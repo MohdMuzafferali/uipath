@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath Competitive Intelligence</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0c1018; --surface:#131924; --surface2:#1a2333;
+      --border:rgba(255,255,255,.08); --text:#e2e8f5; --muted:#8896b0; --accent:#4f8ef7;
+    }
+    body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; }
+
+    /* NAV */
+    nav { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; align-items:center; gap:24px; height:56px; position:sticky; top:0; z-index:100; }
+    .nav-logo { font-weight:700; font-size:15px; white-space:nowrap; }
+    .nav-logo span { color:var(--accent); }
+    .nav-tabs { display:flex; gap:4px; }
+    .nav-tab { background:none; border:none; color:var(--muted); font-size:13px; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .15s; white-space:nowrap; }
+    .nav-tab:hover { background:rgba(255,255,255,.06); color:var(--text); }
+    .nav-tab.active { background:var(--accent); color:#fff; font-weight:600; }
+
+    /* LAYOUT */
+    main { flex:1; padding:24px; max-width:1440px; width:100%; margin:0 auto; }
+    .view { display:none; flex-direction:column; gap:16px; animation:fadeIn .2s ease; }
+    .view.active { display:flex; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:none} }
+
+    /* CARDS */
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .card-head { padding:14px 18px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .card-title { font-size:13px; font-weight:600; }
+    .card-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+    .card-body { padding:16px 18px; }
+
+    /* GRID */
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .grid-sidebar { display:grid; grid-template-columns:300px 1fr; gap:16px; }
+
+    /* VIEW HEADER */
+    .view-header { display:flex; align-items:center; gap:12px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+    .view-header-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .view-header-title { font-size:18px; font-weight:700; }
+    .view-header-sub { font-size:12px; color:var(--muted); margin-top:2px; }
+
+    /* EXEC METRICS */
+    .exec-metric { border-radius:10px; padding:14px 16px; border-left:4px solid; }
+    .exec-metric-label { font-size:11px; font-weight:600; margin-bottom:4px; opacity:.8; }
+    .exec-metric-value { font-size:18px; font-weight:700; }
+    .exec-metric-sub { font-size:11px; margin-top:3px; opacity:.65; }
+    .exec-blue  { background:rgba(79,142,247,.1); border-color:#4f8ef7; color:#4f8ef7; }
+    .exec-green { background:rgba(56,217,169,.1); border-color:#38d9a9; color:#38d9a9; }
+    .exec-amber { background:rgba(245,166,35,.1);  border-color:#f5a623; color:#f5a623; }
+    .exec-red   { background:rgba(240,111,111,.1); border-color:#f06f6f; color:#f06f6f; }
+
+    /* MODE TABS */
+    .mode-tabs { display:flex; gap:3px; background:var(--surface2); border-radius:8px; padding:3px; }
+    .mode-tab { background:none; border:none; color:var(--muted); font-size:12px; padding:5px 12px; border-radius:6px; cursor:pointer; transition:all .15s; white-space:nowrap; }
+    .mode-tab.active { background:var(--accent); color:#fff; font-weight:600; }
+
+    /* CHIPS */
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.04); cursor:pointer; font-size:12px; color:var(--text); user-select:none; transition:all .15s; }
+    .chip:hover { border-color:rgba(255,255,255,.2); }
+    .chip.checked { border-color:currentColor; background:rgba(255,255,255,.08); font-weight:600; }
+    .chip:not(.checked) { opacity:.3; }
+    .chip-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+
+    /* FORM */
+    select { background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:13px; padding:7px 10px; outline:none; width:100%; transition:border-color .15s; }
+    select:focus { border-color:var(--accent); }
+    input[type="text"] { background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:13px; padding:7px 10px; outline:none; width:100%; }
+    input[type="text"]:focus { border-color:var(--accent); }
+    label { font-size:11px; color:var(--muted); display:block; margin-bottom:5px; text-transform:uppercase; letter-spacing:.04em; }
+
+    /* SCORE BADGE */
+    .sb { display:inline-flex; align-items:center; justify-content:center; min-width:28px; height:28px; border-radius:6px; font-size:13px; font-weight:700; flex-shrink:0; padding:0 4px; }
+    .sb-5{background:#14532d;color:#86efac;} .sb-4{background:#1a3a1a;color:#4ade80;}
+    .sb-3{background:#3a2e00;color:#fbbf24;} .sb-2{background:#3a1a00;color:#fb923c;}
+    .sb-1{background:#3a0e0e;color:#f87171;}
+
+    /* HEATMAP */
+    .heatmap-wrap { overflow-x:auto; }
+    .heatmap { width:100%; border-collapse:collapse; font-size:12px; }
+    .heatmap th { padding:8px 10px; text-align:center; color:var(--muted); font-weight:600; font-size:11px; white-space:nowrap; border-bottom:1px solid var(--border); background:var(--surface2); }
+    .heatmap th:first-child { text-align:left; min-width:180px; position:sticky; left:0; background:var(--surface2); }
+    .heatmap td { padding:7px 8px; text-align:center; border-bottom:1px solid rgba(255,255,255,.04); }
+    .heatmap td:first-child { text-align:left; font-weight:500; position:sticky; left:0; background:var(--surface); font-size:11px; padding-left:12px; }
+    .heatmap tr:hover td { background:rgba(255,255,255,.03); }
+    .heatmap tr:hover td:first-child { background:rgba(255,255,255,.05); }
+    .hcell { display:inline-flex; align-items:center; justify-content:center; width:30px; height:22px; border-radius:4px; font-weight:700; font-size:12px; }
+
+    /* TAGS */
+    .tag { font-size:10px; padding:2px 7px; border-radius:4px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+    .tag-high   { background:rgba(74,222,128,.1);  color:#4ade80; }
+    .tag-medium { background:rgba(251,191,36,.1);  color:#fbbf24; }
+    .tag-low    { background:rgba(248,113,113,.1); color:#f87171; }
+    .tag-para   { background:rgba(79,142,247,.1);  color:#4f8ef7; }
+    .tag-int    { background:rgba(56,217,169,.1);  color:#38d9a9; }
+
+    /* EVIDENCE ROWS */
+    .ev-list { display:flex; flex-direction:column; }
+    .ev-row { border-bottom:1px solid var(--border); padding:12px 0; }
+    .ev-row:last-child { border-bottom:none; }
+    .ev-header { display:flex; align-items:center; gap:10px; cursor:pointer; user-select:none; }
+    .ev-name { font-size:13px; font-weight:600; flex:1; }
+    .ev-tags { display:flex; gap:5px; flex-wrap:wrap; }
+    .ev-body { margin-top:10px; padding-left:38px; display:none; }
+    .ev-body.open { display:block; }
+    .ev-evidence { font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:10px; }
+
+    /* ACCORDION */
+    .accordion { margin-top:6px; }
+    details { border:1px solid var(--border); border-radius:8px; background:rgba(255,255,255,.02); margin-bottom:5px; }
+    details summary { cursor:pointer; padding:7px 10px; color:var(--muted); font-size:11px; user-select:none; }
+    details summary:hover { color:var(--text); }
+    .acc-inner { padding:10px 12px; font-size:12px; line-height:1.5; color:var(--muted); }
+    .src-links { display:flex; flex-direction:column; gap:4px; margin-top:4px; }
+    .src-links a { color:var(--accent); font-size:11px; word-break:break-all; text-decoration:none; }
+    .src-links a:hover { text-decoration:underline; }
+
+    /* COMPARE */
+    .cmp-head { background:var(--surface2); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; font-weight:600; }
+
+    /* SCORE GUIDE */
+    .score-guide { display:flex; flex-direction:column; gap:10px; }
+    .sg-row { display:flex; align-items:flex-start; gap:10px; font-size:12px; color:var(--muted); line-height:1.5; }
+
+    .delta-pos{color:#4ade80;font-weight:700;} .delta-neg{color:#f87171;font-weight:700;} .delta-neu{color:var(--muted);}
+    .vdot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+    .chart-wrap { position:relative; }
+    footer { border-top:1px solid var(--border); padding:14px 24px; font-size:11px; color:var(--muted); text-align:center; }
+
+    /* BATTLE CARD */
+    .bc-selector { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:0; }
+    .bc-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; font-weight:600; }
+    .bc-generate-btn { width:100%; background:var(--accent); border:none; color:#fff; font-size:14px; font-weight:600; padding:12px; border-radius:10px; cursor:pointer; transition:opacity .15s; margin-top:16px; }
+    .bc-generate-btn:hover { opacity:.88; }
+    .bc-generate-btn:disabled { opacity:.5; cursor:not-allowed; }
+
+    /* Battle Card output */
+    .bc-output { display:none; }
+    .bc-output.visible { display:flex; flex-direction:column; gap:14px; }
+
+    .bc-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:var(--accent); border-radius:12px; }
+    .bc-header-left h2 { font-size:18px; font-weight:700; color:#fff; margin-bottom:3px; }
+    .bc-header-left p { font-size:12px; color:rgba(255,255,255,.7); }
+    .bc-date { font-size:11px; color:rgba(255,255,255,.6); }
+
+    .bc-scores { display:grid; grid-template-columns:1fr auto 1fr; gap:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .bc-score-block { padding:20px 24px; text-align:center; }
+    .bc-score-block.uipath { border-right:1px solid var(--border); }
+    .bc-score-block.rival { border-left:1px solid var(--border); }
+    .bc-score-vendor { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+    .bc-score-num { font-size:48px; font-weight:700; line-height:1; }
+    .bc-score-sub { font-size:11px; color:var(--muted); margin-top:6px; }
+    .bc-delta-block { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:16px; background:var(--surface2); }
+    .bc-delta-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+    .bc-delta-val { font-size:28px; font-weight:700; }
+
+    .bc-section { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .bc-section-head { padding:12px 18px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+    .bc-section-icon { width:22px; height:22px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
+    .bc-section-title { font-size:13px; font-weight:600; }
+    .bc-section-body { padding:14px 18px; display:flex; flex-direction:column; gap:10px; }
+
+    .bc-point { display:flex; align-items:flex-start; gap:10px; font-size:13px; line-height:1.55; }
+    .bc-point-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+    .bc-point-text { color:var(--text); flex:1; }
+    .bc-point-src { font-size:11px; color:var(--accent); text-decoration:none; display:block; margin-top:2px; }
+    .bc-point-src:hover { text-decoration:underline; }
+
+    .bc-positioning { background:rgba(79,142,247,.08); border:1px solid rgba(79,142,247,.2); border-radius:12px; padding:16px 18px; }
+    .bc-positioning-label { font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:8px; }
+    .bc-positioning-text { font-size:14px; color:var(--text); line-height:1.6; font-style:italic; }
+
+    .bc-loading { display:none; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:48px; }
+    .bc-loading.visible { display:flex; }
+    .bc-loading-text { font-size:13px; color:var(--muted); }
+    .bc-spinner { width:32px; height:32px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">UiPath <span>Competitive Intel</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-view="dashboard">Executive Summary</button>
+    <button class="nav-tab" data-view="battlecard">⚡ Battle Card</button>
+    <button class="nav-tab" data-view="vendor">Vendor Deep Dive</button>
+    <button class="nav-tab" data-view="compare">Head-to-Head</button>
+    <button class="nav-tab" data-view="topic">Topic Analysis</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ══ BATTLE CARD ══ -->
+  <div id="view-battlecard" class="view">
+    <div class="view-header">
+      <div class="view-header-icon" style="background:rgba(79,142,247,.15);">⚡</div>
+      <div>
+        <div class="view-header-title">Battle Card Generator</div>
+        <div class="view-header-sub">Select a competitor and topic — get a ready-to-use positioning card</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="bc-selector">
+          <div>
+            <div class="bc-label">Competing against</div>
+            <select id="bc-rival"></select>
+          </div>
+          <div>
+            <div class="bc-label">Topic / dimension</div>
+            <select id="bc-topic"></select>
+          </div>
+        </div>
+        <button class="bc-generate-btn" id="bc-generate-btn">⚡ Generate Battle Card</button>
+      </div>
+    </div>
+
+    <div class="bc-loading" id="bc-loading">
+      <div class="bc-spinner"></div>
+      <div class="bc-loading-text" id="bc-loading-text">Generating battle card…</div>
+    </div>
+
+    <div class="bc-output" id="bc-output">
+      <div class="bc-header" id="bc-header">
+        <div class="bc-header-left">
+          <h2 id="bc-title">UiPath vs —</h2>
+          <p id="bc-subtitle">—</p>
+        </div>
+        <div class="bc-date" id="bc-date"></div>
+      </div>
+
+      <div class="bc-scores">
+        <div class="bc-score-block uipath">
+          <div class="bc-score-vendor">UiPath</div>
+          <div class="bc-score-num" id="bc-score-uipath" style="color:#fa4616;">—</div>
+          <div class="bc-score-sub">/ 5.0</div>
+        </div>
+        <div class="bc-delta-block">
+          <div class="bc-delta-label">Delta</div>
+          <div class="bc-delta-val" id="bc-delta">—</div>
+        </div>
+        <div class="bc-score-block rival">
+          <div class="bc-score-vendor" id="bc-rival-label">Rival</div>
+          <div class="bc-score-num" id="bc-score-rival" style="color:var(--muted);">—</div>
+          <div class="bc-score-sub">/ 5.0</div>
+        </div>
+      </div>
+
+      <div class="bc-section">
+        <div class="bc-section-head">
+          <div class="bc-section-icon" style="background:rgba(56,217,169,.15);">✅</div>
+          <div class="bc-section-title">UiPath Strengths</div>
+        </div>
+        <div class="bc-section-body" id="bc-strengths"></div>
+      </div>
+
+      <div class="bc-section">
+        <div class="bc-section-head">
+          <div class="bc-section-icon" style="background:rgba(240,111,111,.15);">⚠️</div>
+          <div class="bc-section-title" id="bc-weakness-title">Rival Gaps</div>
+        </div>
+        <div class="bc-section-body" id="bc-weaknesses"></div>
+      </div>
+
+      <div class="bc-positioning">
+        <div class="bc-positioning-label">Suggested positioning</div>
+        <div class="bc-positioning-text" id="bc-positioning">—</div>
+      </div>
+
+      <div class="bc-section">
+        <div class="bc-section-head">
+          <div class="bc-section-icon" style="background:rgba(79,142,247,.15);">🔗</div>
+          <div class="bc-section-title">References</div>
+        </div>
+        <div class="bc-section-body" id="bc-sources"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ EXECUTIVE SUMMARY ══ -->
+  <div id="view-dashboard" class="view active">
+    <div class="view-header">
+      <div class="view-header-icon" style="background:rgba(79,142,247,.15);">📊</div>
+      <div style="flex:1">
+        <div class="view-header-title">Executive Summary</div>
+        <div class="view-header-sub">7 vendors × 15 dimensions · Agentic & RPA Architecture Scorecard</div>
+      </div>
+    </div>
+
+    <div class="grid-4" id="exec-metrics"></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head">
+          <div><div class="card-title">Market Maturity Radar</div><div class="card-sub">Click vendor chip to highlight · avg of score per topic</div></div>
+          <div id="radar-chips" class="chips"></div>
+        </div>
+        <div class="card-body">
+          <div class="chart-wrap" style="height:380px;"><canvas id="radarChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Score Heat Map</div>
+          <div class="mode-tabs" id="heatmap-mode-tabs">
+            <button class="mode-tab active" data-mode="score">Scores</button>
+            <button class="mode-tab" data-mode="delta">Delta vs UiPath</button>
+          </div>
+        </div>
+        <div class="card-body" style="padding:0;">
+          <div class="heatmap-wrap"><table class="heatmap" id="heatmap-table"></table></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Vendor Scope & Strategic Rationale</div></div>
+      <div class="card-body">
+        <div id="scope-table" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ VENDOR DEEP DIVE ══ -->
+  <div id="view-vendor" class="view">
+    <div class="view-header">
+      <div class="view-header-icon" style="background:rgba(56,217,169,.15);">🔍</div>
+      <div style="flex:1">
+        <div class="view-header-title">Vendor Deep Dive</div>
+        <div class="view-header-sub">Score gap analysis · evidence · sources · rationale · reasoning · notes</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Select Vendor</div></div>
+        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+          <div style="width:200px;"><label>Vendor</label><select id="vendor-select"></select></div>
+          <div style="width:160px;"><label>Topic filter</label><select id="vd-topic-filter"><option value="">All topics</option></select></div>
+          <div style="width:130px;"><label>Confidence</label><select id="vd-conf-filter"><option value="">All</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="display:flex;gap:6px;">
+              <button id="vd-generate-topic-btn" style="background:var(--accent);border:none;color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">✨ Generate Topic</button>
+              <button id="vd-generate-all-btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">⚡ All Topics</button>
+            </div>
+            <div id="vd-generate-status" style="font-size:11px;color:var(--muted);text-align:center;min-height:16px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-sidebar">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title" id="vd-vendor-name">—</div>
+            <div class="card-sub" id="vd-vendor-scope" style="margin-top:4px;max-width:260px;"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-wrap" style="height:320px;"><canvas id="vendorBarChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">Evidence, Sources & Reasoning</div><div class="card-sub">Click a row to expand</div></div>
+        <div class="card-body" style="max-height:620px;overflow-y:auto;padding:0 18px;">
+          <div id="vd-evidence-list" class="ev-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HEAD-TO-HEAD ══ -->
+  <div id="view-compare" class="view">
+    <div class="view-header">
+      <div class="view-header-icon" style="background:rgba(245,166,35,.15);">⚔️</div>
+      <div><div class="view-header-title">Head-to-Head</div><div class="view-header-sub">Dimension-by-dimension delta comparison between two vendors</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Select Vendors</div>
+        <div style="display:flex;gap:12px;">
+          <div style="width:180px;"><label>Vendor A (Baseline)</label><select id="cmp-a"></select></div>
+          <div style="width:180px;"><label>Vendor B (Challenger)</label><select id="cmp-b"></select></div>
+        </div>
+      </div>
+      <div class="card-body"><div class="chart-wrap" style="height:340px;"><canvas id="compareChart"></canvas></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Dimension Breakdown</div></div>
+      <div id="cmp-table"></div>
+    </div>
+  </div>
+
+  <!-- ══ TOPIC ANALYSIS ══ -->
+  <div id="view-topic" class="view">
+    <div class="view-header">
+      <div class="view-header-icon" style="background:rgba(240,111,111,.15);">🎯</div>
+      <div><div class="view-header-title">Topic Analysis</div><div class="view-header-sub">Select one dimension — all vendors ranked with full evidence</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title" id="topic-title">—</div></div>
+        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+          <div style="width:300px;"><label>Dimension</label><select id="topic-select"></select></div>
+          <div style="width:160px;"><label>Search topics</label><input type="text" id="topic-search" placeholder="Filter…" /></div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <button id="generate-btn" style="background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">✨ Generate Intelligence</button>
+            <div id="generate-status" style="font-size:11px;color:var(--muted);text-align:center;min-height:16px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="padding:16px 18px;gap:16px;">
+        <div class="chart-wrap" style="height:280px;"><canvas id="topicChart"></canvas></div>
+        <div class="score-guide">
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;">Score Guide</div>
+          <div class="sg-row"><span class="sb sb-5">5</span><span><strong>Best-in-class:</strong> Mature enterprise features, strong governance, clear evidence.</span></div>
+          <div class="sg-row"><span class="sb sb-4">4</span><span><strong>Strong:</strong> Enterprise-ready with minor gaps or distributed capabilities.</span></div>
+          <div class="sg-row"><span class="sb sb-3">3</span><span><strong>Adequate:</strong> Usable baseline; requires customization or external tooling.</span></div>
+          <div class="sg-row"><span class="sb sb-2">2</span><span><strong>Limited:</strong> Partial capability; significant gaps or operational burden.</span></div>
+          <div class="sg-row"><span class="sb sb-1">1</span><span><strong>Not Supported:</strong> Not a primary focus; requires major build.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title" id="topic-ev-title">Evidence — All Vendors</div></div>
+      <div class="card-body" style="padding:0 18px;"><div id="topic-evidence-list" class="ev-list"></div></div>
+    </div>
+  </div>
+
+</main>
+<footer>UiPath Competitive Intelligence · Internal Use Only · Data source: agentic_rpa_vendor_scorecard.xlsx</footer>
+
+<!-- DATA — from vendor_scorecard_dashboard.html (Kobi Shaal) -->
+<script id="scorecard-data" type="application/json">{"topics":["Security & Compliance","Deployment & Operations","Scalability & Reliability","Connectivity & Integration","Time-to-Value & User Experience","Agentic Capabilities","BPM & Orchestration","Testing & Evaluation (Functional + Performance)","Monitoring & Observability","Traceability & Governance","Process Intelligence","Licensing & TCO","Industry applicability / business domain applicability","Long-term value","Business adaptability / Agility"],"vendorOrder":["UiPath","Microsoft","Google","ServiceNow","Appian","n8n","OpenAI"],"colors":{"UiPath":"#e53935","Microsoft":"#1e88e5","Google":"#fdd835","ServiceNow":"#43a047","n8n":"#8e24aa","OpenAI":"#555555","Appian":"#fb8c00"},"vendors":{"Microsoft":[{"category":"Security & Compliance","score":5.0,"rationale":"Strong security/governance ecosystem (Purview, Entra, Sentinel) around automation and agents.","reasoning":"Score 5 because Microsoft provides audit logging via Purview, data exfiltration/network isolation features, and governance controls for Copilot agents—core enterprise security building blocks.","evidence":"Microsoft documentation describes Power Automate audit logs being available in the Microsoft Purview compliance portal, supporting enterprise auditing. Power Platform security updates describe network isolation and security monitoring integrations (for example, Sentinel for Power Platform). Copilot Studio governance guidance also highlights logging and security assessments for agents.","sources":["https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate","https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/","https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":4.0,"rationale":"Cloud-first managed operations with options like hosted RPA and admin tooling.","reasoning":"Score 4 because Power Automate is delivered as a managed cloud service and offers hosted RPA options, but deep on-prem/self-managed flexibility is more limited than containerized suites.","evidence":"Power Automate pricing describes plans for attended and unattended desktop flows, including a Microsoft hosted virtual machine option for hosted RPA. Admin documentation for logging and auditing shows enterprise operations hooks (Purview audit logs and SDK/API access). Together these support day-2 ops for a primarily SaaS deployment model.","sources":["https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing","https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Scalability & Reliability","score":4.0,"rationale":"Enterprise scale is strong, but reliability patterns vary by connector and flow design.","reasoning":"Score 4 because Microsoft operates on Azure-scale infrastructure and provides security/monitoring integrations, yet some reliability is workload-specific (connector limits, throttling, etc.).","evidence":"Microsoft positions Power Platform environments with network isolation and SIEM integration (Sentinel for Power Platform) as part of a broader security/monitoring posture. Automation workloads can be scaled through licensing models that support unattended bots and hosted RPA. Reliability still depends on connector behavior and governance policies in each tenant.","sources":["https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/","https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":"Confirm rate limits, retry semantics, and HA/DR options for your target connectors and regions."},{"category":"Connectivity & Integration","score":5.0,"rationale":"Very broad connectivity via connectors and extensibility for custom connectors.","reasoning":"Score 5 because Power Platform has a large connector ecosystem and explicit support for custom/certified connectors.","evidence":"Microsoft maintains a public repository for Power Platform connectors, describing certified connectors, independent publisher connectors, and custom connector samples.","sources":["https://github.com/microsoft/PowerPlatformConnectors"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":5.0,"rationale":"Excellent time-to-value for business teams due to mature low-code UX and packaged plans.","reasoning":"Score 5 because Power Automate is designed for low-code automation and offers packaged entitlements that reduce the barrier to initial adoption.","evidence":"Power Automate's pricing page describes turnkey plans that include cloud flows, attended desktop flows, and process/task mining for individual users, plus separate plans for unattended automation and hosted machines.","sources":["https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Agentic Capabilities","score":4.0,"rationale":"Rapidly maturing agent ecosystem via Copilot Studio and Microsoft 365/Azure integrations.","reasoning":"Score 4 because Microsoft has clear agent governance/identity patterns and is adding multi-agent orchestration features, but agentic capabilities may be distributed across products.","evidence":"Microsoft's Build 2025 announcement describes Copilot Studio as a low-code hub for building agents, plus Entra Agent ID to assign identities and extend Purview Information Protection.","sources":["https://www.microsoft.com/en-us/microsoft-365/blog/2025/05/19/introducing-microsoft-365-copilot-tuning-multi-agent-orchestration-and-more-from-microsoft-build-2025/","https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":3.0,"rationale":"Good orchestration for workflow automation, weaker for full BPMN-centric process modeling.","reasoning":"Score 3 because Power Automate supports business process flows and workflow composition, but the platform is not primarily BPMN-driven like traditional BPM suites.","evidence":"Microsoft licensing guidance describes Power Automate supporting multiple flow types including 'business process flows' alongside automated/instant/scheduled flows.","sources":["https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":3.0,"rationale":"Testing support exists but is less specialized than dedicated test platforms.","reasoning":"Score 3 because while flows can be tested and observed, Microsoft's automation stack is not primarily marketed as an enterprise test automation suite.","evidence":"Microsoft provides detailed audit logging for automation activities via Purview and Dataverse auditing for record changes, enabling traceability for changes and executions.","sources":["https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate","https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Monitoring & Observability","score":4.0,"rationale":"Strong observability and security monitoring integration options.","reasoning":"Score 4 because the platform provides audit logs and is adding SOC/SIEM integrations.","evidence":"Power Platform security features include integration into a security operations center via Microsoft Sentinel for Power Platform. Power Automate audit logs are available in Purview and can be accessed programmatically via the Office 365 Management API.","sources":["https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/","https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Traceability & Governance","score":5.0,"rationale":"Best-in-class governance and auditing through Purview + platform auditing features.","reasoning":"Score 5 because Microsoft provides broad audit logging for Power Platform services and detailed Dataverse auditing/retention controls.","evidence":"Power Automate admin documentation states that activity logs are available in the Microsoft Purview compliance portal. Dataverse auditing documentation explains how it logs changes to records and user access, supports retention policies, and can be retrieved via API/SDK.","sources":["https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate","https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Process Intelligence","score":4.0,"rationale":"Solid process intelligence through process mining offerings in Power Automate.","reasoning":"Score 4 because Power Automate includes process mining and positions it as an analysis tool for discovering and improving processes.","evidence":"Microsoft describes process mining as extracting knowledge from event logs and audit trails across systems to discover, monitor, and improve processes.","sources":["https://www.microsoft.com/en-gb/power-platform/products/power-automate/topics/process-mining/what-is-process-mining","https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Licensing & TCO","score":3.0,"rationale":"Pricing is transparent but can be complex (per-user, per-bot, pay-as-you-go meters).","reasoning":"Score 3 because Microsoft publishes list prices and also offers pay-as-you-go meters; cost modeling can still be complex across bots, runs, and Dataverse capacity.","evidence":"Power Automate pricing lists per-user and per-bot plans, including unattended bots and hosted RPA. Microsoft Learn also documents pay-as-you-go meters and per-run charges.","sources":["https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing","https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-meters"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Industry applicability / business domain applicability","score":5.0,"rationale":"Broad applicability across departments and ecosystems via Microsoft footprint and connectors.","reasoning":"Score 5 because Power Automate covers cloud flows, desktop flows, and process mining within the Power Platform ecosystem.","evidence":"Power Automate plans cover cloud automation, desktop RPA, and process mining for both individual and enterprise use cases.","sources":["https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing","https://github.com/microsoft/PowerPlatformConnectors"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":5.0,"rationale":"High long-term value due to deep integration with Microsoft identity, compliance, and ecosystem tooling.","reasoning":"Score 5 because governance (Purview), identity (Entra), and ongoing agent/automation investments provide a durable foundation.","evidence":"Microsoft's agent governance announcements describe managing agent identity with Entra and storing logs for auditing in Purview.","sources":["https://www.microsoft.com/en-us/microsoft-365/blog/2025/05/19/introducing-microsoft-365-copilot-tuning-multi-agent-orchestration-and-more-from-microsoft-build-2025/","https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":5.0,"rationale":"Very high agility for iterative automation changes with enterprise guardrails available.","reasoning":"Score 5 because low-code development plus centralized governance/auditing allows fast iteration while maintaining control.","evidence":"Power Platform provides auditing (Purview/Dataverse) and security governance features, enabling admins to set policies while makers build quickly.","sources":["https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing","https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""}],"Appian":[{"category":"Security & Compliance","score":5.0,"rationale":"Extensive compliance portfolio (SOC reports, ISO) with strong cloud security options.","reasoning":"Score 5 because Appian Cloud explicitly lists SOC 2 Type II and ISO 27001/27017 and other certifications, covering many regulated industry requirements.","evidence":"Appian's cloud compliance documentation describes SOC 2 Type II reporting and ISO/IEC 27001:2022 certification. The Trust Center highlights additional attestations (HIPAA, PCI DSS, FedRAMP).","sources":["https://appian.com/support/resources/trust/compliance","https://appian.com/support/resources/trust/security"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":4.0,"rationale":"Enterprise-oriented cloud platform with managed security monitoring.","reasoning":"Score 4 because Appian Cloud is designed for demanding environments, but some advanced features can be limited in self-managed scenarios.","evidence":"The Appian Protect page positions Appian Cloud for demanding enterprise environments, emphasizing security monitoring and encryption.","sources":["https://appian.com/support/resources/trust/security","https://appian.com/products/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Scalability & Reliability","score":4.0,"rationale":"Strong scalability options (including autoscale tiers).","reasoning":"Score 4 because pricing tiers explicitly include autoscale in higher editions.","evidence":"Appian's pricing comparison lists 'Autoscale' capability as included in higher tiers, suggesting built-in scaling support for production workloads.","sources":["https://appian.com/products/pricing","https://appian.com/support/resources/trust/security"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Connectivity & Integration","score":4.0,"rationale":"Good integration story via built-in integrations and data fabric, plus RPA for non-API systems.","reasoning":"Score 4 because Appian includes integration capabilities and RPA to bridge legacy systems.","evidence":"Appian pricing highlights 'Integrations' as a platform capability and includes Robotic Process Automation entitlements (bots) across tiers. The RPA product page emphasizes using RPA when APIs are unavailable.","sources":["https://appian.com/products/pricing","https://appian.com/products/platform/process-automation/robotic-process-automation-rpa"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":4.0,"rationale":"Strong time-to-value with low-code process design and reusable patterns.","reasoning":"Score 4 because Appian is built around low-code process modeling and reusable 'process recipes'.","evidence":"Appian documentation describes BPMN as a standard for graphically describing business processes and states that with Appian the model becomes the executable process.","sources":["https://docs.appian.com/suite/help/24.1/process_modeling.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Agentic Capabilities","score":4.0,"rationale":"Emerging agentic capabilities with explicit auditing for AI/agent usage.","reasoning":"Score 4 because Appian has a defined 'Agent Studio' concept with audit logs.","evidence":"Appian's AI agent auditing documentation describes an always-on AI Usage Audit Log that records timestamps, initiator IDs, agent IDs, feature type, and request status.","sources":["https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html","https://appian.com/products/pricing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":5.0,"rationale":"Best-in-class BPM alignment via BPMN-centric executable process models.","reasoning":"Score 5 because Appian explicitly supports BPMN-based process models as executable workflows.","evidence":"Appian documentation explains that BPMN is the standard for describing processes, and that in Appian the model is not just documentation—it is translated into an executable process.","sources":["https://docs.appian.com/suite/help/24.1/process_modeling.html"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":3.0,"rationale":"Adequate testing/validation features, but less evidence of a dedicated test suite.","reasoning":"Score 3 because Appian supports configuring and testing workflows but lacks emphasis on performance testing harnesses.","evidence":"Appian's process modeling materials focus on building and testing executable workflows as part of process design. The platform also provides audit logging for AI interactions.","sources":["https://docs.appian.com/suite/help/24.1/process_modeling.html","https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Monitoring & Observability","score":4.0,"rationale":"Strong monitoring posture via 'Appian Protect' plus platform analytics options.","reasoning":"Score 4 because Appian Protect is positioned for security monitoring and Appian pricing highlights Process HQ in higher tiers.","evidence":"The Appian Protect page frames Appian Protect as providing security monitoring and related controls for sensitive and regulated data.","sources":["https://appian.com/support/resources/trust/security","https://appian.com/products/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Traceability & Governance","score":4.0,"rationale":"Good traceability for AI usage and compliance-driven environments.","reasoning":"Score 4 because Appian provides default AI usage audit logs and a broader compliance portfolio.","evidence":"Appian's AI Usage Audit Log is described as enabled by default and intended to provide the audit trail required for security questionnaires and compliance reviews.","sources":["https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html","https://appian.com/support/resources/trust/compliance"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Process Intelligence","score":4.0,"rationale":"Integrated process intelligence available as part of platform packaging.","reasoning":"Score 4 because Appian explicitly prices and positions process intelligence as a platform capability.","evidence":"Appian's pricing page lists 'Process intelligence' as part of the product packaging and includes related capabilities such as Process HQ in higher tiers.","sources":["https://appian.com/products/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Licensing & TCO","score":3.0,"rationale":"Pricing is structured (per user/month/app) but can drive TCO complexity at scale.","reasoning":"Score 3 because per-app/per-user constructs and tiered bot entitlements can complicate enterprise-wide TCO comparisons.","evidence":"Appian's pricing page describes platform capabilities as priced per user, per month, per app, and includes tiered entitlements.","sources":["https://appian.com/products/pricing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Industry applicability / business domain applicability","score":4.0,"rationale":"Strong fit for regulated industries and process-heavy domains.","reasoning":"Score 4 because Appian emphasizes healthcare, financial services, government.","evidence":"Appian Protect highlights protecting sensitive and regulated data across domains like healthcare, financial services, and government, and lists certifications such as HIPAA and DoD impact levels.","sources":["https://appian.com/support/resources/trust/security","https://docs.appian.com/suite/help/24.1/process_modeling.html"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Long-term value","score":4.0,"rationale":"Durable value via standards-based BPM and deep compliance footprint.","reasoning":"Score 4 because executable BPMN models and ongoing compliance attestations support long-running programs.","evidence":"Appian's process modeling emphasizes BPMN as the foundation for executable workflows, improving stakeholder clarity and maintainability.","sources":["https://docs.appian.com/suite/help/24.1/process_modeling.html","https://appian.com/support/resources/trust/compliance"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"High agility through low-code design and reusable process patterns.","reasoning":"Score 4 because low-code/BPMN models enable fast iteration while audit logs for agents provide governance.","evidence":"Appian frames process models as executable and maintains process recipes/patterns for common workflows, enabling rapid solution iteration.","sources":["https://docs.appian.com/suite/help/24.1/process_modeling.html","https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}],"ServiceNow":[{"category":"Security & Compliance","score":5.0,"rationale":"Robust enterprise compliance (SOC/ISO) plus trust posture for a large SaaS platform.","reasoning":"Score 5 because ServiceNow publishes long-standing ISO and SOC attestations that address common enterprise compliance requirements.","evidence":"ServiceNow's compliance page lists ISO certifications (including ISO/IEC 27018 for PII in public clouds and ISO/IEC 27701 for privacy) and notes ongoing third-party SOC 1/SOC 2 Type 2 attestations.","sources":["https://www.servicenow.com/uk/company/trust/compliance.html"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":4.0,"rationale":"Cloud platform operations with dedicated automation/RPA components and runtime setup guidance.","reasoning":"Score 4 because ServiceNow is a managed platform with documented operational setup for components like unattended robots.","evidence":"ServiceNow provides product documentation for setting up Unattended Robot applications to connect robots to the RPA Hub instance, including role requirements and mTLS authentication options.","sources":["https://www.servicenow.com/docs/bundle/xanadu-integrate-applications/page/product/rpa-runtime/task/set-up-rpa-runtime.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Scalability & Reliability","score":4.0,"rationale":"Scalable enterprise workflow backbone.","reasoning":"Score 4 because ServiceNow's AI Platform emphasizes centralized workflows with governance mechanisms.","evidence":"ServiceNow positions Process Mining and Automation Center as part of an AI Platform used to improve and deploy workflows and AI agents in a closed loop.","sources":["https://www.servicenow.com/products/process-mining.html","https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":"Confirm your instance's HA/DR, upgrade windows, and integration error-handling patterns for critical workflows."},{"category":"Connectivity & Integration","score":4.0,"rationale":"Strong integration layer via IntegrationHub spokes/actions and templates.","reasoning":"Score 4 because IntegrationHub documents many 'spokes' and reusable actions/templates for connecting external systems.","evidence":"ServiceNow's IntegrationHub datasheet describes connecting API-enabled systems to ServiceNow and highlights 175+ spokes with thousands of actions, plus flow templates across domains.","sources":["https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/data-sheet/ds-integrationhub.pdf","https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/success/quick-answer/integrationhub-definition-use.pdf"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":4.0,"rationale":"Strong time-to-value in domains where ServiceNow is already the system of work.","reasoning":"Score 4 because prebuilt spokes/templates and native workflow tools accelerate delivery, especially for IT/employee workflows.","evidence":"IntegrationHub materials emphasize prebuilt spokes, out-of-the-box solutions, and flow templates that reduce integration build time.","sources":["https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/data-sheet/ds-integrationhub.pdf","https://www.servicenow.com/community/servicenow-ai-platform-articles/how-to-create-a-one-step-approval-workflow-in-servicenow/ta-p/3445881"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Agentic Capabilities","score":4.0,"rationale":"Growing agentic portfolio with centralized governance and cross-platform orchestration initiatives.","reasoning":"Score 4 because ServiceNow is launching governance/orchestration constructs (AI Control Tower, Agent Fabric).","evidence":"ServiceNow's AI Control Tower announcement describes a centralized command center to govern, manage, secure, and realize value from AI agents, models, and workflows—including third-party agents.","sources":["https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":4.0,"rationale":"Strong workflow orchestration in the Now Platform; BPM depth is good but less explicitly BPMN-first.","reasoning":"Score 4 because ServiceNow supports workflow automation and reusable components (subflows), plus IntegrationHub for end-to-end processes.","evidence":"Flow Designer guidance describes designing approval logic and making it reusable via subflows. IntegrationHub is framed as enabling process automation using reusable spokes/actions.","sources":["https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/success/quick-answer/integrationhub-definition-use.pdf","https://www.servicenow.com/community/servicenow-ai-platform-articles/how-to-create-a-one-step-approval-workflow-in-servicenow/ta-p/3445881"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":3.0,"rationale":"Basic built-in testing for workflows; broader functional/performance testing is less productized.","reasoning":"Score 3 because Flow Designer supports testing flows but a full automation testing lifecycle is not highlighted.","evidence":"A Flow Designer walkthrough describes using an in-product 'Test' feature to run a workflow against an incident and watch execution details.","sources":["https://www.servicenow.com/community/servicenow-ai-platform-articles/how-to-create-a-one-step-approval-workflow-in-servicenow/ta-p/3445881"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Monitoring & Observability","score":4.0,"rationale":"Good observability via dashboards and control-tower style monitoring.","reasoning":"Score 4 because ServiceNow promotes real-time monitoring for AI agents and workflows through AI Control Tower.","evidence":"ServiceNow communications describe AI Control Tower as providing visibility into agents' work, governance, risk, and performance.","sources":["https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Traceability & Governance","score":4.0,"rationale":"Strong governance trajectory with AI Control Tower and compliance foundations.","reasoning":"Score 4 because ServiceNow has compliance attestations and is adding a centralized AI governance/management layer.","evidence":"The compliance page lists long-standing SOC and ISO attestations. The AI Control Tower describes centralized policy application across native and third-party agents/workflows.","sources":["https://www.servicenow.com/uk/company/trust/compliance.html","https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Process Intelligence","score":5.0,"rationale":"Strong process intelligence offering tied to workflow improvement loops.","reasoning":"Score 5 because ServiceNow markets Process Mining as closed-loop process intelligence feeding automation improvements.","evidence":"ServiceNow's Process Mining product page describes gaining visibility across ServiceNow and external apps, identifying conformance gaps, and turning insights into action through direct connection with Automation Center.","sources":["https://www.servicenow.com/products/process-mining.html"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Licensing & TCO","score":2.0,"rationale":"Licensing can be complex and expensive in enterprise scenarios.","reasoning":"Score 2 because ServiceNow platforms are often sold as bundled suites; costs can be substantial and depend on modules, users, and add-ons.","evidence":"The IntegrationHub datasheet and Process Mining page position these as platform add-ons/capabilities within the ServiceNow AI Platform, implying module-based packaging.","sources":["https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/data-sheet/ds-integrationhub.pdf","https://www.servicenow.com/products/process-mining.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"Validate licensing assumptions with your account team and map costs to adoption milestones.","questions":""},{"category":"Industry applicability / business domain applicability","score":5.0,"rationale":"Very broad domain applicability (IT, HR, customer service, risk) with packaged workflows.","reasoning":"Score 5 because ServiceNow is positioned as a platform connecting people, processes, and systems across many enterprise functions.","evidence":"ServiceNow's Process Mining page references workflows spanning technology, customer service, and HR. The AI Control Tower emphasizes governing AI agents and workflows across the enterprise.","sources":["https://www.servicenow.com/products/process-mining.html","https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":5.0,"rationale":"High long-term value when ServiceNow is the enterprise workflow hub.","reasoning":"Score 5 because ServiceNow is investing in platform-level governance (AI Control Tower) and closed-loop intelligence (process mining).","evidence":"ServiceNow describes AI Control Tower as a centralized command center for governing and managing AI agents and workflows across native and third-party ecosystems.","sources":["https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx","https://www.servicenow.com/products/process-mining.html"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"Good agility through configuration, reusable subflows, and spoke-based integrations.","reasoning":"Score 4 because platform configuration and reusable building blocks enable fast changes, but enterprise governance/upgrade practices can introduce lead time.","evidence":"Flow Designer guidance highlights building reusable subflows for approval patterns and testing workflows directly in the designer. IntegrationHub emphasizes reusable spokes/actions and prebuilt templates.","sources":["https://www.servicenow.com/community/servicenow-ai-platform-articles/how-to-create-a-one-step-approval-workflow-in-servicenow/ta-p/3445881","https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/success/quick-answer/integrationhub-definition-use.pdf"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}],"n8n":[{"category":"Security & Compliance","score":3.0,"rationale":"Good enterprise security features (RBAC/SSO/secrets) but smaller compliance footprint and higher operational responsibility when self-hosted.","reasoning":"Score 3 because n8n offers RBAC and enterprise SSO plus SOC 2 messaging, but security depends heavily on how instances are deployed/maintained.","evidence":"n8n documentation describes role-based access control for workflows/credentials by project roles and enterprise SSO via SAML/OIDC. The enterprise page highlights integration with secret managers and being SOC 2 audited.","sources":["https://docs.n8n.io/user-management/rbac/","https://docs.n8n.io/hosting/securing/set-up-sso/","https://n8n.io/enterprise/","https://www.techradar.com/pro/security/thousands-of-n8n-instances-under-threat-from-top-security-issue"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Deployment & Operations","score":3.0,"rationale":"Flexible deployment (cloud or self-hosted) with operational burden on the customer for self-host.","reasoning":"Score 3 because n8n supports self-hosting and has enterprise features, but production operations (HA, upgrades, backups) largely fall on the operator.","evidence":"n8n's pricing describes higher tiers that are self-hosted, and its scaling documentation explains running multiple instances and workers using Redis and a database.","sources":["https://n8n.io/pricing/","https://docs.n8n.io/hosting/scaling/queue-mode/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Scalability & Reliability","score":4.0,"rationale":"Strong horizontal scalability via queue mode and worker pools.","reasoning":"Score 4 because queue mode explicitly supports scaling out with workers and optional high availability constructs.","evidence":"n8n scaling documentation describes queue mode as providing the best scalability by splitting a main instance and worker instances coordinated via Redis.","sources":["https://docs.n8n.io/hosting/scaling/queue-mode/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Connectivity & Integration","score":4.0,"rationale":"Large integration/node ecosystem plus extensibility for custom logic.","reasoning":"Score 4 because n8n includes hundreds of nodes and credential types and supports developer-friendly workflows.","evidence":"n8n's pricing indicates all plans include every integration, and its ecosystem documentation highlights a large node system with many service integrations and AI/LLM nodes.","sources":["https://n8n.io/pricing/","https://n8n.io/enterprise/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":4.0,"rationale":"Fast for technical teams; business-user experience depends on internal enablement.","reasoning":"Score 4 because visual workflows and ready integrations speed delivery, but enterprise deployment/governance setup can slow non-technical adoption.","evidence":"n8n pricing emphasizes unlimited users/workflows and execution-based pricing, supporting rapid experimentation. Enterprise features support team use.","sources":["https://n8n.io/pricing/","https://n8n.io/enterprise/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Agentic Capabilities","score":3.0,"rationale":"Useful building blocks for agentic workflows, but limited native governance/orchestration semantics.","reasoning":"Score 3 because n8n can integrate with LLMs and provides AI nodes, yet it lacks the deeper agent governance of dedicated agentic platforms.","evidence":"n8n is widely used to wire together AI tools and APIs inside workflows, and its ecosystem includes AI-focused capabilities and nodes.","sources":["https://n8n.io/enterprise/","https://n8n.io/pricing/"],"evidenceType":"Paraphrase","confidence":"Low","notes":"","questions":""},{"category":"BPM & Orchestration","score":2.0,"rationale":"Workflow orchestration is good for integrations; classic BPM modeling is limited.","reasoning":"Score 2 because n8n is a workflow automation tool rather than a BPMN/DMN process orchestration suite.","evidence":"n8n's documentation focuses on building and executing workflows and scaling them via queue mode. It does not describe BPMN-first modeling or decision modeling standards.","sources":["https://docs.n8n.io/hosting/scaling/queue-mode/","https://n8n.io/pricing/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":2.0,"rationale":"Limited native testing and evaluation tooling.","reasoning":"Score 2 because the product documentation emphasizes execution, scaling, and logging rather than a full test management lifecycle.","evidence":"n8n provides operational features such as execution log retention and controls over what execution data is saved, which help with debugging. Enterprise log streaming can push events to external observability stacks.","sources":["https://docs.n8n.io/hosting/scaling/execution-data/","https://docs.n8n.io/log-streaming/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Monitoring & Observability","score":3.0,"rationale":"Decent observability via log streaming and execution data controls, but depth depends on your stack.","reasoning":"Score 3 because n8n can stream logs and exposes metrics/health endpoints, yet a unified enterprise observability experience requires integrating with external tooling.","evidence":"n8n's Log Streaming feature (enterprise) allows sending events to external logging tools. Scaling docs describe optional worker endpoints such as health checks and metrics.","sources":["https://docs.n8n.io/log-streaming/","https://docs.n8n.io/hosting/scaling/queue-mode/","https://docs.n8n.io/hosting/scaling/execution-data/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Traceability & Governance","score":3.0,"rationale":"Governance is available (projects/roles) but less comprehensive than enterprise automation suites.","reasoning":"Score 3 because RBAC and enterprise features exist, but full audit/governance often requires external controls.","evidence":"n8n documentation explains RBAC as controlling access to workflows and credentials by user roles and projects. Enterprise log streaming helps support auditability by sending workflow events to external systems.","sources":["https://docs.n8n.io/user-management/rbac/","https://n8n.io/enterprise/","https://docs.n8n.io/log-streaming/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Process Intelligence","score":1.0,"rationale":"Minimal built-in process intelligence.","reasoning":"Score 1 because n8n does not offer native process mining/task mining.","evidence":"n8n's documentation covers execution log retention, pruning, and operational insights. There is no evidence of built-in process mining capabilities like event-log discovery, conformance checking, or task mining.","sources":["https://docs.n8n.io/hosting/scaling/execution-data/","https://n8n.io/pricing/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Licensing & TCO","score":5.0,"rationale":"Strong cost efficiency with execution-based pricing and open-source option.","reasoning":"Score 5 because pricing is usage/execution-based with unlimited users/workflows, and self-hosting can optimize infrastructure cost.","evidence":"n8n's pricing page describes plans where pricing is based on monthly workflow executions regardless of complexity, and includes unlimited users and workflows across plans.","sources":["https://n8n.io/pricing/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Industry applicability / business domain applicability","score":3.0,"rationale":"Broad horizontal applicability for integration-heavy teams; less suited for regulated, BPM-heavy enterprise programs out of the box.","reasoning":"Score 3 because it can automate across many apps and APIs, but deeper regulated workflow governance is a separate effort.","evidence":"n8n's enterprise messaging focuses on integrating secrets vaults, defining fine-grained access rules, and streaming workflow logs. At the same time, compliance needs in regulated industries require additional controls.","sources":["https://n8n.io/enterprise/","https://docs.n8n.io/log-streaming/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":3.0,"rationale":"Solid long-term potential as an integration fabric, with risk tied to self-host ops and security hygiene.","reasoning":"Score 3 because the platform can be durable as an integration layer, but long-term value depends on operational maturity.","evidence":"n8n provides scalable architectures (queue mode) and enterprise features (RBAC, SSO, log streaming) that support long-lived deployments.","sources":["https://docs.n8n.io/hosting/scaling/queue-mode/","https://docs.n8n.io/user-management/rbac/","https://www.techradar.com/pro/security/thousands-of-n8n-instances-under-threat-from-top-security-issue"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"High agility for building/iterating integrations and automations.","reasoning":"Score 4 because workflows are easy to change and scale with worker pools, and governance features can be layered on as you grow.","evidence":"n8n's queue mode architecture allows scaling by adding or removing workers as workload changes. Enterprise RBAC and SSO provide basic guardrails for teams.","sources":["https://docs.n8n.io/hosting/scaling/queue-mode/","https://docs.n8n.io/user-management/rbac/","https://docs.n8n.io/hosting/securing/set-up-sso/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}],"UiPath":[{"category":"Security & Compliance","score":5.0,"rationale":"Strong enterprise security posture with dedicated trust center and third-party attestations.","reasoning":"Score 5 because the platform publishes a security review portal and emphasizes independent attestations.","evidence":"UiPath's Trust Center is positioned as a security review hub and lists independent compliance artifacts (SOC reports and certificates). The Automation Cloud SOC 2 Type 2 announcement reinforces that controls around security, availability, and confidentiality were examined by an independent auditor.","sources":["https://trust.uipath.com/","https://www.uipath.com/newsroom/uipath-completes-soc-2-type-2-examination-for-automation-cloud"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":5.0,"rationale":"Flexible deployment (SaaS or self-managed) plus centralized operations tooling.","reasoning":"Score 5 because Orchestrator supports multiple deployment models (SaaS and self-managed) and the platform provides centralized administration/logging.","evidence":"UiPath describes Orchestrator as available instantly as SaaS via Automation Cloud and also deployable on-premises or in private/public cloud, including containerized Automation Suite.","sources":["https://www.uipath.com/product/orchestrator","https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/about-logs"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Scalability & Reliability","score":5.0,"rationale":"Mature orchestration + operational controls for long-running processes.","reasoning":"Score 5 because Maestro/Orchestrator emphasize controlled execution (pause/resume/retry) and enterprise-grade logging/retention.","evidence":"The Maestro product materials highlight operational controls for process instances including suspend/resume/retry/rewind. Automation Cloud provides centralized audit/robot logs with export and longer retention on enterprise tiers.","sources":["https://www.uipath.com/product/agentic-orchestration","https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/about-logs"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Connectivity & Integration","score":5.0,"rationale":"Broad integration surface via prebuilt connectors and standardized auth.","reasoning":"Score 5 because Integration Service is positioned as the platform-wide integration layer that standardizes authorization/authentication and supports many connectors.","evidence":"UiPath's Integration Service documentation states it enables integrations across UiPath products and standardizes authorization/authentication for external systems. It describes a connectors catalog, connection management, triggers/activities, and governance policies.","sources":["https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/connectors"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":4.0,"rationale":"Fast build-to-run path for common enterprise automations, but with enterprise-grade complexity.","reasoning":"Score 4 because the platform offers low-code building blocks, templates/connectors, and orchestration, but real enterprise adoption still requires governance setup.","evidence":"UiPath positions Orchestrator as central management with a more intuitive UI and visibility through dashboards/Insights, which can shorten the path from development to managed operations.","sources":["https://www.uipath.com/product/orchestrator","https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/connectors"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Agentic Capabilities","score":5.0,"rationale":"Dedicated agentic orchestration layer coordinating agents, robots, and humans.","reasoning":"Score 5 because Maestro is explicitly marketed as agentic orchestration, including integration of agents/robots/humans plus analytics and exception handling controls.","evidence":"The Maestro product page describes orchestrating AI agents, robots, and people end-to-end, including BPMN-based modeling, decision management (DMN), instance-level controls (suspend/resume/retry/rewind), and analytics.","sources":["https://www.uipath.com/product/agentic-orchestration","https://docs.uipath.com/maestro/automation-cloud/latest/user-guide/bpmn"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":5.0,"rationale":"BPMN/DMN-based process modeling with execution semantics and guardrails.","reasoning":"Score 5 because Maestro uses BPMN as an execution-ready modeling language and explicitly documents BPMN support and guardrails.","evidence":"Maestro documentation explains BPMN as an OMG-maintained open standard and describes BPMN diagrams as human-readable, machine-actionable, and maintainable—changes to the diagram change behavior without hidden logic.","sources":["https://docs.uipath.com/maestro/automation-cloud/latest/user-guide/bpmn","https://www.uipath.com/product/agentic-orchestration"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":5.0,"rationale":"Strong automated testing suite with enterprise governance integrations.","reasoning":"Score 5 because UiPath offers a dedicated test platform (Test Cloud/Test Suite) and promotes CI/CD and governance features.","evidence":"UiPath's enterprise test suite page describes agentic testing with enterprise-ready AI agents, resilient end-to-end automation for UI and API, and governance features (auditing, role management, centralized credentials). It also emphasizes integrations with CI/CD and ALM tools.","sources":["https://www.uipath.com/solutions/department/enterprise-test-suite"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Monitoring & Observability","score":5.0,"rationale":"Centralized logging and visibility across services, plus Insights/analytics tie-in.","reasoning":"Score 5 because the platform provides unified logs and audit/robot logs with filtering and export.","evidence":"Automation Cloud admin documentation describes a unified logging experience with advanced filtering, CSV export, tenant-level audit logs, and long-term export. Orchestrator marketing also ties execution visibility to dashboards and UiPath Insights.","sources":["https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/about-logs","https://www.uipath.com/product/orchestrator"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Traceability & Governance","score":5.0,"rationale":"Comprehensive audit trails for user/admin actions and automation events.","reasoning":"Score 5 because Orchestrator includes an explicit Audit capability and platform logs describe audit retention and export options.","evidence":"Orchestrator documentation describes an Audit page showing an audit trail of actions by entities in Orchestrator, with filtering by component/user/action/time and CSV export. Automation Cloud logs documentation expands this with centralized audit logs across services.","sources":["https://docs.uipath.com/orchestrator/automation-cloud/latest/user-guide/about-Audit","https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/about-logs"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Process Intelligence","score":5.0,"rationale":"Dedicated process and task mining capabilities with conformance checks.","reasoning":"Score 5 because UiPath offers process mining, conformance checking against BPMN models, and task mining for discovery.","evidence":"UiPath Process Mining documentation describes conformance checking dashboards that help detect compliance issues and discrepancies between actual execution and reference process models. Task Mining positions task capture as a data-driven way to understand how work is done before automation.","sources":["https://docs.uipath.com/process-mining/automation-suite/2023.10/user-guide/conformance-checking","https://www.uipath.com/product/task-mining"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Licensing & TCO","score":3.0,"rationale":"Transparent but sometimes complex licensing (multiple units/entitlements).","reasoning":"Score 3 because licensing details are published, but multiple license types/units can make TCO modeling non-trivial.","evidence":"UiPath's licensing portal includes detailed entitlements and unit concepts (service units, API call limits, and AI/agent action allowances). That transparency helps model costs, but multiple quotas and add-ons mean careful sizing is needed.","sources":["https://licensing.uipath.com/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"Treat as a starting point—TCO varies heavily by robot/agent mix, unattended concurrency, and data/AI usage.","questions":""},{"category":"Industry applicability / business domain applicability","score":5.0,"rationale":"Broad applicability across departments with deep enterprise automation focus.","reasoning":"Score 5 because Maestro/Orchestrator are framed for cross-industry, end-to-end automation (agents + robots + people).","evidence":"UiPath's agentic orchestration materials describe applying Maestro across industries and processes, combining AI agents for decision-making, robots for execution, and humans for oversight.","sources":["https://www.uipath.com/product/agentic-orchestration"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":5.0,"rationale":"Open standards (BPMN) + deep platform coverage support long-lived automation programs.","reasoning":"Score 5 because BPMN-based models, auditability, and broad integration make it easier to evolve automations over time.","evidence":"Maestro documents BPMN as the core modeling language and emphasizes models as maintainable 'contracts' that stakeholders can review and update to change behavior.","sources":["https://docs.uipath.com/maestro/automation-cloud/latest/user-guide/bpmn","https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/about-logs","https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/connectors"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"High agility via model-driven orchestration and configurable integrations—needs guardrails.","reasoning":"Score 4 because BPMN models and connector governance enable rapid iteration, but uncontrolled change can create operational risk.","evidence":"Maestro positions BPMN diagrams as executable and maintainable, where changes to the diagram alter runtime behavior without hidden logic. Integration Service governance policies let admins control connector availability.","sources":["https://docs.uipath.com/maestro/automation-cloud/latest/user-guide/bpmn","https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/connectors"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}],"Google":[{"category":"Security & Compliance","score":5.0,"rationale":"Very strong cloud security/compliance posture with broad certifications and BAAs.","reasoning":"Score 5 because Google Cloud maintains extensive compliance certifications and provides HIPAA support with BAAs plus SOC/ISO coverage.","evidence":"Google Cloud's HIPAA compliance guidance states that Google Cloud supports HIPAA compliance and references third-party audits and certifications including SOC 2 and ISO 27001/27017/27018, plus FedRAMP and PCI.","sources":["https://cloud.google.com/security/compliance/hipaa"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":4.0,"rationale":"Cloud-native deployment and operations with managed runtimes for agents and workflows.","reasoning":"Score 4 because Vertex AI Agent Engine and Workflows provide managed services, but you need to assemble an end-to-end platform across GCP services.","evidence":"Google documents Vertex AI Agent Engine as a managed runtime for deploying agents, with guidance for enabling telemetry and viewing traces in the console. Google Workflows documentation provides best practices for reliability patterns (retries, saga) and callbacks for long-running waits.","sources":["https://docs.cloud.google.com/agent-builder/agent-engine/overview","https://cloud.google.com/workflows/docs/best-practice","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Scalability & Reliability","score":5.0,"rationale":"Excellent scalability and reliability inherited from GCP managed services.","reasoning":"Score 5 because agent runtimes and orchestration services are managed and integrate with Google's cloud infrastructure patterns.","evidence":"Workflows best practices describe parallel execution and structured error handling with retries and the saga pattern for distributed transactions. Agent Engine tracing documentation shows built-in telemetry hooks and integration with Cloud Trace/Logging APIs.","sources":["https://cloud.google.com/workflows/docs/best-practice","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Connectivity & Integration","score":4.0,"rationale":"Strong connectivity through Google integration ecosystem but may require integration product selection.","reasoning":"Score 4 because Vertex AI Agent Builder references integration connectors and API discovery, but the integration experience spans multiple services.","evidence":"The Vertex AI Agent Builder overview highlights integrating agents with enterprise apps through Integration Connectors, and discovering/using APIs via Apigee API Hub or API Management.","sources":["https://docs.cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview","https://cloud.google.com/workflows/docs/best-practice"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":3.0,"rationale":"Good for developer-led delivery; business-user UX depends on additional products and enablement.","reasoning":"Score 3 because Google provides strong developer tooling and managed runtimes, but out-of-the-box citizen-developer experiences are less central.","evidence":"Vertex AI Agent Builder provides an Agent Development Kit and managed runtime for deploying agents, along with documentation on observability and integration connectors. This enables fast delivery for engineering teams but is less turnkey for non-technical builders.","sources":["https://docs.cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview","https://docs.cloud.google.com/agent-builder/agent-engine/overview"],"evidenceType":"Paraphrase","confidence":"Low","notes":"","questions":""},{"category":"Agentic Capabilities","score":5.0,"rationale":"Best-in-class AI/agent building capabilities with production telemetry options.","reasoning":"Score 5 because Vertex AI Agent Builder and Agent Engine are purpose-built for building and deploying AI agents, including multi-tool/multi-agent patterns and tracing.","evidence":"Google's agent platform documentation includes an Agent Engine runtime and guidance for tracing agents using OpenTelemetry, with options to capture prompts/responses and view traces in the console.","sources":["https://docs.cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing","https://docs.cloud.google.com/agent-builder/agent-engine/overview"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":3.0,"rationale":"Solid orchestration via Workflows, but not a BPMN-centric orchestration suite.","reasoning":"Score 3 because Workflows supports robust orchestration patterns but doesn't position itself as BPMN/DMN process modeling for business stakeholders.","evidence":"Google Workflows best practices document how to design resilient workflows with retries, try/except, and the saga pattern, plus callbacks to wait for external events. These are strong orchestration primitives but are code/syntax-driven rather than BPMN-first.","sources":["https://cloud.google.com/workflows/docs/best-practice"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":3.0,"rationale":"Good technical observability and debugging; evaluation frameworks depend on tooling choices.","reasoning":"Score 3 because Agent Engine has tracing and Cloud tooling is strong, but application-level test/eval frameworks are not described as a single integrated suite.","evidence":"Agent Engine tracing documentation shows how to capture traces and optionally include prompt/response content, and how to inspect traces via session/span views. That helps debugging and operational validation.","sources":["https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Monitoring & Observability","score":5.0,"rationale":"Very strong observability via Cloud Trace/Logging integrations and built-in agent tracing.","reasoning":"Score 5 because Agent Engine provides explicit trace and log ingestion with OpenTelemetry and ties into Cloud Trace and Logging APIs.","evidence":"Google's tracing documentation for Agent Engine shows enabling telemetry, exporting traces/logs, and viewing trace DAGs with span inputs/outputs and metadata.","sources":["https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Traceability & Governance","score":4.0,"rationale":"Strong governance primitives through cloud IAM and auditing; agent governance is more DIY than dedicated automation suites.","reasoning":"Score 4 because Google Cloud offers a strong compliance baseline and telemetry/audit hooks, but process governance typically requires additional platform work.","evidence":"Google's HIPAA compliance guidance emphasizes that compliance controls are embedded in infrastructure. Agent Engine tracing can capture metadata and integrates with Cloud Trace and Cloud Logging.","sources":["https://cloud.google.com/security/compliance/hipaa","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Process Intelligence","score":2.0,"rationale":"Limited packaged process intelligence; relies on external analytics stack.","reasoning":"Score 2 because GCP can build process intelligence with data/analytics tools, but the referenced agent/orchestration docs don't describe native process mining products.","evidence":"The sources focus on building agents and orchestrating workflows with reliability and telemetry. Google Cloud does not describe built-in process mining features like event-log discovery, conformance checking, or task mining as an integrated automation feature set.","sources":["https://docs.cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview","https://cloud.google.com/workflows/docs/best-practice"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Licensing & TCO","score":4.0,"rationale":"Generally favorable TCO for cloud-native, usage-based services.","reasoning":"Score 4 because GCP services are usage-based and can scale elastically; TCO depends on orchestration step counts, trace retention, and integration architecture.","evidence":"Workflows documentation notes that retries count as additional step executions for pricing purposes. Agent Engine tracing references Cloud Trace pricing and quotas. These illustrate that costs are largely consumption-based and controllable through architecture.","sources":["https://cloud.google.com/workflows/docs/best-practice","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Industry applicability / business domain applicability","score":4.0,"rationale":"Broad industry applicability, especially in regulated and data-intensive domains.","reasoning":"Score 4 because Google Cloud supports regulated compliance patterns (HIPAA) and provides strong AI and orchestration services adaptable to many domains.","evidence":"Google Cloud HIPAA documentation describes supporting HIPAA compliance across its infrastructure. Vertex AI Agent Builder/Engine provides a path to build and deploy agents with telemetry relevant to many vertical use cases.","sources":["https://cloud.google.com/security/compliance/hipaa","https://docs.cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":5.0,"rationale":"High long-term value due to strong cloud platform fundamentals and ongoing AI investment.","reasoning":"Score 5 because a hyperscaler's compliance, observability, and AI platform roadmap typically supports multi-year evolution of agentic systems.","evidence":"The referenced materials show a managed agent runtime with OpenTelemetry tracing and tight integration to cloud observability, plus orchestration best practices for resilient distributed workflows.","sources":["https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing","https://cloud.google.com/workflows/docs/best-practice","https://cloud.google.com/security/compliance/hipaa"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"High agility for engineering teams; governance/patterns must be standardized to keep speed at scale.","reasoning":"Score 4 because managed services and code-based orchestration allow rapid iteration, but enterprise adoption needs platform standards and guardrails.","evidence":"Workflows best practices recommend retries, error handling, and callbacks to build resilient, maintainable workflows, enabling faster iteration. Agent Engine tracing supports faster debugging in production.","sources":["https://cloud.google.com/workflows/docs/best-practice","https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}],"OpenAI":[{"category":"Security & Compliance","score":4.0,"rationale":"Strong security posture (SOC 2 Type 2, DPA, ISO alignment) but less end-to-end enterprise control than hyperscalers.","reasoning":"Score 4 because OpenAI documents SOC 2 Type 2 coverage for API and ChatGPT Enterprise/Business/Edu and supports GDPR/CCPA.","evidence":"OpenAI's security & privacy page states that the API and enterprise ChatGPT products are covered in a SOC 2 Type 2 report and evaluated by an independent auditor, and that OpenAI supports GDPR/CCPA and offers a Data Processing Addendum.","sources":["https://openai.com/security-and-privacy/","https://openai.com/id-ID/business-data/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Deployment & Operations","score":3.0,"rationale":"Cloud API delivery; operational control is mostly via configuration rather than deployment choice.","reasoning":"Score 3 because OpenAI is primarily an API platform (no self-host), with operational knobs like retention controls and tracing.","evidence":"OpenAI's data controls documentation describes default 30-day abuse monitoring logs and options for Modified Abuse Monitoring or Zero Data Retention for eligible customers.","sources":["https://platform.openai.com/docs/models/how-we-use-your-data"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Scalability & Reliability","score":5.0,"rationale":"Very strong scalability as a managed API, subject to account limits.","reasoning":"Score 5 because OpenAI is designed to handle high-volume inference workloads and offers usage-based scaling.","evidence":"OpenAI provides token-based pricing and supports high-volume usage patterns like caching and batch processing in its API pricing materials.","sources":["https://openai.com/api/pricing"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":"Validate rate limits, regional availability, priority processing options, and latency SLOs for your target workload."},{"category":"Connectivity & Integration","score":3.0,"rationale":"Integration is API-first with strong tooling, but fewer packaged enterprise connectors.","reasoning":"Score 3 because OpenAI integrates into everything via HTTP APIs and SDKs, but provides fewer out-of-the-box enterprise app connectors.","evidence":"OpenAI's platform is consumed primarily through APIs and SDKs. The Agents SDK supports tool calling but enterprises typically need to build connectors to ERP/ITSM/CRM systems.","sources":["https://openai.github.io/openai-agents-python/tracing/","https://openai.com/api/pricing"],"evidenceType":"Paraphrase","confidence":"Low","notes":"","questions":""},{"category":"Time-to-Value & User Experience","score":3.0,"rationale":"Fast time-to-value for engineering prototypes; business-user experience depends on building an app layer.","reasoning":"Score 3 because OpenAI APIs enable quick prototyping and iteration, but enterprise-grade workflows need additional product layers.","evidence":"OpenAI pricing and SDK docs support quick onboarding for developers. However, business users typically need a full application experience with process controls, RBAC, approvals, and integration UX.","sources":["https://openai.com/api/pricing","https://openai.com/security-and-privacy/"],"evidenceType":"Paraphrase","confidence":"Low","notes":"","questions":""},{"category":"Agentic Capabilities","score":5.0,"rationale":"Strong agentic foundation (tool calling, tracing, eval/trace grading).","reasoning":"Score 5 because the Agents SDK provides workflow tracing with tool calls/guardrails/handoffs and platform docs include trace grading for evaluating agent performance at scale.","evidence":"The OpenAI Agents SDK tracing documentation explains that it collects a comprehensive record of events during an agent run, including LLM generations, tool calls, handoffs, guardrails, and custom events, viewable in a Traces dashboard.","sources":["https://openai.github.io/openai-agents-python/tracing/","https://platform.openai.com/docs/guides/trace-grading"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"BPM & Orchestration","score":1.0,"rationale":"Not a BPM/orchestration suite—requires pairing with workflow/RPA tooling.","reasoning":"Score 1 because OpenAI provides AI capabilities but does not provide a BPMN/DMN process modeling engine or enterprise workflow orchestration UI.","evidence":"OpenAI's platform documentation focuses on building AI agents and observing them via traces and evaluations. It does not provide a native business process modeling layer, process instance management, or human task orchestration as a packaged workflow engine.","sources":["https://openai.github.io/openai-agents-python/tracing/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Testing & Evaluation (Functional + Performance)","score":4.0,"rationale":"Strong agent testing/evaluation primitives (tracing + grading), but limited for non-AI functional testing.","reasoning":"Score 4 because trace grading provides a scalable evaluation workflow for agent outputs.","evidence":"OpenAI's trace grading guide describes selecting traces, creating graders, and running evaluations across groups of agent workflows to identify errors at scale.","sources":["https://platform.openai.com/docs/guides/trace-grading","https://openai.github.io/openai-agents-python/tracing/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Monitoring & Observability","score":4.0,"rationale":"Good observability for agents via built-in tracing and dashboards.","reasoning":"Score 4 because Agents SDK provides built-in tracing and a Traces dashboard.","evidence":"Agents SDK tracing is enabled by default and records end-to-end workflow events, including LLM generations and tool calls.","sources":["https://openai.github.io/openai-agents-python/tracing/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Traceability & Governance","score":3.0,"rationale":"Governance features exist (retention controls, SOC report coverage), but process governance is external.","reasoning":"Score 3 because OpenAI supports enterprise security compliance and retention controls, yet workflow-level governance is usually implemented by the customer.","evidence":"OpenAI documents SOC 2 Type 2 coverage and configurable retention approaches including Zero Data Retention for eligible customers.","sources":["https://openai.com/security-and-privacy/","https://platform.openai.com/docs/models/how-we-use-your-data","https://openai.github.io/openai-agents-python/tracing/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Process Intelligence","score":1.0,"rationale":"No native process intelligence.","reasoning":"Score 1 because OpenAI is not a process mining platform.","evidence":"OpenAI's platform materials focus on AI models, agents, tracing, and evaluation. They do not describe collecting event logs from enterprise systems to discover process variants, run conformance checks, or produce process maps.","sources":["https://openai.github.io/openai-agents-python/tracing/"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Licensing & TCO","score":3.0,"rationale":"Transparent, usage-based pricing; TCO depends on token/tool usage and workload design.","reasoning":"Score 3 because pricing is clearly published, but costs can rise quickly for high-volume or long-context agent workflows.","evidence":"OpenAI publishes per-token rates for models and separate costs for built-in tools (file search storage and tool calls).","sources":["https://openai.com/api/pricing"],"evidenceType":"Paraphrase","confidence":"High","notes":"","questions":""},{"category":"Industry applicability / business domain applicability","score":3.0,"rationale":"Broad applicability for AI augmentation; limited as a standalone enterprise automation platform.","reasoning":"Score 3 because OpenAI can support many domains through language reasoning, but domain suitability depends on integration and governance implemented by the enterprise.","evidence":"OpenAI's enterprise and API security materials emphasize general-purpose capabilities paired with compliance features.","sources":["https://openai.com/security-and-privacy/","https://openai.com/id-ID/business-data/"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Long-term value","score":4.0,"rationale":"Strong long-term value as an AI layer, especially with evolving tracing/evaluation tooling.","reasoning":"Score 4 because OpenAI continues to invest in agent tooling like tracing and trace grading.","evidence":"The Agents SDK documentation emphasizes tracing as a comprehensive record of workflow execution events in development and production, and trace grading provides a structured way to evaluate and optimize agent performance.","sources":["https://openai.github.io/openai-agents-python/tracing/","https://platform.openai.com/docs/guides/trace-grading"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""},{"category":"Business adaptability / Agility","score":4.0,"rationale":"High agility for iterating AI behavior; enterprise change control must be layered on.","reasoning":"Score 4 because teams can iterate prompts, tools, and models quickly, while governance levers like retention controls and tracing provide some guardrails.","evidence":"OpenAI's Agents SDK supports tracing and optional custom trace processors, enabling fast debugging and iteration of agent workflows.","sources":["https://openai.github.io/openai-agents-python/tracing/","https://platform.openai.com/docs/models/how-we-use-your-data"],"evidenceType":"Paraphrase","confidence":"Medium","notes":"","questions":""}]},"vendorScopes":{"Microsoft":"Power Automate, Azure AI, Copilot Studio","Google":"AppSheet, Vertex AI, Gemini","ServiceNow":"Now Platform, Automation Engine, AI Control Tower","n8n":"n8n Workflow Automation (open-source)","UiPath":"UiPath Business Automation Platform — Orchestrator, Maestro, Studio, Test Suite","Appian":"Appian Platform, AI Skills, Data Fabric","OpenAI":"Assistants API, GPT-4, Agents SDK, Enterprise"},"vendorRationale":{"Microsoft":"Strong integration with Office 365. Copilot is leading agentic UI. Best-in-class governance via Purview and Entra.","Google":"Vertex AI is powerful. AppSheet is accessible. Fragmentation between tools. Best-in-class agent runtime and observability.","ServiceNow":"ITSM dominance. Workflow is king. Generative AI integration is rapid but specific. High cost.","n8n":"Developer favorite. Highly flexible agentic nodes (LangChain). Weaker governance. Excellent TCO.","UiPath":"RPA Market Leader. Semantic automation is strong. Maestro brings dedicated agentic orchestration with BPMN/DMN.","Appian":"Process-centric. Strong governance. Agentic features emerging via AI Skills. Best-in-class BPM.","OpenAI":"The Brain. Purest agentic capability. Lacks traditional RPA/BPM scaffolding."}}</script>
+
+<script>
+  const DATA = JSON.parse(document.getElementById('scorecard-data').textContent);
+  const TOPICS = DATA.topics;
+  const VORDER = DATA.vendorOrder;
+  const COLORS = DATA.colors;
+  const VENDORS = DATA.vendors;
+  const SCOPES = DATA.vendorScopes;
+  const RATIONALE = DATA.vendorRationale;
+
+  const state = {
+    radarHighlight: null,
+    heatmapMode: 'score',
+    vendorView: VORDER[0],
+    cmpA: VORDER[0], cmpB: VORDER[1],
+    topicIdx: 0,
+    vdTopicFilter: '', vdConfFilter: ''
+  };
+  let radarChart, vendorChart, cmpChart, topicChart;
+
+  // ── helpers ──
+  function score(v, i) { return VENDORS[v][i].score; }
+  function avgScore(v) { return VENDORS[v].reduce((s,d)=>s+d.score,0)/TOPICS.length; }
+  function sbClass(s) { if(s>=5)return'sb-5';if(s>=4)return'sb-4';if(s>=3)return'sb-3';if(s>=2)return'sb-2';return'sb-1'; }
+  function heatBg(val,mode) {
+    if(mode==='delta') return val>0?'#3a0e0e':val<0?'#14532d':'#1a2333';
+    if(val>=5)return'#14532d';if(val>=4)return'#1a3a1a';if(val>=3)return'#3a2e00';if(val>=2)return'#3a1a00';return'#3a0e0e';
+  }
+  function heatFg(val,mode) {
+    if(mode==='delta') return val>0?'#f87171':val<0?'#86efac':'#8896b0';
+    if(val>=5)return'#86efac';if(val>=4)return'#4ade80';if(val>=3)return'#fbbf24';if(val>=2)return'#fb923c';return'#f87171';
+  }
+  function esc(s) { return(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function tagClass(c) { if(!c)return''; return{'High':'tag-high','Medium':'tag-medium','Low':'tag-low'}[c]||''; }
+
+  // ── navigation ──
+  document.querySelectorAll('.nav-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      btn.classList.add('active');
+      const vid=btn.dataset.view;
+      document.getElementById('view-'+vid).classList.add('active');
+      if(vid==='dashboard')renderDashboard();
+      if(vid==='vendor')renderVendorView();
+      if(vid==='compare')renderCompareView();
+      if(vid==='topic')renderTopicView();
+      if(vid==='battlecard') {} // zaten hazır, yeniden render gerekmez
+    });
+  });
+
+  // ── EXECUTIVE SUMMARY ──
+  function renderExecMetrics() {
+    const topV = VORDER.reduce((a,b)=>avgScore(a)>=avgScore(b)?a:b);
+    const agIdx = TOPICS.findIndex(t=>t.toLowerCase().includes('agentic'));
+    const agV = VORDER.reduce((a,b)=>score(a,agIdx)>=score(b,agIdx)?a:b);
+    const uiAvg = avgScore('UiPath');
+    const nearest = VORDER.filter(v=>v!=='UiPath').map(v=>({v,d:uiAvg-avgScore(v)})).sort((a,b)=>a.d-b.d)[0];
+    const maxGap = VORDER.map(v=>{
+      const diffs=VENDORS[v].map(d=>Math.abs(d.score-(d.score)));
+      return{v,gap:0};
+    })[0];
+
+    document.getElementById('exec-metrics').innerHTML=`
+      <div class="exec-metric exec-blue">
+        <div class="exec-metric-label">Highest Average Maturity</div>
+        <div class="exec-metric-value">${topV}</div>
+        <div class="exec-metric-sub">Avg ${avgScore(topV).toFixed(1)} / 5.0 across all 15 dimensions</div>
+      </div>
+      <div class="exec-metric exec-green">
+        <div class="exec-metric-label">Agentic Capabilities Leader</div>
+        <div class="exec-metric-value">${agV}</div>
+        <div class="exec-metric-sub">Score ${score(agV,agIdx)} / 5 on Agentic Capabilities</div>
+      </div>
+      <div class="exec-metric exec-amber">
+        <div class="exec-metric-label">UiPath Lead vs Nearest Rival</div>
+        <div class="exec-metric-value">${nearest?(uiAvg>avgScore(nearest.v)?'+':'')+nearest.d.toFixed(1):'—'}</div>
+        <div class="exec-metric-sub">${nearest?'vs '+nearest.v+' on average score':''}</div>
+      </div>
+      <div class="exec-metric exec-red">
+        <div class="exec-metric-label">Lowest TCO Vendor</div>
+        <div class="exec-metric-value">${VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b)}</div>
+        <div class="exec-metric-sub">Score ${score(VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b),11)} / 5 on Licensing & TCO</div>
+      </div>`;
+  }
+
+  function renderScopeTable() {
+    const el = document.getElementById('scope-table');
+    if(el.children.length) return;
+    el.innerHTML = VORDER.map(v=>`
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span class="vdot" style="background:${COLORS[v]}"></span>
+          <span style="font-weight:600;font-size:13px;">${esc(v)}</span>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">${esc(SCOPES[v]||'')}</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">${esc(RATIONALE[v]||'')}</div>
+      </div>`).join('');
+  }
+
+  function renderRadarChips() {
+    const wrap = document.getElementById('radar-chips');
+    if(wrap.children.length) return;
+    wrap.innerHTML = VORDER.map(v=>`
+      <label class="chip checked" style="color:${COLORS[v]}" data-v="${v}">
+        <span class="chip-dot" style="background:${COLORS[v]}"></span>${esc(v)}
+      </label>`).join('');
+    wrap.querySelectorAll('.chip').forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        const v=chip.dataset.v;
+        if(state.radarHighlight===v){
+          state.radarHighlight=null;
+          wrap.querySelectorAll('.chip').forEach(c=>{c.classList.add('checked');c.style.opacity='1';});
+        } else {
+          state.radarHighlight=v;
+          wrap.querySelectorAll('.chip').forEach(c=>{
+            if(c.dataset.v===v){c.classList.add('checked');c.style.opacity='1';}
+            else{c.classList.remove('checked');c.style.opacity='0.2';}
+          });
+        }
+        renderRadar();
+      });
+    });
+  }
+
+  function renderRadar() {
+    const hl = state.radarHighlight;
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    if(radarChart) radarChart.destroy();
+    radarChart = new Chart(ctx, {
+      type:'radar',
+      data:{
+        labels: TOPICS.map(t=>t.length>20?t.substring(0,18)+'…':t),
+        datasets: VORDER.map(v=>({
+          label:v,
+          data: VENDORS[v].map(d=>d.score),
+          borderColor: COLORS[v],
+          backgroundColor: hl&&hl!==v?'transparent':COLORS[v]+'20',
+          pointBackgroundColor: COLORS[v],
+          borderWidth: hl?(hl===v?3:1):2,
+          pointRadius: hl&&hl!==v?0:2,
+          borderDash: hl&&hl!==v?[4,4]:[],
+          order: hl===v?0:1
+        }))
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        scales:{r:{min:0,max:5,ticks:{stepSize:1,color:'#8896b0',backdropColor:'transparent',font:{size:10}},pointLabels:{color:'#8896b0',font:{size:10}},grid:{color:'rgba(255,255,255,.07)'},angleLines:{color:'rgba(255,255,255,.07)'}}},
+        plugins:{legend:{position:'right',labels:{color:'#8896b0',boxWidth:10,font:{size:11}}}}
+      }
+    });
+  }
+
+  function renderHeatmap() {
+    const mode = state.heatmapMode;
+    let html = '<thead><tr><th>Dimension</th>';
+    VORDER.forEach(v=>{ html+=`<th style="color:${COLORS[v]}">${esc(v)}</th>`; });
+    html += '</tr></thead><tbody>';
+    TOPICS.forEach((t,i)=>{
+      html += `<tr><td title="${esc(t)}">${esc(t.length>24?t.substring(0,22)+'…':t)}</td>`;
+      VORDER.forEach(v=>{
+        const s = VENDORS[v][i].score;
+        const uiS = VENDORS['UiPath'][i].score;
+        const val = mode==='delta' ? (s-uiS) : s;
+        html += `<td><span class="hcell" style="background:${heatBg(val,mode)};color:${heatFg(val,mode)}">${val}</span></td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody>';
+    document.getElementById('heatmap-table').innerHTML = html;
+  }
+
+  function renderDashboard() {
+    renderExecMetrics();
+    renderRadarChips();
+    renderRadar();
+    renderHeatmap();
+    renderScopeTable();
+  }
+
+  document.getElementById('heatmap-mode-tabs').querySelectorAll('.mode-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.getElementById('heatmap-mode-tabs').querySelectorAll('.mode-tab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      state.heatmapMode=btn.dataset.mode;
+      renderHeatmap();
+    });
+  });
+
+  // ── VENDOR DEEP DIVE ──
+  function buildEvRow(row, topicLabel) {
+    const tags = [
+      row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:'',
+      row.evidenceType?`<span class="tag tag-para">${esc(row.evidenceType)}</span>`:''
+    ].filter(Boolean).join('');
+
+    return `<div class="ev-row">
+      <div class="ev-header" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span class="sb ${sbClass(row.score)}">${row.score}</span>
+        <span class="ev-name">${esc(topicLabel)}</span>
+        <div class="ev-tags">${tags}</div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-evidence">${esc(row.evidence)}</div>
+        <div class="accordion">
+          ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
+          ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
+          ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
+          ${(row.notes||row.questions)?`<details><summary>Notes & Next Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function renderVendorView() {
+    const v = state.vendorView;
+    document.getElementById('vd-vendor-name').innerHTML = `<span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}`;
+    document.getElementById('vd-vendor-scope').textContent = SCOPES[v]||'';
+    document.getElementById('vendor-select').innerHTML = VORDER.map(vv=>`<option value="${esc(vv)}" ${vv===v?'selected':''}>${esc(vv)}</option>`).join('');
+    document.getElementById('vd-topic-filter').innerHTML = '<option value="">All topics</option>'+TOPICS.map((t,i)=>`<option value="${i}">${esc(t)}</option>`).join('');
+
+    const ctx = document.getElementById('vendorBarChart').getContext('2d');
+    if(vendorChart) vendorChart.destroy();
+    vendorChart = new Chart(ctx, {
+      type:'bar',
+      data:{
+        labels: TOPICS.map(t=>t.length>12?t.substring(0,10)+'…':t),
+        datasets:[{label:'Score', data:VENDORS[v].map(d=>d.score), backgroundColor:COLORS[v]+'cc', borderRadius:3}]
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        scales:{y:{min:0,max:5,ticks:{color:'#8896b0',stepSize:1},grid:{color:'rgba(255,255,255,.05)'}},x:{ticks:{color:'#8896b0',font:{size:9}},grid:{display:false}}},
+        plugins:{legend:{display:false}}
+      }
+    });
+    renderVendorEvidence();
+  }
+
+  function renderVendorEvidence() {
+    const v=state.vendorView, tf=state.vdTopicFilter, cf=state.vdConfFilter;
+    let rows = VENDORS[v].map((d,i)=>({...d,_i:i}));
+    if(tf!=='') rows=rows.filter(r=>String(r._i)===tf);
+    if(cf) rows=rows.filter(r=>r.confidence===cf);
+    document.getElementById('vd-evidence-list').innerHTML = rows.map(r=>buildEvRow(r,TOPICS[r._i])).join('');
+  }
+
+  document.getElementById('vendor-select').addEventListener('change',e=>{state.vendorView=e.target.value;renderVendorView();});
+  document.getElementById('vd-topic-filter').addEventListener('change',e=>{state.vdTopicFilter=e.target.value;renderVendorEvidence();});
+  document.getElementById('vd-conf-filter').addEventListener('change',e=>{state.vdConfFilter=e.target.value;renderVendorEvidence();});
+
+  // ── HEAD-TO-HEAD ──
+  function renderCompareView() {
+    const vA=state.cmpA, vB=state.cmpB;
+    document.getElementById('cmp-a').innerHTML = VORDER.map(v=>`<option value="${esc(v)}" ${v===vA?'selected':''}>${esc(v)}</option>`).join('');
+    document.getElementById('cmp-b').innerHTML = VORDER.map(v=>`<option value="${esc(v)}" ${v===vB?'selected':''}>${esc(v)}</option>`).join('');
+
+    const ctx = document.getElementById('compareChart').getContext('2d');
+    if(cmpChart) cmpChart.destroy();
+    cmpChart = new Chart(ctx, {
+      type:'bar',
+      data:{
+        labels: TOPICS.map(t=>t.length>16?t.substring(0,14)+'…':t),
+        datasets:[
+          {label:vA, data:VENDORS[vA].map(d=>d.score), backgroundColor:COLORS[vA]+'cc', borderRadius:2},
+          {label:vB, data:VENDORS[vB].map(d=>d.score), backgroundColor:COLORS[vB]+'cc', borderRadius:2}
+        ]
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        scales:{y:{min:0,max:5,ticks:{color:'#8896b0',stepSize:1},grid:{color:'rgba(255,255,255,.05)'}},x:{ticks:{color:'#8896b0',font:{size:10}},grid:{display:false}}},
+        plugins:{legend:{position:'bottom',labels:{color:'#8896b0',boxWidth:10}}}
+      }
+    });
+
+    const sA = VENDORS[vA], sB = VENDORS[vB];
+    let html = `<div class="cmp-head" style="display:grid;grid-template-columns:1fr 60px 60px 1fr;gap:8px;padding:8px 18px;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.04em">
+      <div>Dimension</div><div style="text-align:center">${esc(vA)}</div><div style="text-align:center">${esc(vB)}</div><div>Delta</div></div>`;
+    TOPICS.forEach((t,i)=>{
+      const a=sA[i].score, b=sB[i].score, d=a-b;
+      const dc=d>0?'delta-pos':d<0?'delta-neg':'delta-neu';
+      const ds=d>0?`▲ +${d}`:d<0?`▼ ${d}`:'= 0';
+      const note = d>0?`${vA} leads on this dimension.`:d<0?`${vB} leads on this dimension.`:'Parity.';
+      html+=`<div style="display:grid;grid-template-columns:1fr 60px 60px 1fr;gap:8px;align-items:center;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px;">
+        <div style="font-weight:500">${esc(t)}</div>
+        <div style="text-align:center"><span class="sb ${sbClass(a)}">${a}</span></div>
+        <div style="text-align:center"><span class="sb ${sbClass(b)}">${b}</span></div>
+        <div><span class="${dc}" style="margin-right:8px;">${ds}</span><span style="color:var(--muted);font-size:11px;">${note}</span></div>
+      </div>`;
+    });
+    document.getElementById('cmp-table').innerHTML = html;
+  }
+
+  document.getElementById('cmp-a').addEventListener('change',e=>{state.cmpA=e.target.value;renderCompareView();});
+  document.getElementById('cmp-b').addEventListener('change',e=>{state.cmpB=e.target.value;renderCompareView();});
+
+  // ── TOPIC ANALYSIS ──
+  function renderTopicView() {
+    const idx=state.topicIdx;
+    document.getElementById('topic-select').innerHTML = TOPICS.map((t,i)=>`<option value="${i}" ${i===idx?'selected':''}>${esc(t)}</option>`).join('');
+    document.getElementById('topic-title').textContent = TOPICS[idx];
+    document.getElementById('topic-ev-title').textContent = 'Evidence — ' + TOPICS[idx];
+
+    const sorted = [...VORDER].sort((a,b)=>score(b,idx)-score(a,idx));
+    const ctx = document.getElementById('topicChart').getContext('2d');
+    if(topicChart) topicChart.destroy();
+    topicChart = new Chart(ctx, {
+      type:'bar',
+      data:{
+        labels:sorted,
+        datasets:[{data:sorted.map(v=>score(v,idx)), backgroundColor:sorted.map(v=>COLORS[v]+'cc'), borderRadius:4}]
+      },
+      options:{
+        indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        scales:{x:{min:0,max:5,ticks:{color:'#8896b0',stepSize:1},grid:{color:'rgba(255,255,255,.05)'}},y:{ticks:{color:'#8896b0',font:{size:12}},grid:{display:false}}},
+        plugins:{legend:{display:false}}
+      }
+    });
+
+    document.getElementById('topic-evidence-list').innerHTML = VORDER.map(v=>{
+      const row = VENDORS[v][idx];
+      return `<div class="ev-row">
+        <div class="ev-header" onclick="this.nextElementSibling.classList.toggle('open')">
+          <span class="sb ${sbClass(row.score)}">${row.score}</span>
+          <span class="ev-name"><span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}</span>
+          <div class="ev-tags">
+            ${row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:''}
+            ${row.evidenceType?`<span class="tag tag-para">${esc(row.evidenceType)}</span>`:''}
+          </div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-evidence">${esc(row.evidence)}</div>
+          <div class="accordion">
+            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
+            ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
+            ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
+            ${(row.notes||row.questions)?`<details><summary>Notes & Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  document.getElementById('topic-select').addEventListener('change',e=>{state.topicIdx=parseInt(e.target.value);renderTopicView();});
+  document.getElementById('topic-search').addEventListener('input',e=>{
+    const q=e.target.value.toLowerCase();
+    const opts=document.getElementById('topic-select').options;
+    for(let o of opts){o.style.display=o.text.toLowerCase().includes(q)?'':'none';}
+  });
+
+  // ── BATTLE CARD ──
+  function initBattleCard() {
+    const rivals = VORDER.filter(v => v !== 'UiPath');
+    document.getElementById('bc-rival').innerHTML = rivals.map(v =>
+      `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+    document.getElementById('bc-topic').innerHTML =
+      `<option value="-1">All Topics (Overall)</option>` +
+      TOPICS.map((t,i) => `<option value="${i}">${esc(t)}</option>`).join('');
+    document.getElementById('bc-generate-btn').addEventListener('click', generateBattleCard);
+  }
+
+  async function generateBattleCard() {
+    const rival    = document.getElementById('bc-rival').value;
+    const topicIdx = parseInt(document.getElementById('bc-topic').value);
+    const isAll    = topicIdx === -1;
+    const topic    = isAll ? 'All Topics (Overall)' : TOPICS[topicIdx];
+
+    document.getElementById('bc-output').classList.remove('visible');
+    document.getElementById('bc-loading').classList.add('visible');
+    document.getElementById('bc-generate-btn').disabled = true;
+    document.getElementById('bc-loading-text').textContent = `Researching UiPath vs ${rival} · ${topic}…`;
+
+    try {
+      let uiData, rvData;
+
+      if (isAll) {
+        // Tüm topic'lerin ortalamasını hesapla
+        const uiAvg = (VENDORS['UiPath'].reduce((s,d)=>s+d.score,0)/TOPICS.length).toFixed(1);
+        const rvAvg = (VENDORS[rival].reduce((s,d)=>s+d.score,0)/TOPICS.length).toFixed(1);
+
+        // Tüm topic'leri delta'ya göre sırala (UiPath avantajı büyükten küçüğe)
+        const allTopicsSorted = TOPICS.map((t,i) => ({
+          topic: t,
+          idx: i,
+          uiScore: VENDORS['UiPath'][i].score,
+          rvScore: VENDORS[rival][i].score,
+          delta: VENDORS['UiPath'][i].score - VENDORS[rival][i].score,
+          uiRationale: VENDORS['UiPath'][i].rationale,
+          rvRationale: VENDORS[rival][i].rationale,
+          uiSources: VENDORS['UiPath'][i].sources || [],
+          rvSources: VENDORS[rival][i].sources || []
+        })).sort((a,b) => b.delta - a.delta);
+
+        const uiWins  = allTopicsSorted.filter(t => t.delta > 0);
+        const parity  = allTopicsSorted.filter(t => t.delta === 0);
+        const rvWins  = allTopicsSorted.filter(t => t.delta < 0);
+
+        uiData = {
+          score: parseFloat(uiAvg),
+          rationale: `UiPath leads across ${uiWins.length} of 15 dimensions with an average score of ${uiAvg}/5.0.`,
+          reasoning: allTopicsSorted.map(t =>
+            `${t.topic}: UiPath ${t.uiScore} vs ${rival} ${t.rvScore} (delta ${t.delta > 0 ? '+' : ''}${t.delta}) — ${t.uiRationale}`
+          ).join('\n'),
+          sources: [...new Set(uiWins.flatMap(t=>t.uiSources))].slice(0,4),
+          notes: '',
+          _allTopics: allTopicsSorted,
+          _uiWins: uiWins,
+          _parity: parity,
+          _rvWins: rvWins
+        };
+
+        rvData = {
+          score: parseFloat(rvAvg),
+          rationale: `${rival} averages ${rvAvg}/5.0. Leads UiPath on ${rvWins.length} dimension${rvWins.length !== 1 ? 's' : ''}.`,
+          reasoning: rvWins.map(t =>
+            `${t.topic}: ${rival} ${t.rvScore} vs UiPath ${t.uiScore} — ${t.rvRationale}`
+          ).join('\n'),
+          sources: [...new Set(rvWins.flatMap(t=>t.rvSources))].slice(0,4),
+          notes: rvWins.length > 0 ? `${rival} leads on: ${rvWins.map(t=>t.topic).join(', ')}` : `${rival} does not lead on any dimension.`
+        };
+
+      } else {
+        // Tek topic — mock agent çağır
+        const [uiResult, rivalResult] = await Promise.all([
+          window.Agent?.generateIntelligence({ vendor:'UiPath', topic, topicIdx, onStart:()=>{}, onSuccess:()=>{}, onError:()=>{} }),
+          window.Agent?.generateIntelligence({ vendor:rival,    topic, topicIdx, onStart:()=>{}, onSuccess:()=>{}, onError:()=>{} })
+        ]);
+        uiData = uiResult || VENDORS['UiPath'][topicIdx];
+        rvData = rivalResult || VENDORS[rival][topicIdx];
+      }
+
+      renderBattleCard({ rival, topic, topicIdx, uiData, rvData, isAll });
+
+    } catch (err) {
+      const ti = isAll ? 0 : topicIdx;
+      renderBattleCard({ rival, topic, topicIdx:ti, uiData:VENDORS['UiPath'][ti], rvData:VENDORS[rival][ti], isAll });
+    }
+  }
+
+  function renderBattleCard({ rival, topic, topicIdx, uiData, rvData, isAll }) {
+    const uiScore = uiData.score;
+    const rvScore = rvData.score;
+    const delta   = parseFloat((uiScore - rvScore).toFixed(1));
+
+    document.getElementById('bc-title').textContent = 'UiPath vs ' + rival;
+    document.getElementById('bc-subtitle').textContent = topic;
+    document.getElementById('bc-date').textContent = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    document.getElementById('bc-score-uipath').textContent = uiScore;
+    document.getElementById('bc-score-rival').textContent  = rvScore;
+    document.getElementById('bc-score-rival').style.color  = COLORS[rival] || 'var(--muted)';
+    document.getElementById('bc-rival-label').textContent  = rival;
+
+    const deltaEl = document.getElementById('bc-delta');
+    deltaEl.textContent = delta > 0 ? '+'+delta : delta < 0 ? ''+delta : '=';
+    deltaEl.style.color = delta > 0 ? '#4ade80' : delta < 0 ? '#f87171' : 'var(--muted)';
+
+    if (isAll && uiData._allTopics) {
+      const wins = uiData._uiWins, par = uiData._parity, rvWins = uiData._rvWins;
+      document.getElementById('bc-strengths').innerHTML =
+        '<div style="font-size:11px;color:var(--muted);margin-bottom:8px;">UiPath leads on ' + wins.length + ' dimension' + (wins.length!==1?'s':'') + ', parity on ' + par.length + '. Sorted by delta.</div>' +
+        uiData._allTopics.filter(t=>t.delta>=0).map(t=>
+          '<div class="bc-point"><div class="bc-point-dot" style="background:' + (t.delta>0?'#38d9a9':'#8896b0') + ';"></div><div>' +
+          '<div class="bc-point-text"><strong>' + esc(t.topic) + '</strong>' +
+          '<span style="margin-left:6px;font-size:11px;background:' + (t.delta>0?'rgba(56,217,169,.15)':'rgba(136,150,176,.1)') + ';color:' + (t.delta>0?'#38d9a9':'#8896b0') + ';padding:1px 6px;border-radius:4px;">' +
+          (t.delta>0?'+'+t.delta:'=') + ' · UiPath ' + t.uiScore + ' vs ' + rival + ' ' + t.rvScore + '</span></div>' +
+          '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + esc(t.uiRationale) + '</div></div></div>'
+        ).join('');
+
+      document.getElementById('bc-weakness-title').textContent = rival + ' Gaps';
+      document.getElementById('bc-weaknesses').innerHTML = rvWins.length === 0
+        ? '<div style="font-size:12px;color:var(--muted);">' + rival + ' does not lead UiPath on any dimension.</div>'
+        : '<div style="font-size:11px;color:var(--muted);margin-bottom:8px;">' + rival + ' leads on ' + rvWins.length + ' dimension' + (rvWins.length!==1?'s':'') + '.</div>' +
+          rvWins.map(t=>
+            '<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div>' +
+            '<div class="bc-point-text"><strong>' + esc(t.topic) + '</strong>' +
+            '<span style="margin-left:6px;font-size:11px;background:rgba(240,111,111,.15);color:#f06f6f;padding:1px 6px;border-radius:4px;">' +
+            t.delta + ' · ' + rival + ' ' + t.rvScore + ' vs UiPath ' + t.uiScore + '</span></div>' +
+            '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + esc(t.rvRationale) + '</div></div></div>'
+          ).join('');
+
+      const allSrc = [...new Set(uiData._allTopics.flatMap(t=>[...t.uiSources,...t.rvSources]))].slice(0,8);
+      document.getElementById('bc-sources').innerHTML = allSrc.map(s=>
+        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div><a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a></div>'
+      ).join('') || '<div style="font-size:12px;color:var(--muted);">No sources available.</div>';
+
+    } else {
+      const uiSrc = (uiData.sources||[]).slice(0,2), rvSrc = (rvData.sources||[]).slice(0,2);
+      document.getElementById('bc-strengths').innerHTML =
+        '<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div>' +
+        '<div class="bc-point-text">' + esc(uiData.rationale||uiData.evidence||'—') + '</div>' +
+        uiSrc.map(s=>'<a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a>').join('') + '</div></div>' +
+        (uiData.reasoning?'<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div class="bc-point-text">'+esc(uiData.reasoning)+'</div></div>':'');
+
+      document.getElementById('bc-weakness-title').textContent = rival + ' Gaps';
+      document.getElementById('bc-weaknesses').innerHTML =
+        '<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div>' +
+        '<div class="bc-point-text">' + esc(rvData.rationale||rvData.evidence||'—') + '</div>' +
+        rvSrc.map(s=>'<a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a>').join('') + '</div></div>' +
+        (rvData.notes?'<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div class="bc-point-text">'+esc(rvData.notes)+'</div></div>':'');
+
+      const allSrc = [...new Set([...(uiData.sources||[]),...(rvData.sources||[])])].slice(0,6);
+      document.getElementById('bc-sources').innerHTML = allSrc.map(s=>
+        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div><a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a></div>'
+      ).join('') || '<div style="font-size:12px;color:var(--muted);">No sources available.</div>';
+    }
+
+    const posText = delta >= 2
+      ? 'UiPath significantly outperforms ' + rival + ' on ' + (isAll?'overall platform maturity':topic) + '. Lead with enterprise governance, BPMN orchestration, and test automation depth.'
+      : delta >= 1
+      ? 'UiPath has a clear edge. Emphasize production readiness, audit governance, and deployment flexibility versus ' + rival + '.'
+      : delta === 0
+      ? 'UiPath and ' + rival + ' are on par. Differentiate on adjacent strengths — BPMN execution, process intelligence, and enterprise test suite.'
+      : rival + ' scores higher. Reframe around total platform value and long-term TCO — where UiPath open standards and governance provide durable advantage.';
+
+    document.getElementById('bc-positioning').textContent = posText;
+    document.getElementById('bc-loading').classList.remove('visible');
+    document.getElementById('bc-output').classList.add('visible');
+    document.getElementById('bc-generate-btn').disabled = false;
+  }
+
+  // ── INIT ──
+  renderDashboard();
+  initBattleCard();
+
+  // ── AGENT ENTEGRASYONU ──
+  // agent.js yüklendikten sonra dashboard verisini window'a açar
+  window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };</script>
+
+<!-- Agentic Motor -->
+<script src="agent.js"></script>
+
+<script>
+  // Generate butonu — Topic Analysis sekmesinde çalışır
+  function setupGenerateButton() {
+    const btn = document.getElementById('generate-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', async () => {
+      const topic = TOPICS[state.topicIdx];
+      const topicIdx = state.topicIdx;
+
+      // Loading state
+      btn.disabled = true;
+      btn.textContent = '⏳ Generating…';
+      btn.style.opacity = '0.7';
+
+      const statusEl = document.getElementById('generate-status');
+      statusEl.textContent = `Researching "${topic}" for all vendors…`;
+      statusEl.style.color = '#f5a623';
+
+      try {
+        await window.Agent.generateAllVendorsForTopic({
+          topic,
+          topicIdx,
+          vendors: VORDER,
+
+          onProgress: ({ vendor, status, result, error }) => {
+            if (status === 'loading') {
+              statusEl.textContent = `🔍 Researching ${vendor}…`;
+            } else if (status === 'done') {
+              statusEl.textContent = `✅ ${vendor} done`;
+              // Veriyi güncelle
+              if (result) {
+                VENDORS[vendor][topicIdx] = {
+                  ...VENDORS[vendor][topicIdx],
+                  score: result.score,
+                  evidence: result.evidence,
+                  rationale: result.rationale,
+                  reasoning: result.reasoning,
+                  sources: result.sources,
+                  confidence: result.confidence,
+                  notes: result.notes,
+                };
+              }
+            } else if (status === 'error') {
+              statusEl.textContent = `⚠️ ${vendor}: ${error}`;
+              statusEl.style.color = '#f87171';
+            }
+          },
+
+          onComplete: ({ results, errors }) => {
+            const errCount = Object.keys(errors).length;
+            if (errCount === 0) {
+              statusEl.textContent = `✅ All vendors updated for "${topic}"`;
+              statusEl.style.color = '#38d9a9';
+            } else {
+              statusEl.textContent = `⚠️ Done with ${errCount} error(s). Check console.`;
+              statusEl.style.color = '#f5a623';
+            }
+
+            // Dashboard'u yenile
+            window.DASHBOARD_DATA.vendors = VENDORS;
+            renderTopicView();
+            renderHeatmap();
+            renderRadar();
+
+            // Butonu sıfırla
+            btn.disabled = false;
+            btn.textContent = '✨ Generate Intelligence';
+            btn.style.opacity = '1';
+          }
+        });
+
+      } catch (err) {
+        statusEl.textContent = `❌ Error: ${err.message}`;
+        statusEl.style.color = '#f87171';
+        btn.disabled = false;
+        btn.textContent = '✨ Generate Intelligence';
+        btn.style.opacity = '1';
+      }
+    });
+  }
+
+  // ── VENDOR DEEP DIVE GENERATE ──
+  function vdSetLoading(loading, msg) {
+    const statusEl = document.getElementById('vd-generate-status');
+    const topicBtn = document.getElementById('vd-generate-topic-btn');
+    const allBtn   = document.getElementById('vd-generate-all-btn');
+    if (!statusEl) return;
+    statusEl.textContent = msg || '';
+    statusEl.style.color = loading ? '#f5a623' : '#38d9a9';
+    if (topicBtn) { topicBtn.disabled = loading; topicBtn.style.opacity = loading ? '0.6' : '1'; }
+    if (allBtn)   { allBtn.disabled   = loading; allBtn.style.opacity   = loading ? '0.6' : '1'; }
+  }
+
+  function setupVendorDeepDiveGenerate() {
+    // Generate Topic — seçili topic için tek vendor
+    const topicBtn = document.getElementById('vd-generate-topic-btn');
+    if (topicBtn) {
+      topicBtn.addEventListener('click', async () => {
+        const vendor   = state.vendorView;
+        const tf       = state.vdTopicFilter;
+
+        if (tf === '') {
+          const s = document.getElementById('vd-generate-status');
+          s.textContent = '⚠️ Please select a topic from the filter first';
+          s.style.color = '#f5a623';
+          return;
+        }
+
+        const topicIdx = parseInt(tf);
+        const topic    = TOPICS[topicIdx];
+        vdSetLoading(true, `🔍 Researching ${vendor} · ${topic}…`);
+
+        try {
+          await window.Agent.generateIntelligence({
+            vendor, topic, topicIdx,
+            onStart: () => {},
+            onSuccess: ({ result }) => {
+              VENDORS[vendor][topicIdx] = {
+                ...VENDORS[vendor][topicIdx],
+                score: result.score, evidence: result.evidence,
+                rationale: result.rationale, reasoning: result.reasoning,
+                sources: result.sources, confidence: result.confidence,
+                notes: result.notes,
+              };
+              window.DASHBOARD_DATA.vendors = VENDORS;
+              renderVendorEvidence();
+              renderVendorView();
+              renderHeatmap();
+              renderRadar();
+              vdSetLoading(false, `✅ ${vendor} · "${topic}" updated`);
+            },
+            onError: ({ error }) => {
+              vdSetLoading(false, `❌ ${error}`);
+              document.getElementById('vd-generate-status').style.color = '#f87171';
+            }
+          });
+        } catch (err) {
+          vdSetLoading(false, `❌ ${err.message}`);
+          document.getElementById('vd-generate-status').style.color = '#f87171';
+        }
+      });
+    }
+
+    // Generate All Topics — seçili vendor için tüm 15 topic
+    const allBtn = document.getElementById('vd-generate-all-btn');
+    if (allBtn) {
+      allBtn.addEventListener('click', async () => {
+        const vendor = state.vendorView;
+        vdSetLoading(true, `🔍 Starting all 15 topics for ${vendor}…`);
+
+        for (let i = 0; i < TOPICS.length; i++) {
+          vdSetLoading(true, `🔍 ${vendor} · ${TOPICS[i]} (${i+1}/${TOPICS.length})…`);
+          try {
+            await window.Agent.generateIntelligence({
+              vendor, topic: TOPICS[i], topicIdx: i,
+              onStart: () => {},
+              onSuccess: ({ result }) => {
+                VENDORS[vendor][i] = {
+                  ...VENDORS[vendor][i],
+                  score: result.score, evidence: result.evidence,
+                  rationale: result.rationale, reasoning: result.reasoning,
+                  sources: result.sources, confidence: result.confidence,
+                  notes: result.notes,
+                };
+              },
+              onError: () => {}
+            });
+          } catch(e) { /* devam et */ }
+        }
+
+        window.DASHBOARD_DATA.vendors = VENDORS;
+        renderVendorView();
+        renderHeatmap();
+        renderRadar();
+        vdSetLoading(false, `✅ All 15 topics updated for ${vendor}`);
+      });
+    }
+  }
+
+  // Buton DOM'a eklenince setup et
+  document.addEventListener('DOMContentLoaded', () => {
+    setupGenerateButton();
+    setupVendorDeepDiveGenerate();
+  });
+</script>
+</body>
+</html>
