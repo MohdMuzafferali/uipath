@@ -15,8 +15,8 @@
 
     /* NAV */
     nav { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; align-items:center; gap:24px; height:56px; position:sticky; top:0; z-index:100; }
-    .nav-logo { font-weight:700; font-size:15px; white-space:nowrap; }
-    .nav-logo span { color:var(--accent); }
+    .nav-logo { display:flex; align-items:center; gap:10px; white-space:nowrap; }
+    .nav-logo-text { font-size:13px; font-weight:500; color:rgba(255,255,255,.5); letter-spacing:.02em; }
     .nav-tabs { display:flex; gap:4px; }
     .nav-tab { background:none; border:none; color:var(--muted); font-size:13px; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .15s; white-space:nowrap; }
     .nav-tab:hover { background:rgba(255,255,255,.06); color:var(--text); }
@@ -136,7 +136,24 @@
     footer { border-top:1px solid var(--border); padding:14px 24px; font-size:11px; color:var(--muted); text-align:center; }
 
     /* BATTLE CARD */
-    .bc-selector { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:0; }
+    .bc-selector { display:grid; grid-template-columns:1fr 1fr auto; gap:16px; margin-bottom:0; align-items:end; }
+
+    /* Dashboard light tema overrides */
+    #view-dashboard .heatmap th { background:#f8f9fa; color:#64748b; border-bottom:1px solid #e2e8f0; }
+    #view-dashboard .heatmap th:first-child { background:#f8f9fa; }
+    #view-dashboard .heatmap td { border-bottom:1px solid #f1f5f9; }
+    #view-dashboard .heatmap td:first-child { background:#fff; color:#1a202c; }
+    #view-dashboard .heatmap tr:hover td { background:#f8f9fa; }
+    #view-dashboard .heatmap tr:hover td:first-child { background:#f1f5f9; }
+    #view-dashboard .mode-tab { color:#64748b; }
+    #view-dashboard .mode-tab.active { background:#4f8ef7; color:#fff; }
+    #view-dashboard .chips .chip { border-color:#e2e8f0; background:#f8f9fa; color:#1a202c; }
+    #view-dashboard .chips .chip.checked { background:#fff; }
+    #view-dashboard .chips .chip:not(.checked) { opacity:.4; }
+    #view-battlecard ~ nav .nav-logo svg text,
+    #view-battlecard ~ nav .nav-logo svg path { fill: #1a202c; }
+
+    #view-battlecard .view-header-icon { background:rgba(79,142,247,.1) !important; }
     .bc-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; font-weight:600; }
     .bc-generate-btn { width:100%; background:var(--accent); border:none; color:#fff; font-size:14px; font-weight:600; padding:12px; border-radius:10px; cursor:pointer; transition:opacity .15s; margin-top:16px; }
     .bc-generate-btn:hover { opacity:.88; }
@@ -188,7 +205,17 @@
 <body>
 
 <nav>
-  <div class="nav-logo">UiPath <span>Competitive Intel</span></div>
+  <div class="nav-logo">
+    <!-- UiPath logo — white version for dark nav -->
+    <svg width="120" height="32" viewBox="0 0 500 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Star/spark icon -->
+      <path d="M34 10 L40 28 L58 34 L40 40 L34 58 L28 40 L10 34 L28 28 Z" fill="white"/>
+      <path d="M22 2 L26 14 L38 18 L26 22 L22 34 L18 22 L6 18 L18 14 Z" fill="white" opacity="0.6"/>
+      <!-- UiPath wordmark -->
+      <text x="68" y="90" font-family="'Segoe UI', system-ui, sans-serif" font-size="90" font-weight="700" fill="white" letter-spacing="-2">UiPath</text>
+    </svg>
+    <span class="nav-logo-text">Competitive Intel</span>
+  </div>
   <div class="nav-tabs">
     <button class="nav-tab active" data-view="dashboard">Executive Summary</button>
     <button class="nav-tab" data-view="battlecard">⚡ Battle Card</button>
@@ -221,8 +248,11 @@
             <div class="bc-label">Topic / dimension</div>
             <select id="bc-topic"></select>
           </div>
+          <div style="align-self:flex-end;">
+            <button class="bc-generate-btn" id="bc-generate-btn" style="margin-top:0;width:auto;padding:10px 20px;">⚡ Generate Battle Card</button>
+          </div>
         </div>
-        <button class="bc-generate-btn" id="bc-generate-btn">⚡ Generate Battle Card</button>
+        <div id="bc-generate-status-inline" style="font-size:11px;color:var(--muted);margin-top:6px;min-height:14px;"></div>
       </div>
     </div>
 
@@ -289,48 +319,52 @@
   </div>
 
   <!-- ══ EXECUTIVE SUMMARY ══ -->
-  <div id="view-dashboard" class="view active">
-    <div class="view-header">
-      <div class="view-header-icon" style="background:rgba(79,142,247,.15);">📊</div>
-      <div style="flex:1">
-        <div class="view-header-title">Executive Summary</div>
-        <div class="view-header-sub">7 vendors × 15 dimensions · Agentic & RPA Architecture Scorecard</div>
-      </div>
+  <div id="view-dashboard" class="view active" style="background:#f8f9fa;margin:-24px;padding:32px;min-height:100vh;">
+
+    <!-- Header -->
+    <div style="margin-bottom:24px;">
+      <h1 style="font-size:22px;font-weight:700;color:#1a202c;margin-bottom:6px;">Executive Summary Matrix</h1>
+      <p style="font-size:13px;color:#64748b;max-width:680px;line-height:1.6;">This radar-ready score matrix evaluates vendors across 15 critical dimensions of Agentic and RPA architecture. Scores range from <strong>1 (Not Supported)</strong> to <strong>5 (Best-in-Class)</strong>. The chart below visualizes the average maturity score across all categories.</p>
     </div>
 
-    <div class="grid-4" id="exec-metrics"></div>
-
-    <!-- Data freshness band -->
-    <div id="data-freshness-band" style="display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;font-size:11px;color:var(--muted);"></div>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-head">
-          <div><div class="card-title">Market Maturity Radar</div><div class="card-sub">Click vendor chip to highlight · avg of score per topic</div></div>
+    <!-- Radar + Metric cards -->
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
+        <div style="padding:12px 16px;border-bottom:1px solid #e2e8f0;">
+          <div style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Market Maturity Profile (Avg Score)</div>
           <div id="radar-chips" class="chips"></div>
         </div>
-        <div class="card-body">
-          <div class="chart-wrap" style="height:380px;"><canvas id="radarChart"></canvas></div>
+        <div style="padding:16px;">
+          <div class="chart-wrap" style="height:360px;"><canvas id="radarChart"></canvas></div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-head">
-          <div class="card-title">Score Heat Map</div>
-          <div class="mode-tabs" id="heatmap-mode-tabs">
-            <button class="mode-tab active" data-mode="score">Scores</button>
-            <button class="mode-tab" data-mode="delta">Delta vs UiPath</button>
-          </div>
-        </div>
-        <div class="card-body" style="padding:0;">
-          <div class="heatmap-wrap"><table class="heatmap" id="heatmap-table"></table></div>
-        </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div id="exec-metrics-light"></div>
+
+        <!-- Data freshness -->
+        <div id="data-freshness-band" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:11px;color:#64748b;"></div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-head"><div class="card-title">Vendor Scope & Strategic Rationale</div></div>
-      <div class="card-body">
+    <!-- Score Matrix -->
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+      <div style="padding:14px 18px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:14px;font-weight:600;color:#1a202c;">Detailed Score Matrix</div>
+        <div class="mode-tabs" id="heatmap-mode-tabs" style="background:#f1f5f9;">
+          <button class="mode-tab active" data-mode="score" style="color:#64748b;">Scores</button>
+          <button class="mode-tab" data-mode="delta" style="color:#64748b;">Delta vs UiPath</button>
+        </div>
+      </div>
+      <div class="heatmap-wrap"><table class="heatmap" id="heatmap-table" style="font-size:13px;"></table></div>
+    </div>
+
+    <!-- Vendor Scope -->
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
+      <div style="padding:14px 18px;border-bottom:1px solid #e2e8f0;">
+        <div style="font-size:14px;font-weight:600;color:#1a202c;">Vendor Scope & Strategic Rationale</div>
+      </div>
+      <div style="padding:16px 18px;">
         <div id="scope-table" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;"></div>
       </div>
     </div>
@@ -349,17 +383,14 @@
     <div class="card">
       <div class="card-head">
         <div><div class="card-title">Select Vendor</div></div>
-        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
-          <div style="width:200px;"><label>Vendor</label><select id="vendor-select"></select></div>
-          <div style="width:160px;"><label>Topic filter</label><select id="vd-topic-filter"><option value="">All topics</option></select></div>
-          <div style="width:130px;"><label>Confidence</label><select id="vd-conf-filter"><option value="">All</option><option>High</option><option>Medium</option><option>Low</option></select></div>
-          <div style="display:flex;flex-direction:column;gap:4px;">
-            <div style="display:flex;gap:6px;">
-              <button id="vd-generate-topic-btn" style="background:var(--accent);border:none;color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">✨ Generate Topic</button>
-              <button id="vd-generate-all-btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">⚡ All Topics</button>
-            </div>
-            <div id="vd-generate-status" style="font-size:11px;color:var(--muted);text-align:center;min-height:16px;"></div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+          <div style="display:flex;gap:10px;align-items:flex-end;">
+            <div style="width:180px;"><label>Vendor</label><select id="vendor-select"></select></div>
+            <div style="width:160px;"><label>Topic filter</label><select id="vd-topic-filter"><option value="">All topics</option></select></div>
+            <div style="width:130px;"><label>Confidence</label><select id="vd-conf-filter"><option value="">All</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+            <button id="vd-generate-btn" style="background:var(--accent);border:none;color:#fff;font-size:12px;font-weight:600;padding:0 14px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;flex-shrink:0;height:36px;align-self:flex-end;">✨ Generate Intelligence</button>
           </div>
+          <div id="vd-generate-status" style="font-size:11px;color:var(--muted);min-height:14px;align-self:flex-end;"></div>
         </div>
       </div>
     </div>
@@ -420,13 +451,13 @@
     <div class="card">
       <div class="card-head">
         <div><div class="card-title" id="topic-title">—</div></div>
-        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
-          <div style="width:300px;"><label>Dimension</label><select id="topic-select"></select></div>
-          <div style="width:160px;"><label>Search topics</label><input type="text" id="topic-search" placeholder="Filter…" /></div>
-          <div style="display:flex;flex-direction:column;gap:4px;">
-            <button id="generate-btn" style="background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;">✨ Generate Intelligence</button>
-            <div id="generate-status" style="font-size:11px;color:var(--muted);text-align:center;min-height:16px;"></div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+          <div style="display:flex;gap:10px;align-items:flex-end;">
+            <div style="width:300px;"><label>Dimension</label><select id="topic-select"></select></div>
+            <div style="width:160px;"><label>Search topics</label><input type="text" id="topic-search" placeholder="Filter…" /></div>
+            <button id="generate-btn" style="background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;flex-shrink:0;">✨ Generate Intelligence</button>
           </div>
+          <div id="generate-status" style="font-size:11px;color:var(--muted);min-height:14px;align-self:flex-end;"></div>
         </div>
       </div>
 
@@ -505,7 +536,17 @@
       if(vid==='vendor')renderVendorView();
       if(vid==='compare')renderCompareView();
       if(vid==='topic')renderTopicView();
-      if(vid==='battlecard') {} // zaten hazır, yeniden render gerekmez
+      if(vid==='dashboard') {
+        document.querySelector('.nav-logo svg').style.filter = 'invert(1) brightness(0)';
+        document.querySelector('.nav-logo-text').style.color = '#64748b';
+        document.querySelector('nav').style.background = '#fff';
+        document.querySelector('nav').style.borderBottomColor = '#e2e8f0';
+      } else {
+        document.querySelector('.nav-logo svg').style.filter = '';
+        document.querySelector('.nav-logo-text').style.color = '';
+        document.querySelector('nav').style.background = '';
+        document.querySelector('nav').style.borderBottomColor = '';
+      }
     });
   });
 
@@ -516,31 +557,23 @@
     const agV = VORDER.reduce((a,b)=>score(a,agIdx)>=score(b,agIdx)?a:b);
     const uiAvg = avgScore('UiPath');
     const nearest = VORDER.filter(v=>v!=='UiPath').map(v=>({v,d:uiAvg-avgScore(v)})).sort((a,b)=>a.d-b.d)[0];
-    const maxGap = VORDER.map(v=>{
-      const diffs=VENDORS[v].map(d=>Math.abs(d.score-(d.score)));
-      return{v,gap:0};
-    })[0];
+    const tcoV = VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b);
 
-    document.getElementById('exec-metrics').innerHTML=`
-      <div class="exec-metric exec-blue">
-        <div class="exec-metric-label">Highest Average Maturity</div>
-        <div class="exec-metric-value">${topV}</div>
-        <div class="exec-metric-sub">Avg ${avgScore(topV).toFixed(1)} / 5.0 across all 15 dimensions</div>
-      </div>
-      <div class="exec-metric exec-green">
-        <div class="exec-metric-label">Agentic Capabilities Leader</div>
-        <div class="exec-metric-value">${agV}</div>
-        <div class="exec-metric-sub">Score ${score(agV,agIdx)} / 5 on Agentic Capabilities</div>
-      </div>
-      <div class="exec-metric exec-amber">
-        <div class="exec-metric-label">UiPath Lead vs Nearest Rival</div>
-        <div class="exec-metric-value">${nearest?(uiAvg>avgScore(nearest.v)?'+':'')+nearest.d.toFixed(1):'—'}</div>
-        <div class="exec-metric-sub">${nearest?'vs '+nearest.v+' on average score':''}</div>
-      </div>
-      <div class="exec-metric exec-red">
-        <div class="exec-metric-label">Lowest TCO Vendor</div>
-        <div class="exec-metric-value">${VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b)}</div>
-        <div class="exec-metric-sub">Score ${score(VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b),11)} / 5 on Licensing & TCO</div>
+    const card = (label, value, sub, accent) =>
+      `<div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;border-left:4px solid ${accent};">
+        <div style="font-size:11px;font-weight:600;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">${label}</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <div style="font-size:15px;font-weight:700;color:#1a202c;">${value}</div>
+        </div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:4px;">${sub}</div>
+      </div>`;
+
+    const el = document.getElementById('exec-metrics-light');
+    if(el) el.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        ${card('Highest Average Maturity', topV + ' (' + avgScore(topV).toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', '#4f8ef7')}
+        ${card('Agentic Leader', agV + ' (' + score(agV,agIdx) + ')', 'Highest score in "Agentic Capabilities" topic', '#38d9a9')}
+        ${card('External Validation Gap', nearest?(uiAvg>avgScore(nearest.v)?'UiPath (+'+nearest.d.toFixed(1)+')':''):'UiPath', 'Largest delta between UiPath and nearest rival', '#f5a623')}
       </div>`;
   }
 
@@ -548,13 +581,13 @@
     const el = document.getElementById('scope-table');
     if(el.children.length) return;
     el.innerHTML = VORDER.map(v=>`
-      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;">
+      <div style="background:#f8f9fa;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
           <span class="vdot" style="background:${COLORS[v]}"></span>
-          <span style="font-weight:600;font-size:13px;">${esc(v)}</span>
+          <span style="font-weight:600;font-size:13px;color:#1a202c;">${esc(v)}</span>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">${esc(SCOPES[v]||'')}</div>
-        <div style="font-size:12px;color:var(--text);line-height:1.5;">${esc(RATIONALE[v]||'')}</div>
+        <div style="font-size:11px;color:#64748b;margin-bottom:6px;">${esc(SCOPES[v]||'')}</div>
+        <div style="font-size:12px;color:#374151;line-height:1.5;">${esc(RATIONALE[v]||'')}</div>
       </div>`).join('');
   }
 
@@ -983,6 +1016,12 @@
   renderDashboard();
   initBattleCard();
 
+  // Dashboard başlangıçta aktif — nav beyaz olsun
+  document.querySelector('.nav-logo svg').style.filter = 'invert(1) brightness(0)';
+  document.querySelector('.nav-logo-text').style.color = '#64748b';
+  document.querySelector('nav').style.background = '#fff';
+  document.querySelector('nav').style.borderBottomColor = '#e2e8f0';
+
   // Footer ve data band'ı güncelle
   document.getElementById('app-footer').textContent =
     `UiPath Competitive Intelligence · Internal Use Only · Data as of ${DATA_VERSION} · Source: ${DATA_SOURCE}`;
@@ -1083,99 +1122,67 @@
   // ── VENDOR DEEP DIVE GENERATE ──
   function vdSetLoading(loading, msg) {
     const statusEl = document.getElementById('vd-generate-status');
-    const topicBtn = document.getElementById('vd-generate-topic-btn');
-    const allBtn   = document.getElementById('vd-generate-all-btn');
+    const btn = document.getElementById('vd-generate-btn');
     if (!statusEl) return;
     statusEl.textContent = msg || '';
     statusEl.style.color = loading ? '#f5a623' : '#38d9a9';
-    if (topicBtn) { topicBtn.disabled = loading; topicBtn.style.opacity = loading ? '0.6' : '1'; }
-    if (allBtn)   { allBtn.disabled   = loading; allBtn.style.opacity   = loading ? '0.6' : '1'; }
+    if (btn) { btn.disabled = loading; btn.style.opacity = loading ? '0.6' : '1'; }
   }
 
   function setupVendorDeepDiveGenerate() {
-    // Generate Topic — seçili topic için tek vendor
-    const topicBtn = document.getElementById('vd-generate-topic-btn');
-    if (topicBtn) {
-      topicBtn.addEventListener('click', async () => {
-        const vendor   = state.vendorView;
-        const tf       = state.vdTopicFilter;
+    const btn = document.getElementById('vd-generate-btn');
+    if (!btn) return;
 
-        if (tf === '') {
-          const s = document.getElementById('vd-generate-status');
-          s.textContent = '⚠️ Please select a topic from the filter first';
-          s.style.color = '#f5a623';
-          return;
-        }
+    btn.addEventListener('click', async () => {
+      const vendor = state.vendorView;
+      const tf     = state.vdTopicFilter;
 
+      // Topic filter'a göre karar ver
+      if (tf !== '') {
+        // Belirli bir topic seçili — sadece onu güncelle
         const topicIdx = parseInt(tf);
         const topic    = TOPICS[topicIdx];
         vdSetLoading(true, `🔍 Researching ${vendor} · ${topic}…`);
-
         try {
           await window.Agent.generateIntelligence({
             vendor, topic, topicIdx,
             onStart: () => {},
             onSuccess: ({ result }) => {
-              VENDORS[vendor][topicIdx] = {
-                ...VENDORS[vendor][topicIdx],
-                score: result.score, evidence: result.evidence,
-                rationale: result.rationale, reasoning: result.reasoning,
-                sources: result.sources, confidence: result.confidence,
-                notes: result.notes,
-              };
+              VENDORS[vendor][topicIdx] = { ...VENDORS[vendor][topicIdx], ...result };
               window.DASHBOARD_DATA.vendors = VENDORS;
               renderVendorEvidence();
               renderVendorView();
               renderHeatmap();
               renderRadar();
-              vdSetLoading(false, `✅ ${vendor} · "${topic}" updated`);
             },
-            onError: ({ error }) => {
-              vdSetLoading(false, `❌ ${error}`);
-              document.getElementById('vd-generate-status').style.color = '#f87171';
-            }
+            onError: ({ error }) => { vdSetLoading(false, `❌ ${error}`); document.getElementById('vd-generate-status').style.color='#f87171'; }
           });
-        } catch (err) {
+          vdSetLoading(false, `✅ ${vendor} · "${topic}" updated`);
+        } catch(err) {
           vdSetLoading(false, `❌ ${err.message}`);
           document.getElementById('vd-generate-status').style.color = '#f87171';
         }
-      });
-    }
-
-    // Generate All Topics — seçili vendor için tüm 15 topic
-    const allBtn = document.getElementById('vd-generate-all-btn');
-    if (allBtn) {
-      allBtn.addEventListener('click', async () => {
-        const vendor = state.vendorView;
+      } else {
+        // All topics seçili — tüm 15 topic'i güncelle
         vdSetLoading(true, `🔍 Starting all 15 topics for ${vendor}…`);
-
         for (let i = 0; i < TOPICS.length; i++) {
           vdSetLoading(true, `🔍 ${vendor} · ${TOPICS[i]} (${i+1}/${TOPICS.length})…`);
           try {
             await window.Agent.generateIntelligence({
               vendor, topic: TOPICS[i], topicIdx: i,
               onStart: () => {},
-              onSuccess: ({ result }) => {
-                VENDORS[vendor][i] = {
-                  ...VENDORS[vendor][i],
-                  score: result.score, evidence: result.evidence,
-                  rationale: result.rationale, reasoning: result.reasoning,
-                  sources: result.sources, confidence: result.confidence,
-                  notes: result.notes,
-                };
-              },
+              onSuccess: ({ result }) => { VENDORS[vendor][i] = { ...VENDORS[vendor][i], ...result }; },
               onError: () => {}
             });
           } catch(e) { /* devam et */ }
         }
-
         window.DASHBOARD_DATA.vendors = VENDORS;
         renderVendorView();
         renderHeatmap();
         renderRadar();
         vdSetLoading(false, `✅ All 15 topics updated for ${vendor}`);
-      });
-    }
+      }
+    });
   }
 
   // Buton DOM'a eklenince setup et
