@@ -760,6 +760,7 @@
       <div class="ev-body">
         <div class="ev-evidence">${esc(row.evidence)}</div>
         <div class="accordion">
+          <details open><summary style="color:#fa4616;font-weight:600;">⚡ UiPath Advantage</summary><div class="acc-inner" style="background:rgba(250,70,22,.06);border-left:3px solid #fa4616;border-radius:0 4px 4px 0;color:var(--text);">${esc(row.uipath_advantage || 'Generate Intelligence to get a UiPath-specific positioning statement for this dimension.')}</div></details>
           ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
           ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
           ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
@@ -887,6 +888,7 @@
         <div class="ev-body">
           <div class="ev-evidence">${esc(row.evidence)}</div>
           <div class="accordion">
+            <details open><summary style="color:#fa4616;font-weight:600;">⚡ UiPath Advantage</summary><div class="acc-inner" style="background:rgba(250,70,22,.06);border-left:3px solid #fa4616;border-radius:0 4px 4px 0;color:var(--text);">${esc(row.uipath_advantage || 'Generate Intelligence to get a UiPath-specific positioning statement for this dimension.')}</div></details>
             ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
             ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
             ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
