@@ -978,13 +978,23 @@
         };
 
       } else {
-        // Tek topic — mock agent çağır
+        // Tek topic — agent çağır, veriyi VENDORS'a yaz
         const [uiResult, rivalResult] = await Promise.all([
-          window.Agent?.generateIntelligence({ vendor:'UiPath', topic, topicIdx, onStart:()=>{}, onSuccess:()=>{}, onError:()=>{} }),
-          window.Agent?.generateIntelligence({ vendor:rival,    topic, topicIdx, onStart:()=>{}, onSuccess:()=>{}, onError:()=>{} })
+          window.Agent?.generateIntelligence({
+            vendor:'UiPath', topic, topicIdx,
+            onStart:()=>{},
+            onSuccess:({ result }) => { VENDORS['UiPath'][topicIdx] = { ...VENDORS['UiPath'][topicIdx], ...result }; },
+            onError:()=>{}
+          }),
+          window.Agent?.generateIntelligence({
+            vendor:rival, topic, topicIdx,
+            onStart:()=>{},
+            onSuccess:({ result }) => { VENDORS[rival][topicIdx] = { ...VENDORS[rival][topicIdx], ...result }; },
+            onError:()=>{}
+          })
         ]);
-        uiData = uiResult || VENDORS['UiPath'][topicIdx];
-        rvData = rivalResult || VENDORS[rival][topicIdx];
+        uiData = VENDORS['UiPath'][topicIdx];
+        rvData = VENDORS[rival][topicIdx];
       }
 
       renderBattleCard({ rival, topic, topicIdx, uiData, rvData, isAll });
@@ -1044,6 +1054,7 @@
     } else {
       const uiSrc = (uiData.sources||[]).slice(0,2), rvSrc = (rvData.sources||[]).slice(0,2);
       document.getElementById('bc-strengths').innerHTML =
+        (uiData.uipath_advantage?'<div class="bc-point"><div class="bc-point-dot" style="background:#fa4616;"></div><div class="bc-point-text" style="font-weight:600;color:#fa4616;">'+esc(uiData.uipath_advantage)+'</div></div>':'') +
         '<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div>' +
         '<div class="bc-point-text">' + esc(uiData.rationale||uiData.evidence||'—') + '</div>' +
         uiSrc.map(s=>'<a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a>').join('') + '</div></div>' +
