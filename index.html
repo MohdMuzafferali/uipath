@@ -6,6 +6,8 @@
   <title>UiPath Competitive Intelligence</title>
   <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAgACADASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAABQYHAwQI/8QALBAAAgEDAwMCBAcAAAAAAAAAAQIDBAURAAYSByExUYETFEFxFSYyQlJys//EABgBAAIDAAAAAAAAAAAAAAAAAAQHAwUG/8QAJBEAAQIGAgEFAAAAAAAAAAAAAQIRAAMEBRMhBhKBIjFhkbH/2gAMAwEAAhEDEQA/AOj7jWKUPfSdfJweXfRvaU0F03DBR1K/EiZXJXJGcKT9NKO7546e9XCliHGOGpkjUZzgBiBqcVyRuBJ1mUr0tuBENrq75dEoKJMu2SznssajyzH6DS/vOyU9njoVW4pUVc0Raqp/hsrU7hyOJyB6ffsT4IJsm67dJZt12+0bctXzdLX07NWW5pMxzqp/UeZwCPXI7gai28K+7XG+VL3uWR6yORo3RvERU4KAeAARjA0Ui641bOoz9VxYT5ZCQ6jD/wBKbvEN+W9JpAqy841J/kUOB7nt76zbv2huSq33VwU9sqZKerqmkSoVMxhXbJJbwMZ8Hv21JI6yRXDIxVlOQQcEHThF1U3vFR/LLe2KgYDvDGzgf2K5P3PfS/lXOVj6TX931+Q/anj9Rmy03XYYhT/eos9wroputltoo3DPT2uQyY/aWOQD7AH31AOoD/nm/j0udT/q2te2bpvdqvxvtJXP+INy5zSASF+XnPLOdBbjX1FbWz1lVIZaieRpZXIxyZjknt6k6Erb1kQydFyfEWFp4jgmvMIKeoHy7knxH//Z" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -216,6 +218,64 @@
     #view-battlecard ~ nav .nav-logo svg path { fill: #1a202c; }
 
     #view-battlecard .view-header-icon { background:rgba(79,142,247,.1) !important; }
+
+    /* Export controls */
+    .export-bar { display:flex; align-items:center; gap:10px; margin-left:auto; }
+    .export-radio { display:flex; gap:6px; background:var(--surface2); border-radius:8px; padding:3px; }
+    .export-radio label { display:flex; align-items:center; gap:5px; font-size:12px; color:var(--muted); padding:5px 10px; border-radius:6px; cursor:pointer; user-select:none; }
+    .export-radio input[type=radio] { display:none; }
+    .export-radio input[type=radio]:checked + span { color:var(--text); font-weight:600; }
+    .export-radio label:has(input:checked) { background:var(--surface); color:var(--text); }
+    .export-btn { background:var(--surface2); border:1px solid var(--border); color:var(--text); font-size:12px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; transition:all .15s; white-space:nowrap; }
+    .export-btn:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .bc-pdf-btn { background:var(--surface2); border:1px solid var(--border); color:var(--text); font-size:12px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; transition:all .15s; }
+    .bc-pdf-btn:hover { background:#f06f6f; color:#fff; border-color:#f06f6f; }
+
+    /* Print styles — Battle Card only */
+    @media print {
+      /* Genel: nav ve export barları gizle */
+      nav, .export-bar, .bc-pdf-btn, .bc-selector, .bc-loading,
+      #view-battlecard .view-header,
+      button, select, input { display:none !important; }
+      body { background:#fff !important; color:#000 !important; }
+      main { padding:0 !important; max-width:100% !important; }
+
+      /* Aktif olmayan viewleri gizle */
+      .view { display:none !important; }
+      .view.active { display:block !important; }
+
+      /* Executive Summary */
+      #view-dashboard { background:#fff !important; margin:0 !important; padding:16px !important; }
+      #view-dashboard .chips { display:none !important; }
+
+      /* Battle Card */
+      #view-battlecard.active { display:flex !important; padding:20px !important; }
+      .bc-output { display:flex !important; }
+      .bc-output.visible { display:flex !important; }
+      .bc-header { background:#4f8ef7 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .bc-section, .bc-scores, .bc-positioning { border:1px solid #e2e8f0 !important; }
+      .bc-score-num { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .bc-delta-block { background:#f1f5f9 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+      /* Cards */
+      .card { border:1px solid #e2e8f0 !important; break-inside:avoid; }
+      .card-head { background:#f8f9fa !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+      /* Evidence accordions — hepsini aç */
+      .ev-body { display:block !important; }
+      details { display:block !important; }
+      details[open] summary::marker { display:none; }
+
+      /* Grid — tek kolon yap */
+      .grid-2, .grid-3, .grid-4, .grid-sidebar { grid-template-columns:1fr !important; }
+
+      /* Charts — küçült */
+      .chart-wrap { height:200px !important; }
+
+      /* Heatmap */
+      .heatmap-wrap { overflow:visible !important; }
+      .heatmap { font-size:10px !important; }
+    }
     .bc-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; font-weight:600; }
     .bc-generate-btn { width:100%; background:var(--accent); border:none; color:#fff; font-size:14px; font-weight:600; padding:12px; border-radius:10px; cursor:pointer; transition:opacity .15s; margin-top:16px; }
     .bc-generate-btn:hover { opacity:.88; }
@@ -329,7 +389,10 @@
           <h2 id="bc-title">UiPath vs —</h2>
           <p id="bc-subtitle">—</p>
         </div>
-        <div class="bc-date" id="bc-date"></div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="bc-date" id="bc-date"></div>
+          <button class="bc-pdf-btn" onclick="exportBattleCardPDF()">⬇ Download PDF</button>
+        </div>
       </div>
 
       <div class="bc-scores">
@@ -384,9 +447,14 @@
   <div id="view-dashboard" class="view active" style="background:#f8f9fa;margin:-24px;padding:32px;min-height:100vh;">
 
     <!-- Header -->
-    <div style="margin-bottom:24px;">
-      <h1 style="font-size:22px;font-weight:700;color:#1a202c;margin-bottom:6px;">Executive Summary Matrix</h1>
-      <p style="font-size:13px;color:#64748b;max-width:680px;line-height:1.6;">This radar-ready score matrix evaluates vendors across 15 critical dimensions of Agentic and RPA architecture. Scores range from <strong>1 (Not Supported)</strong> to <strong>5 (Best-in-Class)</strong>. The chart below visualizes the average maturity score across all categories.</p>
+    <div style="margin-bottom:24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <h1 style="font-size:22px;font-weight:700;color:#1a202c;margin-bottom:6px;">Executive Summary Matrix</h1>
+        <p style="font-size:13px;color:#64748b;max-width:680px;line-height:1.6;">This radar-ready score matrix evaluates vendors across 15 critical dimensions of Agentic and RPA architecture. Scores range from <strong>1 (Not Supported)</strong> to <strong>5 (Best-in-Class)</strong>. The chart below visualizes the average maturity score across all categories.</p>
+      </div>
+      <div class="export-bar">
+        <button class="export-btn" onclick="exportView('dashboard')">⬇ Download PDF</button>
+      </div>
     </div>
 
     <!-- Radar + Metric cards -->
@@ -440,6 +508,13 @@
         <div class="view-header-title">Vendor Deep Dive</div>
         <div class="view-header-sub">Score gap analysis · evidence · sources · rationale · reasoning · notes</div>
       </div>
+      <div class="export-bar">
+        <div class="export-radio">
+          <label><input type="radio" name="vendor-fmt" value="excel" checked><span>Excel</span></label>
+          <label><input type="radio" name="vendor-fmt" value="pdf"><span>PDF</span></label>
+        </div>
+        <button class="export-btn" onclick="exportView('vendor')">⬇ Download</button>
+      </div>
     </div>
 
     <div class="card">
@@ -484,6 +559,13 @@
     <div class="view-header">
       <div class="view-header-icon" style="background:rgba(245,166,35,.15);">⚔️</div>
       <div><div class="view-header-title">Head-to-Head</div><div class="view-header-sub">Dimension-by-dimension delta comparison between two vendors</div></div>
+      <div class="export-bar">
+        <div class="export-radio">
+          <label><input type="radio" name="compare-fmt" value="excel" checked><span>Excel</span></label>
+          <label><input type="radio" name="compare-fmt" value="pdf"><span>PDF</span></label>
+        </div>
+        <button class="export-btn" onclick="exportView('compare')">⬇ Download</button>
+      </div>
     </div>
 
     <div class="card">
@@ -508,6 +590,9 @@
     <div class="view-header">
       <div class="view-header-icon" style="background:rgba(240,111,111,.15);">🎯</div>
       <div><div class="view-header-title">Topic Analysis</div><div class="view-header-sub">Select one dimension — all vendors ranked with full evidence</div></div>
+      <div class="export-bar">
+        <button class="export-btn" onclick="exportView('topic')">⬇ Download PDF</button>
+      </div>
     </div>
 
     <div class="card">
@@ -567,7 +652,12 @@
     vendorView: VORDER[0],
     cmpA: VORDER[0], cmpB: VORDER[1],
     topicIdx: 0,
-    vdTopicFilter: '', vdConfFilter: ''
+    vdTopicFilter: '', vdConfFilter: '',
+    // Last generated tracking — auto-generate on download
+    lastGenerated: {
+      battlecard: { rival: null, topicIdx: null },
+      vendor: { vendor: null }
+    }
   };
   let radarChart, vendorChart, cmpChart, topicChart;
 
@@ -758,9 +848,9 @@
         <div class="ev-tags">${tags}</div>
       </div>
       <div class="ev-body">
+        ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
         <div class="ev-evidence">${esc(row.evidence)}</div>
         <div class="accordion">
-          <details open><summary style="color:#fa4616;font-weight:600;">⚡ UiPath Advantage</summary><div class="acc-inner" style="background:rgba(250,70,22,.06);border-left:3px solid #fa4616;border-radius:0 4px 4px 0;color:var(--text);">${esc(row.uipath_advantage || 'Generate Intelligence to get a UiPath-specific positioning statement for this dimension.')}</div></details>
           ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
           ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
           ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
@@ -802,7 +892,11 @@
     document.getElementById('vd-evidence-list').innerHTML = rows.map(r=>buildEvRow(r,TOPICS[r._i])).join('');
   }
 
-  document.getElementById('vendor-select').addEventListener('change',e=>{state.vendorView=e.target.value;renderVendorView();});
+  document.getElementById('vendor-select').addEventListener('change',e=>{
+    state.vendorView=e.target.value;
+    state.lastGenerated.vendor = { vendor: null }; // seçim değişti, generate gerekecek
+    renderVendorView();
+  });
   document.getElementById('vd-topic-filter').addEventListener('change',e=>{state.vdTopicFilter=e.target.value;renderVendorEvidence();});
   document.getElementById('vd-conf-filter').addEventListener('change',e=>{state.vdConfFilter=e.target.value;renderVendorEvidence();});
 
@@ -886,9 +980,9 @@
           </div>
         </div>
         <div class="ev-body">
+          ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
           <div class="ev-evidence">${esc(row.evidence)}</div>
           <div class="accordion">
-            <details open><summary style="color:#fa4616;font-weight:600;">⚡ UiPath Advantage</summary><div class="acc-inner" style="background:rgba(250,70,22,.06);border-left:3px solid #fa4616;border-radius:0 4px 4px 0;color:var(--text);">${esc(row.uipath_advantage || 'Generate Intelligence to get a UiPath-specific positioning statement for this dimension.')}</div></details>
             ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
             ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
             ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
@@ -998,10 +1092,13 @@
       }
 
       renderBattleCard({ rival, topic, topicIdx, uiData, rvData, isAll });
+      // Track last generated state
+      state.lastGenerated.battlecard = { rival, topicIdx: isAll ? -1 : topicIdx };
 
     } catch (err) {
       const ti = isAll ? 0 : topicIdx;
       renderBattleCard({ rival, topic, topicIdx:ti, uiData:VENDORS['UiPath'][ti], rvData:VENDORS[rival][ti], isAll });
+      state.lastGenerated.battlecard = { rival, topicIdx: isAll ? -1 : topicIdx };
     }
   }
 
@@ -1085,6 +1182,300 @@
     document.getElementById('bc-loading').classList.remove('visible');
     document.getElementById('bc-output').classList.add('visible');
     document.getElementById('bc-generate-btn').disabled = false;
+  }
+
+  // ── EXPORT ──
+  async function exportView(view) {
+    const fmtMap = { vendor:'vendor-fmt', compare:'compare-fmt' };
+    const fmt = (view === 'dashboard' || view === 'topic') ? 'pdf'
+      : (document.querySelector(`input[name="${fmtMap[view]}"]:checked`)?.value || 'excel');
+
+    const today = new Date();
+    const dateStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+
+    function safeName(s) { return (s||'').replace(/[^a-zA-Z0-9]/g,''); }
+    function uipathFirst(a, b) { return a === 'UiPath' ? [a,b] : b === 'UiPath' ? [b,a] : [a,b]; }
+    function esc(s) { return (s||'').replace(/"/g,'""'); }
+
+    // Vendor Deep Dive — seçim değişmişse önce generate et
+    if (view === 'vendor') {
+      const v = state.vendorView;
+      const lg = state.lastGenerated.vendor;
+      if (lg.vendor !== v) {
+        const exportBtn = document.querySelector('#view-vendor .export-btn');
+        const statusEl = document.getElementById('vd-generate-status');
+        if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '⏳ Generating…'; }
+        if (statusEl) { statusEl.textContent = `🔍 Refreshing data for ${v}…`; statusEl.style.color = '#f5a623'; }
+
+        // Tüm topic'leri generate et
+        for (let i = 0; i < TOPICS.length; i++) {
+          if (statusEl) statusEl.textContent = `🔍 ${v} · ${TOPICS[i]} (${i+1}/${TOPICS.length})`;
+          try {
+            await window.Agent?.generateIntelligence({
+              vendor: v, topic: TOPICS[i], topicIdx: i,
+              onStart: ()=>{},
+              onSuccess: ({ result }) => { VENDORS[v][i] = { ...VENDORS[v][i], ...result }; },
+              onError: ()=>{}
+            });
+          } catch(e) {}
+        }
+
+        state.lastGenerated.vendor = { vendor: v };
+        window.DASHBOARD_DATA.vendors = VENDORS;
+        renderVendorView();
+
+        if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '⬇ Download'; }
+        if (statusEl) { statusEl.textContent = `✅ ${v} refreshed`; statusEl.style.color = '#38d9a9'; }
+      }
+    }
+
+    // PDF export — orijinal elementi yerinde yakala, UI bozulmasın
+    if (fmt === 'pdf') {
+      const viewNames = { dashboard:'executivesummary', vendor:'vendordeepdive', compare:'headtohead', topic:'topicanalysis' };
+
+      let pdfName = 'uipath-competitive-' + viewNames[view] + '-' + dateStr;
+      if (view === 'vendor') {
+        const v = state.vendorView;
+        const [f,s] = uipathFirst('UiPath', v);
+        pdfName = 'uipath-competitive-vendordeepdive-' + (f===s?f:f+'vs'+safeName(s)) + '-' + dateStr;
+      } else if (view === 'compare') {
+        const [f,s] = uipathFirst(state.cmpA, state.cmpB);
+        pdfName = 'uipath-competitive-headtohead-' + safeName(f) + 'vs' + safeName(s) + '-' + dateStr;
+      } else if (view === 'topic') {
+        pdfName = 'uipath-competitive-topicanalysis-' + safeName(TOPICS[state.topicIdx]).substring(0,24) + '-' + dateStr;
+      }
+
+      const el = document.getElementById('view-' + view);
+      const bgColor = view === 'dashboard' ? '#f8f9fa' : '#0c1018';
+
+      // Export öncesi: gizlenecekler
+      const hiddenEls = [];
+      el.querySelectorAll('.export-bar, .mode-tabs, #radar-chips').forEach(e => {
+        hiddenEls.push({el:e, display:e.style.display});
+        e.style.display = 'none';
+      });
+      el.querySelectorAll('select, input[type="text"]').forEach(e => {
+        hiddenEls.push({el:e, vis:e.style.visibility});
+        e.style.visibility = 'hidden';
+      });
+
+      // Scroll alanlarını geçici aç
+      const scrollEls = [];
+      el.querySelectorAll('[style*="max-height"]').forEach(e => {
+        scrollEls.push({el:e, mh:e.style.maxHeight, ov:e.style.overflow});
+        e.style.maxHeight = 'none';
+        e.style.overflow = 'visible';
+      });
+
+      // Accordion'ları aç
+      const closedBodies = [];
+      el.querySelectorAll('.ev-body:not(.open)').forEach(b => {
+        closedBodies.push(b);
+        b.classList.add('open');
+      });
+      const closedDetails = [];
+      el.querySelectorAll('details:not([open])').forEach(d => {
+        closedDetails.push(d);
+        d.setAttribute('open','');
+      });
+
+      // Sis fix — sadece opacity < 1 olan elementleri düzelt, renklere dokunma
+      const opacityEls = [];
+      el.querySelectorAll('*').forEach(e => {
+        const st = window.getComputedStyle(e);
+        const op = parseFloat(st.opacity);
+        if (op > 0 && op < 1) {
+          opacityEls.push({el:e, opacity:e.style.opacity});
+          e.style.opacity = '1';
+        }
+      });
+
+      // Canvas chart'ları image'a çevir (html2canvas canvas yakalayamaz)
+      const canvasEls = [];
+      el.querySelectorAll('canvas').forEach(c => {
+        try {
+          // Canvas'ı arka plan rengiyle birlikte image'a çevir
+          const tmpCanvas = document.createElement('canvas');
+          tmpCanvas.width = c.width;
+          tmpCanvas.height = c.height;
+          const ctx2 = tmpCanvas.getContext('2d');
+          ctx2.fillStyle = bgColor;
+          ctx2.fillRect(0, 0, tmpCanvas.width, tmpCanvas.height);
+          ctx2.drawImage(c, 0, 0);
+
+          const img = document.createElement('img');
+          img.src = tmpCanvas.toDataURL('image/png');
+          img.style.cssText = `width:${c.offsetWidth}px;height:${c.offsetHeight}px;display:block;`;
+          c.parentNode.insertBefore(img, c);
+          c.style.display = 'none';
+          canvasEls.push({canvas:c, img});
+        } catch(e) {}
+      });
+
+      // Kısa bekleme — DOM render
+      setTimeout(() => {
+        html2canvas(el, {
+          scale: 3,
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: bgColor,
+          logging: false,
+          imageTimeout: 15000,
+          removeContainer: true,
+          scrollX: 0,
+          scrollY: 0,
+          x: 0,
+          y: 0,
+          width: el.scrollWidth,
+          height: el.scrollHeight,
+          windowWidth: el.scrollWidth,
+          windowHeight: el.scrollHeight
+        }).then(canvas => {
+          // Her şeyi geri al
+          hiddenEls.forEach(({el,display,vis}) => {
+            if (display !== undefined) el.style.display = display;
+            if (vis !== undefined) el.style.visibility = vis;
+          });
+          scrollEls.forEach(({el,mh,ov}) => { el.style.maxHeight=mh; el.style.overflow=ov; });
+          closedBodies.forEach(b => b.classList.remove('open'));
+          closedDetails.forEach(d => d.removeAttribute('open'));
+          canvasEls.forEach(({canvas,img}) => { canvas.style.display=''; img.remove(); });
+          opacityEls.forEach(({el,opacity}) => { if(opacity!==undefined) el.style.opacity=opacity; });
+
+          const imgData = canvas.toDataURL('image/png', 1.0);
+          const { jsPDF } = window.jspdf;
+          const pageW = canvas.width / 2;
+          const pageH = canvas.height / 2;
+          const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [pageW, pageH] });
+          pdf.addImage(imgData, 'PNG', 0, 0, pageW, pageH);
+          pdf.save(pdfName + '.pdf');
+        }).catch(err => {
+          hiddenEls.forEach(({el,display,vis}) => {
+            if (display !== undefined) el.style.display = display;
+            if (vis !== undefined) el.style.visibility = vis;
+          });
+          scrollEls.forEach(({el,mh,ov}) => { el.style.maxHeight=mh; el.style.overflow=ov; });
+          closedBodies.forEach(b => b.classList.remove('open'));
+          closedDetails.forEach(d => d.removeAttribute('open'));
+          canvasEls.forEach(({canvas,img}) => { canvas.style.display=''; img.remove(); });
+          opacityEls.forEach(({el,opacity}) => { if(opacity!==undefined) el.style.opacity=opacity; });
+          console.error(err);
+          alert('PDF export failed: ' + err.message);
+        });
+      }, 400);
+      return;
+    }
+
+    // Excel (CSV) export — Topic Analysis'te sadece PDF, Excel yok
+    if (view === 'topic') return;
+
+    let csv = '', fileName = '';
+
+    if (view === 'vendor') {
+      const v = state.vendorView;
+      const [first, second] = uipathFirst('UiPath', v);
+      const pair = first === second ? first : first + 'vs' + safeName(second);
+      fileName = `uipath-competitive-vendordeepdive-${pair}-${dateStr}`;
+      csv = `Vendor Deep Dive — ${v}\n`;
+      csv += 'Topic,Score,Confidence,UiPath Advantage,Sources,Rationale,Reasoning\n';
+      VENDORS[v].forEach(d => {
+        const sources = (d.sources||[]).join(' | ');
+        // Evidence kolonu UiPath Advantage olarak gösteriliyor
+        const uiAdvContent = d.uipath_advantage || d.evidence;
+        csv += `"${d.category}",${d.score},"${esc(d.confidence)}","${esc(uiAdvContent)}","${esc(sources)}","${esc(d.rationale)}","${esc(d.reasoning)}"\n`;
+      });
+
+    } else if (view === 'compare') {
+      const vA = state.cmpA, vB = state.cmpB;
+      const [first, second] = uipathFirst(vA, vB);
+      fileName = `uipath-competitive-headtohead-${safeName(first)}vs${safeName(second)}-${dateStr}`;
+      csv = `Head-to-Head — ${first} vs ${second}\n`;
+      csv += `Topic,UiPath Score,${second} Score,Delta,Result\n`;
+      TOPICS.forEach((t, i) => {
+        const uiScore = VENDORS['UiPath'][i].score;
+        const rivalScore = VENDORS[second][i].score;
+        const d = uiScore - rivalScore;
+        const result = d > 0 ? `UiPath leads on this dimension` : d < 0 ? `${second} leads on this dimension` : 'Parity';
+        csv += `"${t}",${uiScore},${rivalScore},${d},"${result}"\n`;
+      });
+
+    } else if (view === 'topic') {
+      const t = TOPICS[state.topicIdx];
+      fileName = `uipath-competitive-topicanalysis-${safeName(t).substring(0,24)}-${dateStr}`;
+      csv = `Topic Analysis — ${t}\n`;
+      // Kolon sırası: Vendor, Score, Confidence, Evidence, Sources, Rationale, Reasoning, UiPath Advantage
+      csv += 'Vendor,Score,Confidence,Evidence,Sources,Rationale,Reasoning,UiPath Advantage\n';
+      VORDER.forEach(v => {
+        const d = VENDORS[v][state.topicIdx];
+        const sources = (d.sources||[]).join(' | ');
+        csv += `"${v}",${d.score},"${esc(d.confidence)}","${esc(d.evidence)}","${esc(sources)}","${esc(d.rationale)}","${esc(d.reasoning)}","${esc(d.uipath_advantage)}"\n`;
+      });
+    }
+
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${fileName}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ── BATTLE CARD PDF ──
+  async function exportBattleCardPDF() {
+    const rival    = document.getElementById('bc-rival').value;
+    const topicIdx = parseInt(document.getElementById('bc-topic').value);
+    const isAll    = topicIdx === -1;
+
+    const btn = document.querySelector('.bc-pdf-btn');
+    const outputVisible = document.getElementById('bc-output').classList.contains('visible');
+
+    // Seçim değişmiş ya da hiç generate edilmemişse → önce generate et
+    const lg = state.lastGenerated.battlecard;
+    const needsGenerate = !outputVisible ||
+      lg.rival !== rival ||
+      lg.topicIdx !== (isAll ? -1 : topicIdx);
+
+    if (needsGenerate) {
+      if (btn) { btn.disabled = true; btn.textContent = '⏳ Generating…'; }
+      await generateBattleCard();
+      if (btn) { btn.disabled = false; btn.textContent = '⬇ Download PDF'; }
+    }
+
+    const dateStr = new Date().toISOString().split('T')[0];
+    const pdfName = `uipath-competitive-battlecard-UiPathvs${rival.replace(/\s/g,'')}-${dateStr}`;
+
+    const el = document.getElementById('bc-output');
+    if (btn) btn.style.visibility = 'hidden';
+
+    html2canvas(el, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: '#0c1018',
+      logging: false,
+      imageTimeout: 15000,
+      removeContainer: true,
+      scrollX: 0,
+      scrollY: 0,
+      width: el.scrollWidth,
+      height: el.scrollHeight,
+      windowWidth: el.scrollWidth,
+      windowHeight: el.scrollHeight
+    }).then(canvas => {
+      if (btn) btn.style.visibility = '';
+      const imgData = canvas.toDataURL('image/png', 1.0);
+      const { jsPDF } = window.jspdf;
+      const pageW = canvas.width / 2;
+      const pageH = canvas.height / 2;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [pageW, pageH] });
+      pdf.addImage(imgData, 'PNG', 0, 0, pageW, pageH);
+      pdf.save(pdfName + '.pdf');
+    }).catch(err => {
+      if (btn) btn.style.visibility = '';
+      console.error(err);
+      alert('PDF export failed: ' + err.message);
+    });
   }
 
   // ── INIT ──
