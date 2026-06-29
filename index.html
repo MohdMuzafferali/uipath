@@ -646,11 +646,10 @@
   const state = {
     radarHighlight: null,
     heatmapMode: 'score',
-    vendorView: VORDER[0],
-    cmpA: VORDER[0], cmpB: VORDER[1],
+    vendorView: null,
+    cmpA: null, cmpB: null,
     topicIdx: 0,
     vdTopicFilter: '', vdConfFilter: '',
-    // Last generated tracking — auto-generate on download
     lastGenerated: {
       battlecard: { rival: null, topicIdx: null },
       vendor: { vendor: null }
@@ -690,7 +689,14 @@
         document.querySelector('.nav-logo-text').style.color = '#64748b';
         document.querySelector('nav').style.background = '#fff';
         document.querySelector('nav').style.borderBottomColor = '#e2e8f0';
-  } // initApp sonu
+      } else {
+        document.querySelector('.nav-logo svg').style.filter = '';
+        document.querySelector('.nav-logo-text').style.color = '';
+        document.querySelector('nav').style.background = '';
+        document.querySelector('nav').style.borderBottomColor = '';
+      }
+    });
+  }); // nav tab listener sonu
 
   // scorecard-full.json'u fetch et, sonra initApp çalıştır
   fetch('scorecard-full.json')
@@ -705,14 +711,6 @@
       console.error('scorecard-full.json yüklenemedi:', err);
       document.body.innerHTML = '<div style="padding:40px;color:#f87171;font-family:sans-serif;">⚠️ scorecard-full.json yüklenemedi. Lütfen sayfayı Live Server ile açın.</div>';
     });
-      } else {
-        document.querySelector('.nav-logo svg').style.filter = '';
-        document.querySelector('.nav-logo-text').style.color = '';
-        document.querySelector('nav').style.background = '';
-        document.querySelector('nav').style.borderBottomColor = '';
-      }
-    });
-  });
 
   // ── EXECUTIVE SUMMARY ──
   function renderExecMetrics() {
@@ -1500,6 +1498,11 @@
     SCOPES   = DATA.vendorScopes;
     RATIONALE= DATA.vendorRationale;
 
+    // State başlangıç değerlerini VORDER yüklendikten sonra set et
+    state.vendorView = VORDER[0];
+    state.cmpA = VORDER[0];
+    state.cmpB = VORDER[1];
+
     renderDashboard();
     initBattleCard();
 
@@ -1519,7 +1522,8 @@
 
   // ── AGENT ENTEGRASYONU ──
   // agent.js yüklendikten sonra dashboard verisini window'a açar
-  window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };</script>
+  window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
+  } // initApp sonu</script>
 
 <!-- Agentic Motor -->
 <script src="agent.js"></script>
