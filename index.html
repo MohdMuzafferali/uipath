@@ -1490,10 +1490,10 @@
 
   // Footer ve data band'ı güncelle
   document.getElementById('app-footer').textContent =
-    `UiPath Competitive Intelligence · Internal Use Only · Data as of ${DATA_VERSION} · Source: ${DATA_SOURCE}`;
+    `UiPath Competitive Intelligence · Internal Use Only`;
   document.getElementById('data-freshness-band').innerHTML =
     `<span style="width:8px;height:8px;border-radius:50%;background:#38d9a9;flex-shrink:0;"></span>
-     <span>Static data as of <strong style="color:var(--text);">${DATA_VERSION}</strong> · Source: <strong style="color:var(--text);">${DATA_SOURCE}</strong></span>
+     <span>Baseline data: <strong style="color:var(--text);">May 2025</strong> · Refreshed weekly via UiPath Agent</span>
      <span style="margin-left:auto;color:var(--muted);">Generate intelligence to refresh with live data</span>`;
 
   // ── AGENT ENTEGRASYONU ──
