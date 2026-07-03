@@ -1263,15 +1263,19 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "Solid orchestration via Workflows, but not a BPMN-centric orchestration suite.",
-        "reasoning": "Score 3 because Workflows supports robust orchestration patterns but doesn't position itself as BPMN/DMN process modeling for business stakeholders.",
-        "evidence": "Google Workflows best practices document how to design resilient workflows with retries, try/except, and the saga pattern, plus callbacks to wait for external events. These are strong orchestration primitives but are code/syntax-driven rather than BPMN-first.",
+        "score": 4,
+        "rationale": "Google offers credible cloud workflow orchestration through Google Cloud Workflows and Vertex AI-related orchestration components, but the evidence points to a narrower workflow-centric and cloud-centric position than UiPath’s broader business orchestration stack spanning AI agents, robots, and human-in-the-loop work. UiPath appears stronger for enterprise BPM-style end-to-end orchestration because it combines orchestration with RPA, Action Center, governance, and a large automation customer base.",
+        "reasoning": "Search results show Google Cloud Workflows as a serverless workflow orchestration product for Google Cloud services and any HTTP endpoint, which demonstrates real orchestration capability but primarily in an application/cloud workflow context rather than a full BPM suite. A 2026 workflow orchestration comparison also places Google Cloud Workflows and Vertex AI Agent Builder among orchestration tools, supporting that Google has relevant AI-era orchestration assets. In contrast, UiPath search results explicitly position UiPath as a leader in agentic business orchestration and automation, state it is trusted by more than 10,700 organizations worldwide, and describe orchestration across AI agents, robots, and people in enterprise processes. Because the available evidence from snippets does not show Google offering equally explicit BPM governance, human task management, or automation-centric orchestration breadth, UiPath has a demonstrable advantage, though confidence is medium because snippet-only evidence is limited and no analyst-specific Google BPM citation surfaced.",
+        "evidence": "Google Cloud Workflows is described as 'Serverless workflow orchestration of Google Cloud products and any HTTP,' indicating Google provides workflow orchestration for cloud services and external APIs. (Google Cloud Workflows) A 2026 orchestration tools comparison lists 'Google Cloud Workflows and Vertex AI Agent Builder' among workflow orchestration platforms, indicating Google is recognized in the orchestration tooling landscape. (Elementum.ai, Apr 18 2026) UiPath states its business orchestration software 'connects AI agents, robots, and people across enterprise systems to execute end-to-end processes,' showing broader enterprise orchestration scope than simple workflow automation. (UiPath Business Orchestration) UiPath said in an Apr 22 2026 release that it is 'a leader in agentic business orchestration and automation, trusted by more than 10,700 organizations worldwide,' signaling greater enterprise automation scale and market presence. (UiPath investor relations) A Sep 30 2025 UiPath release says Google Cloud Vertex AI and Gemini models can be brought into the UiPath Platform so customers can 'trigger and orchestrate automations through real-time voice conversations,' which suggests Google AI is complementary to UiPath’s orchestration layer rather than a direct replacement for it. (UiPath investor relations)",
         "sources": [
-          "https://cloud.google.com/workflows/docs/best-practice"
+          "https://cloud.google.com/workflows (Google Cloud Workflows)",
+          "https://www.elementum.ai/blog/best-workflow-orchestration-tools (Workflow Orchestration Tools: 9 Best Platforms Compared (2026))",
+          "https://www.uipath.com/platform/agentic-automation/business-orchestration (UiPath Business Orchestration Software for Enterprise Processes)",
+          "https://ir.uipath.com/news/detail/442/uipath-brings-its-ai-document-processing-solution-to-google-cloud-marketplace-with-gemini-powered-automation (UiPath IR, Apr 22 2026)",
+          "https://ir.uipath.com/news/detail/410/uipath-simplifies-agentic-automation-with-voice-agents-with-googles-gemini-models (UiPath IR, Sep 30 2025)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
