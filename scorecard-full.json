@@ -718,14 +718,13 @@
       {
         "category": "Security & Compliance",
         "score": 4,
-        "rationale": "n8n offers self-hosting and some enterprise security options, but the available evidence points to a lighter-weight security/compliance posture than UiPath’s enterprise governance stack. UiPath’s stronger documented governance, auditability, and compliance controls give it the edge for regulated automation programs.",
-        "reasoning": "Search results show n8n is positioned for organizations with strict data privacy needs largely through self-hosting and enterprise deployment flexibility, and third-party comparisons describe it as suitable where data sovereignty matters. However, the snippets did not surface strong evidence of broad analyst-recognized compliance depth, formal trust-layer controls, or comparable enterprise governance breadth. By contrast, UiPath’s baseline includes AI Trust Layer, PII guardrails, audit trails, RBAC, and broader compliance frameworks, which are directly relevant to this topic. Because the n8n evidence is partly indirect and snippet-limited, the score favors UiPath but with medium confidence rather than a maximum gap score.",
-        "evidence": "A Jun. 10, 2026 Blck Alpaca result says enterprise n8n implementations 'demonstrate platform versatility' and that 'n8n addresses security and compliance.' A Jun. 2, 2025 Knack comparison says organizations that self-host workflows will find n8n’s flexibility valuable and that it is ideal for organizations with 'strict compliance, security' needs. An Apr. 20, 2026 n8n Community result references enterprise customers with 'strict data privacy and compliance requirements' when building n8n workflows. A third-party comparison snippet says 'n8n requires DevOps expertise and constant maintenance,' implying enterprise controls depend materially on customer-run operations rather than a deeply managed governance layer.",
+        "rationale": "n8n shows some security/compliance signals, including privacy-oriented templates and published security documentation references, but the search evidence also surfaces a 2026 RCE vulnerability and lacks strong third-party enterprise compliance validation. UiPath appears stronger on enterprise governance, compliance controls, and trust-layer depth.",
+        "reasoning": "Search snippets show n8n has security documentation and privacy-related workflow content, which indicates baseline capability, but the available snippet evidence does not confirm broad certifications, analyst recognition, or enterprise governance maturity. A SentinelOne result highlights CVE-2026-27495 affecting n8n, which weighs against reliability of the security posture in this comparison. By contrast, UiPath's baseline includes AI Trust Layer, PII guardrails, audit trails, role-based access, and compliance frameworks. Because the evidence is partially indirect and snippet-limited, the score favors UiPath but with medium confidence rather than a maximum gap.",
+        "evidence": "A Jan. 30, 2026 comparison snippet says 'n8n Security Documentation (2025)' is referenced in a B2B automation comparison, indicating published security/compliance materials for n8n. A Jan. 24, 2026 LinkedIn article snippet references an 'AI privacy-minded router: PII detection for privacy, security, & compliance | n8n workflow template,' showing n8n-related privacy tooling/workflow support. A Feb. 27, 2026 SentinelOne result lists 'CVE-2026-27495: n8n Workflow Automation RCE Vulnerability,' indicating a publicly tracked remote-code-execution issue affecting n8n.",
         "sources": [
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions (Blck Alpaca)",
-          "https://www.knack.com/blog/n8n-vs-make/ (Knack)",
-          "https://community.n8n.io/t/best-practices-for-enterprise-google-gemini-standard-nodes-vs-vertex-ai/289642?tl=en (n8n Community)",
-          "https://stitchops.io/comparison/n8n-alternative (StitchOps)"
+          "https://whitehat-seo.co.uk/blog/zapier-vs-n8n-vs-make",
+          "https://www.linkedin.com/pulse/comparative-security-architecture-privacy-risk-n8n-versus-maginley-ti6ce",
+          "https://www.sentinelone.com/vulnerability-database/cve-2026-27495/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -734,32 +733,29 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3,
-        "rationale": "n8n is competitive on deployment flexibility because self-hosting and environment separation are meaningful strengths, but UiPath remains stronger in enterprise operations tooling and managed robot/orchestration operations. Overall this looks closer to parity than a decisive lead for either side.",
-        "reasoning": "The search results indicate n8n supports self-hosted and cloud deployment models, and a 2026 article specifically highlights separation across development, staging, and production for enterprise deployments. That gives n8n real credibility for operations teams wanting control over runtime environments. However, other snippets emphasize DevOps effort and ongoing maintenance, suggesting operational maturity is more dependent on internal engineering than with UiPath’s more turnkey enterprise operations model. UiPath’s Orchestrator, cloud/on-prem/hybrid support, and mature bot deployment/management stack justify a slight advantage, but not a runaway one because n8n’s deployment flexibility is clearly real.",
-        "evidence": "A Jun. 10, 2026 Blck Alpaca snippet says n8n supports separation across development, staging, and production, which is 'critical for enterprise deployments.' A Sep. 2, 2025 n8n Community result discusses customers self-hosting n8n in enterprise scenarios. A Feb. 23, 2026 n8n Community result references n8n Cloud plans including Business and Enterprise tiers. A comparison snippet states 'n8n requires DevOps expertise and constant maintenance,' indicating operational overhead for customers.",
+        "score": 4,
+        "rationale": "n8n is attractive for fast setup and developer-led deployment, but snippet evidence for enterprise deployment operations is sparse and often frames it as lighter-weight than more mature enterprise platforms. UiPath has clearer enterprise deployment flexibility and operational maturity.",
+        "reasoning": "The search results emphasize n8n's appeal to automation enthusiasts and fast-moving teams, with one 2026 article noting 'fast deployment & operations teams' and natural-language workflow creation. However, the evidence is thin on enterprise operational controls, release management, and hybrid/on-prem orchestration maturity. UiPath's baseline explicitly includes cloud, on-prem, hybrid, and air-gapped deployment through Automation Cloud and Orchestrator, which is more directly aligned to enterprise operations requirements. Because the available evidence is limited and some results are generic, confidence is low-to-medium; I set medium-low by using low confidence overall.",
+        "evidence": "A Mar. 15, 2026 result for open-source workflow automation tools says n8n is suited to 'Fast deployment & operations teams' and mentions 'Natural language workflow creation.' A Jan. 27, 2026 LinkedIn snippet says 'n8n enables powerful enterprise automation and knowledge-driven systems,' suggesting enterprise deployment use but without concrete operating-model detail. Search results did not surface strong snippet-level evidence of n8n-specific enterprise deployment controls comparable to mature orchestration platforms, indicating a documentation visibility gap in this topic.",
         "sources": [
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions (Blck Alpaca)",
-          "https://community.n8n.io/t/scaling-n8n-in-enterprise/180561?tl=en (n8n Community)",
-          "https://community.n8n.io/t/not-receiving-community-edition-license-key/268797 (n8n Community)",
-          "https://stitchops.io/comparison/n8n-alternative (StitchOps)"
+          "https://www.anything.com/blog/workflow-automation-tools-open-source",
+          "https://www.linkedin.com/posts/seanf_stop-treating-enterprise-ai-like-consumer-activity-7421980899296337920-nAJ5"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 3,
-        "rationale": "n8n shows credible scalability for API-driven workflows and has added monitoring/observability, but available evidence is mixed and often community- or review-driven rather than strong analyst proof of enterprise-grade reliability leadership. UiPath retains an advantage in large-scale operational maturity, yet n8n is not clearly outclassed.",
-        "reasoning": "Search snippets show n8n is described as scalable by users and third-party reviews, and a 2026 article notes platform updates focused on enterprise scalability requirements plus workflow monitoring and observability. Gartner Peer Insights snippets also describe n8n as providing value for teams seeking scalable automation. At the same time, some user-driven evidence mentions cost and architecture concerns as scale increases, and the strongest supporting claims are not from formal analyst writeups on reliability engineering. UiPath’s long enterprise RPA track record and orchestrated robot management support a modest advantage, but the evidence suggests near-parity rather than a decisive gap.",
-        "evidence": "A Jun. 10, 2026 Blck Alpaca snippet says recent n8n platform updates focus on 'enterprise scalability requirements' and add 'workflow monitoring and observability features.' A Jan. 20, 2026 Gartner Peer Insights snippet says n8n 'provides significant value for teams with technical skills who want scalable automation.' A Gartner compare-page snippet includes a favorable review calling n8n 'the most scalable and secure tool to automate your processes.' A Nov. 23, 2024 Reddit post snippet says a team started with n8n Cloud, added self-hosted instances as they grew, and solved error-handling headaches with their setup.",
+        "score": 4,
+        "rationale": "Available search evidence repeatedly contrasts n8n with more enterprise-grade platforms on elastic scaling, uptime, governance isolation, and reliability. UiPath is better positioned for large-scale, controlled automation operations.",
+        "reasoning": "A Workato comparison snippet explicitly states Workato has 'cloud-native, elastic scaling, 99.99% uptime' while marking n8n negatively and noting 'No governance or AI workload isolation' in the comparison context. A Camunda-vs-n8n article says n8n is faster and cheaper for simple use cases, but for enterprise-grade workflows Camunda is preferred, reinforcing limits at higher scale. Although these are competitor-authored or third-party comparisons rather than analyst benchmarks, the pattern is consistent: n8n is capable but not strongly evidenced as a top-tier enterprise scale/reliability platform. UiPath's enterprise RPA/orchestration footprint and large installed base support a UiPath advantage here.",
+        "evidence": "A 2026 Workato comparison snippet says Workato offers 'cloud-native, elastic scaling, 99.99% uptime' and shows n8n negatively in the 'Scalability & Reliability' section. The same Workato result says 'No governance or AI workload isolation' in the comparison context, indicating perceived limitations around production-grade controls for n8n. An Oct. 12, 2025 Camunda-vs-n8n article snippet says 'For simple use cases: n8n is faster and cheaper. For enterprise-grade workflows: Camunda,' implying n8n is less proven for heavier enterprise reliability demands.",
         "sources": [
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions (Blck Alpaca)",
-          "https://external.pi.gpi.aws.gartner.com/reviews/market/ai-agent-development-platforms-for-software-engineering/vendor/n8n (Gartner Peer Insights)",
-          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies/compare/n8n-vs-uipath (Gartner Peer Insights compare)",
-          "https://www.reddit.com/r/n8n/comments/1gy9jub/how_n8n_handles_scale_our_11month_journey_from/ (Reddit)"
+          "https://www.workato.com/insights/workato-vs-n8n",
+          "https://reunico.com/en/blog/camunda-vs-n8n/",
+          "https://www.flotorch.ai/blogs/best-agentic-ai-workflow-automation-tools-for-enterprises-in-2026"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -769,31 +765,27 @@
       {
         "category": "Connectivity & Integration",
         "score": 3,
-        "rationale": "n8n is genuinely strong on API-centric connectivity and breadth of integrations, making this one of its best areas against UiPath. UiPath still competes effectively through its larger enterprise integration estate and API/UI combination, so the result is near parity.",
-        "reasoning": "The snippets provide direct evidence that n8n has 600+ integrations and the ability to connect to any API, which is a meaningful strength for technical teams. Community discussion also shows users considering n8n when app APIs are absent, though this is exactly where UiPath’s native UI automation and RPA capabilities matter. UiPath’s baseline advantage is not just connector count but hybrid integration breadth: 1,000+ Integration Service connectors plus UI automation for systems without APIs. Because n8n appears very capable for API-driven integration, I score this as parity rather than a strong UiPath lead.",
-        "evidence": "A Sep. 23, 2025 Inkeep snippet says n8n offers '600+ integrations,' 'self-hosting capabilities,' and the ability to 'connect to any API.' A Jul. 3, 2024 n8n Community result discusses using n8n in RPA-like scenarios when apps do not have APIs, showing the product is often evaluated for integration gaps. A Mar. 17, 2025 Reddit snippet says a competing platform 'doesn't yet have as many integrations as n8n,' indicating n8n’s integration breadth is a recognized strength. A Jan. 15, 2025 UiPath forum snippet describes UiPath as 'much more powerful than N8N or any other cloud-only based product' in the context of API workflows and automation breadth.",
+        "rationale": "n8n is well known as an integration-centric workflow tool, but the search results for this exact topic were weak and did not surface clear snippet-level enterprise connector counts or direct n8n-vs-UiPath claims. Given n8n's strong integration orientation and UiPath's 1,000+ connectors, this is best scored as near parity with limited evidence.",
+        "reasoning": "The query results for this topic were notably sparse and noisy, so the assessment must remain conservative. n8n's market identity is workflow automation around APIs and triggers, which supports a credible baseline in connectivity, but the snippets retrieved here did not provide specific counts or certifications for enterprise integration breadth. UiPath's baseline includes 1,000+ Integration Service connectors across major enterprise systems, giving it a measurable enterprise breadth advantage. Because the direct evidence on n8n from search snippets is insufficient, I keep the score at parity-leaning-UiPath and set confidence low.",
+        "evidence": "The Connectivity & Integration searches returned sparse and mostly irrelevant results, creating a direct evidence gap for n8n on this topic. A user-provided/market-context inference from n8n's positioning supports that n8n is API- and trigger-centric, but the retrieved snippets did not quantify connector breadth. UiPath's known baseline includes '1,000+ Integration Service connectors,' which is a concrete comparison point absent from the n8n snippet evidence.",
         "sources": [
-          "https://inkeep.com/blog/ai-business-automation-tools (Inkeep)",
-          "https://community.n8n.io/t/n8n-as-an-rpa/49531?tl=en (n8n Community)",
-          "https://www.reddit.com/r/automation/comments/1jd4hxv/what_are_the_best_nocode_automation_platforms/ (Reddit)",
-          "https://forum.uipath.com/t/can-uipath-automate-workflows-like-n8n/819996 (UiPath Forum)"
+          "https://printepssw.com/tharstern-print-mis",
+          "https://www.instagram.com/tribisinc/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "n8n can deliver fast time-to-value for technical users thanks to visual workflows and templates, but the evidence suggests its UX is better suited to developer-leaning teams than broad enterprise citizen-automation audiences. UiPath is stronger for multi-persona enterprise adoption, while n8n remains competitive for technically skilled builders.",
-        "reasoning": "Third-party 2026 comparisons position n8n as having an intuitive interface and fast time-to-value, but the strongest snippet simultaneously contrasts it against Zapier’s 7,000+ integrations and one-click templates, implying the advantage is contextual rather than absolute. Community and Reddit snippets indicate n8n works well for simpler automations, yet can feel less ideal as complexity rises. UiPath’s differentiated UX story is broader because it spans Studio, StudioX, and Studio Web for pro devs, low-code builders, and business users. That supports a slight UiPath advantage overall, but n8n remains strong enough to keep the score at parity.",
-        "evidence": "An Apr. 10, 2026 Tech-Insider snippet says n8n has enterprise features, while Zapier offers 'one-click templates' and an 'intuitive interface' for fast time-to-value, placing n8n in a competitive but not dominant UX position. A Feb. 15, 2026 Reddit snippet says an experienced developer used n8n for 'simple' automations, implying strengths in quick workflow creation for technical users. A May 4, 2024 n8n Community feature request references improving user experience so users can fully leverage n8n for workflow management. A May 7, 2025 LinkedIn snippet references using n8n’s '$runIndex' and Wait node for workflow retries, showing practical usability for builders.",
+        "rationale": "n8n likely has an advantage for developer-friendly quick starts, but the retrieved search results for this specific topic were empty, preventing a strong evidence-based conclusion. UiPath counters with broader low-code/no-code tooling and enterprise-ready onboarding.",
+        "reasoning": "The searches for this topic returned no usable snippets, so the analysis must explicitly acknowledge the gap. n8n's broader market reputation suggests fast setup and a visual workflow UX for technical users, while UiPath offers Studio, StudioX, and Studio Web to serve coders and business users. Without direct snippet-level evidence on UX, onboarding speed, or customer outcomes, a score of 3 is the fairest defensible position. Confidence is low because this score leans on limited evidence and platform baselines rather than direct topical search results.",
+        "evidence": "Searches for 'n8n Time-to-Value & User Experience 2026' and 'n8n vs UiPath Time-to-Value & User Experience' returned no usable snippet evidence. Other retrieved snippets in adjacent topics describe n8n as suitable for 'fast deployment' and natural-language workflow creation, indirectly suggesting rapid setup for some users. UiPath's baseline includes Studio, StudioX, and Studio Web, supporting both technical and non-technical users in a way relevant to time-to-value and UX.",
         "sources": [
-          "https://tech-insider.org/n8n-vs-zapier-2026/ (Tech-Insider)",
-          "https://www.reddit.com/r/n8n/comments/1r5akr6/coding_vs_n8n_in_2026_feeling_the_hype_fade_what/ (Reddit)",
-          "https://community.n8n.io/t/collaborate-on-workflows-community-version/45483?tl=en (n8n Community)",
-          "https://www.linkedin.com/posts/simpsonwayne_had-an-interesting-challenge-this-week-that-activity-7325826400664367104-I7DC (LinkedIn)"
+          "https://www.anything.com/blog/workflow-automation-tools-open-source",
+          "https://www.uipath.com"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -803,14 +795,13 @@
       {
         "category": "Agentic Capabilities",
         "score": 3,
-        "rationale": "n8n has clearly added meaningful AI-agent and human-in-the-loop capabilities, making it more credible here than many lightweight integration tools. UiPath still appears stronger in enterprise-grade agentic orchestration and cross-agent/robot/person coordination, so the most defensible score is parity with a slight UiPath tilt.",
-        "reasoning": "The evidence shows n8n has 'increasingly powerful AI agent capabilities' in its visual node editor and introduced more granular human-in-the-loop control in early 2026. That is substantive progress, and it moves n8n beyond simple workflow automation. However, the snippets also show UiPath emphasizing agentic orchestration where AI agents, robots, and people work together at scale, and external comparisons mention UiPath’s use of computer vision and semantic understanding in new agentic capabilities. UiPath’s more complete orchestration baseline—Maestro, Agent Builder, Action Center—supports a slight edge, but not enough to call n8n weak.",
-        "evidence": "A Mar. 17, 2026 MindStudio snippet says n8n 'has added increasingly powerful AI agent capabilities to its visual node editor.' A Jan. 30, 2026 n8n Community announcement says builders of agentic flows now have 'more granular control over AI behavior' and can 'drop in human feedback exactly where it's' needed. A Mar. 10, 2025 UiPath LinkedIn snippet says UiPath agentic orchestration ensures 'AI agents, robots, and people work together' in a scalable and reliable way. A Mar. 1, 2026 Optimally AI snippet says UiPath’s new agentic capabilities use 'computer vision and semantic understanding.'",
+        "rationale": "n8n has credible momentum in AI/agentic workflow orchestration, including a 2026 SAP partnership announcement, but UiPath's agentic stack is broader and more enterprise-controlled. The evidence suggests meaningful competition, though UiPath remains stronger in orchestrated enterprise agent governance.",
+        "reasoning": "A May 12, 2026 n8n blog snippet explicitly says n8n partnered with SAP to bring 'Visual AI Workflow Orchestration to enterprise' and references agentic capabilities with process automation across SAP. Independent comparison content also frames UiPath's newer agentic capabilities around computer vision and semantic understanding, while UiPath's baseline includes Maestro, Agent Builder, LangGraph/OpenAI Agents integration, and Action Center HITL. n8n is clearly not absent here; it is investing and gaining ecosystem relevance. Still, UiPath's end-to-end agent orchestration, governance, and enterprise automation adjacency justify a slight UiPath edge rather than outright parity-breaking dominance.",
+        "evidence": "A May 12, 2026 n8n announcement says n8n partnered with SAP to bring 'Visual AI Workflow Orchestration to enterprise' and references 'agentic capabilities with process automation across SAP.' A Mar. 1, 2026 comparison snippet says 'UiPath's new agentic capabilities use computer vision and semantic understanding,' highlighting more advanced enterprise automation intelligence. A Jul. 18, 2025 UiPath result says UiPath is 'building and enabling customers to build AI agents' and has a roadmap bringing agentic capabilities into everyday operations.",
         "sources": [
-          "https://www.mindstudio.ai/blog/claude-code-vs-n8n-agentic-workflows-comparison (MindStudio)",
-          "https://community.n8n.io/t/new-human-in-the-loop-capabilities-add-fine-grained-control/258423?tl=en (n8n Community)",
-          "https://www.linkedin.com/posts/gsheldon_agentic-orchestration-platform-features-activity-7304946657278771201-gEcZ (LinkedIn)",
-          "https://optimally-ai.com/blog/agentic-automation-platforms-compare (Optimally AI)"
+          "https://blog.n8n.io/n8n-partners-with-sap-to-bring-visual-ai-workflow-orchestration-to-enterprise/",
+          "https://optimally-ai.com/blog/agentic-automation-platforms-compare",
+          "https://www.uipath.com/blog/rpa/gartner-magic-quadrant-rpa-report"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -820,14 +811,43 @@
       {
         "category": "BPM & Orchestration",
         "score": 4,
-        "rationale": "n8n is credible in developer-centric orchestration, but the evidence suggests it is not positioned as a full enterprise BPM leader versus UiPath’s broader orchestration and process-management stack. UiPath holds the advantage in end-to-end orchestration maturity and adjacent process capabilities.",
-        "reasoning": "n8n’s own messaging says it combines AI capabilities with business process automation, and its 2026 blog discusses key criteria for process orchestration tools. That confirms the company is active and relevant in orchestration. Still, external comparisons frame n8n as strong in API orchestration and developer-centric workflowing, while UiPath is more often associated with enterprise orchestration, RPA, and BPM-adjacent capabilities. UiPath’s combination of orchestration with process mining, task mining, human-in-the-loop routing, and agent coordination gives it broader business-process coverage than the snippet evidence shows for n8n.",
-        "evidence": "A Jun. 10, 2026 n8n blog snippet discusses 'core capabilities to look for in a process orchestration tool.' The n8n homepage snippet says the platform 'uniquely combines AI capabilities with business process automation.' An Apr. 9, 2026 Elementum snippet places n8n in a landscape spanning 'business process management (BPM) to open-source automation and developer-centric orchestration engines.' A Jun. 28, 2025 LinkedIn snippet says 'n8n, on the other hand, shines in the API orchestration features,' implicitly contrasting it with broader enterprise orchestration approaches.",
+        "rationale": "The limited search evidence places UiPath among dominant RPA platforms while BPM/orchestration engines are discussed as a separate class, with little proof that n8n matches enterprise BPM depth. UiPath has the more mature orchestration story for enterprise automation governance.",
+        "reasoning": "The primary snippet retrieved for this topic explicitly says 'UiPath, Automation Anywhere, and Blue Prism dominate this space' in reference to RPA, while separately listing BPM and orchestration engines like Camunda and Temporal. That framing suggests n8n is not strongly established in enterprise BPM analyst narratives. n8n certainly orchestrates workflows, but the search snippets did not surface concrete support for advanced BPM controls, conformance, or enterprise process orchestration depth. UiPath's Orchestrator, Action Center, and broader automation platform make a stronger enterprise orchestration case.",
+        "evidence": "A Jan. 20, 2026 LinkedIn article snippet says 'UiPath, Automation Anywhere, and Blue Prism dominate this space,' indicating stronger recognition in automation orchestration markets. The same snippet separates 'BPM & Orchestration Engines' such as Camunda and Temporal, suggesting a distinct category from lighter workflow tools. Searches did not surface strong snippet-level proof of n8n-specific BPM governance or analyst recognition on enterprise orchestration.",
         "sources": [
-          "https://blog.n8n.io/process-orchestration-tools/ (n8n Blog)",
-          "https://n8n.io/ (n8n)",
-          "https://www.elementum.ai/blog/n8n-alternatives (Elementum)",
-          "https://www.linkedin.com/posts/aysha-rasheed-9596b01b3_automation-uipath-n8n-activity-7344658193542782976-zegn (LinkedIn)"
+          "https://www.linkedin.com/pulse/rpa-vs-legacy-workflow-automation-cron-jobs-agentic-ai-rizwan-shah-w521f",
+          "https://www.uipath.com"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Testing & Evaluation (Functional + Performance)",
+        "score": 4,
+        "rationale": "Little direct evidence was found for n8n on formal functional/performance testing capabilities, while UiPath has an established Test Suite and enterprise testing/governance motion. The absence of n8n testing evidence itself is a meaningful competitive disadvantage for this topic.",
+        "reasoning": "Both searches for this topic returned no useful results, which means there is no snippet-level evidence supporting mature native testing and evaluation capabilities in n8n. For an enterprise automation platform, functional and performance testing support is important both for workflows and underlying systems. UiPath's baseline includes Test Manager and established testing capabilities adjacent to automation assets, giving it a more concrete position. Because this conclusion is driven partly by evidence absence rather than explicit negative proof, confidence is low.",
+        "evidence": "Searches for 'n8n Testing & Evaluation (Functional + Performance) 2026' and 'n8n vs UiPath Testing & Evaluation' returned no usable snippet evidence. No retrieved snippets identified native n8n capabilities for structured functional test management or performance evaluation. UiPath's baseline explicitly includes Test Manager and broader enterprise governance/testing support, creating a clearer documented position.",
+        "sources": [
+          "https://www.uipath.com",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies/compare/n8n-vs-uipath"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Monitoring & Observability",
+        "score": 3,
+        "rationale": "n8n has evidence of practical observability through source control, telemetry, Grafana dashboards, health checks, and log aggregation patterns, but UiPath offers more native enterprise observability and centralized analytics. This looks competitive, with UiPath ahead in polish and governance rather than basic capability.",
+        "reasoning": "The search results show n8n enterprise tiers support source control and that users/community members instrument n8n with Grafana dashboards, readiness endpoints, and telemetry. A job posting snippet referencing n8n architecture explicitly mentions configuring health checks and log aggregation, indicating real operational observability patterns around the platform. However, much of this appears ecosystem- or operator-driven rather than clearly surfaced as a deeply integrated native enterprise observability suite. UiPath's Insights, Orchestrator monitoring, and enterprise analytics give it a slight advantage, but n8n is credible enough to avoid a stronger UiPath lead score.",
+        "evidence": "A Jan. 9, 2026 article says 'Unlike Zapier, n8n (in enterprise tiers) supports source control,' which supports auditability and operational visibility workflows. A May 14, 2025 n8n community post references an 'Ultimate n8n Dev Container (with Debugging, Monitoring & Observability)' and 'Grafana Full Node.js Metrics Dashboard,' indicating real telemetry instrumentation. A job posting for an 'N8N Lead/Architect' mentions 'Configure health checks, log aggregation,' showing n8n deployments commonly integrate operational observability practices.",
+        "sources": [
+          "https://n8nlab.io/blog/zapier-vs-n8n-migration-reasons",
+          "https://community.n8n.io/t/n8n-grafana-full-node-js-metrics-dashboard-json-example-included/115366?tl=en",
+          "https://jobgether.com/offer/6a1762fecd512907df74c892-n8n-lead-architect"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -835,125 +855,95 @@
         "questions": ""
       },
       {
-        "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 2,
-        "rationale": "Limited native testing and evaluation tooling.",
-        "reasoning": "Score 2 because the product documentation emphasizes execution, scaling, and logging rather than a full test management lifecycle.",
-        "evidence": "n8n provides operational features such as execution log retention and controls over what execution data is saved, which help with debugging. Enterprise log streaming can push events to external observability stacks.",
-        "sources": [
-          "https://docs.n8n.io/hosting/scaling/execution-data/",
-          "https://docs.n8n.io/log-streaming/"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "Medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Monitoring & Observability",
-        "score": 3,
-        "rationale": "Decent observability via log streaming and execution data controls, but depth depends on your stack.",
-        "reasoning": "Score 3 because n8n can stream logs and exposes metrics/health endpoints, yet a unified enterprise observability experience requires integrating with external tooling.",
-        "evidence": "n8n's Log Streaming feature (enterprise) allows sending events to external logging tools. Scaling docs describe optional worker endpoints such as health checks and metrics.",
-        "sources": [
-          "https://docs.n8n.io/log-streaming/",
-          "https://docs.n8n.io/hosting/scaling/queue-mode/",
-          "https://docs.n8n.io/hosting/scaling/execution-data/"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "High",
-        "notes": "",
-        "questions": ""
-      },
-      {
         "category": "Traceability & Governance",
-        "score": 3,
-        "rationale": "Governance is available (projects/roles) but less comprehensive than enterprise automation suites.",
-        "reasoning": "Score 3 because RBAC and enterprise features exist, but full audit/governance often requires external controls.",
-        "evidence": "n8n documentation explains RBAC as controlling access to workflows and credentials by user roles and projects. Enterprise log streaming helps support auditability by sending workflow events to external systems.",
+        "score": 4,
+        "rationale": "n8n shows some governance-related signs such as enterprise source control support, but search evidence for full enterprise traceability, policy controls, and audit governance is limited. UiPath is stronger on audit trails, role-based access, trust controls, and governance depth.",
+        "reasoning": "The strongest relevant n8n snippet is that enterprise tiers support source control, which helps change traceability. But the topical searches themselves yielded little direct proof of robust native governance frameworks, approval management, or enterprise-grade audit/control features. UiPath's baseline directly lists role-based access, audit trails, AI Trust Layer, PII guardrails, and Insights analytics, all of which matter strongly for traceability and governance. The scoring therefore favors UiPath, while acknowledging that n8n has at least some traceability-enabling features.",
+        "evidence": "A Jan. 9, 2026 n8n migration article says 'n8n (in enterprise tiers) supports source control,' a concrete traceability-related capability. Searches specifically targeting 'Traceability & Governance' returned no strong direct snippet evidence of n8n-native enterprise governance frameworks. A 2025 comparison snippet referenced n8n in the context of 'governance' and 'enterprise readiness,' suggesting the topic is relevant but not proving comprehensive depth from snippet evidence alone.",
         "sources": [
-          "https://docs.n8n.io/user-management/rbac/",
-          "https://n8n.io/enterprise/",
-          "https://docs.n8n.io/log-streaming/"
+          "https://n8nlab.io/blog/zapier-vs-n8n-migration-reasons",
+          "https://www.stackai.com/blog/stack-ai-vs-n8n",
+          "https://www.uipath.com"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
-        "score": 1,
-        "rationale": "Minimal built-in process intelligence.",
-        "reasoning": "Score 1 because n8n does not offer native process mining/task mining.",
-        "evidence": "n8n's documentation covers execution log retention, pruning, and operational insights. There is no evidence of built-in process mining capabilities like event-log discovery, conformance checking, or task mining.",
+        "score": 5,
+        "rationale": "No meaningful evidence surfaced that n8n offers native process intelligence comparable to UiPath's process mining and task mining stack. UiPath has a clear and well-documented lead on this topic.",
+        "reasoning": "The process intelligence searches mostly surfaced UiPath references and generic analyst pages rather than n8n-native process mining capabilities. Gartner and KYP.ai snippets explicitly point to process intelligence as a recognized market area and describe UiPath's expansion into it via ProcessGold. In contrast, the retrieved snippets did not show n8n offering process mining, task mining, simulation, or conformance checking. Given UiPath's strong baseline in process mining and task mining, this is one of the clearest advantage areas.",
+        "evidence": "A KYP.ai snippet says 'UiPath built its reputation as a market-leading RPA platform and expanded into process intelligence through its 2021 acquisition of ProcessGold,' evidencing UiPath's native investment in this area. Gartner search results explicitly reference 'Process Intelligence Platforms' in the context of n8n vs UiPath market comparisons, indicating this is an established comparison dimension. No retrieved snippet identified n8n-native process mining, task mining, simulation, or conformance checking capabilities.",
         "sources": [
-          "https://docs.n8n.io/hosting/scaling/execution-data/",
-          "https://n8n.io/pricing/"
+          "https://kyp.ai/uipath-process-intelligence-alternatives/",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies/compare/n8n-vs-uipath"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
-        "score": 5,
-        "rationale": "Strong cost efficiency with execution-based pricing and open-source option.",
-        "reasoning": "Score 5 because pricing is usage/execution-based with unlimited users/workflows, and self-hosting can optimize infrastructure cost.",
-        "evidence": "n8n's pricing page describes plans where pricing is based on monthly workflow executions regardless of complexity, and includes unlimited users and workflows across plans.",
+        "score": 2,
+        "rationale": "n8n appears to have a cost and openness advantage, with multiple search results framing it as cheaper and attractive for self-hosted or focused-use scenarios. UiPath remains stronger functionally, but on licensing/TCO n8n likely has the edge for many API-centric automation cases.",
+        "reasoning": "Although the direct licensing/TCO queries returned sparse results, adjacent snippets repeatedly position n8n as faster and cheaper for simple use cases and as helpful for reducing vendor dependency and improving data sovereignty. Open-source and self-hosting options often translate into favorable TCO for engineering-led teams, especially when compared with broader enterprise automation suites. UiPath can still deliver better ROI when its deeper capabilities are fully used, but pure licensing and entry cost dynamics tend to favor n8n. Because the evidence is indirect and not pricing-sheet specific, confidence is medium-low.",
+        "evidence": "An Oct. 12, 2025 Camunda-vs-n8n article snippet says 'For simple use cases: n8n is faster and cheaper,' directly supporting a TCO advantage in some scenarios. A Jun. 10, 2026 n8n workflow article says the approach provides 'long-term value while addressing enterprise concerns about vendor dependency and data sovereignty,' supporting self-host/open ecosystem value. An Aug. 15, 2025 n8n deep-dive snippet references SaaS scenarios where customers can 'buy enterprise licenses for advanced features,' implying a flexible model versus all-in enterprise suite procurement.",
         "sources": [
-          "https://n8n.io/pricing/"
+          "https://reunico.com/en/blog/camunda-vs-n8n/",
+          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
+          "https://jimmysong.io/blog/n8n-deep-dive/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
         "score": 3,
-        "rationale": "Broad horizontal applicability for integration-heavy teams; less suited for regulated, BPM-heavy enterprise programs out of the box.",
-        "reasoning": "Score 3 because it can automate across many apps and APIs, but deeper regulated workflow governance is a separate effort.",
-        "evidence": "n8n's enterprise messaging focuses on integrating secrets vaults, defining fine-grained access rules, and streaming workflow logs. At the same time, compliance needs in regulated industries require additional controls.",
+        "rationale": "n8n appears broadly applicable across common business functions, but the search results did not provide strong industry-specific enterprise proof points. UiPath has wider documented enterprise domain breadth, though n8n remains versatile.",
+        "reasoning": "The evidence here is limited but points to n8n being useful across a range of business tasks and integrations, especially for workflow-centric use cases. A general article mentions sales operations, finance workflows, and healthcare processes when discussing automation value, indicating breadth, but not formal vertical solutions. UiPath's baseline breadth across SAP, Citrix, documents, mining, testing, and enterprise governance supports wider applicability in regulated and operationally complex domains. Because the n8n evidence is not especially verticalized, I score this as near parity with a slight UiPath lean in maturity.",
+        "evidence": "A general market article says n8n can support 'sales operations, finance workflows, healthcare processes,' suggesting multi-domain applicability. n8n's API/workflow orientation implies broad use across SaaS-heavy business domains, though the retrieved snippets did not show packaged industry solutions. UiPath's documented enterprise strengths in SAP, Citrix, document understanding, and governance imply stronger fit for complex cross-industry transformation programs.",
         "sources": [
-          "https://n8n.io/enterprise/",
-          "https://docs.n8n.io/log-streaming/"
+          "https://www.katprotech.com/what-is-n8n-and-when-should-you-use-it/",
+          "https://www.uipath.com"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
         "score": 3,
-        "rationale": "Solid long-term potential as an integration fabric, with risk tied to self-host ops and security hygiene.",
-        "reasoning": "Score 3 because the platform can be durable as an integration layer, but long-term value depends on operational maturity.",
-        "evidence": "n8n provides scalable architectures (queue mode) and enterprise features (RBAC, SSO, log streaming) that support long-lived deployments.",
+        "rationale": "n8n has a compelling long-term value story around openness, ecosystem extensibility, self-hosting, and lower dependency risk, but UiPath offers stronger platform depth and enterprise maturity for transformation at scale. The tradeoff suggests rough parity depending on buyer profile.",
+        "reasoning": "Search results explicitly mention n8n's long-term value in addressing vendor dependency and data sovereignty and highlight ecosystem/community extension potential. At the same time, another result says for focused use cases n8n works well, while platforms with broader enterprise capabilities may fit evolving needs better. UiPath's long-term value comes from platform consolidation and enterprise-grade breadth, whereas n8n's comes from flexibility and openness. This is a classic segmentation case, so parity is the most defensible score.",
+        "evidence": "A Jun. 10, 2026 article says n8n provides 'long-term value while addressing enterprise concerns about vendor dependency and data sovereignty.' An Apr. 4, 2025 n8n community discussion mentions 'Extending n8n capabilities by enabling contributors,' pointing to ecosystem-driven extensibility as a value driver. A Sep. 8, 2025 LinkedIn snippet says 'What n8n does well: - Rapid setup for common tools,' but frames the discussion as 'When to Move Beyond n8n for Enterprise Workflow Automation,' suggesting limits as needs expand.",
         "sources": [
-          "https://docs.n8n.io/hosting/scaling/queue-mode/",
-          "https://docs.n8n.io/user-management/rbac/",
-          "https://www.techradar.com/pro/security/thousands-of-n8n-instances-under-threat-from-top-security-issue"
+          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
+          "https://community.n8n.io/t/your-thoughts-on-community-extensions-for-n8n/96928?tl=en",
+          "https://www.linkedin.com/posts/asimrazvi_n8n-stepfunctions-temporal-activity-7370845416973631488-__bw"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "High agility for building/iterating integrations and automations.",
-        "reasoning": "Score 4 because workflows are easy to change and scale with worker pools, and governance features can be layered on as you grow.",
-        "evidence": "n8n's queue mode architecture allows scaling by adding or removing workers as workload changes. Enterprise RBAC and SSO provide basic guardrails for teams.",
+        "score": 3,
+        "rationale": "n8n is well aligned to agility for API-triggered workflows and rapid iteration, but the direct evidence for this exact topic was sparse. UiPath offers broader adaptability when change spans UI, documents, human approvals, and cross-system orchestration.",
+        "reasoning": "The only directly relevant snippet says 'n8n handles trigger and API based flows nicely on the open source' in a discussion linked to business adaptability and agility. That supports a credible case for rapid change in engineering-led integration scenarios. However, there was little additional evidence around enterprise change management, business-user agility, or cross-functional adaptability. UiPath's broader modality coverage—API, UI, docs, agents, and HITL—means it may adapt better to heterogeneous enterprise processes, balancing n8n's speed with wider applicability.",
+        "evidence": "A May 27, 2026 Quora snippet says 'n8n handles trigger and API based flows nicely on the open source,' directly supporting agility in event/API-driven scenarios. Searches for this topic otherwise returned sparse evidence, limiting confidence in a stronger conclusion. UiPath's documented breadth across UI automation, APIs, documents, agents, and approvals implies stronger adaptability for more varied enterprise change requirements.",
         "sources": [
-          "https://docs.n8n.io/hosting/scaling/queue-mode/",
-          "https://docs.n8n.io/user-management/rbac/",
-          "https://docs.n8n.io/hosting/securing/set-up-sso/"
+          "https://www.quora.com/What-are-the-benefits-of-workflow-standardization-in-enterprises",
+          "https://www.uipath.com"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       }
