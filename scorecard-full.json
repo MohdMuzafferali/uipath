@@ -1648,13 +1648,13 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "Camunda shows credible enterprise security and compliance positioning, but the available snippet-only evidence is limited and does not clearly establish an advantage over UiPath. UiPath appears at least competitive given its stronger published governance, AI Trust Layer, auditability, and deployment flexibility baseline.",
-        "reasoning": "Search snippets show Camunda emphasizing enterprise security, compliance, and operations tooling in 2026 materials, and Camunda 8.9 release notes reference security, backup, and compliance requirements. However, the evidence available here is mostly vendor-authored and snippet-level rather than detailed third-party validation. Against UiPath, the comparison hinges on breadth of enterprise governance and compliance controls across automation and AI, where UiPath's baseline includes RBAC, audit trails, PII guardrails, and broad deployment options. Because the retrieved evidence does not prove either a clear Camunda lead or a clear UiPath lead on this specific topic, parity is the most defensible score.",
-        "evidence": "Camunda's April 7, 2026 assessment guide snippet says the platform has 'strong enterprise credentials, including security, compliance, and operations tooling.' Camunda 8.9 release notes snippet references 'security, backup, and compliance requirements' and notes storage considerations in Helm deployments. A May 22, 2026 article about Camunda 7 end of life says enterprises in regulated sectors like finance and insurance still heavily rely on Camunda 7, implying adoption in compliance-sensitive environments.",
+        "rationale": "Camunda shows credible enterprise security and compliance posture in 2025-2026 messaging, but the snippet evidence is broad and less specific than UiPath’s documented governance stack. UiPath’s stronger explicit enterprise controls and compliance-oriented product packaging give it a slight edge.",
+        "reasoning": "Search snippets show Camunda emphasizing 'strong enterprise credentials, including security, compliance, and operations tooling' and release notes referencing security, backup, and compliance requirements for Camunda 8.9 deployments. However, the available snippet-level evidence does not expose detailed certifications, trust-layer controls, or broad governance depth comparable to UiPath’s AI Trust Layer, PII guardrails, audit trails, and enterprise governance tooling. Camunda is particularly credible in regulated sectors and enterprise orchestration, but its evidence here is more platform-positioning than concrete control detail. That supports a slight UiPath advantage rather than a decisive gap.",
+        "evidence": "Camunda’s April 2026 assessment guide says the platform has 'strong enterprise credentials, including security, compliance, and operations tooling.' Camunda 8.9 release notes reference 'security, backup, and compliance requirements' for deployments. A May 2026 Camunda 7 end-of-life article says enterprises in regulated sectors like finance and insurance still heavily rely on Camunda 7.",
         "sources": [
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/ (Camunda)",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/ (Camunda 8.9 Release Notes)",
-          "https://ntconsultcorp.com/camunda-7-end-of-life/ (NTConsult)"
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/",
+          "https://ntconsultcorp.com/camunda-7-end-of-life/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1663,229 +1663,225 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4,
-        "rationale": "Camunda offers flexible SaaS and Self-Managed deployment options with strong Kubernetes-native operational model, but operational burden on self-hosted deployments is higher.",
-        "reasoning": "Camunda 8 is available as SaaS (fully managed by Camunda) or Self-Managed via Kubernetes/Helm, Docker, or JAR. SaaS provides zero-downtime upgrades and 99.9% SLA. Self-Managed gives full control for regulated/on-prem environments. Process versioning is first-class — new versions deploy while old instances finish. However, Self-Managed requires Kubernetes expertise and carries higher operational overhead than UiPath's Automation Suite.",
-        "evidence": "Camunda documentation confirms SaaS and Self-Managed deployment options for Camunda 8. SaaS tiers carry a 99.9% SLA with sub-minute RTO. Camunda 8.8 introduced streamlined deployment options. Self-Managed uses Helm charts for Kubernetes deployment and supports Docker and JAR-based installation.",
-        "uipath_advantage": "UiPath's Automation Suite provides a comparable on-premises/cloud deployment option with Orchestrator as the central management plane. UiPath also offers hybrid deployment and dedicated cloud environments, and its operational tooling (Orchestrator, Automation Cloud) is more purpose-built for enterprise automation operations at scale.",
+        "score": 3,
+        "rationale": "Camunda demonstrates solid enterprise deployment and operations credibility, especially around enterprise-scale deployment, Helm/Kubernetes operations, and modern orchestration deployment patterns. UiPath remains competitive through broader deployment flexibility and a more mature packaged operations model across RPA and AI services.",
+        "reasoning": "The snippets show Camunda stressing enterprise-scale deployment, operational continuity, and Helm chart updates to keep deployments secure and operational. Camunda 8.9 release notes also mention backup and storage considerations, signaling operational maturity for platform teams. But the evidence is still mostly infrastructure-centric and oriented toward orchestration runtime operations rather than a broader end-to-end automation operating model. UiPath’s stronger packaging across Automation Cloud, Orchestrator, hybrid/on-prem deployment, and broader administrative controls supports a parity-to-slight-UiPath view.",
+        "evidence": "Camunda’s April 2026 assessment guide cites 'security, compliance, and operations tooling' as enterprise credentials. CamundaCon 2026 promotion highlights 'enterprise-scale deployment' in platform roadmap messaging. Camunda’s March 2026 Helm chart update says it helps deployments remain 'secure and operational' despite Bitnami image distribution changes.",
         "sources": [
-          "https://docs.camunda.io/docs/self-managed/about-self-managed/",
-          "https://camunda.com/pricing/",
-          "https://camunda.com/blog/2025/03/streamlined-deployment-with-camunda-8-8/"
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/",
+          "https://camunda.com/press_release/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling/",
+          "https://camunda.com/blog/2026/03/camunda-8-helm-chart-and-bitnami-sub-charts/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Camunda's Zeebe engine is highly scalable with active-active replication and no central database bottleneck, making it enterprise-grade for high-throughput process execution.",
-        "reasoning": "Zeebe, Camunda's orchestration engine, uses event streaming with a peer-to-peer, no-central-database architecture enabling horizontal scaling without bottlenecks. Active-active broker replication across availability zones with automatic leader election and synchronous replication provides near-zero RPO. Intuit and Barclays run mission-critical workloads on it. SaaS production tiers carry a 99.9% SLA with sub-minute RTO.",
-        "evidence": "Camunda's platform page states Zeebe is built on event streaming with a peer-to-peer architecture for horizontal scaling. Active-active broker replication across availability zones provides near-zero RPO and sub-minute RTO on SaaS. Camunda claims 700+ enterprise customers including 9 of the top 10 US banks running mission-critical processes.",
-        "uipath_advantage": "UiPath's Orchestrator and Automation Cloud are also enterprise-grade for scalability, with additional operational controls (pause/resume/retry) specific to RPA and agentic workloads. UiPath's scalability advantage is in coordinating robots, agents, and human tasks simultaneously — beyond pure process execution throughput.",
+        "score": 3,
+        "rationale": "Camunda has strong credibility in scalable process orchestration, with reviewer language specifically citing flexibility and scalability. UiPath is similarly enterprise-proven at scale, so the most supportable position from snippet evidence is parity.",
+        "reasoning": "Available evidence includes Gartner Peer Insights snippet language that Camunda offers strong BPMN features with 'high flexibility and scalability,' plus Camunda and partner content focused on scalable process orchestration. This supports real enterprise scalability strength, especially for process-centric, developer-led architectures. However, the snippets do not provide quantitative reliability claims or broader scale references that would clearly exceed UiPath’s large enterprise install base and mature bot orchestration history. With both vendors demonstrably enterprise capable, parity is the fairest score.",
+        "evidence": "A 2026 Gartner Peer Insights snippet says Camunda offers 'strong BPMN features and support with high flexibility and scalability.' NTConsult’s May 2026 page promotes 'Camunda services for scalable process orchestration.' Camunda’s 'Agentic Orchestration in Action' page lists 'Scalable execution' as a key feature.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://camunda.com/blog/2025/04/camunda-87-agentic-orchestration-for-enterprise/"
+          "https://www.gartner.com/reviews/market/business-process-automation-tools/vendor/camunda",
+          "https://ntconsultcorp.com/camunda-orchestration-services/",
+          "https://camunda.com/de/agentic-orchestration-in-action/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 3,
-        "rationale": "Camunda provides a growing connector ecosystem and supports REST/MCP/A2A integrations, but its integration depth is less comprehensive than dedicated integration platforms.",
-        "reasoning": "Camunda offers pre-built connectors for ERP, CRM, ITSM, and major LLM providers via its Camunda Marketplace. Connectors support REST, webhooks, and RPA tools. Camunda is agent-agnostic, supporting any LLM via MCP, A2A, or REST. However, Camunda's connector catalog is narrower than UiPath's 1,000+ Integration Service connectors and lacks standardized authentication management across all integrations.",
-        "evidence": "Camunda Marketplace provides pre-built connectors for major enterprise systems. Camunda 8's connector framework supports REST, webhooks, RPA, and AI endpoints. Camunda announced SAP integration and task automation capabilities including RPA and IDP in October 2024. The platform supports MCP and A2A protocols for AI agent connectivity.",
-        "uipath_advantage": "UiPath Integration Service provides 1,000+ pre-built connectors with standardized authentication and authorization management across all UiPath products, plus a Connector Builder for custom APIs. UiPath's integration governance with policy controls is more mature than Camunda's connector marketplace model.",
+        "score": 4,
+        "rationale": "Camunda has credible enterprise connectivity, especially for ERP/CRM-linked orchestration and developer-centric integration patterns, but UiPath’s 1,000+ connectors and integration-service breadth are materially broader. That gives UiPath a demonstrable advantage.",
+        "reasoning": "Search snippets indicate Camunda and Gartner materials describing native connectivity and integration capabilities for linking core enterprise systems such as ERP and CRM. Camunda also references OpenAI connectors and developer-oriented extensibility. Still, the available evidence does not point to an integration catalog comparable in scale to UiPath’s Integration Service ecosystem. UiPath’s breadth across enterprise SaaS, productivity suites, ITSM, ERP, and low-code integration assets supports a clear but not overwhelming lead.",
+        "evidence": "A Gartner BOAT market snippet says the platform has 'native connectivity and integration capabilities for linking core enterprise systems such as ERP and CRM.' Camunda’s 2024 AI announcement mentions 'OpenAI Connectors.' Camunda’s April 2026 assessment guide positions it among enterprise automation platforms with agentic and integration features.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://en.wikipedia.org/wiki/Camunda"
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies",
+          "https://camunda.com/press_release/camunda-unveils-ai-capabilities-to-streamline-enterprise-journey-from-siloed-automation-to-end-to-end-orchestration/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "Camunda is developer-friendly with strong BPMN tooling, but requires significant technical expertise for production deployment, limiting business-user accessibility.",
-        "reasoning": "Camunda Modeler provides collaborative BPMN/DMN modeling for both business and technical users. Camunda Copilot generates BPMN from natural language. The free community edition enables rapid prototyping. However, production deployment requires Kubernetes expertise, and Camunda 8's migration from 7 introduces complexity. The platform is more developer-centric than low-code automation platforms.",
-        "evidence": "Camunda provides a free 30-day SaaS trial and community edition for quick starts. Camunda Copilot generates BPMN diagrams from natural language prompts. The Developers Portal provides quickstarts and tutorials. However, analyst reviews note that non-technical users face a steeper learning curve with BPMN modeling and Kubernetes operations.",
-        "uipath_advantage": "UiPath provides StudioX for no-code automation and Studio Web for browser-based development, serving a broader range of users from citizen developers to professional RPA engineers. UiPath's time-to-value for non-technical users is faster through pre-built templates, attended automation, and guided AI-powered development.",
+        "rationale": "Camunda highlights acceleration, ease-of-use improvements, and customer success support, but it remains more technical and process-modeling-centric than UiPath’s broader low-code/no-code portfolio. The evidence supports rough parity with a slight UiPath UX edge.",
+        "reasoning": "Camunda’s 2024 AI launch explicitly says Camunda Copilot, Copilot Modeler, and OpenAI connectors accelerate implementation and increase ease of use. Additional snippets mention accelerated time-to-value and reduced cognitive load through success programs and self-serve capabilities. These are meaningful improvements, but Camunda is still more developer/BPMN oriented than UiPath’s Studio, StudioX, and Studio Web spectrum. Because both vendors now emphasize faster onboarding and AI-assisted development, parity is the safest score.",
+        "evidence": "Camunda’s May 2024 announcement says 'Camunda Copilot, Copilot Modeler, OpenAI Connectors and more accelerate process orchestration implementation, increase ease-of-use.' A Camunda jobs snippet says the company helps enterprises 'accelerate time-to-value.' Camunda Success messaging in July 2025 cites a technology foundation that 'accelerates time to value' and 'reduces cognitive load.'",
         "sources": [
-          "https://camunda.com/blog/2025/12/getting-started-with-local-c8-development-from-zero-to-orchestrating/",
-          "https://camunda.com/pricing/"
+          "https://camunda.com/press_release/camunda-unveils-ai-capabilities-to-streamline-enterprise-journey-from-siloed-automation-to-end-to-end-orchestration/",
+          "https://jobs.ashbyhq.com/camunda/d2b301bc-ec29-46e7-baf0-7e68b6c4b1e2",
+          "https://camunda.com/blog/2025/07/camunda-success-scale-automation-agentic-orchestration/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
-        "score": 2,
-        "rationale": "Camunda has moved aggressively into agentic orchestration with Camunda 8.8 BPMN-based agent integration, but UiPath holds a broader enterprise agentic stack advantage.",
-        "reasoning": "Camunda released enterprise-grade agentic automation in Camunda 8.7/8.8, introducing Agentic BPMN for orchestrating AI agents within process flows, ad-hoc subprocesses for dynamic agent decision-making, and Camunda Copilot for AI-assisted process generation. ProcessOS analyzes existing systems to surface automation opportunities. Camunda is agent-agnostic, supporting any framework via MCP/A2A/REST. However, UiPath's native Agent Builder, Action Center HITL, and dedicated agentic tooling provide a more complete enterprise agentic stack.",
-        "evidence": "Camunda announced enterprise-grade agentic automation in April 2025 with Camunda 8.7, introducing agentic process orchestration capabilities. Camunda 8 documentation includes AI agents under \"agentic orchestration.\" CamundaCon 2026 focused on the theme \"The Agentic Orchestration Conference.\" Camunda was named a Visionary (not Leader) in the Gartner Magic Quadrant for BOAT 2025.",
-        "uipath_advantage": "UiPath differentiates with Maestro for multi-agent orchestration, native Agent Builder for low-code and coded agent development, Action Center for human-in-the-loop governance, and broader execution capabilities across UI, API, documents, and SAP/Citrix beyond Camunda's BPMN-centric orchestration model.",
+        "score": 3,
+        "rationale": "Camunda has become strongly positioned around agentic orchestration, including ProcessOS, adaptive AI agent coordination, and human-in-the-loop governance. UiPath also has substantial agentic capabilities, so current snippet evidence points to parity.",
+        "reasoning": "Camunda’s 2026 messaging is heavily centered on agentic orchestration, with ProcessOS announced as an 'agentic operating system for AI-first enterprise transformation.' Supporting snippets cite adaptive AI agent coordination, human-in-the-loop governance, and real-time monitoring. This is substantial evidence that Camunda is not merely adding superficial AI features. However, UiPath’s Maestro, Agent Builder, LangGraph/OpenAI integrations, and Action Center provide a similarly credible and concrete agentic stack, so parity is most defensible.",
+        "evidence": "Business Wire reports Camunda announced 'ProcessOS, an agentic operating system for AI-first enterprise transformation' in May 2026. Camunda’s 'Agentic Orchestration in Action' lists 'Adaptive AI agent coordination' and 'Human-in-the-loop governance' as key features. Camunda’s April 2026 assessment guide says 'Camunda provides process orchestration and agentic' capabilities.",
         "sources": [
-          "https://camunda.com/blog/2025/10/enterprise-grade-agentic-automation-is-here/",
-          "https://docs.camunda.io/docs/components/agentic-orchestration/ai-agents/",
-          "https://www.morningstar.com/news/business-wire/20260409558241/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling"
+          "https://www.businesswire.com/news/home/20260520352437/en/Camunda-announces-ProcessOS-an-agentic-operating-system-for-AI-first-enterprise-transformation",
+          "https://camunda.com/de/agentic-orchestration-in-action/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 5,
-        "rationale": "Camunda is best-in-class for BPMN-native process orchestration — the process model IS the executable process, with DMN for decisions and Zeebe as the distributed engine.",
-        "reasoning": "Camunda's core strength is BPMN 2.0 as an executable, portable, open standard. The diagram approved by business is exactly what runs in production with no translation layer. DMN handles decision tables. Zeebe is a distributed, peer-to-peer orchestration engine. Process versioning is first-class. Camunda is used by 700+ enterprises including 9 of the top 10 US banks. Camunda is positioned as a Visionary in the 2025 Gartner Magic Quadrant for BOAT and rated 5/5 in Orchestration by Forrester.",
-        "evidence": "Camunda's platform page describes BPMN as simultaneously a visual stakeholder-readable diagram and an executable XML specification. Camunda was named a Visionary in Gartner Magic Quadrant for BOAT 2025 and rated 5/5 in Orchestration by Forrester. The Zeebe engine provides no-central-database distributed orchestration. Camunda markets itself as \"The Business Orchestration Company.\"",
-        "uipath_advantage": "UiPath Maestro also uses BPMN/DMN for executable process modeling, matching Camunda's core strength on this dimension. UiPath differentiates by combining BPMN orchestration with native RPA, agent execution, and document understanding in one platform — while Camunda is purely an orchestration layer requiring external tools for execution.",
+        "score": 2,
+        "rationale": "Camunda remains especially strong in BPM and orchestration, with market perception favoring it as a developer-centric process orchestration platform. On this topic specifically, Camunda holds a slight advantage over UiPath.",
+        "reasoning": "Multiple snippets position Camunda as the 'enterprise platform for agentic orchestration' and specifically the 'developer-favorite process orchestration platform.' This aligns with Camunda’s longstanding BPMN-centric heritage and strong reputation in complex workflow orchestration. UiPath has expanded orchestration significantly, but its market identity is still broader automation/RPA rather than pure BPM/orchestration leadership. Because UiPath is credible but Camunda’s specialization is sharper here, a slight Camunda edge is justified.",
+        "evidence": "CamundaCon 2026 promotion describes Camunda as 'the enterprise platform for agentic orchestration.' A May 2026 industry comparison snippet calls Camunda 'the developer-favorite process orchestration platform.' Camunda’s assessment guide distinguishes 'agentic orchestration platforms' from broader automation suites and positions Camunda in that orchestration category.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://camunda.com/bpmn-expertise/",
-          "https://www.morningstar.com/news/business-wire/20260409558241/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling"
+          "https://camunda.com/press_release/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling/",
+          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 2,
-        "rationale": "Camunda provides basic process testing via Operate but lacks a dedicated enterprise test suite for functional and performance automation testing.",
-        "reasoning": "Camunda Operate provides process monitoring and instance management. Camunda supports process versioning and canary rollouts for testing new versions against production traffic. However, Camunda does not offer a dedicated test automation suite comparable to UiPath's Test Cloud, Autopilot for Testers, or self-healing automation capabilities. Testing is primarily developer-centric via unit tests against the Zeebe engine.",
-        "evidence": "Camunda documentation covers process monitoring via Operate and process versioning for staged rollouts. Camunda 8 supports deployment of new process versions while older instances continue running. However, no dedicated functional or performance test automation product is documented. Community resources reference JUnit-based process testing for developer use.",
-        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, Autopilot for Testers (AI-assisted test design), test governance via Test Manager, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools in 2025 — a market where Camunda has no comparable offering.",
+        "score": 4,
+        "rationale": "Camunda has some evidence of POC and performance evaluation practices, but the snippet evidence does not show a robust dedicated testing platform. UiPath has the clearer demonstrable advantage because of its specific testing and evaluation product portfolio.",
+        "reasoning": "The available snippets for Camunda on this topic are thin and mostly indirect: one POC-oriented blog mentions targeting multiple integrations with a functional test, and another 2026 article references assessing whether systems function as expected and meet performance objectives. That suggests testing awareness, not a market-leading testing capability stack. UiPath, by contrast, has Test Manager and a recognized position in automation lifecycle governance that is more specific to functional and performance evaluation. Given the limited direct evidence for Camunda here, UiPath has the advantage.",
+        "evidence": "Camunda’s February 2024 POC blog says 'one functional test can target several integration' points. A May 2026 Camunda 7 end-of-life article says assessment involves evaluating whether systems 'function as expected and meet performance' goals. Camunda 8.9 release notes indicate ongoing feature updates, but snippets do not show a dedicated enterprise testing suite.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://docs.camunda.io/docs/self-managed/about-self-managed/"
+          "https://camunda.com/blog/2024/02/picking-perfect-process-camunda-proof-of-concept/",
+          "https://ntconsultcorp.com/camunda-7-end-of-life/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 3,
-        "rationale": "Camunda provides solid process monitoring via Operate and Optimize, but enterprise observability requires integration with external tooling.",
-        "reasoning": "Camunda Operate provides real-time monitoring of process instances, incident management, and variable inspection. Camunda Optimize (enterprise) provides analytics, dashboards, and process performance reporting. Camunda integrates with external observability stacks. However, end-to-end observability across agents, robots, and humans requires external tools, unlike UiPath's centralized Automation Cloud logging.",
-        "evidence": "Camunda's platform includes Operate for process monitoring, Tasklist for human task management, and Optimize for analytics. The Camunda platform documentation describes real-time process monitoring, audit logging, and reporting. Zeebe provides built-in audit trails for every process execution path.",
-        "uipath_advantage": "UiPath provides centralized logging and monitoring across Automation Cloud for all automation types (robots, agents, APIs) with unified audit logs, Insights analytics, and AI Trust Layer LLM observability. UiPath's monitoring covers the full execution layer including robot performance, agent traces, and human task completion — beyond Camunda's process-focused view.",
+        "rationale": "Camunda shows credible monitoring and observability capabilities, including real-time monitoring and integrations with observability tooling, but UiPath is similarly strong in enterprise operations visibility. The evidence supports parity.",
+        "reasoning": "Relevant snippets mention IBM Instana business monitoring for Camunda environments and list 'real-time monitoring' as a key feature in Camunda’s agentic orchestration materials. This suggests legitimate runtime visibility rather than purely static process design. However, snippet evidence is limited on built-in observability depth, alerting, and cross-layer analytics. UiPath’s operational analytics and orchestration telemetry are also mature, so neither vendor clearly separates based only on these search results.",
+        "evidence": "A September 2023 Camunda post discusses 'Observing Camunda Environments with IBM Instana Business Monitoring.' Camunda’s 'Agentic Orchestration in Action' lists 'Real-time monitoring' as a key feature. Camunda’s 2026 assessment guide continues to emphasize operations tooling as part of enterprise credentials.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://research.com/software/reviews/camunda"
+          "https://camunda.com/blog/2023/09/observing-camunda-environments-ibm-instana-business-monitoring/",
+          "https://camunda.com/de/agentic-orchestration-in-action/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 4,
-        "rationale": "Camunda provides strong process-level governance with automatic audit trails for every process instance, RBAC, and compliance support for regulated industries.",
-        "reasoning": "Camunda captures complete audit trails automatically for every process instance — which path was taken, which decisions were made, which agents acted, which humans approved. RBAC controls access via role-based policies. Camunda is used in financial services, healthcare, insurance, and government under EU AI Act, HIPAA, BCBS 239, and similar frameworks. SOC 2 Type II and ISO 27001 underpin the governance model.",
-        "evidence": "Camunda's platform documentation states every process instance captures a complete audit trail automatically with decision path, agent actions, and human approvals. Camunda confirms use in regulated industries under EU AI Act and HIPAA without custom audit instrumentation. SOC 2 Type II and ISO 27001 certifications support compliance governance.",
-        "uipath_advantage": "UiPath adds governance beyond process-level tracing with AI Trust Layer for LLM policy enforcement, AgentOps scoped identities for agents, CI/CD pipeline traceability, and Orchestrator-level RBAC covering robots, agents, APIs, and people in one governance model — broader than Camunda's process-centric audit trail.",
+        "score": 3,
+        "rationale": "Camunda has visible governance and traceability messaging, especially for regulated industries and responsible AI orchestration, but UiPath’s governance stack is more explicitly productized. That suggests near parity with a modest UiPath edge.",
+        "reasoning": "Camunda’s 2025-2026 content directly references AI governance, enterprise governance challenges, and the importance of traceability in regulated industries. This indicates the vendor understands governance as a first-class requirement for orchestration and agentic systems. Still, snippet evidence does not expose the same level of concrete governance mechanisms that UiPath markets through AI Trust Layer, audit trails, and policy controls. The balance of evidence supports a close contest rather than a strong vendor lead.",
+        "evidence": "Camunda’s June 2025 governance post says it explores specific features 'from agent orchestration to' AI governance and control. NTConsult’s May 2026 page says 'In highly regulated industries, traceability and governance are' important in Camunda deployments. A March 2026 Camunda blog says the enterprise challenge was not just technical complexity, 'but governance.'",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://camunda.com/platform/use-cases/replace-legacy-bpms/"
+          "https://camunda.com/blog/2025/06/responsible-ai-at-scale-camunda-governance-and-control/",
+          "https://ntconsultcorp.com/camunda-orchestration-services/",
+          "https://camunda.com/blog/2026/03/operate-with-confidence-camunda-8-9-alpha5/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
         "score": 3,
-        "rationale": "Camunda introduced ProcessOS for process discovery and analytics, but this is newer and less mature than established process mining platforms.",
-        "reasoning": "Camunda's ProcessOS analyzes existing systems, operational data, and documentation to surface how processes actually work, identify automation opportunities, and generate improvement proposals. It integrates with Camunda's BPMN modeling for a closed-loop process intelligence approach. However, ProcessOS is newer than dedicated process mining platforms like UiPath's Process Mining, which has conformance checking, variant analysis, and task mining.",
-        "evidence": "Camunda's platform page describes ProcessOS as analyzing existing systems and operational data to discover how processes actually run and identify automation opportunities. This is positioned as part of the end-to-end Camunda platform. However, no third-party analyst coverage or detailed product documentation confirms the depth of ProcessOS compared to established process mining tools.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is recognized as a Leader in Gartner's 2025 Magic Quadrant for Process Mining — a market position Camunda has not achieved.",
+        "rationale": "Camunda’s 2026 messaging suggests an emerging intelligence layer for discovering and continuously improving processes, but the snippet evidence is high-level. UiPath’s more explicit process and task mining assets keep this at parity.",
+        "reasoning": "Camunda press snippets say it is introducing an intelligence layer that 'discovers, re-engineers, and continuously improves enterprise processes.' That is directionally strong and relevant to process intelligence. However, the snippet evidence does not clearly expose equivalent breadth to UiPath’s end-to-end Process Mining, task capture, conformance checking, and simulation positioning. Since Camunda appears to be strengthening this area but the details are limited in snippets, parity is the most defensible score.",
+        "evidence": "Camunda press snippets say the company introduced 'an intelligence layer that discovers, re-engineers, and continuously improves enterprise processes.' Camunda’s May 2026 blog says enterprises are beginning a 'great process re-engineering' effort around AI. TCS event messaging says Camunda helps enterprises make AI real through 'intelligent process orchestration.'",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://camunda.com/blog/2025/04/camunda-87-agentic-orchestration-for-enterprise/"
+          "https://camunda.com/about/press/",
+          "https://camunda.com/blog/2026/05/the-great-process-re-engineering-has-begun/",
+          "https://www.tcs.com/who-we-are/events/tcs-at-camundacon-2026"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Low",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Camunda offers an attractive open-source community edition but enterprise licensing costs are opaque and can be significant, with Operate module requiring additional investment.",
-        "reasoning": "Camunda Community Edition is Apache 2.0 licensed — free for development and evaluation. Enterprise SaaS and Self-Managed require custom-quoted contracts. AWS Marketplace lists approximately $175,000/year as a starting point. The Operate monitoring module requires additional licensing on top of base pricing, effectively doubling minimum costs from $50K to $100K for production use. Multi-year discounts of 15-25% are negotiable.",
-        "evidence": "Camunda pricing analysis from April 2026 shows enterprise contracts typically ranging from $50,000 to $200,000+ per year. The Operate module for production monitoring requires additional licensing beyond the base platform. AWS Marketplace lists ~$175,000/year as a starting point. Community Edition is free under Apache 2.0 for non-production use.",
-        "uipath_advantage": "UiPath's licensing is more transparent with published pricing tiers, though complexity comes from multiple unit types. UiPath offers more deployment flexibility for cost optimization (attended vs. unattended, cloud vs. on-prem). The total platform value (RPA + Process Mining + Test Suite + IXP) in one license is broader than Camunda's orchestration-focused platform.",
+        "rationale": "Camunda can be attractive on flexibility and customization, but public snippet evidence on pricing and TCO is mixed and not definitive. Without stronger direct evidence, this topic looks roughly neutral versus UiPath.",
+        "reasoning": "One 2026 pricing-analysis snippet says enterprise customers find value in Camunda’s capabilities and 'licensing model and unlimited customization,' while Camunda’s own content discusses lowering total cost of ownership and time to market versus traditional IT solutions. At the same time, public pricing clarity is limited, and third-party comparisons indicate negotiated pricing rather than transparent packaging. UiPath also faces enterprise pricing complexity, so neither vendor clearly wins from snippet-only evidence. Confidence is limited because the strongest pricing material is third-party and not deeply detailed in snippets.",
+        "evidence": "A 2026 pricing analysis says users find value in Camunda’s 'licensing model and unlimited customization.' Camunda’s May 2025 blog says the platform can lower 'TCO (total cost of ownership)' and shorten time to market. A 2026 workflow orchestration comparison says there is 'No public pricing' and enterprise tiers are negotiated directly.",
         "sources": [
-          "https://automationatlas.io/answers/camunda-pricing-explained-2026/",
           "https://checkthat.ai/brands/camunda/pricing",
-          "https://camunda.com/pricing/"
+          "https://camunda.com/blog/2025/05/the-benefits-of-using-camunda-compared-to-traditional-it-solutions/",
+          "https://www.elementum.ai/blog/best-workflow-orchestration-tools"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Camunda has strong applicability in regulated industries (financial services, healthcare, insurance, government) and technology companies requiring standards-based process orchestration.",
-        "reasoning": "Camunda is used by 700+ enterprises including 9 of the top 10 US banks and major organizations in financial services, insurance, healthcare, manufacturing, telecoms, and public sector. Use cases span loan processing, claims management, order fulfillment, compliance monitoring, and microservices orchestration. Camunda runs under EU AI Act, HIPAA, BCBS 239, and similar frameworks in regulated industries.",
-        "evidence": "Camunda's CamundaCon 2026 featured practitioners from Deutsche Telekom, Atlassian, Swiss Life, Panasonic, and Commerzbank. Camunda claims 700+ enterprise customers including 9 of the top 10 US banks. Camunda is used in financial services, healthcare, insurance, and government under regulatory frameworks requiring audit trails.",
-        "uipath_advantage": "UiPath has broader industry applicability through purpose-built industry solutions across financial services, healthcare, retail, supply chain, and manufacturing, combined with RPA capabilities for legacy system automation that Camunda's pure orchestration model cannot address without RPA partners.",
+        "score": 3,
+        "rationale": "Camunda is clearly used in complex enterprise and regulated environments, but snippet evidence on cross-industry packaged applicability is broad rather than detailed. UiPath’s wider automation footprint across functions and industries keeps this at parity.",
+        "reasoning": "The search results show Camunda used in finance and complex systems, with explicit mention of regulated industries and enterprise automation use cases. That demonstrates domain relevance, especially where orchestration and BPM matter. But the snippets do not show strong out-of-the-box industry solution breadth or packaged vertical accelerators. UiPath’s broad customer base and automation applicability across front, middle, and back office functions support an overall parity assessment.",
+        "evidence": "NTConsult’s May 2026 page says Camunda supports scalable orchestration with real use cases 'in finance, and complex systems.' A May 2026 Camunda 7 article notes reliance by enterprises in regulated sectors like 'finance and insurance.' Camunda’s June 2019 article references 'wide domain-applicability' of BPMN/Zeebe concepts.",
         "sources": [
-          "https://www.morningstar.com/news/business-wire/20260409558241/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling",
-          "https://camunda.com/platform/use-cases/replace-legacy-bpms/"
+          "https://ntconsultcorp.com/camunda-orchestration-services/",
+          "https://ntconsultcorp.com/camunda-7-end-of-life/",
+          "https://camunda.com/blog/2019/06/real-world-bpmn-minecraft/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Camunda's open standards foundation (BPMN/DMN, Zeebe) and agent-agnostic architecture provide strong long-term value as process logic remains portable across technology changes.",
-        "reasoning": "Camunda's key long-term value proposition is portability: process logic expressed in standard BPMN remains portable across vendors and runtimes. Camunda is agent-agnostic — swap AI models or frameworks without touching process logic. The open-source Zeebe engine ensures no proprietary lock-in on the execution layer. Camunda achieved revenues over €100M and growing enterprise adoption including 9 of the top 10 US banks.",
-        "evidence": "Camunda's platform documentation emphasizes BPMN portability as a core design principle. Camunda achieved revenues over €100M in 2024 per Wikipedia. Camunda 8's agent-agnostic design allows swapping LLMs and frameworks without rewriting process logic. The source-available Zeebe engine prevents vendor lock-in at the orchestration layer.",
-        "uipath_advantage": "UiPath's long-term value is anchored in its comprehensive platform breadth (RPA + AI + Process Mining + Test Suite) and continuous innovation in agentic automation. UiPath's BPMN-based Maestro also provides standards-based portability, while adding native robot execution and document understanding that Camunda requires external partners to provide.",
+        "score": 3,
+        "rationale": "Camunda presents a credible long-term platform story through customer success, LTS support, and ongoing AI-agent investments, but its transition from Camunda 7 to 8 introduces some platform-evolution complexity. UiPath’s broader platform continuity balances this out.",
+        "reasoning": "The evidence shows Camunda emphasizing long-term, self-sustained success and operational best practices, while also maintaining an LTS path for Camunda 7.24 as the last minor Camunda 7 release. At the same time, end-of-life and migration messaging implies customers must navigate a meaningful platform transition. This does not negate long-term value, but it does create adoption friction relative to a broader unified-platform story. With continued innovation in enterprise-grade AI agents, Camunda remains credible, so parity is appropriate.",
+        "evidence": "Camunda’s July 2025 success post says it helps customers achieve 'long-term, self-sustained success.' Camunda documentation says 'Camunda 7.24 LTS' is the last minor release of Camunda 7. A February 2025 announcement describes Camunda 7.24 as the 'Long Term Support release' and points customers toward Camunda 8 value.",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://en.wikipedia.org/wiki/Camunda"
+          "https://camunda.com/blog/2025/07/camunda-success-scale-automation-agentic-orchestration/",
+          "https://docs.camunda.org/enterprise/announcement/",
+          "https://camunda.com/blog/2025/02/camunda-7-enterprise-end-of-life-extension/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "Camunda enables rapid process adaptation through visual BPMN modeling reviewed and deployed in hours, with process versioning enabling zero-downtime updates.",
-        "reasoning": "Camunda's BPMN-first approach allows business stakeholders to review and approve process changes visually before deployment. Process versioning enables deploying new versions while old instances complete — zero-downtime updates. Canary rollouts test new versions against production traffic. SaaS engine upgrades are zero-downtime. Camunda Copilot generates BPMN from natural language for faster iteration.",
-        "evidence": "Camunda documentation describes process versioning as first-class — deploy new versions while older instances finish, migrate in-flight instances via Operate, and run canary rollouts. Camunda Copilot generates BPMN diagrams from natural language or legacy code. SaaS engine upgrades are described as zero-downtime.",
-        "uipath_advantage": "UiPath provides comparable agility through Maestro's BPMN-based orchestration with additional adaptability through its broader automation toolkit — adapting both processes (via BPMN) and the underlying automation (via RPA, agents, APIs) in one platform. UiPath's CI/CD pipeline support also enables DevOps-style automation delivery.",
+        "score": 3,
+        "rationale": "Camunda is well aligned to business adaptability through orchestration and process redesign, but the snippet evidence remains largely directional. UiPath is comparably strong when adaptability depends on combining bots, APIs, AI, and process insights.",
+        "reasoning": "Camunda’s messaging consistently ties orchestration to re-engineering business processes for an AI-first world, and older migration messaging explicitly claims improved business agility and adaptability. This makes Camunda highly relevant for change-heavy operating models. Yet the snippet evidence does not provide sufficiently differentiated proof that Camunda outperforms UiPath in enterprise agility outcomes. Since UiPath also spans process insight plus execution flexibility, parity is the most balanced conclusion.",
+        "evidence": "Camunda’s April 2026 'central business orchestration layer' post positions the platform as an enterprise orchestration layer. A March 2024 Camunda migration post says solution accelerators enhance 'business agility and adaptability.' Camunda’s December 2024 enterprise automation blog says enterprises can build 'scalable and intelligent workflows that address intricate business challenges.'",
         "sources": [
-          "https://camunda.com/platform/",
-          "https://camunda.com/bpmn-expertise/"
+          "https://camunda.com/blog/2026/04/case-for-a-central-business-orchestration-layer-without-recentralizing-your-architecture/",
+          "https://camunda.com/blog/2024/03/why-migrating-camunda-8-good-for-business/",
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       }
@@ -1894,13 +1890,13 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "Automation Anywhere presents strong enterprise security, encryption, governance, and compliance messaging, making it broadly competitive with UiPath on this topic. The snippet evidence does not clearly show either vendor with a decisive advantage, so parity is the safest score.",
-        "reasoning": "The retrieved results point to Automation Anywhere positioning security and compliance as core enterprise platform capabilities, including governance, RBAC controls, and encryption of data in transit and at rest. A 2026 press release also frames its AI-driven process enhancements as operating across secure enterprise systems, reinforcing enterprise-readiness. UiPath's baseline is similarly strong, with enterprise governance, audit trails, compliance frameworks, and AI Trust Layer protections. Since the available evidence is mostly vendor-sourced and insufficiently detailed to prove a market-recognized lead for either side, a score of 3 best reflects the evidence weight.",
-        "evidence": "Automation Anywhere's 2026 buyer's guide snippet says its platforms provide enterprise-grade operations and 'comprehensive security.' Automation Anywhere Community product updates snippet explicitly mentions 'Governance, RBAC controls, and compliance.' Automation Anywhere's cloud security blog says Enterprise A2019 includes comprehensive security and encrypts data both in transit and at rest.",
+        "rationale": "Automation Anywhere has solid enterprise security and compliance positioning, with RBAC, governance, encrypted data handling, and secure enterprise-system access in recent messaging. UiPath remains very competitive because its governance and trust controls are more explicitly differentiated at the platform level.",
+        "reasoning": "Automation Anywhere’s snippets reference governance, RBAC controls, compliance, secure enterprise systems, and encryption at rest and in transit. That is credible enterprise evidence, though some security detail comes from older material while newer snippets are more positioning-oriented. UiPath’s enterprise governance baseline includes AI Trust Layer, PII guardrails, audit trails, and deployment flexibility, which is more concretely differentiated in this comparison frame. As a result, the vendors appear broadly comparable on enterprise security posture.",
+        "evidence": "Automation Anywhere community updates mention 'Governance, RBAC controls, and compliance.' A May 2026 press release says EnterpriseClaw can run across 'secure enterprise systems.' Automation Anywhere’s cloud security blog says Enterprise A2019 encrypts data 'both in transit and at rest.'",
         "sources": [
-          "https://www.automationanywhere.com/rpa/agentic-ai-platforms (Automation Anywhere)",
-          "https://community.automationanywhere.com/product-updates (Automation Anywhere Community)",
-          "https://www.automationanywhere.com/company/blog/product-insights/cloud-security-and-compliance-with-data-privacy (Automation Anywhere)"
+          "https://community.automationanywhere.com/product-updates",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-collaborates-cisco-nvidia-okta-and-openai-launching",
+          "https://www.automationanywhere.com/company/blog/product-insights/cloud-security-and-compliance-with-data-privacy"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1909,221 +1905,225 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4,
-        "rationale": "Automation Anywhere offers cloud-native SaaS with strong enterprise operational features including 16 global datacenters, 99.9% SLA, and 4-hour RTO/RPO disaster recovery.",
-        "reasoning": "Automation 360 is cloud-native with a microservices architecture supporting continuous frictionless updates. 16 global datacenters with contractually guaranteed 99.9% SLA and 4-hour RTO/RPO disaster recovery. RBAC for operational governance. The platform supports attended and unattended automation with centralized management through Control Room. On-premises deployment is available for regulated environments.",
-        "evidence": "Automation Anywhere's security and trust page describes a high-availability cloud-native microservices architecture with 16 global datacenters, >99.9% SLA (contractually guaranteed), and 4-hour RTO/RPO disaster recovery. The platform supports cloud SaaS and on-premises Control Room deployment.",
-        "uipath_advantage": "UiPath and Automation Anywhere have comparable deployment and operations capabilities. UiPath differentiates with Automation Suite for containerized on-premises deployment (OpenShift/Kubernetes) and a more comprehensive operational control plane through Orchestrator supporting agents, robots, APIs, and human tasks.",
+        "score": 3,
+        "rationale": "Automation Anywhere shows strong deployment credibility with hybrid cloud-native architecture and flexible deployment options. UiPath is similarly mature operationally, so the evidence points to parity.",
+        "reasoning": "May 2026 launches describe Automation Anywhere’s 'hybrid cloud-native deployment architecture,' and Gartner snippets mention 'flexible deployment options.' These are meaningful indicators of enterprise deployment maturity and operational readiness. However, the snippets do not establish a materially stronger operational model than UiPath’s Automation Cloud plus on-prem/hybrid capabilities. With both vendors clearly enterprise-ready, parity is the most supportable score.",
+        "evidence": "A May 2026 press release says EnterpriseClaw is powered by Automation Anywhere’s 'hybrid cloud-native deployment architecture.' A Gartner Peer Insights snippet cites 'Flexible deployment options and automation mode for enterprise capability.' Automation Anywhere’s May 2026 platform update says it helps enterprises operate with AI across processes, not just deploy isolated tools.",
         "sources": [
-          "https://www.automationanywhere.com/products/security"
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-collaborates-cisco-nvidia-okta-and-openai-launching",
+          "https://www.gartner.com/reviews/market/robotic-process-automation/vendor/automation-anywhere",
+          "https://www.prnewswire.com/news-releases/automation-anywhere-unveils-2026-platform-enhancements-to-run-ai-driven-processes-across-the-enterprise-302776109.html"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Automation Anywhere's cloud-native architecture with 99.9% SLA and global datacenters provides strong enterprise scalability, with Mozart Orchestrator enabling parallel execution for high-volume workloads.",
-        "reasoning": "Automation 360's microservices architecture supports horizontal scaling. Mozart Orchestrator's \"Split and Merge\" feature (April 2026) enables parallel process execution for high-volume agentic automation. 16 global datacenters ensure geographic redundancy. Contractually guaranteed 99.9% SLA with disaster recovery. Enterprise-scale RPA deployments across thousands of bots are proven.",
-        "evidence": "Automation Anywhere's security page describes high-availability cloud-native microservices with 16 global datacenters and contractually guaranteed SLA. April 2026 product updates highlight Mozart Orchestrator's Split and Merge feature for parallel execution in agentic automation scenarios. Automation Anywhere has proven enterprise-scale RPA deployments.",
-        "uipath_advantage": "Both platforms provide enterprise-grade scalability. UiPath differentiates with Orchestrator's centralized queue management and robot coordination, combined with Maestro's multi-agent orchestration capabilities that coordinate robots, agents, APIs, and people simultaneously at scale.",
+        "score": 3,
+        "rationale": "Automation Anywhere is strongly positioned for scalable enterprise automation and orchestration, with multiple snippets explicitly calling out scalability and reliability. UiPath is equally proven at scale, producing an overall parity assessment.",
+        "reasoning": "Automation Anywhere’s 2026 RPA and orchestration pages explicitly mention scalability and reliability, and Gartner review snippets say the platform is suitable for complex enterprise use cases. That is solid evidence of enterprise-class runtime capability. UiPath, however, is also deeply proven in large-scale unattended automation, enterprise management, and heterogeneous environments. Since the search results do not show a clear leader, parity is the most balanced conclusion.",
+        "evidence": "Automation Anywhere’s RPA page says enterprise-grade RPA adds 'scalability, reliability.' A January 2026 orchestration blog says orchestration brings the 'scalability, reliability, and impact' isolated automations cannot deliver. Gartner snippet language says the platform is 'scalable and suitable for handling complex enterprises automation use cases.'",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://community.automationanywhere.com/pathfinder-blog-85009/april-2026-product-club-mozart-orchestrator-s-split-and-merge-feature-for-parallel-process-execution-91318"
+          "https://www.automationanywhere.com/rpa/robotic-process-automation",
+          "https://www.automationanywhere.com/company/blog/automation-ai/enterprise-automation-how-orchestration-transforms-work",
+          "https://www.gartner.com/reviews/market/robotic-process-automation/vendor/automation-anywhere"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "Automation Anywhere provides strong connectivity through its integration ecosystem, API-based automation capabilities, and partner integrations across enterprise systems.",
-        "reasoning": "Automation 360 supports API automation, attended and unattended desktop automation, and integration with major enterprise systems including SAP, Salesforce, ServiceNow, and others. The platform includes an integration marketplace. Multimodal AI Skills (.38/.39 releases) enhance connectivity for document and image-based automation. LLM integrations support Azure OpenAI, Google Vertex AI, AWS Bedrock, and SageMaker.",
-        "evidence": "Automation Anywhere community updates list multimodal AI skills for sending files and images in 2026. ISO 42001 certification covers integrations with Azure OpenAI, Google Vertex AI, AWS Bedrock, and AWS SageMaker. The platform supports attended and unattended automation across web, desktop, and API-based systems.",
-        "uipath_advantage": "UiPath Integration Service provides 1,000+ pre-built connectors with standardized authentication management — a more comprehensive and governed integration layer than Automation Anywhere's integration approach. UiPath's connector governance policies and Connector Builder for custom APIs provide additional enterprise control.",
+        "score": 3,
+        "rationale": "Automation Anywhere has credible enterprise integration strength, especially in coordinating AI agents, systems, and enterprise technologies, but UiPath’s connector breadth is broader and more explicit. The balance of evidence still lands near parity.",
+        "reasoning": "Automation Anywhere positions itself around battle-tested integration capabilities and shows recent product work on inbound/outbound connections and leading enterprise-technology integrations. That supports strong connectivity for enterprise automation. However, the snippets do not expose a connector catalog breadth comparable to UiPath’s 1,000+ Integration Service connectors. Because Automation Anywhere’s platform still appears strong in system coordination, parity rather than UiPath lead is the fairest score.",
+        "evidence": "Automation Anywhere’s 2026 buyer’s guide says enterprise automation requires 'battle-tested infrastructure, governance, and integration capabilities.' A March 2026 product club post references 'Outbound connections' and enterprise IDP considerations. A May 2026 announcement says EnterpriseClaw 'integrates with leading enterprise technology.'",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://community.automationanywhere.com/product-updates"
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms",
+          "https://community.automationanywhere.com/pathfinder-blog-85009/march-2026-product-club-mcp-inbound-support-91245",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-collaborates-cisco-nvidia-okta-and-openai-launching"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "Automation Anywhere delivers strong time-to-value with citizen developer tools, pre-built bot templates, and a low-code/no-code approach through Automation 360.",
-        "reasoning": "Automation Anywhere AARI (Automation Anywhere Robotic Interface) provides attended automation with a conversational UI for citizen developers. Pre-built automation packages accelerate deployment. The platform's low-code approach and marketplace of pre-built bots reduce development time. Developer-first features (.38 release) accelerate agentic automation development for technical users.",
-        "evidence": "Automation Anywhere's April 2026 product updates highlight developer-first features for agentic automation. The platform has historically emphasized citizen developer accessibility through AARI and pre-built automation packages. IDC MarketScape recognized Automation Anywhere as a Leader in Business Automation Platforms 2025.",
-        "uipath_advantage": "UiPath provides StudioX (no-code), Studio (low-code/pro-code), and Studio Web (browser-based) serving a broader development audience. UiPath's time-to-value advantage is in its integrated development-to-production lifecycle including Process Mining discovery, Test Suite validation, and Orchestrator deployment in one governed workflow.",
+        "score": 3,
+        "rationale": "Automation Anywhere emphasizes democratized AI agent creation and faster time to value, but UiPath has an equally strong low-code/no-code and citizen developer story. The evidence supports parity.",
+        "reasoning": "The strongest snippet here is Automation Anywhere’s June 2024 announcement claiming new AI Studio and second-generation GenAI process models enable democratized agent creation and '3x faster time' outcomes. That is compelling acceleration messaging. Still, UiPath’s Studio family and training ecosystem provide a very mature user-experience spectrum from pro devs to business users. With both vendors investing heavily in usability and acceleration, neither clearly leads from snippet evidence alone.",
+        "evidence": "Automation Anywhere’s June 2024 announcement says new AI Studio enables 'Democratized AI Agent Creation' and '3x Faster Time.' Automation Anywhere’s homepage calls it the 'most deployed agentic process automation system' delivering secure end-to-end automation. RPA messaging emphasizes speed gains, accuracy improvements, and enterprise value from automation.",
         "sources": [
-          "https://community.automationanywhere.com/product-updates",
-          "https://www.automationanywhere.com/resources/analyst-reports"
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-unveils-new-ai-automation-enterprise-system-empowering",
+          "https://www.automationanywhere.com/home",
+          "https://www.automationanywhere.com/rpa/robotic-process-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
         "score": 3,
-        "rationale": "Automation Anywhere is strongly positioned in Agentic Process Automation with dedicated platform investments, making this competitive parity rather than a clear lead for either side.",
-        "reasoning": "Automation Anywhere has branded its platform around Agentic Process Automation (APA), with dedicated agentic AI capabilities, Mozart Orchestrator for parallel agentic execution, and multimodal AI skills. Developer-first features in 2026 accelerate agentic automation development. IDC MarketScape Leader for Business Automation Platforms 2025. However, UiPath's Maestro, Agent Builder, Action Center, and AI Trust Layer provide a more comprehensive agentic governance stack.",
-        "evidence": "Automation Anywhere markets its platform as \"the leading provider of Agentic Process Automation (APA).\" April 2026 product updates highlight Mozart Orchestrator Split and Merge for parallel agentic execution. Developer-first features in .38 and multimodal AI skills in .39 releases advance agentic capabilities. Automation Anywhere is named a Gartner Magic Quadrant Leader for RPA for the seventh consecutive year in 2025.",
-        "uipath_advantage": "UiPath differentiates with Maestro as a dedicated agentic orchestration layer with BPMN/DMN modeling, native Agent Builder for both low-code and coded Python agent development, and Action Center for governed human-in-the-loop workflows. UiPath's AI Trust Layer provides additional governance for LLM traffic that Automation Anywhere does not have an equivalent for.",
+        "rationale": "Automation Anywhere has a very strong 2026 agentic automation narrative with APA, EnterpriseClaw, AI agents, and enterprise orchestration. UiPath is similarly strong and productized here, so parity is the most defensible score.",
+        "reasoning": "Search snippets consistently describe Automation Anywhere as an 'Agentic Process Automation' leader, with 2026 enhancements that unify orchestration, context, process design, and governance so enterprises can coordinate AI agents, automations, and systems. Additional evidence includes reported AI-driven bookings and Gartner reviewer language referencing the platform as an Agentic Process Automation System. This shows genuine momentum and productization, not just marketing. UiPath’s Maestro and Agent Builder stack makes this a head-to-head category rather than a clear-vendor win.",
+        "evidence": "A May 2026 press release says Automation Anywhere announced new capabilities for its 'Agentic Process Automation (APA) platform.' Another May 2026 announcement says new capabilities 'unify orchestration, context, process design, and governance' to coordinate AI agents, automations, and systems. Automation Anywhere reported '61% of Q4 Software Bookings from AI' in April 2026.",
         "sources": [
-          "https://www.automationanywhere.com/rpa/agentic-process-automation",
-          "https://community.automationanywhere.com/pathfinder-blog-85009/april-2026-product-club-mozart-orchestrator-s-split-and-merge-feature-for-parallel-process-execution-91318",
-          "https://www.automationanywhere.com/resources/analyst-reports"
+          "https://www.prnewswire.com/news-releases/automation-anywhere-unveils-2026-platform-enhancements-to-run-ai-driven-processes-across-the-enterprise-302776109.html",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-unveils-2026-platform-enhancements-run-ai-driven-processes",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-reports-61-q4-software-bookings-ai-enterprises-deploy"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
         "score": 3,
-        "rationale": "Automation Anywhere provides workflow orchestration through Mozart Orchestrator but lacks BPMN/DMN standards-based process modeling as a core platform strength.",
-        "reasoning": "Automation Anywhere's Mozart Orchestrator provides process orchestration for agentic and RPA workflows, including parallel execution via Split and Merge. However, Automation Anywhere is primarily an RPA and agentic automation platform rather than a BPMN-native orchestration suite. Process modeling is workflow-centric rather than standards-based BPMN, which limits interoperability and business stakeholder visibility compared to BPMN-first platforms.",
-        "evidence": "Automation Anywhere's April 2026 community updates describe Mozart Orchestrator's Split and Merge feature for parallel process execution. Automation Anywhere does not publicly document BPMN 2.0 or DMN standards support as core platform capabilities. The platform focuses on agentic process automation rather than standards-based business process modeling.",
-        "uipath_advantage": "UiPath Maestro uses BPMN as an OMG open standard for executable process modeling — the diagram is the executable process. DMN handles decision management. This standards-based approach provides business stakeholder visibility, process portability, and compliance auditability that Automation Anywhere's proprietary orchestration approach cannot match.",
+        "rationale": "Automation Anywhere has materially strengthened orchestration and cross-system coordination, but it is still better known for automation/RPA than pure BPM leadership. UiPath is comparable, making parity the best fit.",
+        "reasoning": "The APA platform page says Automation Anywhere orchestrates goal-based AI agents, RPA, APIs, and human expertise across systems. A 2026 industry article also cites capabilities for orchestration, governance, and process simulation. That is substantial orchestration evidence, but less clearly rooted in traditional BPM leadership than Camunda or Appian. Because UiPath also combines orchestration across bots, APIs, AI, and people, neither vendor clearly separates here.",
+        "evidence": "Automation Anywhere’s APA platform says it combines and orchestrates 'goal-based AI agents, RPA, APIs, and human expertise in one' system. Automation Today reports Imagine 2026 highlighted 'capabilities for orchestration, governance, and process simulation.' Automation Anywhere’s agentic workflows guide says orchestration is required to coordinate execution across enterprise work.",
         "sources": [
-          "https://community.automationanywhere.com/pathfinder-blog-85009/april-2026-product-club-mozart-orchestrator-s-split-and-merge-feature-for-parallel-process-execution-91318"
+          "https://www.automationanywhere.com/products/agentic-process-automation-system",
+          "https://automationtoday.net/featuredarticles/automation-anywhere-lands-in-dallas-for-imagine-2026/",
+          "https://www.automationanywhere.com/rpa/agentic-workflows"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 3,
-        "rationale": "Automation Anywhere provides automation testing capabilities but lacks a dedicated enterprise test suite comparable to UiPath's Test Cloud.",
-        "reasoning": "Automation Anywhere supports testing of bot workflows and includes audit logging for compliance verification. The platform's Process Discovery capability helps validate automation accuracy. However, Automation Anywhere does not have a dedicated enterprise test automation product like UiPath's Test Cloud with functional and performance testing, self-healing automation, and Test Manager governance.",
-        "evidence": "Automation Anywhere's ISO 42001 certification covers Process Discovery for validating AI automation accuracy. The platform includes audit logging and compliance monitoring. However, no dedicated test automation suite comparable to UiPath Test Cloud, Autopilot for Testers, or enterprise testing governance is documented in public product materials.",
-        "uipath_advantage": "UiPath Test Cloud provides dedicated enterprise functional and performance testing with self-healing automation, Autopilot for Testers, Test Manager governance, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools — a market where Automation Anywhere has no comparable standalone offering.",
+        "rationale": "Automation Anywhere has explicit 2026 evidence for AI evaluation and benchmarking, which is stronger than many automation vendors. UiPath still has a broader packaged enterprise testing posture, so overall this lands at parity.",
+        "reasoning": "The most relevant snippet is Automation Anywhere’s 2026 platform update, which says 'AI Evaluations' are available for testing, monitoring, and improving AI-driven workflows, allowing organizations to assess agent performance. A companion blog discusses AI agent benchmarks and evaluation approaches in enterprise settings. This is concrete and recent evidence, especially for agentic systems. UiPath still retains strength through Test Manager and test lifecycle governance, but Automation Anywhere’s recent work keeps the category close.",
+        "evidence": "Automation Anywhere’s May 2026 platform update says 'AI Evaluations, available today, allow organizations to assess agent performance.' The same announcement says the capabilities help enterprises 'test, monitor, and improve AI-driven workflows.' A May 2026 blog discusses 'AI Agent Benchmarks: The 2026 Enterprise Evaluation Guide.'",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-unveils-2026-platform-enhancements-run-ai-driven-processes",
+          "https://www.automationanywhere.com/company/blog/product-insights/ai-agent-benchmark",
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4,
-        "rationale": "Automation Anywhere provides solid monitoring through Control Room dashboards, audit trails, and SIEM integrations for enterprise operations teams.",
-        "reasoning": "Automation Anywhere Control Room provides centralized monitoring for bot execution, performance dashboards, and audit trails. SIEM integrations enable security event monitoring. The platform includes comprehensive audit logging with RBAC. ISO 42001 certification covers monitoring of AI-based automation products for transparency and accountability.",
-        "evidence": "Automation Anywhere's security page describes SIEM integrations and comprehensive audit trails with RBAC. The platform includes monitoring controls documented through its SOC 2 Type II and ISO certifications. Control Room provides centralized visibility into bot and agent execution across the enterprise.",
-        "uipath_advantage": "UiPath provides centralized logging across Automation Cloud for all automation types with unified audit logs, AI Trust Layer LLM observability, and Insights analytics. UiPath's monitoring covers the full stack including robot performance, agent traces, and human task completion in one unified view.",
+        "score": 3,
+        "rationale": "Automation Anywhere presents credible observability capabilities including live monitoring, detailed process history, and monitoring of AI-driven workflows. UiPath is similarly mature in operational analytics, so parity is appropriate.",
+        "reasoning": "An April 2026 product club snippet explicitly cites 'observability including live monitoring and detailed process history,' while 2025 and 2026 materials discuss observability for the APA system and testing/monitoring AI-driven workflows. That is concrete evidence of runtime visibility and auditability. UiPath’s Orchestrator and Insights provide similarly strong monitoring for bots and workflows. With both vendors showing substantial capability, parity is justified.",
+        "evidence": "An April 2026 product club post cites 'observability including live monitoring and detailed process history.' A May 2025 product reveal says the APA System includes 'new observability.' The May 2026 platform enhancements say enterprises can 'test, monitor, and improve AI-driven workflows.'",
         "sources": [
-          "https://www.automationanywhere.com/products/security"
+          "https://community.automationanywhere.com/pathfinder-blog-85009/april-2026-product-club-mozart-orchestrator-s-split-and-merge-feature-for-parallel-process-execution-91318",
+          "https://www.automationanywhere.com/company/blog/product-insights/how-autonomous-enterprise-becomes-real-every-big-product-reveal",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-unveils-2026-platform-enhancements-run-ai-driven-processes"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 4,
-        "rationale": "Automation Anywhere provides strong enterprise governance with comprehensive RBAC, audit trails, and the pioneering ISO 42001 AI governance certification covering all AI products.",
-        "reasoning": "Automation Anywhere's governance capabilities include RBAC with role-based controls at line-of-business level, comprehensive audit trails, credential vault integrations (CyberArk, HashiCorp, Azure Key Vault, AWS Secrets Manager), SAML/MFA/SSO authentication, and SIEM integrations. The ISO 42001 AI governance certification validates ethical, transparent, and secure AI systems across all automation products.",
-        "evidence": "Automation Anywhere's security page describes fine-grained RBAC controls, audit trails, and compliance monitoring. ISO 42001 certification (November 2025) covers AI governance across all products including AI agents, Process Discovery, and LLM integrations. The certification was awarded following a rigorous third-party audit.",
-        "uipath_advantage": "UiPath differentiates with AI Trust Layer as a centralized LLM governance layer applying policies before requests reach external models — a capability that goes beyond Automation Anywhere's ISO 42001 compliance posture. UiPath's CI/CD pipeline traceability and AgentOps scoped identities add additional enterprise governance depth.",
+        "score": 3,
+        "rationale": "Automation Anywhere shows strong governance messaging and some evidence-grade traceability references, but UiPath’s governance stack is more explicitly differentiated and broader in the provided baseline. The result is close to parity.",
+        "reasoning": "Recent Automation Anywhere snippets repeatedly mention governance as a core APA component and one 2026 third-party roundup calls out Control Room for orchestration, monitoring, governance, and 'evidence-grade traceability.' That is relevant and concrete enough to establish serious governance capability. However, the available evidence is less detailed than UiPath’s explicit AI Trust Layer, PII controls, and audit framework. As a result, a neutral-parity score is most supportable.",
+        "evidence": "Automation Anywhere’s agentic workflows guide says capabilities are unified with 'agentic process automation (APA).' A June 2026 roundup highlights 'Automation Anywhere Control Room for enterprise orchestration, monitoring, and governance' with 'Evidence-grade traceability.' A May 2026 procurement AI blog cites 'enterprise-grade security' and capabilities across diverse platforms.",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
+          "https://www.automationanywhere.com/rpa/agentic-workflows",
+          "https://wifitalents.com/best/automated-operations-software/",
+          "https://www.automationanywhere.com/company/blog/ai-in-procurement"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
         "score": 3,
-        "rationale": "Automation Anywhere provides Process Discovery for automation opportunity identification but lacks the depth of a full process mining platform with conformance checking.",
-        "reasoning": "Automation Anywhere's Process Discovery uses AI to analyze how work is done and identify automation opportunities. ISO 42001 certification covers Process Discovery as an AI-based product. However, Automation Anywhere does not provide full-featured process mining with event log analysis, conformance checking against reference models, variant analysis, and task mining comparable to dedicated process mining platforms.",
-        "evidence": "Automation Anywhere's ISO 42001 coverage lists Process Discovery among AI-based automation products. Process Discovery is positioned as a capability for identifying automation opportunities. However, public documentation does not describe event log-based process mining, BPMN conformance checking, or variant analysis capabilities.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining — a recognition Automation Anywhere has not achieved.",
+        "rationale": "Automation Anywhere has credible process intelligence claims, including process discovery, process intelligence, and real-time reasoning. UiPath’s process intelligence portfolio is more explicitly documented, so the category is effectively even.",
+        "reasoning": "Gartner review snippets say Automation Anywhere’s AI + Automation Enterprise System offers 'process discovery, end-to-end process' capabilities, while 2026 press material references process intelligence and real-time reasoning. Those are important signals that the platform goes beyond task automation. But the snippets do not clearly establish deeper mining functions such as conformance analysis or simulation breadth relative to UiPath’s mining portfolio. Given the evidence, parity is the most balanced outcome.",
+        "evidence": "A Gartner review snippet says the platform offers 'process discovery, end-to-end process' capabilities. A March 2026 press release mentions 'process intelligence, and real-time reasoning for intelligent decision-making.' A May 2026 announcement says new capabilities unify orchestration, context, process design, and governance.",
         "sources": [
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
+          "https://www.gartner.com/reviews/market/robotic-process-automation/vendor/automation-anywhere",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-and-evolutia-deliver-next-generation-ai-agents-reason-and",
+          "https://www.automationanywhere.com/company/press-room/automation-anywhere-unveils-2026-platform-enhancements-run-ai-driven-processes"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Automation Anywhere's licensing model is enterprise-negotiated and not publicly transparent, with costs varying by deployment scale and automation type.",
-        "reasoning": "Automation Anywhere uses a consumption-based licensing model for its cloud platform. Pricing is not publicly disclosed and requires direct sales engagement. TCO comparisons with UiPath are common in the market with vendors competing on per-bot and per-user economics. The cloud-native model reduces infrastructure TCO compared to on-premises alternatives.",
-        "evidence": "Automation Anywhere does not publish list pricing publicly. Third-party pricing benchmarks and analyst comparisons with UiPath suggest comparable enterprise pricing tiers. The cloud-native Automation 360 reduces infrastructure overhead compared to on-premises RPA deployments.",
-        "uipath_advantage": "UiPath's licensing portal provides more published transparency on unit types and entitlements, though complexity remains for enterprise buyers. Both vendors compete primarily on value delivered per automation rather than list price, with TCO highly dependent on the automation mix, deployment model, and geographic footprint.",
+        "rationale": "Snippet evidence on Automation Anywhere licensing and TCO is limited and mixed, with some references to licensing FAQs and external pricing benchmarks but little direct product-detail evidence. The safest conclusion is parity with low confidence.",
+        "reasoning": "The search results provide only indirect insight: Automation Anywhere has cloud licensing FAQ documentation and third-party 2025-2026 comparisons focused on licensing models, discounts, and TCO. Automation Anywhere’s own buyer’s guide also emphasizes evaluating TCO, implying it is an active buying consideration. But the snippets do not provide enough verified detail to show a clear pricing advantage or disadvantage against UiPath. Because pricing is usually negotiated and heavily contextual, this score remains low-confidence.",
+        "evidence": "Automation Anywhere documentation includes a 'Cloud licensing FAQ.' A September 2025 benchmark advertises head-to-head 'UiPath vs Automation Anywhere pricing' with licensing models and TCO. Automation Anywhere’s 2026 buyer’s guide says buyers should consider 'Total cost of ownership modeling (not just licensing).'",
         "sources": [
-          "https://www.automationanywhere.com/resources/analyst-reports"
+          "https://docs.automationanywhere.com/bundle/enterprise-v2019/page/cloud-licensing-faq.html",
+          "https://vendorbenchmark.com/blog/uipath-vs-automation-anywhere-pricing-benchmark",
+          "https://www.automationanywhere.com/autonomous-it"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Low",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Automation Anywhere has strong cross-industry applicability with proven deployments in financial services, healthcare, public sector, manufacturing, and retail.",
-        "reasoning": "Automation Anywhere serves customers in financial services, healthcare, insurance, manufacturing, retail, and public sector. The platform is used for accounts payable, HR automation, claims processing, compliance reporting, and customer service automation. IDC MarketScape Leader for Business Automation Platforms 2025 and Gartner Magic Quadrant Leader for RPA for the seventh consecutive year confirm broad industry validation.",
-        "evidence": "Automation Anywhere's ISO 42001 certification notes that customers in financial services, healthcare, and public sector rely on the platform for autonomous AI agents in mission-critical processes. Automation Anywhere was named a Gartner Magic Quadrant Leader for RPA for the seventh consecutive year in 2025 and IDC MarketScape Leader for Business Automation Platforms 2025.",
-        "uipath_advantage": "UiPath and Automation Anywhere have comparable broad industry applicability. UiPath differentiates with purpose-built industry solutions, specialized IXP for document-heavy industries, and broader platform coverage including Process Mining, Test Suite, and Maestro orchestration across more use cases.",
+        "score": 3,
+        "rationale": "Automation Anywhere is broadly horizontally applicable across business units and verticals, with evidence of fit for regulated and complex enterprise environments. UiPath’s broad industry footprint keeps this competitive at parity.",
+        "reasoning": "Automation Anywhere’s workflow automation content states that workflow automation is 'horizontally applicable across verticals and business units,' which directly supports broad domain applicability. Additional third-party results reference its fit for highly regulated industries and complex enterprise environments. This establishes wide applicability, though the snippets do not show a uniquely differentiated vertical solution portfolio versus UiPath. Given UiPath’s very broad enterprise customer base and automation reach, parity is the appropriate score.",
+        "evidence": "Automation Anywhere says workflow automation is 'horizontally applicable across verticals and business units.' A 2026 buyer’s guide warns that explainability and audit features matter as regulations deepen, reinforcing enterprise applicability in regulated contexts. A 2026 third-party guide describes enterprise automation and BPM capabilities for 'highly regulated industries and complex enterprise environments.'",
         "sources": [
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html",
-          "https://www.automationanywhere.com/resources/analyst-reports"
+          "https://www.automationanywhere.com/rpa/workflow-automation",
+          "https://www.domo.com/learn/article/agentic-ai-platforms",
+          "https://www.visioneerit.com/blog/best-ai-automation-tools-in-2026-the-complete-guide-to-enterprise-workflow-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Automation Anywhere's consistent Gartner Leadership, strong compliance investment, and agentic automation pivot provide solid long-term enterprise value.",
-        "reasoning": "Automation Anywhere has maintained Gartner Magic Quadrant Leader status for RPA for seven consecutive years through 2025, demonstrating sustained market relevance. Its aggressive agentic automation pivot with ISO 42001 AI governance certification positions it for the next wave of enterprise automation. Cloud-native architecture enables continuous innovation without customer-facing upgrade cycles.",
-        "evidence": "Automation Anywhere received Gartner Magic Quadrant Leader status for RPA for the seventh consecutive year in 2025. ISO 42001 AI governance certification (November 2025) demonstrates commitment to responsible AI for long-term enterprise trust. IDC MarketScape Leader for Business Automation Platforms 2025 confirms market position.",
-        "uipath_advantage": "UiPath and Automation Anywhere are both long-term enterprise players. UiPath's broader platform (Process Mining, Test Suite, IXP, Maestro) provides more durable value across a wider range of automation use cases, while Automation Anywhere's cloud-native model and agentic focus provide competitive long-term positioning in the RPA-to-agentic transition.",
+        "score": 3,
+        "rationale": "Automation Anywhere presents a credible long-term strategic value story around enterprise AI, trust, and agentic automation, but snippet evidence is mostly vendor-authored and directional. UiPath remains similarly strong on platform durability, making this parity.",
+        "reasoning": "Automation Anywhere’s 2026 materials explicitly discuss long-term strategic value emerging as enterprises move from fragmented AI to integrated automation, and broader enterprise AI content says effective AI implementations continue to add value over the long term. This is a solid vision statement supported by ongoing product investment. However, the evidence is more strategic than operational, and does not clearly prove a stronger long-term customer value outcome than UiPath’s broad platform ecosystem and training/partner network. Therefore parity is the most supportable score.",
+        "evidence": "Automation Anywhere’s 2026 buyer’s guide says 'Long-term strategic value emerges' as enterprises integrate AI and automation. Its enterprise AI page says effective AI implementations 'continue to add value over the long term.' A January 2026 community post says trust in AI is now 'table stakes,' reflecting long-term platform expectations.",
         "sources": [
-          "https://www.automationanywhere.com/resources/analyst-reports",
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms",
+          "https://www.automationanywhere.com/rpa/enterprise-ai",
+          "https://community.automationanywhere.com/pathfinder-blog-85009/the-road-ahead-for-enterprise-ai-and-what-to-expect-in-2026-90985"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "Automation Anywhere provides strong business agility through cloud-native continuous updates, low-code development tools, and rapid agentic automation deployment.",
-        "reasoning": "Automation 360's cloud-native microservices architecture enables continuous frictionless updates without maintenance windows. The platform supports rapid bot development through low-code tools and pre-built automation packages. Multimodal AI Skills and developer-first features in 2026 accelerate automation adaptation. The agentic automation capabilities enable faster response to changing business processes.",
-        "evidence": "Automation Anywhere's security page describes continuous frictionless updates as a key operational benefit of the cloud-native architecture. Developer-first features in releases .38 and .39 accelerate automation development. The platform's cloud-native model reduces change management overhead compared to on-premises alternatives.",
-        "uipath_advantage": "UiPath provides comparable agility through Maestro's BPMN-based process modeling (visual changes reviewed in hours), combined with the full automation development lifecycle from Process Mining discovery through Test Suite validation to Orchestrator production deployment. UiPath's CI/CD pipeline support enables DevOps-style automation delivery.",
+        "score": 3,
+        "rationale": "Automation Anywhere strongly links automation and multi-agent systems to business agility and adaptation speed, but UiPath is similarly positioned for enterprise agility through its wider execution fabric. The evidence indicates parity.",
+        "reasoning": "Automation Anywhere’s multi-agent systems page explicitly references 'Business agility measured by adaptation speed to market changes,' and Gartner review snippets mention reliable integration and flexible deployment for different business needs. This supports real adaptability at the operating-model level. Its agentic AI positioning also argues for cross-functional orchestration as a path to agility. UiPath, however, offers equally strong agility through bots, APIs, agents, and process insight, so parity is the fairest conclusion.",
+        "evidence": "Automation Anywhere’s multi-agent systems page cites 'Business agility measured by adaptation speed to market changes.' A Gartner review snippet says 'Integration with enterprise applications is reliable, and deployment options provide flexibility for different business needs.' Automation Anywhere’s agentic AI buyer’s guide asks buyers to avoid platforms merely 'tacking on AI features,' implying adaptability depends on deeper architecture.",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://community.automationanywhere.com/product-updates"
+          "https://www.automationanywhere.com/rpa/multi-agent-systems",
+          "https://www.gartner.com/reviews/market/robotic-process-automation/vendor/automation-anywhere",
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       }
