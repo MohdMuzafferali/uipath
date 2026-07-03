@@ -956,23 +956,6 @@
         "confidence": "Medium",
         "notes": "",
         "questions": ""
-      },
-      {
-        "category": "Testing & Evaluation (Functional + Performance",
-        "score": 4,
-        "rationale": "Available search evidence for n8n on formal testing and evaluation is limited and does not show a strong, productized enterprise testing story. UiPath’s broader enterprise platform and adjacent testing/governance assets make it better positioned here.",
-        "reasoning": "This topic had the weakest direct evidence in the search results. The strongest n8n-related signals were indirect: a report on enterprise AI agent development tools, general comments about evaluation difficulty in the market, and user complaints about reliability/workarounds as workflows grew. I did not find snippet-level proof of a mature, dedicated n8n functional/performance testing capability comparable to UiPath’s enterprise testing and governance ecosystem. Because the evidence gap is real, the score favors UiPath and confidence is low.",
-        "evidence": "A result from n8n dated three days ago is titled 'Enterprise AI agent development tools 2026' and describes 'a technical evaluation of workflow-based automation tooling for building enterprise-grade agentic systems using LLMs.' A May 26, 2026 Vellum snippet says evaluating AI automation platforms is overwhelming and easy to waste weeks testing the wrong stack, highlighting the importance of platform evaluation capability in this market. A Jul. 29, 2025 Reddit snippet says that as one user’s n8n workflows grew, built-in nodes fell short and workarounds became 'too hacky or unreliable,' indicating performance/reliability concerns in practice. An Apr. 9, 2026 Elementum snippet describes n8n as a credible workflow automation tool with enterprise tier and AI workflow capabilities, but does not surface dedicated testing functionality.",
-        "sources": [
-          "https://n8n.io/reports/2026-ai-agent-development-tools/ (n8n)",
-          "https://www.vellum.ai/blog/best-n8n-alternatives (Vellum)",
-          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/ (Reddit)",
-          "https://www.elementum.ai/blog/n8n-alternatives (Elementum)"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "low",
-        "notes": "",
-        "questions": ""
       }
     ],
     "UiPath": [
