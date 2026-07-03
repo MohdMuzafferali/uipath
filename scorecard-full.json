@@ -1648,16 +1648,16 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "Camunda holds ISO 27001 and SOC 2 Type II certifications but has a narrower compliance portfolio than hyperscalers or dedicated automation suites.",
-        "reasoning": "Camunda achieved ISO 27001 (2022 version) and SOC 2 Type II in 2024, and is also GDPR-compliant and TISAX-certified. Its Trust Center at trust.camunda.com provides a Customer Assurance Profile. While solid for a process orchestration vendor, its compliance footprint is narrower than UiPath's, which includes additional regulated-industry certifications and a more extensive trust center covering its broader automation platform.",
-        "evidence": "Camunda's Trust Center lists ISO 27001, SOC 2 Type II, GDPR, and TISAX certifications as of May 2026. The 2024 SOC 2 Type II audit was conducted by A-Lign covering Camunda 8. Camunda also mentions Cloud Security Alliance membership and end-to-end encryption, authentication, and OWASP compliance.",
-        "uipath_advantage": "UiPath offers a more comprehensive compliance portfolio covering its full automation platform including Orchestrator, Test Suite, and AI Trust Layer, with additional certifications for regulated industries and a dedicated Trust Center at trust.uipath.com with broader attestations.",
+        "rationale": "Camunda shows credible enterprise security and compliance positioning, but the available snippet-only evidence is limited and does not clearly establish an advantage over UiPath. UiPath appears at least competitive given its stronger published governance, AI Trust Layer, auditability, and deployment flexibility baseline.",
+        "reasoning": "Search snippets show Camunda emphasizing enterprise security, compliance, and operations tooling in 2026 materials, and Camunda 8.9 release notes reference security, backup, and compliance requirements. However, the evidence available here is mostly vendor-authored and snippet-level rather than detailed third-party validation. Against UiPath, the comparison hinges on breadth of enterprise governance and compliance controls across automation and AI, where UiPath's baseline includes RBAC, audit trails, PII guardrails, and broad deployment options. Because the retrieved evidence does not prove either a clear Camunda lead or a clear UiPath lead on this specific topic, parity is the most defensible score.",
+        "evidence": "Camunda's April 7, 2026 assessment guide snippet says the platform has 'strong enterprise credentials, including security, compliance, and operations tooling.' Camunda 8.9 release notes snippet references 'security, backup, and compliance requirements' and notes storage considerations in Helm deployments. A May 22, 2026 article about Camunda 7 end of life says enterprises in regulated sectors like finance and insurance still heavily rely on Camunda 7, implying adoption in compliance-sensitive environments.",
         "sources": [
-          "https://trust.camunda.com/",
-          "https://camunda.com/blog/2024/07/camunda-security-iso-27001-upgrade-soc-2-type-2/"
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/ (Camunda)",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/ (Camunda 8.9 Release Notes)",
+          "https://ntconsultcorp.com/camunda-7-end-of-life/ (NTConsult)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
@@ -1893,17 +1893,17 @@
     "Automation Anywhere": [
       {
         "category": "Security & Compliance",
-        "score": 4,
-        "rationale": "Automation Anywhere has an enterprise-grade compliance portfolio including SOC 1/2 Type 2, ISO 27001, HITRUST, ISO 22301, and pioneering ISO 42001 AI governance certification.",
-        "reasoning": "Automation Anywhere holds SOC 1 Type 2, SOC 2 Type 2, ISO 27001, HITRUST, ISO 22301, and was among the first 100 companies globally to earn ISO/IEC 42001:2023 (AI governance) certification in November 2025. The platform includes FIPS-140 certified AES-256 encryption, RBAC, SAML/MFA/SSO, CyberArk and HashiCorp vault integrations, and SIEM integrations. Cloud-native with 16 global datacenters and contractually guaranteed 99.9% SLA.",
-        "evidence": "Automation Anywhere's security page lists SOC 1 Type 2, SOC 2 Type 2, ISO 27001, HITRUST, and ISO 22301 certifications. In November 2025, Automation Anywhere became one of the first 100 companies to earn ISO/IEC 42001:2023 AI governance certification, covering all AI-based products including AI agents, Process Discovery, and LLM integrations with Azure OpenAI, Google Vertex AI, AWS Bedrock, and AWS SageMaker.",
-        "uipath_advantage": "Both UiPath and Automation Anywhere have comparable enterprise compliance portfolios. UiPath differentiates with its AI Trust Layer providing governance specifically for LLM traffic and agent operations, while Automation Anywhere's ISO 42001 AI governance certification is a notable differentiator in responsible AI management.",
+        "score": 3,
+        "rationale": "Automation Anywhere presents strong enterprise security, encryption, governance, and compliance messaging, making it broadly competitive with UiPath on this topic. The snippet evidence does not clearly show either vendor with a decisive advantage, so parity is the safest score.",
+        "reasoning": "The retrieved results point to Automation Anywhere positioning security and compliance as core enterprise platform capabilities, including governance, RBAC controls, and encryption of data in transit and at rest. A 2026 press release also frames its AI-driven process enhancements as operating across secure enterprise systems, reinforcing enterprise-readiness. UiPath's baseline is similarly strong, with enterprise governance, audit trails, compliance frameworks, and AI Trust Layer protections. Since the available evidence is mostly vendor-sourced and insufficiently detailed to prove a market-recognized lead for either side, a score of 3 best reflects the evidence weight.",
+        "evidence": "Automation Anywhere's 2026 buyer's guide snippet says its platforms provide enterprise-grade operations and 'comprehensive security.' Automation Anywhere Community product updates snippet explicitly mentions 'Governance, RBAC controls, and compliance.' Automation Anywhere's cloud security blog says Enterprise A2019 includes comprehensive security and encrypts data both in transit and at rest.",
         "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms (Automation Anywhere)",
+          "https://community.automationanywhere.com/product-updates (Automation Anywhere Community)",
+          "https://www.automationanywhere.com/company/blog/product-insights/cloud-security-and-compliance-with-data-privacy (Automation Anywhere)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
@@ -2131,18 +2131,17 @@
     "Salesforce": [
       {
         "category": "Security & Compliance",
-        "score": 5,
-        "rationale": "Salesforce has one of the most comprehensive enterprise compliance portfolios in the industry, with ISO 27001, SOC 1/2/3, FedRAMP, HIPAA, PCI DSS, C5, and hundreds of certifications maintained at compliance.salesforce.com.",
-        "reasoning": "Salesforce maintains an extensive compliance portfolio documented at compliance.salesforce.com, regularly updated through June 2026. Certifications include ISO 27001/27017/27018 for Agentforce, SOC 1/2/3 Type II, FedRAMP, HIPAA, PCI DSS, GDPR, C5, and UK Cyber Essentials Plus. Agentforce Assistant was specifically added to SOC and ISO certifications. Hyperforce (Salesforce's cloud-native infrastructure) enables data residency in specific geographies for regulated industries.",
-        "evidence": "Salesforce's compliance site at compliance.salesforce.com shows certifications updated as recently as June 22, 2026. ISO 27001 certifications cover Agentforce & Einstein Platform, Data Cloud, MuleSoft, Marketing Cloud, and all major Salesforce services. C5 (ISAE 3000) reports cover Salesforce Services on Hyperforce. Agentforce Assistant was added to SOC and ISO certifications per the Trust & Compliance change log.",
-        "uipath_advantage": "Both Salesforce and UiPath have enterprise-grade compliance portfolios. Salesforce's compliance breadth across its hyperscaler-scale infrastructure is broader, while UiPath's AI Trust Layer provides specialized LLM governance for automation-specific AI risks. UiPath differentiates on automation-specific certifications for regulated industry automation processes.",
+        "score": 2,
+        "rationale": "Salesforce appears to have a slight advantage in security and compliance breadth, supported by extensive trust documentation and explicit references to enterprise security programs and major compliance regimes. UiPath remains strong, but Salesforce's long-established trust posture in CRM and platform cloud environments gives it a narrow edge.",
+        "reasoning": "The snippets show Salesforce publishing a 2026 Security Commitment to Customer Trust whitepaper and maintaining a dedicated trust and compliance documentation hub covering security, architecture, subprocessors, and third-party terms. Additional snippet evidence references SOC 2, GDPR, HIPAA, and CCPA compliance, which indicates broad compliance messaging across enterprise use cases. UiPath is also strong in governance and compliance, especially for automation and AI controls, but Salesforce's broader cloud platform trust brand and extensive compliance documentation suggest a slight advantage in this specific category. Because the evidence is still snippet-based rather than fully verified documentation review, the score remains a modest 2 rather than a 1.",
+        "evidence": "Salesforce published a 'Security Commitment to Customer Trust Whitepaper' dated January 8, 2026 describing its enterprise security program. Salesforce maintains a 'Trust and Compliance Documentation' site covering security, architecture, subprocessors, and third-party terms. A 2026 integration article snippet references Salesforce-related enterprise security with SOC 2, GDPR, HIPAA, and CCPA compliance.",
         "sources": [
-          "https://compliance.salesforce.com/en",
-          "https://compliance.salesforce.com/en/categories/iso-27001",
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
+          "https://compliance.salesforce.com/documents/a006e000010ngGsAAI (Salesforce)",
+          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/ (Salesforce)",
+          "https://www.integrate.io/blog/top-salesforce-data-integration-consultants/ (Integrate.io)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
