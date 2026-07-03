@@ -1648,13 +1648,13 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "Camunda shows credible enterprise security and compliance posture in 2025-2026 messaging, but the snippet evidence is broad and less specific than UiPath’s documented governance stack. UiPath’s stronger explicit enterprise controls and compliance-oriented product packaging give it a slight edge.",
-        "reasoning": "Search snippets show Camunda emphasizing 'strong enterprise credentials, including security, compliance, and operations tooling' and release notes referencing security, backup, and compliance requirements for Camunda 8.9 deployments. However, the available snippet-level evidence does not expose detailed certifications, trust-layer controls, or broad governance depth comparable to UiPath’s AI Trust Layer, PII guardrails, audit trails, and enterprise governance tooling. Camunda is particularly credible in regulated sectors and enterprise orchestration, but its evidence here is more platform-positioning than concrete control detail. That supports a slight UiPath advantage rather than a decisive gap.",
-        "evidence": "Camunda’s April 2026 assessment guide says the platform has 'strong enterprise credentials, including security, compliance, and operations tooling.' Camunda 8.9 release notes reference 'security, backup, and compliance requirements' for deployments. A May 2026 Camunda 7 end-of-life article says enterprises in regulated sectors like finance and insurance still heavily rely on Camunda 7.",
+        "rationale": "Camunda shows credible enterprise security posture with SOC 2 Type II, ISO/IEC 27001, TISAX, and Cloud Security Alliance membership, which keeps it competitive. UiPath appears stronger in broader enterprise governance depth and automation-specific trust controls, but the snippet evidence does not show a decisive gap wide enough for a higher score.",
+        "reasoning": "Search results show Camunda explicitly claims SOC 2 Type II compliance, TISAX, ISO/IEC 27001 certification, and Cloud Security Alliance membership on its platform page. That establishes solid enterprise readiness for security and compliance. However, the available search snippets do not surface as much detail on Camunda-specific governance controls, audit policy tooling, or AI trust mechanisms as UiPath's baseline includes with AI Trust Layer, PII guardrails, audit trails, and compliance frameworks. Because both appear enterprise-capable from snippet-level evidence, but UiPath has stronger documented governance breadth in the provided baseline, I scored this as parity leaning UiPath.",
+        "evidence": "Camunda's platform page says it is 'built for the enterprise' and that Camunda is a member of the Cloud Security Alliance and maintains SOC 2 Type II compliance, TISAX, and ISO/IEC 27001 certification. Camunda's enterprise automation blog says Camunda offers advanced process orchestration capabilities and manages end-to-end workflows across diverse systems, indicating enterprise operational control in regulated environments.",
         "sources": [
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/",
-          "https://ntconsultcorp.com/camunda-7-end-of-life/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://agent.nexus/blog/uipath-alternatives (Nexus alternatives article)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1664,13 +1664,13 @@
       {
         "category": "Deployment & Operations",
         "score": 3,
-        "rationale": "Camunda demonstrates solid enterprise deployment and operations credibility, especially around enterprise-scale deployment, Helm/Kubernetes operations, and modern orchestration deployment patterns. UiPath remains competitive through broader deployment flexibility and a more mature packaged operations model across RPA and AI services.",
-        "reasoning": "The snippets show Camunda stressing enterprise-scale deployment, operational continuity, and Helm chart updates to keep deployments secure and operational. Camunda 8.9 release notes also mention backup and storage considerations, signaling operational maturity for platform teams. But the evidence is still mostly infrastructure-centric and oriented toward orchestration runtime operations rather than a broader end-to-end automation operating model. UiPath’s stronger packaging across Automation Cloud, Orchestrator, hybrid/on-prem deployment, and broader administrative controls supports a parity-to-slight-UiPath view.",
-        "evidence": "Camunda’s April 2026 assessment guide cites 'security, compliance, and operations tooling' as enterprise credentials. CamundaCon 2026 promotion highlights 'enterprise-scale deployment' in platform roadmap messaging. Camunda’s March 2026 Helm chart update says it helps deployments remain 'secure and operational' despite Bitnami image distribution changes.",
+        "rationale": "Camunda demonstrates strong deployment and operational maturity through SaaS and self-managed options, tenant-aware operations, and a built-for-enterprise lifecycle spanning build, deploy, operate, and optimize. UiPath remains highly competitive because its baseline includes cloud, on-prem, hybrid, and air-gapped deployment plus mature orchestration tooling.",
+        "reasoning": "The snippets point to Camunda's platform lifecycle covering build, deploy, operate, and optimize, and to Camunda 8's Operate capability for pointing to specific tenants to search, monitor, and manage deployed processes. Another result references Camunda Platform 8 SaaS or self-managed orchestration engine, indicating deployment flexibility. UiPath's baseline is stronger and more explicit on deployment flexibility, including cloud, on-premise, hybrid, and air-gapped environments through Automation Cloud and Orchestrator. Since both vendors show enterprise deployment seriousness, but UiPath's breadth is broader in the available evidence, I scored this at parity.",
+        "evidence": "Camunda's platform page presents lifecycle stages including Build, Deploy, Operate, and Optimize, indicating an end-to-end operational model. Camunda's July 2025 migration blog says 'Once processes are deployed, you can point Operate to specific tenants ... providing a way to search, monitor' deployed processes. A 2026 BPM companies article references 'Camunda Platform 8 SaaS or self-managed orchestration engine,' showing multiple deployment models.",
         "sources": [
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/",
-          "https://camunda.com/press_release/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling/",
-          "https://camunda.com/blog/2026/03/camunda-8-helm-chart-and-bitnami-sub-charts/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/ (Camunda migration blog)",
+          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/ (Kognitos market roundup)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1680,13 +1680,13 @@
       {
         "category": "Scalability & Reliability",
         "score": 3,
-        "rationale": "Camunda has strong credibility in scalable process orchestration, with reviewer language specifically citing flexibility and scalability. UiPath is similarly enterprise-proven at scale, so the most supportable position from snippet evidence is parity.",
-        "reasoning": "Available evidence includes Gartner Peer Insights snippet language that Camunda offers strong BPMN features with 'high flexibility and scalability,' plus Camunda and partner content focused on scalable process orchestration. This supports real enterprise scalability strength, especially for process-centric, developer-led architectures. However, the snippets do not provide quantitative reliability claims or broader scale references that would clearly exceed UiPath’s large enterprise install base and mature bot orchestration history. With both vendors demonstrably enterprise capable, parity is the fairest score.",
-        "evidence": "A 2026 Gartner Peer Insights snippet says Camunda offers 'strong BPMN features and support with high flexibility and scalability.' NTConsult’s May 2026 page promotes 'Camunda services for scalable process orchestration.' Camunda’s 'Agentic Orchestration in Action' page lists 'Scalable execution' as a key feature.",
+        "rationale": "Camunda has strong cloud-native scaling credentials through Zeebe and enterprise-grade reliability claims, making it a serious competitor on distributed orchestration. UiPath is similarly enterprise-proven at scale across large automation estates, so the evidence supports parity.",
+        "reasoning": "The strongest snippet evidence here is Camunda's July 2025 migration post, which states that Zeebe is designed as cloud-native and provides scalability and security, while also calling out seamless scaling with enterprise-grade reliability. Camunda's enterprise automation blog further positions the platform as enabling scalable enterprise orchestration. UiPath's baseline highlights 10,000+ enterprise customers and mature orchestration for UI and API automation, which signals proven production scale. Because both vendors demonstrate enterprise scale in different ways—Camunda in orchestration architecture and UiPath in large automation estate maturity—I scored this as parity.",
+        "evidence": "Camunda's July 2025 migration post says 'Seamless scaling with enterprise-grade reliability' and that 'Zeebe is designed as cloud-native, providing the scalability and security.' Camunda's December 2024 enterprise automation post says enterprises can build scalable automation by orchestrating capabilities within a unified platform like Camunda.",
         "sources": [
-          "https://www.gartner.com/reviews/market/business-process-automation-tools/vendor/camunda",
-          "https://ntconsultcorp.com/camunda-orchestration-services/",
-          "https://camunda.com/de/agentic-orchestration-in-action/"
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/ (Camunda migration blog)",
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://darksn.de/end-to-end-process-automation/ (Darksn comparison article)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1695,14 +1695,15 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "Camunda has credible enterprise connectivity, especially for ERP/CRM-linked orchestration and developer-centric integration patterns, but UiPath’s 1,000+ connectors and integration-service breadth are materially broader. That gives UiPath a demonstrable advantage.",
-        "reasoning": "Search snippets indicate Camunda and Gartner materials describing native connectivity and integration capabilities for linking core enterprise systems such as ERP and CRM. Camunda also references OpenAI connectors and developer-oriented extensibility. Still, the available evidence does not point to an integration catalog comparable in scale to UiPath’s Integration Service ecosystem. UiPath’s breadth across enterprise SaaS, productivity suites, ITSM, ERP, and low-code integration assets supports a clear but not overwhelming lead.",
-        "evidence": "A Gartner BOAT market snippet says the platform has 'native connectivity and integration capabilities for linking core enterprise systems such as ERP and CRM.' Camunda’s 2024 AI announcement mentions 'OpenAI Connectors.' Camunda’s April 2026 assessment guide positions it among enterprise automation platforms with agentic and integration features.",
+        "score": 3,
+        "rationale": "Camunda is strong at orchestrating across systems and has evidence of LDAP integration and broad hyperautomation use across enterprise stacks. UiPath remains competitive or slightly ahead in packaged connector breadth thanks to its Integration Service and large connector library.",
+        "reasoning": "Camunda's platform page positions the product as running AI agents, people, and systems as one governed process, which implies strong cross-system orchestration. Search snippets also show LDAP integration for on-prem deployments and a customer story about Atlassian using Camunda to hyperautomate its tech stack. A third-party comparison snippet explicitly notes UiPath supports integration through native connectors and API capabilities. Because Camunda looks strong for orchestration-centric integration while UiPath has a clearer packaged connector advantage from the baseline, the score remains parity.",
+        "evidence": "Camunda's platform page says customers can 'Run AI agents, people, and systems as one governed process,' showing system-to-system orchestration focus. Camunda's Cawemo Enterprise release notes say on-prem installations can connect to an LDAP server. Camunda's Atlassian case-study snippet says Atlassian used Camunda to hyperautomate its tech stack. A third-party Camunda vs UiPath snippet says UiPath supports integration through native connectors and API capabilities.",
         "sources": [
-          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies",
-          "https://camunda.com/press_release/camunda-unveils-ai-capabilities-to-streamline-enterprise-journey-from-siloed-automation-to-end-to-end-orchestration/",
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://camunda.com/blog/2021/04/cawemo-enterprise-on-premises-1-6-released/ (Camunda Cawemo release)",
+          "https://camunda.com/blog/2023/01/atlassian-camunda-hyperautomation/ (Camunda Atlassian story)",
+          "https://apix-drive.com/en/blog/other/camunda-vs-uipath (ApiX-Drive comparison)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1711,14 +1712,14 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 3,
-        "rationale": "Camunda highlights acceleration, ease-of-use improvements, and customer success support, but it remains more technical and process-modeling-centric than UiPath’s broader low-code/no-code portfolio. The evidence supports rough parity with a slight UiPath UX edge.",
-        "reasoning": "Camunda’s 2024 AI launch explicitly says Camunda Copilot, Copilot Modeler, and OpenAI connectors accelerate implementation and increase ease of use. Additional snippets mention accelerated time-to-value and reduced cognitive load through success programs and self-serve capabilities. These are meaningful improvements, but Camunda is still more developer/BPMN oriented than UiPath’s Studio, StudioX, and Studio Web spectrum. Because both vendors now emphasize faster onboarding and AI-assisted development, parity is the safest score.",
-        "evidence": "Camunda’s May 2024 announcement says 'Camunda Copilot, Copilot Modeler, OpenAI Connectors and more accelerate process orchestration implementation, increase ease-of-use.' A Camunda jobs snippet says the company helps enterprises 'accelerate time-to-value.' Camunda Success messaging in July 2025 cites a technology foundation that 'accelerates time to value' and 'reduces cognitive load.'",
+        "score": 4,
+        "rationale": "UiPath appears advantaged on time-to-value and broad user accessibility because its baseline spans Studio, StudioX, and Studio Web for coded, low-code, and no-code personas. Camunda's snippet evidence emphasizes technical fusion teams and orchestration power more than simplified business-user experience.",
+        "reasoning": "The search evidence for Camunda on this topic is thinner and mostly indirect. One Camunda snippet says Platform 8.2 improved user experience and integration to help fusion teams transform complex processes in less time, but another result highlights market pressure from technical debt and AI modernization rather than simple onboarding. By contrast, UiPath's baseline clearly includes multiple development experiences for professional developers and citizen developers, which usually shortens time-to-value across broader teams. Because Camunda is capable but appears more developer-centric in the visible evidence, UiPath earns a modest advantage.",
+        "evidence": "Camunda's Platform 8.2 blog snippet says improvements in user experience and integration help fusion teams orchestrate and transform complex processes in less time. Camunda's Atlassian case-study snippet says the company used Camunda within its hyperautomation stack to improve customer and employee experiences.",
         "sources": [
-          "https://camunda.com/press_release/camunda-unveils-ai-capabilities-to-streamline-enterprise-journey-from-siloed-automation-to-end-to-end-orchestration/",
-          "https://jobs.ashbyhq.com/camunda/d2b301bc-ec29-46e7-baf0-7e68b6c4b1e2",
-          "https://camunda.com/blog/2025/07/camunda-success-scale-automation-agentic-orchestration/"
+          "https://camunda.com/blog/2023/04/camunda-platform-8-2-key-to-scaling-automation/ (Camunda Platform 8.2 blog)",
+          "https://camunda.com/blog/2023/01/atlassian-camunda-hyperautomation/ (Camunda Atlassian story)",
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/ (Camunda migration blog)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1728,13 +1729,13 @@
       {
         "category": "Agentic Capabilities",
         "score": 3,
-        "rationale": "Camunda has become strongly positioned around agentic orchestration, including ProcessOS, adaptive AI agent coordination, and human-in-the-loop governance. UiPath also has substantial agentic capabilities, so current snippet evidence points to parity.",
-        "reasoning": "Camunda’s 2026 messaging is heavily centered on agentic orchestration, with ProcessOS announced as an 'agentic operating system for AI-first enterprise transformation.' Supporting snippets cite adaptive AI agent coordination, human-in-the-loop governance, and real-time monitoring. This is substantial evidence that Camunda is not merely adding superficial AI features. However, UiPath’s Maestro, Agent Builder, LangGraph/OpenAI integrations, and Action Center provide a similarly credible and concrete agentic stack, so parity is most defensible.",
-        "evidence": "Business Wire reports Camunda announced 'ProcessOS, an agentic operating system for AI-first enterprise transformation' in May 2026. Camunda’s 'Agentic Orchestration in Action' lists 'Adaptive AI agent coordination' and 'Human-in-the-loop governance' as key features. Camunda’s April 2026 assessment guide says 'Camunda provides process orchestration and agentic' capabilities.",
+        "rationale": "Camunda has moved aggressively into agentic orchestration, explicitly branding itself around orchestrating AI agents, people, and systems and surfacing native AI and agentic capabilities in 2025-2026 materials. UiPath is also strong here with Maestro, Agent Builder, LangGraph/OpenAI agent integrations, and HITL, so current evidence indicates parity.",
+        "reasoning": "Camunda's platform page directly calls the product an 'Agentic Orchestration Platform for Enterprise AI' and says users can run AI agents, people, and systems as one governed process. A July 2025 Camunda migration post references new native AI and agentic capabilities, and an external June 2026 article claims Camunda 8.9 introduced first-class agentic orchestration support with AI agent tasks embedded directly in BPMN. UiPath's baseline is equally strong with dedicated agent-building and orchestration tooling. Given both vendors' visible investment, but limited snippet-level detail to prove one is clearly ahead, I scored this as parity.",
+        "evidence": "Camunda's platform page says it is 'the platform for agentic orchestration' and lets customers 'Run AI agents, people, and systems as one governed process you can prove and improve.' Camunda's July 2025 migration blog snippet says customers can 'Modernize with new native AI and agentic capabilities.' A June 2026 DNA Consulting snippet says Camunda 8.9 added 'first-class agentic orchestration support' with AI agent tasks embedded directly inside BPMN process models.",
         "sources": [
-          "https://www.businesswire.com/news/home/20260520352437/en/Camunda-announces-ProcessOS-an-agentic-operating-system-for-AI-first-enterprise-transformation",
-          "https://camunda.com/de/agentic-orchestration-in-action/",
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/ (Camunda migration blog)",
+          "https://www.dnaconsulting.io/blog/agentic-process-orchestration-enterprise-bpm-2026 (DNA Consulting article)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1744,29 +1745,30 @@
       {
         "category": "BPM & Orchestration",
         "score": 2,
-        "rationale": "Camunda remains especially strong in BPM and orchestration, with market perception favoring it as a developer-centric process orchestration platform. On this topic specifically, Camunda holds a slight advantage over UiPath.",
-        "reasoning": "Multiple snippets position Camunda as the 'enterprise platform for agentic orchestration' and specifically the 'developer-favorite process orchestration platform.' This aligns with Camunda’s longstanding BPMN-centric heritage and strong reputation in complex workflow orchestration. UiPath has expanded orchestration significantly, but its market identity is still broader automation/RPA rather than pure BPM/orchestration leadership. Because UiPath is credible but Camunda’s specialization is sharper here, a slight Camunda edge is justified.",
-        "evidence": "CamundaCon 2026 promotion describes Camunda as 'the enterprise platform for agentic orchestration.' A May 2026 industry comparison snippet calls Camunda 'the developer-favorite process orchestration platform.' Camunda’s assessment guide distinguishes 'agentic orchestration platforms' from broader automation suites and positions Camunda in that orchestration category.",
+        "rationale": "Camunda has a slight advantage in BPM and orchestration because this is its historical core, with strong BPMN/DMN roots, cloud-native Zeebe orchestration, and market framing around BOAT and enterprise orchestration. UiPath is credible in orchestration, but Camunda's specialization gives it an edge on pure BPM-centric use cases.",
+        "reasoning": "Camunda's platform messaging, Gartner BOAT category alignment, and 2026 peer-review snippet all reinforce that its core strength is enterprise process orchestration. Search snippets also highlight BPMN/DMN assets and mention SaaS or self-managed orchestration engine options. UiPath has orchestration capability, but its baseline strength is broader automation spanning RPA, agents, integrations, and mining rather than deep BPM specialization alone. On this narrower topic, the weight of evidence favors Camunda slightly.",
+        "evidence": "Camunda's platform page says it is for agentic orchestration and governing processes across AI agents, people, and systems. Gartner's BOAT market definition snippet describes a consolidated platform for enterprise process automation, aligning closely with Camunda's positioning. A Gartner Peer Insights 2026 snippet says Camunda 'delivers enterprise-grade process orchestration with seamless spring boot integration and production ready performance.' Camunda's DMN tutorial snippet highlights support for decision tables, FEEL expressions, and Decision Requirements Diagrams.",
         "sources": [
-          "https://camunda.com/press_release/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling/",
-          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/",
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies (Gartner BOAT page)",
+          "https://www.gartner.com/reviews/product/camunda-881347480 (Gartner Peer Insights Camunda)",
+          "https://camunda.com/dmn/ (Camunda DMN tutorial)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 4,
-        "rationale": "Camunda has some evidence of POC and performance evaluation practices, but the snippet evidence does not show a robust dedicated testing platform. UiPath has the clearer demonstrable advantage because of its specific testing and evaluation product portfolio.",
-        "reasoning": "The available snippets for Camunda on this topic are thin and mostly indirect: one POC-oriented blog mentions targeting multiple integrations with a functional test, and another 2026 article references assessing whether systems function as expected and meet performance objectives. That suggests testing awareness, not a market-leading testing capability stack. UiPath, by contrast, has Test Manager and a recognized position in automation lifecycle governance that is more specific to functional and performance evaluation. Given the limited direct evidence for Camunda here, UiPath has the advantage.",
-        "evidence": "Camunda’s February 2024 POC blog says 'one functional test can target several integration' points. A May 2026 Camunda 7 end-of-life article says assessment involves evaluating whether systems 'function as expected and meet performance' goals. Camunda 8.9 release notes indicate ongoing feature updates, but snippets do not show a dedicated enterprise testing suite.",
+        "rationale": "UiPath appears advantaged because the search evidence for Camunda on formal testing and evaluation is sparse and indirect, while UiPath's baseline includes Test Manager and broader enterprise lifecycle tooling. Camunda likely supports performance validation through its production-oriented architecture, but snippet-level proof is limited.",
+        "reasoning": "The results for this topic did not return strong testing-specific Camunda evidence. Available snippets emphasize production-ready performance, enterprise orchestration, and process automation outcomes, but do not clearly surface dedicated functional testing modules, test management workflows, or built-in evaluation tooling. UiPath's baseline explicitly includes Test Manager and strong enterprise lifecycle governance, which is directly relevant to functional and performance evaluation. Because the evidence gap is significant for Camunda, I scored this in UiPath's favor and lowered confidence.",
+        "evidence": "A Gartner Peer Insights 2026 snippet says Camunda delivers 'production ready performance,' indicating operational performance credibility. Camunda's enterprise automation blog says its tools help implement automation solutions efficiently and improve efficiency, but the snippet does not reference dedicated testing products.",
         "sources": [
-          "https://camunda.com/blog/2024/02/picking-perfect-process-camunda-proof-of-concept/",
-          "https://ntconsultcorp.com/camunda-7-end-of-life/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/"
+          "https://www.gartner.com/reviews/product/camunda-881347480 (Gartner Peer Insights Camunda)",
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://camunda.com/platform/ (Camunda platform page)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1776,13 +1778,13 @@
       {
         "category": "Monitoring & Observability",
         "score": 3,
-        "rationale": "Camunda shows credible monitoring and observability capabilities, including real-time monitoring and integrations with observability tooling, but UiPath is similarly strong in enterprise operations visibility. The evidence supports parity.",
-        "reasoning": "Relevant snippets mention IBM Instana business monitoring for Camunda environments and list 'real-time monitoring' as a key feature in Camunda’s agentic orchestration materials. This suggests legitimate runtime visibility rather than purely static process design. However, snippet evidence is limited on built-in observability depth, alerting, and cross-layer analytics. UiPath’s operational analytics and orchestration telemetry are also mature, so neither vendor clearly separates based only on these search results.",
-        "evidence": "A September 2023 Camunda post discusses 'Observing Camunda Environments with IBM Instana Business Monitoring.' Camunda’s 'Agentic Orchestration in Action' lists 'Real-time monitoring' as a key feature. Camunda’s 2026 assessment guide continues to emphasize operations tooling as part of enterprise credentials.",
+        "rationale": "Camunda is strong in monitoring and observability through Operate/Cockpit-style tooling, live metrics, incident management, and audit trails. UiPath is also strong, especially around agent observability and enterprise analytics, so this looks like parity.",
+        "reasoning": "A Gartner Peer Insights snippet highlights Camunda Cockpit's live metrics, intuitive incident management, and comprehensive audit trails. The Camunda migration blog also says Operate can be pointed to specific tenants to search and monitor deployed processes. UiPath's baseline includes Insights analytics, and an April 2025 UiPath/LangGraph snippet mentions deploying, monitoring, evaluating, and debugging agents with world-class observability. Both vendors therefore show credible observability, though the scope differs somewhat between orchestration runtime and broader automation/agent stacks. I scored this as parity.",
+        "evidence": "A Gartner Peer Insights 2026 snippet says 'camunda cockpit is another standout feature' and that the dashboard provides 'live metrics, intuitive incident management and comprehensive audit trails.' Camunda's July 2025 migration blog says Operate can target specific tenants to search and monitor deployed processes. A UiPath April 2025 snippet references capabilities for deploying, monitoring, evaluating, and debugging agents and says it gives UiPath developers 'a world-class observability capability.'",
         "sources": [
-          "https://camunda.com/blog/2023/09/observing-camunda-environments-ibm-instana-business-monitoring/",
-          "https://camunda.com/de/agentic-orchestration-in-action/",
-          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
+          "https://www.gartner.com/reviews/product/camunda-881347480 (Gartner Peer Insights Camunda)",
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/ (Camunda migration blog)",
+          "https://www.uipath.com/blog/product-and-updates/langgraph-uipath-advancing-agentic-automation-together (UiPath LangGraph blog)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1792,13 +1794,14 @@
       {
         "category": "Traceability & Governance",
         "score": 3,
-        "rationale": "Camunda has visible governance and traceability messaging, especially for regulated industries and responsible AI orchestration, but UiPath’s governance stack is more explicitly productized. That suggests near parity with a modest UiPath edge.",
-        "reasoning": "Camunda’s 2025-2026 content directly references AI governance, enterprise governance challenges, and the importance of traceability in regulated industries. This indicates the vendor understands governance as a first-class requirement for orchestration and agentic systems. Still, snippet evidence does not expose the same level of concrete governance mechanisms that UiPath markets through AI Trust Layer, audit trails, and policy controls. The balance of evidence supports a close contest rather than a strong vendor lead.",
-        "evidence": "Camunda’s June 2025 governance post says it explores specific features 'from agent orchestration to' AI governance and control. NTConsult’s May 2026 page says 'In highly regulated industries, traceability and governance are' important in Camunda deployments. A March 2026 Camunda blog says the enterprise challenge was not just technical complexity, 'but governance.'",
+        "rationale": "Camunda demonstrates meaningful governance and traceability through BPMN-based orchestration, audit trails, access-rights controls, and explainable governed processes. UiPath is comparably strong with broader governance tooling, so the balance is near parity.",
+        "reasoning": "Camunda's platform promise centers on governed processes that customers can 'prove and improve,' which directly supports traceability. Search snippets also note comprehensive audit trails in Camunda Cockpit and improved access-rights capabilities in Cawemo Enterprise, while external thought leadership on enterprise agentic orchestration emphasizes governance, audit, and explainability as essential. UiPath's baseline includes role-based access, audit trails, AI Trust Layer, and Test Manager/Insights governance. Since both vendors show strong governance intent, but UiPath's governance footprint is broader across automation domains, parity is appropriate.",
+        "evidence": "Camunda's platform page says users can run AI agents, people, and systems as one governed process they can 'prove and improve.' A Gartner Peer Insights 2026 snippet says Camunda Cockpit provides 'comprehensive audit trails.' Camunda's Cawemo Enterprise 1.6 release notes mention improved access rights capabilities, with organizations and projects able to have more than one admin. A BP3 April 2026 snippet says enterprise agentic orchestration requires logging decisions, maintaining compliance, and ensuring every action is traceable and explainable.",
         "sources": [
-          "https://camunda.com/blog/2025/06/responsible-ai-at-scale-camunda-governance-and-control/",
-          "https://ntconsultcorp.com/camunda-orchestration-services/",
-          "https://camunda.com/blog/2026/03/operate-with-confidence-camunda-8-9-alpha5/"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://www.gartner.com/reviews/product/camunda-881347480 (Gartner Peer Insights Camunda)",
+          "https://camunda.com/blog/2021/04/cawemo-enterprise-on-premises-1-6-released/ (Camunda Cawemo release)",
+          "https://www.bp-3.com/blog/what-is-enterprise-agentic-ai-orchestration (BP3 guide)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1807,14 +1810,14 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 3,
-        "rationale": "Camunda’s 2026 messaging suggests an emerging intelligence layer for discovering and continuously improving processes, but the snippet evidence is high-level. UiPath’s more explicit process and task mining assets keep this at parity.",
-        "reasoning": "Camunda press snippets say it is introducing an intelligence layer that 'discovers, re-engineers, and continuously improves enterprise processes.' That is directionally strong and relevant to process intelligence. However, the snippet evidence does not clearly expose equivalent breadth to UiPath’s end-to-end Process Mining, task capture, conformance checking, and simulation positioning. Since Camunda appears to be strengthening this area but the details are limited in snippets, parity is the most defensible score.",
-        "evidence": "Camunda press snippets say the company introduced 'an intelligence layer that discovers, re-engineers, and continuously improves enterprise processes.' Camunda’s May 2026 blog says enterprises are beginning a 'great process re-engineering' effort around AI. TCS event messaging says Camunda helps enterprises make AI real through 'intelligent process orchestration.'",
+        "score": 4,
+        "rationale": "UiPath has the clearer advantage because its baseline explicitly includes end-to-end Process Mining, Task Mining, conformance checking, simulation, and variant analysis. Camunda's visible search evidence centers more on orchestration than native process intelligence depth.",
+        "reasoning": "The search snippets do not reveal strong native Camunda process mining or task mining capabilities. Camunda's platform and BOAT positioning suggest it can analyze and improve processes, but third-party alternative lists discussing 'process intelligence' tend to name UiPath, Celonis, SAP Signavio, and others rather than highlighting Camunda as a leader in this subcategory. UiPath's baseline is specific and mature, with simulation, conformance checking, and task mining capabilities. Because Camunda's evidence on this topic is limited and indirect, UiPath deserves the stronger score.",
+        "evidence": "Camunda's platform page says users can run governed processes they can 'prove and improve,' implying some optimization and improvement loop. A KYP.ai 2026 article on UiPath process intelligence alternatives lists multiple process/task mining competitors, but the snippet does not position Camunda as a leading native process intelligence platform. A Decisions competitor article snippet explicitly attributes 'Process Intelligence' to another competitor rather than Camunda, reinforcing that Camunda is more orchestration-centric in the available evidence.",
         "sources": [
-          "https://camunda.com/about/press/",
-          "https://camunda.com/blog/2026/05/the-great-process-re-engineering-has-begun/",
-          "https://www.tcs.com/who-we-are/events/tcs-at-camundacon-2026"
+          "https://camunda.com/platform/ (Camunda platform page)",
+          "https://kyp.ai/uipath-process-intelligence-alternatives/ (KYP.ai alternatives article)",
+          "https://decisions.com/blog/top-10-camunda-competitors-and-alternatives (Decisions competitor roundup)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1824,13 +1827,13 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Camunda can be attractive on flexibility and customization, but public snippet evidence on pricing and TCO is mixed and not definitive. Without stronger direct evidence, this topic looks roughly neutral versus UiPath.",
-        "reasoning": "One 2026 pricing-analysis snippet says enterprise customers find value in Camunda’s capabilities and 'licensing model and unlimited customization,' while Camunda’s own content discusses lowering total cost of ownership and time to market versus traditional IT solutions. At the same time, public pricing clarity is limited, and third-party comparisons indicate negotiated pricing rather than transparent packaging. UiPath also faces enterprise pricing complexity, so neither vendor clearly wins from snippet-only evidence. Confidence is limited because the strongest pricing material is third-party and not deeply detailed in snippets.",
-        "evidence": "A 2026 pricing analysis says users find value in Camunda’s 'licensing model and unlimited customization.' Camunda’s May 2025 blog says the platform can lower 'TCO (total cost of ownership)' and shorten time to market. A 2026 workflow orchestration comparison says there is 'No public pricing' and enterprise tiers are negotiated directly.",
+        "rationale": "Neither side shows a decisive snippet-level advantage on licensing and TCO from the available search results. Camunda may appeal on orchestration-focused architecture and self-managed options, while UiPath's broader platform can improve consolidation value despite enterprise licensing complexity.",
+        "reasoning": "This topic had limited direct evidence. Search results mainly discuss general enterprise licensing negotiations and UiPath pricing complexity, while another 2026 article references Camunda as a platform to design and govern complex enterprise processes without giving pricing specifics. Because reliable snippet-level facts on Camunda pricing, packaging, or cost structure are sparse, a strong claim in either direction would be speculative. I therefore scored parity with low confidence and note the evidence gap.",
+        "evidence": "A 2026 business process mapping comparison snippet says large organizations often negotiate one-off enterprise licensing and support, suggesting enterprise pricing is typically customized for tools like UiPath Studio or Camunda exports/workflows. A 2026 UiPath pricing article says production features such as Orchestrator access, governance controls, AI capabilities, and enterprise support materially affect total cost. A 2026 Riseup Labs snippet references Camunda in the context of designing and governing complex enterprise processes but does not disclose pricing specifics.",
         "sources": [
-          "https://checkthat.ai/brands/camunda/pricing",
-          "https://camunda.com/blog/2025/05/the-benefits-of-using-camunda-compared-to-traditional-it-solutions/",
-          "https://www.elementum.ai/blog/best-workflow-orchestration-tools"
+          "https://www.lyren.ai/blog/business-process-mapping-software-comparison (Lyren.ai comparison)",
+          "https://checkthat.ai/brands/uipath/pricing (CheckThat.ai UiPath pricing)",
+          "https://riseuplabs.com/workflow-automation-tools/ (Riseup Labs roundup)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1840,13 +1843,13 @@
       {
         "category": "Industry applicability / business domain applicability",
         "score": 3,
-        "rationale": "Camunda is clearly used in complex enterprise and regulated environments, but snippet evidence on cross-industry packaged applicability is broad rather than detailed. UiPath’s wider automation footprint across functions and industries keeps this at parity.",
-        "reasoning": "The search results show Camunda used in finance and complex systems, with explicit mention of regulated industries and enterprise automation use cases. That demonstrates domain relevance, especially where orchestration and BPM matter. But the snippets do not show strong out-of-the-box industry solution breadth or packaged vertical accelerators. UiPath’s broad customer base and automation applicability across front, middle, and back office functions support an overall parity assessment.",
-        "evidence": "NTConsult’s May 2026 page says Camunda supports scalable orchestration with real use cases 'in finance, and complex systems.' A May 2026 Camunda 7 article notes reliance by enterprises in regulated sectors like 'finance and insurance.' Camunda’s June 2019 article references 'wide domain-applicability' of BPMN/Zeebe concepts.",
+        "rationale": "Camunda appears broadly applicable across enterprise domains that need complex process orchestration, while UiPath has equally broad cross-industry reach anchored by a very large customer base and extensive automation breadth. The evidence supports parity.",
+        "reasoning": "The evidence for this topic is indirect but consistent: Camunda is repeatedly described as an enterprise orchestration platform suited to complex operations and hyperautomation across diverse systems. BPM market growth data and general BPM skill demand also reinforce that Camunda operates in a large, cross-industry category. UiPath's baseline points to 10,000+ enterprise customers and broad product coverage across documents, RPA, agents, integrations, and mining, which translates well across industries. With both vendors broadly applicable but in somewhat different automation centers of gravity, parity is the fairest score.",
+        "evidence": "Camunda's December 2024 enterprise automation blog says Camunda stands out for advanced process orchestration and managing end-to-end enterprise operations across diverse systems. A March 2026 BPM market report snippet says the BPM market is projected to grow from USD 18.68 billion in 2026 to USD 30.26 billion by 2031, indicating broad business applicability of BPM platforms like Camunda. A January 2026 BPM skills article snippet lists process mining, process intelligence, BPM, and workflow automation as active research interests, signaling continued relevance across business domains.",
         "sources": [
-          "https://ntconsultcorp.com/camunda-orchestration-services/",
-          "https://ntconsultcorp.com/camunda-7-end-of-life/",
-          "https://camunda.com/blog/2019/06/real-world-bpmn-minecraft/"
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://www.mordorintelligence.com/industry-reports/business-process-management-market (Mordor Intelligence BPM market report)",
+          "https://bpmtips.com/bpm-skills-in-2026-hot-or-not/ (BPM Tips article)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1856,13 +1859,13 @@
       {
         "category": "Long-term value",
         "score": 3,
-        "rationale": "Camunda presents a credible long-term platform story through customer success, LTS support, and ongoing AI-agent investments, but its transition from Camunda 7 to 8 introduces some platform-evolution complexity. UiPath’s broader platform continuity balances this out.",
-        "reasoning": "The evidence shows Camunda emphasizing long-term, self-sustained success and operational best practices, while also maintaining an LTS path for Camunda 7.24 as the last minor Camunda 7 release. At the same time, end-of-life and migration messaging implies customers must navigate a meaningful platform transition. This does not negate long-term value, but it does create adoption friction relative to a broader unified-platform story. With continued innovation in enterprise-grade AI agents, Camunda remains credible, so parity is appropriate.",
-        "evidence": "Camunda’s July 2025 success post says it helps customers achieve 'long-term, self-sustained success.' Camunda documentation says 'Camunda 7.24 LTS' is the last minor release of Camunda 7. A February 2025 announcement describes Camunda 7.24 as the 'Long Term Support release' and points customers toward Camunda 8 value.",
+        "rationale": "Camunda offers credible long-term value through maintainability, ongoing platform evolution, and suitability for complex enterprise orchestration. UiPath is similarly compelling because of its broader platform scope, ecosystem scale, and customer success assets, so parity is appropriate.",
+        "reasoning": "Camunda's Platform 8.2 messaging explicitly references long-term maintainability and continued support until 2027 with extended support, which is an important signal for enterprise planning. Camunda's broader enterprise automation messaging also frames automation as strategic and long-term. UiPath's baseline includes a large partner ecosystem, Academy scale, flexible deployment, and broad product surface, all of which increase long-term ROI potential. Because both platforms can create durable value, but in somewhat different ways, I scored this as parity.",
+        "evidence": "Camunda's Platform 8.2 blog snippet says the updates are 'an essential step to ensure the long term maintainability of Camunda Platform' and to continue support until 2027 with extended support. Camunda's enterprise automation blog says leaders should champion automation initiatives by highlighting their long-term benefits and aligning them with business objectives.",
         "sources": [
-          "https://camunda.com/blog/2025/07/camunda-success-scale-automation-agentic-orchestration/",
-          "https://docs.camunda.org/enterprise/announcement/",
-          "https://camunda.com/blog/2025/02/camunda-7-enterprise-end-of-life-extension/"
+          "https://camunda.com/blog/2023/04/camunda-platform-8-2-key-to-scaling-automation/ (Camunda Platform 8.2 blog)",
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://camunda.com/blog/2021/01/cawemo-enterprise-on-premises-1-5-released/ (Camunda Cawemo 1.5 release)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1872,13 +1875,13 @@
       {
         "category": "Business adaptability / Agility",
         "score": 3,
-        "rationale": "Camunda is well aligned to business adaptability through orchestration and process redesign, but the snippet evidence remains largely directional. UiPath is comparably strong when adaptability depends on combining bots, APIs, AI, and process insights.",
-        "reasoning": "Camunda’s messaging consistently ties orchestration to re-engineering business processes for an AI-first world, and older migration messaging explicitly claims improved business agility and adaptability. This makes Camunda highly relevant for change-heavy operating models. Yet the snippet evidence does not provide sufficiently differentiated proof that Camunda outperforms UiPath in enterprise agility outcomes. Since UiPath also spans process insight plus execution flexibility, parity is the most balanced conclusion.",
-        "evidence": "Camunda’s April 2026 'central business orchestration layer' post positions the platform as an enterprise orchestration layer. A March 2024 Camunda migration post says solution accelerators enhance 'business agility and adaptability.' Camunda’s December 2024 enterprise automation blog says enterprises can build 'scalable and intelligent workflows that address intricate business challenges.'",
+        "rationale": "Camunda is well positioned for business adaptability because of its flexibility, scalability, and orchestration orientation, especially for changing cross-system processes. UiPath is similarly strong because its broader low-code/no-code and integration ecosystem can help organizations adapt faster across a wider range of automation patterns.",
+        "reasoning": "Camunda's enterprise automation messaging explicitly says the platform provides the flexibility and scalability needed to handle current challenges and future demands. Broader BOAT market framing also supports Camunda's role in enterprise process change. At the same time, UiPath's baseline includes multiple developer personas, connectors, orchestration, and governance that support fast adaptation in both business-led and IT-led programs. Since both products support agility but optimize for different implementation styles, parity is the best-supported score.",
+        "evidence": "Camunda's December 2024 enterprise automation blog says Camunda provides the 'flexibility and scalability needed to tackle both current challenges and future demands.' Gartner's BOAT category snippet defines the market as delivering enterprise process automation through a consolidated platform, which aligns with agility via orchestration. A Broadcom article snippet distinguishes business process automation with Camunda from robotic process automation with UiPath, indicating complementary but different agility strengths.",
         "sources": [
-          "https://camunda.com/blog/2026/04/case-for-a-central-business-orchestration-layer-without-recentralizing-your-architecture/",
-          "https://camunda.com/blog/2024/03/why-migrating-camunda-8-good-for-business/",
-          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/"
+          "https://camunda.com/blog/2024/12/how-enterprise-automation-transforms-complex-operations/ (Camunda blog)",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies (Gartner BOAT page)",
+          "https://academy.broadcom.com/blog/automation/automic-automation/how-broadcom-knights-help-customers-solve-automation-challenges (Broadcom article)"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
