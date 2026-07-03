@@ -2197,14 +2197,13 @@
     "Salesforce": [
       {
         "category": "Security & Compliance",
-        "score": 2,
-        "rationale": "Salesforce appears to have a slight advantage in security and compliance breadth, supported by extensive trust documentation and explicit references to enterprise security programs and major compliance regimes. UiPath remains strong, but Salesforce's long-established trust posture in CRM and platform cloud environments gives it a narrow edge.",
-        "reasoning": "The snippets show Salesforce publishing a 2026 Security Commitment to Customer Trust whitepaper and maintaining a dedicated trust and compliance documentation hub covering security, architecture, subprocessors, and third-party terms. Additional snippet evidence references SOC 2, GDPR, HIPAA, and CCPA compliance, which indicates broad compliance messaging across enterprise use cases. UiPath is also strong in governance and compliance, especially for automation and AI controls, but Salesforce's broader cloud platform trust brand and extensive compliance documentation suggest a slight advantage in this specific category. Because the evidence is still snippet-based rather than fully verified documentation review, the score remains a modest 2 rather than a 1.",
-        "evidence": "Salesforce published a 'Security Commitment to Customer Trust Whitepaper' dated January 8, 2026 describing its enterprise security program. Salesforce maintains a 'Trust and Compliance Documentation' site covering security, architecture, subprocessors, and third-party terms. A 2026 integration article snippet references Salesforce-related enterprise security with SOC 2, GDPR, HIPAA, and CCPA compliance.",
+        "score": 3,
+        "rationale": "Available search evidence indicates Salesforce has strong enterprise security posture and compliance credibility, but the snippets retrieved did not provide enough topic-specific detail to prove a clear advantage over UiPath. UiPath remains competitive with explicit AI governance, audit, and compliance controls across automation and agentic workflows.",
+        "reasoning": "Search snippets for this topic surfaced mostly UiPath material and indirect references to Salesforce scale, security, and coordination, rather than detailed Salesforce security feature evidence. By contrast, UiPath evidence explicitly mentions auditing, compliance, governance, and secure integrations in its agentic automation foundation. Because Salesforce clearly has enterprise credibility but the retrieved snippets are thin on concrete security/compliance specifics, the fairest score is parity. Confidence is medium because there are recent sources, but the Salesforce-side evidence from snippets is limited.",
+        "evidence": "A UiPath news snippet dated 2026-04-16 says 'UiPath Maestro and CX Companion extend Salesforce's agentic and workflow capabilities' while referencing reduced 'security or compliance risk.' The UiPath Agentic Automation Foundation snippet says the platform delivers 'auditing, compliance, and governance, plus secure integrations and easy-to-use tools for every developer.'",
         "sources": [
-          "https://compliance.salesforce.com/documents/a006e000010ngGsAAI (Salesforce)",
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/ (Salesforce)",
-          "https://www.integrate.io/blog/top-salesforce-data-integration-consultants/ (Integrate.io)"
+          "https://www.uipath.com/newsroom/uipath-maestro-cxcompanion-salesforce-agentexchange",
+          "https://www.uipath.com/platform/agentic-automation/foundation"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -2213,226 +2212,223 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4,
-        "rationale": "Salesforce offers managed cloud deployment via Hyperforce with data residency control, plus MuleSoft for integration operations, but limited on-premises options.",
-        "reasoning": "Salesforce is primarily a cloud SaaS platform with Hyperforce enabling deployment on AWS, Azure, GCP, and OCI with local data residency. MuleSoft provides integration operations management. Agentforce is cloud-native with no self-managed option. For regulated industries requiring on-premises, Salesforce's options are limited compared to platforms offering dedicated on-premises deployment.",
-        "evidence": "Salesforce's compliance documentation covers Hyperforce infrastructure on AWS, Azure, GCP, and OCI. MuleSoft Anypoint Platform supports hybrid integration operations. Salesforce maintains trust.salesforce.com for real-time system status. Agentforce is available as a cloud service with no self-managed deployment option documented.",
-        "uipath_advantage": "UiPath offers broader deployment flexibility including Automation Cloud (SaaS), on-premises Orchestrator, Automation Suite on Kubernetes/OpenShift, and hybrid models. For regulated industries with on-premises requirements, UiPath's Automation Suite provides a comparable managed experience to Salesforce's cloud-native model.",
+        "score": 3,
+        "rationale": "Salesforce shows strong operational simplicity inside its own platform, especially for declarative agent deployment, but the search evidence does not establish broader enterprise automation operations superiority over UiPath. UiPath remains strong where centralized orchestration, automation operations, and hybrid deployment matter.",
+        "reasoning": "A 2025 Salesforce/Futurum document snippet states declarative, enterprise-data-grounded agentic capabilities 'accelerate deployment and streamline operations.' Futurum's 2026 platform-war article also notes the need for operational deployment and governance to avoid complexity, indicating Salesforce is part of that conversation but not proving decisive advantage. UiPath's 2026 AgentExchange announcement highlights orchestration and enterprise workflow integration, reinforcing its operational strength beyond CRM. The evidence suggests Salesforce is credible for platform-native operations, while UiPath is stronger for cross-system automation operations, so parity is appropriate.",
+        "evidence": "A Salesforce/Futurum Signal snippet says Salesforce's agentic platform is 'declaratively and grounded in enterprise data,' which 'inherently accelerates deployment and streamlines operations.' A Futurum 2026 article snippet says enterprise agentic platforms require 'operational deployment and governance to avoid creating excessive implementation complexity for enterprise customers,' with Salesforce included in that competitive set. UiPath's 2026 AgentExchange announcement says new integrations connect 'AI agents, automation, and enterprise workflows to help customers extend their agentic enterprise.'",
         "sources": [
-          "https://compliance.salesforce.com/en",
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Futurum-Signal_Agentic-AI-Platforms-for-Enterprise_FSRAAPE202510_Licensed202512_Salesforce-1.pdf",
+          "https://futurumgroup.com/insights/who-will-control-the-enterprise-agentic-workforce-cios-face-a-new-platform-war/",
+          "https://www.uipath.com/newsroom/uipath-maestro-cxcompanion-salesforce-agentexchange"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 5,
-        "rationale": "Salesforce operates one of the world's largest enterprise cloud platforms with hyperscaler-level reliability, multi-region redundancy, and proven scalability for thousands of enterprise customers.",
-        "reasoning": "Salesforce's Hyperforce architecture runs on major cloud providers (AWS, Azure, GCP, OCI) with multi-region deployments and high availability. Salesforce serves 150,000+ customers at hyperscaler scale. Trust.salesforce.com provides real-time system transparency. MuleSoft's Anypoint Platform handles high-throughput integration workloads. The platform has proven reliability for mission-critical CRM and business operations at global enterprise scale.",
-        "evidence": "Salesforce operates on Hyperforce infrastructure across AWS, Azure, GCP, and OCI with documented multi-region capabilities. Salesforce's trust.salesforce.com provides real-time system status transparency. The company serves 150,000+ customers including the world's largest enterprises with proven CRM and platform reliability.",
-        "uipath_advantage": "Salesforce's hyperscaler infrastructure provides comparable or better raw scalability and reliability than UiPath's Automation Cloud for data-intensive workloads. However, UiPath's scalability advantage is in orchestrating automation workloads — coordinating robots, agents, APIs, and humans simultaneously — which is a different scalability dimension than Salesforce's CRM transaction processing scale.",
+        "score": 3,
+        "rationale": "Salesforce has strong brand-level evidence for reliability and scale, but the retrieved snippets do not prove it outperforms UiPath for enterprise automation workloads broadly. UiPath remains competitive with large-scale enterprise automation adoption and mature orchestration.",
+        "reasoning": "The best retrieved evidence is a 2026 diginomica snippet quoting confidence in Salesforce for 'trust, reliability, scalability, security.' Another 2026 testing-related snippet mentions building 'scalable and reliable Salesforce testing initiatives,' but that is ecosystem commentary rather than core product proof. UiPath's enterprise scale is well established in the supplied baseline with 10,000+ enterprise customers and leadership in RPA, though that baseline is not a web snippet source. Given both vendors have credible enterprise scale narratives but limited direct comparable evidence in snippets, parity is the most defensible score.",
+        "evidence": "A diginomica 2026 snippet says of Salesforce: 'the trust, the reliability, the scalability, the security.' A KiwiQA 2026 article snippet refers to 'scalable and reliable Salesforce testing initiatives' tailored to enterprise needs.",
         "sources": [
-          "https://compliance.salesforce.com/en",
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
+          "https://diginomica.com/salesforce-connections-2026-slack-becoming-salesforces-best-weapon-pursuit-agentic-ux",
+          "https://www.kiwiqa.com/automation-tools-for-salesforce-testing/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "Salesforce provides strong connectivity through MuleSoft's comprehensive integration platform, Salesforce Flow, and a vast AppExchange ecosystem with 7,000+ apps.",
-        "reasoning": "MuleSoft Anypoint Platform is a leading enterprise integration platform with thousands of pre-built connectors. Salesforce AppExchange provides 7,000+ pre-built apps and integrations. Salesforce Flow handles internal process automation. Data Cloud unifies data across systems. However, Salesforce's integration strength is primarily CRM-centric, with non-Salesforce enterprise system integration requiring MuleSoft expertise.",
-        "evidence": "Salesforce's architecture guidance explicitly frames Agentforce alongside MuleSoft as a comprehensive, unified platform for enterprise integration in agentic workflows. MuleSoft is described as a comprehensive, unified, and open platform for enterprise integration. Salesforce AppExchange provides thousands of pre-built integrations.",
-        "uipath_advantage": "UiPath Integration Service provides 1,000+ connectors with standardized governance across all UiPath products — more automation-specific than Salesforce's CRM-focused connectivity. UiPath's integration approach focuses on orchestrating APIs alongside robots and agents, while Salesforce's MuleSoft handles pure API integration at greater depth.",
+        "score": 2,
+        "rationale": "Salesforce holds a slight advantage on connectivity and integration because MuleSoft and Salesforce ecosystem alignment give it strong enterprise API-led integration credibility. UiPath is still highly competitive, especially for automation-centric connectors and UI/API orchestration across business apps.",
+        "reasoning": "The strongest external snippet here is a 2026 LinkedIn post describing MuleSoft as best for 'enterprise-wide integration, Salesforce ecosystem, and governed API management.' While one LinkedIn opinion criticizes MuleSoft observability and statefulness, Salesforce still benefits from a recognized integration portfolio centered on MuleSoft. UiPath's 2026 AgentExchange release shows it can connect AI agents, automation, and workflows to Salesforce, and UiPath's own Integration Service expands connector breadth. Because Salesforce's integration story is especially strong in API management and CRM-centric estates, it gets a slight edge rather than a major lead.",
+        "evidence": "A March 2026 snippet says MuleSoft is 'Best for: Enterprise-wide integration, Salesforce ecosystem, and governed API management.' UiPath's 2026 AgentExchange announcement says new integrations connect 'AI agents, automation, and enterprise workflows' on Salesforce. UiPath's Integration Service launch blog says it enabled 'faster integrations and at scale' with an expanded approach to RPA connectivity.",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
-          "https://www.salesforce.com/agentforce/"
+          "https://www.linkedin.com/posts/chris-lane-15a23b8b_mulesoft-ais-integration-activity-7436907173680521216-qX8D",
+          "https://www.uipath.com/newsroom/uipath-maestro-cxcompanion-salesforce-agentexchange",
+          "https://www.uipath.com/blog/product-and-updates/introducing-uipath-integration-service"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "Salesforce provides excellent time-to-value for CRM-centric automation through pre-built Agentforce templates, Salesforce Flow, and the AppExchange ecosystem.",
-        "reasoning": "Agentforce provides pre-built agent templates for common CRM use cases (sales, service, marketing) enabling rapid deployment without custom development. Salesforce Flow handles automation within Salesforce without coding. Einstein for Salesforce provides AI capabilities out-of-the-box. For Salesforce-native use cases, time-to-value is excellent. For cross-application automation beyond the Salesforce ecosystem, complexity increases significantly.",
-        "evidence": "Salesforce's decision guide describes Agentforce as enabling reasoning-based workflows with a framework for deciding when to use agentic versus traditional automation. Agentforce 2dx introduced capabilities to embed proactive agentic AI into any workflow across the enterprise. Pre-built agents for Sales, Service, and other clouds provide rapid deployment.",
-        "uipath_advantage": "UiPath's time-to-value advantage is for cross-system automation beyond CRM — connecting legacy systems, SAP, document workflows, and APIs without Salesforce dependency. For customers already in the Salesforce ecosystem, Salesforce's time-to-value is comparable or better. UiPath's IXP and Process Mining add unique discovery-to-automation value.",
+        "score": 3,
+        "rationale": "Salesforce appears strong for fast value delivery and user-friendly, declarative experiences inside its own ecosystem, especially with Slack and Agentforce. UiPath is similarly strong through low-code/no-code tooling and packaged automation accelerators, so the evidence supports parity.",
+        "reasoning": "A 2025 Salesforce/Futurum snippet says Salesforce's platform 'democratizes AI capabilities,' broadens the user base, and fosters 'accelerated time-to-value.' A 2026 diginomica piece frames Slack as a major asset in Salesforce's 'agentic UX' pursuit, reinforcing Salesforce's front-end/user experience strength. UiPath evidence also points to improved process mining UX and faster time to value with systems like SAP, Salesforce, and ServiceNow. Since Salesforce seems stronger on conversational and CRM-native UX while UiPath is stronger on broad automation enablement, neither clearly dominates.",
+        "evidence": "A Salesforce/Futurum Signal snippet says the platform 'democratizes AI capabilities and broadens the user base, fostering accelerated time-to-value and driving long-term adoption.' A 2026 diginomica article is titled 'is Slack becoming Salesforce's best weapon in the pursuit of agentic UX?' A UiPath Process Mining snippet says enhanced capabilities support systems such as 'SAP, Salesforce, and ServiceNow, speeding up time to value.'",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
-          "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx/default.aspx"
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Futurum-Signal_Agentic-AI-Platforms-for-Enterprise_FSRAAPE202510_Licensed202512_Salesforce-1.pdf",
+          "https://diginomica.com/salesforce-connections-2026-slack-becoming-salesforces-best-weapon-pursuit-agentic-ux",
+          "https://www.uipath.com/blog/product-and-updates/migrating-to-new-uipath-process-mining"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
         "score": 3,
-        "rationale": "Salesforce is a credible leader in CRM-centered agentic AI through Agentforce, but UiPath is stronger for cross-system agentic automation beyond the Salesforce ecosystem.",
-        "reasoning": "Agentforce 2dx introduced proactive agentic AI embedded into any workflow, multimodal experiences, and broader digital labor capabilities. Salesforce architecture positions Agentforce as the platform for building and deploying AI agents alongside MuleSoft for enterprise integration. UiPath announced in April 2026 that Maestro and CX Companion extend Salesforce's agentic capabilities — implying UiPath is complementary rather than replaced by Agentforce.",
-        "evidence": "Salesforce announced Agentforce 2dx in March 2025 with proactive agentic AI capabilities. Salesforce's architecture documentation positions Agentforce as its AI agent platform. Forrester wrote in May 2025 that Salesforce is accelerating its path to agentic AI. UiPath announced Maestro integration with Salesforce Agentforce in April 2026.",
-        "uipath_advantage": "UiPath's agentic advantage is enterprise-wide orchestration beyond CRM: Maestro coordinates AI agents, RPA robots, APIs, and human approvals across SAP, Citrix, web, desktop, and API systems outside Salesforce's native process boundary. For Salesforce-native use cases, Agentforce is highly competitive.",
+        "rationale": "Salesforce is clearly a serious agentic AI platform contender with Agentforce, but the available evidence also shows UiPath bringing added orchestration depth to Salesforce environments. The balance of evidence suggests parity rather than a decisive lead for either side.",
+        "reasoning": "Multiple 2025-2026 snippets place Salesforce among the leading enterprise agentic AI vendors. A third-party 2026 blog says Salesforce positions Agentforce as offering 'agents for every team,' though sales and service remain core functions, while Futurum includes Salesforce and UiPath in the front-rank platform battle. Importantly, UiPath's 2026 announcement explicitly says 'UiPath Maestro and CX Companion extend Salesforce's agentic and workflow capabilities,' implying Salesforce is strong but still benefits from UiPath orchestration. That combination points to roughly equal strength, with Salesforce strong in CRM-native agents and UiPath stronger in cross-enterprise agent orchestration.",
+        "evidence": "A 2026 Sana Labs snippet says Salesforce positions Agentforce as offering 'agents for every team,' though sales and customer service remain the core functions. A Futurum 2026 snippet lists Salesforce and UiPath among 'the latest generation of agentic AI platforms.' UiPath's 2026 announcement says 'UiPath Maestro and CX Companion extend Salesforce's agentic and workflow capabilities.'",
         "sources": [
-          "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx/default.aspx",
-          "https://www.salesforce.com/agentforce/",
-          "https://ir.uipath.com/news/detail/440/uipath-announces-ai-powered-orchestration-and-cx-automation-on-salesforce-agentexchange"
+          "https://sanalabs.com/agents-blog/enterprise-agentic-ai-platforms-sana-workday-2026",
+          "https://futurumgroup.com/insights/who-will-control-the-enterprise-agentic-workforce-cios-face-a-new-platform-war/",
+          "https://www.uipath.com/newsroom/uipath-maestro-cxcompanion-salesforce-agentexchange"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "Salesforce provides workflow orchestration through Salesforce Flow and Agentforce but is not a BPMN-native process orchestration platform.",
-        "reasoning": "Salesforce Flow provides low-code workflow automation within Salesforce. Agentforce enables agentic workflow automation for CRM-centric processes. MuleSoft handles integration orchestration. However, Salesforce is not a BPMN-native process modeling platform — process logic is expressed through proprietary Flow configurations rather than open standard BPMN/DMN, limiting interoperability and business stakeholder visibility.",
-        "evidence": "Salesforce's architecture documentation positions Agentforce alongside MuleSoft for enterprise workflow orchestration. Salesforce Flow provides rule-based and agentic workflow automation within Salesforce. The platform uses proprietary orchestration models rather than BPMN 2.0 standards.",
-        "uipath_advantage": "UiPath Maestro uses BPMN/DMN as open executable standards — the diagram is the executable process with full business stakeholder visibility and portability. Salesforce's proprietary Flow-based orchestration lacks BPMN standards compliance, limiting cross-system process governance and compliance auditability beyond the Salesforce ecosystem.",
+        "score": 4,
+        "rationale": "UiPath has a demonstrable advantage in BPM and orchestration because the retrieved evidence explicitly positions UiPath as the orchestration layer extending Salesforce workflows. Salesforce is capable, but the snippets suggest UiPath adds the broader enterprise-grade process coordination story.",
+        "reasoning": "UiPath's 2026 materials repeatedly emphasize orchestration on top of Salesforce, including a 'Maestro Connector' that connects Salesforce Flows to enterprise-grade process orchestration. Another UiPath source states that it unifies agentic AI, automation, BPM, and process intelligence, directly matching this topic. A 2026 BPM market snippet says Salesforce is best for enterprises with significant Salesforce CRM footprint, implying stronger fit in-platform than across heterogeneous environments. On balance, UiPath appears stronger in end-to-end orchestration breadth and cross-system BPM maturity.",
+        "evidence": "UiPath's 2026 announcement says the 'UiPath Maestro Connector enables enterprise-grade process orchestration by connecting Salesforce Flows.' UiPath's Salesforce automation page says it unifies 'agentic AI, automation, BPM, and process intelligence.' A 2026 BPM companies snippet says Salesforce is 'Best for: Enterprises with significant Salesforce CRM' presence, suggesting a narrower sweet spot.",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
-          "https://www.salesforce.com/agentforce/"
+          "https://ir.uipath.com/news/detail/440/uipath-announces-ai-powered-orchestration-and-cx-automation-on-salesforce-agentexchange",
+          "https://www.uipath.com/platform/agentic-automation/ai-ecosystem/salesforce-automation",
+          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Salesforce provides testing capabilities through its development lifecycle but lacks a dedicated enterprise test automation suite.",
-        "reasoning": "Salesforce provides sandbox environments for testing configuration and customization changes before production deployment. Salesforce DX and DevOps Center enable CI/CD-style testing and deployment. However, Salesforce does not offer a dedicated enterprise test automation suite for functional and performance testing of business processes comparable to UiPath Test Cloud.",
-        "evidence": "Salesforce DevOps Center supports deployment pipelines with testing stages. Salesforce sandbox environments enable testing before production. However, no dedicated functional or performance test automation product comparable to UiPath Test Cloud, self-healing automation, or Autopilot for Testers is documented in Salesforce's core product portfolio.",
-        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, agentic testing capabilities, Test Manager governance, and CI/CD integrations. UiPath was named a Gartner Magic Quadrant Leader for AI-augmented software testing — a market where Salesforce has no comparable offering.",
+        "score": 4,
+        "rationale": "UiPath has the clearer documented position on functional and emerging performance testing in the retrieved evidence, while Salesforce appears to rely more on partner ecosystem tooling. That gives UiPath a demonstrable advantage on this topic.",
+        "reasoning": "Search results for Salesforce testing mainly returned third-party testing ecosystem content rather than native Salesforce testing platform evidence. By contrast, UiPath results explicitly mention Test Cloud, agentic testing, and even 'Performance testing NEW' in a 2026 announcement snippet. Gartner also shows a market for AI-augmented testing tools where UiPath participates, reinforcing category relevance. Since the available snippet evidence for Salesforce is indirect while UiPath's is product-specific, UiPath scores ahead.",
+        "evidence": "UiPath's testing page says 'agentic testing powered by UiPath Test Cloud' delivers a smarter, faster testing platform. A 2026 UiPath announcement snippet explicitly lists 'Performance testing NEW.' A 2026 KiwiQA article discusses tools for 'Salesforce testing' and 'scalable and reliable Salesforce testing initiatives,' indicating reliance on an ecosystem of specialized tools rather than clearly native Salesforce capabilities.",
         "sources": [
-          "https://www.salesforce.com/agentforce/",
-          "https://compliance.salesforce.com/en"
+          "https://www.uipath.com/platform/agentic-testing",
+          "https://ir.uipath.com/news/detail/440/uipath-announces-ai-powered-orchestration-and-cx-automation-on-salesforce-agentexchange",
+          "https://www.kiwiqa.com/automation-tools-for-salesforce-testing/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "Salesforce provides strong monitoring through trust.salesforce.com real-time status, Einstein Analytics, and Data Cloud visibility across its ecosystem.",
-        "reasoning": "Salesforce maintains trust.salesforce.com for real-time platform status and incident transparency. Einstein Analytics (Tableau) provides business intelligence and operational dashboards. Agentforce monitoring provides agent performance visibility. Salesforce Event Monitoring enables audit logging of user activity. MuleSoft Anypoint Monitoring provides integration-level observability.",
-        "evidence": "Salesforce's trust.salesforce.com provides real-time system status. Salesforce Event Monitoring provides audit logs for user activity. MuleSoft Anypoint Monitoring includes API analytics and integration performance dashboards. Agentforce provides agent activity visibility within the Salesforce ecosystem.",
-        "uipath_advantage": "UiPath provides centralized monitoring across all automation types including robot execution, agent traces, API workflow performance, and human task completion in one unified Automation Cloud view. UiPath's AI Trust Layer adds LLM observability. UiPath's monitoring scope extends beyond Salesforce's platform-centric view to cross-system automation visibility.",
+        "rationale": "UiPath shows a more explicit monitoring and observability story in the evidence retrieved, while Salesforce/MuleSoft evidence includes criticism about reduced observability. That supports a UiPath advantage, though not a total knockout because the third-party evidence is limited.",
+        "reasoning": "The available Salesforce-side monitoring evidence is relatively weak and partly negative: a 2025 LinkedIn post claims MuleSoft became 'lightweight' by stripping 'statefulness and observability.' Another 2026 third-party roundup treats governance and observability as key evaluation criteria but does not specifically crown Salesforce. UiPath's product baseline and surrounding evidence emphasize centralized orchestration and analytics, which are closely tied to observability in automation programs. Because the retrieved web snippets are not deep enough for a '5', a '4' is the most supportable score.",
+        "evidence": "A July 2025 LinkedIn snippet claims MuleSoft became 'lightweight' by stripping enterprise capabilities like 'statefulness and observability.' A May 2026 enterprise agent platform roundup lists 'Governance and observability (audit trails, ...)' as core evaluation criteria for enterprise platforms. A March 2026 implementation snippet describes 'UiPath as the orchestration and automation engine,' implying a central layer for operational monitoring.",
         "sources": [
-          "https://compliance.salesforce.com/en",
-          "https://www.salesforce.com/agentforce/"
+          "https://www.linkedin.com/posts/andresramirezv_legacy-activity-7350798880042569729-Cf1Z",
+          "https://sanalabs.com/agents-blog/enterprise-agentic-ai-platforms-sana-workday-2026",
+          "https://iwconnect.com/from-manual-chaos-to-intelligent-automation-ai-lead-scoring-with-salesforce-uipath/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "Salesforce provides strong platform governance through comprehensive compliance certifications, Data Cloud governance, Einstein Trust Layer, and Shield platform security.",
-        "reasoning": "Salesforce Shield provides field-level encryption, event monitoring, and data archiving for regulated industries. Einstein Trust Layer governs AI operations including data masking and toxicity detection. Data Cloud provides data governance across unified customer data. Salesforce's compliance.salesforce.com documents certifications including ISO 27001 coverage for Agentforce and SOC 2 Type II.",
-        "evidence": "Salesforce's Trust & Compliance change log shows Agentforce Assistant was added to SOC and ISO certifications. Salesforce Shield provides enterprise security including field-level encryption and event monitoring. Einstein Trust Layer (announced 2023, expanded through 2026) provides AI governance including data masking and zero data retention options.",
-        "uipath_advantage": "UiPath's AI Trust Layer provides more automation-specific LLM governance — centralized policy enforcement for all LLM calls across automation workflows. UiPath's Orchestrator audit trails cover the full automation lifecycle (robot, agent, API, human) in ways that Salesforce's platform governance does not address for cross-system automation.",
+        "rationale": "UiPath has the stronger explicit evidence for end-to-end traceability and audit-ready governance, especially in testing and automation operations. Salesforce is credible in enterprise governance, but the retrieved snippets point more clearly to UiPath leadership on traceability.",
+        "reasoning": "A 2026 Sana Labs comparison snippet says enterprise buyers evaluate governance and traceability across agent platforms and that Salesforce Agentforce is built for enterprise use, but it does not show superiority. By contrast, a 2026 TestingXperts snippet states UiPath Test Manager connects requirements, test cases, defects, and execution results to improve traceability and governance. Another 2026 operations roundup explicitly says 'UiPath leads for traceability and audit-ready operations.' That direct evidence supports a UiPath advantage.",
+        "evidence": "A 2026 Sana Labs snippet says buyers compare Salesforce Agentforce and UiPath AI Agents on 'governance and traceability.' A 2026 TestingXperts snippet says UiPath Test Manager connects 'requirements, test cases, defects, and execution results to improve traceability, governance.' A June 2026 WifiTalents snippet states 'UiPath leads for traceability and audit-ready operations.'",
         "sources": [
-          "https://compliance.salesforce.com/en",
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
+          "https://sanalabs.com/agents-blog/leading-ai-enterprise-fortune-500",
+          "https://www.testingxperts.com/blog/uipath-test-manager-business-intent-automated-execution/",
+          "https://wifitalents.com/best/automated-operations-software/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
-        "score": 2,
-        "rationale": "Salesforce has limited native process intelligence capabilities — Data Cloud provides data unification but lacks dedicated process mining, conformance checking, or task mining.",
-        "reasoning": "Salesforce Data Cloud unifies customer and operational data across the Salesforce ecosystem, providing a data foundation for process insights. Einstein Analytics enables business intelligence reporting. However, Salesforce does not offer dedicated process mining with event log analysis, conformance checking against process models, or task mining for desktop process discovery.",
-        "evidence": "Salesforce's architecture documentation focuses on CRM data unification through Data Cloud and AI-powered insights through Einstein Analytics. No dedicated process mining, task mining, or conformance checking capabilities are documented in Salesforce's product portfolio as of 2026.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining — a capability category where Salesforce has no direct product.",
+        "score": 3,
+        "rationale": "Salesforce has materially improved its position through the Apromore acquisition, making process intelligence a genuine strength rather than a gap. UiPath remains highly credible with established process mining and orchestration, so current evidence points to parity.",
+        "reasoning": "Two 2025 sources explicitly state Salesforce acquired Apromore, a process intelligence software provider, to bring process optimization into its platform; one snippet notes Apromore discovers, maps, and analyses processes. That is meaningful evidence of investment and capability expansion. UiPath simultaneously positions itself as unifying process intelligence with automation and orchestration, and the AgentExchange release reinforces process-level integration with Salesforce Flows. Because Salesforce's move is strong but relatively recent, parity is more defensible than awarding either side a strong lead.",
+        "evidence": "A Constellation Research 2025 snippet says Salesforce acquired Apromore 'as it aims to bring process optimization to its' platform. An IDM 2025 snippet says Apromore's software 'discovers, maps and analyses' processes. UiPath's Salesforce automation page says it unifies 'agentic AI, automation, BPM, and process intelligence.'",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
-          "https://www.salesforce.com/agentforce/"
+          "https://www.constellationr.com/insights/news/salesforces-acquisition-apromore-highlights-how-process-intelligence-agentic-ai",
+          "https://idm.net.au/index.php/blog/0015379-salesforce-acquires-process-intelligence-firm",
+          "https://www.uipath.com/platform/agentic-automation/ai-ecosystem/salesforce-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
-        "score": 2,
-        "rationale": "Salesforce licensing is typically expensive with complex per-user, per-feature, and Agentforce conversation-based pricing that can significantly increase TCO at scale.",
-        "reasoning": "Salesforce uses per-user licensing for core CRM with additional fees for Einstein AI, Data Cloud, Agentforce, and MuleSoft. Agentforce uses conversation-based pricing ($2/conversation with volume discounts). MuleSoft licensing is separate and can be substantial. Forrester noted Salesforce's pricing can escalate significantly as AI usage scales. Total Salesforce investment for enterprises often exceeds $500K-$1M+ annually when combining CRM, Data Cloud, Agentforce, and MuleSoft.",
-        "evidence": "Forrester wrote in May 2025 that Salesforce is accelerating toward agentic AI with pricing models that include conversation-based Agentforce pricing. Analyst reviews and customer discussions consistently cite Salesforce's licensing complexity and cost as a significant consideration. MuleSoft requires separate licensing on top of Salesforce platform costs.",
-        "uipath_advantage": "UiPath's licensing model, while complex, is more focused on automation value (bots, agents, API calls) rather than user-seat pricing. For enterprises deploying cross-system automation, UiPath typically offers better TCO than combining Salesforce CRM + Agentforce + MuleSoft for comprehensive automation coverage.",
+        "score": 3,
+        "rationale": "The retrieved evidence suggests Salesforce has evolving AI/agent pricing models and potentially complex enterprise licensing dynamics, but the snippets do not give enough direct, validated pricing detail to prove a TCO advantage or disadvantage versus UiPath. Parity is the safest evidence-based score.",
+        "reasoning": "Search results produced only indirect pricing evidence, including references to 'Salesforce renewal, Agentforce pricing, MuleSoft integration, and Tableau bundle pushback' and a third-party note about an 'Agentic Enterprise License.' Those hints suggest nontrivial licensing complexity, but not enough to quantify TCO. UiPath is also an enterprise platform with its own licensing considerations, and no direct comparative snippet provided a strong cost narrative either way. Because pricing evidence from snippets is thin and partly analyst/blog commentary, confidence is low.",
+        "evidence": "A Redress Compliance search result snippet references 'Salesforce renewal, Agentforce pricing, MuleSoft integration, and Tableau bundle pushback.' A Cygnet.One 2026 snippet references Salesforce's 'Outcome-based: Salesforce's Agentic Enterprise License.'",
         "sources": [
-          "https://www.forrester.com/blogs/salesforce-accelerates-its-path-to-agentic-ai/",
-          "https://www.salesforce.com/agentforce/"
+          "https://redresscompliance.com/blog",
+          "https://www.cygnet.one/feeds/blog/ai-agents-large-scale-support-enterprise"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Salesforce has exceptional applicability in CRM-adjacent industries (financial services, healthcare, retail, manufacturing) with purpose-built industry clouds.",
-        "reasoning": "Salesforce offers industry-specific clouds for Financial Services, Health Cloud, Manufacturing Cloud, Automotive Cloud, Consumer Goods Cloud, and Public Sector. Agentforce is tailored for sales, service, and marketing use cases. With 150,000+ customers globally, Salesforce has proven applicability across virtually every industry vertical, particularly where CRM and customer engagement processes are central.",
-        "evidence": "Salesforce's trust compliance documentation covers Financial Services Cloud, Health Cloud, Marketing Cloud, Manufacturing Cloud, and other industry-specific products. Salesforce serves organizations across financial services, healthcare, retail, manufacturing, and public sector with purpose-built industry solutions.",
-        "uipath_advantage": "UiPath has broader automation applicability beyond CRM-centric use cases — particularly for back-office automation (accounts payable, HR, supply chain), document processing (IXP), legacy system integration, and regulated industry compliance automation that goes beyond Salesforce's CRM-native scope.",
+        "score": 3,
+        "rationale": "Salesforce has broad horizontal and industry applicability, especially across customer-facing domains, while UiPath applies across back-office and operational domains. The evidence supports strong breadth for both, with neither clearly ahead on the snippets retrieved.",
+        "reasoning": "The Salesforce/Futurum snippet highlights broad applicability across functions such as finance, procurement, and HR, which goes beyond front-office CRM. Additional ecosystem/analyst snippets reference industry domain knowledge and accelerators around the Salesforce ecosystem. UiPath's baseline strength is cross-industry automation applicability spanning document understanding, task mining, RPA, and orchestration. Because both have strong but differently centered applicability, parity is the most supportable conclusion.",
+        "evidence": "A Salesforce/Futurum snippet says the platform has 'broad applicability across critical business functions such as finance, procurement, and HR.' An Everest Group snippet references the importance of 'industry domain knowledge, and consulting capabilities' in the Salesforce ecosystem. A Cognizant ISG snippet mentions Salesforce ecosystem delivery with partners including 'UiPath' and other vendors for industry-specific solutions and accelerators.",
         "sources": [
-          "https://compliance.salesforce.com/en/categories/iso-27001",
-          "https://www.salesforce.com/agentforce/"
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Futurum-Signal_Agentic-AI-Platforms-for-Enterprise_FSRAAPE202510_Licensed202512_Salesforce-1.pdf",
+          "https://www.everestgrp.com/report/egr-2025-21-r-7534/",
+          "https://www.cognizant.com/en_us/services/documents/salesforce-ecosystem-2025-quadrant-report-de.pdf"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Salesforce's dominant CRM market position, hyperscaler infrastructure investment, and aggressive Agentforce AI strategy provide strong long-term enterprise value.",
-        "reasoning": "Salesforce is the world's leading CRM platform with $38B+ annual revenue and sustained R&D investment in AI (Agentforce, Einstein, Data Cloud). The Hyperforce infrastructure modernization ensures long-term scalability. Salesforce's ecosystem (AppExchange, partner network, Trailblazer community with millions of developers) provides durable platform value. Agentforce represents a major strategic bet on agentic AI for long-term platform evolution.",
-        "evidence": "Salesforce's scale ($38B+ annual revenue), market dominance in CRM, and significant investment in Agentforce, Data Cloud, and Hyperforce demonstrate sustained long-term platform investment. Forrester and Gartner consistently recognize Salesforce as a market leader across CRM and related automation categories.",
-        "uipath_advantage": "UiPath's long-term value is anchored in enterprise automation breadth (RPA + AI + Process Mining + Test Suite + IXP) rather than CRM market dominance. For customers whose core business processes extend beyond CRM, UiPath provides more comprehensive long-term automation value. Salesforce's dominance is strongest when CRM is the system of record.",
+        "score": 3,
+        "rationale": "Salesforce has a credible long-term value narrative tied to platform adoption and AI expansion, but some analyst commentary suggests its future positioning depends on execution. UiPath likewise has durable long-term value where enterprise automation standardization and cross-system orchestration are strategic priorities.",
+        "reasoning": "The most balanced third-party evidence is Futurum's 2026 statement that Salesforce's 'long-term positioning depends heavily' on whether enterprises can operationalize and package AI capabilities effectively. Salesforce/Futurum also argues the platform broadens the user base and drives 'long-term adoption,' which supports upside. UiPath's long-term value proposition rests on consolidating automation, process intelligence, and testing into one platform. Because the evidence shows promise but not unambiguous superiority for Salesforce, parity is the best score.",
+        "evidence": "A Futurum 2026 snippet says 'Salesforce's long-term positioning depends heavily on whether enterprises' can package and operationalize AI capabilities. A Salesforce/Futurum Signal snippet says the platform drives 'long-term adoption.' A Cognizant ISG snippet references 'long-term business value and system' outcomes in Salesforce ecosystem transformation work.",
         "sources": [
-          "https://www.salesforce.com/agentforce/",
-          "https://compliance.salesforce.com/en"
+          "https://futurumgroup.com/insights/who-will-control-the-enterprise-agentic-workforce-cios-face-a-new-platform-war/",
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Futurum-Signal_Agentic-AI-Platforms-for-Enterprise_FSRAAPE202510_Licensed202512_Salesforce-1.pdf",
+          "https://www.cognizant.com/en_us/services/documents/salesforce-ecosystem-2025-quadrant-report-de.pdf"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "Salesforce provides strong business agility for CRM-centric processes through declarative Salesforce Flow, Agentforce, and continuous platform updates.",
-        "reasoning": "Salesforce Flow enables rapid no-code/low-code process automation changes within the Salesforce ecosystem. Three major releases per year (Spring, Summer, Winter) deliver continuous capabilities. Agentforce 2dx's proactive agentic capabilities enable faster response to business needs. Salesforce's ecosystem of ISV partners and AppExchange accelerators enables rapid capability extension.",
-        "evidence": "Salesforce releases three major updates per year. Agentforce 2dx introduced capabilities to embed proactive agentic AI into any workflow to increase business adaptability. Salesforce Flow provides declarative automation changes without code. The AppExchange provides thousands of pre-built solutions for rapid capability extension.",
-        "uipath_advantage": "UiPath provides comparable business agility through Maestro's BPMN-based process changes (visual process updates reviewed in hours), combined with the full automation lifecycle from Process Mining discovery through Test Suite validation to Orchestrator production deployment. UiPath's adaptability extends to legacy system changes that Salesforce Flow cannot address.",
+        "score": 3,
+        "rationale": "Salesforce has strong agility messaging around declarative AI, multi-agent collaboration, and flexible model choices, but UiPath is similarly strong in adaptable cross-system automation. The available evidence points to parity.",
+        "reasoning": "Salesforce/Futurum snippets highlight movement toward multi-agent collaboration and suggest flexible, declarative AI capabilities that can broaden adaptability. A Cognizant ISG snippet notes organizations benefit from flexibility to select AI models and capabilities for unique challenges, aligning with agility. UiPath, however, has a strong agility story through low-code plus coded development, connectors, orchestration, and human-in-the-loop automation across systems. With neither side clearly proven superior by the snippets, parity is the most rigorous conclusion.",
+        "evidence": "A Salesforce/Futurum snippet says there is 'a clear movement towards multi-agent collaboration, where autonomous AI agents perceive environments, make decisions.' A Cognizant ISG snippet says businesses benefit from 'the flexibility to select AI models and capabilities that best address their unique challenges.' An Everest Group snippet says firms are using agentic AI to 'enhance agility, scalability, and resilience.'",
         "sources": [
-          "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx/default.aspx",
-          "https://www.salesforce.com/agentforce/"
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Futurum-Signal_Agentic-AI-Platforms-for-Enterprise_FSRAAPE202510_Licensed202512_Salesforce-1.pdf",
+          "https://www.cognizant.com/en_us/services/documents/salesforce-ecosystem-2025-quadrant-report-de.pdf",
+          "https://www.everestgrp.com/report/egr-2025-71-v-7445/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       }
