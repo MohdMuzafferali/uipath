@@ -264,6 +264,54 @@
         "confidence": "High",
         "notes": "",
         "questions": ""
+      },
+      {
+        "vendor": "microsoft",
+        "topic": "Security & Compliance",
+        "score": 3,
+        "rationale": "Microsoft shows strong, current security and compliance depth across Power Platform, Copilot Studio, and its broader cloud stack, while UiPath has a focused enterprise governance model with AI Trust Layer, auditability, and deployment flexibility. Based on available search-result evidence, this topic is best scored as near parity rather than a clear lead for either side.",
+        "reasoning": "Search results indicate Microsoft continues to invest in enterprise-grade security and compliance for Power Platform in 2026, including enhanced security agent features, governance and administration updates, and Copilot Studio security and governance controls tied to Power Platform. Third-party comparison snippets also cite Microsoft's secure cloud infrastructure and compliance with standards such as GDPR, ISO, and HIPAA, reinforcing strong enterprise maturity. UiPath, however, has explicit platform strengths in AI Trust Layer, PII guardrails, role-based access, audit trails, and flexible cloud/on-prem/hybrid/air-gapped deployment that can be especially important for regulated automation programs. Because this environment only exposes search-result snippets and not full page browsing, the evidence is sufficient to establish Microsoft's strength but not enough to prove a decisive advantage over UiPath on automation-specific security and compliance, so parity is the most defensible score.",
+        "evidence": [
+          "Microsoft's Power Platform 2026 release wave 1 plan says 'enhanced security agent features will further support low code ... enterprise-grade compliance at scale' and highlights governance and administration.",
+          "Microsoft's 2026 Power Platform governance and administration release-plan page says the feature area includes 'enterprise-grade protection for all Power Platform assets' and references identifying security and compliance issues before deployment.",
+          "Microsoft Learn's Copilot Studio security and governance page says users can use Power Platform security and governance controls plus 'certifications, regulatory compliance, environment routing'.",
+          "A 2025 comparison article snippet states Power Automate is built on Microsoft's secure cloud infrastructure and offers compliance with standards such as GDPR, ISO, and HIPAA.",
+          "Microsoft's Power Platform governance considerations page references subscribing to Microsoft 365 Security and Compliance Audit Logs for alerting, indicating integration with broader Microsoft compliance operations."
+        ],
+        "uipath_advantage": "UiPath differentiates with automation-specific enterprise controls including AI Trust Layer, PII guardrails, Action Center human-in-the-loop governance, detailed audit trails, and deployment flexibility across cloud, on-premises, hybrid, and air-gapped environments via Automation Cloud and Orchestrator.",
+        "sources": [
+          "Microsoft Power Platform 2026 release wave 1 plan - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/",
+          "Overview of Microsoft Power Platform governance and administration - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-platform-governance-administration/",
+          "Copilot Studio security and governance - https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
+          "Security and governance considerations in Power Platform - https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations",
+          "Flexmind: Power Automate vs UiPath - https://www.flexmind.co/power-automate-vs-uipath/"
+        ],
+        "confidence": "medium",
+        "last_updated": "2026-07-03"
+      },
+      {
+        "vendor": "microsoft",
+        "topic": "Security & Compliance",
+        "score": 3,
+        "rationale": "Microsoft is strong on security and compliance for Power Platform and Copilot Studio, leveraging Microsoft 365/Azure controls and governance tooling. UiPath remains highly credible in enterprise governance and AI trust, so available evidence supports parity rather than a clear lead for either vendor.",
+        "reasoning": "Search evidence shows Microsoft emphasizing enterprise-grade security, compliance, and governance across Power Platform in 2025-2026, including a 2026 release-plan item specifically for security and compliance and managed environment licensing for Power Automate Premium and Copilot Studio. Competitive snippets also state Power Automate inherits Microsoft 365 identity, security, and compliance controls, which is a meaningful enterprise advantage for Microsoft-centric customers. However, the search-result-only evidence does not provide enough detailed third-party proof that Microsoft clearly surpasses UiPath on automation-specific governance, auditability, AI trust controls, or regulated deployment flexibility. Given UiPath's baseline strengths in AI Trust Layer, PII guardrails, audit trails, role-based access, and cloud/on-prem/hybrid/air-gapped deployment, the most supportable score is parity.",
+        "evidence": [
+          "Microsoft's 2026 Power Platform governance and administration release-plan page says the 'Security and compliance' feature area includes 'enterprise-grade protection for all Power Platform assets.' (Microsoft Learn, Mar. 26, 2026)",
+          "Microsoft Learn managed environment licensing page lists Power Automate Premium and Microsoft Copilot Studio among covered Power Platform offerings, indicating formal enterprise administration/licensing controls for these services. (Microsoft Learn, Jun. 22, 2026)",
+          "Microsoft's Power Platform site says customers can 'build and scale intelligent apps, agents, and automation with an AI platform that maintains enterprise-grade control, security, and trust.' (Microsoft Power Platform)",
+          "A 2026 competitive article states 'Power Automate inherits Microsoft 365's identity, security, and compliance' controls. (i3solutions, Apr. 8, 2026)",
+          "Microsoft's 2025 Gartner Magic Quadrant announcement for enterprise low-code application platforms cites investments in 'compliance, and security capabilities.' (Microsoft Power Platform Blog, Aug. 7, 2025)"
+        ],
+        "uipath_advantage": "UiPath differentiates with automation-specific enterprise governance rather than broader suite inheritance: AI Trust Layer and PII guardrails for AI usage, Action Center human-in-the-loop controls, Insights and Test Manager for governed operations, and flexible deployment across cloud, on-prem, hybrid, and air-gapped environments via Automation Cloud and Orchestrator.",
+        "sources": [
+          "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-platform-governance-administration/",
+          "https://learn.microsoft.com/en-us/power-platform/admin/managed-environment-licensing",
+          "https://www.microsoft.com/en-us/power-platform",
+          "https://i3solutions.com/insights-power-platform/power-automate-vs-rpa/",
+          "https://www.microsoft.com/en-us/power-platform/blog/power-apps/microsoft-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-enterprise-low-code-application-platforms/"
+        ],
+        "confidence": "medium",
+        "last_updated": "2026-07-03"
       }
     ],
     "Appian": [
@@ -2339,32 +2387,6 @@
         "confidence": "High",
         "notes": "",
         "questions": ""
-      }
-    ],
-    "microsoft": [
-      {
-        "vendor": "microsoft",
-        "topic": "Security & Compliance",
-        "score": 3,
-        "rationale": "Microsoft shows strong, current security and compliance depth across Power Platform, Copilot Studio, and its broader cloud stack, while UiPath has a focused enterprise governance model with AI Trust Layer, auditability, and deployment flexibility. Based on available search-result evidence, this topic is best scored as near parity rather than a clear lead for either side.",
-        "reasoning": "Search results indicate Microsoft continues to invest in enterprise-grade security and compliance for Power Platform in 2026, including enhanced security agent features, governance and administration updates, and Copilot Studio security and governance controls tied to Power Platform. Third-party comparison snippets also cite Microsoft's secure cloud infrastructure and compliance with standards such as GDPR, ISO, and HIPAA, reinforcing strong enterprise maturity. UiPath, however, has explicit platform strengths in AI Trust Layer, PII guardrails, role-based access, audit trails, and flexible cloud/on-prem/hybrid/air-gapped deployment that can be especially important for regulated automation programs. Because this environment only exposes search-result snippets and not full page browsing, the evidence is sufficient to establish Microsoft's strength but not enough to prove a decisive advantage over UiPath on automation-specific security and compliance, so parity is the most defensible score.",
-        "evidence": [
-          "Microsoft's Power Platform 2026 release wave 1 plan says 'enhanced security agent features will further support low code ... enterprise-grade compliance at scale' and highlights governance and administration.",
-          "Microsoft's 2026 Power Platform governance and administration release-plan page says the feature area includes 'enterprise-grade protection for all Power Platform assets' and references identifying security and compliance issues before deployment.",
-          "Microsoft Learn's Copilot Studio security and governance page says users can use Power Platform security and governance controls plus 'certifications, regulatory compliance, environment routing'.",
-          "A 2025 comparison article snippet states Power Automate is built on Microsoft's secure cloud infrastructure and offers compliance with standards such as GDPR, ISO, and HIPAA.",
-          "Microsoft's Power Platform governance considerations page references subscribing to Microsoft 365 Security and Compliance Audit Logs for alerting, indicating integration with broader Microsoft compliance operations."
-        ],
-        "uipath_advantage": "UiPath differentiates with automation-specific enterprise controls including AI Trust Layer, PII guardrails, Action Center human-in-the-loop governance, detailed audit trails, and deployment flexibility across cloud, on-premises, hybrid, and air-gapped environments via Automation Cloud and Orchestrator.",
-        "sources": [
-          "Microsoft Power Platform 2026 release wave 1 plan - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/",
-          "Overview of Microsoft Power Platform governance and administration - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-platform-governance-administration/",
-          "Copilot Studio security and governance - https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
-          "Security and governance considerations in Power Platform - https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations",
-          "Flexmind: Power Automate vs UiPath - https://www.flexmind.co/power-automate-vs-uipath/"
-        ],
-        "confidence": "medium",
-        "last_updated": "2026-07-03"
       }
     ]
   },
