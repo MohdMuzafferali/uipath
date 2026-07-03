@@ -44,9 +44,9 @@
     "Microsoft": [
       {
         "category": "Security & Compliance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong security/governance ecosystem (Purview, Entra, Sentinel) around automation and agents.",
-        "reasoning": "Score 5 because Microsoft provides audit logging via Purview, data exfiltration/network isolation features, and governance controls for Copilot agents\u2014core enterprise security building blocks.",
+        "reasoning": "Score 5 because Microsoft provides audit logging via Purview, data exfiltration/network isolation features, and governance controls for Copilot agents—core enterprise security building blocks.",
         "evidence": "Microsoft documentation describes Power Automate audit logs being available in the Microsoft Purview compliance portal, supporting enterprise auditing. Power Platform security updates describe network isolation and security monitoring integrations (for example, Sentinel for Power Platform). Copilot Studio governance guidance also highlights logging and security assessments for agents.",
         "sources": [
           "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate",
@@ -60,7 +60,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Cloud-first managed operations with options like hosted RPA and admin tooling.",
         "reasoning": "Score 4 because Power Automate is delivered as a managed cloud service and offers hosted RPA options, but deep on-prem/self-managed flexibility is more limited than containerized suites.",
         "evidence": "Power Automate pricing describes plans for attended and unattended desktop flows, including a Microsoft hosted virtual machine option for hosted RPA. Admin documentation for logging and auditing shows enterprise operations hooks (Purview audit logs and SDK/API access). Together these support day-2 ops for a primarily SaaS deployment model.",
@@ -75,7 +75,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Enterprise scale is strong, but reliability patterns vary by connector and flow design.",
         "reasoning": "Score 4 because Microsoft operates on Azure-scale infrastructure and provides security/monitoring integrations, yet some reliability is workload-specific (connector limits, throttling, etc.).",
         "evidence": "Microsoft positions Power Platform environments with network isolation and SIEM integration (Sentinel for Power Platform) as part of a broader security/monitoring posture. Automation workloads can be scaled through licensing models that support unattended bots and hosted RPA. Reliability still depends on connector behavior and governance policies in each tenant.",
@@ -90,7 +90,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very broad connectivity via connectors and extensibility for custom connectors.",
         "reasoning": "Score 5 because Power Platform has a large connector ecosystem and explicit support for custom/certified connectors.",
         "evidence": "Microsoft maintains a public repository for Power Platform connectors, describing certified connectors, independent publisher connectors, and custom connector samples.",
@@ -104,7 +104,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Excellent time-to-value for business teams due to mature low-code UX and packaged plans.",
         "reasoning": "Score 5 because Power Automate is designed for low-code automation and offers packaged entitlements that reduce the barrier to initial adoption.",
         "evidence": "Power Automate's pricing page describes turnkey plans that include cloud flows, attended desktop flows, and process/task mining for individual users, plus separate plans for unattended automation and hosted machines.",
@@ -118,7 +118,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Rapidly maturing agent ecosystem via Copilot Studio and Microsoft 365/Azure integrations.",
         "reasoning": "Score 4 because Microsoft has clear agent governance/identity patterns and is adding multi-agent orchestration features, but agentic capabilities may be distributed across products.",
         "evidence": "Microsoft's Build 2025 announcement describes Copilot Studio as a low-code hub for building agents, plus Entra Agent ID to assign identities and extend Purview Information Protection.",
@@ -133,7 +133,7 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Good orchestration for workflow automation, weaker for full BPMN-centric process modeling.",
         "reasoning": "Score 3 because Power Automate supports business process flows and workflow composition, but the platform is not primarily BPMN-driven like traditional BPM suites.",
         "evidence": "Microsoft licensing guidance describes Power Automate supporting multiple flow types including 'business process flows' alongside automated/instant/scheduled flows.",
@@ -147,7 +147,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Testing support exists but is less specialized than dedicated test platforms.",
         "reasoning": "Score 3 because while flows can be tested and observed, Microsoft's automation stack is not primarily marketed as an enterprise test automation suite.",
         "evidence": "Microsoft provides detailed audit logging for automation activities via Purview and Dataverse auditing for record changes, enabling traceability for changes and executions.",
@@ -162,7 +162,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong observability and security monitoring integration options.",
         "reasoning": "Score 4 because the platform provides audit logs and is adding SOC/SIEM integrations.",
         "evidence": "Power Platform security features include integration into a security operations center via Microsoft Sentinel for Power Platform. Power Automate audit logs are available in Purview and can be accessed programmatically via the Office 365 Management API.",
@@ -177,7 +177,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Best-in-class governance and auditing through Purview + platform auditing features.",
         "reasoning": "Score 5 because Microsoft provides broad audit logging for Power Platform services and detailed Dataverse auditing/retention controls.",
         "evidence": "Power Automate admin documentation states that activity logs are available in the Microsoft Purview compliance portal. Dataverse auditing documentation explains how it logs changes to records and user access, supports retention policies, and can be retrieved via API/SDK.",
@@ -192,7 +192,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Solid process intelligence through process mining offerings in Power Automate.",
         "reasoning": "Score 4 because Power Automate includes process mining and positions it as an analysis tool for discovering and improving processes.",
         "evidence": "Microsoft describes process mining as extracting knowledge from event logs and audit trails across systems to discover, monitor, and improve processes.",
@@ -207,7 +207,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Pricing is transparent but can be complex (per-user, per-bot, pay-as-you-go meters).",
         "reasoning": "Score 3 because Microsoft publishes list prices and also offers pay-as-you-go meters; cost modeling can still be complex across bots, runs, and Dataverse capacity.",
         "evidence": "Power Automate pricing lists per-user and per-bot plans, including unattended bots and hosted RPA. Microsoft Learn also documents pay-as-you-go meters and per-run charges.",
@@ -222,7 +222,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Broad applicability across departments and ecosystems via Microsoft footprint and connectors.",
         "reasoning": "Score 5 because Power Automate covers cloud flows, desktop flows, and process mining within the Power Platform ecosystem.",
         "evidence": "Power Automate plans cover cloud automation, desktop RPA, and process mining for both individual and enterprise use cases.",
@@ -237,7 +237,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 5.0,
+        "score": 5,
         "rationale": "High long-term value due to deep integration with Microsoft identity, compliance, and ecosystem tooling.",
         "reasoning": "Score 5 because governance (Purview), identity (Entra), and ongoing agent/automation investments provide a durable foundation.",
         "evidence": "Microsoft's agent governance announcements describe managing agent identity with Entra and storing logs for auditing in Purview.",
@@ -252,7 +252,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very high agility for iterative automation changes with enterprise guardrails available.",
         "reasoning": "Score 5 because low-code development plus centralized governance/auditing allows fast iteration while maintaining control.",
         "evidence": "Power Platform provides auditing (Purview/Dataverse) and security governance features, enabling admins to set policies while makers build quickly.",
@@ -269,7 +269,7 @@
     "Appian": [
       {
         "category": "Security & Compliance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Extensive compliance portfolio (SOC reports, ISO) with strong cloud security options.",
         "reasoning": "Score 5 because Appian Cloud explicitly lists SOC 2 Type II and ISO 27001/27017 and other certifications, covering many regulated industry requirements.",
         "evidence": "Appian's cloud compliance documentation describes SOC 2 Type II reporting and ISO/IEC 27001:2022 certification. The Trust Center highlights additional attestations (HIPAA, PCI DSS, FedRAMP).",
@@ -284,7 +284,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Enterprise-oriented cloud platform with managed security monitoring.",
         "reasoning": "Score 4 because Appian Cloud is designed for demanding environments, but some advanced features can be limited in self-managed scenarios.",
         "evidence": "The Appian Protect page positions Appian Cloud for demanding enterprise environments, emphasizing security monitoring and encryption.",
@@ -299,7 +299,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong scalability options (including autoscale tiers).",
         "reasoning": "Score 4 because pricing tiers explicitly include autoscale in higher editions.",
         "evidence": "Appian's pricing comparison lists 'Autoscale' capability as included in higher tiers, suggesting built-in scaling support for production workloads.",
@@ -314,7 +314,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Good integration story via built-in integrations and data fabric, plus RPA for non-API systems.",
         "reasoning": "Score 4 because Appian includes integration capabilities and RPA to bridge legacy systems.",
         "evidence": "Appian pricing highlights 'Integrations' as a platform capability and includes Robotic Process Automation entitlements (bots) across tiers. The RPA product page emphasizes using RPA when APIs are unavailable.",
@@ -329,7 +329,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong time-to-value with low-code process design and reusable patterns.",
         "reasoning": "Score 4 because Appian is built around low-code process modeling and reusable 'process recipes'.",
         "evidence": "Appian documentation describes BPMN as a standard for graphically describing business processes and states that with Appian the model becomes the executable process.",
@@ -343,7 +343,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Emerging agentic capabilities with explicit auditing for AI/agent usage.",
         "reasoning": "Score 4 because Appian has a defined 'Agent Studio' concept with audit logs.",
         "evidence": "Appian's AI agent auditing documentation describes an always-on AI Usage Audit Log that records timestamps, initiator IDs, agent IDs, feature type, and request status.",
@@ -358,10 +358,10 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Best-in-class BPM alignment via BPMN-centric executable process models.",
         "reasoning": "Score 5 because Appian explicitly supports BPMN-based process models as executable workflows.",
-        "evidence": "Appian documentation explains that BPMN is the standard for describing processes, and that in Appian the model is not just documentation\u2014it is translated into an executable process.",
+        "evidence": "Appian documentation explains that BPMN is the standard for describing processes, and that in Appian the model is not just documentation—it is translated into an executable process.",
         "sources": [
           "https://docs.appian.com/suite/help/24.1/process_modeling.html"
         ],
@@ -372,7 +372,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Adequate testing/validation features, but less evidence of a dedicated test suite.",
         "reasoning": "Score 3 because Appian supports configuring and testing workflows but lacks emphasis on performance testing harnesses.",
         "evidence": "Appian's process modeling materials focus on building and testing executable workflows as part of process design. The platform also provides audit logging for AI interactions.",
@@ -387,7 +387,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong monitoring posture via 'Appian Protect' plus platform analytics options.",
         "reasoning": "Score 4 because Appian Protect is positioned for security monitoring and Appian pricing highlights Process HQ in higher tiers.",
         "evidence": "The Appian Protect page frames Appian Protect as providing security monitoring and related controls for sensitive and regulated data.",
@@ -402,7 +402,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Good traceability for AI usage and compliance-driven environments.",
         "reasoning": "Score 4 because Appian provides default AI usage audit logs and a broader compliance portfolio.",
         "evidence": "Appian's AI Usage Audit Log is described as enabled by default and intended to provide the audit trail required for security questionnaires and compliance reviews.",
@@ -417,7 +417,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Integrated process intelligence available as part of platform packaging.",
         "reasoning": "Score 4 because Appian explicitly prices and positions process intelligence as a platform capability.",
         "evidence": "Appian's pricing page lists 'Process intelligence' as part of the product packaging and includes related capabilities such as Process HQ in higher tiers.",
@@ -431,7 +431,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Pricing is structured (per user/month/app) but can drive TCO complexity at scale.",
         "reasoning": "Score 3 because per-app/per-user constructs and tiered bot entitlements can complicate enterprise-wide TCO comparisons.",
         "evidence": "Appian's pricing page describes platform capabilities as priced per user, per month, per app, and includes tiered entitlements.",
@@ -445,7 +445,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong fit for regulated industries and process-heavy domains.",
         "reasoning": "Score 4 because Appian emphasizes healthcare, financial services, government.",
         "evidence": "Appian Protect highlights protecting sensitive and regulated data across domains like healthcare, financial services, and government, and lists certifications such as HIPAA and DoD impact levels.",
@@ -460,7 +460,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Durable value via standards-based BPM and deep compliance footprint.",
         "reasoning": "Score 4 because executable BPMN models and ongoing compliance attestations support long-running programs.",
         "evidence": "Appian's process modeling emphasizes BPMN as the foundation for executable workflows, improving stakeholder clarity and maintainability.",
@@ -475,7 +475,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
+        "score": 4,
         "rationale": "High agility through low-code design and reusable process patterns.",
         "reasoning": "Score 4 because low-code/BPMN models enable fast iteration while audit logs for agents provide governance.",
         "evidence": "Appian frames process models as executable and maintains process recipes/patterns for common workflows, enabling rapid solution iteration.",
@@ -492,7 +492,7 @@
     "ServiceNow": [
       {
         "category": "Security & Compliance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Robust enterprise compliance (SOC/ISO) plus trust posture for a large SaaS platform.",
         "reasoning": "Score 5 because ServiceNow publishes long-standing ISO and SOC attestations that address common enterprise compliance requirements.",
         "evidence": "ServiceNow's compliance page lists ISO certifications (including ISO/IEC 27018 for PII in public clouds and ISO/IEC 27701 for privacy) and notes ongoing third-party SOC 1/SOC 2 Type 2 attestations.",
@@ -506,7 +506,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Cloud platform operations with dedicated automation/RPA components and runtime setup guidance.",
         "reasoning": "Score 4 because ServiceNow is a managed platform with documented operational setup for components like unattended robots.",
         "evidence": "ServiceNow provides product documentation for setting up Unattended Robot applications to connect robots to the RPA Hub instance, including role requirements and mTLS authentication options.",
@@ -520,7 +520,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Scalable enterprise workflow backbone.",
         "reasoning": "Score 4 because ServiceNow's AI Platform emphasizes centralized workflows with governance mechanisms.",
         "evidence": "ServiceNow positions Process Mining and Automation Center as part of an AI Platform used to improve and deploy workflows and AI agents in a closed loop.",
@@ -535,7 +535,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong integration layer via IntegrationHub spokes/actions and templates.",
         "reasoning": "Score 4 because IntegrationHub documents many 'spokes' and reusable actions/templates for connecting external systems.",
         "evidence": "ServiceNow's IntegrationHub datasheet describes connecting API-enabled systems to ServiceNow and highlights 175+ spokes with thousands of actions, plus flow templates across domains.",
@@ -550,7 +550,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong time-to-value in domains where ServiceNow is already the system of work.",
         "reasoning": "Score 4 because prebuilt spokes/templates and native workflow tools accelerate delivery, especially for IT/employee workflows.",
         "evidence": "IntegrationHub materials emphasize prebuilt spokes, out-of-the-box solutions, and flow templates that reduce integration build time.",
@@ -565,10 +565,10 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Growing agentic portfolio with centralized governance and cross-platform orchestration initiatives.",
         "reasoning": "Score 4 because ServiceNow is launching governance/orchestration constructs (AI Control Tower, Agent Fabric).",
-        "evidence": "ServiceNow's AI Control Tower announcement describes a centralized command center to govern, manage, secure, and realize value from AI agents, models, and workflows\u2014including third-party agents.",
+        "evidence": "ServiceNow's AI Control Tower announcement describes a centralized command center to govern, manage, secure, and realize value from AI agents, models, and workflows—including third-party agents.",
         "sources": [
           "https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx"
         ],
@@ -579,7 +579,7 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong workflow orchestration in the Now Platform; BPM depth is good but less explicitly BPMN-first.",
         "reasoning": "Score 4 because ServiceNow supports workflow automation and reusable components (subflows), plus IntegrationHub for end-to-end processes.",
         "evidence": "Flow Designer guidance describes designing approval logic and making it reusable via subflows. IntegrationHub is framed as enabling process automation using reusable spokes/actions.",
@@ -594,7 +594,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Basic built-in testing for workflows; broader functional/performance testing is less productized.",
         "reasoning": "Score 3 because Flow Designer supports testing flows but a full automation testing lifecycle is not highlighted.",
         "evidence": "A Flow Designer walkthrough describes using an in-product 'Test' feature to run a workflow against an incident and watch execution details.",
@@ -608,7 +608,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Good observability via dashboards and control-tower style monitoring.",
         "reasoning": "Score 4 because ServiceNow promotes real-time monitoring for AI agents and workflows through AI Control Tower.",
         "evidence": "ServiceNow communications describe AI Control Tower as providing visibility into agents' work, governance, risk, and performance.",
@@ -622,7 +622,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong governance trajectory with AI Control Tower and compliance foundations.",
         "reasoning": "Score 4 because ServiceNow has compliance attestations and is adding a centralized AI governance/management layer.",
         "evidence": "The compliance page lists long-standing SOC and ISO attestations. The AI Control Tower describes centralized policy application across native and third-party agents/workflows.",
@@ -637,7 +637,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong process intelligence offering tied to workflow improvement loops.",
         "reasoning": "Score 5 because ServiceNow markets Process Mining as closed-loop process intelligence feeding automation improvements.",
         "evidence": "ServiceNow's Process Mining product page describes gaining visibility across ServiceNow and external apps, identifying conformance gaps, and turning insights into action through direct connection with Automation Center.",
@@ -651,7 +651,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 2.0,
+        "score": 2,
         "rationale": "Licensing can be complex and expensive in enterprise scenarios.",
         "reasoning": "Score 2 because ServiceNow platforms are often sold as bundled suites; costs can be substantial and depend on modules, users, and add-ons.",
         "evidence": "The IntegrationHub datasheet and Process Mining page position these as platform add-ons/capabilities within the ServiceNow AI Platform, implying module-based packaging.",
@@ -666,7 +666,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very broad domain applicability (IT, HR, customer service, risk) with packaged workflows.",
         "reasoning": "Score 5 because ServiceNow is positioned as a platform connecting people, processes, and systems across many enterprise functions.",
         "evidence": "ServiceNow's Process Mining page references workflows spanning technology, customer service, and HR. The AI Control Tower emphasizes governing AI agents and workflows across the enterprise.",
@@ -681,7 +681,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 5.0,
+        "score": 5,
         "rationale": "High long-term value when ServiceNow is the enterprise workflow hub.",
         "reasoning": "Score 5 because ServiceNow is investing in platform-level governance (AI Control Tower) and closed-loop intelligence (process mining).",
         "evidence": "ServiceNow describes AI Control Tower as a centralized command center for governing and managing AI agents and workflows across native and third-party ecosystems.",
@@ -696,7 +696,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Good agility through configuration, reusable subflows, and spoke-based integrations.",
         "reasoning": "Score 4 because platform configuration and reusable building blocks enable fast changes, but enterprise governance/upgrade practices can introduce lead time.",
         "evidence": "Flow Designer guidance highlights building reusable subflows for approval patterns and testing workflows directly in the designer. IntegrationHub emphasizes reusable spokes/actions and prebuilt templates.",
@@ -713,7 +713,7 @@
     "n8n": [
       {
         "category": "Security & Compliance",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Good enterprise security features (RBAC/SSO/secrets) but smaller compliance footprint and higher operational responsibility when self-hosted.",
         "reasoning": "Score 3 because n8n offers RBAC and enterprise SSO plus SOC 2 messaging, but security depends heavily on how instances are deployed/maintained.",
         "evidence": "n8n documentation describes role-based access control for workflows/credentials by project roles and enterprise SSO via SAML/OIDC. The enterprise page highlights integration with secret managers and being SOC 2 audited.",
@@ -730,7 +730,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Flexible deployment (cloud or self-hosted) with operational burden on the customer for self-host.",
         "reasoning": "Score 3 because n8n supports self-hosting and has enterprise features, but production operations (HA, upgrades, backups) largely fall on the operator.",
         "evidence": "n8n's pricing describes higher tiers that are self-hosted, and its scaling documentation explains running multiple instances and workers using Redis and a database.",
@@ -745,7 +745,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong horizontal scalability via queue mode and worker pools.",
         "reasoning": "Score 4 because queue mode explicitly supports scaling out with workers and optional high availability constructs.",
         "evidence": "n8n scaling documentation describes queue mode as providing the best scalability by splitting a main instance and worker instances coordinated via Redis.",
@@ -759,7 +759,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Large integration/node ecosystem plus extensibility for custom logic.",
         "reasoning": "Score 4 because n8n includes hundreds of nodes and credential types and supports developer-friendly workflows.",
         "evidence": "n8n's pricing indicates all plans include every integration, and its ecosystem documentation highlights a large node system with many service integrations and AI/LLM nodes.",
@@ -774,7 +774,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Fast for technical teams; business-user experience depends on internal enablement.",
         "reasoning": "Score 4 because visual workflows and ready integrations speed delivery, but enterprise deployment/governance setup can slow non-technical adoption.",
         "evidence": "n8n pricing emphasizes unlimited users/workflows and execution-based pricing, supporting rapid experimentation. Enterprise features support team use.",
@@ -789,7 +789,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Useful building blocks for agentic workflows, but limited native governance/orchestration semantics.",
         "reasoning": "Score 3 because n8n can integrate with LLMs and provides AI nodes, yet it lacks the deeper agent governance of dedicated agentic platforms.",
         "evidence": "n8n is widely used to wire together AI tools and APIs inside workflows, and its ecosystem includes AI-focused capabilities and nodes.",
@@ -804,7 +804,7 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 2.0,
+        "score": 2,
         "rationale": "Workflow orchestration is good for integrations; classic BPM modeling is limited.",
         "reasoning": "Score 2 because n8n is a workflow automation tool rather than a BPMN/DMN process orchestration suite.",
         "evidence": "n8n's documentation focuses on building and executing workflows and scaling them via queue mode. It does not describe BPMN-first modeling or decision modeling standards.",
@@ -819,7 +819,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 2.0,
+        "score": 2,
         "rationale": "Limited native testing and evaluation tooling.",
         "reasoning": "Score 2 because the product documentation emphasizes execution, scaling, and logging rather than a full test management lifecycle.",
         "evidence": "n8n provides operational features such as execution log retention and controls over what execution data is saved, which help with debugging. Enterprise log streaming can push events to external observability stacks.",
@@ -834,7 +834,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Decent observability via log streaming and execution data controls, but depth depends on your stack.",
         "reasoning": "Score 3 because n8n can stream logs and exposes metrics/health endpoints, yet a unified enterprise observability experience requires integrating with external tooling.",
         "evidence": "n8n's Log Streaming feature (enterprise) allows sending events to external logging tools. Scaling docs describe optional worker endpoints such as health checks and metrics.",
@@ -850,7 +850,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Governance is available (projects/roles) but less comprehensive than enterprise automation suites.",
         "reasoning": "Score 3 because RBAC and enterprise features exist, but full audit/governance often requires external controls.",
         "evidence": "n8n documentation explains RBAC as controlling access to workflows and credentials by user roles and projects. Enterprise log streaming helps support auditability by sending workflow events to external systems.",
@@ -866,7 +866,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 1.0,
+        "score": 1,
         "rationale": "Minimal built-in process intelligence.",
         "reasoning": "Score 1 because n8n does not offer native process mining/task mining.",
         "evidence": "n8n's documentation covers execution log retention, pruning, and operational insights. There is no evidence of built-in process mining capabilities like event-log discovery, conformance checking, or task mining.",
@@ -881,7 +881,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong cost efficiency with execution-based pricing and open-source option.",
         "reasoning": "Score 5 because pricing is usage/execution-based with unlimited users/workflows, and self-hosting can optimize infrastructure cost.",
         "evidence": "n8n's pricing page describes plans where pricing is based on monthly workflow executions regardless of complexity, and includes unlimited users and workflows across plans.",
@@ -895,7 +895,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Broad horizontal applicability for integration-heavy teams; less suited for regulated, BPM-heavy enterprise programs out of the box.",
         "reasoning": "Score 3 because it can automate across many apps and APIs, but deeper regulated workflow governance is a separate effort.",
         "evidence": "n8n's enterprise messaging focuses on integrating secrets vaults, defining fine-grained access rules, and streaming workflow logs. At the same time, compliance needs in regulated industries require additional controls.",
@@ -910,7 +910,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Solid long-term potential as an integration fabric, with risk tied to self-host ops and security hygiene.",
         "reasoning": "Score 3 because the platform can be durable as an integration layer, but long-term value depends on operational maturity.",
         "evidence": "n8n provides scalable architectures (queue mode) and enterprise features (RBAC, SSO, log streaming) that support long-lived deployments.",
@@ -926,7 +926,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
+        "score": 4,
         "rationale": "High agility for building/iterating integrations and automations.",
         "reasoning": "Score 4 because workflows are easy to change and scale with worker pools, and governance features can be layered on as you grow.",
         "evidence": "n8n's queue mode architecture allows scaling by adding or removing workers as workload changes. Enterprise RBAC and SSO provide basic guardrails for teams.",
@@ -944,7 +944,7 @@
     "UiPath": [
       {
         "category": "Security & Compliance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong enterprise security posture with dedicated trust center and third-party attestations.",
         "reasoning": "Score 5 because the platform publishes a security review portal and emphasizes independent attestations.",
         "evidence": "UiPath's Trust Center is positioned as a security review hub and lists independent compliance artifacts (SOC reports and certificates). The Automation Cloud SOC 2 Type 2 announcement reinforces that controls around security, availability, and confidentiality were examined by an independent auditor.",
@@ -959,7 +959,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Flexible deployment (SaaS or self-managed) plus centralized operations tooling.",
         "reasoning": "Score 5 because Orchestrator supports multiple deployment models (SaaS and self-managed) and the platform provides centralized administration/logging.",
         "evidence": "UiPath describes Orchestrator as available instantly as SaaS via Automation Cloud and also deployable on-premises or in private/public cloud, including containerized Automation Suite.",
@@ -974,7 +974,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Mature orchestration + operational controls for long-running processes.",
         "reasoning": "Score 5 because Maestro/Orchestrator emphasize controlled execution (pause/resume/retry) and enterprise-grade logging/retention.",
         "evidence": "The Maestro product materials highlight operational controls for process instances including suspend/resume/retry/rewind. Automation Cloud provides centralized audit/robot logs with export and longer retention on enterprise tiers.",
@@ -989,7 +989,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Broad integration surface via prebuilt connectors and standardized auth.",
         "reasoning": "Score 5 because Integration Service is positioned as the platform-wide integration layer that standardizes authorization/authentication and supports many connectors.",
         "evidence": "UiPath's Integration Service documentation states it enables integrations across UiPath products and standardizes authorization/authentication for external systems. It describes a connectors catalog, connection management, triggers/activities, and governance policies.",
@@ -1003,7 +1003,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Fast build-to-run path for common enterprise automations, but with enterprise-grade complexity.",
         "reasoning": "Score 4 because the platform offers low-code building blocks, templates/connectors, and orchestration, but real enterprise adoption still requires governance setup.",
         "evidence": "UiPath positions Orchestrator as central management with a more intuitive UI and visibility through dashboards/Insights, which can shorten the path from development to managed operations.",
@@ -1018,7 +1018,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Dedicated agentic orchestration layer coordinating agents, robots, and humans.",
         "reasoning": "Score 5 because Maestro is explicitly marketed as agentic orchestration, including integration of agents/robots/humans plus analytics and exception handling controls.",
         "evidence": "The Maestro product page describes orchestrating AI agents, robots, and people end-to-end, including BPMN-based modeling, decision management (DMN), instance-level controls (suspend/resume/retry/rewind), and analytics.",
@@ -1033,10 +1033,10 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 5.0,
+        "score": 5,
         "rationale": "BPMN/DMN-based process modeling with execution semantics and guardrails.",
         "reasoning": "Score 5 because Maestro uses BPMN as an execution-ready modeling language and explicitly documents BPMN support and guardrails.",
-        "evidence": "Maestro documentation explains BPMN as an OMG-maintained open standard and describes BPMN diagrams as human-readable, machine-actionable, and maintainable\u2014changes to the diagram change behavior without hidden logic.",
+        "evidence": "Maestro documentation explains BPMN as an OMG-maintained open standard and describes BPMN diagrams as human-readable, machine-actionable, and maintainable—changes to the diagram change behavior without hidden logic.",
         "sources": [
           "https://docs.uipath.com/maestro/automation-cloud/latest/user-guide/bpmn",
           "https://www.uipath.com/product/agentic-orchestration"
@@ -1048,7 +1048,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong automated testing suite with enterprise governance integrations.",
         "reasoning": "Score 5 because UiPath offers a dedicated test platform (Test Cloud/Test Suite) and promotes CI/CD and governance features.",
         "evidence": "UiPath's enterprise test suite page describes agentic testing with enterprise-ready AI agents, resilient end-to-end automation for UI and API, and governance features (auditing, role management, centralized credentials). It also emphasizes integrations with CI/CD and ALM tools.",
@@ -1062,7 +1062,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Centralized logging and visibility across services, plus Insights/analytics tie-in.",
         "reasoning": "Score 5 because the platform provides unified logs and audit/robot logs with filtering and export.",
         "evidence": "Automation Cloud admin documentation describes a unified logging experience with advanced filtering, CSV export, tenant-level audit logs, and long-term export. Orchestrator marketing also ties execution visibility to dashboards and UiPath Insights.",
@@ -1077,7 +1077,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Comprehensive audit trails for user/admin actions and automation events.",
         "reasoning": "Score 5 because Orchestrator includes an explicit Audit capability and platform logs describe audit retention and export options.",
         "evidence": "Orchestrator documentation describes an Audit page showing an audit trail of actions by entities in Orchestrator, with filtering by component/user/action/time and CSV export. Automation Cloud logs documentation expands this with centralized audit logs across services.",
@@ -1092,7 +1092,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Dedicated process and task mining capabilities with conformance checks.",
         "reasoning": "Score 5 because UiPath offers process mining, conformance checking against BPMN models, and task mining for discovery.",
         "evidence": "UiPath Process Mining documentation describes conformance checking dashboards that help detect compliance issues and discrepancies between actual execution and reference process models. Task Mining positions task capture as a data-driven way to understand how work is done before automation.",
@@ -1107,7 +1107,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Transparent but sometimes complex licensing (multiple units/entitlements).",
         "reasoning": "Score 3 because licensing details are published, but multiple license types/units can make TCO modeling non-trivial.",
         "evidence": "UiPath's licensing portal includes detailed entitlements and unit concepts (service units, API call limits, and AI/agent action allowances). That transparency helps model costs, but multiple quotas and add-ons mean careful sizing is needed.",
@@ -1116,12 +1116,12 @@
         ],
         "evidenceType": "Paraphrase",
         "confidence": "Medium",
-        "notes": "Treat as a starting point\u2014TCO varies heavily by robot/agent mix, unattended concurrency, and data/AI usage.",
+        "notes": "Treat as a starting point—TCO varies heavily by robot/agent mix, unattended concurrency, and data/AI usage.",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Broad applicability across departments with deep enterprise automation focus.",
         "reasoning": "Score 5 because Maestro/Orchestrator are framed for cross-industry, end-to-end automation (agents + robots + people).",
         "evidence": "UiPath's agentic orchestration materials describe applying Maestro across industries and processes, combining AI agents for decision-making, robots for execution, and humans for oversight.",
@@ -1135,7 +1135,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Open standards (BPMN) + deep platform coverage support long-lived automation programs.",
         "reasoning": "Score 5 because BPMN-based models, auditability, and broad integration make it easier to evolve automations over time.",
         "evidence": "Maestro documents BPMN as the core modeling language and emphasizes models as maintainable 'contracts' that stakeholders can review and update to change behavior.",
@@ -1151,8 +1151,8 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
-        "rationale": "High agility via model-driven orchestration and configurable integrations\u2014needs guardrails.",
+        "score": 4,
+        "rationale": "High agility via model-driven orchestration and configurable integrations—needs guardrails.",
         "reasoning": "Score 4 because BPMN models and connector governance enable rapid iteration, but uncontrolled change can create operational risk.",
         "evidence": "Maestro positions BPMN diagrams as executable and maintainable, where changes to the diagram alter runtime behavior without hidden logic. Integration Service governance policies let admins control connector availability.",
         "sources": [
@@ -1168,7 +1168,7 @@
     "Google": [
       {
         "category": "Security & Compliance",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very strong cloud security/compliance posture with broad certifications and BAAs.",
         "reasoning": "Score 5 because Google Cloud maintains extensive compliance certifications and provides HIPAA support with BAAs plus SOC/ISO coverage.",
         "evidence": "Google Cloud's HIPAA compliance guidance states that Google Cloud supports HIPAA compliance and references third-party audits and certifications including SOC 2 and ISO 27001/27017/27018, plus FedRAMP and PCI.",
@@ -1182,7 +1182,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Cloud-native deployment and operations with managed runtimes for agents and workflows.",
         "reasoning": "Score 4 because Vertex AI Agent Engine and Workflows provide managed services, but you need to assemble an end-to-end platform across GCP services.",
         "evidence": "Google documents Vertex AI Agent Engine as a managed runtime for deploying agents, with guidance for enabling telemetry and viewing traces in the console. Google Workflows documentation provides best practices for reliability patterns (retries, saga) and callbacks for long-running waits.",
@@ -1198,7 +1198,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Excellent scalability and reliability inherited from GCP managed services.",
         "reasoning": "Score 5 because agent runtimes and orchestration services are managed and integrate with Google's cloud infrastructure patterns.",
         "evidence": "Workflows best practices describe parallel execution and structured error handling with retries and the saga pattern for distributed transactions. Agent Engine tracing documentation shows built-in telemetry hooks and integration with Cloud Trace/Logging APIs.",
@@ -1213,7 +1213,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong connectivity through Google integration ecosystem but may require integration product selection.",
         "reasoning": "Score 4 because Vertex AI Agent Builder references integration connectors and API discovery, but the integration experience spans multiple services.",
         "evidence": "The Vertex AI Agent Builder overview highlights integrating agents with enterprise apps through Integration Connectors, and discovering/using APIs via Apigee API Hub or API Management.",
@@ -1228,7 +1228,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Good for developer-led delivery; business-user UX depends on additional products and enablement.",
         "reasoning": "Score 3 because Google provides strong developer tooling and managed runtimes, but out-of-the-box citizen-developer experiences are less central.",
         "evidence": "Vertex AI Agent Builder provides an Agent Development Kit and managed runtime for deploying agents, along with documentation on observability and integration connectors. This enables fast delivery for engineering teams but is less turnkey for non-technical builders.",
@@ -1243,7 +1243,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Best-in-class AI/agent building capabilities with production telemetry options.",
         "reasoning": "Score 5 because Vertex AI Agent Builder and Agent Engine are purpose-built for building and deploying AI agents, including multi-tool/multi-agent patterns and tracing.",
         "evidence": "Google's agent platform documentation includes an Agent Engine runtime and guidance for tracing agents using OpenTelemetry, with options to capture prompts/responses and view traces in the console.",
@@ -1259,7 +1259,7 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Solid orchestration via Workflows, but not a BPMN-centric orchestration suite.",
         "reasoning": "Score 3 because Workflows supports robust orchestration patterns but doesn't position itself as BPMN/DMN process modeling for business stakeholders.",
         "evidence": "Google Workflows best practices document how to design resilient workflows with retries, try/except, and the saga pattern, plus callbacks to wait for external events. These are strong orchestration primitives but are code/syntax-driven rather than BPMN-first.",
@@ -1273,7 +1273,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Good technical observability and debugging; evaluation frameworks depend on tooling choices.",
         "reasoning": "Score 3 because Agent Engine has tracing and Cloud tooling is strong, but application-level test/eval frameworks are not described as a single integrated suite.",
         "evidence": "Agent Engine tracing documentation shows how to capture traces and optionally include prompt/response content, and how to inspect traces via session/span views. That helps debugging and operational validation.",
@@ -1287,7 +1287,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very strong observability via Cloud Trace/Logging integrations and built-in agent tracing.",
         "reasoning": "Score 5 because Agent Engine provides explicit trace and log ingestion with OpenTelemetry and ties into Cloud Trace and Logging APIs.",
         "evidence": "Google's tracing documentation for Agent Engine shows enabling telemetry, exporting traces/logs, and viewing trace DAGs with span inputs/outputs and metadata.",
@@ -1301,7 +1301,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong governance primitives through cloud IAM and auditing; agent governance is more DIY than dedicated automation suites.",
         "reasoning": "Score 4 because Google Cloud offers a strong compliance baseline and telemetry/audit hooks, but process governance typically requires additional platform work.",
         "evidence": "Google's HIPAA compliance guidance emphasizes that compliance controls are embedded in infrastructure. Agent Engine tracing can capture metadata and integrates with Cloud Trace and Cloud Logging.",
@@ -1316,7 +1316,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 2.0,
+        "score": 2,
         "rationale": "Limited packaged process intelligence; relies on external analytics stack.",
         "reasoning": "Score 2 because GCP can build process intelligence with data/analytics tools, but the referenced agent/orchestration docs don't describe native process mining products.",
         "evidence": "The sources focus on building agents and orchestrating workflows with reliability and telemetry. Google Cloud does not describe built-in process mining features like event-log discovery, conformance checking, or task mining as an integrated automation feature set.",
@@ -1331,7 +1331,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Generally favorable TCO for cloud-native, usage-based services.",
         "reasoning": "Score 4 because GCP services are usage-based and can scale elastically; TCO depends on orchestration step counts, trace retention, and integration architecture.",
         "evidence": "Workflows documentation notes that retries count as additional step executions for pricing purposes. Agent Engine tracing references Cloud Trace pricing and quotas. These illustrate that costs are largely consumption-based and controllable through architecture.",
@@ -1346,7 +1346,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Broad industry applicability, especially in regulated and data-intensive domains.",
         "reasoning": "Score 4 because Google Cloud supports regulated compliance patterns (HIPAA) and provides strong AI and orchestration services adaptable to many domains.",
         "evidence": "Google Cloud HIPAA documentation describes supporting HIPAA compliance across its infrastructure. Vertex AI Agent Builder/Engine provides a path to build and deploy agents with telemetry relevant to many vertical use cases.",
@@ -1361,7 +1361,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 5.0,
+        "score": 5,
         "rationale": "High long-term value due to strong cloud platform fundamentals and ongoing AI investment.",
         "reasoning": "Score 5 because a hyperscaler's compliance, observability, and AI platform roadmap typically supports multi-year evolution of agentic systems.",
         "evidence": "The referenced materials show a managed agent runtime with OpenTelemetry tracing and tight integration to cloud observability, plus orchestration best practices for resilient distributed workflows.",
@@ -1377,7 +1377,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
+        "score": 4,
         "rationale": "High agility for engineering teams; governance/patterns must be standardized to keep speed at scale.",
         "reasoning": "Score 4 because managed services and code-based orchestration allow rapid iteration, but enterprise adoption needs platform standards and guardrails.",
         "evidence": "Workflows best practices recommend retries, error handling, and callbacks to build resilient, maintainable workflows, enabling faster iteration. Agent Engine tracing supports faster debugging in production.",
@@ -1394,7 +1394,7 @@
     "OpenAI": [
       {
         "category": "Security & Compliance",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong security posture (SOC 2 Type 2, DPA, ISO alignment) but less end-to-end enterprise control than hyperscalers.",
         "reasoning": "Score 4 because OpenAI documents SOC 2 Type 2 coverage for API and ChatGPT Enterprise/Business/Edu and supports GDPR/CCPA.",
         "evidence": "OpenAI's security & privacy page states that the API and enterprise ChatGPT products are covered in a SOC 2 Type 2 report and evaluated by an independent auditor, and that OpenAI supports GDPR/CCPA and offers a Data Processing Addendum.",
@@ -1409,7 +1409,7 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Cloud API delivery; operational control is mostly via configuration rather than deployment choice.",
         "reasoning": "Score 3 because OpenAI is primarily an API platform (no self-host), with operational knobs like retention controls and tracing.",
         "evidence": "OpenAI's data controls documentation describes default 30-day abuse monitoring logs and options for Modified Abuse Monitoring or Zero Data Retention for eligible customers.",
@@ -1423,7 +1423,7 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Very strong scalability as a managed API, subject to account limits.",
         "reasoning": "Score 5 because OpenAI is designed to handle high-volume inference workloads and offers usage-based scaling.",
         "evidence": "OpenAI provides token-based pricing and supports high-volume usage patterns like caching and batch processing in its API pricing materials.",
@@ -1437,7 +1437,7 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Integration is API-first with strong tooling, but fewer packaged enterprise connectors.",
         "reasoning": "Score 3 because OpenAI integrates into everything via HTTP APIs and SDKs, but provides fewer out-of-the-box enterprise app connectors.",
         "evidence": "OpenAI's platform is consumed primarily through APIs and SDKs. The Agents SDK supports tool calling but enterprises typically need to build connectors to ERP/ITSM/CRM systems.",
@@ -1452,7 +1452,7 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Fast time-to-value for engineering prototypes; business-user experience depends on building an app layer.",
         "reasoning": "Score 3 because OpenAI APIs enable quick prototyping and iteration, but enterprise-grade workflows need additional product layers.",
         "evidence": "OpenAI pricing and SDK docs support quick onboarding for developers. However, business users typically need a full application experience with process controls, RBAC, approvals, and integration UX.",
@@ -1467,7 +1467,7 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 5.0,
+        "score": 5,
         "rationale": "Strong agentic foundation (tool calling, tracing, eval/trace grading).",
         "reasoning": "Score 5 because the Agents SDK provides workflow tracing with tool calls/guardrails/handoffs and platform docs include trace grading for evaluating agent performance at scale.",
         "evidence": "The OpenAI Agents SDK tracing documentation explains that it collects a comprehensive record of events during an agent run, including LLM generations, tool calls, handoffs, guardrails, and custom events, viewable in a Traces dashboard.",
@@ -1482,8 +1482,8 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 1.0,
-        "rationale": "Not a BPM/orchestration suite\u2014requires pairing with workflow/RPA tooling.",
+        "score": 1,
+        "rationale": "Not a BPM/orchestration suite—requires pairing with workflow/RPA tooling.",
         "reasoning": "Score 1 because OpenAI provides AI capabilities but does not provide a BPMN/DMN process modeling engine or enterprise workflow orchestration UI.",
         "evidence": "OpenAI's platform documentation focuses on building AI agents and observing them via traces and evaluations. It does not provide a native business process modeling layer, process instance management, or human task orchestration as a packaged workflow engine.",
         "sources": [
@@ -1496,7 +1496,7 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong agent testing/evaluation primitives (tracing + grading), but limited for non-AI functional testing.",
         "reasoning": "Score 4 because trace grading provides a scalable evaluation workflow for agent outputs.",
         "evidence": "OpenAI's trace grading guide describes selecting traces, creating graders, and running evaluations across groups of agent workflows to identify errors at scale.",
@@ -1511,7 +1511,7 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Good observability for agents via built-in tracing and dashboards.",
         "reasoning": "Score 4 because Agents SDK provides built-in tracing and a Traces dashboard.",
         "evidence": "Agents SDK tracing is enabled by default and records end-to-end workflow events, including LLM generations and tool calls.",
@@ -1525,7 +1525,7 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Governance features exist (retention controls, SOC report coverage), but process governance is external.",
         "reasoning": "Score 3 because OpenAI supports enterprise security compliance and retention controls, yet workflow-level governance is usually implemented by the customer.",
         "evidence": "OpenAI documents SOC 2 Type 2 coverage and configurable retention approaches including Zero Data Retention for eligible customers.",
@@ -1541,7 +1541,7 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 1.0,
+        "score": 1,
         "rationale": "No native process intelligence.",
         "reasoning": "Score 1 because OpenAI is not a process mining platform.",
         "evidence": "OpenAI's platform materials focus on AI models, agents, tracing, and evaluation. They do not describe collecting event logs from enterprise systems to discover process variants, run conformance checks, or produce process maps.",
@@ -1555,7 +1555,7 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Transparent, usage-based pricing; TCO depends on token/tool usage and workload design.",
         "reasoning": "Score 3 because pricing is clearly published, but costs can rise quickly for high-volume or long-context agent workflows.",
         "evidence": "OpenAI publishes per-token rates for models and separate costs for built-in tools (file search storage and tool calls).",
@@ -1569,7 +1569,7 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 3.0,
+        "score": 3,
         "rationale": "Broad applicability for AI augmentation; limited as a standalone enterprise automation platform.",
         "reasoning": "Score 3 because OpenAI can support many domains through language reasoning, but domain suitability depends on integration and governance implemented by the enterprise.",
         "evidence": "OpenAI's enterprise and API security materials emphasize general-purpose capabilities paired with compliance features.",
@@ -1584,7 +1584,7 @@
       },
       {
         "category": "Long-term value",
-        "score": 4.0,
+        "score": 4,
         "rationale": "Strong long-term value as an AI layer, especially with evolving tracing/evaluation tooling.",
         "reasoning": "Score 4 because OpenAI continues to invest in agent tooling like tracing and trace grading.",
         "evidence": "The Agents SDK documentation emphasizes tracing as a comprehensive record of workflow execution events in development and production, and trace grading provides a structured way to evaluate and optimize agent performance.",
@@ -1599,7 +1599,7 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4.0,
+        "score": 4,
         "rationale": "High agility for iterating AI behavior; enterprise change control must be layered on.",
         "reasoning": "Score 4 because teams can iterate prompts, tools, and models quickly, while governance levers like retention controls and tracing provide some guardrails.",
         "evidence": "OpenAI's Agents SDK supports tracing and optional custom trace processors, enabling fast debugging and iteration of agent workflows.",
@@ -1634,7 +1634,7 @@
         "category": "Deployment & Operations",
         "score": 4,
         "rationale": "Camunda offers flexible SaaS and Self-Managed deployment options with strong Kubernetes-native operational model, but operational burden on self-hosted deployments is higher.",
-        "reasoning": "Camunda 8 is available as SaaS (fully managed by Camunda) or Self-Managed via Kubernetes/Helm, Docker, or JAR. SaaS provides zero-downtime upgrades and 99.9% SLA. Self-Managed gives full control for regulated/on-prem environments. Process versioning is first-class \u2014 new versions deploy while old instances finish. However, Self-Managed requires Kubernetes expertise and carries higher operational overhead than UiPath's Automation Suite.",
+        "reasoning": "Camunda 8 is available as SaaS (fully managed by Camunda) or Self-Managed via Kubernetes/Helm, Docker, or JAR. SaaS provides zero-downtime upgrades and 99.9% SLA. Self-Managed gives full control for regulated/on-prem environments. Process versioning is first-class — new versions deploy while old instances finish. However, Self-Managed requires Kubernetes expertise and carries higher operational overhead than UiPath's Automation Suite.",
         "evidence": "Camunda documentation confirms SaaS and Self-Managed deployment options for Camunda 8. SaaS tiers carry a 99.9% SLA with sub-minute RTO. Camunda 8.8 introduced streamlined deployment options. Self-Managed uses Helm charts for Kubernetes deployment and supports Docker and JAR-based installation.",
         "uipath_advantage": "UiPath's Automation Suite provides a comparable on-premises/cloud deployment option with Orchestrator as the central management plane. UiPath also offers hybrid deployment and dedicated cloud environments, and its operational tooling (Orchestrator, Automation Cloud) is more purpose-built for enterprise automation operations at scale.",
         "sources": [
@@ -1653,7 +1653,7 @@
         "rationale": "Camunda's Zeebe engine is highly scalable with active-active replication and no central database bottleneck, making it enterprise-grade for high-throughput process execution.",
         "reasoning": "Zeebe, Camunda's orchestration engine, uses event streaming with a peer-to-peer, no-central-database architecture enabling horizontal scaling without bottlenecks. Active-active broker replication across availability zones with automatic leader election and synchronous replication provides near-zero RPO. Intuit and Barclays run mission-critical workloads on it. SaaS production tiers carry a 99.9% SLA with sub-minute RTO.",
         "evidence": "Camunda's platform page states Zeebe is built on event streaming with a peer-to-peer architecture for horizontal scaling. Active-active broker replication across availability zones provides near-zero RPO and sub-minute RTO on SaaS. Camunda claims 700+ enterprise customers including 9 of the top 10 US banks running mission-critical processes.",
-        "uipath_advantage": "UiPath's Orchestrator and Automation Cloud are also enterprise-grade for scalability, with additional operational controls (pause/resume/retry) specific to RPA and agentic workloads. UiPath's scalability advantage is in coordinating robots, agents, and human tasks simultaneously \u2014 beyond pure process execution throughput.",
+        "uipath_advantage": "UiPath's Orchestrator and Automation Cloud are also enterprise-grade for scalability, with additional operational controls (pause/resume/retry) specific to RPA and agentic workloads. UiPath's scalability advantage is in coordinating robots, agents, and human tasks simultaneously — beyond pure process execution throughput.",
         "sources": [
           "https://camunda.com/platform/",
           "https://camunda.com/blog/2025/04/camunda-87-agentic-orchestration-for-enterprise/"
@@ -1715,10 +1715,10 @@
       {
         "category": "BPM & Orchestration",
         "score": 5,
-        "rationale": "Camunda is best-in-class for BPMN-native process orchestration \u2014 the process model IS the executable process, with DMN for decisions and Zeebe as the distributed engine.",
+        "rationale": "Camunda is best-in-class for BPMN-native process orchestration — the process model IS the executable process, with DMN for decisions and Zeebe as the distributed engine.",
         "reasoning": "Camunda's core strength is BPMN 2.0 as an executable, portable, open standard. The diagram approved by business is exactly what runs in production with no translation layer. DMN handles decision tables. Zeebe is a distributed, peer-to-peer orchestration engine. Process versioning is first-class. Camunda is used by 700+ enterprises including 9 of the top 10 US banks. Camunda is positioned as a Visionary in the 2025 Gartner Magic Quadrant for BOAT and rated 5/5 in Orchestration by Forrester.",
         "evidence": "Camunda's platform page describes BPMN as simultaneously a visual stakeholder-readable diagram and an executable XML specification. Camunda was named a Visionary in Gartner Magic Quadrant for BOAT 2025 and rated 5/5 in Orchestration by Forrester. The Zeebe engine provides no-central-database distributed orchestration. Camunda markets itself as \"The Business Orchestration Company.\"",
-        "uipath_advantage": "UiPath Maestro also uses BPMN/DMN for executable process modeling, matching Camunda's core strength on this dimension. UiPath differentiates by combining BPMN orchestration with native RPA, agent execution, and document understanding in one platform \u2014 while Camunda is purely an orchestration layer requiring external tools for execution.",
+        "uipath_advantage": "UiPath Maestro also uses BPMN/DMN for executable process modeling, matching Camunda's core strength on this dimension. UiPath differentiates by combining BPMN orchestration with native RPA, agent execution, and document understanding in one platform — while Camunda is purely an orchestration layer requiring external tools for execution.",
         "sources": [
           "https://camunda.com/platform/",
           "https://camunda.com/bpmn-expertise/",
@@ -1735,7 +1735,7 @@
         "rationale": "Camunda provides basic process testing via Operate but lacks a dedicated enterprise test suite for functional and performance automation testing.",
         "reasoning": "Camunda Operate provides process monitoring and instance management. Camunda supports process versioning and canary rollouts for testing new versions against production traffic. However, Camunda does not offer a dedicated test automation suite comparable to UiPath's Test Cloud, Autopilot for Testers, or self-healing automation capabilities. Testing is primarily developer-centric via unit tests against the Zeebe engine.",
         "evidence": "Camunda documentation covers process monitoring via Operate and process versioning for staged rollouts. Camunda 8 supports deployment of new process versions while older instances continue running. However, no dedicated functional or performance test automation product is documented. Community resources reference JUnit-based process testing for developer use.",
-        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, Autopilot for Testers (AI-assisted test design), test governance via Test Manager, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools in 2025 \u2014 a market where Camunda has no comparable offering.",
+        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, Autopilot for Testers (AI-assisted test design), test governance via Test Manager, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools in 2025 — a market where Camunda has no comparable offering.",
         "sources": [
           "https://camunda.com/platform/",
           "https://docs.camunda.io/docs/self-managed/about-self-managed/"
@@ -1751,7 +1751,7 @@
         "rationale": "Camunda provides solid process monitoring via Operate and Optimize, but enterprise observability requires integration with external tooling.",
         "reasoning": "Camunda Operate provides real-time monitoring of process instances, incident management, and variable inspection. Camunda Optimize (enterprise) provides analytics, dashboards, and process performance reporting. Camunda integrates with external observability stacks. However, end-to-end observability across agents, robots, and humans requires external tools, unlike UiPath's centralized Automation Cloud logging.",
         "evidence": "Camunda's platform includes Operate for process monitoring, Tasklist for human task management, and Optimize for analytics. The Camunda platform documentation describes real-time process monitoring, audit logging, and reporting. Zeebe provides built-in audit trails for every process execution path.",
-        "uipath_advantage": "UiPath provides centralized logging and monitoring across Automation Cloud for all automation types (robots, agents, APIs) with unified audit logs, Insights analytics, and AI Trust Layer LLM observability. UiPath's monitoring covers the full execution layer including robot performance, agent traces, and human task completion \u2014 beyond Camunda's process-focused view.",
+        "uipath_advantage": "UiPath provides centralized logging and monitoring across Automation Cloud for all automation types (robots, agents, APIs) with unified audit logs, Insights analytics, and AI Trust Layer LLM observability. UiPath's monitoring covers the full execution layer including robot performance, agent traces, and human task completion — beyond Camunda's process-focused view.",
         "sources": [
           "https://camunda.com/platform/",
           "https://research.com/software/reviews/camunda"
@@ -1765,9 +1765,9 @@
         "category": "Traceability & Governance",
         "score": 4,
         "rationale": "Camunda provides strong process-level governance with automatic audit trails for every process instance, RBAC, and compliance support for regulated industries.",
-        "reasoning": "Camunda captures complete audit trails automatically for every process instance \u2014 which path was taken, which decisions were made, which agents acted, which humans approved. RBAC controls access via role-based policies. Camunda is used in financial services, healthcare, insurance, and government under EU AI Act, HIPAA, BCBS 239, and similar frameworks. SOC 2 Type II and ISO 27001 underpin the governance model.",
+        "reasoning": "Camunda captures complete audit trails automatically for every process instance — which path was taken, which decisions were made, which agents acted, which humans approved. RBAC controls access via role-based policies. Camunda is used in financial services, healthcare, insurance, and government under EU AI Act, HIPAA, BCBS 239, and similar frameworks. SOC 2 Type II and ISO 27001 underpin the governance model.",
         "evidence": "Camunda's platform documentation states every process instance captures a complete audit trail automatically with decision path, agent actions, and human approvals. Camunda confirms use in regulated industries under EU AI Act and HIPAA without custom audit instrumentation. SOC 2 Type II and ISO 27001 certifications support compliance governance.",
-        "uipath_advantage": "UiPath adds governance beyond process-level tracing with AI Trust Layer for LLM policy enforcement, AgentOps scoped identities for agents, CI/CD pipeline traceability, and Orchestrator-level RBAC covering robots, agents, APIs, and people in one governance model \u2014 broader than Camunda's process-centric audit trail.",
+        "uipath_advantage": "UiPath adds governance beyond process-level tracing with AI Trust Layer for LLM policy enforcement, AgentOps scoped identities for agents, CI/CD pipeline traceability, and Orchestrator-level RBAC covering robots, agents, APIs, and people in one governance model — broader than Camunda's process-centric audit trail.",
         "sources": [
           "https://camunda.com/platform/",
           "https://camunda.com/platform/use-cases/replace-legacy-bpms/"
@@ -1783,7 +1783,7 @@
         "rationale": "Camunda introduced ProcessOS for process discovery and analytics, but this is newer and less mature than established process mining platforms.",
         "reasoning": "Camunda's ProcessOS analyzes existing systems, operational data, and documentation to surface how processes actually work, identify automation opportunities, and generate improvement proposals. It integrates with Camunda's BPMN modeling for a closed-loop process intelligence approach. However, ProcessOS is newer than dedicated process mining platforms like UiPath's Process Mining, which has conformance checking, variant analysis, and task mining.",
         "evidence": "Camunda's platform page describes ProcessOS as analyzing existing systems and operational data to discover how processes actually run and identify automation opportunities. This is positioned as part of the end-to-end Camunda platform. However, no third-party analyst coverage or detailed product documentation confirms the depth of ProcessOS compared to established process mining tools.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is recognized as a Leader in Gartner's 2025 Magic Quadrant for Process Mining \u2014 a market position Camunda has not achieved.",
+        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is recognized as a Leader in Gartner's 2025 Magic Quadrant for Process Mining — a market position Camunda has not achieved.",
         "sources": [
           "https://camunda.com/platform/",
           "https://camunda.com/blog/2025/04/camunda-87-agentic-orchestration-for-enterprise/"
@@ -1797,7 +1797,7 @@
         "category": "Licensing & TCO",
         "score": 3,
         "rationale": "Camunda offers an attractive open-source community edition but enterprise licensing costs are opaque and can be significant, with Operate module requiring additional investment.",
-        "reasoning": "Camunda Community Edition is Apache 2.0 licensed \u2014 free for development and evaluation. Enterprise SaaS and Self-Managed require custom-quoted contracts. AWS Marketplace lists approximately $175,000/year as a starting point. The Operate monitoring module requires additional licensing on top of base pricing, effectively doubling minimum costs from $50K to $100K for production use. Multi-year discounts of 15-25% are negotiable.",
+        "reasoning": "Camunda Community Edition is Apache 2.0 licensed — free for development and evaluation. Enterprise SaaS and Self-Managed require custom-quoted contracts. AWS Marketplace lists approximately $175,000/year as a starting point. The Operate monitoring module requires additional licensing on top of base pricing, effectively doubling minimum costs from $50K to $100K for production use. Multi-year discounts of 15-25% are negotiable.",
         "evidence": "Camunda pricing analysis from April 2026 shows enterprise contracts typically ranging from $50,000 to $200,000+ per year. The Operate module for production monitoring requires additional licensing beyond the base platform. AWS Marketplace lists ~$175,000/year as a starting point. Community Edition is free under Apache 2.0 for non-production use.",
         "uipath_advantage": "UiPath's licensing is more transparent with published pricing tiers, though complexity comes from multiple unit types. UiPath offers more deployment flexibility for cost optimization (attended vs. unattended, cloud vs. on-prem). The total platform value (RPA + Process Mining + Test Suite + IXP) in one license is broader than Camunda's orchestration-focused platform.",
         "sources": [
@@ -1830,8 +1830,8 @@
         "category": "Long-term value",
         "score": 4,
         "rationale": "Camunda's open standards foundation (BPMN/DMN, Zeebe) and agent-agnostic architecture provide strong long-term value as process logic remains portable across technology changes.",
-        "reasoning": "Camunda's key long-term value proposition is portability: process logic expressed in standard BPMN remains portable across vendors and runtimes. Camunda is agent-agnostic \u2014 swap AI models or frameworks without touching process logic. The open-source Zeebe engine ensures no proprietary lock-in on the execution layer. Camunda achieved revenues over \u20ac100M and growing enterprise adoption including 9 of the top 10 US banks.",
-        "evidence": "Camunda's platform documentation emphasizes BPMN portability as a core design principle. Camunda achieved revenues over \u20ac100M in 2024 per Wikipedia. Camunda 8's agent-agnostic design allows swapping LLMs and frameworks without rewriting process logic. The source-available Zeebe engine prevents vendor lock-in at the orchestration layer.",
+        "reasoning": "Camunda's key long-term value proposition is portability: process logic expressed in standard BPMN remains portable across vendors and runtimes. Camunda is agent-agnostic — swap AI models or frameworks without touching process logic. The open-source Zeebe engine ensures no proprietary lock-in on the execution layer. Camunda achieved revenues over €100M and growing enterprise adoption including 9 of the top 10 US banks.",
+        "evidence": "Camunda's platform documentation emphasizes BPMN portability as a core design principle. Camunda achieved revenues over €100M in 2024 per Wikipedia. Camunda 8's agent-agnostic design allows swapping LLMs and frameworks without rewriting process logic. The source-available Zeebe engine prevents vendor lock-in at the orchestration layer.",
         "uipath_advantage": "UiPath's long-term value is anchored in its comprehensive platform breadth (RPA + AI + Process Mining + Test Suite) and continuous innovation in agentic automation. UiPath's BPMN-based Maestro also provides standards-based portability, while adding native robot execution and document understanding that Camunda requires external partners to provide.",
         "sources": [
           "https://camunda.com/platform/",
@@ -1846,9 +1846,9 @@
         "category": "Business adaptability / Agility",
         "score": 4,
         "rationale": "Camunda enables rapid process adaptation through visual BPMN modeling reviewed and deployed in hours, with process versioning enabling zero-downtime updates.",
-        "reasoning": "Camunda's BPMN-first approach allows business stakeholders to review and approve process changes visually before deployment. Process versioning enables deploying new versions while old instances complete \u2014 zero-downtime updates. Canary rollouts test new versions against production traffic. SaaS engine upgrades are zero-downtime. Camunda Copilot generates BPMN from natural language for faster iteration.",
-        "evidence": "Camunda documentation describes process versioning as first-class \u2014 deploy new versions while older instances finish, migrate in-flight instances via Operate, and run canary rollouts. Camunda Copilot generates BPMN diagrams from natural language or legacy code. SaaS engine upgrades are described as zero-downtime.",
-        "uipath_advantage": "UiPath provides comparable agility through Maestro's BPMN-based orchestration with additional adaptability through its broader automation toolkit \u2014 adapting both processes (via BPMN) and the underlying automation (via RPA, agents, APIs) in one platform. UiPath's CI/CD pipeline support also enables DevOps-style automation delivery.",
+        "reasoning": "Camunda's BPMN-first approach allows business stakeholders to review and approve process changes visually before deployment. Process versioning enables deploying new versions while old instances complete — zero-downtime updates. Canary rollouts test new versions against production traffic. SaaS engine upgrades are zero-downtime. Camunda Copilot generates BPMN from natural language for faster iteration.",
+        "evidence": "Camunda documentation describes process versioning as first-class — deploy new versions while older instances finish, migrate in-flight instances via Operate, and run canary rollouts. Camunda Copilot generates BPMN diagrams from natural language or legacy code. SaaS engine upgrades are described as zero-downtime.",
+        "uipath_advantage": "UiPath provides comparable agility through Maestro's BPMN-based orchestration with additional adaptability through its broader automation toolkit — adapting both processes (via BPMN) and the underlying automation (via RPA, agents, APIs) in one platform. UiPath's CI/CD pipeline support also enables DevOps-style automation delivery.",
         "sources": [
           "https://camunda.com/platform/",
           "https://camunda.com/bpmn-expertise/"
@@ -1913,7 +1913,7 @@
         "rationale": "Automation Anywhere provides strong connectivity through its integration ecosystem, API-based automation capabilities, and partner integrations across enterprise systems.",
         "reasoning": "Automation 360 supports API automation, attended and unattended desktop automation, and integration with major enterprise systems including SAP, Salesforce, ServiceNow, and others. The platform includes an integration marketplace. Multimodal AI Skills (.38/.39 releases) enhance connectivity for document and image-based automation. LLM integrations support Azure OpenAI, Google Vertex AI, AWS Bedrock, and SageMaker.",
         "evidence": "Automation Anywhere community updates list multimodal AI skills for sending files and images in 2026. ISO 42001 certification covers integrations with Azure OpenAI, Google Vertex AI, AWS Bedrock, and AWS SageMaker. The platform supports attended and unattended automation across web, desktop, and API-based systems.",
-        "uipath_advantage": "UiPath Integration Service provides 1,000+ pre-built connectors with standardized authentication management \u2014 a more comprehensive and governed integration layer than Automation Anywhere's integration approach. UiPath's connector governance policies and Connector Builder for custom APIs provide additional enterprise control.",
+        "uipath_advantage": "UiPath Integration Service provides 1,000+ pre-built connectors with standardized authentication management — a more comprehensive and governed integration layer than Automation Anywhere's integration approach. UiPath's connector governance policies and Connector Builder for custom APIs provide additional enterprise control.",
         "sources": [
           "https://www.automationanywhere.com/products/security",
           "https://community.automationanywhere.com/product-updates"
@@ -1962,7 +1962,7 @@
         "rationale": "Automation Anywhere provides workflow orchestration through Mozart Orchestrator but lacks BPMN/DMN standards-based process modeling as a core platform strength.",
         "reasoning": "Automation Anywhere's Mozart Orchestrator provides process orchestration for agentic and RPA workflows, including parallel execution via Split and Merge. However, Automation Anywhere is primarily an RPA and agentic automation platform rather than a BPMN-native orchestration suite. Process modeling is workflow-centric rather than standards-based BPMN, which limits interoperability and business stakeholder visibility compared to BPMN-first platforms.",
         "evidence": "Automation Anywhere's April 2026 community updates describe Mozart Orchestrator's Split and Merge feature for parallel process execution. Automation Anywhere does not publicly document BPMN 2.0 or DMN standards support as core platform capabilities. The platform focuses on agentic process automation rather than standards-based business process modeling.",
-        "uipath_advantage": "UiPath Maestro uses BPMN as an OMG open standard for executable process modeling \u2014 the diagram is the executable process. DMN handles decision management. This standards-based approach provides business stakeholder visibility, process portability, and compliance auditability that Automation Anywhere's proprietary orchestration approach cannot match.",
+        "uipath_advantage": "UiPath Maestro uses BPMN as an OMG open standard for executable process modeling — the diagram is the executable process. DMN handles decision management. This standards-based approach provides business stakeholder visibility, process portability, and compliance auditability that Automation Anywhere's proprietary orchestration approach cannot match.",
         "sources": [
           "https://community.automationanywhere.com/pathfinder-blog-85009/april-2026-product-club-mozart-orchestrator-s-split-and-merge-feature-for-parallel-process-execution-91318"
         ],
@@ -1977,7 +1977,7 @@
         "rationale": "Automation Anywhere provides automation testing capabilities but lacks a dedicated enterprise test suite comparable to UiPath's Test Cloud.",
         "reasoning": "Automation Anywhere supports testing of bot workflows and includes audit logging for compliance verification. The platform's Process Discovery capability helps validate automation accuracy. However, Automation Anywhere does not have a dedicated enterprise test automation product like UiPath's Test Cloud with functional and performance testing, self-healing automation, and Test Manager governance.",
         "evidence": "Automation Anywhere's ISO 42001 certification covers Process Discovery for validating AI automation accuracy. The platform includes audit logging and compliance monitoring. However, no dedicated test automation suite comparable to UiPath Test Cloud, Autopilot for Testers, or enterprise testing governance is documented in public product materials.",
-        "uipath_advantage": "UiPath Test Cloud provides dedicated enterprise functional and performance testing with self-healing automation, Autopilot for Testers, Test Manager governance, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools \u2014 a market where Automation Anywhere has no comparable standalone offering.",
+        "uipath_advantage": "UiPath Test Cloud provides dedicated enterprise functional and performance testing with self-healing automation, Autopilot for Testers, Test Manager governance, and CI/CD integrations. UiPath was named a Leader in Gartner Magic Quadrant for AI-augmented software testing tools — a market where Automation Anywhere has no comparable standalone offering.",
         "sources": [
           "https://www.automationanywhere.com/products/security",
           "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
@@ -2008,7 +2008,7 @@
         "rationale": "Automation Anywhere provides strong enterprise governance with comprehensive RBAC, audit trails, and the pioneering ISO 42001 AI governance certification covering all AI products.",
         "reasoning": "Automation Anywhere's governance capabilities include RBAC with role-based controls at line-of-business level, comprehensive audit trails, credential vault integrations (CyberArk, HashiCorp, Azure Key Vault, AWS Secrets Manager), SAML/MFA/SSO authentication, and SIEM integrations. The ISO 42001 AI governance certification validates ethical, transparent, and secure AI systems across all automation products.",
         "evidence": "Automation Anywhere's security page describes fine-grained RBAC controls, audit trails, and compliance monitoring. ISO 42001 certification (November 2025) covers AI governance across all products including AI agents, Process Discovery, and LLM integrations. The certification was awarded following a rigorous third-party audit.",
-        "uipath_advantage": "UiPath differentiates with AI Trust Layer as a centralized LLM governance layer applying policies before requests reach external models \u2014 a capability that goes beyond Automation Anywhere's ISO 42001 compliance posture. UiPath's CI/CD pipeline traceability and AgentOps scoped identities add additional enterprise governance depth.",
+        "uipath_advantage": "UiPath differentiates with AI Trust Layer as a centralized LLM governance layer applying policies before requests reach external models — a capability that goes beyond Automation Anywhere's ISO 42001 compliance posture. UiPath's CI/CD pipeline traceability and AgentOps scoped identities add additional enterprise governance depth.",
         "sources": [
           "https://www.automationanywhere.com/products/security",
           "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
@@ -2024,7 +2024,7 @@
         "rationale": "Automation Anywhere provides Process Discovery for automation opportunity identification but lacks the depth of a full process mining platform with conformance checking.",
         "reasoning": "Automation Anywhere's Process Discovery uses AI to analyze how work is done and identify automation opportunities. ISO 42001 certification covers Process Discovery as an AI-based product. However, Automation Anywhere does not provide full-featured process mining with event log analysis, conformance checking against reference models, variant analysis, and task mining comparable to dedicated process mining platforms.",
         "evidence": "Automation Anywhere's ISO 42001 coverage lists Process Discovery among AI-based automation products. Process Discovery is positioned as a capability for identifying automation opportunities. However, public documentation does not describe event log-based process mining, BPMN conformance checking, or variant analysis capabilities.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining \u2014 a recognition Automation Anywhere has not achieved.",
+        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining — a recognition Automation Anywhere has not achieved.",
         "sources": [
           "https://www.prnewswire.com/news-releases/automation-anywhere-among-the-first-100-companies-to-earn-certification-of-the-iso-standard-for-ai-governance-and-security-strengthening-its-leadership-in-responsible-ai-management-302610256.html"
         ],
@@ -2137,7 +2137,7 @@
         "rationale": "Salesforce operates one of the world's largest enterprise cloud platforms with hyperscaler-level reliability, multi-region redundancy, and proven scalability for thousands of enterprise customers.",
         "reasoning": "Salesforce's Hyperforce architecture runs on major cloud providers (AWS, Azure, GCP, OCI) with multi-region deployments and high availability. Salesforce serves 150,000+ customers at hyperscaler scale. Trust.salesforce.com provides real-time system transparency. MuleSoft's Anypoint Platform handles high-throughput integration workloads. The platform has proven reliability for mission-critical CRM and business operations at global enterprise scale.",
         "evidence": "Salesforce operates on Hyperforce infrastructure across AWS, Azure, GCP, and OCI with documented multi-region capabilities. Salesforce's trust.salesforce.com provides real-time system status transparency. The company serves 150,000+ customers including the world's largest enterprises with proven CRM and platform reliability.",
-        "uipath_advantage": "Salesforce's hyperscaler infrastructure provides comparable or better raw scalability and reliability than UiPath's Automation Cloud for data-intensive workloads. However, UiPath's scalability advantage is in orchestrating automation workloads \u2014 coordinating robots, agents, APIs, and humans simultaneously \u2014 which is a different scalability dimension than Salesforce's CRM transaction processing scale.",
+        "uipath_advantage": "Salesforce's hyperscaler infrastructure provides comparable or better raw scalability and reliability than UiPath's Automation Cloud for data-intensive workloads. However, UiPath's scalability advantage is in orchestrating automation workloads — coordinating robots, agents, APIs, and humans simultaneously — which is a different scalability dimension than Salesforce's CRM transaction processing scale.",
         "sources": [
           "https://compliance.salesforce.com/en",
           "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
@@ -2153,7 +2153,7 @@
         "rationale": "Salesforce provides strong connectivity through MuleSoft's comprehensive integration platform, Salesforce Flow, and a vast AppExchange ecosystem with 7,000+ apps.",
         "reasoning": "MuleSoft Anypoint Platform is a leading enterprise integration platform with thousands of pre-built connectors. Salesforce AppExchange provides 7,000+ pre-built apps and integrations. Salesforce Flow handles internal process automation. Data Cloud unifies data across systems. However, Salesforce's integration strength is primarily CRM-centric, with non-Salesforce enterprise system integration requiring MuleSoft expertise.",
         "evidence": "Salesforce's architecture guidance explicitly frames Agentforce alongside MuleSoft as a comprehensive, unified platform for enterprise integration in agentic workflows. MuleSoft is described as a comprehensive, unified, and open platform for enterprise integration. Salesforce AppExchange provides thousands of pre-built integrations.",
-        "uipath_advantage": "UiPath Integration Service provides 1,000+ connectors with standardized governance across all UiPath products \u2014 more automation-specific than Salesforce's CRM-focused connectivity. UiPath's integration approach focuses on orchestrating APIs alongside robots and agents, while Salesforce's MuleSoft handles pure API integration at greater depth.",
+        "uipath_advantage": "UiPath Integration Service provides 1,000+ connectors with standardized governance across all UiPath products — more automation-specific than Salesforce's CRM-focused connectivity. UiPath's integration approach focuses on orchestrating APIs alongside robots and agents, while Salesforce's MuleSoft handles pure API integration at greater depth.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
           "https://www.salesforce.com/agentforce/"
@@ -2169,7 +2169,7 @@
         "rationale": "Salesforce provides excellent time-to-value for CRM-centric automation through pre-built Agentforce templates, Salesforce Flow, and the AppExchange ecosystem.",
         "reasoning": "Agentforce provides pre-built agent templates for common CRM use cases (sales, service, marketing) enabling rapid deployment without custom development. Salesforce Flow handles automation within Salesforce without coding. Einstein for Salesforce provides AI capabilities out-of-the-box. For Salesforce-native use cases, time-to-value is excellent. For cross-application automation beyond the Salesforce ecosystem, complexity increases significantly.",
         "evidence": "Salesforce's decision guide describes Agentforce as enabling reasoning-based workflows with a framework for deciding when to use agentic versus traditional automation. Agentforce 2dx introduced capabilities to embed proactive agentic AI into any workflow across the enterprise. Pre-built agents for Sales, Service, and other clouds provide rapid deployment.",
-        "uipath_advantage": "UiPath's time-to-value advantage is for cross-system automation beyond CRM \u2014 connecting legacy systems, SAP, document workflows, and APIs without Salesforce dependency. For customers already in the Salesforce ecosystem, Salesforce's time-to-value is comparable or better. UiPath's IXP and Process Mining add unique discovery-to-automation value.",
+        "uipath_advantage": "UiPath's time-to-value advantage is for cross-system automation beyond CRM — connecting legacy systems, SAP, document workflows, and APIs without Salesforce dependency. For customers already in the Salesforce ecosystem, Salesforce's time-to-value is comparable or better. UiPath's IXP and Process Mining add unique discovery-to-automation value.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
           "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx/default.aspx"
@@ -2183,7 +2183,7 @@
         "category": "Agentic Capabilities",
         "score": 3,
         "rationale": "Salesforce is a credible leader in CRM-centered agentic AI through Agentforce, but UiPath is stronger for cross-system agentic automation beyond the Salesforce ecosystem.",
-        "reasoning": "Agentforce 2dx introduced proactive agentic AI embedded into any workflow, multimodal experiences, and broader digital labor capabilities. Salesforce architecture positions Agentforce as the platform for building and deploying AI agents alongside MuleSoft for enterprise integration. UiPath announced in April 2026 that Maestro and CX Companion extend Salesforce's agentic capabilities \u2014 implying UiPath is complementary rather than replaced by Agentforce.",
+        "reasoning": "Agentforce 2dx introduced proactive agentic AI embedded into any workflow, multimodal experiences, and broader digital labor capabilities. Salesforce architecture positions Agentforce as the platform for building and deploying AI agents alongside MuleSoft for enterprise integration. UiPath announced in April 2026 that Maestro and CX Companion extend Salesforce's agentic capabilities — implying UiPath is complementary rather than replaced by Agentforce.",
         "evidence": "Salesforce announced Agentforce 2dx in March 2025 with proactive agentic AI capabilities. Salesforce's architecture documentation positions Agentforce as its AI agent platform. Forrester wrote in May 2025 that Salesforce is accelerating its path to agentic AI. UiPath announced Maestro integration with Salesforce Agentforce in April 2026.",
         "uipath_advantage": "UiPath's agentic advantage is enterprise-wide orchestration beyond CRM: Maestro coordinates AI agents, RPA robots, APIs, and human approvals across SAP, Citrix, web, desktop, and API systems outside Salesforce's native process boundary. For Salesforce-native use cases, Agentforce is highly competitive.",
         "sources": [
@@ -2200,9 +2200,9 @@
         "category": "BPM & Orchestration",
         "score": 3,
         "rationale": "Salesforce provides workflow orchestration through Salesforce Flow and Agentforce but is not a BPMN-native process orchestration platform.",
-        "reasoning": "Salesforce Flow provides low-code workflow automation within Salesforce. Agentforce enables agentic workflow automation for CRM-centric processes. MuleSoft handles integration orchestration. However, Salesforce is not a BPMN-native process modeling platform \u2014 process logic is expressed through proprietary Flow configurations rather than open standard BPMN/DMN, limiting interoperability and business stakeholder visibility.",
+        "reasoning": "Salesforce Flow provides low-code workflow automation within Salesforce. Agentforce enables agentic workflow automation for CRM-centric processes. MuleSoft handles integration orchestration. However, Salesforce is not a BPMN-native process modeling platform — process logic is expressed through proprietary Flow configurations rather than open standard BPMN/DMN, limiting interoperability and business stakeholder visibility.",
         "evidence": "Salesforce's architecture documentation positions Agentforce alongside MuleSoft for enterprise workflow orchestration. Salesforce Flow provides rule-based and agentic workflow automation within Salesforce. The platform uses proprietary orchestration models rather than BPMN 2.0 standards.",
-        "uipath_advantage": "UiPath Maestro uses BPMN/DMN as open executable standards \u2014 the diagram is the executable process with full business stakeholder visibility and portability. Salesforce's proprietary Flow-based orchestration lacks BPMN standards compliance, limiting cross-system process governance and compliance auditability beyond the Salesforce ecosystem.",
+        "uipath_advantage": "UiPath Maestro uses BPMN/DMN as open executable standards — the diagram is the executable process with full business stakeholder visibility and portability. Salesforce's proprietary Flow-based orchestration lacks BPMN standards compliance, limiting cross-system process governance and compliance auditability beyond the Salesforce ecosystem.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
           "https://www.salesforce.com/agentforce/"
@@ -2218,7 +2218,7 @@
         "rationale": "Salesforce provides testing capabilities through its development lifecycle but lacks a dedicated enterprise test automation suite.",
         "reasoning": "Salesforce provides sandbox environments for testing configuration and customization changes before production deployment. Salesforce DX and DevOps Center enable CI/CD-style testing and deployment. However, Salesforce does not offer a dedicated enterprise test automation suite for functional and performance testing of business processes comparable to UiPath Test Cloud.",
         "evidence": "Salesforce DevOps Center supports deployment pipelines with testing stages. Salesforce sandbox environments enable testing before production. However, no dedicated functional or performance test automation product comparable to UiPath Test Cloud, self-healing automation, or Autopilot for Testers is documented in Salesforce's core product portfolio.",
-        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, agentic testing capabilities, Test Manager governance, and CI/CD integrations. UiPath was named a Gartner Magic Quadrant Leader for AI-augmented software testing \u2014 a market where Salesforce has no comparable offering.",
+        "uipath_advantage": "UiPath Test Cloud provides enterprise-grade functional and performance testing including self-healing UI automation, agentic testing capabilities, Test Manager governance, and CI/CD integrations. UiPath was named a Gartner Magic Quadrant Leader for AI-augmented software testing — a market where Salesforce has no comparable offering.",
         "sources": [
           "https://www.salesforce.com/agentforce/",
           "https://compliance.salesforce.com/en"
@@ -2250,7 +2250,7 @@
         "rationale": "Salesforce provides strong platform governance through comprehensive compliance certifications, Data Cloud governance, Einstein Trust Layer, and Shield platform security.",
         "reasoning": "Salesforce Shield provides field-level encryption, event monitoring, and data archiving for regulated industries. Einstein Trust Layer governs AI operations including data masking and toxicity detection. Data Cloud provides data governance across unified customer data. Salesforce's compliance.salesforce.com documents certifications including ISO 27001 coverage for Agentforce and SOC 2 Type II.",
         "evidence": "Salesforce's Trust & Compliance change log shows Agentforce Assistant was added to SOC and ISO certifications. Salesforce Shield provides enterprise security including field-level encryption and event monitoring. Einstein Trust Layer (announced 2023, expanded through 2026) provides AI governance including data masking and zero data retention options.",
-        "uipath_advantage": "UiPath's AI Trust Layer provides more automation-specific LLM governance \u2014 centralized policy enforcement for all LLM calls across automation workflows. UiPath's Orchestrator audit trails cover the full automation lifecycle (robot, agent, API, human) in ways that Salesforce's platform governance does not address for cross-system automation.",
+        "uipath_advantage": "UiPath's AI Trust Layer provides more automation-specific LLM governance — centralized policy enforcement for all LLM calls across automation workflows. UiPath's Orchestrator audit trails cover the full automation lifecycle (robot, agent, API, human) in ways that Salesforce's platform governance does not address for cross-system automation.",
         "sources": [
           "https://compliance.salesforce.com/en",
           "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/"
@@ -2263,10 +2263,10 @@
       {
         "category": "Process Intelligence",
         "score": 2,
-        "rationale": "Salesforce has limited native process intelligence capabilities \u2014 Data Cloud provides data unification but lacks dedicated process mining, conformance checking, or task mining.",
+        "rationale": "Salesforce has limited native process intelligence capabilities — Data Cloud provides data unification but lacks dedicated process mining, conformance checking, or task mining.",
         "reasoning": "Salesforce Data Cloud unifies customer and operational data across the Salesforce ecosystem, providing a data foundation for process insights. Einstein Analytics enables business intelligence reporting. However, Salesforce does not offer dedicated process mining with event log analysis, conformance checking against process models, or task mining for desktop process discovery.",
         "evidence": "Salesforce's architecture documentation focuses on CRM data unification through Data Cloud and AI-powered insights through Einstein Analytics. No dedicated process mining, task mining, or conformance checking capabilities are documented in Salesforce's product portfolio as of 2026.",
-        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining \u2014 a capability category where Salesforce has no direct product.",
+        "uipath_advantage": "UiPath Process Mining provides conformance checking against BPMN reference models, variant analysis, task mining for desktop process discovery, and closed-loop integration with automation design. UiPath is a Gartner Magic Quadrant Leader for Process Mining — a capability category where Salesforce has no direct product.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/decision-guides/guide/determining-agentic-vs-traditional-workflow-automation",
           "https://www.salesforce.com/agentforce/"
@@ -2298,7 +2298,7 @@
         "rationale": "Salesforce has exceptional applicability in CRM-adjacent industries (financial services, healthcare, retail, manufacturing) with purpose-built industry clouds.",
         "reasoning": "Salesforce offers industry-specific clouds for Financial Services, Health Cloud, Manufacturing Cloud, Automotive Cloud, Consumer Goods Cloud, and Public Sector. Agentforce is tailored for sales, service, and marketing use cases. With 150,000+ customers globally, Salesforce has proven applicability across virtually every industry vertical, particularly where CRM and customer engagement processes are central.",
         "evidence": "Salesforce's trust compliance documentation covers Financial Services Cloud, Health Cloud, Marketing Cloud, Manufacturing Cloud, and other industry-specific products. Salesforce serves organizations across financial services, healthcare, retail, manufacturing, and public sector with purpose-built industry solutions.",
-        "uipath_advantage": "UiPath has broader automation applicability beyond CRM-centric use cases \u2014 particularly for back-office automation (accounts payable, HR, supply chain), document processing (IXP), legacy system integration, and regulated industry compliance automation that goes beyond Salesforce's CRM-native scope.",
+        "uipath_advantage": "UiPath has broader automation applicability beyond CRM-centric use cases — particularly for back-office automation (accounts payable, HR, supply chain), document processing (IXP), legacy system integration, and regulated industry compliance automation that goes beyond Salesforce's CRM-native scope.",
         "sources": [
           "https://compliance.salesforce.com/en/categories/iso-27001",
           "https://www.salesforce.com/agentforce/"
@@ -2340,6 +2340,32 @@
         "notes": "",
         "questions": ""
       }
+    ],
+    "microsoft": [
+      {
+        "vendor": "microsoft",
+        "topic": "Security & Compliance",
+        "score": 3,
+        "rationale": "Microsoft shows strong, current security and compliance depth across Power Platform, Copilot Studio, and its broader cloud stack, while UiPath has a focused enterprise governance model with AI Trust Layer, auditability, and deployment flexibility. Based on available search-result evidence, this topic is best scored as near parity rather than a clear lead for either side.",
+        "reasoning": "Search results indicate Microsoft continues to invest in enterprise-grade security and compliance for Power Platform in 2026, including enhanced security agent features, governance and administration updates, and Copilot Studio security and governance controls tied to Power Platform. Third-party comparison snippets also cite Microsoft's secure cloud infrastructure and compliance with standards such as GDPR, ISO, and HIPAA, reinforcing strong enterprise maturity. UiPath, however, has explicit platform strengths in AI Trust Layer, PII guardrails, role-based access, audit trails, and flexible cloud/on-prem/hybrid/air-gapped deployment that can be especially important for regulated automation programs. Because this environment only exposes search-result snippets and not full page browsing, the evidence is sufficient to establish Microsoft's strength but not enough to prove a decisive advantage over UiPath on automation-specific security and compliance, so parity is the most defensible score.",
+        "evidence": [
+          "Microsoft's Power Platform 2026 release wave 1 plan says 'enhanced security agent features will further support low code ... enterprise-grade compliance at scale' and highlights governance and administration.",
+          "Microsoft's 2026 Power Platform governance and administration release-plan page says the feature area includes 'enterprise-grade protection for all Power Platform assets' and references identifying security and compliance issues before deployment.",
+          "Microsoft Learn's Copilot Studio security and governance page says users can use Power Platform security and governance controls plus 'certifications, regulatory compliance, environment routing'.",
+          "A 2025 comparison article snippet states Power Automate is built on Microsoft's secure cloud infrastructure and offers compliance with standards such as GDPR, ISO, and HIPAA.",
+          "Microsoft's Power Platform governance considerations page references subscribing to Microsoft 365 Security and Compliance Audit Logs for alerting, indicating integration with broader Microsoft compliance operations."
+        ],
+        "uipath_advantage": "UiPath differentiates with automation-specific enterprise controls including AI Trust Layer, PII guardrails, Action Center human-in-the-loop governance, detailed audit trails, and deployment flexibility across cloud, on-premises, hybrid, and air-gapped environments via Automation Cloud and Orchestrator.",
+        "sources": [
+          "Microsoft Power Platform 2026 release wave 1 plan - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/",
+          "Overview of Microsoft Power Platform governance and administration - https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-platform-governance-administration/",
+          "Copilot Studio security and governance - https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
+          "Security and governance considerations in Power Platform - https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations",
+          "Flexmind: Power Automate vs UiPath - https://www.flexmind.co/power-automate-vs-uipath/"
+        ],
+        "confidence": "medium",
+        "last_updated": "2026-07-03"
+      }
     ]
   },
   "vendorScopes": {
@@ -2347,7 +2373,7 @@
     "Google": "AppSheet, Vertex AI, Gemini",
     "ServiceNow": "Now Platform, Automation Engine, AI Control Tower",
     "n8n": "n8n Workflow Automation (open-source)",
-    "UiPath": "UiPath Business Automation Platform \u2014 Orchestrator, Maestro, Studio, Test Suite",
+    "UiPath": "UiPath Business Automation Platform — Orchestrator, Maestro, Studio, Test Suite",
     "Appian": "Appian Platform, AI Skills, Data Fabric",
     "OpenAI": "Assistants API, GPT-4, Agents SDK, Enterprise",
     "Camunda": "Camunda Platform 8, BPMN Orchestration",
