@@ -273,222 +273,232 @@
     "Appian": [
       {
         "category": "Security & Compliance",
-        "score": 5,
-        "rationale": "Extensive compliance portfolio (SOC reports, ISO) with strong cloud security options.",
-        "reasoning": "Score 5 because Appian Cloud explicitly lists SOC 2 Type II and ISO 27001/27017 and other certifications, covering many regulated industry requirements.",
-        "evidence": "Appian's cloud compliance documentation describes SOC 2 Type II reporting and ISO/IEC 27001:2022 certification. The Trust Center highlights additional attestations (HIPAA, PCI DSS, FedRAMP).",
+        "score": 3,
+        "rationale": "Search evidence confirms Appian documents AI data processing and encryption details, but the available snippets did not surface enough direct, recent compliance-certification detail to prove a lead over UiPath. Given UiPath's explicit AI Trust Layer, auditability, and enterprise governance baseline, this looks closer to parity with a slight UiPath edge, but evidence is too thin for a stronger call.",
+        "reasoning": "The strongest Appian-specific snippet came from Appian AI documentation referencing 'data processing and encryption details' under Security & Compliance, which supports that Appian has formal security controls around AI features. However, the search results did not reliably return recent third-party or product-page snippets listing certifications, control frameworks, or governance features in enough detail to demonstrate superiority. UiPath's baseline includes role-based access, audit trails, compliance frameworks, and AI Trust Layer/PII guardrails, all directly relevant to this topic. Because Appian clearly addresses security but the retrieved evidence lacks breadth and recency, I scored this as parity with low confidence.",
+        "evidence": "Appian AI documentation snippet says: 'For data processing and encryption details, see Security & Compliance.' (Appian docs, 26.6). The same Appian AI documentation snippet references 'Enterprise Copilot' and 'Generative AI skills,' indicating Appian applies security/compliance guidance to newer AI capabilities. A 2025 Superblocks market-comparison snippet says Appian's security measures and compliance certifications were part of platform evaluation, implying Appian competes on enterprise security controls, though specific certifications were not visible in snippet.",
         "sources": [
-          "https://appian.com/support/resources/trust/compliance",
-          "https://appian.com/support/resources/trust/security"
+          "https://docs.appian.com/suite/help/26.6/model-support-and-deprecation.html (Appian Docs)",
+          "https://www.superblocks.com/blog/outsystems-competitors (Superblocks, 2025 market comparison)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "Enterprise-oriented cloud platform with managed security monitoring.",
-        "reasoning": "Score 4 because Appian Cloud is designed for demanding environments, but some advanced features can be limited in self-managed scenarios.",
-        "evidence": "The Appian Protect page positions Appian Cloud for demanding enterprise environments, emphasizing security monitoring and encryption.",
+        "rationale": "The searches returned little direct Appian product evidence for deployment and operations, while UiPath has a well-documented advantage in deployment flexibility across cloud, on-prem, hybrid, and air-gapped models. On the available evidence, UiPath appears stronger for enterprise operational deployment breadth.",
+        "reasoning": "Search results for Appian on this topic were noisy and mostly unrelated job listings or generic DevSecOps references rather than Appian product capabilities. That means there was not enough snippet-level proof to credit Appian with differentiated deployment tooling, operational controls, or platform management breadth. UiPath's reference baseline explicitly includes Automation Cloud, Orchestrator, and support for cloud, on-premise, hybrid, and air-gapped deployments, which is a concrete advantage in operations-heavy enterprise environments. Because lack of Appian-specific evidence may be a search limitation rather than a product gap, I used a moderate UiPath-advantage score rather than the most extreme one.",
+        "evidence": "Search results for 'Appian Deployment & Operations' were dominated by unrelated LinkedIn/job snippets, indicating limited accessible snippet evidence for Appian's deployment-specific product positioning. One result referenced Appian in the context of 'managed enterprise platforms like Appian' and 'DevSecOps Leadership,' but this was a practitioner profile rather than an Appian product claim. UiPath's baseline explicitly states deployment flexibility across cloud, on-premise, hybrid, and air-gapped environments via Automation Cloud and Orchestrator.",
         "sources": [
-          "https://appian.com/support/resources/trust/security",
-          "https://appian.com/products/pricing"
+          "https://au.linkedin.com/in/kimi-z-9140442b (LinkedIn profile snippet)",
+          "https://www.linkedin.com/jobs/view/senior-manager-business-operations-enablement-at-slalom-4426080952 (LinkedIn jobs snippet)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Strong scalability options (including autoscale tiers).",
-        "reasoning": "Score 4 because pricing tiers explicitly include autoscale in higher editions.",
-        "evidence": "Appian's pricing comparison lists 'Autoscale' capability as included in higher tiers, suggesting built-in scaling support for production workloads.",
+        "score": 3,
+        "rationale": "The retrieved web snippets did not provide direct, traceable Appian platform claims about scale, availability, or reliability, so a decisive comparison is not supported. Appian is clearly an enterprise platform, but UiPath's enterprise maturity is better evidenced from the provided baseline.",
+        "reasoning": "Searches for this topic returned mostly irrelevant or generic results and no strong Appian snippet with uptime, elasticity, HA architecture, or reliability benchmarks. That prevents a confident assessment of Appian's relative strength on scalability and reliability from the allowed evidence set. UiPath's baseline points to a mature enterprise automation platform with large customer adoption and established orchestration/deployment options, which suggests operational maturity. Still, because Appian is also an enterprise-grade workflow platform and the missing evidence is largely a retrieval problem, parity is the fairest score.",
+        "evidence": "Searches for 'Appian Scalability & Reliability' returned mostly irrelevant snippets and no direct benchmark, SLA, or high-availability claim for Appian. Appian appears in enterprise BPM/orchestration contexts, indicating it is used for mission-critical workflows, but the retrieved snippets did not quantify reliability or scale. UiPath's baseline notes 10,000+ enterprise customers and mature orchestration/deployment options, which are relevant indicators of platform reliability and scale.",
         "sources": [
-          "https://appian.com/products/pricing",
-          "https://appian.com/support/resources/trust/security"
+          "https://www.acte.in/red-hat-certification-path-article (search snippet mentioning Appian in enterprise applications context)",
+          "https://ro.linkedin.com/in/losneanu (LinkedIn snippet referencing UiPath engineering and reliability-related work)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
         "score": 4,
-        "rationale": "Good integration story via built-in integrations and data fabric, plus RPA for non-API systems.",
-        "reasoning": "Score 4 because Appian includes integration capabilities and RPA to bridge legacy systems.",
-        "evidence": "Appian pricing highlights 'Integrations' as a platform capability and includes Robotic Process Automation entitlements (bots) across tiers. The RPA product page emphasizes using RPA when APIs are unavailable.",
+        "rationale": "The searches did not surface strong Appian-specific integration claims, whereas UiPath's integration breadth is explicit and extensive. Based on evidence weight, UiPath holds a demonstrable advantage in packaged connectivity and enterprise integration breadth.",
+        "reasoning": "Results for Appian on connectivity and integration were mostly generic integration content from other vendors and not Appian product evidence. Without browse access, I cannot substantiate Appian connector counts, native adapters, or integration-service breadth from snippets alone. UiPath's baseline, however, explicitly includes 1,000+ Integration Service connectors spanning SAP, Salesforce, ServiceNow, Microsoft 365, Google Workspace, and more. That breadth is materially relevant for enterprise automation programs, so UiPath earns the edge.",
+        "evidence": "Searches for 'Appian Connectivity & Integration' returned mostly unrelated results from Palantir, Progress, and generic integration profiles rather than direct Appian product snippets. No retrieved Appian snippet provided a connector count, named integration fabric, or comparable packaged breadth claim. UiPath baseline explicitly states '1,000+ Integration Service connectors' covering SAP, Salesforce, ServiceNow, Microsoft 365, Google Workspace, and more.",
         "sources": [
-          "https://appian.com/products/pricing",
-          "https://appian.com/products/platform/process-automation/robotic-process-automation-rpa"
+          "https://www.progress.com/events/data-platform-summit (generic integration reference; search noise)",
+          "https://palantir.com/docs/foundry/palantir-mcp/overview/ (generic connectivity reference; search noise)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "Strong time-to-value with low-code process design and reusable patterns.",
-        "reasoning": "Score 4 because Appian is built around low-code process modeling and reusable 'process recipes'.",
-        "evidence": "Appian documentation describes BPMN as a standard for graphically describing business processes and states that with Appian the model becomes the executable process.",
+        "score": 3,
+        "rationale": "The searches produced insufficient direct Appian evidence for this topic, so a strong claim either way would be speculative. Appian's low-code heritage suggests fast app delivery, while UiPath's low-code/no-code studios and prebuilt automation assets suggest comparable time-to-value for automation use cases.",
+        "reasoning": "No useful Appian-specific snippets were returned for time-to-value or UX, creating a significant evidence gap. Appian is broadly known as a low-code process application platform, which typically supports rapid delivery, but the retrieved snippets did not provide concrete proof such as build-time reductions or UX design features. UiPath's baseline includes Studio, StudioX, and Studio Web across coded, low-code, and no-code personas, which supports usability and faster automation development. With no strong snippet-level proof favoring one side, parity is the safest score.",
+        "evidence": "Searches for 'Appian Time-to-Value & User Experience' returned no usable snippet-level evidence specific to Appian product capabilities. Appian's market positioning as a low-code platform implies faster application delivery, but that was not directly substantiated in the retrieved snippets. UiPath baseline includes Studio, StudioX, and Studio Web for different developer personas, indicating a broad UX strategy for faster automation creation.",
         "sources": [
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html"
+          "No strong direct result surfaced for this query; evidence gap noted from web search output",
+          "UiPath product baseline provided in task prompt"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4,
-        "rationale": "Emerging agentic capabilities with explicit auditing for AI/agent usage.",
-        "reasoning": "Score 4 because Appian has a defined 'Agent Studio' concept with audit logs.",
-        "evidence": "Appian's AI agent auditing documentation describes an always-on AI Usage Audit Log that records timestamps, initiator IDs, agent IDs, feature type, and request status.",
+        "score": 3,
+        "rationale": "Appian has visible 2025-2026 messaging around embedding agentic capabilities within business processes, but UiPath also has concrete agentic orchestration assets such as Maestro, Agent Builder, and Action Center. The available evidence suggests both are credible, with UiPath stronger in explicit agent tooling and Appian stronger in process embedding, resulting in parity overall.",
+        "reasoning": "Appian-specific results were much stronger here than on several other topics. A 2026 SiliconANGLE snippet says Appian's agentic capabilities were featured at Appian World, while Zacks/TradingView snippets say Appian aims to improve AI reliability by embedding agentic capabilities within business processes. Appian's own 2025 BOAT/Gartner blog snippet also emphasizes orchestration, connectivity, and agentic capabilities on a consolidated platform. UiPath, however, has a very specific agent stack in the baseline—Maestro orchestration, Agent Builder, LangGraph/OpenAI Agents integration, and Action Center HITL—which makes UiPath's offering more explicitly productized for agent development and governance. That balance supports a parity score.",
+        "evidence": "A SiliconANGLE Appian World 2026 snippet says 'Appian's agentic capabilities received similar treatment,' showing agentic automation was a current product focus. A June 18, 2026 Zacks/TradingView snippet says Appian 'aims to improve the reliability of enterprise AI by embedding agentic capabilities within business processes.' An Appian blog snippet from Oct. 25, 2025 says 72% of enterprise application leaders want consolidated platforms with 'orchestration, connectivity and agentic capabilities.' UiPath's 2025 Gartner RPA report blog snippet says 'UiPath is building and enabling customers to build AI agents' and describes a roadmap bringing agentic capabilities into operations.",
         "sources": [
-          "https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html",
-          "https://appian.com/products/pricing"
+          "https://siliconangle.com/2026/04/30/enterprise-process-automation-reliability-capability-appianworld/ (SiliconANGLE)",
+          "https://www.tradingview.com/news/zacks:97f89d5e2094b:0-can-appian-s-agentic-ai-strategy-drive-measurable-roi-for-enterprises/ (Zacks via TradingView)",
+          "https://appian.com/blog/2025/gartner-magic-quadrant-boat-appian-is-a-leader (Appian blog)",
+          "https://www.uipath.com/blog/rpa/gartner-magic-quadrant-rpa-report (UiPath blog)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 5,
-        "rationale": "Best-in-class BPM alignment via BPMN-centric executable process models.",
-        "reasoning": "Score 5 because Appian explicitly supports BPMN-based process models as executable workflows.",
-        "evidence": "Appian documentation explains that BPMN is the standard for describing processes, and that in Appian the model is not just documentation—it is translated into an executable process.",
+        "score": 2,
+        "rationale": "On BPM and orchestration, Appian is strongly associated with process automation, workflow, and orchestration, giving it a credible edge over UiPath's historically RPA-centered positioning. UiPath has improved substantially with Maestro and process orchestration, but Appian remains more natively rooted in BPM-style orchestration.",
+        "reasoning": "Even though search results were sparse, the usable snippets consistently placed Appian in the BPM & Orchestration category. A 2026 Visys Cloud snippet explicitly groups 'Camunda, Pega, Appian' under BPM & Orchestration while separately grouping 'UiPath, Automation Anywhere' under intelligent automation, reflecting common market segmentation. That suggests Appian is more strongly recognized for process-centric orchestration than UiPath in analyst/partner positioning. UiPath's Maestro narrows the gap and adds modern orchestration capabilities, but the market framing in the retrieved evidence gives Appian a slight advantage here.",
+        "evidence": "A 2026 Visys Cloud snippet explicitly categorizes 'Camunda, Pega, Appian' under 'BPM & Orchestration.' The same Visys Cloud snippet separately groups 'UiPath, Automation Anywhere' under 'Intelligent Automation,' implying a distinct market perception between BPM platforms and RPA-led vendors. Appian's 2025-2026 agentic messaging emphasizes orchestration embedded in business processes, reinforcing its process-centric orchestration positioning.",
         "sources": [
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html"
+          "https://visyscloudtech.com/automation-services (Visys Cloud Technologies)",
+          "https://appian.com/blog/2025/gartner-magic-quadrant-boat-appian-is-a-leader (Appian blog)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Adequate testing/validation features, but less evidence of a dedicated test suite.",
-        "reasoning": "Score 3 because Appian supports configuring and testing workflows but lacks emphasis on performance testing harnesses.",
-        "evidence": "Appian's process modeling materials focus on building and testing executable workflows as part of process design. The platform also provides audit logging for AI interactions.",
+        "score": 4,
+        "rationale": "The searches did not return usable Appian-specific evidence for functional or performance testing capabilities, while UiPath has explicit test automation strengths in its platform portfolio. Based on the available evidence, UiPath has the clearer position.",
+        "reasoning": "No meaningful Appian product snippets were returned for this exact topic, so there is not enough evidence to attribute mature testing capabilities to Appian from search snippets alone. UiPath's enterprise automation platform includes established testing and governance assets in its broader platform baseline, including Test Manager. Since the retrieved evidence fails to show Appian matching that dedicated testing posture, UiPath is better positioned on this topic. Confidence remains low because the gap is driven by sparse search retrieval rather than definitive negative evidence about Appian.",
+        "evidence": "Searches for 'Appian Testing & Evaluation (Functional + Performance)' returned no usable Appian-specific snippet evidence. UiPath baseline includes Test Manager as part of enterprise governance and lifecycle support. UiPath is regularly associated with test automation in enterprise automation positioning, while no equivalent Appian snippet surfaced in the allowed search results.",
         "sources": [
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html",
-          "https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html"
+          "No strong direct result surfaced for this query; evidence gap noted from web search output",
+          "UiPath product baseline provided in task prompt"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4,
-        "rationale": "Strong monitoring posture via 'Appian Protect' plus platform analytics options.",
-        "reasoning": "Score 4 because Appian Protect is positioned for security monitoring and Appian pricing highlights Process HQ in higher tiers.",
-        "evidence": "The Appian Protect page frames Appian Protect as providing security monitoring and related controls for sensitive and regulated data.",
+        "score": 3,
+        "rationale": "There was limited Appian-specific evidence beyond generic references to monitoring and observability in job and services snippets, so a strong lead is not demonstrated. UiPath has clear operational analytics strengths, but the available data is insufficient to move far from parity.",
+        "reasoning": "The most relevant results were an Appian career page snippet listing monitoring and observability tooling like Grafana, Prometheus, and InfluxDB, plus generic enterprise operations references mentioning Appian environments. These snippets suggest Appian deployments participate in standard observability stacks but do not prove differentiated native observability capabilities. UiPath's baseline includes Insights analytics and enterprise governance tooling, which helps with operational visibility. Because the Appian evidence is indirect and implementation-oriented rather than product-native, parity with low confidence is the fairest score.",
+        "evidence": "An Appian Careers snippet references 'Monitoring & Observability' with tools such as 'Grafana, Prometheus, InfluxDB,' indicating Appian environments are operated with enterprise observability practices. A LinkedIn snippet about Appian + Salesforce operations mentions monitoring tools including 'Dynatrace' and 'Splunk,' suggesting Appian customers use standard observability ecosystems. UiPath baseline includes Insights analytics, which is directly relevant to monitoring automation programs and performance.",
         "sources": [
-          "https://appian.com/support/resources/trust/security",
-          "https://appian.com/products/pricing"
+          "https://careers.appian.com/jobs/7977620-senior-consultant (Appian Careers)",
+          "https://in.linkedin.com/in/thilak-suvarna-a8b6411b6 (LinkedIn profile snippet)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "Good traceability for AI usage and compliance-driven environments.",
-        "reasoning": "Score 4 because Appian provides default AI usage audit logs and a broader compliance portfolio.",
-        "evidence": "Appian's AI Usage Audit Log is described as enabled by default and intended to provide the audit trail required for security questionnaires and compliance reviews.",
+        "rationale": "The searches returned almost no Appian-specific evidence on traceability or governance, while UiPath's baseline includes explicit governance, audit, and control capabilities. UiPath therefore has the clearer documented advantage on available evidence.",
+        "reasoning": "Search results were effectively noise for this topic and did not surface Appian snippets about lineage, approval controls, audit trails, role-based governance, or compliance oversight. UiPath's baseline directly includes role-based access, audit trails, Insights, Test Manager, and AI Trust Layer/PII guardrails, which are highly relevant to traceability and governance. In competitive scoring, explicit documented capability usually outweighs absent evidence. Because I cannot browse deeper to validate Appian's governance stack, I score UiPath ahead but keep confidence low.",
+        "evidence": "Searches for 'Appian Traceability & Governance' produced no direct Appian product evidence in snippets. UiPath baseline explicitly includes role-based access, audit trails, Insights analytics, Test Manager, AI Trust Layer, and PII guardrails. The lack of retrievable Appian snippet evidence creates an evidence disadvantage on this topic even if Appian may have governance features not visible in search results.",
         "sources": [
-          "https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html",
-          "https://appian.com/support/resources/trust/compliance"
+          "https://www.clearwork.io/blog/all-blog-posts (generic search noise indicating no direct Appian result)",
+          "UiPath product baseline provided in task prompt"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
-        "score": 4,
-        "rationale": "Integrated process intelligence available as part of platform packaging.",
-        "reasoning": "Score 4 because Appian explicitly prices and positions process intelligence as a platform capability.",
-        "evidence": "Appian's pricing page lists 'Process intelligence' as part of the product packaging and includes related capabilities such as Process HQ in higher tiers.",
+        "score": 3,
+        "rationale": "Appian has explicit 2026 product positioning around Process Intelligence and appears in Gartner's Process Intelligence Platforms market, but UiPath also has a mature process/task mining stack. The evidence supports rough parity.",
+        "reasoning": "This topic had strong Appian evidence. Appian's Jan. 15, 2026 US Army press release snippet and Apr. 28, 2026 Appian World press release snippet both describe Process Intelligence as the ability to 'access, analyze, and report on process and business data.' Gartner's 2026 Process Intelligence Platforms review page also lists Appian in that market, confirming third-party category presence. On the UiPath side, the baseline includes end-to-end Process Mining with simulation and conformance checking plus Task Mining and variant analysis, which is broader and very mature. Appian is clearly credible, but UiPath's dedicated mining/task stack keeps this at parity overall.",
+        "evidence": "Appian's Jan. 15, 2026 press release snippet says Process Intelligence lets users 'Access, analyze, and report on process and business data.' Appian's Apr. 28, 2026 Appian World press release snippet again highlights Process Intelligence and 'new capabilities in agentic automation and AI-assisted' delivery. A Gartner 2026 Process Intelligence Platforms review page lists Appian in that market. A KYP.ai 2026 comparison snippet says Appian 'targets complex process automation and orchestration with a unified no-code/low-code approach, positioning process intelligence as an integral component.'",
         "sources": [
-          "https://appian.com/products/pricing"
+          "https://appian.com/about/explore/press-releases/2026/us-army-awards-appian-enterprise-agreement (Appian press release)",
+          "https://appian.com/about/explore/press-releases/2026/appian-advances-ai-in-process-to-deliver-enterprise-outcomes-at-scale (Appian press release)",
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms (Gartner Peer Insights market page)",
+          "https://kyp.ai/uipath-process-intelligence-alternatives/ (KYP.ai)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Pricing is structured (per user/month/app) but can drive TCO complexity at scale.",
-        "reasoning": "Score 3 because per-app/per-user constructs and tiered bot entitlements can complicate enterprise-wide TCO comparisons.",
-        "evidence": "Appian's pricing page describes platform capabilities as priced per user, per month, per app, and includes tiered entitlements.",
+        "rationale": "The retrieved evidence only established that Appian uses custom enterprise pricing and is sometimes perceived as firmly enterprise-priced, but it did not provide enough direct comparative data versus UiPath. Without transparent, traceable pricing evidence from snippets, parity is the safest conclusion.",
+        "reasoning": "Searches for this topic were sparse, and the most useful snippet was from KYP.ai stating 'Appian pricing is custom based on users and capabilities,' while Superblocks noted Appian's pricing is 'firmly in the' enterprise tier. Those claims suggest Appian is not positioned as a low-cost option. UiPath pricing also varies by product/module and enterprise configuration, so the available snippet evidence does not prove a decisive TCO advantage for either side. Because cost outcomes depend heavily on deployment scope, automation mix, and governance needs, I scored parity with low confidence.",
+        "evidence": "A KYP.ai 2026 snippet says 'Appian pricing is custom based on users and capabilities. Contact Appian for enterprise pricing details.' A Superblocks 2025 comparison snippet says 'Appian's pricing is firmly in the...' enterprise tier, implying premium enterprise positioning. No retrieved snippet provided a direct Appian-vs-UiPath cost comparison, per-bot economics, or TCO benchmark.",
         "sources": [
-          "https://appian.com/products/pricing"
+          "https://kyp.ai/aris-process-intelligence-alternatives/ (KYP.ai)",
+          "https://www.superblocks.com/blog/outsystems-competitors (Superblocks)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Strong fit for regulated industries and process-heavy domains.",
-        "reasoning": "Score 4 because Appian emphasizes healthcare, financial services, government.",
-        "evidence": "Appian Protect highlights protecting sensitive and regulated data across domains like healthcare, financial services, and government, and lists certifications such as HIPAA and DoD impact levels.",
+        "score": 3,
+        "rationale": "Appian shows broad enterprise applicability and appears in multiple markets and public-sector use cases, while UiPath has equally broad horizontal applicability across automation scenarios. The evidence supports broad-domain parity rather than a decisive lead.",
+        "reasoning": "The strongest snippet here was Appian's Jan. 15, 2026 US Army enterprise agreement, which signals applicability in government and mission-critical contexts. Gartner Peer Insights comparison snippets also indicate Appian has reviews in multiple markets, including property and casualty-related areas, supporting cross-industry reach. UiPath's baseline, however, reflects a very broad horizontal automation footprint across documents, apps, APIs, mining, testing, and governance. Since both vendors are demonstrably used across industries, the available evidence suggests parity.",
+        "evidence": "Appian's Jan. 15, 2026 US Army enterprise agreement demonstrates adoption in a large public-sector, mission-critical environment. A Gartner Peer Insights comparison snippet says Appian has reviews across multiple markets and notes unique market presence beyond pure RPA. Appian is consistently positioned around complex process automation/orchestration, which tends to map across many business domains rather than a narrow vertical niche.",
         "sources": [
-          "https://appian.com/support/resources/trust/security",
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html"
+          "https://appian.com/about/explore/press-releases/2026/us-army-awards-appian-enterprise-agreement (Appian press release)",
+          "https://www.gartner.com/reviews/market/robotic-process-automation/compare/appian-vs-uipath (Gartner Peer Insights)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Durable value via standards-based BPM and deep compliance footprint.",
-        "reasoning": "Score 4 because executable BPMN models and ongoing compliance attestations support long-running programs.",
-        "evidence": "Appian's process modeling emphasizes BPMN as the foundation for executable workflows, improving stakeholder clarity and maintainability.",
+        "score": 3,
+        "rationale": "Appian presents a credible long-term value story through continued investment messaging and a strong partner ecosystem, but the retrieved evidence is largely corporate/financial narrative rather than product-proof. UiPath also has a strong long-term enterprise platform story, so parity is most defensible.",
+        "reasoning": "The relevant snippets here included Appian earnings-call language about continuing to 'invest responsibly to maximize our long term value' and partner/alliance content from EY and Macedon highlighting Appian in long-duration enterprise transformation programs. These support Appian's viability and ecosystem commitment, but they are not direct proof of product ROI durability versus UiPath. UiPath's long-term value case is reinforced by its customer base, partner ecosystem, and broadening platform scope across AI, mining, integrations, and governance. With both vendors positioned for sustained enterprise relevance, parity is the most supportable score.",
+        "evidence": "Appian's Q4 2025 earnings-call prepared remarks say the company will 'continue to invest responsibly to maximize our long term value.' Appian's Q1 2026 earnings-call prepared remarks repeat that it will 'continue to invest responsibly to maximize our long term value.' EY and Appian alliance messaging positions Appian for AI process automation transformations, indicating ecosystem support for durable enterprise programs. Macedon describes itself as a trusted partner of both Appian and UiPath, suggesting both vendors maintain viable ecosystems for long-term enterprise adoption.",
         "sources": [
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html",
-          "https://appian.com/support/resources/trust/compliance"
+          "https://investors.appian.com/static-files/beb8956b-d1cd-43af-a8b4-65b43b92b932 (Appian Q4 2025 earnings remarks)",
+          "https://investors.appian.com/static-files/1117581f-f132-4821-858a-d1c28f943f0d (Appian Q1 2026 earnings remarks)",
+          "https://www.ey.com/en_gl/newsroom/2023/01/ey-announces-alliance-with-appian-to-bring-people-technology-and-data-together-to-unlock-maximum-customer-value (EY)",
+          "https://www.macedontechnologies.com/about-macedon-appian-premier-partner-automation-experts (Macedon Technologies)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "High agility through low-code design and reusable process patterns.",
-        "reasoning": "Score 4 because low-code/BPMN models enable fast iteration while audit logs for agents provide governance.",
-        "evidence": "Appian frames process models as executable and maintains process recipes/patterns for common workflows, enabling rapid solution iteration.",
+        "score": 3,
+        "rationale": "Appian's low-code process-automation roots imply strong business agility, while UiPath's mix of low-code, coded, and no-code tooling supports rapid adaptation across automation scenarios. Because the searches produced little direct snippet evidence, parity is the safest assessment.",
+        "reasoning": "This topic suffered from sparse search results and no strong Appian-specific snippet about adaptability or agility outcomes. Appian's general positioning as a low-code process platform naturally aligns with business adaptability, especially for workflow change and orchestration-heavy use cases, but the retrieved evidence did not quantify that. UiPath's baseline supports agility through Studio, StudioX, Studio Web, broad connectors, and deployment flexibility. Since both vendors are architected to support change, but evidence is thin, I scored parity with low confidence.",
+        "evidence": "Searches for 'Appian Business adaptability / Agility' returned no strong direct Appian snippet evidence. Appian's broader 2025-2026 messaging emphasizes orchestration, connectivity, and process-centered automation, which generally supports adaptability in changing business processes. UiPath baseline includes multiple development experiences and deployment options that help organizations adapt automations quickly across teams and environments.",
         "sources": [
-          "https://docs.appian.com/suite/help/24.1/process_modeling.html",
-          "https://docs.appian.com/suite/help/25.4/auditing-ai-agent-usage.html"
+          "https://appian.com/blog/2025/gartner-magic-quadrant-boat-appian-is-a-leader (Appian blog)",
+          "UiPath product baseline provided in task prompt"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       }
