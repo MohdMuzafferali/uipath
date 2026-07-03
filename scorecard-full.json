@@ -45,17 +45,13 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "Microsoft shows strong, recent enterprise security and compliance depth across Power Platform, Microsoft 365, and Copilot Studio, while UiPath also has credible enterprise-grade trust, audit, and governance capabilities. Based on available search-result evidence alone, the market dynamic looks broadly competitive rather than clearly favoring either side.",
-        "reasoning": "Search results indicate Microsoft has substantial security and compliance capabilities embedded across its stack: Power Platform governance can subscribe to Microsoft 365 Security and Compliance Audit Logs, Copilot Studio exposes security and governance controls plus certifications and regulatory compliance, and Microsoft 365 enterprise plans emphasize advanced security and compliance tooling. Direct comparison snippets also note Power Automate inherits Microsoft 365 identity, security, and compliance controls and is described as compliant with standards such as GDPR, ISO, and HIPAA. Against that, UiPath’s baseline includes AI Trust Layer, PII guardrails, role-based access, audit trails, compliance frameworks, and flexible deployment options including on-premises and air-gapped environments, which are particularly relevant for regulated automation programs. Because the evidence comes from snippets rather than browsed pages and lacks strong third-party analyst comparison specific to automation security/compliance, parity is the most defensible score.",
-        "evidence": "Microsoft Learn states in 'Security and governance considerations in Power Platform' (Apr 7, 2026) that governance alerting can subscribe to Microsoft 365 Security and Compliance Audit Logs. Microsoft Learn states in 'Copilot Studio security and governance' (Jan 27, 2026) that customers can use Power Platform security and governance controls, including certifications, regulatory compliance, and environment routing. Microsoft's enterprise plan pages describe Microsoft 365 E3/E5/E7 and Microsoft 365 Enterprise as offering enhanced or advanced security and compliance capabilities. An April 8, 2026 i3solutions comparison snippet says Power Automate inherits Microsoft 365 identity, security, and compliance controls. A July 29, 2025 Flexmind comparison snippet says Power Automate is built on Microsoft's secure cloud infrastructure and offers compliance with standards like GDPR, ISO, and HIPAA.",
+        "rationale": "Microsoft is highly competitive on security and compliance because Power Platform aligns with Microsoft's broader enterprise security stack, but the available snippet evidence does not prove a decisive lead over UiPath's enterprise governance and AI trust controls. UiPath remains strong for automation-specific governance, auditability, and controlled human-in-the-loop operations.",
+        "reasoning": "Search snippets indicate Microsoft Power Automate is frequently positioned as aligned to Microsoft's enterprise security standards, with references to SOC 2, ISO 27001, and enterprise data loss prevention controls. However, the snippet evidence available here is indirect and does not provide detailed proof points on automation-specific compliance depth versus UiPath. UiPath's baseline includes AI Trust Layer, PII guardrails, audit trails, role-based access, and Action Center HITL, which are directly relevant to secure enterprise automation. Because both vendors appear strong but the web snippets are not deep enough to validate a durable lead either way, parity is the most defensible score.",
+        "evidence": "Improvado's 2026 UiPath competitors article snippet says Microsoft security is 'aligned to Microsoft's enterprise standards (SOC 2, ISO 27001).' Automation Anywhere's 2026 agentic AI buyer's guide snippet references 'Microsoft Graph connectivity, Teams and Office integration, enterprise data loss prevention controls.' A UiPath March 18, 2026 press release snippet says UiPath announced 'a new security automation capability' built with Microsoft.",
         "sources": [
-          "https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations (Microsoft Learn: Security and governance considerations in Power Platform)",
-          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance (Microsoft Learn: Copilot Studio security and governance)",
-          "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plans-and-pricing (Microsoft 365 Enterprise plans and pricing)",
-          "https://www.microsoft.com/en-us/security/pricing/enterprise-plans (Microsoft 365 Security Enterprise Plans)",
-          "https://i3solutions.com/insights-power-platform/power-automate-vs-rpa/ (i3solutions: Power Automate vs RPA for Enterprise IT Leaders)",
-          "https://www.flexmind.co/power-automate-vs-uipath/ (Flexmind: Power Automate vs UiPath)",
-          "https://www.uipath.com/legal/trust-and-security (UiPath Trust Portal)"
+          "https://improvado.io/blog/uipath-competitors",
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms",
+          "https://www.uipath.com/newsroom/uipath-microsoft-security-collaboration-workflows"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -64,208 +60,225 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 4,
-        "rationale": "Cloud-first managed operations with options like hosted RPA and admin tooling.",
-        "reasoning": "Score 4 because Power Automate is delivered as a managed cloud service and offers hosted RPA options, but deep on-prem/self-managed flexibility is more limited than containerized suites.",
-        "evidence": "Power Automate pricing describes plans for attended and unattended desktop flows, including a Microsoft hosted virtual machine option for hosted RPA. Admin documentation for logging and auditing shows enterprise operations hooks (Purview audit logs and SDK/API access). Together these support day-2 ops for a primarily SaaS deployment model.",
+        "score": 3,
+        "rationale": "Microsoft has an operational advantage inside Azure and Microsoft 365-centric environments, while UiPath offers broader enterprise deployment flexibility across cloud, on-prem, hybrid, and air-gapped automation estates. The current evidence supports rough parity rather than a clear lead.",
+        "reasoning": "Available snippets show Microsoft's platform benefiting from Azure-scale infrastructure and citizen-developer deployment models, while external comparisons note Power Automate's strength in low-code deployment. UiPath's baseline explicitly includes cloud, on-prem, hybrid, and air-gapped options plus enterprise Orchestrator controls, which is a strong differentiator for regulated and heterogeneous environments. Because the retrieved results did not provide recent operational feature-level detail for Microsoft beyond broad platform fit, it is difficult to justify Microsoft leading on enterprise deployment breadth. The most balanced score is parity.",
+        "evidence": "Elementum AI's May 24, 2026 snippet says 'Microsoft Power Automate provides low-code automation and citizen-developer deployment.' UiPath's Azure availability press release states customers can use Azure's 'scalability, reliability and agility' to scale automation initiatives and highlights 'streamlined deployment and management.' Microsoft's July 24, 2025 customer transformation blog snippet highlights Microsoft 365 Copilot automation usage at scale in enterprise operations.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
-          "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate"
+          "https://www.elementum.ai/blog/uipath-alternatives",
+          "https://www.uipath.com/newsroom/uipath-automation-platform-available-in-microsoft-azure",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Enterprise scale is strong, but reliability patterns vary by connector and flow design.",
-        "reasoning": "Score 4 because Microsoft operates on Azure-scale infrastructure and provides security/monitoring integrations, yet some reliability is workload-specific (connector limits, throttling, etc.).",
-        "evidence": "Microsoft positions Power Platform environments with network isolation and SIEM integration (Sentinel for Power Platform) as part of a broader security/monitoring posture. Automation workloads can be scaled through licensing models that support unattended bots and hosted RPA. Reliability still depends on connector behavior and governance policies in each tenant.",
+        "score": 3,
+        "rationale": "Microsoft benefits from Azure-scale cloud infrastructure and broad enterprise adoption, but UiPath is also explicitly positioned for reliable enterprise automation and large-scale unattended operations. Evidence supports parity, with each vendor strong in different ways.",
+        "reasoning": "The retrieved material suggests Microsoft inherits strong scalability and reliability characteristics from Azure and the broader Microsoft Cloud, which matters for enterprise automation workloads. At the same time, UiPath has long-standing enterprise automation credibility and explicitly markets reliable enterprise automation, plus its core RPA platform maturity is a key baseline strength. The snippets do not provide quantitative uptime, throughput, or HA comparisons for Power Automate versus UiPath. Without stronger direct proof, parity is the most supportable outcome.",
+        "evidence": "UiPath's Azure announcement snippet references the 'scalability, reliability and agility of Azure' for scaling automation initiatives. Improvado's May 2026 snippet says competitors now match or exceed UiPath in 'cloud scalability.' Microsoft's annual-report-related snippet references Power Automate within the broader Microsoft platform and large-scale customer transformation activity.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/",
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+          "https://www.uipath.com/newsroom/uipath-automation-platform-available-in-microsoft-azure",
+          "https://improvado.io/blog/uipath-competitors",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
-        "questions": "Confirm rate limits, retry semantics, and HA/DR options for your target connectors and regions."
+        "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 5,
-        "rationale": "Very broad connectivity via connectors and extensibility for custom connectors.",
-        "reasoning": "Score 5 because Power Platform has a large connector ecosystem and explicit support for custom/certified connectors.",
-        "evidence": "Microsoft maintains a public repository for Power Platform connectors, describing certified connectors, independent publisher connectors, and custom connector samples.",
+        "score": 3,
+        "rationale": "Microsoft is exceptionally strong for connectivity across Microsoft 365, Dynamics 365, Azure, Graph, Teams, and the Power Platform connector ecosystem. UiPath remains highly competitive due to its own 1,000+ Integration Service connectors plus strong UI/API automation for systems without modern APIs, making this a parity area.",
+        "reasoning": "Multiple snippets explicitly reference Microsoft's thousands of Power Platform connectors and deep native integration with Microsoft services, which is a clear strength for Microsoft. However, comparative snippets also note UiPath Marketplace and custom API activities, and UiPath's baseline states 1,000+ Integration Service connectors plus strong SAP and Citrix automation. Since enterprises often need both API integration and resilient UI automation across legacy apps, UiPath retains meaningful differentiation outside the Microsoft stack. Overall, neither side has a snippet-proven decisive lead across the full integration problem space.",
+        "evidence": "EPC Group's comparison snippet says 'Integrations. 1,000+ connectors; native Microsoft ecosystem integration, UiPath Marketplace + custom API activities.' KYP.ai's 2026 process mining comparison snippet says Microsoft has 'Native connection to Microsoft 365, Dynamics 365, Azure services, and thousands of Power Platform connectors.' Automation Anywhere's buyer's guide snippet cites 'Microsoft Graph connectivity, Teams and Office integration.'",
         "sources": [
-          "https://github.com/microsoft/PowerPlatformConnectors"
+          "https://www.epcgroup.net/power-automate-vs-uipath",
+          "https://kyp.ai/process-mining-software-comparison/",
+          "https://www.automationanywhere.com/rpa/agentic-ai-platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 5,
-        "rationale": "Excellent time-to-value for business teams due to mature low-code UX and packaged plans.",
-        "reasoning": "Score 5 because Power Automate is designed for low-code automation and offers packaged entitlements that reduce the barrier to initial adoption.",
-        "evidence": "Power Automate's pricing page describes turnkey plans that include cloud flows, attended desktop flows, and process/task mining for individual users, plus separate plans for unattended automation and hosted machines.",
+        "score": 2,
+        "rationale": "Microsoft appears to hold a slight advantage in time-to-value and user experience, especially for organizations already standardized on Microsoft 365 and Teams. UiPath remains strong for complex enterprise automation, but Microsoft's low-code and bundled ecosystem can speed early adoption.",
+        "reasoning": "The snippets repeatedly position Power Automate as user-friendly, low-code, and well-suited to Microsoft-centric task automation, with one comparison showing a far lower entry pricing point than UiPath. External commentary also notes Power Automate performs especially well when processes are mostly within Microsoft services, which directly affects speed to first automation value. UiPath counters with strong Autopilot/Copilot integration and broader enterprise process coverage, but complexity can be higher when building deeply governed automations. That mix suggests a slight Microsoft advantage rather than a major one.",
+        "evidence": "EPC Group's comparison snippet says 'Power Automate vs UiPath: RPA features, pricing ($15/user vs $420/user), AI capabilities, and bot types compared.' A February 24, 2026 LinkedIn snippet on new Power features references a 'user-friendly experience in Teams.' A May 8, 2025 LinkedIn comparison snippet says 'if your RPA process is mostly within Microsoft services itself, Power Automate does alot better there.'",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+          "https://www.epcgroup.net/power-automate-vs-uipath",
+          "https://www.linkedin.com/posts/jukkaniiranen_just-one-of-the-things-i-dont-enjoy-about-activity-7432017876104093696-5iGQ",
+          "https://www.linkedin.com/posts/pearlynkang_and-i-resonate-so-deeply-as-an-uipath-rpa-activity-7326269512310226944-vqv8"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4,
-        "rationale": "Rapidly maturing agent ecosystem via Copilot Studio and Microsoft 365/Azure integrations.",
-        "reasoning": "Score 4 because Microsoft has clear agent governance/identity patterns and is adding multi-agent orchestration features, but agentic capabilities may be distributed across products.",
-        "evidence": "Microsoft's Build 2025 announcement describes Copilot Studio as a low-code hub for building agents, plus Entra Agent ID to assign identities and extend Purview Information Protection.",
+        "score": 3,
+        "rationale": "Both Microsoft and UiPath are credible in agentic AI, with Microsoft strong through Copilot Studio and AutoGen, and UiPath strong through Maestro, Agent Builder, and its open agentic ecosystem. The current evidence supports parity rather than a clear leader.",
+        "reasoning": "The results explicitly place Microsoft Copilot Studio and AutoGen among leading enterprise agentic platforms, showing Microsoft is a serious competitor here. At the same time, UiPath's 2025-2026 announcements describe an enterprise-grade platform for agentic automation and bi-directional integrations with Microsoft Copilot Studio, underscoring maturity and interoperability rather than a gap. UiPath's baseline additionally includes Maestro orchestration, Agent Builder, LangGraph/OpenAI Agents integration, and HITL controls, which are directly relevant for enterprise-grade deployment. Given both vendors have meaningful capabilities and the snippets do not prove one clearly ahead, parity is justified.",
+        "evidence": "Sana Labs' May 30, 2026 snippet lists 'Microsoft Copilot Studio and AutoGen' among top enterprise agentic AI platforms. UiPath's May 19, 2025 press release snippet says it advanced its 'Open Agentic Ecosystem through Bi-directional Integrations with Microsoft Copilot Studio.' UiPath's April 30, 2025 launch snippet describes 'the first enterprise-grade platform for agentic automation' that unifies AI agents, robots, and people.",
         "sources": [
-          "https://www.microsoft.com/en-us/microsoft-365/blog/2025/05/19/introducing-microsoft-365-copilot-tuning-multi-agent-orchestration-and-more-from-microsoft-build-2025/",
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"
+          "https://sanalabs.com/agents-blog/enterprise-agentic-ai-platforms-sana-workday-2026",
+          "https://www.uipath.com/newsroom/uipath-announces-bidirectional-integrations-with-microsoft-copilot-studio",
+          "https://www.uipath.com/newsroom/uipath-launches-first-enterprise-grade-platform-for-agentic-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "Good orchestration for workflow automation, weaker for full BPMN-centric process modeling.",
-        "reasoning": "Score 3 because Power Automate supports business process flows and workflow composition, but the platform is not primarily BPMN-driven like traditional BPM suites.",
-        "evidence": "Microsoft licensing guidance describes Power Automate supporting multiple flow types including 'business process flows' alongside automated/instant/scheduled flows.",
+        "score": 4,
+        "rationale": "UiPath appears to have a demonstrable advantage in BPM and orchestration because it is explicitly positioned around agentic business orchestration and enterprise control-plane coordination. Microsoft is capable for workflow orchestration, especially in Microsoft 365 scenarios, but the snippet evidence is less comprehensive for end-to-end enterprise process orchestration.",
+        "reasoning": "Search results describe Power Automate as useful for Microsoft 365 workflows and enterprise workflows, but not as clearly as a full enterprise-wide business orchestration control plane. By contrast, Gartner market text in the results explicitly describes UiPath as 'the Agentic Business Orchestration platform' coordinating AI agents, robots, people, and models across end-to-end processes. UiPath's baseline also includes Maestro and Action Center, which strengthen orchestration across humans and AI. Based on available evidence, UiPath holds the clearer product narrative and capability breadth here.",
+        "evidence": "A KYP.ai orchestration comparison snippet says large organizations often use 'Power Automate for Microsoft 365 workflows.' Serval's March 2026 snippet notes 'A key UiPath capability is unattended RPA: fully automated digital processes.' A Gartner BOAT market snippet describes UiPath as 'the Agentic Business Orchestration platform: a single enterprise control plane that coordinates end-to-end processes across AI agents, robots, people...'",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+          "https://kyp.ai/top-process-orchestration-solutions-to-compare/",
+          "https://www.serval.com/insights/11-best-workflow-automation-solutions-for-enterprise-it-teams-(2026)",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Testing support exists but is less specialized than dedicated test platforms.",
-        "reasoning": "Score 3 because while flows can be tested and observed, Microsoft's automation stack is not primarily marketed as an enterprise test automation suite.",
-        "evidence": "Microsoft provides detailed audit logging for automation activities via Purview and Dataverse auditing for record changes, enabling traceability for changes and executions.",
+        "score": 4,
+        "rationale": "UiPath has the clearer enterprise testing story in the available evidence, while Microsoft search results did not surface strong Power Automate-specific functional and performance testing capabilities. This suggests UiPath has an advantage, though confidence is limited by sparse direct evidence.",
+        "reasoning": "The retrieved results for this topic were notably weak on Microsoft-specific testing capabilities, surfacing mostly generic testing-market references and Microsoft's annual report rather than targeted product evidence. UiPath's baseline includes Test Manager and broader enterprise governance capabilities, which gives it a more concrete testing-related position in this comparison. Because the snippet set does not validate a strong Microsoft functional/performance testing offering for automation programs, UiPath is better supported. Confidence remains low because the evidence base is thin and indirect.",
+        "evidence": "The Microsoft 2024 Annual Report snippet references Power Automate among Microsoft's business applications and 'on-premises ERP and CRM applications,' but does not cite dedicated functional/performance test capabilities. A Gartner market snippet for AI-augmented software testing tools references 'automated UI, API and visual testing capabilities' in the market generally, but the search results did not tie that directly to Microsoft Power Automate. UiPath's baseline strengths provided for this analysis include 'Test Manager' under enterprise governance.",
         "sources": [
-          "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate",
-          "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"
+          "https://www.microsoft.com/investor/reports/ar24/index.html",
+          "https://www.gartner.com/reviews/market/ai-augmented-software-testing-tools",
+          "https://ir.uipath.com/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
-        "score": 4,
-        "rationale": "Strong observability and security monitoring integration options.",
-        "reasoning": "Score 4 because the platform provides audit logs and is adding SOC/SIEM integrations.",
-        "evidence": "Power Platform security features include integration into a security operations center via Microsoft Sentinel for Power Platform. Power Automate audit logs are available in Purview and can be accessed programmatically via the Office 365 Management API.",
+        "score": 3,
+        "rationale": "Microsoft has a credible observability story via its wider cloud and AI operations ecosystem, but the search results did not provide enough Power Automate-specific monitoring detail to show a clear lead over UiPath. UiPath remains competitive through centralized automation operations and analytics.",
+        "reasoning": "The available results reference monitoring and observability for Microsoft automation workloads and broader model lifecycle operations in Microsoft Foundry, which suggests Microsoft can support enterprise operations well. However, the evidence is not tightly tied to Power Automate runtime observability or bot-level monitoring in a way that proves superiority over UiPath. UiPath's baseline includes Insights analytics and enterprise governance, which are directly relevant to monitoring automation estates. With incomplete direct evidence for both sides at feature level, parity is the safest score.",
+        "evidence": "An Entergy job posting snippet from June 23, 2026 references 'Microsoft Power Platform administration' and 'knowledge of monitoring and observability tools for automation workloads.' A Microsoft Foundry developer blog snippet says teams should 'select the right model, evaluate quality, optimize cost, operate safely,' indicating operational lifecycle tooling. TrueFoundry's June 16, 2026 snippet says enterprise-grade agentic AI tools include 'observability, governance, and security layers for production deployment.'",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/",
-          "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate"
+          "https://jobs.entergy.com/job/New-Orleans-Manager%2C-IT-Service-Delivery-%28Automation-Platform-Services%29-Loui/1402543500/",
+          "https://devblogs.microsoft.com/foundry/build-2026-foundry-models/",
+          "https://www.truefoundry.com/fr/blog/agentic-ai-platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 5,
-        "rationale": "Best-in-class governance and auditing through Purview + platform auditing features.",
-        "reasoning": "Score 5 because Microsoft provides broad audit logging for Power Platform services and detailed Dataverse auditing/retention controls.",
-        "evidence": "Power Automate admin documentation states that activity logs are available in the Microsoft Purview compliance portal. Dataverse auditing documentation explains how it logs changes to records and user access, supports retention policies, and can be retrieved via API/SDK.",
+        "score": 3,
+        "rationale": "Microsoft is strong in enterprise governance through the broader Microsoft platform, but UiPath also brings purpose-built automation governance, audit trails, and role-based controls. The evidence supports parity rather than a decisive advantage either way.",
+        "reasoning": "Search results point to governance, compliance, and enterprise content/document governance in Microsoft-centric environments, which suggests a solid Microsoft governance posture. Yet the snippets are broad and not highly specific to automation traceability. UiPath's baseline is more directly automation-specific, with role-based access, audit trails, AI Trust Layer, PII guardrails, and Test Manager governance. Since Microsoft has broad platform governance while UiPath has more explicit automation-native controls, parity is the most balanced outcome.",
+        "evidence": "Sana Labs' April 15, 2026 snippet says enterprise AI agent platforms should be compared on 'governance, integration depth, scalability, compliance, deployment speed, and pricing,' and includes UiPath among evaluated platforms. Tungsten Automation's May 26, 2026 snippet says Microsoft-centric platforms are 'well-suited for knowledge sharing, document governance, and enterprise content management.' Blue Prism's 2026 vendor-comparison snippet defines governance maturity as including 'traceability, role-based access controls and audit' in enterprise automation evaluation.",
         "sources": [
-          "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate",
-          "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"
+          "https://sanalabs.com/agents-blog/leading-ai-enterprise-fortune-500",
+          "https://www.tungstenautomation.com/learn/blog/best-document-automation-software-ai-knowledge-base-2026-guide",
+          "https://www.blueprism.com/guides/ai-automation/best-platform/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
         "score": 4,
-        "rationale": "Solid process intelligence through process mining offerings in Power Automate.",
-        "reasoning": "Score 4 because Power Automate includes process mining and positions it as an analysis tool for discovering and improving processes.",
-        "evidence": "Microsoft describes process mining as extracting knowledge from event logs and audit trails across systems to discover, monitor, and improve processes.",
+        "rationale": "Microsoft has process mining capability, but UiPath appears stronger in end-to-end process intelligence because its baseline includes both Process Mining and Task Mining with simulation and conformance checking. The snippet evidence supports UiPath having broader dedicated process intelligence depth.",
+        "reasoning": "Search results confirm Microsoft Power Automate Process Mining is in the market and is included among notable process mining tools. However, the snippets do not show Microsoft matching UiPath's stated breadth across process mining, task mining, variant analysis, simulation, and conformance checking. UiPath's process intelligence baseline is more explicit and enterprise-focused, covering discovery through optimization. That breadth gives UiPath a demonstrable edge.",
+        "evidence": "KYP.ai's 2026 comparison snippet lists 'UiPath Process Mining' and 'Microsoft Power Automate Process Mining' among system-log mining tools. G2's January 8, 2026 snippet says it compared process mining tools including 'UiPath, Celonis, Microsoft Power Automate, Bizagi, and IBM.' A KYP.ai task-mining comparison snippet says activity-based output can flow into 'RPA design studios (UiPath, Automation Anywhere), process mining platforms (Celonis), or business intelligence,' underscoring UiPath's connection to discovery-to-automation workflows.",
         "sources": [
-          "https://www.microsoft.com/en-gb/power-platform/products/power-automate/topics/process-mining/what-is-process-mining",
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+          "https://kyp.ai/process-mining-software-comparison/",
+          "https://learn.g2.com/best-process-mining-software",
+          "https://kyp.ai/task-mining-tools-compared/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
-        "score": 3,
-        "rationale": "Pricing is transparent but can be complex (per-user, per-bot, pay-as-you-go meters).",
-        "reasoning": "Score 3 because Microsoft publishes list prices and also offers pay-as-you-go meters; cost modeling can still be complex across bots, runs, and Dataverse capacity.",
-        "evidence": "Power Automate pricing lists per-user and per-bot plans, including unattended bots and hosted RPA. Microsoft Learn also documents pay-as-you-go meters and per-run charges.",
+        "score": 2,
+        "rationale": "Microsoft appears to have a slight advantage on licensing and TCO because Power Automate can be bundled with Microsoft 365 and is commonly positioned as lower-cost to start. UiPath remains competitive on enterprise value, but Microsoft's pricing model is an important advantage in Microsoft-standardized organizations.",
+        "reasoning": "Several snippets explicitly point to lower TCO for Microsoft, especially when organizations already own Microsoft 365 E3/E5 or related enterprise agreements. Comparative pricing snippets also show dramatically lower entry-point numbers for Power Automate versus UiPath, even if actual enterprise contracts vary. UiPath can still justify cost with deeper automation breadth and enterprise controls, but the evidence favors Microsoft on headline licensing efficiency. Therefore Microsoft earns a slight advantage.",
+        "evidence": "EPC Group's comparison snippet says Power Automate is best if organizations 'want the lowest TCO with bundled Microsoft 365 licensing.' Peakflo's April 2, 2026 snippet says 'Many organizations already have Power Automate licenses through Microsoft 365 E3/E5 subscriptions.' EPC Group's broader comparison snippet references pricing of '$15/user vs $420/user,' while noting actual pricing varies by region and volume discounts.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
-          "https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-meters"
+          "https://www.epcgroup.net/power-automate-vs-uipath",
+          "https://peakflo.co/blog/best-ai-agent-platforms-finance-teams-2026",
+          "https://kyp.ai/process-mining-software-comparison/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 5,
-        "rationale": "Broad applicability across departments and ecosystems via Microsoft footprint and connectors.",
-        "reasoning": "Score 5 because Power Automate covers cloud flows, desktop flows, and process mining within the Power Platform ecosystem.",
-        "evidence": "Power Automate plans cover cloud automation, desktop RPA, and process mining for both individual and enterprise use cases.",
+        "score": 3,
+        "rationale": "Microsoft has broad horizontal applicability across industries thanks to its cloud, productivity, and business application footprint, while UiPath is also clearly cross-industry and strongly proven in enterprise automation. The evidence supports parity.",
+        "reasoning": "Microsoft's annual report snippet points to Enterprise Support Services and Industry Solutions, indicating broad industry reach and domain relevance. UiPath's own market positioning emphasizes usage across every industry and thousands of use cases, which supports similarly broad applicability. The search results do not provide enough topic-specific domain-pack evidence to prove Microsoft ahead or behind in business domain applicability for automation. As a result, parity is the most defensible score.",
+        "evidence": "Microsoft's 2024 Annual Report snippet references 'Enterprise Support Services, Industry Solutions.' UiPath's RPA overview snippet says RPA tools are used by 'enterprises in every industry for thousands of use cases and applications.' Creatio's January 8, 2026 snippet says 'Agentic platforms are industry-agnostic by design,' reflecting the broader market context for these platforms.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
-          "https://github.com/microsoft/PowerPlatformConnectors"
+          "https://www.microsoft.com/investor/reports/ar24/index.html",
+          "https://www.uipath.com/rpa/robotic-process-automation",
+          "https://www.creatio.com/glossary/agentic-platform"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 5,
-        "rationale": "High long-term value due to deep integration with Microsoft identity, compliance, and ecosystem tooling.",
-        "reasoning": "Score 5 because governance (Purview), identity (Entra), and ongoing agent/automation investments provide a durable foundation.",
-        "evidence": "Microsoft's agent governance announcements describe managing agent identity with Entra and storing logs for auditing in Purview.",
+        "score": 3,
+        "rationale": "Microsoft brings strong long-term platform value through financial scale, ecosystem durability, and bundled cloud investments, while UiPath offers strong long-term value through specialization in enterprise automation and agentic orchestration. The evidence indicates parity overall.",
+        "reasoning": "Microsoft's financial scale and platform breadth suggest durable long-term support and continued product investment, which matters to enterprise buyers. At the same time, third-party snippets still position UiPath among the top enterprise automation platforms and highlight its continued relevance even as the market evolves. UiPath's specialization can create stronger long-term value in complex automation programs than general-purpose workflow tooling alone. Because each vendor offers a credible but different long-term value proposition, parity is appropriate.",
+        "evidence": "Microsoft's annual report snippet says the company delivered 'over $245 billion in annual revenue' and 'over $109 billion in operating income,' indicating major investment capacity. Blue Prism's 2026 comparison snippet includes UiPath and Microsoft Power Automate among the major enterprise AI automation platforms evaluated for business value and ROI signals. Improvado's May 2026 snippet says 'UiPath remains a leader, but competitors now match or exceed it in cloud scalability, AI capabilities, and pricing flexibility.'",
         "sources": [
-          "https://www.microsoft.com/en-us/microsoft-365/blog/2025/05/19/introducing-microsoft-365-copilot-tuning-multi-agent-orchestration-and-more-from-microsoft-build-2025/",
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/"
+          "https://www.microsoft.com/investor/reports/ar24/index.html",
+          "https://www.blueprism.com/guides/ai-automation/best-platform/",
+          "https://improvado.io/blog/uipath-competitors"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "Medium",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 5,
-        "rationale": "Very high agility for iterative automation changes with enterprise guardrails available.",
-        "reasoning": "Score 5 because low-code development plus centralized governance/auditing allows fast iteration while maintaining control.",
-        "evidence": "Power Platform provides auditing (Purview/Dataverse) and security governance features, enabling admins to set policies while makers build quickly.",
+        "score": 3,
+        "rationale": "Microsoft is strong for rapid business agility in Microsoft-native environments due to low-code tooling and widespread platform familiarity, while UiPath is strong for adapting complex cross-system business processes at enterprise scale. The evidence suggests overall parity.",
+        "reasoning": "The available snippets indicate Microsoft platforms can improve operational efficiency and agility, particularly where businesses already run heavily on Microsoft services. UiPath, however, is designed for broader business-process adaptability through cross-application automation, orchestration, and deployment flexibility. Because the search results did not produce direct, feature-specific agility comparisons, it would be hard to justify a decisive lead. Parity best reflects the mixed evidence.",
+        "evidence": "A June 19, 2026 operational analytics snippet says platform choice impacts 'operational efficiency, business agility, scalability, and enterprise resilience.' UiPath's Azure deployment release says customers can use Azure with 'streamlined deployment and management,' supporting faster enterprise adaptation. Elementum AI's May 24, 2026 snippet describes Microsoft Power Automate as a low-code platform, which supports rapid change and adoption.",
         "sources": [
-          "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing",
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"
+          "https://www.instagram.com/p/DZxQX73jH2u/",
+          "https://www.uipath.com/newsroom/uipath-automation-platform-available-in-microsoft-azure",
+          "https://www.elementum.ai/blog/uipath-alternatives"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       }
