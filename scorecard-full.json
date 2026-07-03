@@ -44,17 +44,21 @@
     "Microsoft": [
       {
         "category": "Security & Compliance",
-        "score": 5,
-        "rationale": "Strong security/governance ecosystem (Purview, Entra, Sentinel) around automation and agents.",
-        "reasoning": "Score 5 because Microsoft provides audit logging via Purview, data exfiltration/network isolation features, and governance controls for Copilot agents—core enterprise security building blocks.",
-        "evidence": "Microsoft documentation describes Power Automate audit logs being available in the Microsoft Purview compliance portal, supporting enterprise auditing. Power Platform security updates describe network isolation and security monitoring integrations (for example, Sentinel for Power Platform). Copilot Studio governance guidance also highlights logging and security assessments for agents.",
+        "score": 3,
+        "rationale": "Microsoft shows strong, recent enterprise security and compliance depth across Power Platform, Microsoft 365, and Copilot Studio, while UiPath also has credible enterprise-grade trust, audit, and governance capabilities. Based on available search-result evidence alone, the market dynamic looks broadly competitive rather than clearly favoring either side.",
+        "reasoning": "Search results indicate Microsoft has substantial security and compliance capabilities embedded across its stack: Power Platform governance can subscribe to Microsoft 365 Security and Compliance Audit Logs, Copilot Studio exposes security and governance controls plus certifications and regulatory compliance, and Microsoft 365 enterprise plans emphasize advanced security and compliance tooling. Direct comparison snippets also note Power Automate inherits Microsoft 365 identity, security, and compliance controls and is described as compliant with standards such as GDPR, ISO, and HIPAA. Against that, UiPath’s baseline includes AI Trust Layer, PII guardrails, role-based access, audit trails, compliance frameworks, and flexible deployment options including on-premises and air-gapped environments, which are particularly relevant for regulated automation programs. Because the evidence comes from snippets rather than browsed pages and lacks strong third-party analyst comparison specific to automation security/compliance, parity is the most defensible score.",
+        "evidence": "Microsoft Learn states in 'Security and governance considerations in Power Platform' (Apr 7, 2026) that governance alerting can subscribe to Microsoft 365 Security and Compliance Audit Logs. Microsoft Learn states in 'Copilot Studio security and governance' (Jan 27, 2026) that customers can use Power Platform security and governance controls, including certifications, regulatory compliance, and environment routing. Microsoft's enterprise plan pages describe Microsoft 365 E3/E5/E7 and Microsoft 365 Enterprise as offering enhanced or advanced security and compliance capabilities. An April 8, 2026 i3solutions comparison snippet says Power Automate inherits Microsoft 365 identity, security, and compliance controls. A July 29, 2025 Flexmind comparison snippet says Power Automate is built on Microsoft's secure cloud infrastructure and offers compliance with standards like GDPR, ISO, and HIPAA.",
         "sources": [
-          "https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate",
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/03/20/protect-enterprise-solutions-with-new-microsoft-power-platform-security-features-2/",
-          "https://www.microsoft.com/en-us/power-platform/blog/2024/09/16/it-governance-controls-for-your-copilot-agents/"
+          "https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations (Microsoft Learn: Security and governance considerations in Power Platform)",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance (Microsoft Learn: Copilot Studio security and governance)",
+          "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-plans-and-pricing (Microsoft 365 Enterprise plans and pricing)",
+          "https://www.microsoft.com/en-us/security/pricing/enterprise-plans (Microsoft 365 Security Enterprise Plans)",
+          "https://i3solutions.com/insights-power-platform/power-automate-vs-rpa/ (i3solutions: Power Automate vs RPA for Enterprise IT Leaders)",
+          "https://www.flexmind.co/power-automate-vs-uipath/ (Flexmind: Power Automate vs UiPath)",
+          "https://www.uipath.com/legal/trust-and-security (UiPath Trust Portal)"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "High",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
