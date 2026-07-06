@@ -1158,17 +1158,20 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "UiPath appears adequate rather than exceptional on testing and evaluation based on the limited evidence surfaced in this search session. There is not enough direct snippet evidence on dedicated functional and performance testing capabilities to support a strong or best-in-class rating.",
-        "reasoning": "The available search results were weakly aligned to this topic and mostly returned general automation, agentic AI, and market pages rather than concrete testing product details. Gartner RPA review snippets confirm analytics and deployment capabilities, but they do not directly validate software testing depth. Because the evidence does not show clear absence of testing capability, a 1 or 2 would be too harsh; however, it also does not show strong dedicated testing breadth, performance engineering, or analyst recognition. Under the rubric, 3 best fits a credible but insufficiently evidenced capability area.",
-        "evidence": "Gartner's RPA review snippet says the software includes bot creation, deployment, management, and analytics capabilities. UiPath platform snippets emphasize enterprise-ready automation and AI agents, but did not surface detailed testing-specific functionality in this session. No returned snippet in this search set provided clear proof of dedicated functional testing or performance testing leadership for UiPath.",
+        "score": 4,
+        "rationale": "UiPath has a strong, enterprise-grade testing offering spanning functional, API, and performance testing, with recent expansion into agentic evaluation and cloud-based enterprise testing. The evidence shows broad capability and analyst recognition, but the available snippets do not conclusively establish clear best-in-class market leadership specifically in software testing versus the entire field.",
+        "reasoning": "Search results show UiPath Test Cloud supports functional, API, and performance testing in a single platform and provides enterprise-grade performance tests using cloud robots without managing load infrastructure. Recent 2025 product updates also reference enhanced agentic testing capabilities and formal agent evaluation features, including evaluation sets and scoring workflows in Agent Builder. Third-party recognition is present in snippets citing UiPath as a Leader in IDC MarketScape for Worldwide Cloud Testing and referencing the Gartner Magic Quadrant for AI-Augmented Software Testing Tools in 2026 financial disclosures. Based on breadth, enterprise deployment options such as single-tenant Test Cloud Dedicated, and analyst validation, UiPath merits a 4 for strong maturity; a 5 would require stronger direct evidence from independent analysts in the snippets that UiPath is broadly recognized as the top testing platform in this category.",
+        "evidence": "UiPath Test Cloud supports 'functional, API, and performance testing in a single' platform and lets teams 'run enterprise-grade performance tests without managing load infrastructure.' UiPath Documentation says 'Test Cloud Dedicated is a single-tenant enterprise SaaS testing' offering. A 2025 UiPath update says teams can use 'functional automated tests to identify performance bottlenecks before they land in production.' UiPath's agent documentation says evaluation sets should include '≥30 curated test cases' and use the 'Agent Builder → Evaluations tab.' UiPath's 2026 financial results snippet references the 'Gartner® Magic Quadrant™ for AI-Augmented Software Testing Tools Report' and its 'testing solution, UiPath Test Cloud.' UiPath's platform page snippet states 'UiPath Named a Leader in IDC MarketScape: Worldwide Cloud Testing 2022 Vendor Assessment.'",
         "sources": [
-          "https://www.gartner.com/reviews/market/robotic-process-automation",
-          "https://www.uipath.com/platform/agentic-automation",
-          "https://www.uipath.com/"
+          "https://www.uipath.com/platform/agentic-testing/performance-testing",
+          "https://docs.uipath.com/test-cloud/automation-cloud/latest/admin-guide/about-test-cloud",
+          "https://www.uipath.com/blog/product-and-updates/uipath-test-cloud-2025-10-release-updates",
+          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/best-practices-for-publishing-and-deploying-agents",
+          "https://ir.uipath.com/news/detail/431/uipath-reports-fourth-quarter-and-full-year-fiscal-2026-financial-results",
+          "https://www.uipath.com/platform/agentic-testing"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
