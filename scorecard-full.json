@@ -1279,14 +1279,13 @@
     "Google": [
       {
         "category": "Security & Compliance",
-        "score": 3,
-        "rationale": "Google shows strong enterprise security and compliance depth across Google Cloud and Gemini Enterprise, but the available evidence is broader cloud/AI platform evidence rather than automation-specific governance where UiPath is strong. UiPath remains advantaged in automation-native governance controls, while Google is stronger in hyperscale cloud security infrastructure.",
-        "reasoning": "Search results show Google emphasizing enterprise security and compliance at Google I/O 2026 and across its cloud security portfolio, including Security Command Center and AI security capabilities. Google also has documented 2026 release activity for compliance-related tooling such as Compliance Manager and vulnerability scanning for GKE. However, the evidence found is centered on cloud security posture and AI platform controls rather than end-to-end automation governance, attended/unattended robot control, or automation trust features. UiPath counters with AI Trust Layer, PII guardrails, audit trails, and automation governance embedded in Automation Cloud and Orchestrator, so this looks closest to parity rather than a decisive lead either way.",
-        "evidence": "Google Cloud Blog said in May 2026 that Google Cloud introduced 'enterprise security and compliance' capabilities and was transforming AI security and vulnerability detection. Google Cloud Security positions Google's portfolio around SecOps, intelligence, AI, and cloud security to help enterprises achieve a strong security posture. Security Command Center release notes state that Vulnerability Assessment for Google Cloud supports scanning GKE clusters with image streaming enabled and that Compliance Manager received 2026 updates.",
+        "score": 4,
+        "rationale": "Google demonstrates strong enterprise security and compliance maturity through Google Cloud security capabilities and SecOps automation, but the available snippet evidence does not show best-in-class analyst recognition specific to this topic in this session.",
+        "reasoning": "Search results directly show Google positioning around security and compliance and identify concrete security operations functionality. The Google Cloud security page snippet states Google offers security and compliance capabilities for enterprises, while the Google SecOps page snippet states it includes full-fledged SOAR capabilities and automated playbooks. That supports broad, enterprise-grade coverage rather than a basic offering. However, the snippets returned here do not provide explicit Gartner/Forrester recognition of Google as a top leader in security and compliance, so a 4 is better supported than a 5.",
+        "evidence": "Google Cloud's security page says it provides 'security and compliance capabilities' so enterprises can achieve a strong security posture. Google Security Operations (SecOps) 'includes full fledged security orchestration, automation and response (SOAR) capabilities' and lets teams 'build playbooks that automate common response actions.'",
         "sources": [
-          "https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud",
           "https://cloud.google.com/security",
-          "https://docs.cloud.google.com/security-command-center/docs/release-notes"
+          "https://cloud.google.com/security/products/security-operations"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1295,14 +1294,28 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 2,
-        "rationale": "Google appears to hold a slight advantage in deployment and operations because its hyperscale cloud platform, Gemini Enterprise rollout motion, and operational footprint are broader and more infrastructure-mature than UiPath's automation-centric operations layer. UiPath remains competitive for automation deployment flexibility, especially hybrid and air-gapped enterprise environments.",
-        "reasoning": "Google Cloud Next 2026 results highlight large-scale deployments such as GE Appliances deploying more than 800 AI agents and Signal Iduna using Gemini Enterprise globally, indicating strong enterprise operationalization. The Bain analysis also frames Gemini as an emerging operating core for the enterprise, which supports the case that Google is investing heavily in production deployment patterns. Still, the evidence is focused on agent deployment and cloud operations rather than automation lifecycle management, package governance, or robot fleet operations. UiPath retains differentiated deployment flexibility with cloud, on-prem, hybrid, and air-gapped support via Automation Cloud and Orchestrator, so Google's edge is slight rather than overwhelming.",
-        "evidence": "Google Cloud Blog said in April 2026 that Signal Iduna is using Gemini Enterprise across global operations and delivering insurance answers 37% faster. Google Cloud Blog said in April 2026 that GE Appliances is deploying more than 800 AI agents with Gemini Enterprise across manufacturing, logistics, and supply chain operations. Bain described the Gemini platform in April 2026 as an 'agentic enterprise control plane' whose operating core increasingly runs through Gemini.",
+        "score": 3,
+        "rationale": "Google appears to offer credible operational tooling, especially through cloud and security operations, but the evidence returned in this session is indirect for deployment and enterprise operations as a unified capability.",
+        "reasoning": "The strongest directly relevant snippet in this session is Google SecOps, which demonstrates operational response automation. Gartner search results in this set also reference endpoint management as a category involving configuration management, patching, and deployment, but they do not identify Google's standing in that market. Because the snippet evidence is not rich enough to confirm deep deployment lifecycle capabilities, release management breadth, or analyst leadership specifically for deployment and operations, Google fits an adequate rather than strong score. The offering is clearly real, but the search evidence is not broad enough to justify a 4 or 5.",
+        "evidence": "Google Security Operations (SecOps) includes SOAR capabilities and playbooks to automate common response actions. Gartner's endpoint management tools category describes deployment-related capabilities such as configuration management, patching, and operating system deployment, but the returned snippet does not establish Google as a leader in that category.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26",
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up",
-          "https://www.bain.com/insights/google_cloud_next_2026_the_agentic_enterprise_control_plane_comes_into_view/"
+          "https://cloud.google.com/security/products/security-operations",
+          "https://www.gartner.com/reviews/market/endpoint-management-tools"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Scalability & Reliability",
+        "score": 4,
+        "rationale": "Google shows strong maturity for scalability and reliability, supported by infrastructure reputation and API management evidence, though the snippets in this session stop short of explicit market-leading analyst recognition on this exact topic.",
+        "reasoning": "The most concrete snippet in this session is Gartner Peer Insights stating that Apigee API Management addresses API scalability and reliability challenges. As part of Google Cloud, that points to proven enterprise platform capabilities in distributed integration and runtime resilience. Additional search context reflects Google's broad cloud foundation, but the snippet set here is narrower than needed to assert best-in-class dominance across all dimensions. Accordingly, a 4 reflects enterprise-proven strength with some evidence limitations.",
+        "evidence": "Gartner Peer Insights says Apigee API Management addresses 'API scalability, reliability' challenges. Search results repeatedly surfaced Google in enterprise platform and cloud contexts, indicating credible enterprise-scale deployment relevance even when the returned snippets were not deeply specific to this topic.",
+        "sources": [
+          "https://www.gartner.com/reviews/market/api-management",
+          "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1310,31 +1323,14 @@
         "questions": ""
       },
       {
-        "category": "Scalability & Reliability",
-        "score": 2,
-        "rationale": "Google has a slight advantage on raw scalability and reliability because it is anchored in hyperscale Google Cloud infrastructure and explicitly documents reliability patterns and production-scale deployments. UiPath is strong for enterprise automation scale, but not at the same infrastructure breadth as Google Cloud.",
-        "reasoning": "Google's 2026 material repeatedly highlights scale: the Next 2026 wrap-up references a reliable global backbone and tighter integration with Colossus for more scale, while the Well-Architected Framework discusses stateless architectures to improve reliability and scalability. Customer examples such as Vodafone using Gemini agents to resolve outages and optimize infrastructure further reinforce real-world scale and resilience claims. However, these strengths are platform/infrastructure-centric rather than directly proving superior automation workload scaling versus UiPath robots and orchestration. UiPath remains highly credible for enterprise automation at scale, but Google's cloud backbone gives it a slight lead on this specific topic.",
-        "evidence": "Google Cloud Next 2026 Wrap Up said Google offers a 'reliable global backbone' and added capabilities tied to scaling autonomous systems. Google Cloud's Well-Architected Framework states that stateless architecture can increase both reliability and scalability of applications. Google Cloud Blog said Vodafone is deploying Gemini Enterprise agents to proactively resolve outages and optimize infrastructure, scaling network reliability and operations.",
-        "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up",
-          "https://docs.cloud.google.com/architecture/framework",
-          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
         "category": "Connectivity & Integration",
-        "score": 3,
-        "rationale": "Google is strong in data connectivity and enterprise integration through Google Cloud networking and partner ecosystem, but UiPath's 1,000+ Integration Service connectors and automation-centric application integrations keep the comparison at parity. Google leads in cloud/platform integration; UiPath leads in packaged enterprise automation connectivity.",
-        "reasoning": "The search results show Google framing networking as the integration layer for the agentic enterprise and highlighting unified governance and data connectivity with ServiceNow. Google also references tighter integration with Colossus and broad cloud networking capabilities. That said, the evidence does not show a packaged library of business app connectors comparable to UiPath's Integration Service breadth across SAP, Salesforce, ServiceNow, Microsoft 365, and many other enterprise systems. Because Google's integration strengths are real but more platform-oriented, while UiPath is stronger in prebuilt automation connectivity, this combination lands at parity.",
-        "evidence": "ServiceNow and Google Cloud announced in April 2026 that their joint solution is underpinned by unified governance and data connectivity supported by Gemini Enterprise. Google Cloud networking at Next 26 was described as moving beyond basic connectivity to become the critical integration layer for the agentic enterprise. Google Cloud Next 2026 Wrap Up said tighter integration with Colossus provides more scale and enterprise capabilities.",
+        "score": 4,
+        "rationale": "Google demonstrates strong integration maturity through Apigee and broad cloud ecosystem fit, supporting a strong score, though best-in-class proof from analyst snippets was limited in this session.",
+        "reasoning": "The clearest evidence is the Gartner Peer Insights snippet for Apigee API Management, which explicitly addresses API management challenges central to connectivity and integration. Google also appears in enterprise platform contexts across cloud, Workspace, and AI services, suggesting broad ecosystem interoperability. However, the returned snippets do not enumerate connector breadth, low-code integration tooling depth, or named analyst leadership specific to integration platforms. That supports a solid 4 rather than a 5.",
+        "evidence": "Gartner Peer Insights states Apigee API Management addresses API management problems related to consistent API operations and scalability/reliability. A 2025 enterprise search market guide snippet says Google fits organizations already invested in the Google Cloud ecosystem, indicating practical ecosystem connectivity for enterprise deployments.",
         "sources": [
-          "https://www.googlecloudpresscorner.com/2026-04-22-ServiceNow-and-Google-Cloud-Unite-AI-Agents-for-Autonomous-Enterprise-Operations",
-          "https://cloud.google.com/blog/products/networking/whats-new-in-cloud-networking-at-next26",
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up"
+          "https://www.gartner.com/reviews/market/api-management",
+          "https://www.kore.ai/blog/best-enterprise-search-software"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1344,13 +1340,27 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "Google has improved time-to-value with Gemini Enterprise packaging and user-facing agent experiences, but UiPath still has an edge in structured low-code/no-code automation development for business users. The net result is parity.",
-        "reasoning": "Google's 2026 results emphasize faster business outcomes, such as Signal Iduna delivering answers 37% faster and Gemini Enterprise for Customer Experience being packaged as an agentic solution for retail and service use cases. The Agentic Taskforce and customer experience offerings also suggest Google is simplifying adoption for business-facing scenarios. However, the available evidence is oriented toward AI assistants and agents rather than end-to-end workflow automation usability, reusable automations, or citizen-developer productivity. UiPath's StudioX, Studio Web, and guided automation design remain strong differentiators for business-user time-to-value, so neither side clearly dominates from the evidence available.",
-        "evidence": "Google Cloud Blog said Signal Iduna is using Gemini Enterprise to deliver insurance answers to customers 37% faster. Google Cloud announced Agentic Taskforce capabilities across Gemini Enterprise for Customer Experience and Google Workspace. Google Cloud unveiled Gemini Enterprise for Customer Experience in January 2026 as an agentic solution designed for shopping and customer service workflows.",
+        "rationale": "Google likely delivers acceptable user experience and ecosystem familiarity, but the search snippets in this session provide only limited direct evidence on implementation speed and end-user experience for this topic.",
+        "reasoning": "Most returned results for this topic were generic market pages rather than Google-specific UX or onboarding evidence. One relevant snippet notes that Google Cloud ecosystem alignment can matter for organizations looking to evolve toward agentic capabilities, which implies easier adoption for existing Google customers. But there were no direct snippet claims here on low-code onboarding, guided deployment, out-of-box templates, or analyst praise for time-to-value. Given the limited direct evidence, an adequate score is most defensible.",
+        "evidence": "A 2025 market guide snippet says Google may fit organizations already in the Google Cloud ecosystem, implying easier adoption for those customers. The search results returned mostly generic time-to-value commentary rather than Google-specific proof points on implementation speed or UX depth.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26",
-          "https://www.googlecloudpresscorner.com/2026-01-11-Google-Cloud-Brings-Shopping-and-Customer-Service-Together-with-Gemini-Enterprise-for-Customer-Experience",
-          "https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders"
+          "https://www.kore.ai/blog/best-enterprise-search-software",
+          "https://www.simpplr.com/resources/compare/lumapps/"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Agentic Capabilities",
+        "score": 4,
+        "rationale": "Google shows strong and current agentic maturity through Gemini-related ecosystem momentum and enterprise AI positioning, but the returned snippets do not establish clear best-in-class leadership in analyst rankings for agent platforms.",
+        "reasoning": "The search results show strong market momentum around enterprise agent adoption and repeatedly place Google in the agentic AI conversation. A returned snippet explicitly says organizations in the Google Cloud ecosystem can build developer-led search experiences that evolve toward agentic capabilities over time. Another result on Gartner's first Magic Quadrant for Enterprise AI Coding Agents notes AWS and Google were pushed from the Leaders quadrant by specialized vendors, suggesting Google is credible but not clearly dominant in at least one agentic subsegment. That pattern supports a strong but not best-in-class score.",
+        "evidence": "A 2025 enterprise search market guide says Google Cloud customers can build developer-led search experiences that can evolve toward agentic capabilities over time. A June 2026 article summarizing Gartner's first Magic Quadrant for Enterprise AI Coding Agents says AWS and Google were pushed from the Leaders quadrant by Anthropic, Cursor, GitHub, and OpenAI.",
+        "sources": [
+          "https://www.kore.ai/blog/best-enterprise-search-software",
+          "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1358,31 +1368,14 @@
         "questions": ""
       },
       {
-        "category": "Agentic Capabilities",
-        "score": 2,
-        "rationale": "Google has a slight advantage in agentic capabilities based on its 2026 Gemini Enterprise Agent Platform launch, Agent Designer, long-running agents, memory features, and large partner momentum. UiPath is credible and differentiated in orchestration and HITL, but Google currently shows stronger platform momentum and model depth in public evidence.",
-        "reasoning": "The evidence is unusually strong and current here: Google introduced Gemini Enterprise Agent Platform as the evolution of Vertex AI for model, model-building, and agent-building use cases. Bain's analysis highlights Agent Designer, Inbox, Skills, Projects, Canvas, and long-running agents, while Google also announced a $750 million partner acceleration effort for agentic AI. These signals suggest Google is aggressively productizing enterprise agents at platform scale. UiPath still differentiates with Maestro multi-agent orchestration, Agent Builder, LangGraph/OpenAI Agents integration, and Action Center human-in-the-loop, so Google has only a slight rather than definitive lead.",
-        "evidence": "Google Cloud launched Gemini Enterprise Agent Platform in April 2026 as the evolution of Vertex AI with model selection, model building, and agent building capabilities. Bain reported in April 2026 that the Gemini Enterprise app added Agent Designer, Inbox, Skills, Projects, Canvas, and long-running agents for business use. Google announced in April 2026 a $750 million commitment to accelerate partners' agentic AI development around Google Cloud.",
-        "sources": [
-          "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
-          "https://www.bain.com/insights/google_cloud_next_2026_the_agentic_enterprise_control_plane_comes_into_view/",
-          "https://www.googlecloudpresscorner.com/2026-04-22-Google-Cloud-Commits-750-Million-to-Accelerate-Partners-Agentic-AI-Development"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
         "category": "BPM & Orchestration",
-        "score": 4,
-        "rationale": "UiPath has a demonstrable advantage in BPM and orchestration because the search evidence did not surface a clear Google-native BPM suite or workflow orchestration product comparable to UiPath's automation and process orchestration stack. Google's strengths are more agent-platform and cloud-platform oriented than formal BPM.",
-        "reasoning": "For this topic, the targeted search results were weak and largely returned third-party workflow orchestration content rather than a clear Google BPM offering. That absence itself is meaningful relative to UiPath, which has established orchestration assets like Orchestrator, Maestro, queues, long-running workflows, and human-in-the-loop with Action Center. Google may support workflow composition through broader cloud services, but the snippets available here do not substantiate enterprise BPM depth, case management, or business workflow governance. Given the evidence gap on Google's side and UiPath's mature orchestration baseline, UiPath holds the advantage.",
-        "evidence": "The targeted search did not surface a clear Google-native BPM product in the returned top results, while instead returning third-party workflow orchestration platforms like Temporal, Mendix, and Decisions. Google's strongest directly surfaced orchestration-related result was Gemini Enterprise Agent Platform, which emphasizes agent building rather than classic BPM or case management. UiPath's reference baseline includes Maestro multi-agent orchestration, Orchestrator, queues, and Action Center human-in-the-loop capabilities, which directly map to enterprise process orchestration.",
+        "score": 2,
+        "rationale": "Google has adjacent orchestration and workflow capabilities, but the evidence returned in this session does not show a mature, recognized BPM suite on par with dedicated business orchestration platforms.",
+        "reasoning": "Search results for this topic mostly returned category pages for business process automation tools and general market resources, not Google-specific BPM proof. Google SecOps does show orchestration in the security domain, but that is not the same as broad BPM for enterprise business workflows. Because the available evidence is largely adjacent rather than direct, Google's maturity on BPM and orchestration appears emerging/basic in this session's evidence set. A higher score would require clearer proof of process modeling, workflow governance, case management, and analyst standing in BPM/BOAT markets.",
+        "evidence": "Google SecOps includes SOAR playbooks that automate common response actions, showing domain-specific orchestration capability. Returned Gartner results for Business Process Automation Tools and Magic Quadrant pages did not provide Google-specific BPM recognition in the snippets.",
         "sources": [
-          "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
-          "https://temporal.io/",
-          "https://www.elementum.ai/blog/best-workflow-orchestration-tools"
+          "https://cloud.google.com/security/products/security-operations",
+          "https://www.gartner.com/reviews/market/business-process-automation-tools"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1391,14 +1384,13 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Google has meaningful agent evaluation and observability capabilities, but the evidence is not enough to show a full enterprise testing platform for functional and performance testing. UiPath has adjacent governance and testing assets, so parity is the safest score.",
-        "reasoning": "Google's strongest evidence here is its Agent Evaluation capability, which the Next 2026 wrap-up says tracks live performance, and the Gemini Enterprise Agent Platform launch that references model and agent building. Those are important evaluation primitives for AI agents, but they are not the same as comprehensive functional UI testing, regression management, or performance engineering. The returned results also included tangential sources like a Chrome extension and generic AI testing articles, indicating limited direct proof. UiPath can point to Test Manager and broader automation test governance, so the evidence supports parity with low-to-medium confidence.",
-        "evidence": "Google Cloud Next 2026 Wrap Up said 'Agent Evaluation' tracks live performance. Google Cloud said Gemini Enterprise Agent Platform extends Vertex AI with model selection, model building, and agent building capabilities. The targeted search results did not surface a clear Google-native end-to-end functional and performance testing suite comparable to enterprise test management platforms.",
+        "score": 2,
+        "rationale": "The evidence in this session does not show Google offering a broad, mature enterprise platform for functional and performance testing; it appears more adjacent through developer tooling and AI coding support than a dedicated testing suite.",
+        "reasoning": "Search results for this topic were weakly matched and centered on general testing services or AI coding agents rather than Google-specific testing products. A June 2026 article states Google was not in the Leaders quadrant for Enterprise AI Coding Agents, which may matter for developer productivity but is not direct proof of strong testing capabilities. No returned snippet established Google as a leader in functional testing, performance testing, test orchestration, or quality engineering platforms. Therefore, the most supportable score is emerging/basic.",
+        "evidence": "A June 2026 article on Gartner's Enterprise AI Coding Agents says AWS and Google were outside the Leaders group led by Anthropic, Cursor, GitHub, and OpenAI. Returned search results for application testing services and AI developer tools did not provide Google-specific evidence of a mature functional and performance testing platform.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up",
-          "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
-          "https://testguild.com/7-innovative-ai-test-automation-tools-future-third-wave/"
+          "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx",
+          "https://www.gartner.com/reviews/market/application-testing-services-worldwide"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1407,30 +1399,13 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 2,
-        "rationale": "Google has a slight advantage because it now exposes agent observability capabilities in Gemini Enterprise and also benefits from the broader Google Cloud Operations ecosystem. UiPath remains solid for automation monitoring, but Google's platform-level observability breadth is stronger in the public evidence.",
-        "reasoning": "This topic has direct 2025-2026 evidence: Gemini Enterprise release notes say observability for agents reached GA on June 24, 2026, and earlier metrics monitoring features were added in December 2025. Google also states in the Agent Platform launch that observability lets users visually inspect agent behavior, and external commentary references monitoring latency and success rates. These are meaningful production capabilities, especially when combined with Google Cloud Operations and ecosystem integrations like Splunk. UiPath still offers operational analytics and Insights, but Google's cloud-native observability stack gives it a slight lead on this topic.",
-        "evidence": "Gemini Enterprise release notes say 'Observability for agents' reached GA on June 24, 2026. Gemini Enterprise release notes also note a December 11, 2025 feature to monitor metrics for Gemini Enterprise. Google Cloud's Agent Platform announcement says observability lets users visually inspect agent behavior.",
+        "score": 4,
+        "rationale": "Google demonstrates strong monitoring and observability-adjacent maturity through SecOps and broader cloud operations heritage, though the snippets in this session provide limited direct proof on full-stack observability depth.",
+        "reasoning": "The clearest snippet shows Google SecOps supports rapid response and includes SOAR playbooks, evidencing operational visibility and actionability. While the returned results do not explicitly enumerate Google Cloud Observability features, Google's presence in cloud and security operations strengthens the case for enterprise readiness. At the same time, the snippet set lacks direct analyst recognition or detailed feature evidence for logs, traces, metrics, and root-cause analysis on this exact topic. Strong is justified, but best-in-class is not proven from these results alone.",
+        "evidence": "Google Security Operations promises to 'respond with speed and precision' and includes SOAR automation playbooks. The search results for observability returned industry context emphasizing anomaly detection, root cause analysis, lineage, and observability agents, but Google-specific depth on those dimensions was not fully visible in snippets.",
         "sources": [
-          "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
-          "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
-          "https://help.splunk.com/en/splunk-observability-cloud/monitor-infrastructure/monitor-services-and-hosts/monitor-google-cloud-platform/monitor-gcp"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Traceability & Governance",
-        "score": 3,
-        "rationale": "Google has credible governance and identity controls for Gemini Enterprise, but UiPath remains very strong in automation traceability and governance. The evidence supports parity rather than a clear lead for either vendor.",
-        "reasoning": "Google explicitly says the Gemini Enterprise app is built on the Agent Platform and that governance, security, and identity capabilities come standard. Additional Google announcements reference advanced governance, while external governance guidance emphasizes agent inventory and action traceability as enterprise requirements. However, the snippets do not provide detailed evidence of end-to-end action lineage, approval chains, or automation audit workflows comparable to UiPath's automation control plane. UiPath's AI Trust Layer, audit trails, role-based access, and governance over robots and agents keep this close to even.",
-        "evidence": "Google said in April 2026 that the Gemini Enterprise app is built on the Agent Platform and that governance, security, and identity capabilities come standard. Google Cloud announced advanced governance features in Gemini Enterprise for the 'agentic task force' in April 2026. Zenity's March 2026 governance checklist highlights the need for comprehensive AI agent inventory and traceability of actions to support compliance readiness.",
-        "sources": [
-          "https://cloud.google.com/blog/products/ai-machine-learning/the-new-gemini-enterprise-one-platform-for-agent-development",
-          "https://cloud.google.com/blog/products/ai-machine-learning/whats-new-in-gemini-enterprise",
-          "https://zenity.io/blog/security/ai-agent-governance"
+          "https://cloud.google.com/security/products/security-operations",
+          "https://montecarlo.ai/blog-what-is-data-observability"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1438,15 +1413,14 @@
         "questions": ""
       },
       {
-        "category": "Process Intelligence",
-        "score": 4,
-        "rationale": "UiPath has a demonstrable advantage because the search results did not show a strong Google-native process intelligence, process mining, or task mining offering. Google's agent platform is adjacent, but UiPath is much more directly aligned to this category.",
-        "reasoning": "The targeted search surfaced generic Gemini Enterprise and Gartner process intelligence market content, but no specific Google product for process mining, conformance checking, desktop task mining, or variant analysis. That gap matters because UiPath's baseline explicitly includes end-to-end Process Mining, Task Mining, simulation, and conformance checking. Google may contribute analytics and AI tooling that can support process improvement indirectly, but the snippets do not substantiate a first-class process intelligence platform. Therefore UiPath has the clearer and more mature position on this topic.",
-        "evidence": "The top returned Google results for this topic focused on Gemini Enterprise app features such as Agent Designer, Inbox, long-running agents, Skills, and Projects rather than process mining or task mining. A Gartner process intelligence review page describes the category as including process and task mining, process modeling, advanced analysis, alerting, and SLA tracking. No directly surfaced Google result in the search snippets provided evidence of Google-native conformance checking, variant analysis, or desktop task mining.",
+        "category": "Traceability & Governance",
+        "score": 3,
+        "rationale": "Google has credible governance capabilities across cloud and AI-adjacent domains, but the available snippet evidence here is too indirect to support a strong governance score for this topic specifically.",
+        "reasoning": "The search results surfaced enterprise architecture and AI governance market pages, but they did not provide Google-specific snippet evidence of lineage, policy enforcement, auditability, approval governance, or end-to-end traceability. Google's broader enterprise platform reputation suggests credible foundations, yet the session evidence does not show direct analyst or product-level proof on traceability and governance. That leaves Google at an adequate score rather than strong. Confidence is limited because the search snippets were category-heavy rather than Google-specific.",
+        "evidence": "Returned Gartner results included enterprise architecture tools with features for risk management and information governance, but did not establish Google-specific leadership. Returned Gartner Peer Insights results included an AI governance platforms category, but no snippet directly tied Google to leading governance capabilities on this topic.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26",
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up"
+          "https://www.gartner.com/reviews/market/enterprise-architecture-tools",
+          "https://www.gartner.com/reviews/market/ai-governance-platforms"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1454,14 +1428,28 @@
         "questions": ""
       },
       {
+        "category": "Process Intelligence",
+        "score": 2,
+        "rationale": "Google has strong BI and analytics assets such as Looker, but the snippet evidence does not show a dedicated process intelligence capability with process mining depth, conformance analysis, or task mining maturity.",
+        "reasoning": "The most relevant Google-specific snippet is Looker, which is described as a governed intelligence experience leveraging Gemini and Google Cloud's Agentic Data Cloud. That supports analytics strength, but process intelligence requires more specific capabilities like process mining, variant analysis, and operational process discovery. Gartner's process intelligence category result in this session highlighted Celonis rather than Google, underscoring the gap in direct evidence. Therefore, Google appears adjacent but not mature on process intelligence itself.",
+        "evidence": "The Looker snippet says it delivers a 'governed intelligence experience' leveraging Gemini and Google Cloud's Agentic Data Cloud. Gartner's Process Intelligence Platforms result highlighted Celonis Process Intelligence Platform, while no Google-specific process intelligence recognition appeared in the returned snippets.",
+        "sources": [
+          "https://cloud.google.com/looker",
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "medium",
+        "notes": "",
+        "questions": ""
+      },
+      {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "The evidence is too limited and indirect to claim a clear TCO or licensing lead for either side. Google has scalable cloud economics and some references to hidden licensing costs in comparisons, but UiPath's automation ROI model can also be compelling, so parity is the safest call.",
-        "reasoning": "The available search results for this topic were sparse and not ideal: one comparison article references hidden licensing costs and notes agent orchestration and data governance considerations, while other returned results were only tangentially related. Google clearly supports cloud-style consumption and automated updates across parts of its enterprise stack, but the snippets do not provide enough concrete, apples-to-apples licensing detail against UiPath. UiPath, for its part, is often evaluated on automation ROI and platform consolidation rather than pure seat pricing. Because evidence is incomplete and comparison quality is weak, this should be scored as parity with low confidence.",
-        "evidence": "A May 2026 comparison article said Gemini Enterprise should be evaluated for agent orchestration, data governance, and hidden licensing costs. Chrome Enterprise Help states that automatic updates deliver the latest features and security updates across OS, browser, and hardware, reducing some operational overhead. Google SecOps is described as including full SOAR capabilities and being built with Gemini Enterprise Agent support, suggesting platform consolidation value in security operations use cases.",
+        "rationale": "Google likely offers credible enterprise pricing options, but the search evidence in this session is thin on pricing transparency, packaging simplicity, and total cost outcomes, so an adequate score is most supportable.",
+        "reasoning": "The returned results for this topic were mostly generic Gartner and buyer-guide materials, not Google-specific pricing evidence. Google SecOps demonstrates enterprise functionality, but functional strength does not by itself prove favorable licensing or TCO. No snippet here directly described Google licensing structure, included entitlements, or cost optimization outcomes. Because the offering is clearly enterprise-grade but cost evidence is limited, a 3 is the safest objective judgment.",
+        "evidence": "Search results on evaluating enterprise AI solutions highlighted total cost of ownership as a critical evaluation criterion, but not Google-specific TCO outcomes. The session returned Google SecOps as enterprise functionality evidence, yet no direct snippet described Google licensing transparency or bundled pricing advantages for this topic.",
         "sources": [
-          "https://somosautenticare.com.br/en/blog/gemini-enterprise-vs-microsoft-copilot-365/",
-          "https://support.google.com/chrome/a/answer/6220366?hl=en",
+          "https://writer.com/guides/evaluating-generative-ai-2026/",
           "https://cloud.google.com/security/products/security-operations"
         ],
         "evidenceType": "Paraphrase",
@@ -1471,14 +1459,13 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 3,
-        "rationale": "Google has strong cross-industry applicability through Google Cloud and Gemini Enterprise partnerships, but UiPath is also broadly applicable across business domains with a more explicit automation focus. The evidence supports parity.",
-        "reasoning": "Search results show Google and partners like Accenture targeting global enterprises with industry domain experts, and Google Cloud certification content explicitly positions its offerings across business functions and industries. Workspace privacy documentation also references business, education, and public sector customers, reinforcing breadth. Still, that breadth is generic platform applicability rather than direct proof of packaged domain automations or automation use-case libraries. UiPath is similarly broad across industries and functions, so parity is appropriate.",
-        "evidence": "Accenture said in April 2026 that its expanded Google Cloud partnership combines technology with industry domain experts for global enterprises. Google Cloud certification material says leaders identify opportunities across business functions and industries using Google's enterprise-ready offerings. Google Workspace Privacy Hub says the guidance is intended for business, education, and public sector customers.",
+        "score": 4,
+        "rationale": "Google has broad industry applicability across enterprise domains through Google Cloud, Workspace, AI, analytics, and security products, though the search evidence here is more general than vertical-solution specific.",
+        "reasoning": "Returned results indicate Google technologies are integrated across business and enterprise contexts, including Workspace Enterprise and cloud/security offerings. The topic search also surfaced industry-oriented buyer guidance emphasizing regulated industries and broad applicability, and Google's broad product estate makes cross-domain applicability credible. However, the snippets do not provide detailed vertical accelerators or analyst leadership specific to industry process solutions. That supports a strong horizontal applicability score of 4.",
+        "evidence": "A 2026 comparison article snippet says Google has integrated Gemini into Google Workspace Business and Enterprise offerings. Google SecOps and Google Cloud security results indicate enterprise applicability in security-sensitive and regulated environments.",
         "sources": [
-          "https://newsroom.accenture.com/news/2026/accenture-and-google-cloud-expand-partnership-to-scale-agentic-transformation-for-global-enterprises-with-gemini-enterprise",
-          "https://cloud.google.com/learn/certification/generative-ai-leader",
-          "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub"
+          "https://www.hungyichen.com/en/insights/chatgpt-enterprise-guide",
+          "https://cloud.google.com/security/products/security-operations"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1487,14 +1474,13 @@
       },
       {
         "category": "Long-term value",
-        "score": 3,
-        "rationale": "Google demonstrates strong long-term investment and ecosystem commitment around Gemini Enterprise, but UiPath also offers long-term value through automation platform consolidation and customer success depth. The market evidence suggests parity.",
-        "reasoning": "Google's 2026 evidence is solid on sustained investment: Memory Bank and Memory Profiles are positioned for scalable long-term agent memory, Google continues to expand Gemini Enterprise, and partnerships with firms like McKinsey show strategic commitment. Chrome Enterprise also demonstrates long-term support practices with LTS release notes and regionalized data features. However, long-term value in enterprise automation also depends on governance, adoption, and durable ROI, areas where UiPath has deep enterprise references and mature operational tooling. With both vendors showing strong but different value propositions, parity is the most defensible score.",
-        "evidence": "Google Cloud Blog said in April 2026 that Memory Bank and Memory Profiles give agents scalable, long-term memory. Google Cloud Press Corner said Gemini Enterprise for Customer Experience includes a shopping agent aimed at driving long-term loyalty and value. Google documents ChromeOS Long-term Support release notes, including enterprise data regionalization and enrolled browser support features in 2026.",
+        "score": 4,
+        "rationale": "Google offers strong long-term value through its broad cloud, AI, productivity, and security ecosystem, but the snippets in this session do not directly quantify retention, ROI, or analyst recognition for sustained platform value.",
+        "reasoning": "Long-term value is supported by Google's large ecosystem footprint and continued AI integration momentum, including Gemini across enterprise offerings and ongoing relevance in strategic technology trends. The search results also show Google remains part of major enterprise AI platform discussions, even if not always the clear leader in every subsegment. That breadth and staying power support a strong score. A 5 would require stronger direct evidence of market-leading sustained customer outcomes or analyst best-in-class recognition on this specific dimension.",
+        "evidence": "A 2026 comparison article snippet says Google has integrated Gemini into Google Workspace Business and Enterprise, supporting continued platform evolution. A June 2026 article summarizing Gartner's AI coding agent quadrant shows Google remains a significant enterprise AI participant even if specialized vendors led that segment.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26",
-          "https://www.googlecloudpresscorner.com/2026-01-11-Google-Cloud-Brings-Shopping-and-Customer-Service-Together-with-Gemini-Enterprise-for-Customer-Experience",
-          "https://support.google.com/chrome/a/answer/12239814?hl=en"
+          "https://www.hungyichen.com/en/insights/chatgpt-enterprise-guide",
+          "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1503,14 +1489,13 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 3,
-        "rationale": "Google clearly positions its AI and cloud stack as an enabler of enterprise agility, but the evidence is mostly directional and ecosystem-driven rather than automation-workflow specific. UiPath is equally strong in helping enterprises adapt processes quickly, so this is best scored at parity.",
-        "reasoning": "Google's Next 2026 materials emphasize enabling every employee to build with AI for every workflow, and partner/event materials explicitly describe Google Cloud as driving business agility and digital innovation at enterprise scale. Those messages, combined with agentic tooling, suggest strong adaptability potential. Yet the available evidence is more thematic than product-specific for process change management, workflow redesign, or rapid automation iteration. UiPath's low-code tools, process intelligence, and orchestration make it equally credible for business agility, so there is no clear winner from the evidence gathered.",
-        "evidence": "Google Cloud Next 2026 Wrap Up said the Gemini Enterprise app brings Google AI to every employee and every workflow, with features that let employees build. Hitachi's Google Cloud Next 2026 pre-event material said Google Cloud drives business agility, sustainability, and digital innovation at enterprise scale. Deloitte's 2026 Human Capital Trends report noted that traditional functions are often too slow and siloed for today's business demands, underscoring the value of adaptable digital operating models.",
+        "score": 4,
+        "rationale": "Google demonstrates strong adaptability through broad AI integration, cloud-native services, and ecosystem flexibility, though this session's snippet evidence is still more contextual than direct proof of business agility outcomes.",
+        "reasoning": "Search results show Google participates in the enterprise move toward agentic applications and adaptive, composable technology strategies. Google also appears across Workspace, Cloud, analytics, and security, which collectively supports flexible enterprise adoption and change capacity. The evidence returned does not directly document workflow agility tooling or business-led change management features, so a 4 is more justified than a 5. Overall, Google's platform breadth and AI trajectory support strong adaptability.",
+        "evidence": "Gartner predicted that 40% of enterprise applications will feature task-specific AI agents by 2026, and Google appears repeatedly in the returned agentic enterprise context. Gartner ERP topic results describe composable, adaptive technology strategies, aligning with the type of platform flexibility Google Cloud customers often seek, though the snippet was not Google-specific.",
         "sources": [
-          "https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up",
-          "https://hitachidigital.com/hitachi-at-gcn-2026/",
-          "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html"
+          "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025",
+          "https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
