@@ -551,14 +551,14 @@
     "ServiceNow": [
       {
         "category": "Security & Compliance",
-        "score": 3,
-        "rationale": "ServiceNow shows strong enterprise security, GRC, and compliance posture on its platform, but available search-snippet evidence does not clearly establish an advantage over UiPath's AI Trust Layer, auditability, and enterprise governance controls. The result is near-parity with moderate uncertainty from snippet-only research.",
-        "reasoning": "Search results show ServiceNow emphasizing a central repository of security and compliance resources and publishing GRC/IRM release notes, which supports mature governance and compliance capabilities. A third-party comparison snippet also cites vulnerability management, compliance tracking, data encryption, and MFA for ServiceNow. Against that, UiPath's baseline includes AI Trust Layer, PII guardrails, role-based access, audit trails, and compliance frameworks purpose-built for automation governance. Because the evidence is strong for ServiceNow platform security but limited in direct like-for-like comparison against UiPath automation controls, I scored this as parity.",
-        "evidence": "ServiceNow's 'Securing the ServiceNow AI Platform' snippet says customers can access a central repository of ServiceNow security and compliance resources. ServiceNow Store Governance, Risk, and Compliance release notes indicate ongoing version history and product updates for IRM/GRC capabilities. Reco AI's March 21, 2025 snippet says ServiceNow includes vulnerability management, compliance tracking, data encryption, and MFA.",
+        "score": 4,
+        "rationale": "ServiceNow shows strong enterprise-grade security and compliance maturity, with established GRC capabilities and analyst visibility, though the available snippet evidence does not support a best-in-class designation on this specific topic. Its platform breadth and use in regulated environments indicate broad, proven coverage with minor evidence gaps.",
+        "reasoning": "Search results show ServiceNow is a broad enterprise workflow platform that has extended into GRC, and a 2026 roundup explicitly lists policy and compliance management, risk assessment workflows, audit management, and vendor risk capabilities. ServiceNow also maintains an analyst reports hub and appears in Gartner-adjacent enterprise platform evaluations, which supports market recognition. However, the snippets available do not provide detailed certifications, control frameworks, or direct analyst leadership claims specifically for security/compliance, so a 5 would overstate the evidence. Based on breadth, enterprise orientation, and concrete governance features, a 4 is justified.",
+        "evidence": "MetricStream's 2026 GRC tools roundup states that ServiceNow GRC offers policy and compliance management, risk assessment workflows, audit management, and vendor risk capabilities. MetricStream's 2026 roundup says ServiceNow is a broad enterprise workflow platform that has extended its capabilities into GRC. ServiceNow's website positions the Now Platform as an enterprise AI platform used across the business, indicating centralized platform-level governance and security posture.",
         "sources": [
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf",
-          "https://www.servicenow.com/docs/r/store-release-notes/store-rn-grc.html",
-          "https://www.reco.ai/hub/servicenow-vs-salesforce"
+          "https://www.metricstream.com/blog/top-governance-risk-compliance-grc-tools.html",
+          "https://www.servicenow.com/",
+          "https://www.servicenow.com/company/analyst-reports.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -567,14 +567,14 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3,
-        "rationale": "ServiceNow appears strong in operational standardization and managed cloud deployment, but UiPath retains an edge in deployment flexibility because it supports cloud, on-premise, hybrid, and air-gapped automation environments. Overall this balances to parity.",
-        "reasoning": "ServiceNow's security paper snippet states both deployment models adhere to the same rigorous security, redundancy, and operational standards, indicating mature operations. ServiceNow's AI Agents page and ecosystem messaging also suggest operationalized deployment of out-of-the-box or custom agents. However, the snippet evidence does not show the same breadth of deployment options that UiPath offers across cloud, on-prem, hybrid, and air-gapped enterprise automation estates. Because ServiceNow is operationally mature but less clearly flexible across deployment models from the evidence available, I scored it at parity leaning slightly toward UiPath.",
-        "evidence": "ServiceNow's security paper says both deployment models adhere to the same rigorous security, redundancy, and operational standards. ServiceNow AI Agents says customers can deploy out-of-the-box AI agents or build their own using natural language in AI Agent Studio. Cygnet.One's April 27, 2026 snippet cites ServiceNow for deployment flexibility and proven use across core business functions.",
+        "score": 4,
+        "rationale": "ServiceNow has strong maturity in deployment and ongoing operations as an enterprise workflow and ITSM platform with proven operational use cases. The evidence suggests broad operational capability, but the snippet set lacks specific deployment architecture details needed for a top score.",
+        "reasoning": "Gartner Peer Insights snippets define ITSM platforms as cohesive workflow management and automation systems, and ServiceNow is explicitly described there as software that automates and streamlines IT service delivery. ServiceNow's core platform messaging and partner ecosystem reinforce that it is deployed widely for enterprise transformation and operational workflows. This implies mature operational tooling, lifecycle support, and broad enterprise deployment experience. Still, because the search snippets do not expose direct evidence on release management, multi-environment controls, or SRE-style operational tooling, 4 is more defensible than 5.",
+        "evidence": "Gartner Peer Insights describes ServiceNow IT Service Management as software designed to automate and streamline IT service delivery for organizations. Gartner Peer Insights characterizes ITSM platforms as offering cohesive workflow management and automation for organizations, which aligns with ServiceNow's operating model. ServiceNow states its AI platform empowers customers and employees across the enterprise, indicating broad production deployment across business functions.",
         "sources": [
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf",
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.cygnet.one/feeds/blog/ai-agents-large-scale-support-enterprise"
+          "https://www.gartner.com/reviews/market/it-service-management-platforms",
+          "https://www.servicenow.com/",
+          "https://www.servicenow.com/partners.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -583,14 +583,14 @@
       },
       {
         "category": "Scalability & Reliability",
-        "score": 3,
-        "rationale": "ServiceNow presents as a scalable, reliable enterprise platform, but UiPath also has a mature enterprise automation footprint and large installed base. The available evidence supports rough parity rather than a clear lead by either vendor.",
-        "reasoning": "Search snippets describe ServiceNow as a single, scalable platform that unites data, AI, workflows, and security. Another result highlights enterprise application and service monitoring, integration, orchestration, and discovery, which suggests platform depth for reliable operations at scale. Third-party commentary also calls ServiceNow scalable and reliable for enterprises, though the evidence is snippet-level and not benchmark-based. UiPath's enterprise scale, long leadership in RPA, and large customer base offset ServiceNow's platform scale claims, so a parity score is appropriate.",
-        "evidence": "ServiceNow AI Agents says 'Only ServiceNow unites data, AI, workflows, and security on a single, scalable platform.' ServiceNow's security paper snippet references enterprise application and service monitoring, integration, orchestration, and discovery. igmGuru's June 26, 2026 snippet says ServiceNow offers features that make it a scalable and reliable solution for enterprises.",
+        "score": 4,
+        "rationale": "ServiceNow demonstrates strong enterprise scalability and reliability by virtue of its widespread use as an enterprise workflow platform and ITSM backbone. The available evidence supports mature production use, though snippet-level proof of reliability engineering specifics is limited.",
+        "reasoning": "ServiceNow is consistently presented as a broad enterprise workflow platform, and Gartner review contexts place it among enterprise-grade ITSM and automation providers. Enterprise adoption in service delivery and workflow automation generally requires robust scale, availability, and operational resilience, which supports a strong score. In addition, analyst-facing materials suggest sustained market presence and platform maturity. Because the available snippets do not include direct uptime figures, architecture specifics, or resilience benchmarks, the evidence is not strong enough for best-in-class.",
+        "evidence": "ServiceNow is described as a broad enterprise workflow platform serving customers and employees across the enterprise. Gartner Peer Insights places ServiceNow in enterprise ITSM and automation contexts that typically require high scale and reliable service delivery. ServiceNow maintains analyst-report visibility across low-code, AI, and workflow-related categories, signaling a mature platform with sustained enterprise usage.",
         "sources": [
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf",
-          "https://www.igmguru.com/blog/what-is-servicenow"
+          "https://www.servicenow.com/",
+          "https://www.gartner.com/reviews/market/robotic-process-automation",
+          "https://www.servicenow.com/company/analyst-reports.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -599,14 +599,14 @@
       },
       {
         "category": "Connectivity & Integration",
-        "score": 3,
-        "rationale": "ServiceNow has credible integration breadth through its Store, Workflow Data Fabric, and partner ecosystem, but UiPath's 1,000+ Integration Service connectors and automation-native integrations keep it highly competitive. The likely position is parity.",
-        "reasoning": "Search results show ServiceNow Store as a marketplace extending the Now Platform into many use cases and Workflow Data Fabric as a way to connect real-time data and fuel AI agents through ecosystem partners. ServiceNow also appears integrable through third-party connectors such as CData and is demonstrably connected with UiPath in community content. However, UiPath's published baseline of 1,000+ connectors across major enterprise apps is a strong and very specific breadth claim. Because ServiceNow is clearly capable but the snippet evidence doesn't demonstrate connector breadth beyond UiPath's stated scale, I scored parity.",
-        "evidence": "ServiceNow Workflow Data Fabric says it connects real-time data and fuels AI agents through an ecosystem of integration partners. ServiceNow Store says apps from hundreds of partners extend the Now Platform into new use cases. UiPath community content shows a ServiceNow and Slack integration built using the UiPath integration connection.",
+        "score": 4,
+        "rationale": "ServiceNow has strong connectivity and integration maturity, with workflow integration called out in analyst review snippets and a platform model designed to connect business functions. The evidence supports broad enterprise integration capability, but not enough detail to prove best-in-class breadth from snippets alone.",
+        "reasoning": "A Gartner Peer Insights snippet for ITSM platforms explicitly mentions integration capabilities with other business systems as part of the workflow software profile relevant to ServiceNow. ServiceNow's core platform message emphasizes enterprise-wide workflows, which implies cross-system coordination and data exchange. Its partner positioning and low-code platform recognition also support a mature integration ecosystem. However, the search snippets do not enumerate connector counts, API management depth, or specific integration tooling, so 4 is the most defensible score.",
+        "evidence": "A Gartner Peer Insights snippet highlights integration capabilities with other business systems in the context of ServiceNow-relevant workflow software. ServiceNow positions the Now Platform as serving every corner of the business, implying cross-functional system connectivity. ServiceNow's analyst reports and partner ecosystem suggest an enterprise platform with broad extensibility and integration use cases.",
         "sources": [
-          "https://www.servicenow.com/platform/workflow-data-fabric.html",
-          "https://store.servicenow.com/store",
-          "https://www.uipath.com/community-blog/tutorials/servicenow-slack-integration-with-uipath"
+          "https://www.gartner.com/reviews/market/it-service-management-platforms",
+          "https://www.servicenow.com/",
+          "https://www.servicenow.com/partners.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -615,14 +615,14 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 3,
-        "rationale": "ServiceNow demonstrates strong packaged value through ready-to-use components, partner frameworks, and low-friction agent creation, but UiPath also offers fast-start low-code/no-code tooling and a large enablement ecosystem. The evidence points to parity.",
-        "reasoning": "Hackett Group's snippet explicitly claims faster time to value for ServiceNow deployments via established frameworks. ServiceNow also cites over 1,300 ready-to-use RPA components and 95% bot efficiency/stability in a customer story, which supports operational acceleration. AI Agent Studio's natural-language creation flow may further improve user experience for business teams. UiPath counters with StudioX, Studio Web, Academy, and broad templates/connectors, so I do not see enough evidence for a ServiceNow lead.",
-        "evidence": "The Hackett Group snippet says its ServiceNow experience and established frameworks enable faster time to value. ServiceNow's 'Now on Now - RPA' snippet says it has over 1300+ ready-to-use components to reduce time to value for future RPA initiatives. ServiceNow AI Agents highlights building agents using natural language in AI Agent Studio.",
+        "score": 4,
+        "rationale": "ServiceNow appears strong on time-to-value and user experience due to its low-code orientation, multichannel service experiences, and broad enterprise workflow capabilities. The evidence suggests mature usability and operational value realization, though snippets do not provide direct implementation-speed proof.",
+        "reasoning": "Gartner-related results reference advanced multichannel support features that enhance end-user experience in IT services, which maps well to ServiceNow's service workflow heritage. ServiceNow also appears in enterprise low-code analyst materials, suggesting the platform supports faster application delivery and workflow creation. Its enterprise AI platform message implies a unified experience spanning customers and employees. Because the snippets do not provide quantified deployment times or explicit customer outcomes on time-to-value, 4 is appropriate rather than 5.",
+        "evidence": "A Gartner Peer Insights snippet notes that advanced multichannel support features enhance the end-user experience and help services remain agile and aligned with business needs. ServiceNow's analyst reports include Gartner critical capabilities for enterprise low-code applications, supporting faster app and workflow delivery use cases. ServiceNow says its AI platform empowers both customers and employees across the business, indicating a unified user experience approach.",
         "sources": [
-          "https://www.thehackettgroup.com/partners/servicenow/",
-          "https://www.servicenow.com/customers/now-on-now-rpa.html",
-          "https://www.servicenow.com/products/ai-agents.html"
+          "https://www.gartner.com/reviews/market/it-service-management-platforms",
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "https://www.servicenow.com/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -631,14 +631,14 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 3,
-        "rationale": "ServiceNow is clearly investing aggressively in agentic AI with AI Agents, AI Agent Studio, and AI Agent Fabric, but UiPath also has a strong agentic automation stack centered on Maestro, Agent Builder, and HITL orchestration. Current snippet evidence suggests a close race rather than a clear leader.",
-        "reasoning": "ServiceNow's product page states users can deploy out-of-the-box agents, build their own in AI Agent Studio, and use a central intelligent hub for strategy, governance, and management. Additional snippets describe ServiceNow's AI strategy as a neutral orchestration layer and frame it among top enterprise agent platforms in 2026. However, UiPath's baseline is very specific around multi-agent orchestration, coded and low-code agent building, LangGraph/OpenAI agent integrations, and human-in-the-loop handling through Action Center. With both vendors showing substantial momentum, parity is the most defensible score from snippet-only evidence.",
-        "evidence": "ServiceNow AI Agents says users can deploy out-of-the-box AI agents or build their own using natural language in AI Agent Studio. ServiceNow AI Agents describes a central intelligent hub for AI strategy, governance, and management across the enterprise. A February 2026 LinkedIn snippet characterizes ServiceNow's AI strategy as a 'neutral orchestration layer.'",
+        "score": 4,
+        "rationale": "ServiceNow has strong and clearly advancing agentic AI maturity, with analyst-recognized capability for building and managing AI agents. The available evidence is compelling, but snippet-level validation is still too thin to call it unequivocally best-in-class.",
+        "reasoning": "The strongest evidence is ServiceNow's analyst reports page citing the 2025 Gartner Critical Capabilities for Enterprise Low-Code Applications, where ServiceNow says it ranked #1 for the Building and Managing AI Agents use case. That is a concrete third-party signal that ServiceNow's agent-related tooling is robust and recognized. ServiceNow also positions its AI platform broadly across the enterprise, suggesting that agentic functionality is integrated into a wider workflow fabric. Because the search snippets do not expose product-level details such as agent builder architecture, governance depth, or customer references, a 4 is more evidence-grounded than a 5.",
+        "evidence": "ServiceNow's analyst reports page says the company ranked #1 in the 2025 Gartner Critical Capabilities for Enterprise Low-Code Applications for the Building and Managing AI Agents use case. ServiceNow markets its offering as an AI platform that empowers customers and employees across the enterprise, implying broad deployment surfaces for AI agents. Third-party 2025-2026 market guides for agentic platforms discuss enterprise governance and agent capabilities as key criteria, and ServiceNow appears in analyst-facing AI platform positioning rather than as an absent player.",
         "sources": [
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.linkedin.com/posts/michelregueiro_ive-been-trying-to-make-sense-of-servicenow-activity-7424753569083609089-lWHx",
-          "https://www.servicenow.com/community/workflow-data-fabric-blog/don-t-just-migrate-transform-future-proof-rpa-with-servicenow/ba-p/3315829"
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "https://www.servicenow.com/",
+          "https://writer.com/guides/evaluating-generative-ai-2026/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -647,62 +647,62 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "ServiceNow is well positioned in business orchestration and workflow-centric BPM, including BOAT-style positioning, while UiPath is strong in automation orchestration and emerging agentic process coordination. The net result is parity with different strengths.",
-        "reasoning": "Search results explicitly reference Gartner's BOAT category and third-party commentary naming ServiceNow as a platform that unifies ITSM, HR, customer service, and enterprise workflows. Other snippets list ServiceNow among comprehensive suite-based BPM platforms. UiPath's strength is less traditional case-centric BPM and more cross-system automation and agent/process orchestration, but Maestro and Process/Task Mining strengthen that position. Given ServiceNow's workflow heritage and UiPath's automation orchestration depth, parity is the most balanced score.",
-        "evidence": "Gartner's BOAT market page defines the category as a consolidated software platform for enterprise process automation. Elementum AI's May 24, 2026 snippet says ServiceNow is a BOAT platform unifying ITSM, HR, customer service, and more. Kinetic Data's February 12, 2026 snippet lists ServiceNow among suite-based BPM vendors with comprehensive features.",
+        "score": 4,
+        "rationale": "ServiceNow has strong BPM and orchestration maturity with explicit workflow and BPM positioning, plus analyst visibility in business orchestration and automation. It appears enterprise-proven, though the snippets stop short of proving category-leading depth across all orchestration scenarios.",
+        "reasoning": "ServiceNow has a dedicated BPM page and describes BPM as aligning people, systems, and goals to streamline operations and adapt to evolving needs. Its analyst reports page references the 2025 Gartner Magic Quadrant for Business Orchestration and Automation, which indicates recognition in the relevant category. Third-party 2026 BPM platform roundups also include ServiceNow among major enterprise BPM vendors. These indicators support broad orchestration maturity, but without snippet-level detail on modeling depth, runtime orchestration, and complex case management, a 4 is appropriate.",
+        "evidence": "ServiceNow's BPM page says BPM aligns people, systems, and goals to streamline operations and adapt to evolving needs. ServiceNow's analyst reports page references the 2025 Gartner Magic Quadrant for Business Orchestration and Automation. A 2026 BPM platform comparison includes ServiceNow among top enterprise BPM companies for digital transformation.",
         "sources": [
-          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies",
-          "https://www.elementum.ai/blog/uipath-alternatives",
-          "https://www.kineticdata.com/blog/enterprise-workflow-automation-the-complete-guide-to-orchestrating-business-processes"
+          "https://www.servicenow.com/platform/what-is-business-process-management.html",
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 4,
-        "rationale": "Available snippet evidence for ServiceNow on functional and performance testing is relatively limited and more adjacent to automation monitoring than dedicated enterprise test automation, while UiPath has specific enterprise testing assets in its platform baseline. UiPath therefore appears to have a demonstrable advantage.",
-        "reasoning": "The main ServiceNow-relevant evidence found was Automation Center reporting KPIs and job executions, plus security and vulnerability-response related items. I did not find strong snippet evidence that ServiceNow has a broad, market-recognized functional and performance testing suite comparable to dedicated testing platforms or UiPath's testing capabilities. UiPath's baseline explicitly includes Test Manager under enterprise governance, and UiPath historically has dedicated test automation coverage across UI and APIs. Because the ServiceNow evidence is sparse and indirect for this topic, UiPath scores higher here.",
-        "evidence": "ServiceNow Automation Center provides an overview dashboard with performance and KPIs of active automations and an Executions Dashboard to monitor RPA jobs. ServiceNow Vulnerability Response release notes mention improvements for Penetration Test Assessment. The strongest third-party testing result returned was Tricentis discussing QA testing tools, not a ServiceNow-native testing suite.",
+        "score": 2,
+        "rationale": "The available web evidence does not show a well-substantiated dedicated functional and performance testing capability for ServiceNow on this topic. ServiceNow likely supports platform development and workflow evaluation indirectly, but snippet-level proof of a mature testing offering is weak.",
+        "reasoning": "Search results for this topic returned mostly generic ServiceNow platform pages and unrelated category pages, not direct evidence of a testing platform with functional test management, performance testing, or evaluation depth. While ServiceNow is a strong enterprise platform, the maturity rubric requires concrete evidence on the topic itself. In this case, the evidence gap is material enough that a strong score would be speculative. Accordingly, ServiceNow is best assessed as emerging/basic for this specific topic based on the limited visible proof.",
+        "evidence": "Search results for this topic primarily surfaced generic ServiceNow platform pages rather than dedicated functional or performance testing capabilities. No returned snippet provided concrete claims about ServiceNow-owned performance testing, load testing, or functional test automation features. ServiceNow's broader workflow and low-code positioning may support indirect testing workflows, but the search snippets did not substantiate a mature dedicated testing capability.",
         "sources": [
-          "https://store.servicenow.com/store/app/da9aab661b246a50a85b16db234bcbb5",
-          "https://www.servicenow.com/docs/r/store-release-notes/store-secops-rn-vulnerability-response.html",
-          "https://www.tricentis.com/learn/qa-testing-tools"
+          "https://www.servicenow.com/",
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "Gartner — IT Service Management Platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 3,
-        "rationale": "ServiceNow has credible monitoring and observability capabilities through platform logging, CMDB-linked observability connectors, and AI agent monitoring, but UiPath also offers strong operational monitoring for automations. This looks broadly comparable.",
-        "reasoning": "ServiceNow release notes show a Service Graph Connector for Observability that imports Dynatrace monitoring data into the CMDB, which supports cross-domain observability workflows. Its AI Agents page also says AI Agent Fabric can manage, monitor, and optimize third-party AI from a central hub. The security paper mentions logging and monitoring, reinforcing operational controls. UiPath remains strong in robot/job observability and analytics, so the evidence supports parity rather than a decisive lead.",
-        "evidence": "ServiceNow's Service Graph Connector for Observability imports and integrates Dynatrace monitoring data into the CMDB. ServiceNow AI Agent Fabric says it can manage, monitor, and optimize AI from a central intelligent hub. ServiceNow's security paper includes logging and monitoring as part of its security posture.",
+        "rationale": "ServiceNow has credible monitoring-adjacent and IT operations capabilities, but the snippet evidence here does not establish deep, best-of-breed observability maturity. It appears adequate for enterprise operations use cases with likely limitations versus dedicated observability platforms.",
+        "reasoning": "Search results for this topic did not return strong direct evidence of ServiceNow as a leading observability platform; instead they surfaced generic platform pages and unrelated observability vendors. ServiceNow's ITSM and workflow foundation suggests it can participate in incident, event, and operations workflows, which supports an adequate baseline. However, the absence of snippet-level proof for capabilities such as distributed tracing, advanced metrics/log correlation, or native observability analytics prevents a higher score. Therefore, 3 best reflects credible but not clearly deep observability maturity from the evidence available.",
+        "evidence": "Search results for this topic mostly returned generic ServiceNow pages rather than direct observability product claims. ServiceNow is a mature enterprise workflow and IT service platform, which supports monitoring-related operational workflows at a baseline level. A Gartner event intelligence category appeared in results, but no ServiceNow-specific snippet established leadership in observability capabilities.",
         "sources": [
-          "https://www.servicenow.com/docs/r/store-release-notes/store-platcap-rn-service-graph-connector-dynatrace.html",
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf"
+          "https://www.servicenow.com/",
+          "https://www.gartner.com/reviews/market/event-intelligence-solutions",
+          "https://www.servicenow.com/what-is-servicenow.html"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 3,
-        "rationale": "ServiceNow is strong on governance and enterprise management, especially around AI and GRC, but UiPath offers equally strong automation-native traceability through audit trails, AI Trust Layer, and controlled human-in-the-loop workflows. The competitive position is parity.",
-        "reasoning": "ServiceNow's GRC release notes support ongoing investment in governance workflows, while the AI Agents page frames the product as a hub for enterprise AI strategy, governance, and management. A 2026 LinkedIn snippet further mentions citations and traceability in an enterprise agentic AI implementation on ServiceNow + Azure. UiPath's baseline explicitly includes audit trails, PII guardrails, role-based access, and Action Center, which are highly relevant to traceability in automated processes. Since both vendors show meaningful governance depth, I scored this topic as parity.",
-        "evidence": "ServiceNow Store Governance, Risk, and Compliance release notes show continued evolution of governance-related capabilities. ServiceNow AI Agents says it is a central intelligent hub to connect AI strategy, governance, and management across the enterprise. A February 1, 2026 LinkedIn snippet says responses in a ServiceNow + Azure agentic implementation always included citations and traceability.",
+        "score": 4,
+        "rationale": "ServiceNow has strong traceability and governance maturity, supported by its GRC extension, AI governance adjacency, and enterprise architecture/governance positioning. The evidence indicates broad governance coverage, though direct traceability mechanics are not fully exposed in snippets.",
+        "reasoning": "A 2026 AI governance buyer's guide explicitly places ServiceNow among large platform companies that extended existing GRC, ITSM, or trust infrastructure into AI governance. MetricStream's 2026 summary also cites ServiceNow GRC features including policy/compliance management, risk workflows, audit management, and vendor risk. Enterprise architecture/governance category snippets further reinforce that ServiceNow participates in structured governance domains. Because the visible evidence is strong on governance but lighter on end-to-end traceability specifics, the score lands at 4.",
+        "evidence": "A 2026 AI governance buyer's guide says ServiceNow is among large platform companies that extended existing GRC, ITSM, or trust infrastructure into AI governance. MetricStream says ServiceNow GRC includes policy and compliance management, risk assessment workflows, audit management, and vendor risk capabilities. Gartner enterprise architecture review snippets describe support for business process analysis, risk management, and information governance in adjacent governance categories relevant to ServiceNow's platform positioning.",
         "sources": [
-          "https://www.servicenow.com/docs/r/store-release-notes/store-rn-grc.html",
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.linkedin.com/pulse/building-enterprise-grade-agentic-ai-servicenow-azure-akhtar-zxbdc"
+          "https://www.modulos.ai/best-ai-governance-platforms/",
+          "https://www.metricstream.com/blog/top-governance-risk-compliance-grc-tools.html",
+          "https://www.gartner.com/reviews/market/enterprise-architecture-tools"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -711,14 +711,14 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 4,
-        "rationale": "ServiceNow has process mining visibility, especially around ITSM and enterprise workflows, but UiPath's process intelligence stack is broader and more mature, combining Process Mining, Task Mining, simulation, and conformance checking. UiPath appears to hold the clearer advantage.",
-        "reasoning": "Gartner's market page confirms ServiceNow Process Mining as a recognized process intelligence product, and KYP.ai notes ServiceNow integrates process mining directly into the platform for ITSM workflows and enterprise processes. That is meaningful capability, but the available evidence emphasizes embedded visibility more than the full-spectrum process intelligence depth UiPath advertises. UiPath's baseline includes end-to-end Process Mining with simulation and conformance checking plus Task Mining desktop capture, which exceeds the snippet evidence found for ServiceNow. Therefore UiPath has a demonstrable lead on this topic.",
-        "evidence": "Gartner's Process Intelligence Platforms page identifies ServiceNow Process Mining as software for analyzing and visualizing business processes using digital-system data. KYP.ai says ServiceNow integrated process mining capabilities directly into its platform to provide visibility into ITSM workflows and enterprise processes. ServiceNow's security paper snippet references optimizing business processes and tasks across the enterprise.",
+        "score": 3,
+        "rationale": "ServiceNow has credible process intelligence capability, but the evidence available suggests it is meaningful rather than category-leading. The strongest direct signal is AI-powered process mining, which supports an adequate-to-strong foundation but not enough for a higher score from snippets alone.",
+        "reasoning": "The clearest evidence is ServiceNow's Utah release announcement, which states the platform introduced AI-powered process mining with RPA capabilities. That indicates direct investment in process discovery and optimization rather than merely workflow execution. However, the search results do not show analyst recognition specifically for ServiceNow as a process intelligence leader, and Gartner process intelligence snippets highlight other vendors instead. Given the available proof, ServiceNow earns a 3 for credible capability with visible but not fully substantiated market leadership.",
+        "evidence": "ServiceNow's Utah release announcement says the Now Platform unveiled AI-powered process mining with RPA capabilities. ServiceNow positions itself as an enterprise workflow platform, giving it natural adjacency to process analysis and optimization use cases. The search results did not provide direct analyst-leader evidence for ServiceNow in process intelligence, while Gartner process intelligence snippets highlighted other vendors.",
         "sources": [
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
-          "https://kyp.ai/uipath-process-intelligence-alternatives/",
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf"
+          "https://newsroom.servicenow.com/press-releases/details/2023/ServiceNow-Launches-Major-Platform-Expansion-with-the-Utah-Release-03-22-2023-12-00-AM/default.aspx",
+          "https://www.servicenow.com/",
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -728,13 +728,13 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Search-snippet evidence on direct ServiceNow licensing economics versus UiPath is sparse, making a confident lead call inappropriate. Both platforms can deliver enterprise ROI, but licensing/TCO comparisons vary heavily by use case and estate complexity.",
-        "reasoning": "The available results are mostly indirect: third-party licensing advisory blogs, a ServiceNow release-note item, and general enterprise AI platform comparisons. None of the snippets provided concrete ServiceNow pricing or independently benchmarked TCO against UiPath. UiPath's broad automation reuse and multiple development experiences can improve unit economics in some scenarios, while ServiceNow can reduce sprawl when customers are already standardized on the Now Platform. Because the evidence is limited and largely non-comparative, I assigned parity with low confidence.",
-        "evidence": "Cygnet.One's April 27, 2026 snippet lists ServiceNow AI Agents and UiPath Autopilot among top enterprise AI agent platforms, but does not provide pricing details. Redress Compliance's search result identifies itself as independent enterprise software licensing intelligence covering ServiceNow. No returned snippet supplied a concrete ServiceNow license metric or direct TCO benchmark against UiPath for this topic.",
+        "rationale": "ServiceNow likely delivers substantial long-term platform value but can be complex in licensing and implementation economics, and the snippet evidence here is limited. The maturity is adequate because the product is enterprise-proven, yet the available research does not substantiate a particularly strong or simple TCO position.",
+        "reasoning": "The search results for this topic did not return direct, ServiceNow-specific licensing model details or transparent TCO evidence. One 2026 buyer's guide generally stresses including licensing, implementation, and separately charged features in TCO analysis, which reflects the complexity typical of enterprise platforms like ServiceNow. ServiceNow's broad platform footprint may improve consolidation value, but it can also increase adoption scope and cost. Because the snippet evidence is indirect, a middle score is the most supportable.",
+        "evidence": "The search results did not provide direct ServiceNow licensing specifics or pricing transparency for this topic. A 2026 governance buyer's guide emphasizes evaluating licensing, implementation, and separately charged features in enterprise TCO analysis, which is relevant to platforms like ServiceNow. ServiceNow's Strategic Portfolio Management page highlights alignment from strategy to business outcomes, suggesting consolidation value even if licensing complexity is not detailed in snippets.",
         "sources": [
-          "https://www.cygnet.one/feeds/blog/ai-agents-large-scale-support-enterprise",
-          "https://redresscompliance.com/blog",
-          "https://thenegotiationexperts.com/blog/"
+          "https://www.linx.security/blog/top-10-iga-tools-a-modern-identity-governance-buyers-guide",
+          "https://www.servicenow.com/products/strategic-portfolio-management.html",
+          "https://www.gartner.com/reviews/market/it-service-management-platforms"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -743,14 +743,14 @@
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 3,
-        "rationale": "ServiceNow has broad applicability across IT, HR, customer service, and enterprise workflows, while UiPath is horizontal across many industries and business functions. The evidence supports broad applicability for both, resulting in parity.",
-        "reasoning": "Search results frame ServiceNow as both a software vendor and an operator of extensive cloud infrastructure, and third-party snippets associate it with enterprise business processes and repeatable applicability across functions and verticals. Google also cited ServiceNow alongside UiPath in agent interoperability context, indicating strategic relevance in enterprise automation ecosystems. UiPath's baseline and market position are similarly horizontal, spanning documents, processes, integrations, and automation across industries. Since both vendors are broadly applicable but with somewhat different centers of gravity, parity is the most defensible score.",
-        "evidence": "ServiceNow's security paper says the company should be understood both as a software vendor and operator of extensive cloud infrastructure. An HFS Horizons snippet references applicability and repeatability across enterprise functions and verticals. Google's Agent2Agent announcement says ServiceNow and Google Cloud are collaborating while calling UiPath a pioneer in agentic orchestration.",
+        "score": 4,
+        "rationale": "ServiceNow demonstrates strong cross-industry and cross-domain applicability as a broad enterprise workflow platform used beyond IT into multiple business functions. The evidence supports wide applicability, though snippet detail on vertical-specific depth is limited.",
+        "reasoning": "ServiceNow repeatedly positions its AI platform as bringing intelligence to every corner of the enterprise, indicating applicability across many functions rather than a narrow departmental tool. Third-party commentary also notes its fit for large enterprises and regulated industries, especially in GRC contexts. Its partner ecosystem further supports extension into varied business domains and transformation programs. Because the snippets do not enumerate industry clouds or domain-specific product depth, 4 is more defensible than 5.",
+        "evidence": "ServiceNow says it brings intelligence and AI to every corner of the enterprise. A 2026 GRC roundup associates ServiceNow with large enterprises and regulated industries, indicating relevance across demanding industry contexts. ServiceNow's partner program emphasizes tailored solutions and expertise for business transformation and GenAI optimization.",
         "sources": [
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf",
-          "https://assets.kpmg.com/content/dam/kpmgsites/xx/pdf/2026/04/hfs-horizons-agentic-services-2026.pdf",
-          "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
+          "https://www.servicenow.com/partners.html",
+          "https://www.metricstream.com/blog/top-governance-risk-compliance-grc-tools.html",
+          "https://www.servicenow.com/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -759,33 +759,33 @@
       },
       {
         "category": "Long-term value",
-        "score": 3,
-        "rationale": "ServiceNow appears to offer durable long-term platform value through AI-centered expansion and enterprise workflow consolidation, while UiPath offers strong long-term value through automation platform breadth and enterprise momentum. The evidence suggests parity.",
-        "reasoning": "ServiceNow's AI Agents positioning and partner messaging indicate the company is becoming more of an AI and workflow platform, which supports long-term expansion potential. Partner content also links ServiceNow to lifetime value, risk, and compliance outcomes. On the other side, a 2026 Zacks/TradingView snippet highlights UiPath's stronger long-term revenue visibility and growth in million-dollar customers. Since both vendors show plausible long-term value creation and the evidence is not an apples-to-apples product benchmark, I scored parity.",
-        "evidence": "ServiceNow AI Agents markets a scalable agent platform with AI Agent Studio and governance hub capabilities. Persistent Systems' ServiceNow page snippet references lifetime value and risk/compliance outcomes. A June 11, 2026 TradingView/Zacks snippet says UiPath has stronger long-term revenue visibility and accelerating growth in million-dollar customers.",
+        "score": 4,
+        "rationale": "ServiceNow offers strong long-term value because of its broad enterprise platform scope, analyst visibility, and ability to consolidate workflows across functions. The evidence suggests durable strategic value, though it does not conclusively establish best-in-class economics or long-term product superiority from snippets alone.",
+        "reasoning": "ServiceNow is consistently presented as a broad enterprise workflow and AI platform, which supports long-term platform consolidation and extensibility. Its analyst reports page references recognition across business orchestration, low-code, and AI-related categories, showing sustained relevance rather than a point solution profile. The Utah release evidence also shows platform expansion into process mining and adjacent capabilities, indicating continued product evolution. Without more concrete customer outcome data or TCO proof, 4 is appropriate.",
+        "evidence": "ServiceNow is positioned as a broad enterprise workflow platform for customers and employees across the business. ServiceNow's analyst reports page references Gartner evaluations across multiple strategic categories, suggesting sustained market relevance. ServiceNow's Utah release expanded the platform with AI-powered process mining and RPA capabilities, showing continued roadmap investment.",
         "sources": [
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.persistent.com/partner-ecosystem/servicenow/",
-          "https://www.tradingview.com/news/zacks:48df50be8094b:0-uipath-s-enterprise-momentum-fortifies-with-high-value-customer-growth/"
+          "https://www.servicenow.com/",
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "https://newsroom.servicenow.com/press-releases/details/2023/ServiceNow-Launches-Major-Platform-Expansion-with-the-Utah-Release-03-22-2023-12-00-AM/default.aspx"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 3,
-        "rationale": "ServiceNow supports business agility through workflow configuration, AI agents, and platform extensibility, but UiPath is also strong where adaptability depends on rapidly automating across legacy and modern systems. The overall position is parity.",
-        "reasoning": "ServiceNow's AI Agents page emphasizes natural-language agent building and centralized management, both of which can improve adaptability. A 2024 SPM-focused snippet also explicitly calls out greater agility from ServiceNow's flexibility and scalability, though that evidence is older and adjacent. Conversely, a June 2026 Zacks/TradingView snippet says UiPath's financial flexibility gives it agility that ServiceNow lacks, albeit from a market commentary perspective rather than direct product proof. Given mixed and partly indirect evidence, parity is the safest score.",
-        "evidence": "ServiceNow AI Agents says users can build their own agents using natural language in AI Agent Studio. ServiceNow's security paper includes business continuity and disaster recovery, supporting operational adaptability. A March 12, 2024 ServiceNow SPM snippet says the platform's flexibility and scalability allow greater agility.",
+        "score": 4,
+        "rationale": "ServiceNow has strong business adaptability and agility thanks to its workflow-centric platform, BPM capabilities, and low-code analyst recognition. The evidence shows an enterprise platform designed to adapt processes and experiences, with only limited snippet detail preventing a top score.",
+        "reasoning": "ServiceNow's BPM page explicitly emphasizes adapting to evolving needs, which is directly relevant to business agility. Gartner-related analyst materials also point to ServiceNow's standing in enterprise low-code application platforms and business orchestration, both of which are strong enablers of adaptability. The platform's enterprise-wide AI and workflow positioning further indicates it is used to reconfigure and automate processes across functions. Since the snippets do not provide direct customer agility metrics or implementation evidence, the score remains 4 rather than 5.",
+        "evidence": "ServiceNow's BPM page says BPM helps organizations streamline operations and adapt to evolving needs. ServiceNow's analyst reports reference Gartner critical capabilities for enterprise low-code applications and the Magic Quadrant for Business Orchestration and Automation. ServiceNow positions its AI platform as serving every corner of the enterprise, supporting broad process change and agility.",
         "sources": [
-          "https://www.servicenow.com/products/ai-agents.html",
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/ebk-how-servicenow-delivers-safe-and-secure-cloud-services.pdf",
-          "https://blog.vsoftconsulting.com/blog/servicenow-spm-optimizes-your-strategic-portfolio-management"
+          "https://www.servicenow.com/platform/what-is-business-process-management.html",
+          "https://www.servicenow.com/company/analyst-reports.html",
+          "https://www.servicenow.com/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       }
