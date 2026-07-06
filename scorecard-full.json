@@ -1527,16 +1527,16 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "OpenAI shows strong enterprise privacy, security, and governance signals for ChatGPT Enterprise, but the snippet-level evidence does not prove broader compliance/governance breadth beyond the AI layer. UiPath remains stronger for end-to-end automation governance, auditability, and enterprise controls across workflows and robots.",
-        "reasoning": "Search snippets show OpenAI emphasizing enterprise privacy and security for ChatGPT Business and Enterprise, plus admin controls and a 2026 acquisition of Promptfoo for AI security. However, the evidence available from snippets is mostly OpenAI-authored and focused on model/workspace security rather than comprehensive automation-platform governance, RBAC, audit, and compliance across business processes. UiPath's baseline includes AI Trust Layer, PII guardrails, audit trails, role-based governance, and platform-wide compliance, which is broader than an LLM-centric security posture. Because OpenAI is credible and improving quickly but the available snippet evidence is narrower than UiPath's platform scope, this lands at parity/slight UiPath edge overall.",
-        "evidence": "OpenAI's 'Enterprise privacy at OpenAI' page says it is 'committed to privacy and security for ChatGPT Business, ChatGPT Enterprise' (OpenAI, Jan 8 2026). OpenAI's business data page says organizational data 'always remains confidential, secure, and entirely owned by you' across ChatGPT Enterprise (OpenAI). ChatGPT Enterprise & Edu release notes mention 'Admin Controls, Security, and Compliance in apps' and 'Plugin sharing for Enterprise workspaces' (OpenAI Help Center, Jun 5 2026). OpenAI announced it is acquiring Promptfoo, described as an AI security platform that helps enterprises identify and remediate vulnerabilities in AI systems (OpenAI, Mar 9 2026).",
+        "rationale": "OpenAI shows strong, recent enterprise security momentum with dedicated privacy pages, enterprise admin controls, and the Promptfoo acquisition, but UiPath retains an advantage in broader enterprise governance tied to automation operations, auditability, and compliance controls across bots, agents, and workflows.",
+        "reasoning": "Search evidence shows OpenAI has materially strengthened its enterprise security position in 2026: enterprise privacy commitments, business-data ownership claims, admin/security controls in ChatGPT Enterprise, and the acquisition of Promptfoo for AI security testing. That said, the evidence is concentrated on model/platform security and workspace governance rather than end-to-end automation governance across human-in-the-loop, process controls, and operational audit trails. UiPath's baseline includes AI Trust Layer, PII guardrails, RBAC, audit trails, and governance across automation and agent orchestration, which is broader in enterprise automation contexts. Because OpenAI is credible and improving rapidly but is not clearly stronger than UiPath on full-stack automation compliance, the most defensible score is parity.",
+        "evidence": "OpenAI's 'Enterprise privacy at OpenAI' page says it is committed to privacy and security for ChatGPT Business and ChatGPT Enterprise (OpenAI, Jan 8 2026). OpenAI's business data page says organizational data remains confidential, secure, and owned by the customer across ChatGPT Enterprise (OpenAI). OpenAI Help Center release notes mention 'Admin Controls, Security, and Compliance in apps' and plugin sharing for Enterprise workspaces (June 5, 2026). OpenAI announced it is acquiring Promptfoo, described as an AI security platform for identifying and remediating vulnerabilities in AI systems during enterprise deployment (Mar 9, 2026).",
         "sources": [
-          "https://openai.com/enterprise-privacy/ (OpenAI)",
-          "https://openai.com/business-data/ (OpenAI)",
-          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes (OpenAI Help Center)",
-          "https://openai.com/index/openai-to-acquire-promptfoo/ (OpenAI)",
-          "https://www.uipath.com/platform/agentic-automation/foundation (UiPath)",
-          "https://www.uipath.com/legal/trust-and-security/security (UiPath)"
+          "https://openai.com/enterprise-privacy/",
+          "https://openai.com/business-data/",
+          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+          "https://openai.com/index/openai-to-acquire-promptfoo/",
+          "https://www.uipath.com/platform/agentic-automation/foundation",
+          "https://www.uipath.com/legal/trust-and-security/security"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1545,32 +1545,32 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3,
-        "rationale": "OpenAI is investing heavily in enterprise deployment support and has visible large-scale rollouts, but UiPath still has stronger evidence of mature operational deployment options across cloud, hybrid, on-prem, and air-gapped automation estates. OpenAI is strong in model deployment acceleration; UiPath is stronger in operational automation operations.",
-        "reasoning": "Search results show OpenAI launched the OpenAI Deployment Company in May 2026 specifically to help organizations bring frontier AI into production, with Bain investing in that effort. Snippets also cite Samsung's global ChatGPT Enterprise and Codex rollout as one of OpenAI's largest enterprise launches, indicating growing operational maturity. But the snippet evidence does not establish the same breadth of deployment flexibility or operational tooling that UiPath documents across Automation Cloud, Orchestrator, hybrid and on-prem deployments. The combination suggests neither side clearly dominates across all dimensions, though UiPath appears stronger for full enterprise automation operations while OpenAI is improving rapidly for AI deployment services.",
-        "evidence": "OpenAI announced the 'OpenAI Deployment Company' to help businesses build around and deploy AI at enterprise scale (OpenAI, May 11 2026). Bain & Company said it invested in the OpenAI Deployment Company, described as a venture 'to deploy AI at enterprise scale' (Bain, May 11 2026). OpenAI said Samsung's global deployment is 'one of OpenAI's largest enterprise launches ever' and that ChatGPT Enterprise provides enterprise-grade capabilities (OpenAI, Jun 21 2026). UiPath documentation highlights Automation Cloud and Orchestrator deployment, including support for configuring OpenAI-compatible LLMs within the UiPath platform (UiPath Docs).",
+        "score": 4,
+        "rationale": "OpenAI has increased enterprise deployment support through DeployCo and its partner network, but UiPath remains stronger for operating automations in production with mature deployment, scheduling, governance, and hybrid/on-prem control.",
+        "reasoning": "OpenAI's 2026 announcements show a clear push toward enterprise deployment: the OpenAI Deployment Company, investments from services partners, and a partner network to accelerate adoption. These are meaningful go-to-market and enablement moves, but the snippets do not demonstrate comparable depth in production operations tooling such as orchestrated bot deployment, lifecycle management, hybrid infrastructure controls, and long-running business workflow operations. UiPath specifically claims customers can build, test, deploy, operate, and govern automations at scale, and its Automation Suite supports on-prem and public sector deployment. That operational maturity gives UiPath a demonstrable advantage even though OpenAI is improving quickly.",
+        "evidence": "OpenAI launched the 'OpenAI Deployment Company' in May 2026 to help organizations deploy AI at enterprise scale and turn capability into operational impact. OpenAI introduced the OpenAI Partner Network in June 2026, investing $150M to help partners accelerate enterprise AI adoption and deployment. UiPath said in May 2026 that UiPath for Coding Agents lets enterprises build, test, deploy, operate, and govern automations at scale. UiPath Automation Suite was positioned for on-premises agentic AI deployment and governance for public sector organizations in 2026.",
         "sources": [
-          "https://openai.com/index/openai-launches-the-deployment-company/ (OpenAI)",
-          "https://www.bain.com/about/media-center/press-releases/2026/bain-company-openai-a-new-venture-to-deploy-ai-at-enterprise-scale/ (Bain & Company)",
-          "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment/ (OpenAI)",
-          "https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/configuring-llms (UiPath Documentation)"
+          "https://openai.com/index/openai-launches-the-deployment-company/",
+          "https://openai.com/index/introducing-openai-partner-network/",
+          "https://www.uipath.com/newsroom/uipath-for-coding-agents-launch",
+          "https://ir.uipath.com/news/detail/446/uipath-automation-suite-delivers-on-premises-agentic-ai-for-the-public-sector"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
         "score": 3,
-        "rationale": "OpenAI clearly operates at significant enterprise scale and is positioning for reliability, but snippet evidence is lighter on concrete reliability SLAs and operational guarantees than UiPath's long-established enterprise automation footprint. This supports a parity score with different strengths: OpenAI in AI scale, UiPath in automation runtime maturity.",
-        "reasoning": "OpenAI's enterprise materials and related results point to scaling AI usage across enterprises, deeper workflow integration, and internal roles focused on identity, storage, reliability, permissions, and enterprise readiness. That indicates meaningful progress on scale and reliability, but the search snippets do not surface hard metrics, uptime commitments, or platform reliability details. UiPath's baseline includes more mature enterprise automation scaling across thousands of customers and long-running unattended operations. With available evidence limited mostly to directional signals rather than quantified reliability claims, parity is the most defensible score.",
-        "evidence": "OpenAI's May 11 2026 guide says enterprises are scaling AI and that the 'most durable gains came from hybrid workflows' (OpenAI). An OpenAI career posting references responsibilities spanning 'identity, storage, reliability, permissions, and enterprise readiness' plus scalability and performance (OpenAI Careers). OpenAI's 2025 enterprise AI report says enterprise usage is scaling with deeper workflow integration (OpenAI, Dec 17 2025). Third-party commentary on enterprise LLM selection frames OpenAI in terms of security, scalability, reliability, compliance, and cost control considerations (ITU Online, Apr 2 2026).",
+        "rationale": "OpenAI has strong evidence of enterprise-scale adoption and reliability focus, especially around Codex and production infrastructure, while UiPath has established scale in automation operations; overall the evidence supports rough parity.",
+        "reasoning": "OpenAI evidence highlights reliability and scale as central 2026 themes, including enterprise-focused scaling of Codex and broader production-ready infrastructure language in third-party coverage. However, the search snippets do not provide precise SLAs, uptime metrics, or operational resilience details that would clearly establish superiority over UiPath in enterprise business automation contexts. UiPath, by contrast, has longstanding scale claims in automation and pricing/packaging geared for scalable enterprise automation, but the retrieved evidence here is also somewhat indirect. Given both vendors show credible scale narratives but limited directly comparable operational metrics in snippets, parity is the safest score.",
+        "evidence": "OpenAI's May 2026 article says enterprises are scaling AI and emphasizes hybrid workflows to generate durable gains. OpenAI's April 2026 'Scaling Codex to enterprises worldwide' piece cites customers such as Ramp, Notion, and Cisco using Codex in enterprise contexts. A 2026 comparison article describes OpenAI as focused on enterprise reliability, production-ready infrastructure, safety, scalability, and AI agents. UiPath pricing and packaging emphasize scalable agentic automation solutions for businesses of all sizes.",
         "sources": [
-          "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/ (OpenAI)",
-          "https://openai.com/careers/product-manager-chatgpt-sites-san-francisco/ (OpenAI Careers)",
-          "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/ (OpenAI)",
-          "https://www.ituonline.com/blogs/comparing-claude-and-openai-gpt-which-large-language-model-best-fits-your-enterprise-ai-needs/ (ITU Online)"
+          "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai/",
+          "https://openai.com/index/scaling-codex-to-enterprises-worldwide/",
+          "https://serverspace.io/about/blog/grok-api-vs-openai-api-2026-full-comparison-features-performance-use-cases/",
+          "https://www.uipath.com/pricing"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1580,14 +1580,14 @@
       {
         "category": "Connectivity & Integration",
         "score": 4,
-        "rationale": "UiPath has a demonstrable advantage in connectivity breadth and enterprise integration tooling. OpenAI offers APIs, plugins, MCP-oriented packaging, partner channels, and selected integrations, but the snippet evidence does not approach UiPath's 1,000+ connector breadth or process automation integration depth.",
-        "reasoning": "OpenAI results show an emerging integration ecosystem: the OpenAI Partner Network, ChatGPT for Excel and new financial data integrations, and release notes that say plugins can package skills, optional app integrations, and MCP server configurations. These are meaningful capabilities, especially for AI-native workflows. However, UiPath's baseline explicitly includes 1,000+ Integration Service connectors and mature enterprise integrations across SAP, Salesforce, ServiceNow, Microsoft 365, and Google Workspace. The evidence strongly favors UiPath on breadth, admin manageability, and integration into automated business processes rather than isolated AI interactions.",
-        "evidence": "OpenAI launched the OpenAI Partner Network, stating the limiting factor in enterprise AI value is no longer model capabilities but deployment and integration support (OpenAI, Jun 14 2026). OpenAI introduced 'ChatGPT for Excel and new financial data integrations' for enterprise customers (OpenAI, Mar 5 2026). OpenAI release notes say 'Plugins can package skills, optional app integrations, and MCP server configurations in a single place' (OpenAI Help Center, Mar 25 2026). UiPath documentation states customers can connect their own LLM using providers including AWS, Google Vertex, Azure OpenAI, and OpenAI V1 Compliant, indicating open integration of external models into UiPath automation flows (UiPath Docs).",
+        "rationale": "OpenAI has growing integration surfaces via APIs, plugins, MCP configurations, and partner integrations, but UiPath holds a broader and more mature enterprise integration advantage through its large connector ecosystem and workflow-native integration model.",
+        "reasoning": "OpenAI's search results show progress in integrations: ChatGPT plugins can package app integrations and MCP configurations, OpenAI announced Excel and financial data integrations, and its partner network emphasizes integration services. Still, the evidence suggests an ecosystem centered around AI application extensibility rather than a full enterprise integration layer across business systems. UiPath's Integration Service and 1,000+ connector baseline are more directly aligned to enterprise automation needs, and UiPath explicitly exposes an OpenAI connector as one among many systems it can orchestrate. That breadth and workflow-native integration model give UiPath a clear edge on this topic.",
+        "evidence": "OpenAI release notes say plugins can package skills, optional app integrations, and MCP server configurations in one place (Mar 25, 2026). OpenAI announced ChatGPT for Excel and new financial data integrations in March 2026. OpenAI's Partner Network launch says enterprise value is now constrained less by model capability and more by integration and deployment execution. UiPath documentation states its OpenAI connector lets developers access OpenAI models through Integration Service, evidencing UiPath's role as a broader orchestration layer across third-party systems.",
         "sources": [
-          "https://openai.com/index/introducing-openai-partner-network/ (OpenAI)",
-          "https://openai.com/index/chatgpt-for-excel/ (OpenAI)",
-          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes (OpenAI Help Center)",
-          "https://docs.uipath.com/automation-cloud/automation-cloud/latest/admin-guide/configuring-llms (UiPath Documentation)"
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://openai.com/index/chatgpt-for-excel/",
+          "https://openai.com/index/introducing-openai-partner-network/",
+          "https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/uipath-openai-openai"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1597,13 +1597,14 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "OpenAI has a strong advantage in intuitive conversational UX and rapid first-use value, while UiPath is stronger for turning that value into governed, repeatable enterprise automation outcomes. The net result is parity because each wins a different phase of the value curve.",
-        "reasoning": "Search results support OpenAI's easy end-user experience via ChatGPT app experience updates and widespread enterprise adoption messaging around time saved and improved work. That suggests strong initial usability and low-friction experimentation. At the same time, some community feedback points to continuity/context-transition UX gaps for long sessions in Codex, and snippets do not show equivalent low-code process implementation breadth. UiPath's Studio/StudioX/Studio Web plus prebuilt automation and connectors typically create more structured enterprise time-to-value after initial ideation, so overall the picture is balanced.",
-        "evidence": "OpenAI's 2025 enterprise AI report says enterprise workers report time saved and improved work outcomes (OpenAI, Dec 17 2025). OpenAI release notes mention 'ChatGPT app experience updates' and model picker updates rolling out across web, iOS, and Android (OpenAI Help Center, Jun 8 2026). A June 2026 OpenAI community thread requests better 'long-session project continuity and context transition UX' for Codex, indicating some user-experience gaps in production use (OpenAI Community). UiPath's platform baseline includes Studio, StudioX, and Studio Web for coded, low-code, and no-code development, which improves structured time-to-value for different user personas.",
+        "rationale": "OpenAI delivers very strong end-user simplicity and rapid experimentation through ChatGPT, but UiPath remains better for turning prototypes into governed enterprise automations; the net position is near parity with different strengths.",
+        "reasoning": "OpenAI's UX advantage is implied by mainstream ChatGPT usability, app experience updates, and enterprise reports emphasizing time saved and productivity. However, enterprise time-to-value is not just prompt usability; it also depends on converting capabilities into repeatable workflows, controls, and measurable outcomes. UiPath's partnership messaging with OpenAI specifically positions UiPath as accelerating time to value and ROI from agentic AI efforts, which suggests UiPath is strong in operationalizing value beyond experimentation. Because OpenAI likely leads on raw conversational UX but UiPath leads on enterprise workflow realization, parity is justified.",
+        "evidence": "OpenAI's 2025 enterprise report says value is created after firms translate underlying capabilities into scaled use cases, and enterprise workers report time saved and improved productivity. OpenAI Help Center release notes mention ChatGPT app experience updates and model picker updates rolling out across web and mobile in June 2026. A community request for Codex asked for better long-session project continuity and context transition UX, indicating some UX gaps remain for advanced use cases. UiPath's 2025 collaboration announcement with OpenAI says UiPath's agentic automation capabilities plus OpenAI models and APIs improve time to value and ROI from enterprise agentic AI efforts.",
         "sources": [
-          "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/ (OpenAI)",
-          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes (OpenAI Help Center)",
-          "https://community.openai.com/t/codex-needs-better-long-session-project-continuity-and-context-transition-ux/1381553 (OpenAI Community)"
+          "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/",
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://community.openai.com/t/codex-needs-better-long-session-project-continuity-and-context-transition-ux/1381553",
+          "https://www.uipath.com/newsroom/uipath-collaborates-with-openai-on-enterprise-agentic-automation"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1613,14 +1614,14 @@
       {
         "category": "Agentic Capabilities",
         "score": 3,
-        "rationale": "OpenAI is a credible leader in foundational agentic AI and coding-agent innovation, but UiPath has stronger evidence for enterprise-grade orchestration of agents with automation, human approvals, and business systems. OpenAI leads on model intelligence; UiPath competes strongly on operationalizing agents in enterprise workflows.",
-        "reasoning": "OpenAI's snippets are strong here: GPT-5.4 is described as unifying agentic workflows into a single frontier model, GPT-5.5 says OpenAI is building global infrastructure for agentic AI, and Gartner reportedly named OpenAI a leader in enterprise AI coding agents with Codex recognized for innovation. Those are substantial strengths. But UiPath's baseline includes Maestro multi-agent orchestration, Agent Builder, Action Center human-in-the-loop, and native orchestration with RPA and documents, which is broader for enterprise execution than a model/provider-centric agent story. Because both are strong in different layers of the stack, parity is the most justified score.",
-        "evidence": "OpenAI said GPT-5.4 'unifies agentic workflows into a single frontier model' and incorporates GPT-5.3-Codex capabilities (OpenAI, Mar 5 2026). OpenAI said GPT-5.5 is 'building the global infrastructure for agentic AI' (OpenAI, Apr 23 2026). OpenAI stated it was named a leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation (OpenAI, May 22 2026). Travelers said its agentic AI claim assistant was developed with OpenAI, and that OpenAI stood out for rigor, reliability, and enterprise-grade security (Travelers, Feb 18 2026).",
+        "rationale": "OpenAI is one of the strongest vendors in core agentic model capability and coding-agent innovation, while UiPath is stronger in enterprise agent orchestration and operationalization; neither clearly dominates the full category.",
+        "reasoning": "OpenAI has unusually strong evidence here: Gartner recognition for enterprise AI coding agents, repeated references to agentic workflows in GPT releases, and customer deployments using OpenAI agentic capabilities. That gives OpenAI a strong claim in frontier model reasoning and agent behavior. UiPath, however, has positioned itself as a complementary layer that simplifies building, orchestrating, governing, and integrating agents into business processes, including native support for OpenAI models and APIs. The evidence supports a split: OpenAI leads in foundational agent intelligence, UiPath leads in enterprise agentic automation packaging and control, making parity the best composite score.",
+        "evidence": "OpenAI said it was named a Leader in the 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents, with Codex recognized for innovation. OpenAI's GPT-5.5 announcement says the company is building global infrastructure for agentic AI. OpenAI's GPT-5.4 announcement says it unified agentic workflows into a single frontier model and includes industry-leading coding capabilities. UiPath's 2025 OpenAI collaboration says UiPath's best-in-class agentic automation capabilities plus OpenAI models and APIs simplify AI agent development and orchestration.",
         "sources": [
-          "https://openai.com/index/introducing-gpt-5-4/ (OpenAI)",
-          "https://openai.com/index/introducing-gpt-5-5/ (OpenAI)",
-          "https://openai.com/index/gartner-2026-agentic-coding-leader/ (OpenAI)",
-          "https://investor.travelers.com/newsroom/press-releases/news-details/2026/Travelers-Launches-Industry-Leading-Agentic-AI-Claim-Assistant-Developed-with-OpenAI/default.aspx (Travelers)"
+          "https://openai.com/index/gartner-2026-agentic-coding-leader/",
+          "https://openai.com/index/introducing-gpt-5-5/",
+          "https://openai.com/index/introducing-gpt-5-4/",
+          "https://www.uipath.com/newsroom/uipath-collaborates-with-openai-on-enterprise-agentic-automation"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1629,31 +1630,33 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 4,
-        "rationale": "UiPath has a clear advantage in BPM and orchestration. The snippet evidence for OpenAI points to influence in agentic orchestration discussions, but not to a native BPM suite or production-grade business process orchestration platform comparable to UiPath.",
-        "reasoning": "Search results for this topic mostly surfaced third-party landscape pieces where OpenAI appears as a model/provider component within broader orchestration stacks rather than as the orchestrator itself. For example, enterprise automation articles describe model-flexible orchestration with support for OpenAI alongside other providers, and BPM discussions reference separate BPM engines and orchestration categories. By contrast, UiPath's baseline includes Maestro orchestration, Action Center, process automation, and integrated RPA/document/human steps, which is directly relevant to BPM. Because the evidence does not show OpenAI owning a comparable BPM/orchestration platform, UiPath has the stronger position.",
-        "evidence": "An enterprise automation article says model-flexible orchestration supports providers like OpenAI, Gemini, Anthropic, and Bedrock, positioning OpenAI as an underlying model choice rather than the orchestration layer (Elementum, Apr 17 2026). A 2026 enterprise agentic AI landscape article references orchestration categories such as IT scheduling, data pipelines, and BPM processes while saying OpenAI is 'moving aggressively,' but it does not present OpenAI as a BPM platform (Kai Waehner, Apr 6 2026). A BPM-focused article describes an 'AI-powered BPM platform' built on a Camunda-compatible engine, again implying BPM capability comes from orchestration platforms rather than directly from OpenAI (DNA Consulting, Jun 22 2026).",
+        "score": 5,
+        "rationale": "OpenAI has agentic and workflow capabilities but lacks strong evidence of a native enterprise BPM/orchestration platform comparable to UiPath's business orchestration and Maestro capabilities, giving UiPath a clear lead.",
+        "reasoning": "The OpenAI-side search results for BPM and orchestration are largely ecosystem commentary discussing enterprise orchestration categories or platforms that support OpenAI as a model provider. They do not establish OpenAI as a leading BPM or enterprise process orchestration platform in its own right. UiPath, by contrast, explicitly markets business orchestration software, states it orchestrates UiPath agents alongside Claude, OpenAI, and Gemini, and positions Maestro for long-running BPM-style workflows. This is one of the clearest category mismatches in the comparison, so UiPath's lead is strong and well supported.",
+        "evidence": "Third-party 2026 enterprise orchestration content discusses OpenAI as a provider supported within orchestration ecosystems, not as a BPM platform itself. UiPath's business orchestration page says it orchestrates UiPath agents alongside Claude, OpenAI, Gemini and more. UiPath announced in May 2026 that it became the first business orchestration and automation platform with native integration for coding agents, including OpenAI Codex. UiPath's investor relations materials describe identifying processes, building AI agents, and orchestrating workflows as a unified focus.",
         "sources": [
-          "https://www.elementum.ai/blog/best-ai-automation-platforms-for-enterprises (Elementum)",
-          "https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/ (Kai Waehner)",
-          "https://www.dnaconsulting.io/blog/agentic-process-orchestration-enterprise-bpm-2026 (DNA Consulting)"
+          "https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/",
+          "https://www.uipath.com/platform/agentic-automation/business-orchestration",
+          "https://ir.uipath.com/news/detail/447/uipath-becomes-first-business-orchestration-automation-platform-with-native-integration-for-coding-agents-unlocking-enterprise-transformation-at-scale",
+          "https://ir.uipath.com/news/detail/408/uipath-collaborates-with-openai-on-enterprise-agentic-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 3,
-        "rationale": "OpenAI demonstrates serious model evaluation and external testing practices, especially for advanced capabilities, but UiPath is stronger for testing end-to-end enterprise automations and application workflows. The available evidence supports parity across different testing scopes.",
-        "reasoning": "OpenAI's snippets show robust evaluation language: GPT-5.5 references evaluations for advanced biology and cybersecurity capabilities and robust testing with external experts; GPT-5.6 preview mentions sharing evaluations and functional exploit conditions tested; and release notes reference reductions to thinking time based on testing. Those signals suggest significant investment in model-level testing and performance tuning. However, they do not demonstrate a full enterprise functional/performance testing suite for business process automation. UiPath's baseline includes Test Manager and broader automation lifecycle tooling, so neither vendor uniformly dominates across all testing dimensions.",
-        "evidence": "OpenAI's GPT-5.5 announcement mentions 'evaluations for advanced biology and cybersecurity capabilities, and robust testing with external experts' (OpenAI, Apr 23 2026). OpenAI's release notes say 'We made another small reduction to Standard thinking time based on testing,' indicating performance tuning informed by testing (OpenAI Help Center, Feb 3 2026). OpenAI said GPT-5.4 is the first general-purpose model it released with native, state-of-the-art computer-use capabilities in Codex and the API (OpenAI, Mar 5 2026). OpenAI's GPT-5.6 preview says it shares a set of evaluations and references a 'functional full-chain exploit under the conditions tested' (OpenAI, Jun 2026).",
+        "rationale": "OpenAI demonstrates robust model evaluation and external testing discipline, while UiPath is stronger in enterprise functional testing of automations and application workflows; overall this lands at parity across different testing layers.",
+        "reasoning": "OpenAI clearly emphasizes evaluations in model releases, external expert testing, and benchmark sharing, including cybersecurity and biology capability assessments and functional exploit testing. That is meaningful strength in AI-model testing and safety evaluation. UiPath, however, has specific enterprise test management capabilities and benchmarking for computer-use model performance inside automation contexts, which are more relevant for functional testing of business applications and workflows. Since the vendors are strong in different parts of the testing stack, parity is the most balanced conclusion.",
+        "evidence": "OpenAI's GPT-5.5 release mentions evaluations for advanced biology and cybersecurity capabilities and robust testing with external experts. OpenAI release notes reference reductions to thinking time based on testing and strong performance in function-related tasks. OpenAI's GPT-5.4 release says it added native state-of-the-art computer-use capabilities in Codex and the API. UiPath's OpenAI collaboration announcement says it launched a benchmark to evaluate and compare the performance of different AI models in interacting with computer systems.",
         "sources": [
-          "https://openai.com/index/introducing-gpt-5-5/ (OpenAI)",
-          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes (OpenAI Help Center)",
-          "https://openai.com/index/introducing-gpt-5-4/ (OpenAI)",
-          "https://openai.com/index/previewing-gpt-5-6-sol/ (OpenAI)"
+          "https://openai.com/index/introducing-gpt-5-5/",
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://openai.com/index/introducing-gpt-5-4/",
+          "https://www.uipath.com/newsroom/uipath-collaborates-with-openai-on-enterprise-agentic-automation",
+          "https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/evaluating-requirement-quality"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1663,13 +1666,14 @@
       {
         "category": "Monitoring & Observability",
         "score": 3,
-        "rationale": "OpenAI now surfaces meaningful observability messaging for enterprise agents, but the snippet evidence remains limited compared with UiPath's mature monitoring of orchestrated automation operations. This points to parity with a likely UiPath edge in workflow/runtime observability depth.",
-        "reasoning": "The strongest direct evidence is OpenAI Frontier's statement that agent actions are visible and auditable with built-in monitoring and observability. Release notes also mention new controls and capabilities for ChatGPT workspace agents, suggesting growing enterprise admin/monitoring support. However, the available snippets do not detail telemetry depth, process-level dashboards, SLA tracking, or cross-automation observability. UiPath's baseline includes Insights analytics and orchestration-centric monitoring, which appears broader for enterprise operations; still, OpenAI's recent progress justifies keeping the score at parity rather than a stronger UiPath lead.",
-        "evidence": "OpenAI Frontier says 'Agent actions are visible and auditable' with 'Built-in monitoring' and 'Observability' (OpenAI Frontier). ChatGPT Enterprise & Edu release notes from May 28 2026 mention new model, admin, app access, and response capabilities for ChatGPT workspace agents (OpenAI Help Center). A SiliconANGLE report said Anthropic was pushing the envelope for agent monitoring with an observability offering while OpenAI was targeting enterprises with enterprise-grade controls and lower pricing, implying OpenAI is competing but not clearly leading in observability (SiliconANGLE, Apr 9 2026).",
+        "rationale": "OpenAI now has meaningful observability messaging for enterprise agents, but UiPath remains stronger in operational monitoring of automations and agent execution in production; the evidence suggests rough parity leaning UiPath.",
+        "reasoning": "OpenAI Frontier explicitly claims observability, visibility, auditability, and built-in monitoring for agent actions, which is important progress. Additional third-party reporting notes OpenAI targeting enterprise-grade controls. However, snippet evidence is still light on depth such as dashboards, workflow telemetry, SLA operations, or root-cause analysis in complex enterprise automation estates. UiPath's platform has longstanding monitoring capabilities for robots and now extends them to agents, so although OpenAI is credible, UiPath appears stronger operationally; because the evidence is not deep enough for a stronger claim, parity is appropriate.",
+        "evidence": "OpenAI Frontier says agent actions are visible and auditable and includes built-in monitoring. ChatGPT Enterprise & Edu release notes from May 28, 2026 mention new controls and capabilities for ChatGPT workspace agents, including admin and app access controls. A SiliconANGLE report in April 2026 said OpenAI was targeting large enterprises with enterprise-grade controls. UiPath documentation for coded agents says developers can build and deploy OpenAI Agents to the UiPath Cloud Platform and monitor agent execution within broader automation workflows.",
         "sources": [
-          "https://openai.com/business/frontier/ (OpenAI)",
-          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes (OpenAI Help Center)",
-          "https://siliconangle.com/2026/04/09/anthropic-openai-target-big-businesses-enterprise-grade-controls-lower-pricing/ (SiliconANGLE)"
+          "https://openai.com/business/frontier/",
+          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+          "https://siliconangle.com/2026/04/09/anthropic-openai-target-big-businesses-enterprise-grade-controls-lower-pricing/",
+          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/about-coded-agents"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1679,14 +1683,15 @@
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "UiPath has a demonstrable advantage in traceability and governance across enterprise automation. OpenAI is adding enterprise governance controls and security posture improvements, but the snippet evidence centers on AI/workspace governance rather than full process traceability and policy enforcement across automated operations.",
-        "reasoning": "OpenAI materials mention security and governance in ChatGPT Enterprise, governance in financial integrations, and the Promptfoo acquisition aimed at identifying and remediating AI vulnerabilities. These are important signals that OpenAI is investing in governance. But there is limited snippet evidence of end-to-end traceability across multi-step enterprise processes, approvals, robots, and system interactions. UiPath's baseline includes audit trails, AI Trust Layer, role-based access, and governed orchestration, which more directly map to enterprise traceability and governance requirements across automation programs.",
-        "evidence": "OpenAI said it is acquiring Promptfoo, an AI security platform that helps enterprises identify and remediate vulnerabilities in AI systems (OpenAI, Mar 9 2026). OpenAI's ChatGPT for Excel announcement says ChatGPT Enterprise includes the security and governance organizations need when adopting ChatGPT at work (OpenAI, Mar 5 2026). Wolters Kluwer said its expanded enterprise AI collaboration with OpenAI is for professional environments where 'accuracy, governance, and trust are paramount' (Wolters Kluwer, Jun 3 2026).",
+        "rationale": "OpenAI is improving governance through enterprise controls and Promptfoo-related security validation, but UiPath still offers more comprehensive traceability and governance across agents, robots, processes, and approvals.",
+        "reasoning": "The retrieved OpenAI evidence points to enterprise governance features in ChatGPT Enterprise, plus the Promptfoo acquisition to help identify and remediate AI vulnerabilities. That supports serious progress in governance for AI usage. However, the snippets do not show equally strong native end-to-end traceability across multi-step business processes, human review, and automation execution history. UiPath's documentation and product positioning emphasize tracing, debugging, trust, governance, and scalability across the broader automation lifecycle, giving UiPath a demonstrable advantage.",
+        "evidence": "OpenAI announced it is acquiring Promptfoo, an AI security platform that helps enterprises identify and remediate vulnerabilities in AI systems during deployment. OpenAI's ChatGPT for Excel announcement says ChatGPT Enterprise includes security and governance for organizations adopting ChatGPT at work. OpenAI Enterprise release notes mention new controls and capabilities for workspace agents in May 2026. UiPath coded agents documentation mentions tracing and debugging with LangSmith, and UiPath product messaging emphasizes trust, governance, and scalability with open frameworks.",
         "sources": [
-          "https://openai.com/index/openai-to-acquire-promptfoo/ (OpenAI)",
-          "https://openai.com/index/chatgpt-for-excel/ (OpenAI)",
-          "https://www.wolterskluwer.com/en/news/wolters-kluwer-and-openai-expand-enterprise-ai-collaboration-to-advance-trusted-expert-ai (Wolters Kluwer)",
-          "https://www.uipath.com/platform/agentic-automation/foundation (UiPath)"
+          "https://openai.com/index/openai-to-acquire-promptfoo/",
+          "https://openai.com/index/chatgpt-for-excel/",
+          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/about-coded-agents",
+          "https://www.uipath.com/blog/product-and-updates/unified-development-2025-10-release"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1696,13 +1701,13 @@
       {
         "category": "Process Intelligence",
         "score": 5,
-        "rationale": "UiPath has a clear lead in process intelligence. The search results do not show OpenAI offering native process mining or task mining capabilities comparable to UiPath's platform.",
-        "reasoning": "For this topic, the available OpenAI snippets focus on enterprise deployment, workspace controls, partnerships, and model advances, not process mining or task mining. There is no snippet evidence that OpenAI provides conformance checking, simulation, process discovery, or desktop task capture as a first-party product capability. UiPath's baseline explicitly includes end-to-end Process Mining with conformance checking and Task Mining with recorder-based capture and variant analysis. Given the absence of direct OpenAI evidence and UiPath's established strength, UiPath has a clear market-recognized lead on this topic.",
-        "evidence": "OpenAI's enterprise release notes discuss workspace agent controls, model/admin/app access, and response capabilities, but do not reference process mining or task mining (OpenAI Help Center, May 28 2026). OpenAI's deployment and funding announcements emphasize enterprise deployment and compute scale, not process intelligence features such as conformance checking or task capture (OpenAI, Mar-May 2026). UiPath's core platform baseline includes Process Mining with simulation and conformance checking plus Task Mining desktop recording and variant analysis.",
+        "rationale": "There is little evidence that OpenAI offers native process intelligence comparable to UiPath's process mining and task mining stack, so UiPath has a clear lead.",
+        "reasoning": "The search results for this topic mainly surfaced commentary around OpenAI workspace agents and general AI capabilities, not a dedicated process mining or task mining product. OpenAI may help analyze workflows through models, but the snippets do not show native process discovery, conformance checking, simulation, or desktop task capture. UiPath's baseline explicitly includes Process Mining and Task Mining with variant analysis and simulation, which are purpose-built process intelligence capabilities. Given the absence of comparable evidence for OpenAI, UiPath's lead is clear.",
+        "evidence": "Search results for OpenAI on process intelligence surfaced commentary about workspace agents and broader business process discussion rather than a native process mining product. An Opus Research item referenced 'OpenAI Workspace Agents and the Expanding Toolkit for CX Intelligence,' indicating domain assistance rather than process mining. UiPath's positioning in its OpenAI collaboration includes identifying critical and repetitive processes before building AI agents and orchestrating workflows. UiPath's core platform baseline includes Process Mining, Task Mining, simulation, and conformance checking, which are not evidenced for OpenAI in the search results.",
         "sources": [
-          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes (OpenAI Help Center)",
-          "https://openai.com/index/accelerating-the-next-phase-ai/ (OpenAI)",
-          "https://openai.com/index/openai-launches-the-deployment-company/ (OpenAI)"
+          "https://opusresearch.net/2026/05/04/openai-workspace-agents-and-the-expanding-toolkit-for-cx-intelligence/",
+          "https://ir.uipath.com/news/detail/408/uipath-collaborates-with-openai-on-enterprise-agentic-automation",
+          "UiPath Core Strengths baseline — Process & Task Mining"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1712,32 +1717,33 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "The snippet evidence on OpenAI licensing and TCO is incomplete and somewhat indirect, so a parity score is safest. OpenAI appears to be evolving plan structure and seat types, while UiPath's platform economics may be easier to justify when multiple automation use cases are consolidated on one platform.",
-        "reasoning": "Search results show that ChatGPT Enterprise added a new 'Codex seat' in April 2026 and that business/API use is governed by OpenAI business terms and services agreements. Third-party results discuss ChatGPT Enterprise pricing and hidden TCO questions, but the snippets do not provide enough verified specifics to conclude a clear cost advantage either way. UiPath's licensing can be expensive in some contexts, but it also bundles automation, governance, mining, testing, and orchestration into a single enterprise platform, which can improve TCO when replacing fragmented tooling. Due to limited direct pricing detail in snippets, confidence is low and parity is most defensible.",
-        "evidence": "OpenAI Help says that on April 2, 2026 it updated ChatGPT Enterprise and introduced a new 'Codex seat' offering codex-only access (OpenAI Help Center). OpenAI's Terms of Use say its Business Terms govern use of ChatGPT Enterprise, APIs, and other services (OpenAI, published Jan 1 2026). OpenAI's Services Agreement applies to APIs, ChatGPT Enterprise, and ChatGPT Business effective Jan 1 2026 (OpenAI Services Agreement). Third-party pricing pages specifically frame ChatGPT Enterprise around total cost of ownership questions beyond the base license fee, indicating TCO evaluation complexity (Inference.net; GoSearch, 2026).",
+        "rationale": "OpenAI offers flexible consumption models and updated seat types such as Codex-only access, but TCO depends heavily on deployment pattern and usage; UiPath remains stronger where automation estates need centralized governance and scale economics, so overall this is parity.",
+        "reasoning": "Search results show 2026 market discussion around ChatGPT Enterprise pricing, hidden fees, and Codex licensing changes, plus OpenAI Help documentation confirming a new Codex seat type. These indicate pricing flexibility but also potential variability in total cost depending on API consumption, seats, and surrounding operational tooling. UiPath can be more expensive in some scenarios, but for large automation estates its centralized platform can lower operational sprawl and support costs. Because the available evidence is more qualitative than comparative and lacks authoritative pricing detail from search snippets alone, parity with medium confidence is the safest conclusion.",
+        "evidence": "OpenAI Help Center says that on April 2, 2026 ChatGPT Enterprise introduced a new seat type: a Codex seat offering codex-only access. Third-party 2026 pricing analyses discuss ChatGPT Enterprise total cost of ownership beyond base license fees and note model/version dependencies. OpenAI Services Agreement and business terms govern APIs, ChatGPT Enterprise, and related services effective January 1, 2026, showing formal enterprise packaging. Market commentary shows TCO for enterprise AI depends not only on license fees but on operational layers and deployment support around the core model service.",
         "sources": [
-          "https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise (OpenAI Help Center)",
-          "https://openai.com/policies/row-terms-of-use/ (OpenAI)",
-          "https://openai.com/policies/services-agreement/ (OpenAI)",
-          "https://inference.net/content/chatgpt-enterprise-pricing/ (Inference.net)",
-          "https://www.gosearch.ai/faqs/chatgpt-enterprise-pricing-explained-cost-tiers-hidden-fees-gosearch-comparison/ (GoSearch)"
+          "https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise",
+          "https://openai.com/policies/services-agreement/",
+          "https://openai.com/policies/row-terms-of-use/",
+          "https://inference.net/content/chatgpt-enterprise-pricing/",
+          "https://www.gosearch.ai/faqs/chatgpt-enterprise-pricing-explained-cost-tiers-hidden-fees-gosearch-comparison/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
         "score": 3,
-        "rationale": "OpenAI's models have broad horizontal applicability across industries, but UiPath has stronger evidence of domain application through packaged enterprise automation patterns and integration into operational systems. The overall position is balanced.",
-        "reasoning": "OpenAI clearly supports broad business applicability: its terms and services apply across enterprise offerings, privacy materials position it for organizational use, and large partners such as ServiceNow are making OpenAI models a preferred intelligence layer for enterprise customers. That suggests strong horizontal relevance across domains. However, the snippets do not demonstrate the same breadth of industry-specific automation use cases, templates, or process-specific product modules that UiPath's automation ecosystem and partner network support. Because OpenAI is broadly useful but not evidenced as a full domain automation platform, parity is the best fit.",
-        "evidence": "OpenAI's Terms of Use and Services Agreement explicitly govern enterprise/API offerings, indicating a general-purpose commercial platform for many business scenarios (OpenAI, 2025-2026). OpenAI Help says ChatGPT Enterprise was updated in April 2026 with a new Codex seat type, showing role-specific packaging for enterprise users (OpenAI Help Center). ServiceNow said OpenAI models will be a preferred intelligence capability offered to ServiceNow enterprise customers, extending applicability into enterprise workflows (ServiceNow, Jan 20 2026). OpenAI privacy messaging states it is committed to privacy and security for ChatGPT Business and Enterprise, reinforcing enterprise applicability across regulated settings (OpenAI, Jan 8 2026).",
+        "rationale": "OpenAI has very broad horizontal applicability across industries and functions, while UiPath is stronger where domain use cases require governed process automation and prebuilt enterprise operational patterns; this supports parity.",
+        "reasoning": "OpenAI's broad-model approach gives it wide applicability across industries, and market/partner content regularly references use across diverse business functions. However, broad applicability is different from packaged domain operationalization. UiPath's automation platform, BYOM posture, and domain-focused automation capabilities make it stronger when specific industries need integration with business systems, documents, approvals, and process controls. Because OpenAI is broader as a general AI substrate but UiPath is stronger in operational business domain execution, parity is appropriate.",
+        "evidence": "OpenAI's business terms govern ChatGPT Enterprise and APIs broadly, supporting horizontal enterprise applicability across use cases. Microsoft customer stories show Azure OpenAI being used by companies such as Siemens Digital Industries Software and Trelent across different business contexts. UiPath's BYOM announcement says customers can tailor models for their business requirements and domain-specific use cases. Industry analysis on AI-driven automation explicitly discusses UiPath alongside OpenAI-related ecosystems in domains like healthcare, finance, and manufacturing.",
         "sources": [
-          "https://openai.com/policies/row-terms-of-use/ (OpenAI)",
-          "https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise (OpenAI Help Center)",
-          "https://investor.servicenow.com/news/news-details/2026/ServiceNow-and-OpenAI-collaborate-to-deepen-and-accelerate-enterprise-AI-outcomes/default.aspx (ServiceNow)",
-          "https://openai.com/enterprise-privacy/ (OpenAI)"
+          "https://openai.com/policies/row-terms-of-use/",
+          "https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/",
+          "https://www.uipath.com/blog/product-and-updates/introducing-bring-your-own-model-to-uipath",
+          "https://www.sciencedirect.com/org/science/article/pii/S1546221825007416"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1747,13 +1753,14 @@
       {
         "category": "Long-term value",
         "score": 3,
-        "rationale": "OpenAI offers strong long-term upside through frontier model leadership, scale investment, and ecosystem momentum, while UiPath offers long-term value through durable automation infrastructure and governance. Each has a compelling but different long-term value proposition.",
-        "reasoning": "OpenAI's March 2026 funding announcement and continued model cadence signal substantial investment capacity and platform momentum. Its GPT-5.6 preview also indicates ongoing work with enterprise customers on longer-term needs. However, some commentary raises concerns about long-term support for specific constructs like custom GPTs, and snippet evidence does not fully resolve platform stability and roadmap predictability for enterprise automation use cases. UiPath, meanwhile, offers durable value through entrenched automation operations and governance, so parity is a balanced conclusion.",
-        "evidence": "OpenAI announced it raised '$122 billion to accelerate the next phase of AI,' signaling major long-term investment capacity (OpenAI, Mar 31 2026). OpenAI said GPT-5.6 Sol is being developed with enterprise customers on longer-term capabilities (OpenAI, Jun 2026). An OpenAI community discussion explicitly raises whether custom GPTs have a future and notes that long-term support matters in practical terms, indicating some roadmap concern from users (OpenAI Community, Jan 12 2026).",
+        "rationale": "OpenAI offers strong long-term upside through rapid model innovation, ecosystem momentum, and investment scale, while UiPath offers more durable value in governed business automation and platform stickiness; the result is parity.",
+        "reasoning": "OpenAI's long-term value case is strengthened by major capital raised, continued model roadmap momentum, and growing enterprise deployment partnerships. At the same time, some evidence hints at customer concerns around continuity and long-session product maturity in advanced workflows, and model/platform evolution can create migration burdens. UiPath's long-term value comes from embedded enterprise workflows, governance, orchestration, and automation assets that often produce durable operational lock-in and measurable ROI. Since OpenAI has stronger frontier innovation momentum while UiPath has stronger enterprise automation durability, parity is the balanced score.",
+        "evidence": "OpenAI announced it raised $122 billion in March 2026 to accelerate the next phase of AI. OpenAI's GPT-5.6 preview says it is working with enterprise customers on longer-term approaches including privacy-preserving detection and customer-operated safety controls. OpenAI community discussion around Codex requested better long-session continuity and context transition, suggesting some maturity gaps in advanced sustained workflows. Market commentary around UiPath highlights long-term relationship strength and enterprise fit in regulated industries, even while OpenAI contributes strong brand and innovation value.",
         "sources": [
-          "https://openai.com/index/accelerating-the-next-phase-ai/ (OpenAI)",
-          "https://openai.com/index/previewing-gpt-5-6-sol/ (OpenAI)",
-          "https://community.openai.com/t/does-the-custom-gpts-have-a-future/1371528 (OpenAI Community)"
+          "https://openai.com/index/accelerating-the-next-phase-ai/",
+          "https://openai.com/index/previewing-gpt-5-6-sol/",
+          "https://community.openai.com/t/codex-needs-better-long-session-project-continuity-and-context-transition-ux/1381553",
+          "https://www.tradingview.com/news/zacks:14bdec74a094b:0-dave-vs-uipath-which-disruptive-tech-stock-has-an-upside/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1763,16 +1770,17 @@
       {
         "category": "Business adaptability / Agility",
         "score": 3,
-        "rationale": "OpenAI enables rapid experimentation and quick adaptation of AI experiences, but UiPath is stronger when agility requires governed change across real business processes and systems. The balance of evidence suggests parity.",
-        "reasoning": "OpenAI's rapid release cadence, deployment initiatives, and partner expansion indicate a platform that evolves quickly and can help enterprises move from experimentation to production faster. The OpenAI Deployment Company and partner network directly target that need. But the snippet evidence is thinner on native business process adaptability constructs such as process redesign, workflow governance, and reusable enterprise orchestration components. UiPath's low-code tools, connectors, and orchestration give it an edge in controlled business agility, so overall the competitive picture is balanced.",
-        "evidence": "OpenAI launched the OpenAI Deployment Company to help businesses bring frontier AI into production, directly supporting faster operational adaptation (OpenAI, May 11 2026). OpenAI introduced the OpenAI Partner Network, saying the limiting factor in enterprise AI value is no longer model capability but execution support such as integration and consulting (OpenAI, Jun 14 2026). OpenAI's enterprise release notes cite new controls and capabilities for ChatGPT workspace agents in May 2026, reflecting rapid product iteration for enterprise users (OpenAI Help Center).",
+        "rationale": "OpenAI enables rapid experimentation and adaptation through flexible AI capabilities, but UiPath is better for adapting governed cross-system business operations at scale; the evidence supports parity.",
+        "reasoning": "OpenAI's strength in business agility comes from fast-moving model capabilities, expanding enterprise packaging, and the ability to inject intelligence into many workflows quickly. External enterprise commentary also links AI to adaptability and agility when decision-making processes mature. However, adapting a business often requires more than model access: it requires process redesign, orchestration, integrations, governance, and operational controls. UiPath's adaptive automation positioning and orchestration strengths make it strong in translating AI into agile process change, offsetting OpenAI's raw capability advantage and resulting in parity.",
+        "evidence": "Enterprise commentary in 2026 says AI can enable major gains in agility and adaptability, but only if enterprise decision-making capabilities mature. OpenAI-Microsoft partnership commentary highlights enterprise multi-cloud AI procurement leverage and feature parity considerations in 2026, indicating growing deployment flexibility around OpenAI capabilities. Industry content describes adaptive automation that scales with evolving business needs as a core enterprise requirement, aligning more closely with UiPath's automation posture. Microsoft customer stories describe Azure OpenAI contributing to business agility and adaptability in enterprise transformation contexts.",
         "sources": [
-          "https://openai.com/index/openai-launches-the-deployment-company/ (OpenAI)",
-          "https://openai.com/index/introducing-openai-partner-network/ (OpenAI)",
-          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes (OpenAI Help Center)"
+          "https://www.cio.com/article/4165232/whats-holding-back-enterprise-ai-shortage-of-talent-cios-say.html",
+          "https://fifthrow.com/blog/from-lock-in-to-leverage-how-the-open-ai-microsoft-partnership-amendment-redefines-enterprise-multi-cloud-ai-procurement-in-2026",
+          "https://www.akkodis.com/en/blog/articles/legacy-rpa-to-agentic-ai-replatforming",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       }
