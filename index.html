@@ -658,6 +658,20 @@
   let radarChart, vendorChart, cmpChart, topicChart;
 
   // ── helpers ──
+  // Güncel scorecard-full.json'u çeker ve VENDORS'u tazeler.
+  // Mimari: schedule edilmiş Maestro job GitHub'daki bu dosyayı günceller;
+  // dashboard Maestro'yu asla doğrudan çağırmaz, sadece dosyayı okur.
+  async function refreshScorecard() {
+    const r = await fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('scorecard-full.json fetch failed (HTTP ' + r.status + ')');
+    const json = await r.json();
+    if (!json || !json.vendors) throw new Error('scorecard-full.json geçersiz format — "vendors" alanı yok');
+    Object.keys(json.vendors).forEach(v => { VENDORS[v] = json.vendors[v]; });
+    DATA = json;
+    window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
+    return json;
+  }
+
   function score(v, i) { return VENDORS[v][i].score; }
   function avgScore(v) { return VENDORS[v].reduce((s,d)=>s+d.score,0)/TOPICS.length; }
   function sbClass(s) { if(s>=5)return'sb-5';if(s>=4)return'sb-4';if(s>=3)return'sb-3';if(s>=2)return'sb-2';return'sb-1'; }
@@ -698,8 +712,8 @@
     });
   }); // nav tab listener sonu
 
-  // scorecard-full.json'u fetch et, sonra initApp çalıştır
-  fetch('scorecard-full.json')
+  // scorecard-full.json'u fetch et (cache-bust ile — Maestro güncellemeleri anında görünsün), sonra initApp çalıştır
+  fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.json())
     .then(json => {
       DATA = json;
@@ -1033,6 +1047,13 @@
     document.getElementById('bc-loading-text').textContent = `Researching UiPath vs ${rival} · ${topic}…`;
 
     try {
+      // Güncel scorecard-full.json'u çek ve VENDORS'u tazele (schedule edilmiş Maestro job çıktısı)
+      try {
+        await refreshScorecard();
+      } catch (e) {
+        console.warn('[BattleCard] Scorecard yenilenemedi, bellekteki veri kullanılıyor:', e.message);
+      }
+
       let uiData, rvData;
 
       if (isAll) {
@@ -1082,21 +1103,7 @@
         };
 
       } else {
-        // Tek topic — agent çağır, veriyi VENDORS'a yaz
-        const [uiResult, rivalResult] = await Promise.all([
-          window.Agent?.generateIntelligence({
-            vendor:'UiPath', topic, topicIdx,
-            onStart:()=>{},
-            onSuccess:({ result }) => { VENDORS['UiPath'][topicIdx] = { ...VENDORS['UiPath'][topicIdx], ...result }; },
-            onError:()=>{}
-          }),
-          window.Agent?.generateIntelligence({
-            vendor:rival, topic, topicIdx,
-            onStart:()=>{},
-            onSuccess:({ result }) => { VENDORS[rival][topicIdx] = { ...VENDORS[rival][topicIdx], ...result }; },
-            onError:()=>{}
-          })
-        ]);
+        // Tek topic — veri zaten güncel scorecard'dan yüklendi, direkt oku
         uiData = VENDORS['UiPath'][topicIdx];
         rvData = VENDORS[rival][topicIdx];
       }
@@ -1214,24 +1221,14 @@
       if (lg.vendor !== v) {
         const exportBtn = document.querySelector('#view-vendor .export-btn');
         const statusEl = document.getElementById('vd-generate-status');
-        if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '⏳ Generating…'; }
+        if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '⏳ Refreshing…'; }
         if (statusEl) { statusEl.textContent = `🔍 Refreshing data for ${v}…`; statusEl.style.color = '#f5a623'; }
 
-        // Tüm topic'leri generate et
-        for (let i = 0; i < TOPICS.length; i++) {
-          if (statusEl) statusEl.textContent = `🔍 ${v} · ${TOPICS[i]} (${i+1}/${TOPICS.length})`;
-          try {
-            await window.Agent?.generateIntelligence({
-              vendor: v, topic: TOPICS[i], topicIdx: i,
-              onStart: ()=>{},
-              onSuccess: ({ result }) => { VENDORS[v][i] = { ...VENDORS[v][i], ...result }; },
-              onError: ()=>{}
-            });
-          } catch(e) {}
-        }
+        // Güncel scorecard'ı çek — tek fetch, tüm topic'ler gelir
+        try { await refreshScorecard(); }
+        catch(e) { console.warn('[Export] Scorecard yenilenemedi:', e.message); }
 
         state.lastGenerated.vendor = { vendor: v };
-        window.DASHBOARD_DATA.vendors = VENDORS;
         renderVendorView();
 
         if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '⬇ Download'; }
@@ -1517,16 +1514,11 @@
     `UiPath Competitive Intelligence · Internal Use Only`;
   document.getElementById('data-freshness-band').innerHTML =
     `<span style="width:8px;height:8px;border-radius:50%;background:#38d9a9;flex-shrink:0;"></span>
-     <span>Baseline data: <strong style="color:var(--text);">May 2025</strong> · Refreshed weekly via UiPath Agent</span>
-     <span style="margin-left:auto;color:var(--muted);">Generate intelligence to refresh with live data</span>`;
+     <span>Data source: <strong style="color:var(--text);">scorecard-full.json</strong> · Refreshed via UiPath Maestro pipeline</span>
+     <span style="margin-left:auto;color:var(--muted);">Generate intelligence pulls the latest scorecard data</span>`;
 
-  // ── AGENT ENTEGRASYONU ──
-  // agent.js yüklendikten sonra dashboard verisini window'a açar
   window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
   } // initApp sonu</script>
-
-<!-- Agentic Motor -->
-<script src="agent.js"></script>
 
 <script>
   // Generate butonu — Topic Analysis sekmesinde çalışır
@@ -1544,61 +1536,24 @@
       btn.style.opacity = '0.7';
 
       const statusEl = document.getElementById('generate-status');
-      statusEl.textContent = `Researching "${topic}" for all vendors…`;
+      statusEl.textContent = `Fetching latest scorecard for "${topic}"…`;
       statusEl.style.color = '#f5a623';
 
       try {
-        await window.Agent.generateAllVendorsForTopic({
-          topic,
-          topicIdx,
-          vendors: VORDER,
+        // Güncel scorecard-full.json'u çek — tüm vendor'lar tek fetch'te gelir
+        await refreshScorecard();
 
-          onProgress: ({ vendor, status, result, error }) => {
-            if (status === 'loading') {
-              statusEl.textContent = `🔍 Researching ${vendor}…`;
-            } else if (status === 'done') {
-              statusEl.textContent = `✅ ${vendor} done`;
-              // Veriyi güncelle
-              if (result) {
-                VENDORS[vendor][topicIdx] = {
-                  ...VENDORS[vendor][topicIdx],
-                  score: result.score,
-                  evidence: result.evidence,
-                  rationale: result.rationale,
-                  reasoning: result.reasoning,
-                  sources: result.sources,
-                  confidence: result.confidence,
-                  notes: result.notes,
-                };
-              }
-            } else if (status === 'error') {
-              statusEl.textContent = `⚠️ ${vendor}: ${error}`;
-              statusEl.style.color = '#f87171';
-            }
-          },
+        // Dashboard'u yenile
+        renderTopicView();
+        renderHeatmap();
+        renderRadar();
 
-          onComplete: ({ results, errors }) => {
-            const errCount = Object.keys(errors).length;
-            if (errCount === 0) {
-              statusEl.textContent = `✅ All vendors updated for "${topic}"`;
-              statusEl.style.color = '#38d9a9';
-            } else {
-              statusEl.textContent = `⚠️ Done with ${errCount} error(s). Check console.`;
-              statusEl.style.color = '#f5a623';
-            }
+        statusEl.textContent = `✅ All vendors updated for "${topic}"`;
+        statusEl.style.color = '#38d9a9';
 
-            // Dashboard'u yenile
-            window.DASHBOARD_DATA.vendors = VENDORS;
-            renderTopicView();
-            renderHeatmap();
-            renderRadar();
-
-            // Butonu sıfırla
-            btn.disabled = false;
-            btn.textContent = '✨ Generate Intelligence';
-            btn.style.opacity = '1';
-          }
-        });
+        btn.disabled = false;
+        btn.textContent = '✨ Generate Intelligence';
+        btn.style.opacity = '1';
 
       } catch (err) {
         statusEl.textContent = `❌ Error: ${err.message}`;
@@ -1627,51 +1582,20 @@
     btn.addEventListener('click', async () => {
       const vendor = state.vendorView;
       const tf     = state.vdTopicFilter;
+      const scope  = tf !== '' ? `"${TOPICS[parseInt(tf)]}"` : 'all 15 topics';
 
-      // Topic filter'a göre karar ver
-      if (tf !== '') {
-        // Belirli bir topic seçili — sadece onu güncelle
-        const topicIdx = parseInt(tf);
-        const topic    = TOPICS[topicIdx];
-        vdSetLoading(true, `🔍 Researching ${vendor} · ${topic}…`);
-        try {
-          await window.Agent.generateIntelligence({
-            vendor, topic, topicIdx,
-            onStart: () => {},
-            onSuccess: ({ result }) => {
-              VENDORS[vendor][topicIdx] = { ...VENDORS[vendor][topicIdx], ...result };
-              window.DASHBOARD_DATA.vendors = VENDORS;
-              renderVendorEvidence();
-              renderVendorView();
-              renderHeatmap();
-              renderRadar();
-            },
-            onError: ({ error }) => { vdSetLoading(false, `❌ ${error}`); document.getElementById('vd-generate-status').style.color='#f87171'; }
-          });
-          vdSetLoading(false, `✅ ${vendor} · "${topic}" updated`);
-        } catch(err) {
-          vdSetLoading(false, `❌ ${err.message}`);
-          document.getElementById('vd-generate-status').style.color = '#f87171';
-        }
-      } else {
-        // All topics seçili — tüm 15 topic'i güncelle
-        vdSetLoading(true, `🔍 Starting all 15 topics for ${vendor}…`);
-        for (let i = 0; i < TOPICS.length; i++) {
-          vdSetLoading(true, `🔍 ${vendor} · ${TOPICS[i]} (${i+1}/${TOPICS.length})…`);
-          try {
-            await window.Agent.generateIntelligence({
-              vendor, topic: TOPICS[i], topicIdx: i,
-              onStart: () => {},
-              onSuccess: ({ result }) => { VENDORS[vendor][i] = { ...VENDORS[vendor][i], ...result }; },
-              onError: () => {}
-            });
-          } catch(e) { /* devam et */ }
-        }
-        window.DASHBOARD_DATA.vendors = VENDORS;
+      vdSetLoading(true, `🔍 Fetching latest scorecard for ${vendor} · ${scope}…`);
+      try {
+        // Güncel scorecard-full.json'u çek — vendor'ın tüm topic'leri tek fetch'te gelir
+        await refreshScorecard();
+        renderVendorEvidence();
         renderVendorView();
         renderHeatmap();
         renderRadar();
-        vdSetLoading(false, `✅ All 15 topics updated for ${vendor}`);
+        vdSetLoading(false, `✅ ${vendor} · ${scope} updated`);
+      } catch(err) {
+        vdSetLoading(false, `❌ ${err.message}`);
+        document.getElementById('vd-generate-status').style.color = '#f87171';
       }
     });
   }
