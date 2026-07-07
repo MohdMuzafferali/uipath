@@ -2036,142 +2036,13 @@
     "Automation Anywhere": [
       {
         "category": "Security & Compliance",
-        "score": 4,
-        "rationale": "Automation Anywhere shows strong enterprise security and compliance maturity, with multiple named certifications and a dedicated compliance portal. Evidence supports broad security controls, though the available search snippets do not show analyst recognition specifically for security leadership, keeping it below best-in-class.",
-        "reasoning": "Search results surfaced topic-specific security sources rather than generic marketing pages, including Automation Anywhere's trust/security page and compliance portal. Those snippets explicitly cite SOC 1 Type 2, SOC 2 Type 2, ISO 27001, HITRUST, and ISO 22301, which are concrete enterprise compliance indicators. This is enough for a strong score under the rubric because it demonstrates breadth and institutionalized controls, but the evidence available from snippets alone is mostly vendor-provided and lacks recent third-party validation specific to this topic. As a result, the capability appears enterprise-proven and broad, but not clearly market-leading from the evidence collected.",
-        "evidence": "Automation Anywhere's security page states the platform is 'SOC 1 Type 2, SOC 2 Type 2, ISO 27001, HITRUST, and ISO 22301 certified.' Automation Anywhere's Compliance Portal snippet lists cloud security/compliance artifacts including 'ISO 27001 Certificate - Corporate,' 'ISO 9001:2015 Certificate,' 'Cyber Essentials Certificate,' 'SOC 1 Type 2 Report,' and 'SOC 2 Type 2.' A company security announcement says Automation Anywhere is 'Veracode Continuous verified, SOC 2 certified and ISO compliant' to reduce vulnerabilities.",
-        "sources": [
-          "https://www.automationanywhere.com/products/security",
-          "https://www.automationanywhere.com/compliance-portal",
-          "https://www.automationanywhere.com/company/blog/company-news/automation-anywhere-security-certified"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Deployment & Operations",
-        "score": 4,
-        "rationale": "Automation Anywhere demonstrates strong deployment and operational maturity through cloud-native delivery, SaaS-managed control room, and flexible deployment options spanning on-premises, private/public cloud, and SaaS. The evidence indicates well-developed operational tooling, though snippet-level evidence is limited on advanced enterprise ops depth like SRE-grade controls or broad third-party validation.",
-        "reasoning": "The deployment-related search returned topic-specific pages describing the platform as cloud-native and highlighting a cloud-managed control room that reduces IT overhead for High Availability and Disaster Recovery. Another result explicitly states the platform can run on premises, in private or public cloud, or as SaaS managed by Automation Anywhere, showing meaningful deployment flexibility. These are strong indicators of operational maturity suitable for enterprise use. I did not find strong recent analyst evidence specifically on operations tooling, so the score remains 4 rather than 5.",
-        "evidence": "Automation Anywhere's cloud-native platform page says it offers 'the only automation cloud with data on-premises option' and 'faster time to value.' A deployment blog says an Automation Anywhere 'cloud-managed control room' removes the IT overhead of managing 'High Availability and Disaster Recovery.' Automation Anywhere states its platform can be deployed 'on premises, in a private or public cloud, or in a Software as a Service (SaaS)-based option managed by Automation Anywhere.'",
-        "sources": [
-          "https://www.automationanywhere.com/products/cloud-native",
-          "https://www.automationanywhere.com/company/blog/thought-leadership/why-your-business-should-move-automation-360-cloud",
-          "https://www.automationanywhere.com/company/blog/product-insights/rpa-platform-cloud-architecture-5-must-haves-and-3-to-avoid"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Automation Anywhere appears strong on scalability and reliability, with cloud-managed HA/DR messaging and a cloud-native architecture designed for enterprise automation. However, snippet evidence lacks detailed reliability metrics, large-scale reference architectures, or strong third-party validation specific to resilience, so it stops short of best-in-class.",
-        "reasoning": "The strongest evidence came from deployment and cloud architecture sources, which are relevant because they directly address reliability and scalability in the platform model. The cloud-managed control room reducing HA and DR overhead is a concrete operational reliability claim, and the platform is repeatedly positioned as cloud-native or serverless. These are credible signals of enterprise readiness and scalable architecture. The absence of snippet-level proof points such as uptime SLAs, concurrency benchmarks, or analyst citations focused on resilience constrains the score to 4.",
-        "evidence": "Automation Anywhere says its cloud-managed control room removes the IT overhead of managing 'High Availability and Disaster Recovery.' The cloud service page describes 'serverless automation' delivering 'lightning-fast integrated workflows.' Automation Anywhere describes its platform as 'cloud-native,' indicating an architecture aimed at elastic enterprise automation.",
-        "sources": [
-          "https://www.automationanywhere.com/company/blog/thought-leadership/why-your-business-should-move-automation-360-cloud",
-          "https://www.automationanywhere.com/products/cloud-service",
-          "https://www.automationanywhere.com/products/cloud-native"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "Automation Anywhere has strong integration maturity, with named support for major enterprise systems and open standards such as REST and SOAP. The available evidence shows broad practical connectivity, but not enough analyst or ecosystem depth in snippets to justify a best-in-class score.",
-        "reasoning": "The integration search produced highly topic-specific results, including a dedicated integrations page and cloud service page. Those snippets explicitly name SAP, Salesforce, ServiceNow, and Workday, and mention support for REST and SOAP, which demonstrates enterprise-oriented breadth rather than narrow point integration. The AI technology page also reinforces native connectors and extensibility. This is clearly above adequate and reflects strong maturity, though the evidence does not quantify connector counts or show third-party market leadership recognition for integration specifically.",
-        "evidence": "Automation Anywhere's integrations page says it integrates with 'SAP, Salesforce, ServiceNow, Workday and more.' The same source says it connects with open standards like 'REST and SOAP.' Automation Anywhere's cloud service page says it integrates with 'API endpoints and enterprise SaaS applications such as SAP, Salesforce, ServiceNow, Workday, and more.'",
-        "sources": [
-          "https://www.automationanywhere.com/products/integrations",
-          "https://www.automationanywhere.com/products/cloud-service",
-          "https://www.automationanywhere.com/ai/technology"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "Automation Anywhere appears strong on time-to-value, especially through cloud-native deployment, serverless automation messaging, and embedded AI assistant experiences. The user-experience side is less deeply evidenced in the snippets than deployment speed, so the score remains strong rather than top-tier.",
-        "reasoning": "The search results point to several concrete time-to-value claims: the cloud-native platform says customers can 'automate right away' with no infrastructure setup delay, and the cloud service highlights 'touchless, serverless' automation. The Automation Co-Pilot product page suggests an embedded assistant experience 'in any app,' supporting ease of use for end users. Together these indicate a mature product strategy for faster adoption and easier access. What is missing in snippets are detailed UX analyst rankings, low-code/no-code proof points, or customer adoption evidence specific to developer and business-user experience, which keeps the score at 4.",
-        "evidence": "Automation Anywhere's cloud-native page says users can 'Automate right away with no time lost to infrastructure or application set up.' The cloud service page describes 'Touchless, serverless—wait-less' automation. Automation Co-Pilot is described as being 'embedded in any app' so teams can get work done faster.",
-        "sources": [
-          "https://www.automationanywhere.com/products/cloud-native",
-          "https://www.automationanywhere.com/products/cloud-service",
-          "https://www.automationanywhere.com/products/automation-co-pilot"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Agentic Capabilities",
-        "score": 4,
-        "rationale": "Automation Anywhere shows strong and current agentic capability positioning, including explicit 'Agentic Process Automation' branding and references to operational AI agents. The evidence demonstrates credible productization, but third-party snippet evidence does not clearly establish Automation Anywhere as the market-recognized top leader in agentic orchestration.",
-        "reasoning": "This topic had some of the clearest recent evidence: Automation Anywhere has dedicated pages for 'agentic process automation' and an AI technology stack, and its 2026 business process automation blog explicitly mentions operational AI agents. A vendor-authored buyer's guide also frames the company around hybrid enterprise deployment and native connectors for major systems, indicating the platform is not merely aspirational. At the same time, third-party agentic market guides in the returned results did not clearly single Automation Anywhere out as the category leader. That supports a strong 4 rather than a 5.",
-        "evidence": "Automation Anywhere defines 'Agentic Process Automation (APA)' as leveraging 'AI agents to create flexible, responsive workflows capable of completing tasks without human intervention.' A February 2026 Automation Anywhere article says 'Automation Anywhere's operational AI agents' are important for maintaining security, regulatory adherence, and trust in automated processes. Automation Anywhere's AI technology page describes 'The AI infrastructure for enterprise work' and highlights native connectors and extensibility.",
-        "sources": [
-          "https://www.automationanywhere.com/rpa/agentic-process-automation",
-          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
-          "https://www.automationanywhere.com/ai/technology"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "BPM & Orchestration",
         "score": 3,
-        "rationale": "Automation Anywhere has credible workflow and automation orchestration capability, especially through its agentic process automation positioning, but the available evidence does not show the depth or external recognition of a top-tier BPM/BOAT platform. It appears adequate for core orchestration needs without proving leadership in formal BPM suites.",
-        "reasoning": "The search results were thinner and less direct here than for other topics. Automation Anywhere's own content clearly ties AI, automation, and workflows together, and its agentic process automation messaging implies orchestration of tasks across processes. However, the third-party BOAT and BPM results that surfaced were mostly about other vendors such as Appian, not Automation Anywhere. Since I could not substantiate strong BPM-specific modeling, case management, or analyst leadership from snippets alone, the appropriate score is 3: credible but not deeply evidenced as broad BPM leadership.",
-        "evidence": "Automation Anywhere says AI business process automation unlocks 'new levels of capability, value, and innovation,' indicating support for automating broader business processes rather than isolated tasks. Automation Anywhere describes Agentic Process Automation as creating 'flexible, responsive workflows' with AI agents. Returned BPM/BOAT analyst search results highlighted other platforms such as Appian as Leaders, while no comparable BPM-specific analyst recognition for Automation Anywhere surfaced in the snippets.",
+        "rationale": "Automation Anywhere shows credible enterprise security and compliance positioning, but the available snippet evidence in this session is limited and does not surface detailed certifications or control frameworks directly. That supports an adequate rather than strong maturity rating.",
+        "reasoning": "The strongest directly relevant evidence is Automation Anywhere's 2026 AI business process automation material, which explicitly says security, regulatory adherence, and trust are critical in automated processes. Gartner's 2026 RPA review page confirms Automation Anywhere participates in the enterprise RPA market, but the search snippets did not expose detailed compliance attestations such as SOC 2, ISO 27001, or granular governance controls. Because the evidence indicates awareness and positioning but not broad, independently validated depth from the snippets alone, the capability lands at 3. Confidence is low because source coverage for security specifics was limited.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 AI business process automation article says security, regulatory adherence, and trust are critical in automated processes. The Gartner 2026 robotic process automation reviews page lists the enterprise RPA market in which Automation Anywhere participates.",
         "sources": [
           "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
-          "https://www.automationanywhere.com/rpa/agentic-process-automation",
-          "https://appian.com/resources/analyst-reports/gartner-boat-magic-quadrant"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Automation Anywhere has credible but not clearly market-leading support for testing and preproduction evaluation through process simulation and governed automation development. The evidence supports practical evaluation capabilities, but does not demonstrate a full enterprise testing platform spanning functional and performance testing depth.",
-        "reasoning": "This topic required a capability-specific search because generic topic queries were thin. The best evidence was Automation Anywhere's Process Simulation product, which explicitly says customers can rehearse end-to-end workflows before go-live, and Automation Anywhere Code claims automations are 'tested' and production-ready. There is also a customer story referencing automation of a claims testing process, but that is a use case rather than product proof of a dedicated testing suite. Without snippet evidence of broad functional test management, performance test tooling, or analyst recognition for test automation, a 3 is most defensible.",
-        "evidence": "Automation Anywhere's Process Simulation page says users can 'Rehearse Every Automation Before It Goes Live' and 'Simulate end-to-end workflows in a safe environment.' Automation Anywhere Code says it turns plain language into 'fully governed, tested, and production-ready enterprise automations.' An HGS customer story says Automation Anywhere was used to automate a 'claims testing process.'",
-        "sources": [
-          "https://www.automationanywhere.com/products/process-simulation",
-          "https://www.automationanywhere.com/products/automation-anywhere-code",
-          "https://www.automationanywhere.com/resources/customer-stories/hgs-insurance"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Monitoring & Observability",
-        "score": 3,
-        "rationale": "Automation Anywhere appears to offer some governance and operational visibility, but the available search evidence for dedicated monitoring and observability capabilities is limited. The topic is supported at a credible level, yet snippet evidence does not demonstrate deep observability breadth such as logs, traces, metrics, or advanced operational analytics.",
-        "reasoning": "Generic searches for monitoring and observability mostly surfaced irrelevant third-party observability results, which is itself a signal that the capability is not prominently evidenced in readily discoverable topic-specific materials. The best relevant snippet was from Automation Anywhere's process automation content and agentic governance discussion, which implies operational oversight but not full observability detail. Because I could not extract stronger evidence on dashboards, alerting, tracing, or integrated monitoring features, the score should not exceed 3. Confidence is lower than on core platform topics due to the thin evidence base.",
-        "evidence": "Automation Anywhere's February 2026 AI process automation article discusses keeping AI-automated processes stable as systems, data, or rules change, implying some operational oversight focus. A third-party 2025 agentic AI market guide notes enterprises struggle with 'lack of observability' and 'weak AI governance,' which is relevant market context but does not prove Automation Anywhere solves it comprehensively. No dedicated Automation Anywhere monitoring or observability product page surfaced in the returned snippets for this topic-specific search.",
-        "sources": [
-          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
-          "https://www.kore.ai/blog/7-best-agentic-ai-platforms",
-          "https://www.gartner.com/reviews/market/infrastructure-monitoring-tools"
+          "https://www.gartner.com/reviews/market/robotic-process-automation"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -2179,61 +2050,42 @@
         "questions": ""
       },
       {
-        "category": "Traceability & Governance",
+        "category": "Deployment & Operations",
         "score": 3,
-        "rationale": "Automation Anywhere has adequate governance maturity, with evidence of authority constraints and tested/governed automation development, but the snippet-level proof is not deep enough to demonstrate best-in-class enterprise traceability. The capability appears credible, though not strongly evidenced in this run.",
-        "reasoning": "The most useful evidence came from AI business process automation content mentioning 'governance or authority constraints' and from Automation Anywhere Code claiming fully governed automations. Those are meaningful indications that governance is built into automation creation and execution. However, I did not surface stronger topic-specific evidence on audit trails, lineage, policy management, segregation of duties, or detailed governance analytics. That supports an adequate score of 3 rather than a higher rating.",
-        "evidence": "Automation Anywhere's 2026 AI process automation article refers to 'governance or authority constraints' in AI-driven process execution. Automation Anywhere Code claims to produce 'fully governed, tested, and production-ready enterprise automations.' Process Simulation positions itself as a way to validate workflows safely before deployment, which supports controlled change management and traceability practices.",
+        "rationale": "Automation Anywhere appears to have a workable enterprise deployment and operating model, but the snippets returned here do not demonstrate deep operational tooling, HA/DR detail, or broad third-party validation. The evidence supports adequate maturity.",
+        "reasoning": "Search results repeatedly place Automation Anywhere in enterprise automation discussions and describe it as enabling AI business process automation, implying production deployment capability. However, the snippets did not surface detailed operational constructs such as deployment topology choices, lifecycle management controls, or disaster recovery specifics. Gartner's generic RPA review page supports category presence but not operations depth. Given credible but not richly evidenced deployment and operations detail in this session, a 3 is appropriate.",
+        "evidence": "Automation Anywhere's 2026 AI business process automation article discusses skills needed to build and maintain AI-automated processes, implying an operationalized platform. Gartner's 2026 robotic process automation reviews page shows Automation Anywhere operating in the enterprise RPA category.",
         "sources": [
           "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
-          "https://www.automationanywhere.com/products/automation-anywhere-code",
-          "https://www.automationanywhere.com/products/process-simulation"
+          "https://www.gartner.com/reviews/market/robotic-process-automation"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
-        "category": "Process Intelligence",
-        "score": 4,
-        "rationale": "Automation Anywhere shows strong process intelligence maturity, with dedicated process discovery and process intelligence offerings and explicit references to AI-driven real-time synthesis of process data. The evidence is product-specific and coherent, though broad analyst validation for category leadership was not visible in snippets.",
-        "reasoning": "This was one of the clearest topics from the searches. Automation Anywhere has dedicated pages for process discovery and process intelligence, and the snippets specifically describe process intelligence as AI-driven and real-time. A 2022 company post also references FortressIQ as the basis of its process intelligence offering, supporting product lineage and investment depth. The evidence indicates a strong, purpose-built capability set, but without recent third-party leadership validation in the returned snippets, a 4 is the best fit.",
-        "evidence": "Automation Anywhere says 'process discovery is the analysis of operational activities to uncover how processes work across' the organization. Automation Anywhere states 'Process intelligence is a component of process discovery, an AI-driven approach to acquire and synthesize process data and workflows in real time.' Automation Anywhere said its process intelligence product is 'FortressIQ,' indicating a dedicated offering for this area.",
-        "sources": [
-          "https://www.automationanywhere.com/rpa/process-discovery",
-          "https://www.automationanywhere.com/rpa/process-intelligence",
-          "https://www.automationanywhere.com/company/blog/rpa-thought-leadership/where-to-begin-your-process-transformation-journey"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Licensing & TCO",
+        "category": "Scalability & Reliability",
         "score": 3,
-        "rationale": "Automation Anywhere has a credible TCO story, especially around cloud-native and serverless operations reducing infrastructure burden, but the evidence on licensing transparency and pricing structure is limited in the snippets. The value proposition is present, yet not strongly substantiated with detailed cost model evidence.",
-        "reasoning": "For this topic, pricing pages and TCO-oriented claims are appropriate evidence. Automation Anywhere's cloud-native platform highlights 'cost efficient infrastructure' and minimal setup, while its comparison content claims '1/5th the Cost,' though that source is obviously vendor-comparative marketing and should be treated cautiously. I also surfaced a documentation page for licenses, which indicates established licensing administration, but the search snippet lacked substantive pricing detail. Given the limited transparency and heavy reliance on vendor claims, a 3 with medium confidence is appropriate.",
-        "evidence": "Automation Anywhere's cloud-native platform claims 'Cost efficient infrastructure.' Automation Anywhere's comparison page claims '1/5th the Cost.' Automation Anywhere documentation includes a dedicated cloud administration licenses page, indicating formal license management capabilities.",
+        "rationale": "Automation Anywhere is positioned as enterprise-grade automation software, but this session's snippets do not provide direct proof of high-availability architecture, reliability SLAs, or scale benchmarks. That indicates adequate maturity with evidence gaps.",
+        "reasoning": "Automation Anywhere's own 2026 article asks how organizations keep AI-automated processes stable as systems, data, or rules change, showing focus on reliability challenges. External 2026 comparison snippets mention scalability among evaluation criteria for automation platforms, but they do not provide Automation Anywhere-specific proof points. Gartner's market presence confirms enterprise relevance, yet not direct best-in-class scale validation from the snippets alone. On that basis, the most defensible score is 3.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article explicitly addresses how organizations keep AI-automated processes stable as systems, data, or rules change. A 2026 competitor-comparison snippet cites scalability as a key evaluation dimension for automation platforms that includes Automation Anywhere.",
         "sources": [
-          "https://www.automationanywhere.com/products/cloud-native",
-          "https://www.automationanywhere.com/comparison/automation-anywhere-vs-uipath",
-          "https://docs.automationanywhere.com/bundle/enterprise-v2019/page/enterprise-cloud/topics/control-room/dashboards/cloud-administration-licenses.html"
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
+          "https://improvado.io/blog/uipath-competitors"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
-        "category": "Industry applicability / business domain applicability",
+        "category": "Connectivity & Integration",
         "score": 4,
-        "rationale": "Automation Anywhere appears broadly applicable across industries and enterprise domains, supported by major enterprise-system integrations and general-purpose automation positioning. The evidence suggests strong cross-domain relevance, though returned snippets did not provide a rich set of industry-specific analyst citations or vertical solution proof points.",
-        "reasoning": "The technology alliance and integrations evidence is especially relevant here because broad domain applicability depends on being usable across major enterprise systems and functions. Automation Anywhere highlights connectors for SAP, Salesforce, ServiceNow, and Workday, and its partner messaging notes SAP's scale across industries. Its process automation and AI positioning are clearly horizontal rather than niche. However, I did not gather enough snippet evidence on prebuilt vertical accelerators or deep analyst recognition by industry, so the score is strong but not best-in-class.",
-        "evidence": "Automation Anywhere's integrations page names enterprise systems spanning multiple business domains: 'SAP, Salesforce, ServiceNow, Workday and more.' Automation Anywhere's technology alliance program highlights partnerships as an essential part of long-term growth and specifically references SAP's broad enterprise footprint. Automation Anywhere's AI business process automation messaging positions the platform as a general enterprise capability to unlock new levels of value and innovation.",
+        "rationale": "Automation Anywhere demonstrates strong integration maturity through its technology alliance ecosystem and explicit emphasis on automation-platform integration skills. The evidence supports broad enterprise connectivity, though the snippets do not enumerate connector counts or API depth.",
+        "reasoning": "The clearest evidence is Automation Anywhere's Technology Alliance Program, which states partnerships are an essential part of its long-term growth strategy and highlights major enterprise software relationships such as SAP. Its 2026 AI business process automation article also references required skills in automation platforms and integration, indicating integration is a core product and delivery concern. While the snippets stop short of exposing deep connector catalogs or orchestration APIs, they do show a broad, enterprise-oriented integration posture. That is consistent with a strong score of 4.",
+        "evidence": "Automation Anywhere's Technology Alliance Program says partnerships are an essential part of its long-term growth strategy. The Technology Alliance Program snippet specifically highlights SAP as a major enterprise application software partner context. Automation Anywhere's 2026 AI business process automation article references skills in automation platforms and integration.",
         "sources": [
-          "https://www.automationanywhere.com/products/integrations",
           "https://www.automationanywhere.com/technology-alliance-program",
           "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works"
         ],
@@ -2243,11 +2095,148 @@
         "questions": ""
       },
       {
+        "category": "Time-to-Value & User Experience",
+        "score": 3,
+        "rationale": "Automation Anywhere appears capable of delivering business value through AI business process automation, but the snippets returned here do not provide strong evidence on low-code usability, onboarding speed, or customer time-to-value metrics. This supports an adequate score.",
+        "reasoning": "External 2026 roundup content includes Automation Anywhere among leading AI workflow automation tools, implying a usable and competitive product experience. Its own 2026 messaging emphasizes unlocking new levels of capability, value, and innovation, which signals ROI intent. However, the available snippets lack direct evidence on citizen developer UX, implementation acceleration features, or quantified time-to-value outcomes. Without those specifics, the safer maturity judgment is 3.",
+        "evidence": "A March 31, 2026 roundup lists Automation Anywhere among the top 12 AI workflow automation tools. Automation Anywhere's Feb. 3, 2026 article says the platform enables AI business process automation to unlock new levels of capability, value, and innovation.",
+        "sources": [
+          "https://www.kore.ai/blog/best-ai-workflow-automation-tools",
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Agentic Capabilities",
+        "score": 3,
+        "rationale": "Automation Anywhere has credible AI-augmented automation positioning and discusses operational AI agents, but the search snippets do not establish market-leading agentic architecture, governance, or analyst leadership. The evidence supports emerging-to-adequate capability, rounded up to 3 for credible functionality.",
+        "reasoning": "Automation Anywhere's Feb. 3, 2026 article explicitly references operational AI agents and AI business process automation. It is also included in a 2026 list of top AI workflow automation tools, indicating relevance in the emerging agentic automation conversation. However, an external 2025 market guide on agentic AI platforms highlights capabilities like multi-agent coordination, integrations, and observability without clearly placing Automation Anywhere among the leaders. Since the evidence shows real capability but not category-leading depth from snippets alone, a 3 is appropriate.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article references operational AI agents in automated processes. A March 31, 2026 roundup includes Automation Anywhere among the top 12 AI workflow automation tools. A Dec. 15, 2025 market guide describes key agentic-platform requirements such as multi-agent coordination and integrations, underscoring the maturity bar Automation Anywhere would need to meet.",
+        "sources": [
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
+          "https://www.kore.ai/blog/best-ai-workflow-automation-tools",
+          "https://www.kore.ai/blog/7-best-agentic-ai-platforms"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "medium",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "BPM & Orchestration",
+        "score": 3,
+        "rationale": "Automation Anywhere clearly supports process automation, but the snippets in this session do not show direct analyst leadership or rich BPM-suite depth comparable to dedicated BOAT/BPM leaders. This suggests adequate orchestration maturity.",
+        "reasoning": "Automation Anywhere's 2026 AI business process automation article demonstrates a process-centric automation vision. But third-party analyst evidence retrieved for this topic surfaces Appian as a Leader in Gartner's BOAT market, not Automation Anywhere. That absence does not mean Automation Anywhere lacks orchestration, but it does mean this session lacks evidence of best-in-class BPM leadership. Therefore Automation Anywhere fits a 3: credible capability, but limited proof of deep BPM/BOAT maturity from the available snippets.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article centers on AI business process automation, indicating process orchestration capability. Retrieved analyst-related results for this topic highlight Appian as a Leader in Gartner's BOAT category rather than Automation Anywhere, suggesting Automation Anywhere is not evidenced here as a BOAT leader.",
+        "sources": [
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
+          "https://appian.com/resources/analyst-reports/gartner-boat-magic-quadrant"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Testing & Evaluation (Functional + Performance)",
+        "score": 2,
+        "rationale": "The searches did not surface meaningful evidence that Automation Anywhere has a dedicated, mature functional and performance testing offering. Based on evidence absence in this session, the topic appears emerging or narrow for Automation Anywhere.",
+        "reasoning": "Returned results for this topic were largely generic or off-topic, with no clear product page, analyst report, or enterprise reference for a testing-specific Automation Anywhere capability. Gartner's generic RPA market page confirms the company is in automation, but not that it offers robust software testing and performance evaluation tooling. In this run, lack of topic-specific evidence is itself meaningful because multiple searches did not reveal a testing product. Accordingly, Automation Anywhere scores 2 with low confidence.",
+        "evidence": "Searches for Automation Anywhere on testing did not return a dedicated functional or performance testing product page in this session. The available results instead pointed to generic RPA market pages and unrelated content rather than testing-specific capabilities.",
+        "sources": [
+          "https://www.gartner.com/reviews/market/infrastructure-monitoring-tools",
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Monitoring & Observability",
+        "score": 2,
+        "rationale": "This session did not return strong evidence of dedicated monitoring or observability capabilities from Automation Anywhere. The available snippets point more to general automation than to deep observability tooling.",
+        "reasoning": "The main Automation Anywhere evidence for this topic is indirect: its AI automation article and external market guides discuss governance and operational challenges, including observability, as important concerns. However, no product-specific snippet surfaced metrics, logs, tracing, dashboards, or native observability modules tied to Automation Anywhere. The lack of topic-specific results after targeted searching suggests monitoring/observability is not a standout documented strength in the available evidence. That supports a 2.",
+        "evidence": "A Dec. 15, 2025 market guide says organizations hit roadblocks including lack of observability and weak AI governance in agent platforms. Automation Anywhere's available snippet for this topic was general AI business process automation content rather than monitoring-specific product functionality.",
+        "sources": [
+          "https://www.kore.ai/blog/7-best-agentic-ai-platforms",
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Traceability & Governance",
+        "score": 3,
+        "rationale": "Automation Anywhere shows credible governance awareness, especially around AI processes and authority constraints, but this session lacks detailed evidence on end-to-end traceability, audit design, or enterprise policy controls. That supports an adequate rating.",
+        "reasoning": "The most relevant snippet is from Automation Anywhere's 2026 article, which explicitly references governance or authority constraints in AI-driven processes. External 2025 guidance further stresses weak AI governance as a common enterprise roadblock, reinforcing the importance of this area. Yet the snippets retrieved here do not provide concrete detail on audit trails, approval workflows, model governance, or full traceability features within Automation Anywhere's product. As a result, Automation Anywhere appears credible but not strongly evidenced beyond baseline maturity, yielding a 3.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article explicitly mentions governance or authority constraints in AI-driven process automation. A Dec. 15, 2025 enterprise market guide cites weak AI governance as a common roadblock for organizations adopting agent platforms.",
+        "sources": [
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
+          "https://www.kore.ai/blog/7-best-agentic-ai-platforms"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Process Intelligence",
+        "score": 3,
+        "rationale": "Automation Anywhere demonstrates credible process-automation intelligence direction, but the snippets do not surface deep process mining or task mining specifics. The capability appears adequate rather than strongly evidenced as a leader.",
+        "reasoning": "Automation Anywhere's own AI business process automation content speaks to keeping AI-automated processes stable as systems, data, or rules change, which implies operational process insight. Gartner-related search results around IDP and automation show adjacency to intelligent process work, but no direct process mining leadership evidence appeared in the snippets. There is also no clear surfaced product page in this session for mining, conformance analysis, or desktop task discovery. That combination supports a middle score of 3 with low confidence.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article discusses maintaining AI-automated processes as systems, data, or rules change. Searches for this topic did not return a dedicated process mining or task mining snippet for Automation Anywhere in this session.",
+        "sources": [
+          "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
+          "https://www.gartner.com/reviews/market/intelligent-document-processing-solutions"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Licensing & TCO",
+        "score": 2,
+        "rationale": "The search results provide very limited direct evidence on Automation Anywhere pricing or licensing mechanics, making TCO difficult to validate. With weak sourcing on this specific topic, maturity is best treated as emerging/basic in terms of transparency and provable value evidence.",
+        "reasoning": "This topic requires pricing or licensing-specific evidence, but the searches mainly returned generic AI and market commentary rather than Automation Anywhere pricing pages or packaging detail. One external 2026 snippet references bundled licensing and TCO advantages in a comparison context, but it does not give Automation Anywhere-specific structure or economics. Because direct evidence for licensing transparency and TCO levers is minimal in this session, the maturity score remains conservative at 2. Confidence is low due to poor source coverage on the exact topic.",
+        "evidence": "Searches for Licensing & TCO did not surface an Automation Anywhere pricing or licensing page in this session. A Jan. 8, 2026 comparison snippet references total cost of ownership advantages including bundled licensing in the broader market context, but without Automation Anywhere-specific depth.",
+        "sources": [
+          "https://checkthat.ai/answers/ai-business-process-optimization-solutions",
+          "https://www.gartner.com/en/topics/generative-ai"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "low",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Industry applicability / business domain applicability",
+        "score": 4,
+        "rationale": "Automation Anywhere appears broadly applicable across enterprise functions and industries, supported by its alliance ecosystem and category presence in enterprise automation. The evidence supports strong cross-domain applicability, even if vertical proof points were limited in the snippets.",
+        "reasoning": "Automation Anywhere's technology alliance content highlights relationships with major enterprise platforms such as SAP, a positive signal for applicability across industries and business domains. Its inclusion in leading AI workflow automation tool roundups and the general-purpose nature of AI business process automation also indicate breadth of use. While the snippets did not provide a long list of named industry solutions or customer references by sector, they do support wide enterprise relevance rather than narrow specialization. That supports a 4.",
+        "evidence": "Automation Anywhere's Technology Alliance Program highlights partnerships as central to growth and references SAP's large enterprise footprint. Automation Anywhere is included in a March 31, 2026 roundup of top AI workflow automation tools, indicating broad enterprise relevance. AI is described in market commentary as a general-purpose technology with use cases in every industry and business function, aligning with automation platform breadth.",
+        "sources": [
+          "https://www.automationanywhere.com/technology-alliance-program",
+          "https://www.kore.ai/blog/best-ai-workflow-automation-tools",
+          "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-top-trends-in-tech"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "medium",
+        "notes": "",
+        "questions": ""
+      },
+      {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "Automation Anywhere demonstrates strong long-term value potential through continued investment in cloud-native automation, agentic automation, and ecosystem partnerships. The evidence supports durable platform relevance, though the snippets do not provide enough independent proof of sustained best-in-class outcomes to justify a 5.",
-        "reasoning": "Long-term value is partly evidenced by platform direction and ecosystem durability. Automation Anywhere's 2026 messaging centers on AI business process automation and agentic automation, showing product evolution beyond traditional RPA. Its technology alliance program indicates partnership-led growth, and recent third-party market roundups still include the company among leading AI workflow automation tools. Because most evidence is directional rather than quantified customer ROI or analyst superlatives, a 4 is appropriate.",
-        "evidence": "Automation Anywhere's February 2026 article says the company 'enables AI business process automation to unlock new levels of capability, value, and innovation.' Automation Anywhere's technology alliance page says partnerships are 'an essential part of Automation Anywhere's long-term growth strategy.' A 2026 third-party roundup lists Automation Anywhere among the 'top 12' AI workflow automation tools.",
+        "rationale": "Automation Anywhere shows strong long-term value signals through enterprise-market relevance, continued AI business process automation investment, and an ecosystem-led growth strategy. The snippets support a durable platform position, though not enough to prove best-in-class leadership on this topic.",
+        "reasoning": "Automation Anywhere's 2026 positioning centers on AI business process automation delivering capability, value, and innovation, which indicates ongoing strategic product evolution. Its Technology Alliance Program states partnerships are an essential part of its long-term growth strategy, another positive signal for durability and ecosystem expansion. Inclusion among top AI workflow automation tools in 2026 further supports continued market relevance. Because the evidence is positive but not coupled with direct analyst leadership or extensive customer-outcome proof in the snippets, a 4 is appropriate.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article says the platform unlocks new levels of capability, value, and innovation. Automation Anywhere's Technology Alliance Program says partnerships are an essential part of its long-term growth strategy. A March 31, 2026 market roundup includes Automation Anywhere among the top 12 AI workflow automation tools.",
         "sources": [
           "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
           "https://www.automationanywhere.com/technology-alliance-program",
@@ -2261,16 +2250,15 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "Automation Anywhere shows strong agility characteristics through agentic workflows, cloud-native deployment, and flexible integration with core enterprise systems. The platform appears well suited to adapting processes as data, rules, and systems change, though the evidence base is still more vendor-led than independently validated.",
-        "reasoning": "The most relevant evidence came from Automation Anywhere's recent AI process automation content, which explicitly asks how organizations keep AI-automated processes stable as systems, data, or rules change. Its Agentic Process Automation positioning emphasizes flexible, responsive workflows, and its cloud-native model supports faster operational change. The platform's integration breadth further supports adaptability by allowing changes across enterprise applications. While these are strong signs of agility, I did not surface independent analyst assessment directly focused on business adaptability, so the score remains 4.",
-        "evidence": "Automation Anywhere's 2026 process automation article discusses keeping AI-automated processes stable as 'systems, data, or rules change.' Automation Anywhere defines Agentic Process Automation as enabling 'flexible, responsive workflows.' Automation Anywhere integrates with major enterprise systems including 'SAP, Salesforce, ServiceNow, Workday and more,' which supports adapting automations across changing business environments.",
+        "rationale": "Automation Anywhere demonstrates strong agility potential through AI-enabled business process automation and broad integration partnerships. The evidence suggests it can adapt workflows and processes across changing enterprise needs.",
+        "reasoning": "Automation Anywhere's 2026 AI business process automation messaging directly focuses on unlocking new capability and handling changing systems, data, and rules—key indicators of business adaptability. Its alliance program also suggests flexibility through ecosystem integration rather than isolated automation. Although the session lacks detailed workflow redesign, low-code agility, or change-management features, the combined evidence supports strong adaptability for enterprise process change. Therefore the topic scores 4.",
+        "evidence": "Automation Anywhere's Feb. 3, 2026 article asks how organizations keep AI-automated processes stable as systems, data, or rules change. The same article says Automation Anywhere enables AI business process automation to unlock new levels of capability, value, and innovation. Automation Anywhere's Technology Alliance Program indicates a partnership-led ecosystem that can broaden business process adaptability.",
         "sources": [
           "https://www.automationanywhere.com/company/blog/automation-ai/ai-business-process-automation-what-it-and-how-it-works",
-          "https://www.automationanywhere.com/rpa/agentic-process-automation",
-          "https://www.automationanywhere.com/products/integrations"
+          "https://www.automationanywhere.com/technology-alliance-program"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       }
