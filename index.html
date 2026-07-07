@@ -175,6 +175,8 @@
     .ev-tags { display:flex; gap:5px; flex-wrap:wrap; }
     .ev-body { margin-top:10px; padding-left:38px; display:none; }
     .ev-body.open { display:block; }
+    .ev-chev { color:var(--muted); font-size:10px; flex-shrink:0; margin-left:4px; transition:transform .15s ease; }
+    .ev-header.open .ev-chev { transform:rotate(180deg); }
     .ev-evidence { font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:10px; }
 
     /* ACCORDION */
@@ -923,10 +925,11 @@
     ].filter(Boolean).join('');
 
     return `<div class="ev-row">
-      <div class="ev-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <div class="ev-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
         <span class="sb ${sbClass(row.score)}">${row.score}</span>
         <span class="ev-name">${esc(topicLabel)}</span>
         <div class="ev-tags">${tags}</div>
+        <span class="ev-chev">▼</span>
       </div>
       <div class="ev-body">
         ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
@@ -1052,13 +1055,14 @@
     document.getElementById('topic-evidence-list').innerHTML = VORDER.map(v=>{
       const row = VENDORS[v][idx];
       return `<div class="ev-row">
-        <div class="ev-header" onclick="this.nextElementSibling.classList.toggle('open')">
+        <div class="ev-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
           <span class="sb ${sbClass(row.score)}">${row.score}</span>
           <span class="ev-name"><span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}</span>
           <div class="ev-tags">
             ${row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:''}
             <span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${esc(row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION)}</span>
           </div>
+          <span class="ev-chev">▼</span>
         </div>
         <div class="ev-body">
           ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
@@ -1542,7 +1546,20 @@
     // DATA'dan sabit tanımları yükle
     TOPICS   = DATA.topics;
     VORDER   = DATA.vendorOrder;
-    COLORS   = DATA.colors;
+    // Renk paleti dashboard'a aittir — sunum meselesi, veri dosyasının işi değil.
+    // scorecard-full.json'daki "colors" bloğu artık OKUNMUYOR; oradan silinebilir.
+    COLORS = {
+      'UiPath':              '#FA4616',  // marka turuncusu
+      'Microsoft':           '#1e88e5',
+      'Google':              '#fdd835',
+      'ServiceNow':          '#43a047',
+      'Appian':              '#fb8c00',
+      'n8n':                 '#8e24aa',
+      'OpenAI':              '#555555',
+      'Camunda':             '#14b8a6',  // teal — UiPath turuncusuyla çakışmasın
+      'Automation Anywhere': '#E01C1C',
+      'Salesforce':          '#00A1E0'
+    };
     VENDORS  = DATA.vendors;
     SCOPES   = DATA.vendorScopes;
     RATIONALE= DATA.vendorRationale;
