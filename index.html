@@ -639,8 +639,43 @@
   let TOPICS, VORDER, COLORS, VENDORS, SCOPES, RATIONALE;
   
 
-  // Veri tarihi — Kobi'nin araştırma tarihi / Data version — Kobi's research date
+  // Veri tarihi: scorecard-full.json'un HTTP Last-Modified header'ından okunur
+  // (Maestro dosyayı her push'ladığında GitHub Pages bu tarihi günceller).
+  // 'May 2025' sadece hiçbir tarih bulunamazsa devreye giren son çare.
+  let SCORECARD_DATE = null;
   const DATA_VERSION = 'May 2025';
+  function captureScorecardDate(response) {
+    const lm = response.headers.get('Last-Modified');
+    if (lm) {
+      const d = new Date(lm);
+      if (!isNaN(d)) SCORECARD_DATE = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+    }
+  }
+  // Last-Modified header bazı ortamlarda (Pages CDN, Live Server) gelmiyor.
+  // En güvenilir kaynak: scorecard-full.json'a dokunan son commit'in tarihi.
+  async function fetchCommitDate() {
+    try {
+      const r = await fetch('https://api.github.com/repos/tunauipath/uipath-competitive/commits?path=scorecard-full.json&per_page=1');
+      if (!r.ok) return;
+      const j = await r.json();
+      const iso = j && j[0] && j[0].commit && j[0].commit.committer && j[0].commit.committer.date;
+      if (iso) {
+        const d = new Date(iso);
+        if (!isNaN(d)) {
+          SCORECARD_DATE = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+          updateFreshnessBand();
+        }
+      }
+    } catch (e) { /* rate limit / offline — header veya fallback devrede kalır */ }
+  }
+  function updateFreshnessBand() {
+    const el = document.getElementById('data-freshness-band');
+    if (!el || !SCORECARD_DATE) return;
+    el.innerHTML =
+      `<span style="width:8px;height:8px;border-radius:50%;background:#38d9a9;flex-shrink:0;"></span>
+       <span>Data source: <strong style="color:var(--text);">scorecard-full.json</strong> · Last updated: <strong style="color:var(--text);">${SCORECARD_DATE}</strong> · Refreshed via UiPath Maestro pipeline</span>
+       <span style="margin-left:auto;color:var(--muted);">Generate intelligence pulls the latest scorecard data</span>`;
+  }
   const DATA_SOURCE  = 'agentic_rpa_vendor_scorecard.xlsx';
 
   const state = {
@@ -664,6 +699,8 @@
   async function refreshScorecard() {
     const r = await fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error('scorecard-full.json fetch failed (HTTP ' + r.status + ')');
+    captureScorecardDate(r);
+    fetchCommitDate(); // arkaplanda güncel commit tarihini de tazele
     const json = await r.json();
     if (!json || !json.vendors) throw new Error('scorecard-full.json geçersiz format — "vendors" alanı yok');
     Object.keys(json.vendors).forEach(v => { VENDORS[v] = json.vendors[v]; });
@@ -684,6 +721,18 @@
     if(val>=5)return'#86efac';if(val>=4)return'#4ade80';if(val>=3)return'#fbbf24';if(val>=2)return'#fb923c';return'#f87171';
   }
   function esc(s) { return(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  // Kaynak linki: gerçek URL ise direkt aç, değilse ("Publisher — Title" gibi)
+  // Google aramasına yönlendir. Agent'ın ürettiği bozuk/uydurma URL sorununa
+  // karşı garanti fallback.
+  function srcLink(s, cls) {
+    const t = (s||'').trim();
+    if (!t) return '';
+    const isUrl = /^https?:\/\/[^\s]+$/i.test(t);
+    const href  = isUrl ? t : 'https://www.google.com/search?q=' + encodeURIComponent(t);
+    const label = isUrl ? t.replace(/^https?:\/\/(www\.)?/i,'') : t + ' 🔍';
+    return '<a class="' + (cls||'') + '" href="' + esc(href) + '" target="_blank" rel="noopener" title="' + esc(isUrl ? t : 'Search: ' + t) + '">' + esc(label) + '</a>';
+  }
   function tagClass(c) { if(!c)return''; return{'High':'tag-high','Medium':'tag-medium','Low':'tag-low'}[c]||''; }
 
   // ── navigation ──
@@ -714,12 +763,13 @@
 
   // scorecard-full.json'u fetch et (cache-bust ile — Maestro güncellemeleri anında görünsün), sonra initApp çalıştır
   fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' })
-    .then(r => r.json())
+    .then(r => { captureScorecardDate(r); return r.json(); })
     .then(json => {
       DATA = json;
       window.DASHBOARD_DATA = { vendors: {} };
       Object.keys(DATA.vendors).forEach(v => { window.DASHBOARD_DATA.vendors[v] = DATA.vendors[v]; });
       initApp();
+      fetchCommitDate(); // asıl tarih kaynağı: son commit tarihi (band'i günceller)
     })
     .catch(err => {
       console.error('scorecard-full.json yüklenemedi:', err);
@@ -749,7 +799,16 @@
       <div style="display:flex;flex-direction:column;gap:10px;">
         ${card('Highest Average Maturity', topV + ' (' + avgScore(topV).toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', '#4f8ef7')}
         ${card('Agentic Leader', agV + ' (' + score(agV,agIdx) + ')', 'Highest score in "Agentic Capabilities" topic', '#38d9a9')}
-        ${card('External Validation Gap', nearest?(uiAvg>avgScore(nearest.v)?'UiPath (+'+nearest.d.toFixed(1)+')':''):'UiPath', 'Largest delta between UiPath and nearest rival', '#f5a623')}
+        ${card('External Validation Gap',
+          nearest
+            ? (nearest.d >= 0
+                ? 'UiPath (+' + nearest.d.toFixed(1) + ')'
+                : nearest.v + ' leads (' + nearest.d.toFixed(1) + ')')
+            : 'UiPath',
+          nearest && nearest.d < 0
+            ? 'UiPath trails nearest rival — review score semantics'
+            : 'Largest delta between UiPath and nearest rival',
+          '#f5a623')}
       </div>`;
   }
 
@@ -858,7 +917,7 @@
 
   // ── VENDOR DEEP DIVE ──
   function buildEvRow(row, topicLabel) {
-    const dateLabel = row.last_updated || DATA_VERSION;
+    const dateLabel = row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION;
     const tags = [
       row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:'',
       row.evidenceType?`<span class="tag tag-para">${esc(row.evidenceType)}</span>`:'',
@@ -875,7 +934,7 @@
         ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
         <div class="ev-evidence">${esc(row.evidence)}</div>
         <div class="accordion">
-          ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
+          ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
           ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
           ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
           ${(row.notes||row.questions)?`<details><summary>Notes & Next Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
@@ -1007,7 +1066,7 @@
           ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
           <div class="ev-evidence">${esc(row.evidence)}</div>
           <div class="accordion">
-            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join('')}</div></div></details>`:''}
+            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
             ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
             ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
             ${(row.notes||row.questions)?`<details><summary>Notes & Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
@@ -1162,7 +1221,7 @@
 
       const allSrc = [...new Set(uiData._allTopics.flatMap(t=>[...t.uiSources,...t.rvSources]))].slice(0,8);
       document.getElementById('bc-sources').innerHTML = allSrc.map(s=>
-        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div><a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a></div>'
+        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div>'+srcLink(s,'bc-point-src')+'</div>'
       ).join('') || '<div style="font-size:12px;color:var(--muted);">No sources available.</div>';
 
     } else {
@@ -1171,19 +1230,19 @@
         (uiData.uipath_advantage?'<div class="bc-point"><div class="bc-point-dot" style="background:#fa4616;"></div><div class="bc-point-text" style="font-weight:600;color:#fa4616;">'+esc(uiData.uipath_advantage)+'</div></div>':'') +
         '<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div>' +
         '<div class="bc-point-text">' + esc(uiData.rationale||uiData.evidence||'—') + '</div>' +
-        uiSrc.map(s=>'<a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a>').join('') + '</div></div>' +
+        uiSrc.map(s=>srcLink(s,'bc-point-src')).join('') + '</div></div>' +
         (uiData.reasoning?'<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div class="bc-point-text">'+esc(uiData.reasoning)+'</div></div>':'');
 
       document.getElementById('bc-weakness-title').textContent = rival + ' Gaps';
       document.getElementById('bc-weaknesses').innerHTML =
         '<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div>' +
         '<div class="bc-point-text">' + esc(rvData.rationale||rvData.evidence||'—') + '</div>' +
-        rvSrc.map(s=>'<a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a>').join('') + '</div></div>' +
+        rvSrc.map(s=>srcLink(s,'bc-point-src')).join('') + '</div></div>' +
         (rvData.notes?'<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div class="bc-point-text">'+esc(rvData.notes)+'</div></div>':'');
 
       const allSrc = [...new Set([...(uiData.sources||[]),...(rvData.sources||[])])].slice(0,6);
       document.getElementById('bc-sources').innerHTML = allSrc.map(s=>
-        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div><a class="bc-point-src" href="'+esc(s)+'" target="_blank">'+esc(s)+'</a></div>'
+        '<div class="bc-point"><div class="bc-point-dot" style="background:var(--accent);"></div>'+srcLink(s,'bc-point-src')+'</div>'
       ).join('') || '<div style="font-size:12px;color:var(--muted);">No sources available.</div>';
     }
 
@@ -1514,7 +1573,7 @@
     `UiPath Competitive Intelligence · Internal Use Only`;
   document.getElementById('data-freshness-band').innerHTML =
     `<span style="width:8px;height:8px;border-radius:50%;background:#38d9a9;flex-shrink:0;"></span>
-     <span>Data source: <strong style="color:var(--text);">scorecard-full.json</strong> · Refreshed via UiPath Maestro pipeline</span>
+     <span>Data source: <strong style="color:var(--text);">scorecard-full.json</strong>${SCORECARD_DATE ? ' · Last updated: <strong style="color:var(--text);">' + SCORECARD_DATE + '</strong>' : ''} · Refreshed via UiPath Maestro pipeline</span>
      <span style="margin-left:auto;color:var(--muted);">Generate intelligence pulls the latest scorecard data</span>`;
 
   window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
@@ -1581,18 +1640,21 @@
 
     btn.addEventListener('click', async () => {
       const vendor = state.vendorView;
-      const tf     = state.vdTopicFilter;
-      const scope  = tf !== '' ? `"${TOPICS[parseInt(tf)]}"` : 'all 15 topics';
 
-      vdSetLoading(true, `🔍 Fetching latest scorecard for ${vendor} · ${scope}…`);
+      vdSetLoading(true, `🔍 Fetching latest scorecard for ${vendor} · all 15 topics…`);
       try {
         // Güncel scorecard-full.json'u çek — vendor'ın tüm topic'leri tek fetch'te gelir
         await refreshScorecard();
+        // Generate = tam yenileme: topic filtresini resetle ki 15 satırın hepsi görünsün.
+        // (Dropdown manuel gezinme filtresi olarak çalışmaya devam eder.)
+        state.vdTopicFilter = '';
+        const tfSel = document.getElementById('vd-topic-filter');
+        if (tfSel) tfSel.value = '';
         renderVendorEvidence();
         renderVendorView();
         renderHeatmap();
         renderRadar();
-        vdSetLoading(false, `✅ ${vendor} · ${scope} updated`);
+        vdSetLoading(false, `✅ ${vendor} · all 15 topics updated`);
       } catch(err) {
         vdSetLoading(false, `❌ ${err.message}`);
         document.getElementById('vd-generate-status').style.color = '#f87171';
