@@ -601,7 +601,6 @@
         <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
           <div style="display:flex;gap:10px;align-items:flex-end;">
             <div style="width:300px;"><label>Dimension</label><select id="topic-select"></select></div>
-            <div style="width:160px;"><label>Search topics</label><input type="text" id="topic-search" placeholder="Filter…" /></div>
             <button id="generate-btn" style="background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:opacity .15s;flex-shrink:0;">✨ Generate Intelligence</button>
           </div>
           <div id="generate-status" style="font-size:11px;color:var(--muted);min-height:14px;align-self:flex-end;"></div>
@@ -920,8 +919,7 @@
     const dateLabel = row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION;
     const tags = [
       row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:'',
-      row.evidenceType?`<span class="tag tag-para">${esc(row.evidenceType)}</span>`:'',
-      `<span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 ${esc(dateLabel)}</span>`
+      `<span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${esc(dateLabel)}</span>`
     ].filter(Boolean).join('');
 
     return `<div class="ev-row">
@@ -1059,7 +1057,7 @@
           <span class="ev-name"><span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}</span>
           <div class="ev-tags">
             ${row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:''}
-            ${row.evidenceType?`<span class="tag tag-para">${esc(row.evidenceType)}</span>`:''}
+            <span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${esc(row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION)}</span>
           </div>
         </div>
         <div class="ev-body">
@@ -1077,11 +1075,6 @@
   }
 
   document.getElementById('topic-select').addEventListener('change',e=>{state.topicIdx=parseInt(e.target.value);renderTopicView();});
-  document.getElementById('topic-search').addEventListener('input',e=>{
-    const q=e.target.value.toLowerCase();
-    const opts=document.getElementById('topic-select').options;
-    for(let o of opts){o.style.display=o.text.toLowerCase().includes(q)?'':'none';}
-  });
 
   // ── BATTLE CARD ──
   function initBattleCard() {
