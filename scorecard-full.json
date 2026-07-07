@@ -44,67 +44,66 @@
     "Microsoft": [
       {
         "category": "Security & Compliance",
-        "score": 4,
-        "rationale": "Microsoft shows strong enterprise-grade security and compliance capabilities across Power Platform, Copilot Studio, and Azure, backed by Azure-scale controls and governance tooling. The score stops short of best-in-class for this specific automation/agent platform topic because available snippet evidence also points to emerging security exposure concerns around Copilot Studio agents.",
-        "reasoning": "Search results show Microsoft positioning Power Platform on an Azure foundation with enterprise-grade scale and compliance, and Azure API Management explicitly emphasizes securing, scaling, and monitoring APIs across environments. Microsoft also published 2025 security messaging for the 'agentic era' covering governance of AI apps and agents across Microsoft 365 Copilot, Copilot Studio, and Azure AI Foundry. Third-party and ecosystem snippets indicate credible governance strength, but also note limitations: Zenity's research snippet flags potential security exposures in Copilot Studio agents, suggesting the platform still has operational hardening challenges. On balance, the breadth of security stack, compliance posture, and governance tooling support a strong maturity score of 4 rather than 5.",
-        "evidence": "Microsoft Power Platform is described as improving enterprise workflow automation with low-code development tools including Power Apps, Power Automate, Power Pages, and Microsoft Copilot. Azure API Management is described as an advanced API management platform for securing, scaling, and monitoring APIs across environments. Microsoft's 2025 Gartner Magic Quadrant announcement says Power Platform provides enterprise-grade scale and compliance on a foundation solidly on Microsoft Azure. Microsoft Security's Sept. 30, 2025 Sentinel post says innovations help secure and govern AI apps and agents in Microsoft 365 Copilot, Copilot Studio, and Azure AI Foundry. Zenity research snippets state analysis of Microsoft Power Platform security features revealed limitations that could expose Copilot Studio agents.",
+        "score": 5,
+        "rationale": "Microsoft demonstrates best-in-class maturity in security and compliance for automation and agentic workflows, with documented DLP, audit, Purview, and AI agent governance controls across Copilot Studio and Power Platform. The breadth of compliance coverage and traceability evidence supports a market-leading assessment.",
+        "reasoning": "Search evidence shows Microsoft provides explicit governance and security controls for AI agents and low-code automation, including DLP, audit logging, Purview integration, and organization-wide agent governance guidance. Microsoft Learn documents security and governance patterns for AI agents, while 2026 sources cite Copilot-related privacy controls and Purview-backed auditability. The platform also inherits Microsoft 365 and Azure security/compliance posture, including references to GDPR, ISO, and SOC in governance discussions. Given the combination of native controls, enterprise compliance framing, and current 2026 documentation, Microsoft merits a 5 on this topic.",
+        "evidence": "Microsoft Learn's 'Govern and secure AI agents' documents responsible AI policies, agent governance, and security controls across the organization. A 2026 article on securing Copilot Studio agents states that Copilot Studio audit logs can be integrated with Microsoft Purview and that agents are built and hosted in Power Platform environments. Microsoft's 2026 Microsoft 365 Copilot privacy page addresses regulatory compliance requirements and privacy controls for connected experiences. A 2026 governance guide references Microsoft 365 security and compliance standards including GDPR, ISO, and SOC, plus audit logs and built-in DLP for Power Platform.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://azure.microsoft.com/en-us/products/api-management",
-          "https://www.microsoft.com/en-us/power-platform/blog/power-apps/microsoft-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-enterprise-low-code-application-platforms/",
-          "https://www.microsoft.com/en-us/security/blog/2025/09/30/empowering-defenders-in-the-era-of-agentic-ai-with-microsoft-sentinel/",
-          "https://zenity.io/blog/research"
+          "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/governance-security-across-organization",
+          "https://promx.net/en/2026/04/securing-copilot-studio-agents-with-dlp-and-compliance-controls/",
+          "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy",
+          "https://www.syskit.com/blog/scalable-power-platform-governance-guide"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "Microsoft has a strong deployment and operations story through Azure, Power Platform lifecycle support, and DevOps integration, making it enterprise-proven for operating automation and AI services at scale. It is not scored 5 because the snippet evidence is broad and platform-level rather than deeply specific on end-to-end automation operations discipline for this exact domain.",
-        "reasoning": "Microsoft Power Platform and Azure together provide a mature cloud operating base, and Azure's DevOps page highlights recognition in the 2025 Forrester Wave for DevOps platforms. The 2025 Gartner low-code announcement also emphasizes collaboration between business and IT users, which is relevant to governed deployment and operational handoff. Azure Virtual Desktop and broader Azure infrastructure reinforce deployment flexibility and enterprise operational reach. However, the evidence gathered from snippets is more indirect than ideal on environment promotion, release controls, rollback, and operational runbooks for automation assets, so the score remains 4 with medium confidence.",
-        "evidence": "Microsoft Power Platform is positioned as a low-code platform spanning Power Apps, Power Automate, Power Pages, and Microsoft Copilot for enterprise workflow automation. Azure's Agentic DevOps page says Microsoft is recognized in the 2025 Forrester Wave DevOps Platforms report. Microsoft's 2025 Gartner Magic Quadrant announcement says Power Platform capabilities are designed to foster seamless collaboration between business and IT users. Azure Virtual Desktop is described as combining Azure and Microsoft 365 scale, security, and cost benefits for secure deployment from virtually anywhere.",
+        "rationale": "Microsoft has strong deployment and operational maturity for Power Platform through managed environments, deployment pipelines, Git/Azure DevOps integration, and admin deployment tooling. It is enterprise-proven, though evidence points more to strong ALM and admin operations than a uniquely market-defining operations layer.",
+        "reasoning": "Microsoft Learn documents Power Platform pipelines, managed environments, and an admin deployment hub, indicating mature operational tooling for enterprise rollout. Additional architecture guidance references Azure DevOps, service principals or managed identities, and RBAC for enterprise ALM. These are concrete, production-oriented capabilities rather than aspirational claims. The evidence supports a strong score of 4, but the search snippets did not surface independent analyst validation specifically naming Microsoft as the top platform for automation deployment operations, so a 5 is not justified from snippet evidence alone.",
+        "evidence": "Microsoft Learn's 2026 pipelines overview says Power Platform pipelines support ALM and can be enabled via managed environments in the Power Platform admin center. The 2026 admin deployment hub page describes management of ALM workloads including pipelines from a centralized admin deployment page. Microsoft's enterprise ALM reference architecture cites RBAC across Power Platform environments and Azure DevOps plus service principals or managed identities for pipeline execution. Microsoft previously stated that customers use Azure DevOps and GitHub Actions to implement automated ALM processes for Power Platform and Dynamics 365.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://azure.microsoft.com/en-us/solutions/devops",
-          "https://www.microsoft.com/en-us/power-platform/blog/power-apps/microsoft-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-enterprise-low-code-application-platforms/",
-          "https://azure.microsoft.com/en-us/products/virtual-desktop"
+          "https://learn.microsoft.com/en-us/power-platform/alm/pipelines",
+          "https://learn.microsoft.com/en-us/power-platform/alm/admin-deployment-hub",
+          "https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/enterprise-power-platform-alm",
+          "https://www.microsoft.com/en-us/power-platform/blog/2022/12/07/automate-deployments-with-power-platform-pipelines-now-in-preview/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Microsoft demonstrates strong scalability and reliability through Azure-backed services, enterprise low-code recognition, and managed API infrastructure. The evidence supports enterprise-grade scale, but not enough direct snippet-level proof of category-leading reliability on this precise automation topic to justify a 5.",
-        "reasoning": "Microsoft's Power Platform messaging directly ties workflow automation to Azure-backed infrastructure, and Microsoft states in its 2025 Gartner announcement that Power Platform makes enterprise-grade scale and compliance simple at any scale. Azure API Management explicitly claims capabilities for securing, scaling, and monitoring APIs across environments, which is relevant to large automation estates. Additional Microsoft materials on Foundry mention enterprise-scale AI deployment with robust observability, supporting a mature reliability posture. Still, because the evidence is mainly vendor-provided and broad rather than containing detailed SLAs, outage metrics, or independent analyst ranking on reliability, a 4 is the most defensible score.",
-        "evidence": "Power Platform is marketed for enterprise workflow automation across Power Apps, Power Automate, Power Pages, and Microsoft Copilot. Microsoft's 2025 Gartner low-code announcement says the platform is making enterprise-grade scale and compliance simple at any scale. Azure API Management is described as securing, scaling, and monitoring APIs across environments. Microsoft Foundry adoption material says organizations can deploy AI solutions at enterprise scale with robust observability.",
+        "score": 5,
+        "rationale": "Microsoft shows best-in-class scalability and reliability based on Azure-wide high availability, business continuity, availability zones, SLA-backed services, and dynamic scalability evidence. The surrounding Azure platform strength materially elevates Microsoft’s maturity for automation workloads.",
+        "reasoning": "The research surfaced current Microsoft Learn documentation on business continuity, high availability, disaster recovery, and reliability recommendations across Azure. Additional 2026 evidence references SLA-backed speed and availability with instant dynamic scalability, while Cosmos DB reliability documentation highlights availability-zone-based SLAs. For enterprise automation and AI workloads, Microsoft benefits from one of the deepest hyperscale infrastructure foundations in the market. Because the evidence shows broad, current, enterprise-grade reliability primitives and scaling support, Microsoft earns a 5.",
+        "evidence": "Microsoft Learn's June 2026 guidance covers business continuity, high availability, and disaster recovery for Azure-based solutions. Azure Advisor reliability recommendations include zone-redundant architectures using Availability Zones to improve resiliency, scalability, and availability. A 2026 Azure Cosmos DB announcement references SLA-backed speed and availability along with instant dynamic scalability. Microsoft Learn's 2026 Cosmos DB reliability page says availability zones are physically separate and improve availability SLAs.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://www.microsoft.com/en-us/power-platform/blog/power-apps/microsoft-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-enterprise-low-code-application-platforms/",
-          "https://azure.microsoft.com/en-us/products/api-management",
-          "https://adoption.microsoft.com/files/agents/MicrosoftFoundryAIAdoptionJourney.pdf"
+          "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+          "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations",
+          "https://devblogs.microsoft.com/cosmosdb/announced-at-ms-build-2026-azure-cosmos-db-mcp-toolkit-semantic-reranking-global-secondary-indexes-and-more/",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-cosmos-db"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
         "score": 5,
-        "rationale": "Microsoft is best-in-class on connectivity and integration thanks to the breadth of Azure integration services, API management, Power Platform connectivity, and deep ties across Microsoft business applications. The ecosystem depth, enterprise API controls, and cross-product integration evidence clearly support a top score.",
-        "reasoning": "Azure API Management is explicitly positioned for securing, scaling, and monitoring APIs across environments, a core enterprise integration capability. Power Platform is built to connect workflow automation, apps, pages, BI, and Copilot, while Power BI snippets emphasize infusing insights into existing Microsoft 365 apps. Microsoft's broader ecosystem strength also appears in customer and analyst-oriented materials that emphasize integration as a product advantage. Given the combination of platform breadth, managed API infrastructure, and tight application ecosystem integration, Microsoft merits a 5 for this topic.",
-        "evidence": "Azure API Management is described as an advanced API management platform for securing, scaling, and monitoring APIs across environments. Microsoft Power Platform spans Power Apps, Power Automate, Power Pages, and Microsoft Copilot for workflow automation. Power BI is described as a business intelligence platform that helps visualize data and infuse insights into existing Microsoft 365 apps. A Rand Group review snippet cites Microsoft ecosystem integration as a strength in Dynamics 365 Finance & Operations.",
+        "rationale": "Microsoft is best-in-class in connectivity and integration, with 1,000+ connectors, custom connector support, and Azure API Management integration across Power Platform and Copilot Studio. The combination of breadth, enterprise control, and ecosystem reach supports a top score.",
+        "reasoning": "The evidence directly references Microsoft’s connector catalog and repeated claims of 1,000+ out-of-the-box connectors across Power Apps, Power Automate, and related services. Search results also point to Azure API Management as a platform for securing, scaling, and monitoring APIs, complementing low-code integration patterns. Partner and security commentary specifically cites the large connector fleet as a core enterprise benefit. Given this documented breadth plus Microsoft’s broader API platform, a maturity score of 5 is warranted.",
+        "evidence": "Microsoft Learn's May 2026 connector reference provides a summary of connectors available for Azure Logic Apps, Power Automate, and Power Apps. Microsoft's Power Platform blog states the platform has an existing fleet of 1000+ connectors. A 2026 Microsoft partner blog says Power Platform has 1,000+ out-of-the-box connectors within the enterprise governance perimeter customers already control. Azure API Management is described by Microsoft as an advanced platform for securing, scaling, and monitoring APIs across environments.",
         "sources": [
-          "https://azure.microsoft.com/en-us/products/api-management",
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://www.microsoft.com/en-us/power-platform/products/power-bi",
-          "https://www.randgroup.com/insights/microsoft/dynamics-365/finance-operations/microsoft-dynamics-365-finance-operations-reviews/"
+          "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-powerapps-connectors",
+          "https://www.microsoft.com/en-us/power-platform/blog/2023/11/16/arcgis-meisterplan-and-microsoft-translator-among-60-new-connectors-50-connector-updates-launched-to-accelerate-value-from-low-code/",
+          "https://techcommunity.microsoft.com/blog/partnernews/agent-builder-copilot-studio-or-azure-ai-foundry-how-we-decide-for-every-client/4520318",
+          "https://azure.microsoft.com/en-us/products/api-management"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -114,14 +113,13 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 4,
-        "rationale": "Microsoft offers strong time-to-value through low-code tooling, Copilot-assisted development, and broad familiarity with Microsoft interfaces, making it highly accessible for enterprise users. It falls short of a 5 because snippets also hint at product limitations and evolving experiences in some areas.",
-        "reasoning": "Power Platform directly targets low-code development for enterprise workflow automation, which generally reduces implementation effort and supports faster delivery. Microsoft's 2025 Gartner recognition cites purpose-built capabilities to foster collaboration between business and IT users, strengthening the ease-of-adoption argument. At the same time, community and product-update snippets suggest some UX and feature limitations remain in parts of the platform, especially as Copilot and related design experiences evolve. The result is a strong but not unequivocally best-in-class maturity score of 4.",
-        "evidence": "Microsoft Power Platform is described as improving enterprise workflow automation with low-code development tools. Microsoft's 2025 Gartner announcement says developer capabilities are designed to foster seamless collaboration between business and IT users. A Power BI updates snippet references semantic modeling capabilities in GitHub Copilot and mentions limitations in semantic model use. SAMexpert's March 2026 Microsoft Copilot reorg snippet describes Microsoft accelerating a user-focused AI-first product and growth framework.",
+        "rationale": "Microsoft offers a strong low-code/no-code experience with guided agent creation and native workflow-like design patterns, enabling fast time-to-value for many business users. However, the available evidence also surfaces some UX churn and criticism around designer consistency, preventing a best-in-class score.",
+        "reasoning": "Microsoft Learn quickstart content says Copilot Studio lets users quickly create powerful agents through a guided, no-code graphical experience. The product overview further emphasizes a low-code experience and a workflow experience similar to Power Automate, which supports fast onboarding and business user productivity. At the same time, 2026 community commentary indicates some designer transitions and UX inconsistency, suggesting the experience is still evolving. That mix supports a 4: clearly strong and usable, but not unequivocally best-in-class from the available evidence.",
+        "evidence": "Microsoft Learn's Copilot Studio quickstart says users can quickly and easily create powerful agents through a guided, no-code graphical experience. Microsoft Learn's Copilot Studio overview says the platform's low-code experience puts AI power in users' hands and provides a workflow experience similar to Power Automate. A 2026 LinkedIn post from a Power Platform expert criticizes changes around the designer experience in Copilot Studio and Power Automate, suggesting UX evolution is still in progress.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://www.microsoft.com/en-us/power-platform/blog/power-apps/microsoft-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-enterprise-low-code-application-platforms/",
-          "https://community.fabric.microsoft.com/t5/Power-BI-Updates-Blog/bg-p/fbc_pbiupdatesblog/label-name/analysis%20services",
-          "https://samexpert.com/microsoft-copilot-reorganisation-march-2026/"
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio",
+          "https://www.linkedin.com/posts/jukkaniiranen_aaaaaand-its-gone-the-new-designer-activity-7427331945220440064-YECn"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -130,32 +128,32 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4,
-        "rationale": "Microsoft has rapidly built strong agentic capabilities across Azure AI, Copilot Studio, and related governance layers, with clear enterprise investment and productization. It is not yet scored 5 because available evidence shows rapid maturation but limited independent analyst confirmation in the search snippets for outright market-leading status on enterprise agent orchestration.",
-        "reasoning": "Azure AI solutions explicitly market secure, responsible AI apps and agents and claim trust across industries with 11K+ models, indicating significant breadth. Microsoft's Sentinel security post references governance for AI apps and agents spanning Microsoft 365 Copilot, Copilot Studio, and Azure AI Foundry, which shows enterprise controls around agent deployment. Azure's Agentic DevOps offering and Foundry adoption materials further reinforce that Microsoft is moving beyond pilots to enterprise-scale deployment with observability. These are strong signs of maturity, but because third-party snippet evidence is thinner and the space is still evolving quickly, a 4 is more defensible than a 5.",
-        "evidence": "Azure AI Apps and Agents says Microsoft offers secure, responsible AI apps and agents trusted across industries with 11K+ models. Microsoft's Sept. 30, 2025 Sentinel post says innovations help secure and govern AI apps and agents in Microsoft 365 Copilot, Copilot Studio, and Azure AI Foundry. Azure's Agentic DevOps page promotes next-generation agentic DevOps solutions. Microsoft Foundry adoption material says organizations can deploy AI solutions at enterprise scale with robust observability.",
+        "score": 5,
+        "rationale": "Microsoft has best-in-class agentic capabilities, with Copilot Studio support for agents, tools, prompts, agent flows, new agent experiences, and 2026 scale-focused roadmap updates. The evidence shows a broad, current, enterprise-focused agent platform rather than a narrow chatbot layer.",
+        "reasoning": "Official Microsoft Copilot Studio documentation explicitly includes adding knowledge, extending agents with tools, creating prompts, and building and managing agent flows. Microsoft’s January 2026 blog highlights '6 core capabilities to scale agent adoption,' including agent flows and a Workflows Agent, while the June 2026 'What's new' page references a new enhanced agent-building experience. Third-party summaries also cite Copilot Studio for building and deploying AI agents across business workflows. This breadth, recency, and enterprise framing justify a 5.",
+        "evidence": "Official Microsoft Copilot Studio documentation includes capabilities to add knowledge, extend agents with tools, create prompts, and build and manage agent flows. Microsoft's January 2026 Copilot Studio blog says agent flows and the Workflows Agent allow agents to own more work as adoption scales. Microsoft Learn's June 2026 'What's new in Copilot Studio' notes a new enhanced experience for building agents. A 2026 market guide says Microsoft Copilot Studio is used for building and deploying AI agents across business workflows.",
         "sources": [
-          "https://azure.microsoft.com/en-us/solutions/ai",
-          "https://www.microsoft.com/en-us/security/blog/2025/09/30/empowering-defenders-in-the-era-of-agentic-ai-with-microsoft-sentinel/",
-          "https://azure.microsoft.com/en-us/solutions/devops",
-          "https://adoption.microsoft.com/files/agents/MicrosoftFoundryAIAdoptionJourney.pdf"
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+          "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/6-core-capabilities-to-scale-agent-adoption-in-2026/",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+          "https://www.kore.ai/blog/best-ai-workflow-automation-tools"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "Microsoft has credible workflow and orchestration capabilities through Power Automate and adjacent services, but the evidence here suggests a solid rather than category-leading BPM stack. It covers core orchestration needs, yet appears less specialized than dedicated enterprise BPM suites.",
-        "reasoning": "Power Platform clearly supports enterprise workflow automation and is commonly included in BPM comparisons, indicating real market relevance. However, the most specific independent snippet found is a 2026 comparison article listing Microsoft among BPM vendors rather than highlighting leadership, while another snippet notes Power Apps works best within the Microsoft ecosystem, implying constraints in broader BPM use cases. Gartner result pages surfaced market categories but not direct analyst recognition for Microsoft as a BPM leader in the snippets available. That combination supports an adequate score of 3: credible and useful, but with limitations in specialization and ecosystem breadth.",
-        "evidence": "Microsoft Power Platform is marketed for enterprise workflow automation across Power Apps, Power Automate, Power Pages, and Copilot. A 2026 Kognitos comparison lists Microsoft among top BPM companies for enterprise digital transformation. A Kissflow 2026 low-code comparison snippet says Power Apps works best within the Microsoft ecosystem, indicating trade-offs. Gartner market pages surfaced enterprise low-code and iPaaS categories but did not provide snippet evidence naming Microsoft as a BPM leader.",
+        "score": 4,
+        "rationale": "Microsoft has strong BPM and orchestration maturity through Power Automate, approvals, business logic, adaptive UI interactions, and intelligent process automation at scale. The evidence supports broad orchestration capability, but some market commentary suggests it is not the most advanced environment for deeply business-critical orchestration.",
+        "reasoning": "Microsoft Learn’s 2026 release wave plan states Power Automate is focused on automating repetitive tasks, orchestrating complex business processes, and driving intelligent automation at scale. A 2026 Copilot Studio update adds approvals, business logic, and adaptive UI interactions within the same automation system, reinforcing orchestration depth. Independent content also lists Microsoft Power Automate among top BPA tools. However, expert commentary surfaced in search results criticized Microsoft’s handling of 'real business critical process automation and orchestration,' which tempers the score from 5 to 4.",
+        "evidence": "Microsoft Learn's 2026 release wave 1 overview says Power Automate helps orchestrate complex business processes and drive intelligent automation at scale. A May 2026 Microsoft Copilot Studio update says approvals, business logic, and adaptive UI interactions can operate within the same automation system. An independent 2026 BPA tools roundup includes Microsoft Power Automate, Power Apps, and Copilot Studio among leading business process automation tools. A 2026 expert LinkedIn comment argues Microsoft has not fully mastered real business-critical process automation and orchestration, indicating some perceived limitations.",
         "sources": [
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/",
-          "https://kissflow.com/low-code/best-low-code-company/",
-          "https://www.gartner.com/reviews/market/enterprise-low-code-application-platform"
+          "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-automate/",
+          "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-computer-using-agents-a-new-workflows-experience-and-real-time-voice-experiences/",
+          "https://www.incworx.com/blog/business-process-automation-tools",
+          "https://www.linkedin.com/posts/jukkaniiranen_aaaaaand-its-gone-the-new-designer-activity-7427331945220440064-YECn"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -164,96 +162,99 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 2,
-        "rationale": "Microsoft has some adjacent testing and DevOps assets, but the search evidence did not surface strong, automation-specific functional and performance testing capabilities for this topic. The capability appears emerging or indirect rather than a well-defined platform strength.",
-        "reasoning": "Search results for this topic returned mostly generic Gartner category pages and unrelated platform comparisons, with limited direct evidence of Microsoft offering a comprehensive testing-and-evaluation capability in the automation/agent platform context. While Azure DevOps, GitHub, and platform tooling likely provide some testing support, the available snippets in this session did not provide enough specific, traceable claims on functional test automation, performance benchmarking, or evaluation frameworks within Power Platform/Copilot Studio. Under the rubric, absence of strong evidence and lack of explicit positioning on the topic justify a conservative score of 2. Confidence is low because snippet coverage was limited.",
-        "evidence": "The search results for this topic surfaced generic Gartner Magic Quadrant and analytics review pages rather than direct Microsoft testing capability pages. A Rand Group snippet about Dynamics 365 Finance & Operations mentions capabilities, strengths, limitations, and business value, but not dedicated functional or performance testing features. No strong snippet-level evidence in this session identified Microsoft as a leader in testing and evaluation for automation or agent workflows.",
+        "score": 3,
+        "rationale": "Microsoft has an adequate, credible testing offering through Azure App Testing, Playwright Workspaces, and Azure Load Testing covering core functional and performance needs. But the retirement of Microsoft Playwright Testing and lack of stronger analyst evidence in the snippets suggest a solid but not leading position for enterprise test automation on this exact topic.",
+        "reasoning": "Microsoft Learn states Azure App Testing supports functional tests with Playwright Workspaces and performance tests using Azure Load Testing. The broader Azure App Testing documentation further highlights end-to-end Playwright tests and cloud load tests using JMeter or Locust, showing practical coverage of the requested scope. However, Azure updates note Microsoft Playwright Testing is being retired in favor of Azure App Testing, which implies transition and product consolidation rather than a settled market-leading suite. With good core capability but limited snippet evidence for deeper unified enterprise testing governance, Microsoft scores a 3.",
+        "evidence": "Microsoft Learn says Azure App Testing allows users to run functional tests with Playwright Workspaces and performance tests using Azure Load Testing. Azure App Testing documentation says users can run end-to-end Playwright tests or automated load tests in the cloud using JMeter or Locust scripts. Azure updates in 2025 state Microsoft Playwright Testing is being retired on March 8, 2026, in favor of Azure App Testing. A Microsoft blog says Azure App Testing combines Azure Load Testing and Playwright Workspaces to validate application performance and functionality at scale.",
         "sources": [
-          "https://www.gartner.com/en/research/magic-quadrant",
-          "https://www.randgroup.com/insights/microsoft/dynamics-365/finance-operations/microsoft-dynamics-365-finance-operations-reviews/",
-          "https://www.gartner.com/reviews/market/analytics-business-intelligence-platforms"
+          "https://learn.microsoft.com/en-us/azure/app-testing/overview-what-is-azure-app-testing",
+          "https://learn.microsoft.com/en-us/azure/app-testing/",
+          "https://azure.microsoft.com/updates?id=499860",
+          "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-app-testing-playwright-workspaces-for-local-to-cloud-test-runs/4442711"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "Microsoft has strong monitoring and observability capabilities through Azure-native monitoring, API management telemetry, and AI-at-scale observability messaging. The score is strong rather than best-in-class because the evidence is broad and cross-platform, not tightly centered on automation-specific observability workflows.",
-        "reasoning": "Azure API Management explicitly includes monitoring across environments, which is a concrete observability feature relevant to integration-heavy automation. Microsoft's Foundry adoption material refers to enterprise-scale AI deployment with robust observability, indicating that observability is now part of Microsoft's AI operating model. Azure DevOps and the wider IT/observability ecosystem further reinforce operational maturity, although the returned snippets do not provide deep specifics on automation execution tracing or business-level observability for Power Automate flows. Overall, enterprise capability is clearly strong, supporting a 4.",
-        "evidence": "Azure API Management is described as securing, scaling, and monitoring APIs across environments. Microsoft Foundry adoption material says organizations can deploy AI solutions at enterprise scale with robust observability. Azure's Agentic DevOps page highlights Microsoft recognition in the 2025 Forrester Wave DevOps Platforms report.",
+        "rationale": "Microsoft has strong monitoring and observability maturity via Azure Monitor, Application Insights, and Power Platform observability guidance including CoE telemetry. The evidence indicates robust, enterprise-scale observability, though not enough topic-specific analyst recognition surfaced to support a 5 solely from snippets.",
+        "reasoning": "Microsoft Learn’s well-architected guidance for Power Platform explicitly references telemetry flowing into Application Insights and points to deep adoption insights via CoE Power BI tooling. Azure Monitor is presented as a unified observability platform for hybrid and multicloud environments, while reference architecture material cites Azure Monitor and Application Insights tracking executions, queue health, delivery success, and failures. These are substantial operational observability capabilities. The evidence supports a 4 because the platform is clearly strong and broad, but the snippet set did not show market-leading analyst designation for this automation-specific topic.",
+        "evidence": "Microsoft Learn's Power Platform observability guidance says telemetry can flow into Application Insights and references CoE Power BI for deep adoption insights. Azure Monitor is described by Microsoft as providing unified observability and real-time insights across hybrid and multicloud environments. A Power Platform reference architecture says Application Insights and Azure Monitor track function executions, queue health, delivery success, and failures. The Azure Observability blog references dynamic thresholds and anomaly detection in Azure Monitor managed Prometheus metric alerts.",
         "sources": [
-          "https://azure.microsoft.com/en-us/products/api-management",
-          "https://adoption.microsoft.com/files/agents/MicrosoftFoundryAIAdoptionJourney.pdf",
-          "https://azure.microsoft.com/en-us/solutions/devops"
+          "https://learn.microsoft.com/en-us/power-platform/well-architected/operational-excellence/observability",
+          "https://azure.microsoft.com/en-us/products/monitor",
+          "https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/scalable-notification-system",
+          "https://techcommunity.microsoft.com/category/azure/blog/azureobservabilityblog"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 4,
-        "rationale": "Microsoft is strong on traceability and governance through Purview, enterprise compliance tooling, and governance messaging across Copilot Studio and Azure AI assets. The score remains 4 because the evidence indicates substantial capability, but not enough direct analyst snippet support in this session for clear best-in-class leadership on automation governance specifically.",
-        "reasoning": "Gartner Peer Insights snippets explicitly describe Microsoft Purview as providing data governance, risk, and compliance solutions, and another 2026 governance comparison names Microsoft Purview among cloud-native tools displacing standalone governance platforms. Microsoft also discusses securing and governing AI apps and agents across Copilot Studio and Azure AI Foundry, extending governance into the agentic domain. These signals show broad governance maturity across data, AI, and platform controls. However, traceability at the level of end-to-end automation lineage and business process auditability was not richly evidenced in snippets, so a 4 is appropriate.",
-        "evidence": "Gartner Peer Insights describes Microsoft Purview as providing data governance, risk, and compliance solutions for organizations. An Improvado 2026 comparison says cloud-native tools including Microsoft Purview are displacing standalone governance platforms. Microsoft's Sept. 30, 2025 Sentinel post says innovations help secure and govern AI apps and agents in Microsoft 365 Copilot, Copilot Studio, and Azure AI Foundry.",
+        "score": 5,
+        "rationale": "Microsoft is best-in-class in traceability and governance thanks to Purview audit logging, retention policies, cross-cloud protection extensions, and a dedicated control-plane narrative for AI agents. The evidence shows deep traceability and governance capabilities applied directly to agents and Copilot scenarios.",
+        "reasoning": "Microsoft Learn documents audit logs for Copilot and AI applications and separately documents retention policy management in Microsoft Purview. Microsoft’s June 2026 security blog states Purview Audit logs all agent activity for full traceability, which is directly on-topic. Another 2026 Purview post extends data protection to AWS Bedrock agents, indicating governance is increasingly cross-cloud rather than Microsoft-only. Combined with Agent 365’s positioning as a control plane for governing agents at scale, Microsoft earns a 5.",
+        "evidence": "Microsoft Learn provides audit log coverage for Copilot and AI applications through Microsoft Purview. Microsoft's June 2026 security blog states that Microsoft Purview Audit logs all agent activity for full traceability. Microsoft Learn documents customizable audit log retention policies in Purview for organizational retention needs. A 2026 Purview blog describes extending Microsoft Purview data protection to AWS Bedrock agents for cross-cloud AI governance.",
         "sources": [
-          "https://www.gartner.com/reviews/market/ai-governance-platforms",
-          "https://improvado.io/blog/data-governance-tools",
-          "https://www.microsoft.com/en-us/security/blog/2025/09/30/empowering-defenders-in-the-era-of-agentic-ai-with-microsoft-sentinel/"
+          "https://learn.microsoft.com/en-us/purview/audit-copilot",
+          "https://www.microsoft.com/en-us/security/blog/2026/06/02/microsoft-build-2026-securing-code-agents-and-models-across-the-development-lifecycle/",
+          "https://learn.microsoft.com/en-us/purview/audit-log-retention-policies",
+          "https://techcommunity.microsoft.com/blog/microsoft-purview-blog/extend-microsoft-purview-data-protection-to-aws-bedrock-agents-for-cross-cloud-a/4525984"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
-        "score": 3,
-        "rationale": "Microsoft has credible process intelligence adjacency through workflow automation, analytics, and market presence, but the snippet evidence did not show deep, dedicated process intelligence leadership. It appears adequate for core needs rather than a top-tier specialized offering.",
-        "reasoning": "Gartner's process intelligence category page confirms the topic's relevance and defines it around leveraging process data from underlying IT systems. Microsoft Power Platform is clearly active in workflow automation and is included in BPM comparisons, but the search results did not surface strong direct evidence of a leading Microsoft-native process mining or process intelligence capability. The absence of rich snippet evidence on conformance checking, simulation, variant analysis, or mining depth keeps Microsoft at 3 instead of 4. This is a credible but not standout maturity position based on available evidence.",
-        "evidence": "Gartner describes process intelligence platforms as leveraging data from underlying IT systems and applying process mining and automation capabilities to provide insights into business processes. Microsoft Power Platform is positioned for enterprise workflow automation across Power Apps, Power Automate, Power Pages, and Microsoft Copilot. A 2026 BPM comparison includes Microsoft Power Platform among enterprise digital transformation options.",
+        "score": 4,
+        "rationale": "Microsoft has strong process intelligence maturity through Power Automate process mining and task mining, with GA product evidence and continued 2026 roadmap investment. It clearly exceeds basic capability, though the snippets do not establish Microsoft as the category’s most recognized leader.",
+        "reasoning": "Microsoft Learn’s process advisor overview explicitly covers process mining and task mining in Power Automate, and notes process mining is licensed as part of Power Automate. Microsoft’s 2023 announcement states Power Automate Process Mining is generally available, while 2026 release planning continues to include process mining. Third-party comparisons list Microsoft among task mining tool vendors, confirming market presence. These signals support a strong score of 4, but not 5 because the evidence does not show dominant analyst recognition relative to category leaders from snippet data alone.",
+        "evidence": "Microsoft Learn's process advisor overview covers both process mining and task mining in Power Automate. Microsoft's August 2023 announcement says Microsoft Power Automate Process Mining is generally available. The 2026 release wave 1 planned features page for Power Automate explicitly includes process mining. A 2026 task mining tools comparison lists Microsoft Power Automate Process Mining among notable vendors.",
         "sources": [
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
-          "https://www.microsoft.com/en-us/power-platform",
-          "https://www.kognitos.com/blog/best-bpm-companies-enterprise-digital-transformation-2026/"
+          "https://learn.microsoft.com/en-us/power-automate/process-advisor-overview",
+          "https://www.microsoft.com/en-us/power-platform/blog/2023/08/01/microsoft-power-automate-process-mining-is-generally-available/",
+          "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-automate/planned-features",
+          "https://kyp.ai/task-mining-tools-compared/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Microsoft offers broad packaging options and enterprise buying leverage, but the evidence also points to hidden consumption costs and licensing complexity around Copilot and agent offerings. That mix suggests an adequate but not especially simple or low-TCO maturity position.",
-        "reasoning": "Microsoft benefits from enterprise-wide commercial relationships and broad bundles across Microsoft 365, Dynamics 365, and Power Platform, which can improve buying efficiency. However, search snippets directly mention hidden consumption costs, discount complexity, and layered packaging such as Microsoft 365 E7 and Agent 365 pricing. This indicates that while Microsoft can be cost-effective in existing estates, TCO predictability may be challenging, especially as AI and agent credits are added. Therefore, a 3 best captures a credible but mixed licensing/TCO position.",
-        "evidence": "SAMexpert says Microsoft 365 E7 includes E5, Copilot, Entra Suite, and Agent 365 at $99/user, and references hidden consumption costs and discount complexity. A June 2026 SAMexpert snippet says Microsoft Agent 365 is GA at $15/user/month standalone or $99 in a bundle. A May 2026 Digital Applied snippet says Copilot Studio computer-use agents GA included Purview logging and 5 Copilot Credits per message, implying usage-based economics. Microsoft's March 2026 Dynamics 365 Licensing Guide says customers have a variety of options to suit requirements.",
+        "rationale": "Microsoft’s licensing is credible and flexible, with per-user options, included orchestration/desktop capabilities, and bundled rights across parts of the Microsoft estate. However, the licensing model is also layered and can be complex, supporting an adequate rather than clearly strong maturity score on this topic.",
+        "reasoning": "Microsoft’s pricing page and 2026 licensing documentation show concrete packaging for Power Automate, including attended/unattended usage, bot orchestration and management, and included process-mining capacity. The licensing guide further references different connectors and orchestration scenarios, while Copilot Studio has its own licensing guide and use-right interactions with other Microsoft licenses. That breadth can help TCO when customers are already standardized on Microsoft, but it also indicates complexity across SKUs and entitlements. The evidence therefore supports a 3: workable and real, but not obviously simple or market-leading in TCO clarity.",
+        "evidence": "Microsoft's Power Automate pricing page says desktop flow authoring and bot orchestration and management are included. The pricing page states each per-user license comes with 50 MB of process mining up to a maximum of 100 MB. Microsoft Learn's March 2026 licensing page describes licensed users creating and running automations, including attended or unattended desktop flows. The January 2026 Power Platform Licensing Guide references connectors and orchestration scenarios combining cloud flows and desktop flows in one automation.",
         "sources": [
-          "https://samexpert.com/microsoft-365-e7-licensing-guide/",
-          "https://samexpert.com/agent-365/",
-          "https://www.digitalapplied.com/blog/copilot-studio-computer-use-agents-ga-deep-dive",
-          "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Dynamics-365-Licensing-Guide-March-2026-PUB.pdf"
+          "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
+          "https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/types",
+          "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-January-2026-PUB.pdf",
+          "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Microsoft-Copilot-Studio-Licensing-Guide-May-2026-PUB.pdf"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
         "score": 5,
-        "rationale": "Microsoft is best-in-class in industry applicability because its platform spans productivity, ERP/CRM, analytics, low-code, and AI across virtually every major business domain. The search evidence points to broad cross-functional deployment and deep industry reach.",
-        "reasoning": "Microsoft 365 Copilot spans core office workflows such as Word, Excel, PowerPoint, Outlook, and Teams, showing horizontal reach across knowledge work. Customer storytelling from Microsoft cites more than 1,000 stories of transformation and notes use of Power Platform and Copilot Studio in finance and other business groups. Dynamics 365 and Power BI further extend Microsoft's footprint into line-of-business processes and analytics. This combination of horizontal and vertical applicability strongly supports a 5.",
-        "evidence": "Microsoft 365 business plans highlight work-grounded Copilot in Word, Excel, PowerPoint, Outlook, and Teams, plus reasoning AI for research and data analysis. Microsoft's July 2025 customer transformation post says organizations used Power Platform and Copilot Studio to automate processes for finance and other business groups. Microsoft's March 2026 Dynamics 365 Licensing Guide says intelligent business applications offer a variety of options to suit business needs. Copilot for Power BI overview says the product includes AI-infused Copilot features spanning business users to advanced creators.",
+        "rationale": "Microsoft demonstrates best-in-class industry applicability through broad coverage across healthcare, financial services, manufacturing, government, retail, and other sectors, supported by dedicated industry cloud content and partner ecosystem reach. The evidence indicates very broad domain relevance rather than a narrow horizontal platform.",
+        "reasoning": "Microsoft industry documentation explicitly spans healthcare, financial services, manufacturing, nonprofits, sustainability, and other verticals. Additional Microsoft Cloud and AI content references industry-specific growth across financial services, government, healthcare, manufacturing, mobility, retail, and telecommunications. This breadth is amplified by Microsoft’s partner ecosystem and cloud portfolio, which helps operationalize automation and AI in industry contexts. On absolute maturity, Microsoft deserves a 5 because its domain applicability is exceptionally broad and enterprise-proven.",
+        "evidence": "Microsoft Learn industry documentation lists healthcare, financial services, manufacturing, nonprofits, and sustainability resources. A 2025 Microsoft Cloud blog cites industry-specific AI across financial services, government, healthcare, manufacturing, mobility, retail, and telecommunications. Microsoft's manufacturing industry blog discusses cloud modernization and agentic AI accelerating migration in manufacturing, healthcare, and financial services.",
         "sources": [
-          "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-plans-and-pricing",
-          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/",
-          "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Dynamics-365-Licensing-Guide-March-2026-PUB.pdf",
-          "https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction"
+          "https://learn.microsoft.com/en-us/industry/",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/03/27/beyond-productivity-how-industry-specific-ai-fuels-growth/",
+          "https://www.microsoft.com/en-us/microsoft-cloud/blog/industry/manufacturing/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -262,32 +263,32 @@
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Microsoft offers strong long-term value through ecosystem durability, broad product portfolio integration, and continued roadmap investment in Power Platform and Copilot Studio. It is not scored 5 because the available evidence also suggests some fast-evolving product changes and packaging complexity that can affect realized value over time.",
-        "reasoning": "Microsoft's 2025 Ignite Book of News and 2026 release wave materials show active roadmap investment in Power Platform and Copilot Studio, including enterprise-ready agentic capabilities. The vendor's broad installed base and cross-product platform strategy also increase durability and reuse across many initiatives. At the same time, some community and market commentary points to rapid product changes and evolving experiences, which can create churn or retraining costs. Overall, the platform offers strong long-term value, but the evidence here supports a 4 rather than a clearly unmatched 5.",
-        "evidence": "Microsoft Ignite 2025 Book of News says Power Platform updates empower makers to more easily build and govern apps. A Microsoft Copilot article says Copilot Studio, Visual Studio, GitHub, and Power Platform integration contribute to long-term value. Microsoft's March 2026 release wave 1 post highlights enterprise-ready agentic and low-code data platform capabilities. A May 2026 Microsoft customer story says a Costa Rican dairy cooperative used Microsoft 365 Copilot, Copilot Chat, and Copilot Studio as part of long-term business viability efforts.",
+        "score": 5,
+        "rationale": "Microsoft offers best-in-class long-term value through sustained roadmap investment, an enormous partner ecosystem, and expanding agent/security/platform capabilities that protect future relevance. The evidence indicates both product continuity and ecosystem durability.",
+        "reasoning": "Microsoft’s 2026 release wave plan highlights ongoing expansion of Power Platform and Copilot Studio with modern app development, intelligent automation, and enterprise governance. The Ignite 2025 Book of News cites a partner ecosystem of more than 500,000 partners, underscoring implementation durability and extension capacity. Additional 2026 announcements around Agent 365 and ecosystem partners show Microsoft is actively broadening the platform for emerging agentic use cases. This combination of roadmap momentum, scale, and ecosystem support supports a score of 5 for long-term value.",
+        "evidence": "Microsoft's 2026 release wave 1 plan says Power Platform continues to expand modern app development, intelligent automation, and enterprise-grade governance. Microsoft Ignite 2025 Book of News says Marketplace powers Microsoft's ecosystem of more than 500,000 partners supporting customers worldwide. Microsoft's May 2026 Agent 365 announcement says ecosystem partners play a critical role in extending agents into line-of-business systems and vertical scenarios. A February 2026 roadmap update references adoption growth and customer and partner feedback shaping Microsoft 365 and Power Platform activity.",
         "sources": [
-          "https://news.microsoft.com/ignite-2025-book-of-news/",
-          "https://www.microsoft.com/en-us/microsoft-copilot/copilot-101/ai-agents-types-and-uses",
           "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/03/18/2026-release-wave-1-plans-for-microsoft-dynamics-365-microsoft-power-platform-and-copilot-studio-offerings/",
-          "https://news.microsoft.com/source/latam/features/ai/costa-rica-dos-pinos-ai-agents-microsoft-copilot-en/?lang=en"
+          "https://news.microsoft.com/ignite-2025-book-of-news/",
+          "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/",
+          "https://devblogs.microsoft.com/microsoft365dev/sharepoint-framework-spfx-roadmap-update-february-2026/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "Microsoft is strong on business adaptability because low-code tools, Copilot assistance, and frequent platform release waves help organizations change processes quickly. It falls short of a 5 because some evidence points to ecosystem dependence and evolving product experiences that may slow adaptation in more complex heterogeneous environments.",
-        "reasoning": "Microsoft's 2026 release wave 1 materials explicitly emphasize enterprise-ready agentic and low-code data platform capabilities, showing ongoing investment in business agility. Ignite 2025 messaging also highlights empowering makers to build and govern apps more easily, reinforcing adaptability for business teams. Dynamics 365 messaging ties Microsoft's platforms to growth, agility, and resilience, while marketplace offerings around Copilot Studio agents suggest a growing implementation ecosystem. Still, trade-offs around Microsoft-centric fit and platform evolution temper the score slightly to 4.",
-        "evidence": "Microsoft's March 2026 release wave 1 post highlights enterprise-ready agentic and low-code data platform capabilities. Microsoft Ignite 2025 Book of News says Power Platform updates empower makers to more easily build and govern apps. A December 2025 Dynamics 365 post says modern business leaders require ERP solutions that deliver growth, agility, and resilience. A February 2026 Microsoft Marketplace post references implementation roadmaps and recommended architecture for Microsoft Copilot Studio agents based on business cases.",
+        "rationale": "Microsoft has strong business adaptability and agility due to low-code development, fusion-team patterns, and guidance for decentralized delivery models. The evidence supports rapid change enablement, though the snippets do not prove an unmatched leadership position for agility alone.",
+        "reasoning": "Microsoft Learn adoption guidance explicitly discusses agility of decentralized teams and fusion teams blending low-code and traditional resources. Additional materials position Power Platform as enabling organizations to build apps rapidly and automate business processes, reinforcing adaptability. Microsoft has also promoted repeatable adoption patterns and democratized solution delivery for years, which supports organizational agility at scale. This is strong evidence for a 4, short of a 5 because the snippet set is more guidance-oriented than proof of uniquely best-in-class market recognition on this dimension.",
+        "evidence": "Microsoft Learn's delivery models guidance references the agility of decentralized teams using Power Platform. Microsoft Learn's application modernization guidance highlights fusion teams that blend low-code and traditional resources. A 2026 Power Platform fundamentals article says the platform enables organizations to build business applications rapidly and automate processes. Microsoft's Power CAT adoption maturity model blog says the low-code approach has enabled thousands of organizations to use technology for solution delivery.",
         "sources": [
-          "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/03/18/2026-release-wave-1-plans-for-microsoft-dynamics-365-microsoft-power-platform-and-copilot-studio-offerings/",
-          "https://news.microsoft.com/ignite-2025-book-of-news/",
-          "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2025/12/01/microsoft-dynamics-365-named-a-leader-in-three-gartner-magic-quadrant-reports-cloud-erp-for-service-centric-enterprises-cloud-erp-for-product-centric-enterprises-and-cloud-erp-finance/",
-          "https://techcommunity.microsoft.com/blog/marketplace-blog/new-in-microsoft-marketplace-february-25-2026/4485667"
+          "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/delivery-models",
+          "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/application-modernization",
+          "https://venkatasubbaraopolisetty.com/2026/01/31/power-platform-fundamentals-2-introduction-to-microsoft-power-platform-fundamentals-architecture-and-business-value-quick-read-series/",
+          "https://www.microsoft.com/en-us/power-platform/blog/2021/04/28/power-cat-adoption-maturity-model-repeatable-patterns-for-successful-power-platform-adoption/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
