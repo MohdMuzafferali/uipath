@@ -1293,73 +1293,78 @@
     "Google": [
       {
         "category": "Security & Compliance",
-        "score": 4,
-        "rationale": "Google demonstrates strong enterprise security and compliance maturity through Google Cloud security capabilities and SecOps automation, but the available snippet evidence does not show best-in-class analyst recognition specific to this topic in this session.",
-        "reasoning": "Search results directly show Google positioning around security and compliance and identify concrete security operations functionality. The Google Cloud security page snippet states Google offers security and compliance capabilities for enterprises, while the Google SecOps page snippet states it includes full-fledged SOAR capabilities and automated playbooks. That supports broad, enterprise-grade coverage rather than a basic offering. However, the snippets returned here do not provide explicit Gartner/Forrester recognition of Google as a top leader in security and compliance, so a 4 is better supported than a 5.",
-        "evidence": "Google Cloud's security page says it provides 'security and compliance capabilities' so enterprises can achieve a strong security posture. Google Security Operations (SecOps) 'includes full fledged security orchestration, automation and response (SOAR) capabilities' and lets teams 'build playbooks that automate common response actions.'",
+        "score": 5,
+        "rationale": "Google demonstrates market-leading security and compliance maturity through dedicated cloud security products, broad compliance positioning, and analyst-recognized SecOps capabilities. The evidence supports best-in-class status for enterprise cloud security and operations.",
+        "reasoning": "Search results show Google Cloud has a dedicated security portfolio and explicitly positions security and compliance as core enterprise capabilities. Google Security Operations is described as a cloud-native platform for detecting, investigating, and responding to threats, indicating operational depth beyond baseline controls. Third-party coverage states Google SecOps held a Leader position in the 2025 Gartner Magic Quadrant for SIEM, which is strong analyst validation. Because the available snippets do not enumerate certification counts or specific compliance frameworks directly, the evidence is strongest on security operations and platform breadth rather than exhaustive compliance detail, but still sufficient for a top-tier score.",
+        "evidence": "Google Cloud's security page says customers can leverage Google Security Operations and security and compliance capabilities to achieve a strong security posture. Google Security Operations is described as a cloud-native security operations platform that helps teams detect, investigate, and respond to cybersecurity threats. A 2026 third-party analysis states Google SecOps and Microsoft Sentinel both held Leader positions in the 2025 Gartner Magic Quadrant for SIEM.",
         "sources": [
           "https://cloud.google.com/security",
-          "https://cloud.google.com/security/products/security-operations"
+          "https://cloud.google.com/security/products/security-operations",
+          "https://www.scybers.com/insight/google-secops-vs-microsoft-sentinel-a-2026-platform-analysis-for-security-leaders"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Deployment & Operations",
-        "score": 3,
-        "rationale": "Google appears to offer credible operational tooling, especially through cloud and security operations, but the evidence returned in this session is indirect for deployment and enterprise operations as a unified capability.",
-        "reasoning": "The strongest directly relevant snippet in this session is Google SecOps, which demonstrates operational response automation. Gartner search results in this set also reference endpoint management as a category involving configuration management, patching, and deployment, but they do not identify Google's standing in that market. Because the snippet evidence is not rich enough to confirm deep deployment lifecycle capabilities, release management breadth, or analyst leadership specifically for deployment and operations, Google fits an adequate rather than strong score. The offering is clearly real, but the search evidence is not broad enough to justify a 4 or 5.",
-        "evidence": "Google Security Operations (SecOps) includes SOAR capabilities and playbooks to automate common response actions. Gartner's endpoint management tools category describes deployment-related capabilities such as configuration management, patching, and operating system deployment, but the returned snippet does not establish Google as a leader in that category.",
+        "score": 4,
+        "rationale": "Google has strong enterprise deployment and operations maturity through its cloud-native platform, managed services, and operational tooling, but the evidence gathered is broader than topic-specific deployment documentation. This supports a strong score rather than clear best-in-class on the basis of the retrieved snippets alone.",
+        "reasoning": "The search results point to Google Cloud's mature operational stack, including cloud-native security operations and broad infrastructure/service announcements at Cloud Next '26. These results imply robust deployment and run-time operations across cloud services, but the snippets retrieved are less explicit on release management, environment promotion, or platform operations workflows than ideal for this topic. Google Cloud's enterprise footprint and product breadth strongly support operational maturity. However, because the available evidence is somewhat indirect and not centered on deployment-operations documentation, a 4 is better calibrated than a 5.",
+        "evidence": "Google Security Operations is described as a cloud-native security operations platform, indicating mature cloud-native operating practices and incident workflows. A 2026 Cloud Next coverage article says Google announced cross-cloud infrastructure, networking, and data services aimed at AI, reflecting ongoing investment in operating enterprise workloads. Google Cloud is presented broadly as an enterprise cloud platform with technical teams building and running modern systems on managed services.",
         "sources": [
           "https://cloud.google.com/security/products/security-operations",
-          "https://www.gartner.com/reviews/market/endpoint-management-tools"
+          "https://virtualizationreview.com/articles/2026/04/24/google-cloud-next-26-gemini-enterprise-agent-platform-leads-ai-centric-news.aspx",
+          "Google Cloud — product/platform pages surfaced in search results"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Google shows strong maturity for scalability and reliability, supported by infrastructure reputation and API management evidence, though the snippets in this session stop short of explicit market-leading analyst recognition on this exact topic.",
-        "reasoning": "The most concrete snippet in this session is Gartner Peer Insights stating that Apigee API Management addresses API scalability and reliability challenges. As part of Google Cloud, that points to proven enterprise platform capabilities in distributed integration and runtime resilience. Additional search context reflects Google's broad cloud foundation, but the snippet set here is narrower than needed to assert best-in-class dominance across all dimensions. Accordingly, a 4 reflects enterprise-proven strength with some evidence limitations.",
-        "evidence": "Gartner Peer Insights says Apigee API Management addresses 'API scalability, reliability' challenges. Search results repeatedly surfaced Google in enterprise platform and cloud contexts, indicating credible enterprise-scale deployment relevance even when the returned snippets were not deeply specific to this topic.",
+        "score": 5,
+        "rationale": "Google shows best-in-class scalability and reliability, anchored by products like Spanner that are explicitly positioned as always-on and virtually unlimited scale. The evidence supports top-tier maturity for running highly scalable enterprise workloads.",
+        "reasoning": "The strongest retrieved evidence is Google Cloud Spanner, which is marketed as an always-on database with virtually unlimited scale, a direct signal of advanced scalability and resilience engineering. Additional search results include API management references noting Google's support for scalability and reliability concerns, reinforcing platform-wide maturity. Google Cloud's long-standing hyperscale infrastructure and enterprise cloud positioning further support a top score. While the snippets do not provide SLA metrics or outage history context, the capability evidence is concrete and category-leading.",
+        "evidence": "Google Cloud Spanner is described as an 'always-on, virtually unlimited scale' database. Spanner's multi-model capabilities are positioned for intelligent, AI-enabled applications on operational relational and NoSQL data. Gartner Peer Insights search results for API management note Apigee addresses API scalability and reliability challenges and supports cloud-native integration patterns.",
         "sources": [
+          "https://cloud.google.com/spanner",
           "https://www.gartner.com/reviews/market/api-management",
-          "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025"
+          "https://jsssee.org/index.php/home/article/download/10/11"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "Google demonstrates strong integration maturity through Apigee and broad cloud ecosystem fit, supporting a strong score, though best-in-class proof from analyst snippets was limited in this session.",
-        "reasoning": "The clearest evidence is the Gartner Peer Insights snippet for Apigee API Management, which explicitly addresses API management challenges central to connectivity and integration. Google also appears in enterprise platform contexts across cloud, Workspace, and AI services, suggesting broad ecosystem interoperability. However, the returned snippets do not enumerate connector breadth, low-code integration tooling depth, or named analyst leadership specific to integration platforms. That supports a solid 4 rather than a 5.",
-        "evidence": "Gartner Peer Insights states Apigee API Management addresses API management problems related to consistent API operations and scalability/reliability. A 2025 enterprise search market guide snippet says Google fits organizations already invested in the Google Cloud ecosystem, indicating practical ecosystem connectivity for enterprise deployments.",
+        "score": 5,
+        "rationale": "Google demonstrates best-in-class connectivity and integration maturity through products such as Apigee, Looker integration into Google Cloud, and broader cross-cloud/platform integration signals. The evidence indicates deep enterprise-grade API and ecosystem integration capability.",
+        "reasoning": "Integration is one of Google's strongest areas because Google Cloud spans APIs, analytics, data, and security tooling. The search results directly reference Looker integrating into the Google Cloud ecosystem and Gartner category pages for API management where Apigee is relevant to scalability and cloud-native integration patterns. Cross-cloud infrastructure and platform announcements from Cloud Next '26 further support integration breadth. Taken together, Google merits a 5 for broad, enterprise-proven connectivity and integration capability.",
+        "evidence": "Looker on Google Cloud is said to seamlessly integrate the Looker platform into the secure Google Cloud ecosystem. Gartner Peer Insights API management results note Apigee supports cloud-native integration patterns and addresses API scalability and reliability challenges. Cloud Next '26 coverage says Google announced cross-cloud infrastructure, networking, and data services aimed at AI.",
         "sources": [
+          "https://cloud.google.com/looker",
           "https://www.gartner.com/reviews/market/api-management",
-          "https://www.kore.ai/blog/best-enterprise-search-software"
+          "https://virtualizationreview.com/articles/2026/04/24/google-cloud-next-26-gemini-enterprise-agent-platform-leads-ai-centric-news.aspx"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "Google likely delivers acceptable user experience and ecosystem familiarity, but the search snippets in this session provide only limited direct evidence on implementation speed and end-user experience for this topic.",
-        "reasoning": "Most returned results for this topic were generic market pages rather than Google-specific UX or onboarding evidence. One relevant snippet notes that Google Cloud ecosystem alignment can matter for organizations looking to evolve toward agentic capabilities, which implies easier adoption for existing Google customers. But there were no direct snippet claims here on low-code onboarding, guided deployment, out-of-box templates, or analyst praise for time-to-value. Given the limited direct evidence, an adequate score is most defensible.",
-        "evidence": "A 2025 market guide snippet says Google may fit organizations already in the Google Cloud ecosystem, implying easier adoption for those customers. The search results returned mostly generic time-to-value commentary rather than Google-specific proof points on implementation speed or UX depth.",
+        "rationale": "Google appears adequate on time-to-value and user experience through low-code/no-code and governed analytics experiences, but the evidence retrieved is indirect and mixed. The results support credible capability, though not enough to claim top-tier simplicity or fast enterprise onboarding for this topic.",
+        "reasoning": "The best evidence here is Looker's positioning around a governed intelligence experience and outside references to Google AppSheet as a no-code/low-code tool. That suggests Google can accelerate delivery for some user personas, particularly analytics and app creation. However, the search results did not surface strong, recent analyst or customer-proof evidence specifically about reduced deployment time, ease of use, or adoption outcomes. Because the capability is present but the snippet evidence is thin and partially indirect, a 3 is appropriate.",
+        "evidence": "Looker is described as offering a governed intelligence experience leveraging Gemini and Google Cloud's Agentic Data Cloud. Older third-party coverage cited Google among leading enterprise low-code platforms, noting time-to-solution considerations for enterprise apps. External results reference point-and-click, no-code or low-code tools for business teams, which is directionally consistent with AppSheet-style experiences.",
         "sources": [
-          "https://www.kore.ai/blog/best-enterprise-search-software",
-          "https://www.simpplr.com/resources/compare/lumapps/"
+          "https://cloud.google.com/looker",
+          "https://adtmag.com/blogs/dev-watch/2017/05/low-code-tools.aspx",
+          "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1368,28 +1373,30 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 4,
-        "rationale": "Google shows strong and current agentic maturity through Gemini-related ecosystem momentum and enterprise AI positioning, but the returned snippets do not establish clear best-in-class leadership in analyst rankings for agent platforms.",
-        "reasoning": "The search results show strong market momentum around enterprise agent adoption and repeatedly place Google in the agentic AI conversation. A returned snippet explicitly says organizations in the Google Cloud ecosystem can build developer-led search experiences that evolve toward agentic capabilities over time. Another result on Gartner's first Magic Quadrant for Enterprise AI Coding Agents notes AWS and Google were pushed from the Leaders quadrant by specialized vendors, suggesting Google is credible but not clearly dominant in at least one agentic subsegment. That pattern supports a strong but not best-in-class score.",
-        "evidence": "A 2025 enterprise search market guide says Google Cloud customers can build developer-led search experiences that can evolve toward agentic capabilities over time. A June 2026 article summarizing Gartner's first Magic Quadrant for Enterprise AI Coding Agents says AWS and Google were pushed from the Leaders quadrant by Anthropic, Cursor, GitHub, and OpenAI.",
+        "score": 5,
+        "rationale": "Google demonstrates best-in-class agentic maturity with a dedicated Gemini Enterprise Agent Platform and clear positioning around building production-grade enterprise agents. The evidence is recent and directly aligned to the topic.",
+        "reasoning": "The strongest result is Google's own Gemini Enterprise Agent Platform page, which explicitly positions the offering as a single destination to build agents that transform applications and workflows into agentic systems. Additional 2025-2026 market coverage references Google's portfolio including Vertex AI search, Agentspace, and enterprise agent capabilities, showing ecosystem momentum. Google has both foundation model strength and platform packaging for enterprise agent development. This combination of recent product evidence and market recognition supports a 5.",
+        "evidence": "Google's Gemini Enterprise Agent Platform is described as a single destination for technical teams to build agents that transform enterprise applications and workflows into powerful agentic systems. Kore.ai market-guide coverage says Google Cloud's portfolio includes Vertex AI search and Agentspace. Cloud Next '26 coverage highlights Gemini Enterprise Agent Platform as a lead announcement in Google's AI-centric news.",
         "sources": [
+          "https://cloud.google.com/products/gemini-enterprise-agent-platform",
           "https://www.kore.ai/blog/best-enterprise-search-software",
-          "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx"
+          "https://virtualizationreview.com/articles/2026/04/24/google-cloud-next-26-gemini-enterprise-agent-platform-leads-ai-centric-news.aspx"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
-        "score": 2,
-        "rationale": "Google has adjacent orchestration and workflow capabilities, but the evidence returned in this session does not show a mature, recognized BPM suite on par with dedicated business orchestration platforms.",
-        "reasoning": "Search results for this topic mostly returned category pages for business process automation tools and general market resources, not Google-specific BPM proof. Google SecOps does show orchestration in the security domain, but that is not the same as broad BPM for enterprise business workflows. Because the available evidence is largely adjacent rather than direct, Google's maturity on BPM and orchestration appears emerging/basic in this session's evidence set. A higher score would require clearer proof of process modeling, workflow governance, case management, and analyst standing in BPM/BOAT markets.",
-        "evidence": "Google SecOps includes SOAR playbooks that automate common response actions, showing domain-specific orchestration capability. Returned Gartner results for Business Process Automation Tools and Magic Quadrant pages did not provide Google-specific BPM recognition in the snippets.",
+        "score": 3,
+        "rationale": "Google has credible orchestration-related capabilities, but the retrieved evidence points more to low-code and workflow tooling than to a full, market-leading BPM suite. This supports an adequate maturity score.",
+        "reasoning": "The search results did not surface a strong Google-native BPM product with rich process modeling, governance, and end-to-end business orchestration comparable to specialist BPM vendors. Instead, results pointed indirectly to low-code platforms and workflow-oriented tools such as AppSheet-related references. That suggests Google can orchestrate workflows and build apps, but its BPM maturity appears more adjacent than category-defining based on available evidence. Accordingly, 3 is the best fit: credible but not broad/deep enough in the evidence to merit a 4 or 5.",
+        "evidence": "Search results reference Google AppSheet as a no-code platform that enables business application creation, indicating workflow and app orchestration capability. Gartner's enterprise low-code platform category surfaced in the search, implying Google participates more naturally in low-code than classic BPM positioning. No strong Google-specific BPM analyst recognition or process orchestration evidence was surfaced in the retrieved snippets.",
         "sources": [
-          "https://cloud.google.com/security/products/security-operations",
-          "https://www.gartner.com/reviews/market/business-process-automation-tools"
+          "https://www.gartner.com/reviews/market/enterprise-low-code-application-platform",
+          "https://checkthat.ai/brands/apache-kie",
+          "https://www.superblocks.com/blog/low-code-platforms"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1399,27 +1406,29 @@
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 2,
-        "rationale": "The evidence in this session does not show Google offering a broad, mature enterprise platform for functional and performance testing; it appears more adjacent through developer tooling and AI coding support than a dedicated testing suite.",
-        "reasoning": "Search results for this topic were weakly matched and centered on general testing services or AI coding agents rather than Google-specific testing products. A June 2026 article states Google was not in the Leaders quadrant for Enterprise AI Coding Agents, which may matter for developer productivity but is not direct proof of strong testing capabilities. No returned snippet established Google as a leader in functional testing, performance testing, test orchestration, or quality engineering platforms. Therefore, the most supportable score is emerging/basic.",
-        "evidence": "A June 2026 article on Gartner's Enterprise AI Coding Agents says AWS and Google were outside the Leaders group led by Anthropic, Cursor, GitHub, and OpenAI. Returned search results for application testing services and AI developer tools did not provide Google-specific evidence of a mature functional and performance testing platform.",
+        "rationale": "The retrieved evidence does not show Google offering a strong, dedicated enterprise functional and performance testing platform for this topic. Google has broad developer and AI tooling, but direct testing capability evidence is limited, so maturity appears basic to emerging here.",
+        "reasoning": "Search results mostly surfaced general Gartner testing category pages and broader AI developer market commentary rather than Google-specific testing products. One analyst-related article even notes AWS and Google were pushed out of Leaders in Gartner's first Magic Quadrant for Enterprise AI Coding Agents, which weakens any claim of category leadership around development-adjacent tooling. Without concrete snippet evidence for Google-native functional test automation, performance testing management, or enterprise test governance, the topic appears underdeveloped in comparison with dedicated testing vendors. Therefore, a 2 is justified.",
+        "evidence": "The search results surfaced generic application testing services and AI developer tool pages rather than a clearly defined Google enterprise testing product. A 2026 article on Gartner's first Magic Quadrant for Enterprise AI Coding Agents says AWS and Google were both outside the Leaders group. No snippet in the retrieved results described Google-native functional testing, performance testing, or enterprise test management capabilities directly.",
         "sources": [
           "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx",
-          "https://www.gartner.com/reviews/market/application-testing-services-worldwide"
+          "https://www.gartner.com/reviews/market/application-testing-services-worldwide",
+          "https://checkmarx.com/learn/ai-security/top-12-ai-developer-tools-in-2026-for-security-coding-and-quality/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "Google demonstrates strong monitoring and observability-adjacent maturity through SecOps and broader cloud operations heritage, though the snippets in this session provide limited direct proof on full-stack observability depth.",
-        "reasoning": "The clearest snippet shows Google SecOps supports rapid response and includes SOAR playbooks, evidencing operational visibility and actionability. While the returned results do not explicitly enumerate Google Cloud Observability features, Google's presence in cloud and security operations strengthens the case for enterprise readiness. At the same time, the snippet set lacks direct analyst recognition or detailed feature evidence for logs, traces, metrics, and root-cause analysis on this exact topic. Strong is justified, but best-in-class is not proven from these results alone.",
-        "evidence": "Google Security Operations promises to 'respond with speed and precision' and includes SOAR automation playbooks. The search results for observability returned industry context emphasizing anomaly detection, root cause analysis, lineage, and observability agents, but Google-specific depth on those dimensions was not fully visible in snippets.",
+        "rationale": "Google has strong monitoring and observability maturity through its operations and security operations tooling, but the evidence retrieved was somewhat indirect for full-stack observability depth. The available snippets support a strong enterprise capability.",
+        "reasoning": "The clearest evidence is Google Security Operations, which supports detecting, investigating, and responding to threats, signaling mature operational visibility. Google also announced broad infrastructure and data services at Cloud Next '26, reinforcing platform operations maturity. However, the retrieved snippets did not explicitly surface Google Cloud Operations Suite or detailed metrics/logs/traces capabilities, which would have strengthened a best-in-class case. As a result, Google earns a 4 rather than a 5 on the evidence in hand.",
+        "evidence": "Google Security Operations is described as a cloud-native platform for detection, investigation, and response. Cloud Next '26 coverage says Google announced cross-cloud infrastructure, networking, and data services aimed at AI, reflecting platform operations investment. The search context for observability returned enterprise monitoring market references, supporting Google as a participant in an enterprise observability landscape, though without explicit category leadership evidence in the snippet set.",
         "sources": [
           "https://cloud.google.com/security/products/security-operations",
-          "https://montecarlo.ai/blog-what-is-data-observability"
+          "https://virtualizationreview.com/articles/2026/04/24/google-cloud-next-26-gemini-enterprise-agent-platform-leads-ai-centric-news.aspx",
+          "https://www.gartner.com/reviews/market/infrastructure-monitoring-tools"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1429,12 +1438,13 @@
       {
         "category": "Traceability & Governance",
         "score": 3,
-        "rationale": "Google has credible governance capabilities across cloud and AI-adjacent domains, but the available snippet evidence here is too indirect to support a strong governance score for this topic specifically.",
-        "reasoning": "The search results surfaced enterprise architecture and AI governance market pages, but they did not provide Google-specific snippet evidence of lineage, policy enforcement, auditability, approval governance, or end-to-end traceability. Google's broader enterprise platform reputation suggests credible foundations, yet the session evidence does not show direct analyst or product-level proof on traceability and governance. That leaves Google at an adequate score rather than strong. Confidence is limited because the search snippets were category-heavy rather than Google-specific.",
-        "evidence": "Returned Gartner results included enterprise architecture tools with features for risk management and information governance, but did not establish Google-specific leadership. Returned Gartner Peer Insights results included an AI governance platforms category, but no snippet directly tied Google to leading governance capabilities on this topic.",
+        "rationale": "Google has credible governance capability, especially in data and AI contexts, but the retrieved evidence is thinner and partially ecosystem-based rather than directly from Google's own governance product pages. This supports an adequate score.",
+        "reasoning": "The most relevant snippet references Dataplex in the context of unified data governance and lineage, suggesting Google has governance foundations for data estate management. Analyst results also show AI governance as an established market, but not Google-specific leadership on that page. Because the evidence set lacks direct snippet proof of end-to-end traceability, auditability, and governance breadth across business processes, AI, and operations, a score of 3 is more defensible than 4. Google clearly has governance capabilities, yet the retrieved evidence does not show category-leading depth for this exact topic.",
+        "evidence": "An Atlan article on Dataplex says AI lineage capabilities can trace individual features back and references Google Cloud's security and audit posture. Search results surfaced Gartner's AI governance platforms category, indicating governance is a recognized enterprise capability area relevant to Google's AI stack. A 2026 governance tools comparison notes cloud-native tools are displacing standalone governance platforms, which benefits hyperscalers like Google Cloud in governance-adjacent buying patterns.",
         "sources": [
-          "https://www.gartner.com/reviews/market/enterprise-architecture-tools",
-          "https://www.gartner.com/reviews/market/ai-governance-platforms"
+          "https://atlan.com/know/dataplex-atlan-integration-better-together/",
+          "https://www.gartner.com/reviews/market/ai-governance-platforms",
+          "https://improvado.io/blog/data-governance-tools"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1444,12 +1454,13 @@
       {
         "category": "Process Intelligence",
         "score": 2,
-        "rationale": "Google has strong BI and analytics assets such as Looker, but the snippet evidence does not show a dedicated process intelligence capability with process mining depth, conformance analysis, or task mining maturity.",
-        "reasoning": "The most relevant Google-specific snippet is Looker, which is described as a governed intelligence experience leveraging Gemini and Google Cloud's Agentic Data Cloud. That supports analytics strength, but process intelligence requires more specific capabilities like process mining, variant analysis, and operational process discovery. Gartner's process intelligence category result in this session highlighted Celonis rather than Google, underscoring the gap in direct evidence. Therefore, Google appears adjacent but not mature on process intelligence itself.",
-        "evidence": "The Looker snippet says it delivers a 'governed intelligence experience' leveraging Gemini and Google Cloud's Agentic Data Cloud. Gartner's Process Intelligence Platforms result highlighted Celonis Process Intelligence Platform, while no Google-specific process intelligence recognition appeared in the returned snippets.",
+        "rationale": "The retrieved evidence does not indicate Google has a strong, dedicated process intelligence platform comparable to specialists in process mining and process intelligence. Capability appears limited or indirect based on the available results.",
+        "reasoning": "Searches for process intelligence returned category pages dominated by specialist vendors such as Celonis and ARIS rather than Google-native offerings. No search snippet directly described Google as providing process mining, conformance checking, or process intelligence functionality. Google may support analytics broadly, but broad analytics is not sufficient evidence for this specific maturity topic. Therefore, Google scores 2: adjacent data capabilities exist, but dedicated process intelligence evidence is weak.",
+        "evidence": "Gartner's process intelligence platform category search result highlighted Celonis rather than Google for analyzing, monitoring, and optimizing business processes. ARIS search results emphasize process intelligence for the AI era, again with no Google-specific process intelligence snippet surfaced. No retrieved result described a Google-native process mining or conformance checking product.",
         "sources": [
-          "https://cloud.google.com/looker",
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms"
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
+          "https://aris.com/",
+          "https://decisions.com/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1458,58 +1469,63 @@
       },
       {
         "category": "Licensing & TCO",
-        "score": 3,
-        "rationale": "Google likely offers credible enterprise pricing options, but the search evidence in this session is thin on pricing transparency, packaging simplicity, and total cost outcomes, so an adequate score is most supportable.",
-        "reasoning": "The returned results for this topic were mostly generic Gartner and buyer-guide materials, not Google-specific pricing evidence. Google SecOps demonstrates enterprise functionality, but functional strength does not by itself prove favorable licensing or TCO. No snippet here directly described Google licensing structure, included entitlements, or cost optimization outcomes. Because the offering is clearly enterprise-grade but cost evidence is limited, a 3 is the safest objective judgment.",
-        "evidence": "Search results on evaluating enterprise AI solutions highlighted total cost of ownership as a critical evaluation criterion, but not Google-specific TCO outcomes. The session returned Google SecOps as enterprise functionality evidence, yet no direct snippet described Google licensing transparency or bundled pricing advantages for this topic.",
+        "score": 4,
+        "rationale": "Google shows strong maturity on licensing and TCO with usage-based cloud pricing models and explicit TCO messaging, though complexity across products can still make enterprise cost optimization nontrivial. The evidence supports a strong score.",
+        "reasoning": "For this topic, pricing pages are appropriate evidence, and Google Cloud Run pricing explicitly frames total cost of ownership in relation to compute-based charges. Additional customer-story evidence highlights AlloyDB migration as reducing TCO by lowering licensing, operational overhead, and infrastructure expenses. Another result notes Looker combines platform subscription with user licensing and token-based AI usage, showing flexible but layered pricing constructs. Overall, Google demonstrates mature economic models and TCO value propositions, though not necessarily simplicity across the whole portfolio.",
+        "evidence": "Cloud Run pricing says used container instances are billed and explicitly discusses total cost of ownership. A 2026 Google Cloud customer story says Urban Outfitters moved Sterling OMS to AlloyDB to reduce TCO by lowering licensing, operational overhead, and infrastructure expenses. An industry pricing comparison says Looker combines platform subscription with user licensing and token-based AI usage.",
         "sources": [
-          "https://writer.com/guides/evaluating-generative-ai-2026/",
-          "https://cloud.google.com/security/products/security-operations"
+          "https://cloud.google.com/run/pricing",
+          "https://cloud.google.com/blog/products/databases/urban-outfitters-moves-sterling-oms-to-alloydb-for-postgresql",
+          "https://www.inetsoft.com/info/bi-vendors-scalable-pricing-plans/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Google has broad industry applicability across enterprise domains through Google Cloud, Workspace, AI, analytics, and security products, though the search evidence here is more general than vertical-solution specific.",
-        "reasoning": "Returned results indicate Google technologies are integrated across business and enterprise contexts, including Workspace Enterprise and cloud/security offerings. The topic search also surfaced industry-oriented buyer guidance emphasizing regulated industries and broad applicability, and Google's broad product estate makes cross-domain applicability credible. However, the snippets do not provide detailed vertical accelerators or analyst leadership specific to industry process solutions. That supports a strong horizontal applicability score of 4.",
-        "evidence": "A 2026 comparison article snippet says Google has integrated Gemini into Google Workspace Business and Enterprise offerings. Google SecOps and Google Cloud security results indicate enterprise applicability in security-sensitive and regulated environments.",
+        "score": 5,
+        "rationale": "Google demonstrates best-in-class industry applicability through explicit solutions for multiple regulated and complex sectors, plus major partner-led transformation programs. The evidence shows broad cross-industry relevance and packaging.",
+        "reasoning": "The search results directly surfaced Google Cloud industry solutions for healthcare/life sciences, retail, and financial services, showing dedicated domain positioning across major verticals. Partnership news with Hitachi and Accenture further indicates applicability in industrial, infrastructure, and enterprise transformation contexts. This breadth across regulated industries, customer experience, and operational domains supports a top score. The evidence is recent and concrete enough to classify Google as best-in-class for cross-industry applicability.",
+        "evidence": "Google Cloud has dedicated solutions for healthcare and life sciences. Google Cloud has dedicated retail and commerce solutions focused on marketing, inventory optimization, and customer experiences. Google Cloud has dedicated financial services solutions and an Accenture partnership for scaling agentic transformation with Gemini Enterprise.",
         "sources": [
-          "https://www.hungyichen.com/en/insights/chatgpt-enterprise-guide",
-          "https://cloud.google.com/security/products/security-operations"
+          "https://cloud.google.com/solutions/healthcare-life-sciences",
+          "https://cloud.google.com/solutions/retail",
+          "https://cloud.google.com/solutions/financial-services",
+          "https://newsroom.accenture.com/news/2026/accenture-and-google-cloud-expand-partnership-to-scale-agentic-transformation-for-global-enterprises-with-gemini-enterprise"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Google offers strong long-term value through its broad cloud, AI, productivity, and security ecosystem, but the snippets in this session do not directly quantify retention, ROI, or analyst recognition for sustained platform value.",
-        "reasoning": "Long-term value is supported by Google's large ecosystem footprint and continued AI integration momentum, including Gemini across enterprise offerings and ongoing relevance in strategic technology trends. The search results also show Google remains part of major enterprise AI platform discussions, even if not always the clear leader in every subsegment. That breadth and staying power support a strong score. A 5 would require stronger direct evidence of market-leading sustained customer outcomes or analyst best-in-class recognition on this specific dimension.",
-        "evidence": "A 2026 comparison article snippet says Google has integrated Gemini into Google Workspace Business and Enterprise, supporting continued platform evolution. A June 2026 article summarizing Gartner's AI coding agent quadrant shows Google remains a significant enterprise AI participant even if specialized vendors led that segment.",
+        "score": 5,
+        "rationale": "Google shows best-in-class long-term value through sustained enterprise cloud investment, a visible AI roadmap, and extensive real-world use cases and partner commitments. The evidence indicates customers are buying into a long-term platform strategy.",
+        "reasoning": "Recent Google Cloud Next '26 materials highlight continued expansion of Gemini Enterprise capabilities, including long-term memory, showing roadmap continuity. Google's investor presentation explicitly states customers are committing to a long-term AI roadmap with Google because of the unique value of its full-stack approach. The large volume of real-world generative AI use cases from industry leaders further demonstrates enduring enterprise relevance. Combined, these signals support a 5 for long-term strategic value.",
+        "evidence": "Google Cloud Next '26 materials describe new AI capabilities across Gemini Enterprise and mention long-term memory. Alphabet's June 2026 investor presentation says customers are committing to a long-term AI roadmap with Google because of the unique value of its approach. Google Cloud published real-world generative AI use cases from leading organizations, indicating broad enterprise adoption momentum.",
         "sources": [
-          "https://www.hungyichen.com/en/insights/chatgpt-enterprise-guide",
-          "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx"
+          "https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26",
+          "https://blog.google/alphabet/investor-presentation-june-2026/",
+          "https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "Google demonstrates strong adaptability through broad AI integration, cloud-native services, and ecosystem flexibility, though this session's snippet evidence is still more contextual than direct proof of business agility outcomes.",
-        "reasoning": "Search results show Google participates in the enterprise move toward agentic applications and adaptive, composable technology strategies. Google also appears across Workspace, Cloud, analytics, and security, which collectively supports flexible enterprise adoption and change capacity. The evidence returned does not directly document workflow agility tooling or business-led change management features, so a 4 is more justified than a 5. Overall, Google's platform breadth and AI trajectory support strong adaptability.",
-        "evidence": "Gartner predicted that 40% of enterprise applications will feature task-specific AI agents by 2026, and Google appears repeatedly in the returned agentic enterprise context. Gartner ERP topic results describe composable, adaptive technology strategies, aligning with the type of platform flexibility Google Cloud customers often seek, though the snippet was not Google-specific.",
+        "rationale": "Google demonstrates strong business adaptability through no-code/low-code tooling, AI-assisted app building, and flexible cloud services, but the evidence retrieved is somewhat diffuse rather than centered on a single agility platform. This supports a strong score.",
+        "reasoning": "Google AppSheet and Gemini-related results show Google enabling no-code app creation and workflow automation, which directly support organizational agility. The search results also point to startup and enterprise use cases where Google AI tools help teams automate domain workflows quickly. However, the evidence is spread across external commentary and use cases rather than direct, analyst-validated claims about enterprise agility leadership. Therefore, Google scores 4: strong and flexible, but not definitively best-in-class from the retrieved snippet set.",
+        "evidence": "A Devoteam article says users can use Google AppSheet and Gemini to create a first no-code app, indicating accessible rapid application development. A Facebook Google Workspace/AppSheet post references no-code SMB workflow automation with AppSheet plus Gemini. Google's real-world gen AI use case collection includes AI automation solutions for corporate finance teams, showing adaptability across business functions.",
         "sources": [
-          "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025",
-          "https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning"
+          "https://www.devoteam.com/expert-view/build-apps-without-coding-guide-to-google-appsheet-with-gemini-ai/",
+          "https://www.facebook.com/googleworkspace/posts/%EF%B8%8F-build-faster-operate-smarter-with-appsheet-discover-the-power-of-no-code-app-d/1117973150371199/",
+          "https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
