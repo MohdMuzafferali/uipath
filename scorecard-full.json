@@ -2263,14 +2263,13 @@
       {
         "category": "Security & Compliance",
         "score": 5,
-        "rationale": "Salesforce demonstrates best-in-class maturity in security and compliance, with extensive trust documentation, Shield capabilities, Hyperforce security architecture, and current compliance coverage updates including Agentforce Operations. The breadth of certifications, encryption, auditability, and zero-trust infrastructure support a top-tier score.",
-        "reasoning": "Search results show a dedicated trust and compliance documentation hub plus 2025-2026 change logs and security architecture PDFs, indicating mature, continuously maintained compliance operations. The snippets specifically reference Salesforce Shield, Hyperforce security/privacy architecture, and SOC 1/SOC 2 coverage for Agentforce Operations, which is concrete evidence of enterprise-grade controls. Salesforce’s engineering content also references zero-trust infrastructure and protection for very large transaction volumes, reinforcing operationalized security at scale. Given the combination of named features, recency, and enterprise trust posture, Salesforce meets the rubric for best-in-class maturity.",
-        "evidence": "Salesforce maintains a dedicated Trust and Compliance Documentation portal covering security, architecture, subprocessors, and third-party terms. A Salesforce Trust & Compliance change log dated Sep 16, 2025 states SOC 1 and SOC 2 certification coverage was added for Agentforce Operations. A June 19, 2026 Salesforce security/privacy architecture document references specific features of the Salesforce Shield Extension Package. Salesforce engineering states Shield encryption secures data at rest through the Hyperforce Trust layer and describes zero-trust infrastructure protecting 20 trillion transactions.",
+        "rationale": "Salesforce demonstrates best-in-class security and compliance maturity, with extensive documented controls, zero-trust architecture, Hyperforce security design, and broad certification coverage including ISO 27001 and SOC reporting. The evidence shows deep enterprise capability rather than basic checklist compliance.",
+        "reasoning": "Search results surfaced multiple topic-specific first-party trust and architecture documents rather than generic marketing pages. Salesforce's 2026 security/privacy architecture PDF explicitly references SOC 2 and SOC 3 reports and ISO 27001 certification, while Data 360 security architecture references zero-trust, security-by-design, and compliance alignment including FedRAMP. Hyperforce security architecture adds infrastructure-level trust posture, which is important for enterprise deployment. Given the breadth of controls, recency of documentation, and enterprise trust posture, Salesforce merits a 5 on its own maturity.",
+        "evidence": "Salesforce's June 19, 2026 Security, Privacy and Architecture document states that SOC 2 and SOC 3 reports are available and references ISO 27001 certification. Salesforce's Data 360 Security Architecture says its architecture follows Zero Trust and security-by-design principles and aligns with standards such as ISO 27001, SOC 2, and FedRAMP. Salesforce published a June 19, 2026 Hyperforce Security, Privacy and Architecture document describing a robust security and privacy posture for Hyperforce.",
         "sources": [
-          "https://www.salesforce.com/company/legal/trust-and-compliance-documentation/",
-          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/misc/trust-and-compliance-change-log.pdf",
           "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/misc/salesforce-security-privacy-and-architecture.pdf",
-          "https://engineering.salesforce.com/behind-the-zero-trust-infrastructure-powering-agentforce-360-platform-protecting-20-trillion-transactions/"
+          "https://architect.salesforce.com/docs/architect/fundamentals/guide/data360_security_architecture",
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/misc/hyperforce-security-privacy-and-architecture.pdf"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2280,31 +2279,30 @@
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "Salesforce has a strong, enterprise-proven deployment and operations model built on Hyperforce and supported by release automation and DevOps capabilities, but it is not as clearly dominant as specialist DevOps platforms. The evidence supports broad, mature operations with some reliance on ecosystem tooling for deeper DevOps workflows.",
-        "reasoning": "Release notes and platform architecture content point to Hyperforce-based operational capabilities and ongoing feature delivery, which are hallmarks of a mature cloud operating model. Search snippets also reference DevOps Center and a 2025 Gartner Magic Quadrant announcement noting governance enhancements for apps, agents, and APIs plus DevOps Testing quality gates. However, the evidence from snippets is thinner on end-to-end native release orchestration, environment promotion, and rollback than on infrastructure operations generally. That places Salesforce in the strong tier rather than best-in-class for this topic.",
-        "evidence": "Salesforce Summer '26 Release Notes reference Hyperforce and advanced cross-region capabilities, indicating active operational feature delivery. Salesforce platform architecture documentation says Hyperforce ensures delivery of the Salesforce Platform and allows swift deployment of new features. A 2025 Salesforce Gartner low-code announcement says Salesforce enhanced governance options for apps, agents, and APIs and that DevOps Testing lets builders set quality gates. Salesforce infrastructure and subprocessors documentation explicitly references Hyperforce Operating Zone Infrastructure and DevOps Center.",
+        "rationale": "Salesforce has strong deployment and operational maturity with sandboxes, DevOps Center, release management support, and regular major platform releases. It is enterprise-proven, though operational tooling is more platform-centric than a full-spectrum infrastructure operations suite.",
+        "reasoning": "The results show topic-specific evidence around Sandboxes, DevOps Center, Salesforce CLI, and release governance. Salesforce's Sandboxes page explicitly calls out collaborative deployment, version control support, and reduced downtime, while the DevSecOps Guide references traceability and version-controlled pipelines. Summer '26 release notes demonstrate ongoing operational cadence and active platform evolution. This is clearly beyond adequate and enterprise-proven, but not enough evidence from snippets alone to conclude market-leading operations tooling across all software lifecycle and runtime ops dimensions, so 4 is appropriate.",
+        "evidence": "Salesforce's Sandboxes page says multiple sandboxes speed collaborative deployment, improve version control, and help avoid system downtime. The Salesforce DevSecOps Guide references DevOps Center, version-controlled pipelines, Salesforce CLI, sandboxes, Hyperforce, and Code Analyzer for managed delivery processes. Salesforce publishes Summer '26 Release Notes, showing a mature recurring release and operations cadence across the platform.",
         "sources": [
-          "https://help.salesforce.com/s/articleView?id=release-notes.salesforce_release_notes.htm&language=en&release=262&type=5",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://www.salesforce.com/news/stories/gartner-magic-quadrant-low-code-application-2025/",
-          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/misc/salesforce-infrastructure-and-subprocessors.pdf"
+          "https://www.salesforce.com/platform/sandboxes-environments/",
+          "https://www.salesforce.com/es-es/wp-content/uploads/sites/4/documents/PDF/SFC-DevSecOps-Guide.pdf",
+          "https://help.salesforce.com/s/articleView?id=release-notes.salesforce_release_notes.htm&language=en&release=262&type=5"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
         "score": 5,
-        "rationale": "Salesforce shows best-in-class maturity for scalability and reliability through Hyperforce architecture, higher-availability engineering, and cross-region continuity features. The evidence reflects large-scale, enterprise-proven cloud operations with concrete resilience mechanisms.",
-        "reasoning": "Multiple search results point directly to Hyperforce’s scalability, high availability, and cross-region continuity. Salesforce Help content from 2026 says Hyperforce is engineered for stability and scalability, while architecture materials mention elastic scaling, high availability, and zero-downtime capabilities. Salesforce also documents a broader journey to higher availability and engineering principles for Hyperforce across public-cloud infrastructure. These are exactly the kinds of operational and architectural signals expected of a market-leading platform on this dimension.",
-        "evidence": "Salesforce platform architecture documentation says CloudHub 2.0 provides elastic scaling, high availability, and zero-downtime capabilities. A May 20, 2026 Salesforce Help article says Hyperforce is engineered for stability and scalability. Salesforce Help says products running on Hyperforce benefit from enhanced standards for compliance, security, agility, and scalability. Salesforce engineering states Hyperforce is built natively on public cloud infrastructure with multiple data centers in a single region.",
+        "rationale": "Salesforce shows best-in-class maturity for scalability and reliability through Hyperforce, high-availability and disaster recovery design, and platform engineering focused on large-scale trusted operations. The evidence indicates broad, enterprise-grade resilience capabilities.",
+        "reasoning": "This topic returned strong, specific evidence tied to platform architecture and reliability. Hyperforce FAQ and platform transformation materials explicitly mention high availability, disaster recovery, and modern public-cloud-based infrastructure evolution. Salesforce engineering also highlighted trust infrastructure protecting 20 trillion transactions, which is a powerful scale signal, and MuleSoft HA documentation reinforces reliability patterns in integration runtime. Given the scale indicators and enterprise architecture depth, Salesforce qualifies for a 5.",
+        "evidence": "Salesforce Help says Hyperforce systems are designed to deliver high availability and recover through disaster recovery mechanisms. Salesforce's platform transformation architecture describes Hyperforce as foundational infrastructure evolved onto public cloud providers and enhanced with Salesforce technologies. A Salesforce Engineering post in November 2025 describes trust infrastructure protecting 20 trillion transactions while maintaining high standards for trust and reliability. MuleSoft documentation describes HA and disaster recovery models intended to improve performance, scalability, and reliability.",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://help.salesforce.com/s/articleView?id=002521432&language=en_US&type=1",
           "https://help.salesforce.com/s/articleView?id=000388902&language=en_US&type=1",
-          "https://engineering.salesforce.com/architectural-principles-for-high-availability-on-hyperforce/"
+          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
+          "https://engineering.salesforce.com/behind-the-zero-trust-infrastructure-powering-agentforce-360-platform-protecting-20-trillion-transactions/",
+          "https://help.salesforce.com/s/articleView?id=001122574&language=en_US&type=1"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2314,14 +2312,14 @@
       {
         "category": "Connectivity & Integration",
         "score": 5,
-        "rationale": "Salesforce is best-in-class in connectivity and integration due to MuleSoft, API-led connectivity, prebuilt connectors, and analyst-recognized API management capabilities. The combined platform breadth and market recognition support a top score.",
-        "reasoning": "Search snippets show Salesforce pairing native platform integration methods with MuleSoft’s enterprise-grade integration stack. Salesforce’s 2026 Connectivity Report announcement explicitly says IT leaders are turning to API integration and references MuleSoft Agent Fabric, while MuleSoft Composer offers prebuilt connectors for business users. Third-party recognition appears in Salesforce’s Forrester Wave announcement naming MuleSoft a Leader in API Management. This combination of product breadth, enterprise patterns, and analyst validation meets the rubric for best-in-class maturity.",
-        "evidence": "Salesforce announced a 2026 Connectivity Report saying IT leaders are turning to API integration across systems and highlighting MuleSoft Agent Fabric capabilities. Salesforce architecture documentation references APIs, web callouts, and MuleSoft connectors as integration methods. MuleSoft Composer says business teams can integrate across systems using pre-built connectors directly in Salesforce. Salesforce announced MuleSoft was named a Leader in the Forrester Wave for API Management in 2024.",
+        "rationale": "Salesforce has best-in-class connectivity and integration maturity, anchored by MuleSoft, enterprise API management, and numerous connectors across Salesforce and external systems. The evidence supports broad and deep integration capability at enterprise scale.",
+        "reasoning": "This topic has some of the strongest evidence in the set. Salesforce architecture guidance explicitly calls MuleSoft Anypoint enterprise-grade API management, and MuleSoft docs surfaced multiple connectors including Data Cloud and composite connectors. Salesforce also positions MuleSoft as the layer to unify integration, automation, and API management for AI and data use cases. Because the evidence demonstrates breadth, enterprise depth, and market recognition momentum around data connectivity, Salesforce earns a 5.",
+        "evidence": "Salesforce architecture guidance says MuleSoft Anypoint provides enterprise-grade API management for data integration. Salesforce documentation includes a Data Cloud Connector for MuleSoft and references Anypoint Studio 7.11.x or later for ingestion setup. Salesforce positions MuleSoft as a way to unify integration, automation, and API management so connected data becomes actionable. MuleSoft documentation surfaced composite and system connectors, including Salesforce-specific and enterprise messaging connectors.",
         "sources": [
-          "https://www.salesforce.com/news/stories/connectivity-report-announcement-2026/",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://www.salesforce.com/mulesoft/composer/",
-          "https://www.salesforce.com/news/stories/forrester-wave-api-management-2024/"
+          "https://architect.salesforce.com/docs/architect/decision-guides/guide/data-integration.html",
+          "https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-mulesoft.html",
+          "https://www.salesforce.com/uk/mulesoft/",
+          "https://help.salesforce.com/s/articleView?id=001120682&language=en_US&type=1"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2331,31 +2329,31 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 4,
-        "rationale": "Salesforce offers strong time-to-value and user experience through low-code tools, dynamic forms, Lightning/App Builder, and Agentforce Builder’s unified conversational workspace. The platform is mature and broad, though enterprise complexity can temper speed-to-value in larger deployments.",
-        "reasoning": "Salesforce architecture content highlights user-friendly interfaces and a development spectrum from low-code to pro-code. Architects documentation recommends Lightning Pages and Dynamic Forms as the easiest way to build forms on Agentforce 360, and App Builder content emphasizes contextual user experiences. Agentforce Builder further unifies drafting, testing, and deployment into a single workspace, suggesting reduced friction for AI-centered app and agent delivery. These are strong indicators of maturity, but the snippets do not fully establish category-leading simplicity across all enterprise scenarios, so a 4 is more defensible than a 5.",
-        "evidence": "Salesforce architecture documentation says the platform features user-friendly interfaces for end-users and a range of development tools from low-code to pro-code. Salesforce Architects says Lightning Pages and Dynamic Forms are the easiest way to build forms on the Agentforce 360 platform. A Salesforce admin article shows App Builder being used to place pertinent information at the right place and time for users. Salesforce says Agentforce Builder unifies drafting, testing, and deployment into a single conversational workspace.",
+        "rationale": "Salesforce is strong on time-to-value and user experience, supported by low-code tools, guided learning via Trailhead, Lightning Experience, and App Builder. However, implementation complexity for larger enterprise programs keeps it from a best-in-class score based on the available evidence.",
+        "reasoning": "The search results show multiple onboarding and productivity assets: Trailhead for learning, Lightning Experience quick starts, App Builder for UX optimization, and Flow guidance to simplify automation. Those are strong signals of ecosystem maturity and accelerated adoption. At the same time, snippet evidence is more indirect on actual implementation speed at enterprise scale, and Salesforce's broad platform can be complex depending on modules and customization. That supports a strong 4 rather than a 5.",
+        "evidence": "Trailhead states that admins, users, and developers can all learn Salesforce through role-specific trails. A Trailhead quick-start project focuses on Lightning Experience for faster, smarter selling. Salesforce Admin guidance recommends keeping flows simple to improve maintainability and user experience. Salesforce App Builder content highlights optimizing user experiences through configurable application design.",
         "sources": [
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://architect.salesforce.com/docs/architect/decision-guides/guide/build-forms",
-          "https://admin.salesforce.com/blog/2024/optimize-user-experiences-with-app-builder-how-i-solved-it",
-          "https://www.salesforce.com/agentforce/"
+          "https://trailhead.salesforce.com/",
+          "https://trailhead.salesforce.com/content/learn/projects/quickstart-lightning-experience-sales",
+          "https://admin.salesforce.com/blog/2023/how-i-solved-it-automate-processes-with-flow",
+          "https://admin.salesforce.com/blog/2024/optimize-user-experiences-with-app-builder-how-i-solved-it"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
         "score": 5,
-        "rationale": "Salesforce has rapidly built a best-in-class agentic platform around Agentforce, with capabilities to build, customize, test, deploy, and monitor AI-powered agents plus orchestration foundations and governance messaging. The combination of flagship product focus and third-party attention supports a top score.",
-        "reasoning": "Search results consistently center on Agentforce as Salesforce’s dedicated AI agent platform. The platform page and pricing page explicitly state users can build, customize, test, deploy, and monitor AI-powered agents. Developer documentation references a coding agent platform powered by orchestration engines and describes secure AI agentic capabilities, while Forrester commentary notes Informatica strengthens the foundation for scaling Agentforce. The breadth of lifecycle support and analyst visibility justify a best-in-class assessment, although the market is evolving quickly.",
-        "evidence": "Salesforce Agentforce pricing states customers can build, customize, test, deploy, and monitor AI-powered agents. Salesforce developer documentation says Agentforce Vibes is built on Salesforce’s Coding Agent Platform powered by Claude and Mastra agent orchestration engines. Salesforce describes Agentic AI as a platform enabling seamless interaction between AI agents and humans in a collaborative environment. Forrester wrote in May 2025 that Informatica strengthens Salesforce’s data foundation for scaling Agentforce and Salesforce’s agentic AI capabilities.",
+        "rationale": "Salesforce demonstrates best-in-class agentic capability maturity through Agentforce, the Atlas Reasoning Engine, out-of-the-box autonomous agents, and dedicated tooling to build and govern agents. The product evidence is direct, current, and highly specific.",
+        "reasoning": "This was one of the clearest topics in the research. Salesforce has dedicated first-party product pages for Agentforce and Atlas that describe autonomous, proactive agents and the reasoning engine that helps them understand, decide, and act. Investor/news materials extend this with Agentforce 360 and low-code extension points. Although broad third-party analyst proof in snippets was limited, the product-specific depth and recency are sufficient to place Salesforce at 5 for maturity of the capability itself.",
+        "evidence": "Salesforce's Agentforce page describes it as an enterprise agentic AI solution and says the Atlas Reasoning Engine is how Agentforce understands, decides, and acts. Salesforce says Agentforce includes out-of-the-box AI agents and tools to build and customize them. A December 2024 Salesforce news story explains that reasoning engines are compound systems powering AI agents. Salesforce's October 2025 investor announcement says Agentforce 360 includes the Atlas Reasoning Engine and low-code extensions called Agentforce Vibes.",
         "sources": [
           "https://www.salesforce.com/agentforce/",
-          "https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-overview.html",
-          "https://www.salesforce.com/agentforce/pricing/",
-          "https://www.forrester.com/blogs/salesforce-accelerates-its-path-to-agentic-ai/"
+          "https://www.salesforce.com/agentforce/what-is-a-reasoning-engine/atlas/",
+          "https://www.salesforce.com/news/stories/reasoning-engine-for-ai-agents/",
+          "https://investor.salesforce.com/news/news-details/2025/Welcome-to-the-Agentic-Enterprise-With-Agentforce-360-Salesforce-Elevates-Human-Potential-in-the-Age-of-AI/default.aspx"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2364,15 +2362,15 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 3,
-        "rationale": "Salesforce has credible BPM and orchestration capabilities through Flow and Flow Orchestrator, but the evidence points more to adequate workflow orchestration than clear leadership in the broader BPM suite market. It covers core needs but appears less deep than dedicated process-orchestration vendors.",
-        "reasoning": "Search results show Salesforce positioning workflow engines and Flow Orchestrator for multi-user workflows and business process automation. The admin content references more sophisticated business processes and reporting on Orchestrator objects, indicating a real product rather than a lightweight add-on. However, analyst-focused searches surfaced mostly general BPM market pages from other vendors rather than strong third-party recognition for Salesforce specifically in BPM/orchestration. That suggests Salesforce is credible and functional here, but not sufficiently evidenced as a leader, supporting a score of 3.",
-        "evidence": "A Salesforce admin article says Flow tooling can accommodate more sophisticated business processes and references creating reports on Orchestrator objects. Salesforce’s workflow engine page discusses BPM versus agentic automation and positions workflow engines as a distinct capability. Salesforce Help lists third-party connectors that can perform tasks like running BPM workflows from Flow. Searches for analyst validation on Salesforce BPM/orchestration returned limited vendor-specific recognition compared with specialist BPM vendors.",
+        "score": 4,
+        "rationale": "Salesforce has strong BPM and orchestration maturity through Flow, Flow Orchestrator, approvals, and app ecosystem extensions. It is enterprise-capable for many process use cases, though the evidence does not show category-leading recognition in dedicated BPM/BOAT markets from the snippets alone.",
+        "reasoning": "The topic-specific results point to concrete orchestration constructs such as orchestration runs, approval submissions, work items, and orchestration of business requirements. AppExchange also reflects an ecosystem around approval orchestration. However, one snippet from the Trailblazer community references implementation issues, suggesting some complexity or rough edges in advanced use. Overall Salesforce is solidly enterprise-capable, but available evidence supports a 4 rather than a 5.",
+        "evidence": "Salesforce Help explains flow approval processes in terms of orchestration runs, flows, approval submissions, and approval work items. Salesforce Help documents orchestration work items and control over notifications for specific flow approval processes. An AppExchange listing describes using Salesforce Orchestrator and Flow to build tailored approval orchestration for business requirements. A Trailblazer community post in 2025 references issues deploying approval flow orchestration, indicating some practical complexity.",
         "sources": [
-          "https://admin.salesforce.com/blog/2022/road-to-tdx-multi-user-workflows-with-antoine-cabot",
-          "https://www.salesforce.com/agentforce/workflow-engines/",
-          "https://help.salesforce.com/s/articleView?id=platform.automate_flow_ref_third_party_connectors.htm&language=en_US&type=5",
-          "Gartner — Magic Quadrant & Critical Capabilities"
+          "https://help.salesforce.com/s/articleView?id=platform.automate_automated_approvals_concepts.htm&language=en_US&type=5",
+          "https://help.salesforce.com/s/articleView?id=platform.automate_automated_approvals_concepts_work_items.htm&language=en_US&type=5",
+          "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000I5qMCUAZ",
+          "https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000PYc780AD"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -2381,32 +2379,32 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 4,
-        "rationale": "Salesforce has strong and increasingly explicit testing capabilities, especially for AI agents through Agentforce Testing Center, plus evidence of broader performance testing and deployment quality controls. The offering is mature, though the evidence is still more specialized than a standalone best-in-class testing platform.",
-        "reasoning": "Salesforce Help documents Agentforce Testing Center in May 2026, including detailed features and guidance such as 20–30 test cases per evaluation for optimal performance. Salesforce also publishes dedicated AI agent testing guidance and references broader platform performance testing through simulation of parallel user journeys. The 2025 Gartner low-code announcement adds DevOps Testing quality gates, showing this area is becoming more productized across the platform. This is stronger than basic support, but the snippet evidence does not yet prove market-leading breadth across all functional and performance testing categories, so a 4 fits.",
-        "evidence": "Salesforce Help says Agentforce Testing Center includes detailed features and capabilities and recommends 20-30 test cases per evaluation for optimal performance. Salesforce publishes a dedicated guide to AI agent testing covering accuracy, security, testing strategies, and performance metrics. Salesforce architecture documentation says its setup allows extensive simulation of parallel user journeys so each new feature is thoroughly performance tested. A 2025 Salesforce Gartner low-code announcement says DevOps Testing lets builders set quality gates.",
+        "score": 3,
+        "rationale": "Salesforce has adequate testing capability with Apex unit testing, DevOps Testing, sandbox-based performance testing, and integrations to third-party test providers. However, the evidence suggests a credible but not category-leading native offering for full functional and performance testing breadth.",
+        "reasoning": "Search results show that Salesforce supports unified testing in DevOps workflows and can integrate native and partner test providers, including Apex Unit Testing and Agentforce Testing Center. Sandbox guidance also references performance and load testing. Still, the evidence indicates reliance on integrated partners such as Provar, QualityClouds, and Panaya for broader enterprise test automation and test management. That supports a 3: credible and working, but with limitations in native depth across the full topic spectrum.",
+        "evidence": "Salesforce Help says DevOps Testing supports test providers such as Agentforce Testing Center, Apex Unit Testing, Code Analyzer, Provar Automation, and QualityClouds. Salesforce's sandbox guide references performance and load testing and notes DevOps Center supports version control and automated deployments across environments. Trailhead Winter '26 certification maintenance content references test automation and integrating Agentforce Testing Center with DevOps Testing. AppExchange partner Panaya positions itself as bringing enterprise-grade test management and automation into Salesforce DevOps workflows.",
         "sources": [
-          "https://help.salesforce.com/s/articleView?id=005228642&language=en_US&type=1",
-          "https://www.salesforce.com/agentforce/ai-agents/testing/",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://www.salesforce.com/news/stories/gartner-magic-quadrant-low-code-application-2025/"
+          "https://help.salesforce.com/s/articleView?id=platform.devops_testing_integrate_test_providers_for_unified_testing.htm&language=en_US&type=5",
+          "https://www.salesforce.com/platform/sandboxes-environments/salesforce-sandbox-guide/",
+          "https://trailhead.salesforce.com/content/learn/modules/salesforce-architect-certification-maintenance-winter-26/discover-whats-new-with-development-lifecycles-for-winter-26",
+          "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FR4VnUAL"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "Salesforce has strong observability capabilities spanning Agentforce observability, live health monitoring, Event Monitoring, and internal large-scale observability engineering. The capability is clearly enterprise-grade, but external analyst validation for Salesforce as a standalone observability leader is limited in the search snippets.",
-        "reasoning": "Salesforce’s Agentforce observability page explicitly mentions deep observability, live health monitoring, adoption analytics, and consumption tracking. A 2025 news announcement says Agent Health Monitoring will be generally available in Spring 2026, while Salesforce engineering describes an observability platform scaling to one trillion transactions monthly with zero-code instrumentation and open standards. Event Monitoring within Shield adds security and product observability dimensions. This is substantial and enterprise-proven, though the evidence does not establish that Salesforce leads the broader observability market versus specialist vendors, so the score is 4.",
-        "evidence": "Salesforce says Agentforce Observability includes deep observability, live health monitoring, rich adoption analytics, and consumption tracking. A Nov 20, 2025 Salesforce announcement says Agent Health Monitoring will be generally available in Spring 2026. Salesforce engineering describes its observability platform as the default monitoring solution and says it scales to one trillion transactions monthly with zero-code instrumentation and open standards. A Salesforce developer blog says Shield Event Monitoring helps customers with security, observability, and product intelligence.",
+        "rationale": "Salesforce has strong monitoring and observability maturity through Shield Event Monitoring, event logs, real-time event visibility, and component instrumentation. The offering is enterprise-capable, though evidence points more to platform/security observability than a broad full-stack observability leadership position.",
+        "reasoning": "The evidence is specific and recent: Event Monitoring supports security, performance, and adoption analysis; logs are available via API and the Event Log Browser; and Salesforce added component instrumentation for Lightning web components. This demonstrates credible runtime observability and monitoring depth. However, the surfaced evidence is primarily focused on Salesforce platform telemetry rather than end-to-end enterprise observability across heterogeneous estates. That supports a score of 4.",
+        "evidence": "A Salesforce developer blog says Shield Event Monitoring helps with security, observability, and product intelligence. Salesforce's January 2026 security architecture guide calls Shield Event Monitoring the foundation of Salesforce security observability. Salesforce Help says Event Monitoring data is tracked via API and surfaces many event logs in the Event Log Browser. Salesforce release notes mention a Custom Component Instrumentation API for monitoring and tracking Lightning component events.",
         "sources": [
-          "https://www.salesforce.com/agentforce/observability/",
-          "https://www.salesforce.com/news/stories/agentforce-studio-observability-tools-announcement/",
-          "https://engineering.salesforce.com/one-trillion-transactions-monthly-how-salesforces-observability-platform-scales-with-zero-code-instrumentation-and-open-standards/",
-          "https://developer.salesforce.com/blogs/2024/07/use-data-cloud-event-monitoring-for-security-performance-and-adoption"
+          "https://developer.salesforce.com/blogs/2024/07/use-data-cloud-event-monitoring-for-security-performance-and-adoption",
+          "https://www.salesforce.com/au/blog/a-security-architecture-guide-to-event-monitoring/",
+          "https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.real_time_event_monitoring_overview.htm&type=5",
+          "https://help.salesforce.com/s/articleView?id=release-notes.rn_lc_component_instrumentation.htm&language=en_US&release=246&type=5"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2416,31 +2414,30 @@
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "Salesforce has strong traceability and governance features, especially across Data 360 and emerging AI governance, with unified audit trails, lineage, and catalog integration. The evidence supports a mature enterprise offering, though the market for governance tooling is broad and Salesforce’s leadership is more contextual than universal.",
-        "reasoning": "Architect content provides concrete claims about end-to-end traceability, unified audit trails, governance logging, and built-in lineage. Search results also show Agent Fabric Context Catalog integrating with Informatica’s Cloud Data Governance & Catalog, which suggests Salesforce is investing in AI-era governance beyond conventional auditability. Clean Rooms add audit DMOs for traceability, reinforcing the enterprise posture. These are robust capabilities, but analyst-search evidence for Salesforce as a top governance platform is limited, so a 4 is appropriate rather than a 5.",
-        "evidence": "Salesforce architect documentation says unified audit trails link every action back to a verified identity for end-to-end traceability. Salesforce Data 360 Architecture says all operations within a data space are logged with enterprise-grade audit trails for compliance, stewardship, and governance. Salesforce engineering says Agent Fabric was integrated with Informatica’s Cloud Data Governance & Catalog to form Agent Fabric Context Catalog. Salesforce architect documentation says Data 360 includes built-in lineage, governance, auditing capabilities, and audit trail support for governance and compliance.",
+        "rationale": "Salesforce has strong traceability and governance capability via policy-driven data governance, access controls, compliance reporting, lineage tracking, and Shield logging. The evidence is broad and enterprise-relevant, though not enough to prove category-leading governance leadership across all governance domains.",
+        "reasoning": "The strongest evidence comes from Salesforce Data 360 security architecture and governance materials that explicitly reference policy-driven governance, lineage tracking, access controls, compliance reporting, and quality checks. The public sector Shield guide also points to stronger data usage monitoring than standard logs. These are significant governance capabilities for enterprise data and platform administration. Because the analyst-leadership evidence for this exact topic was limited in snippets, 4 is the most defensible score.",
+        "evidence": "Salesforce governance guidance lists data cataloguing, lineage tracking, access controls, compliance reporting, and quality checks as core governance tool capabilities. Salesforce Data 360 Security Architecture says governance becomes a dynamic, policy-driven orchestration layer. A June 2026 Salesforce guide for public sector says standard Salesforce logs help track some activities, but Shield provides stronger data-usage monitoring at scale.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/fundamentals/guide/data360_security_architecture",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/data-360-architecture.html",
-          "https://engineering.salesforce.com/agent-fabric-context-catalog-and-the-future-of-ai-governance/",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/data360_integration_patterns_and_practices"
+          "https://www.salesforce.com/ap/data/governance/guide/tools/",
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/products/platform/forms/SFC_ShieldforPubSecGuide.pdf"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
         "score": 4,
-        "rationale": "Salesforce has strong and fast-improving process intelligence through AppExchange-native process mining, MuleSoft/Apromore linkage, and the announced acquisition of Apromore. The capability is substantial, but recent integration and platform consolidation keep it just short of clear best-in-class status from the available evidence.",
-        "reasoning": "Search results show multiple credible process intelligence signals: Hubbl Process Intelligence on AppExchange, Salesforce educational content on process mining, a prior MuleSoft + Apromore process mining blog, and a 2025 agreement to acquire Apromore for process and task mining and digital twins. Gartner review snippets show Apromore from Salesforce with a 4.7 rating and Apromore’s own site references analyst recognition. This indicates a strong, recognized capability with momentum into agentic automation. Because part of the story is acquisition/integration rather than long-standing native leadership, a 4 is the most balanced score.",
-        "evidence": "An AppExchange listing describes Hubbl Process Intelligence as the first process mining solution built natively on Salesforce, turning Salesforce data into living process maps. Salesforce says process mining sits alongside business intelligence, RPA, and workflow automation in its process mining explainer. A Salesforce news story on Oct 9, 2025 says the Apromore acquisition adds process and task mining and digital twins to accelerate agentic process automation. Gartner review snippets list Apromore by Salesforce in Process Intelligence Platforms with a 4.7 rating based on 31 ratings.",
+        "rationale": "Salesforce has strong and improving process intelligence maturity, with process mining content, ecosystem solutions, and a strategic move to acquire Apromore for process intelligence, task mining, and digital twins. It is clearly more than emerging, but the evidence suggests the capability is still consolidating into the platform.",
+        "reasoning": "This topic produced meaningful evidence. Salesforce has first-party educational/process pages on process mining, historical integration content with Apromore, native ecosystem offerings such as Hubbl Process Intelligence, and a 2025 announcement to acquire Apromore to strengthen process intelligence, process and task mining, and digital twins. That indicates strong strategic commitment and enterprise relevance. Because integration and market validation as a mature Salesforce-native capability are still in motion, a 4 is more defensible than a 5.",
+        "evidence": "Salesforce has a first-party page explaining where process mining fits alongside BI, RPA, and workflow automation. A Salesforce May 2023 post says process analytics can extract process maps, performance analytics, and digital twins using MuleSoft plus Apromore. An AppExchange listing describes Hubbl Process Intelligence as the first process mining solution built natively on Salesforce. Salesforce announced in October 2025 that acquiring Apromore would add process intelligence, process and task mining, and digital twins.",
         "sources": [
-          "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000Iu7p9UAB",
           "https://www.salesforce.com/agentforce/process-mining/",
-          "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-apromore/",
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms"
+          "https://www.salesforce.com/blog/process-mining-mulesoft-apromore/",
+          "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000Iu7p9UAB",
+          "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-apromore/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2450,14 +2447,14 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Salesforce has a credible enterprise licensing model and clear commercial packaging, but evidence also points to cost complexity and potential TCO challenges in multi-cloud or multi-org scenarios. This supports an adequate score rather than a strong one.",
-        "reasoning": "On this topic, pricing and TCO-related sources are appropriate evidence. Search results include Salesforce-authored TCO content and architecture commentary noting that multi-org setups may increase licensing costs, alongside third-party snippets stating multi-cloud Salesforce licensing can create cost complexity and hidden expenses. These signals suggest the platform is commercially mature but can become expensive and operationally complex as scope expands. That combination aligns with a score of 3: credible and enterprise-usable, but with notable limitations in cost efficiency and simplicity.",
-        "evidence": "Salesforce publishes TCO guidance for commerce that discusses limitations driving up costs as a business grows. A Salesforce architecture blog from Oct 10, 2025 says a multi-org setup may incur higher overall licensing costs. A third-party comparison snippet states multi-cloud Salesforce licensing creates cost complexity that can result in a suite tax. A third-party Salesforce pricing analysis snippet references hidden Year 1 expenses tied to license, services, Salesforce dependency, and Agentforce impact.",
+        "rationale": "Salesforce has adequate licensing maturity with clear editions, add-on documentation, and broad packaging, but total cost of ownership can become complex and expensive due to layered add-ons and scale-dependent pricing. The evidence shows a workable model, not a cost-efficient best-in-class one.",
+        "reasoning": "This topic appropriately uses pricing sources. Salesforce provides formal pricing overview pages and add-on pricing PDFs, which is good for structure and transparency. However, third-party results point to significant annual license costs at scale and suggest that implementation services and add-ons materially increase TCO. That combination indicates mature commercialization but not especially favorable simplicity or cost efficiency, so 3 is appropriate.",
+        "evidence": "Salesforce provides pricing pages covering editions such as Essentials, Professional, Enterprise, and Unlimited. Salesforce's add-on pricing PDF lists numerous separately priced add-ons, including analytics and industry-related components. A March 2026 third-party article says 100 users on Salesforce Enterprise can cost $210,000 annually in licensing alone. A May 2026 third-party article says license fees may represent only 30-40% of true 3-year enterprise TCO, with implementation and migration adding substantial cost.",
         "sources": [
-          "https://www.salesforce.com/commerce/ecommerce-tco-total-cost-of-ownership/",
-          "https://www.salesforce.com/blog/architectural-decisions-human-led-ai-powered-approach/",
-          "https://cdp.com/basics/cdp-vendors/",
-          "https://solutions4sf.com/blog/pardot-pricing-2026/"
+          "https://www.salesforce.com/eu/pricing/",
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/all-add-ons.pdf",
+          "https://pretius.com/blog/custom-crm-vs-salesforce",
+          "https://improvado.io/blog/top-enterprise-marketing-platforms"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -2467,14 +2464,15 @@
       {
         "category": "Industry applicability / business domain applicability",
         "score": 5,
-        "rationale": "Salesforce demonstrates best-in-class industry and business domain applicability through a broad portfolio of industry clouds and domain-specific solutions spanning sectors such as financial services, healthcare, retail, government, and more. The platform’s long-established verticalization strongly supports a top score.",
-        "reasoning": "Salesforce’s industries page explicitly points to solutions for financial, healthcare, retail, and other industries. Public Sector Solutions appears as a separate offering, and architect content references business functional domains across major Salesforce products. These are strong signs of deep domain packaging rather than generic platform claims. While the search snippets are more product-marketing than analyst-heavy, Salesforce’s breadth across industries is concrete and substantial enough to merit best-in-class maturity.",
-        "evidence": "Salesforce’s industries page says its software helps financial, healthcare, retail, and other industries work efficiently. Salesforce offers Public Sector Solutions as a named industry solution. Architect documentation says business functional domains support various Salesforce products such as Sales Cloud and Service Cloud. Salesforce pricing materials show multiple add-ons and clouds aligned to specific domain capabilities such as marketing analytics.",
+        "rationale": "Salesforce demonstrates best-in-class industry applicability with broad horizontal CRM capabilities and deep vertical solutions across financial services, healthcare, public sector, manufacturing, and more. The evidence supports wide business-domain coverage and enterprise tailoring.",
+        "reasoning": "Salesforce's industry positioning is unusually broad and specific. Search results surfaced dedicated industry clouds such as Financial Services Cloud and Health Cloud, plus Hyperforce service coverage that includes Public Sector Solutions and Manufacturing Cloud. Salesforce also cites more than 150,000 customer stories/companies, reinforcing broad domain applicability. Because the platform clearly spans many industries with tailored solutions, a 5 is warranted.",
+        "evidence": "Salesforce has a dedicated industries page covering solutions for financial, healthcare, retail, and other sectors. Salesforce offers Financial Services Cloud with industry-specific capabilities and AI positioning for financial institutions. Salesforce offers Health Cloud with industry-specific capabilities and packaged access to Agentforce, Data Cloud, Slack, and analytics. Salesforce compliance materials for Hyperforce list multiple industry solutions including Health Cloud, Manufacturing Cloud, and Public Sector Solutions. Salesforce says it helps 150,000+ companies improve productivity, loyalty, and revenue.",
         "sources": [
           "https://www.salesforce.com/industries/",
-          "https://www.salesforce.com/government/solutions/",
-          "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/all-add-ons.pdf"
+          "https://www.salesforce.com/financial-services/cloud/",
+          "https://www.salesforce.com/healthcare/cloud/",
+          "https://compliance.salesforce.com/services/salesforce-services-hyperforce",
+          "https://www.salesforce.com/customer-stories/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -2483,15 +2481,15 @@
       },
       {
         "category": "Long-term value",
-        "score": 4,
-        "rationale": "Salesforce offers strong long-term value through platform breadth, extensibility, data/AI expansion, and published ROI stories, but the value case can be moderated by complexity and cost over time. The evidence supports strong value for many enterprises without making a universal best-in-class claim.",
-        "reasoning": "Salesforce marketing snippets cite increased marketing ROI, customer lifetime value, and engagement, while loyalty and AI marketing pages emphasize durable customer relationships and churn reduction. News content on Data Cloud growth suggests customers are finding value in unified enterprise data, and broader platform breadth often increases strategic staying power. However, long-term value is partially offset by TCO complexity indicated elsewhere in the search results. Taken together, Salesforce shows strong long-term enterprise value, but not enough neutral evidence for an unequivocal 5.",
-        "evidence": "Salesforce marketing reports cite a 34% increase in overall marketing ROI, a 32% increase in customer lifetime value, and a 27% decrease in cost to acquire new customers. Salesforce Loyalty Management is positioned to build loyalty experiences that drive lifetime value. Salesforce says autonomous agents can proactively reach out to customers who show signs of churn. Salesforce reported Data Cloud growth and momentum in April 2025, tying enterprise data unification to business value.",
+        "score": 5,
+        "rationale": "Salesforce demonstrates best-in-class long-term value through ecosystem scale, persistent enterprise adoption, partner depth, and ongoing platform evolution into AI and agentic workflows. The evidence indicates strong ability to sustain value over time for large enterprises.",
+        "reasoning": "The evidence base here is somewhat more indirect than security or integration, but still compelling. Salesforce's homepage positioning around unified AI, data, and CRM shows continued platform expansion; IBM's State of Salesforce report points to organizations scaling AI agents and optimizing ROI; and ISG material highlights long-term commitment in the Salesforce ecosystem. Combined with Salesforce's massive installed base and partner/community ecosystem, long-term value maturity is strong enough for a 5.",
+        "evidence": "Salesforce positions itself as a unified AI, data, and CRM platform for agentic enterprises. IBM's State of Salesforce 2025-2026 report says a group of organizations is successfully scaling AI agents across the enterprise and optimizing ROI from Salesforce. Futurum's February 2026 analysis says Salesforce's Q4 FY2026 results showed Agentic AI scaling, enterprise value, and large enterprise deal momentum. ISG ecosystem materials reference long-term commitment and maximizing long-term value from Salesforce investments.",
         "sources": [
-          "https://www.salesforce.com/marketing/",
-          "https://www.salesforce.com/marketing/loyalty-management/",
-          "https://www.salesforce.com/marketing/ai/ai-marketing-automation/",
-          "https://www.salesforce.com/news/stories/data-cloud-growth/"
+          "https://www.salesforce.com/",
+          "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/state-of-salesforce-2025",
+          "https://futurumgroup.com/insights/salesforce-q4-fy-2026-earnings-show-agentic-ai-scaling-guidance-steadies/",
+          "https://isg-one.com/docs/default-source/2026-ipl-brochures/salesforce-ecosystem-2026_brochure_english.pdf?sfvrsn=8051af31_4"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -2500,15 +2498,16 @@
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "Salesforce is strong in business adaptability and agility due to mature low-code capabilities, scalable enterprise app development, and a shared platform spanning apps, data, and agents. The evidence supports broad adaptability, though complexity at scale can constrain agility in some enterprise contexts.",
-        "reasoning": "Salesforce architecture materials emphasize low-code to pro-code development and user/developer experience. Platform pages say Salesforce lets customers create and deploy applications with low-code capabilities that scale as the business grows. Additional content on low-code/no-code broadens access to development and supports faster adaptation by business teams. These are hallmarks of a strong adaptability platform, even if large-enterprise governance and platform complexity can reduce agility relative to simpler tools.",
-        "evidence": "Salesforce architecture documentation says the platform provides user-friendly interfaces and a range of development tools from low-code to pro-code. Salesforce enterprise application platform content says low-code capabilities let customers create the applications they need and deploy faster. Salesforce says low-code and no-code platforms make enterprise app development and agent development accessible to a wider range of businesses and entrepreneurs. Salesforce’s core platform positioning emphasizes unified AI, data, and apps to support agentic enterprises.",
+        "score": 5,
+        "rationale": "Salesforce shows best-in-class business adaptability and agility through low-code and no-code development, customizable workflows, app-building tools, agent-building tools, and support for both low-code and pro-code approaches. The platform is designed to adapt workflows and applications as business needs change.",
+        "reasoning": "The evidence is strong and directly aligned to adaptability. Salesforce architecture documentation highlights user-friendly tools spanning low-code to pro-code, while low-code materials emphasize customization and flexibility. Additional materials point to custom app and UI creation without coding and adaptable DevOps practices as business needs evolve. Combined with Agentforce builder references, Salesforce merits a 5 for adaptability and agility.",
+        "evidence": "Salesforce architecture documentation says the platform offers user-friendly experiences and development tools ranging from low-code to pro-code. Salesforce's low-code guide says low-code platforms simplify app and agent development and emphasizes customization and flexibility. A Salesforce PDF says customers can create custom apps and user interfaces tailored to business needs with no coding required. Salesforce's DevOps vs Agile page says selected tools should be flexible enough to accommodate changing software requirements and scale as the business grows. Salesforce's llms.txt references Agentforce AI Agent Builder for creating custom AI agents with no code.",
         "sources": [
           "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation.html",
-          "https://www.salesforce.com/eu/platform/enterprise-app-development/platform/",
-          "https://www.salesforce.com/platform/low-code-development-platform/what-is-low-code/low-code-vs-no-code/",
-          "https://www.salesforce.com/"
+          "https://www.salesforce.com/eu/platform/low-code-development-platform/what-is-low-code/",
+          "https://www.salesforce.com/en-au/wp-content/uploads/sites/4/products/platform/forms/The-4-Step-Process-for-Agent-and-Application-Development-on-Salesforce.pdf",
+          "https://www.salesforce.com/platform/devops-tools/what-is-devops/devops-vs-agile/",
+          "https://www.salesforce.com/llms.txt"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
