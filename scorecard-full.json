@@ -799,14 +799,14 @@
       {
         "category": "Security & Compliance",
         "score": 3,
-        "rationale": "n8n shows credible security and compliance fundamentals, including SOC 2 alignment and enterprise governance controls, but evidence also shows notable gaps and recent vulnerabilities. Its capability is adequate rather than strong because enterprise-grade controls appear partly tier-gated and not broadly validated by top-tier analysts.",
-        "reasoning": "Search evidence shows n8n maintains a security program aligned to SOC 2 and publishes security, encryption, audit, and data protection documentation. There is also evidence of enterprise governance policies and enterprise-tier features, indicating meaningful security investment. However, multiple 2026 security vulnerability reports and community evidence about governance/compliance limits outside Enterprise reduce confidence in broad enterprise maturity. With no clear Gartner or Forrester recognition surfaced specifically for security/compliance leadership, n8n fits an adequate maturity level rather than a market-leading one.",
-        "evidence": "n8n states that it aligns its security program to SOC 2 on its Security page. n8n's Security page says it gathers compliance info, SOC reports, encryption practices, audits, and data protection details. A January 2026 community post describes governance policies intended to let IT/security teams enforce enterprise node-usage policies. Checkmarx reported 2026 vulnerabilities affecting n8n instances, including OverDoS and CSP sandbox bypass issues.",
+        "rationale": "n8n has credible security and compliance foundations, including SOC 2-aligned controls and enterprise identity/audit features, but evidence also shows notable security incidents and less analyst validation than top enterprise platforms. That supports an adequate rather than market-leading maturity assessment.",
+        "reasoning": "Search results show n8n publishes a dedicated security page stating alignment to SOC 2 and that enterprise plans include SSO/SAML/LDAP, RBAC, and audit-log retention. Third-party 2026 comparisons also reference SOC 2 Type II, EU/US hosting options, and suitability for GDPR/HIPAA/ISO 27001-oriented deployments, especially via self-hosting. However, 2026 Checkmarx and Orca results surfaced serious vulnerabilities in n8n, indicating the security posture is real but still maturing under enterprise scrutiny. With concrete controls present but limited independent analyst recognition and visible security issues, n8n fits a 3 for this topic.",
+        "evidence": "n8n's security page says its security program aligns to SOC 2. n8n's security page states SSO, SAML, and LDAP are available with the Enterprise plan, along with role-based access and audit log history retention. A 2026 comparison snippet says n8n Cloud offers SOC 2 Type II and EU/US hosting options and is suitable for HIPAA, GDPR, and ISO 27001-oriented requirements. Orca Security published a Jan 2026 result for CVE-2026-1470 describing a critical n8n RCE and sandbox escape. Checkmarx published a 2026 result for a stored XSS vulnerability in the open-source workflow platform n8n (CVE-2026-27578).",
         "sources": [
           "https://n8n.io/legal/security/",
-          "https://community.n8n.io/t/enable-enterprise-control-over-node-usage-with-governance-policies/258316",
-          "https://checkmarx.com/zero-post/n8n-overdos-vulnerability-cve-2026-42236/",
-          "https://checkmarx.com/zero-post/same-origin-same-tricks-bypassing-n8ns-csp-sandbox-cve-2026-27578/"
+          "https://checkmarx.com/zero-post/same-origin-same-tricks-bypassing-n8ns-csp-sandbox-cve-2026-27578/",
+          "https://orca.security/resources/blog/cve-2026-1470-n8n-rce-sandbox-escape/",
+          "https://cipherprojects.com/blog/posts/n8n-vs-zapier-automation-tool-comparison/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -815,32 +815,32 @@
       },
       {
         "category": "Deployment & Operations",
-        "score": 3,
-        "rationale": "n8n offers credible deployment flexibility through both cloud and self-hosted models, making it workable for many technical teams. It remains only adequate because operational maturity such as source control and advanced deployment management appears constrained by editioning and user-reported friction.",
-        "reasoning": "Search results consistently indicate n8n supports both n8n Cloud and self-hosted deployment, which is a meaningful operational strength. Community and documentation evidence shows operational features such as source control and additional enterprise capabilities exist, but they are not universally accessible and may be expensive or gated for community users. User discussions also point to practical deployment and activation issues in air-gapped/local environments, indicating some operational overhead. Without clear analyst validation for operational excellence, n8n lands at adequate maturity rather than strong enterprise operations maturity.",
-        "evidence": "A 2025/2026 n8n guide states that n8n offers two deployment models: n8n Cloud and self-hosted. A May 2026 community thread says Source Control would help with managing dev, staging, and production workflows, but describes the pricing as a barrier for many teams. A 2025 community post references deploying n8n Docker in a completely local network and difficulties activating extra features. n8n pricing notes that Business or Enterprise features can be accessed on self-hosted instances.",
+        "score": 4,
+        "rationale": "n8n shows strong deployment flexibility with cloud and self-hosted options plus current documentation for hosting and scaling in production. It is operationally solid for technical teams, though it relies more on customer-managed DevOps than fully managed enterprise automation suites.",
+        "reasoning": "n8n's deployment docs explicitly cover hosting and self-hosted setup, and search snippets reference Docker, Kubernetes, Linux, and cloud/self-hosted choices. The platform also documents scaling configuration and external infrastructure patterns, indicating operational maturity beyond hobbyist automation tools. Community and third-party deployment content consistently treats n8n as production-deployable, especially for technical teams comfortable with containers and Kubernetes. That breadth and production-readiness merit a 4, with the main gap being heavier operational responsibility compared with more turnkey enterprise platforms.",
+        "evidence": "n8n Docs has a current 'Host n8n' deployment section for setting up and managing self-hosted instances. Search results reference deployment options including Docker, npm, n8n Cloud, desktop app, and Kubernetes on Linux. n8n Docs includes a dedicated scaling configuration page for running n8n with large numbers of users, workflows, or executions. A 2026 comparison snippet says the self-hosted version includes every feature of the cloud version and highlights Docker-based self-hosting.",
         "sources": [
-          "https://hatchworks.com/blog/ai-agents/n8n-guide/",
-          "https://community.n8n.io/t/versioning-and-deploying-n8n-workflows-across-dev-staging-and-production/295660?tl=en",
-          "https://community.n8n.io/t/how-to-activate-the-free-extra-features-if-i-deploy-it-in-a-completely-local-network/115113",
-          "https://n8n.io/pricing/"
+          "https://docs.n8n.io/deploy/host-n8n",
+          "https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling",
+          "https://community.n8n.io/t/self-hosted-environment-with-starter-plan/153350",
+          "https://tech-insider.org/n8n-vs-zapier-2026/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
         "score": 3,
-        "rationale": "n8n has credible scalability and reliability for many workflow scenarios, with recent platform messaging around reliability fixes and enterprise scaling. However, evidence of limitations under complex or heavy enterprise workloads keeps it at an adequate rather than strong level.",
-        "reasoning": "The strongest positive evidence is n8n 2.0 messaging about reliability fixes, feature deprecations causing instability, and improvements aimed at mission-critical workflows. Pricing and product pages also reference enterprise scaling and external log streaming, suggesting intentional investment in higher-scale use cases. Still, multiple community and Reddit results say heavy processing is often offloaded to serverless/code, and some users report n8n becomes less ideal for complex, production-grade scaling. With no strong independent analyst endorsement specific to scalability/reliability, the capability appears credible but not best-in-class.",
-        "evidence": "The n8n 2.0 announcement says the release includes reliability fixes and deprecations of features that were causing instability. n8n pricing references Enterprise Scaling and the ability to stream logs to external services such as Datadog. A July 2025 enterprise user discussion says heavy processing was moved to external tools while n8n handled triggering and collection. A March 2026 Infralovers article says n8n supports 400+ integrations, can be self-hosted, and has been steadily adding AI capabilities, but agentic capabilities are still maturing.",
+        "rationale": "n8n has real scalability mechanisms such as queue mode, workers, and external Redis/PostgreSQL patterns, but the available evidence suggests scaling requires careful architecture and operational tuning rather than being inherently turnkey. That places it at adequate maturity rather than strong enterprise-leading reliability.",
+        "reasoning": "The most relevant results emphasize queue mode, dedicated workers/webhook nodes, and horizontal scaling patterns, showing n8n can scale beyond a single instance. However, the snippets repeatedly frame high availability and reliability as architecture choices requiring external PostgreSQL, Redis, autoscaling, and production engineering. One result explicitly contrasts limited vertical scaling in basic setups with horizontal scale only after adding workers, reinforcing that reliability depends on correct deployment patterns. This is solid but not clearly proven as best-in-class from the search evidence, so a 3 is appropriate.",
+        "evidence": "n8n documentation has a dedicated scaling page for large numbers of users, workflows, or executions. Production deployment guidance says PostgreSQL and Redis should ideally be external or highly available services for better reliability and that n8n must run in Queue Mode for worker execution. Community chart documentation describes advanced queue mode with dedicated worker and webhook nodes for distributed execution and high availability. Worker-mode guidance describes horizontal scaling with worker pods based on queue depth and CPU usage.",
         "sources": [
-          "https://blog.n8n.io/introducing-n8n-2-0/",
-          "https://n8n.io/pricing/",
-          "https://www.reddit.com/r/n8n/comments/1mcgcy6/the_reality_of_n8n_after_3_years_automating_for/",
-          "https://www.infralovers.com/blog/2026-03-09-n8n-agentic-mcp-hub/"
+          "https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling",
+          "https://puffersoft.com/production-grade-n8n-deployment-on-kubernetes/",
+          "https://community-charts.github.io/docs/charts/n8n/usage",
+          "https://docs.sleakops.com/tutorial/n8n-worker"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -850,14 +850,14 @@
       {
         "category": "Connectivity & Integration",
         "score": 4,
-        "rationale": "Connectivity and integration are among n8n's strongest areas, with evidence of 400+ core nodes, 1000+ total integrations, API/webhook extensibility, and custom node support. It earns a strong score because breadth is substantial and central to the product's value proposition, even if top-tier analyst validation was not surfaced.",
-        "reasoning": "Multiple search results point to very broad integration coverage, including claims of 400+ core nodes and 1000+ total integrations in 2026. Community content also highlights the ability to connect unsupported applications through APIs, webhooks, or custom integrations, which is important for enterprise extensibility. This breadth and flexibility place n8n above merely adequate on integration maturity. The absence of direct Gartner/Forrester validation and some edition-gated enterprise features keep it from a best-in-class score.",
-        "evidence": "A 2025/2026 article says n8n has 400+ core nodes and 1000+ total integrations in 2026. Community discussion asks whether unsupported apps can be connected via API/webhook or custom integration, indicating these are expected patterns in n8n. The n8n homepage describes the platform as combining AI capabilities with business process automation for technical teams. Third-party comparisons repeatedly describe n8n as strong when engineering teams want integration breadth and deployment control.",
+        "rationale": "n8n has a strong integration posture with public API access, webhook support, and broad prebuilt-node connectivity, making it a capable integration and workflow fabric for technical teams. It stops short of best-in-class because the evidence here lacks analyst recognition or proof of the deepest enterprise connector/governance catalog.",
+        "reasoning": "The results show n8n provides a public REST API and technical documentation for webhook-based integrations, both core signs of a credible integration platform. Multiple 2026 snippets also describe n8n as supporting 1000+ integrations and API-based automation patterns. Community demand around telecom OSS, GIS, RFMS, and custom API connections further suggests applicability across heterogeneous systems. This is broader than basic integration capability and merits a 4, though the search evidence does not confirm the analyst leadership expected for a 5.",
+        "evidence": "n8n Docs provides public REST API documentation for programmatic platform access. n8n Docs has a built-in Webhook node documentation page for exposing workflow endpoints and integrating via API calls. A 2026 AI-agent page snippet says n8n supports 1000+ integrations. Community discussion snippets reference integrating REST APIs from OSS, RFMS, GIS, and PostgreSQL in n8n workflows.",
         "sources": [
-          "https://vps.us/blog/how-many-n8n-integrations/",
-          "https://community.n8n.io/t/connecting-apis/145109",
-          "https://n8n.io/",
-          "https://www.kognitos.com/blog/best-uipath-alternatives-generative-ai-automation-2026/"
+          "https://docs.n8n.io/connect/n8n-api",
+          "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+          "https://n8n.io/ai-agents/",
+          "https://community.n8n.io/t/looking-for-an-n8n-freelancer-consultant-with-telecom-oss-experience/300396"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -867,14 +867,14 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 3,
-        "rationale": "n8n offers fast time-to-value for technical users through visual workflow building and broad integrations, but user experience appears uneven for less technical or enterprise-governed use cases. The result is an adequate score with clear strengths for developers and operators, but notable usability friction.",
-        "reasoning": "Search results support the idea that n8n can deliver fast time-to-value for common use cases and simple workflow automation, especially for users comfortable with Docker, APIs, and development concepts. Academic and third-party snippets note approximately 400 native integrations and explicit evaluation of time-to-value. However, community feature requests and user feedback point to collaboration limitations, sub-workflow UX gaps, and a steeper learning curve for beginners. That combination indicates a credible but not polished enterprise-grade experience across all persona types.",
-        "evidence": "A comparative study snippet says n8n provides time-to-value for common use cases and approximately 400 native integrations. A 2024 community feature request asks for better collaboration on workflows in the community version to improve user experience. A 2025 feature request says sub-workflows are useful but limited and would benefit from defaults and better behavior. Several user discussions say n8n works well for simple workflows but is not ideal as an entry point for beginners to automation.",
+        "rationale": "n8n offers a capable low-code workflow builder and templates that can deliver fast value for technical teams, but available evidence repeatedly notes the UX is less friendly for non-technical users. That balance supports an adequate score rather than a strong one.",
+        "reasoning": "Search snippets indicate n8n has workflow templates and low-code construction that can reduce time to first value. At the same time, multiple 2026 comparison snippets explicitly describe the workflow builder as complex and less friendly for non-technical users. This suggests the product is efficient once in the hands of technical builders, but not as universally approachable as top low-code enterprise platforms. That combination fits a 3 for overall maturity on time-to-value and UX.",
+        "evidence": "A 2026 comparison says workflow templates for common business tasks reduce time to first value. Vellum's 2026 comparison snippet says n8n is less friendly for non-technical users and that its workflow builder is complex and built for technical users. Community discussion around OpenClaw in n8n references low-code nodes and workflow builder usability. n8n pricing snippets describe a 'leading editor UI,' indicating a substantial builder experience exists.",
         "sources": [
-          "https://koreascience.kr/article/JAKO202502157624068.page",
-          "https://community.n8n.io/t/collaborate-on-workflows-community-version/45483?tl=en",
-          "https://community.n8n.io/t/sub-workflow-trigger-node-enhancements/136897?tl=en",
-          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/"
+          "https://xpander.ai/resources/best-n8n-alternatives-for-ai-agents-2026",
+          "https://www.vellum.ai/blog/best-n8n-alternatives",
+          "https://community.n8n.io/t/n8n-claw-openclaw-in-n8n/271756?tl=en",
+          "https://n8n.io/pricing/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -883,32 +883,32 @@
       },
       {
         "category": "Agentic Capabilities",
-        "score": 3,
-        "rationale": "n8n has credible and rapidly improving agentic capabilities, including AI workflow orchestration and evaluation-oriented features, but evidence suggests the capability is still maturing. It is adequate rather than strong because advanced planning, memory, and enterprise-grade agent management remain limited.",
-        "reasoning": "Multiple 2025-2026 sources describe n8n as supporting AI features, agentic orchestration, and even positioning as an MCP/agentic hub. This shows the topic is materially supported, not just aspirational. However, one 2026 source explicitly states n8n's agent capabilities are still maturing and calls out limitations in complex multi-step planning and advanced memory management. Without independent analyst recognition as a leader in agentic AI, the evidence supports an adequate maturity score.",
-        "evidence": "A 2025/2026 n8n guide says the platform supports agentic AI orchestration and highlights native AI capabilities. A March 2026 article says n8n supports 400+ integrations, can be self-hosted, and has been steadily adding AI capabilities. The same March 2026 article says n8n's agent capabilities are still maturing, with limitations in complex multi-step planning and advanced memory management. A December 2025 n8n blog describes building an LLM evaluation framework to support AI workflow testing.",
+        "score": 4,
+        "rationale": "n8n has moved beyond simple automation into credible agentic workflow support with dedicated AI Agent functionality and a positioning around production-ready AI agents. It is strong, though not yet clearly best-in-class from the evidence available.",
+        "reasoning": "The most direct evidence is n8n's AI Agent node documentation and its dedicated AI-agents product page, both from 2026-era search results. These sources indicate agent workflows are not just marketing copy but represented as first-class product constructs. External comparisons also place n8n among agent frameworks being evaluated on developer experience and agent capabilities. While that is strong evidence of meaningful maturity, the snippets do not show the breadth of governance/evaluation/orchestration recognition needed for a 5.",
+        "evidence": "n8n Docs includes an AI Agent node with technical documentation for integrating AI Agent capabilities into workflows. n8n's AI agents page says users can build production-ready AI agents with customizable templates and 1000+ integrations. A 2026 framework comparison includes n8n among platforms compared on agent capabilities and developer experience. A Reddit snippet notes n8n has AI agent functionality, confirming community awareness and usage of the feature area.",
         "sources": [
-          "https://hatchworks.com/blog/ai-agents/n8n-guide/",
-          "https://www.infralovers.com/blog/2026-03-09-n8n-agentic-mcp-hub/",
-          "https://blog.n8n.io/llm-evaluation-framework/",
-          "https://community.n8n.io/t/n8n-as-an-agentic-os-on-my-local-computer/254660"
+          "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent",
+          "https://n8n.io/ai-agents/",
+          "https://www.speakeasy.com/blog/ai-agent-framework-comparison",
+          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "BPM & Orchestration",
         "score": 3,
-        "rationale": "n8n clearly supports workflow orchestration and positions itself in business process automation, but it lacks strong evidence of deep BPM-suite maturity such as standards-heavy modeling and analyst leadership. It is therefore adequate for orchestration, but not a strong BPM leader.",
-        "reasoning": "The n8n homepage explicitly positions the platform as combining AI capabilities with business process automation, and the n8n blog discusses process orchestration tools and their required capabilities. Third-party comparisons also place n8n in the set of orchestration engines spanning open-source automation to BPM. However, search evidence does not show strong leadership in analyst BPM evaluations, nor does it demonstrate deep BPM-specific capabilities like standards-centric modeling or process governance at the level of top BPM suites. That leaves n8n as a credible orchestration platform with moderate BPM maturity.",
-        "evidence": "The n8n homepage says the platform combines AI capabilities with business process automation. A June 2026 n8n blog discusses core capabilities to look for in process orchestration tools. An April 2026 industry article groups n8n among orchestration engines spanning BPM to developer-centric orchestration. A Gartner BPA market page defines BPA tools as software enabling the design, execution, and monitoring of business processes, providing the category context n8n participates in.",
+        "rationale": "n8n is a credible workflow orchestration platform with support for rule-based and human-in-the-loop patterns, but evidence suggests it is not a full-featured BPM suite with native BPMN depth. That places it in the adequate tier.",
+        "reasoning": "n8n clearly participates in workflow and process orchestration, as shown by its own blog and platform messaging around human-in-the-loop approvals and rule-based automation. However, third-party comparisons distinguish enterprise BPM engines such as Camunda and note gaps like lack of native human approval steps in some scenarios, implying n8n's BPM depth is narrower than dedicated process suites. This makes n8n viable for orchestration-heavy use cases without proving best-in-class business process management maturity. A score of 3 reflects that middle ground.",
+        "evidence": "n8n's 2026 blog discusses process orchestration tools and references human-in-the-loop approval gates. n8n's platform page snippet says users can combine human-in-the-loop approvals with rule-based automation. An enterprise comparison snippet contrasts n8n with BPM categories and notes lack of native human-in-the-loop approval steps within some scenarios. Wrike's orchestration comparison snippet distinguishes BPMN/DMN workflow engines from broader orchestration tools, implying n8n sits more in orchestration than deep BPM.",
         "sources": [
-          "https://n8n.io/",
           "https://blog.n8n.io/process-orchestration-tools/",
+          "https://n8n.io/",
           "https://www.elementum.ai/blog/n8n-alternatives",
-          "https://www.gartner.com/reviews/market/business-process-automation-tools"
+          "https://www.wrike.com/workflow-guide/workflow-orchestration-tools/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -917,15 +917,14 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "n8n has real emerging-to-adequate capability here, especially around AI/LLM evaluation, but broader functional and performance testing maturity is not strongly evidenced. It earns a 3 because testing is supported in meaningful ways, though not yet shown as deep, comprehensive, or enterprise-proven across classic software quality dimensions.",
-        "reasoning": "The best evidence is n8n's own content on building an LLM evaluation framework and evaluating AI agent performance, including running test datasets through workflows before deploying changes. That demonstrates genuine testing/evaluation functionality, particularly for AI workflows. However, available evidence does not show a broad, mature testing suite for end-to-end functional regression, load testing, or performance benchmarking across the platform. User commentary about node limitations and complex enterprise-grade automation challenges reinforces that testing maturity is credible but limited in scope.",
-        "evidence": "A December 2025 n8n blog describes building an LLM evaluation framework using n8n. An April 2026 n8n blog says n8n's Evaluations feature lets users run test datasets through agent workflows before deploying changes. The n8n vs Zapier page says paid Business and Enterprise plans include an Evaluations feature designed to test AI performance. User discussions mention node limitations and awkward workarounds in some workflows, suggesting functional robustness still varies by use case.",
+        "score": 2,
+        "rationale": "Evidence for native testing and evaluation capabilities in n8n is thin, and community results explicitly indicate performance testing of the instance is different from testing workflow logic. This suggests an emerging/basic capability that relies heavily on external tooling and custom practice.",
+        "reasoning": "The search results did not surface first-party product pages for built-in functional or performance testing of workflows. Instead, the strongest directly relevant result is a community thread noting that current testing discussions focus on instance performance rather than workflow logic, alongside references to unit testing as requests or external practice. Community commentary also says teams need to set up their own unit and integration tests. With no solid evidence of a mature native testing product, n8n fits a 2 on this topic.",
+        "evidence": "A community thread says testing the performance of the n8n instance is different from testing workflows and their logic. The same thread references 'Workflow Unit Testing with Test Cases' as a feature-request-style topic rather than a clearly established native capability. A 2025 Reddit snippet says teams need to set up their own unit and integration tests around n8n. No topic-specific first-party n8n testing product/documentation surfaced in the search results for functional and performance testing.",
         "sources": [
-          "https://blog.n8n.io/llm-evaluation-framework/",
-          "https://blog.n8n.io/how-to-evaluate-the-performance-of-ai-agents/",
-          "https://n8n.io/vs/zapier/",
-          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/"
+          "https://community.n8n.io/t/testing-capabilities/62714?tl=en",
+          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/",
+          "https://www.vellum.ai/blog/best-n8n-alternatives"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -934,66 +933,48 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 3,
-        "rationale": "n8n provides meaningful monitoring and observability foundations, including workflow visibility and external log streaming, but evidence also highlights limitations in native AI observability and metadata tracking. This places it at adequate maturity rather than strong enterprise observability.",
-        "reasoning": "Positive evidence includes product/pricing references to streaming logs to external services like Datadog and multiple 2026 articles describing workflow monitoring and observability features. Community requests around Langfuse and token usage also indicate a growing ecosystem and real user demand for deeper observability. Still, third-party documentation and user posts point to gaps such as missing automatic metadata tracking and incomplete workflow-level observability for AI scenarios. In enterprise terms, n8n supports observability, but not yet at the depth expected from top-tier platforms.",
-        "evidence": "n8n pricing says logs can be streamed to external services such as Datadog. A June 2026 article says workflow monitoring and observability features provide visibility into recent platform updates and operations. A community thread requests native support for AI observability platforms like Langfuse, Comet, and Opik. TrueFoundry documentation says the OpenAI Chat Node integration has limitations including no automatic metadata tracking and no workflow-level observability.",
+        "score": 2,
+        "rationale": "n8n provides execution visibility, but the available evidence shows deeper observability often depends on external stacks and community add-ons rather than strong native capabilities. That points to an emerging/basic maturity level for this topic.",
+        "reasoning": "The most relevant 2026 observability results explicitly state that production monitoring needs more than the built-in execution UI and that there are no external metrics, alerting, or cross-workflow correlation out of the box. Additional evidence shows users and partners wiring in OpenTelemetry, Grafana dashboards, Signoz, or community-built dashboards to cover gaps. These integrations are valuable, but they imply the platform itself lacks mature native observability depth. Therefore n8n earns a 2 rather than a 3 or 4.",
+        "evidence": "OpenObserve's 2026 post says n8n monitoring in production requires more than the built-in execution UI and lacks external metrics, alerting, and cross-workflow correlation out of the box. A 2026 Signoz post says built-in execution logs in n8n Cloud are only a starting point and are not good for deeper monitoring and debugging. A community project in 2026 introduced a self-hosted observability dashboard for n8n with execution tracking, Prometheus metrics exploration, RBAC, and audit logging. Grafana Labs published an n8n workflow and execution analytics dashboard for monitoring success rates and bottlenecks.",
         "sources": [
-          "https://n8n.io/pricing/",
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
-          "https://community.n8n.io/t/capturing-n8n-flows-with-observability-evaluations-platforms-like-langfuse-comet-opik-etc/75764?tl=en",
-          "https://www.truefoundry.com/docs/ai-gateway/n8n"
+          "https://openobserve.ai/blog/n8n-monitoring-opentelemetry/",
+          "https://signoz.io/blog/n8n-monitoring-with-opentelemetry/",
+          "https://community.n8n.io/t/n8n-trace-a-self-hosted-observability-dashboard-for-n8n-workflows/273899?tl=en",
+          "https://grafana.com/grafana/dashboards/24475-n8n-workflow-execution-analytics/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Traceability & Governance",
-        "score": 2,
-        "rationale": "n8n has some governance capability, especially in enterprise editions, but the available evidence repeatedly points to meaningful limitations in centralized governance, auditability, and incident traceability. That makes this an emerging/basic capability rather than an adequately mature one for enterprise-wide governance demands.",
-        "reasoning": "Several sources explicitly state that n8n does not provide the same level of centralized governance as stronger enterprise platforms and that governance capabilities are limited outside the Enterprise tier. Additional sources cite gaps around SOX/GDPR-oriented traceability, agent credentials, source attribution, and compliance. There is some positive evidence, such as governance policy discussions and Enterprise feature unlocks, but the preponderance of evidence indicates important governance controls remain partial, edition-gated, or weaker than enterprise expectations. Given that, a score of 2 is justified.",
-        "evidence": "A December 2025 market guide states that n8n does not provide the same level of centralized governance. A February 2026 Workato article says n8n's governance capabilities are limited outside its Enterprise tier and references SOX/GDPR compliance and incident traceability needs. An October 2025 Inkeep comparison says n8n lacks enterprise governance features such as source attribution, agent credentials, and compliance. A January 2026 community feature post discusses governance policies to enforce enterprise control over node usage, indicating governance is an active area of development rather than a fully mature baseline.",
+        "score": 3,
+        "rationale": "n8n has meaningful governance features—RBAC, SSO/SAML/LDAP, audit logging, security policies, and log streaming—but these are concentrated in enterprise tiers and the evidence suggests governance is more basic than top enterprise platforms. That supports an adequate maturity score.",
+        "reasoning": "Current n8n pricing and docs snippets list audit logging, SSO/SAML/LDAP, and log streaming to external services such as Datadog. Security and docs pages also reference role-based access control and enterprise-only governance features. However, independent comparisons describe n8n's governance as limited or basic relative to more mature enterprise automation platforms, which tempers the score. The result is a credible governance baseline but not best-in-class depth, warranting a 3.",
+        "evidence": "n8n pricing snippets list audit logging, SSO/SAML/LDAP, and log streaming to external services such as Datadog on enterprise plans. The n8n security page states SSO, SAML, LDAP, role-based access, and audit log history retention are available. Release notes snippets mention owner accounts, SSO (OIDC and SAML), security policies, and log streaming to enterprise SIEM and observability tools. Third-party comparisons describe n8n governance as limited to enterprise-tier features with basic RBAC and audit logs.",
         "sources": [
-          "https://www.kore.ai/blog/7-moveworks-alternatives",
-          "https://www.workato.com/the-connector/open-source-gaps/",
-          "https://inkeep.com/blog/openai-agentkit-vs-n8n-vs-zapier",
-          "https://community.n8n.io/t/enable-enterprise-control-over-node-usage-with-governance-policies/258316"
+          "https://n8n.io/pricing/",
+          "https://n8n.io/legal/security/",
+          "https://docs.n8n.io/changelog/release-notes-2.x",
+          "https://www.kognitos.com/compare/kognitos-vs-n8n/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
-        "score": 2,
-        "rationale": "n8n participates in workflow automation and business process execution, but there is little credible evidence that it offers native process intelligence depth such as process mining, conformance checking, or discovery. On this topic it appears emerging/basic rather than mature.",
-        "reasoning": "Search results around process intelligence mostly return broader BPA category definitions or external references, not direct proof of native n8n process intelligence features. There is evidence that n8n can be used in business intelligence or business process scenarios, but that is materially different from a true process intelligence capability. No clear analyst recognition or product evidence surfaced for process mining, task mining, conformance analysis, or simulation. Therefore n8n shows adjacency, not deep native maturity, warranting a 2.",
-        "evidence": "The n8n homepage positions the platform around AI-enabled business process automation, not explicitly process intelligence. A June 2026 article mentions real-world n8n applications in data processing and business intelligence. Search results did not surface evidence of native process mining or conformance-checking features from n8n. Gartner BPA market definitions describe process execution/monitoring categories, but no search result tied n8n to dedicated process intelligence leadership.",
+        "score": 1,
+        "rationale": "No credible first-party evidence surfaced that n8n provides native process mining or task mining capabilities. The available results discuss those capabilities as strengths of other platforms, implying n8n does not meaningfully support this topic natively.",
+        "reasoning": "Search results for process intelligence did not return n8n product documentation or product pages for process mining, task mining, conformance, or simulation. Instead, the strongest relevant result is a comparison that cites process mining and task mining as areas where other platforms reduce the need for external tools, implying n8n lacks them. Since the evidence indicates absence rather than a developed offering, the correct score is 1. Confidence is medium because absence is inferred from search patterns and comparisons rather than an explicit n8n statement saying the feature does not exist.",
+        "evidence": "No n8n first-party product page or documentation for process mining or task mining surfaced in topic-specific searches. A 2026 comparison discusses process mining and task mining as differentiators of other automation platforms when compared with n8n. Search results for process intelligence were dominated by vendors such as Apromore, ABBYY Timeline, Celonis, and SAP Signavio rather than n8n.",
         "sources": [
-          "https://n8n.io/",
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
-          "https://www.gartner.com/reviews/market/business-process-automation-tools",
-          "https://www.makeitfuture.com/blog/exploring-celonis-optimization"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "low",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Licensing & TCO",
-        "score": 3,
-        "rationale": "n8n's licensing model can be attractive due to its fair-code/self-hosted orientation, but TCO becomes more mixed as enterprise requirements grow and advanced capabilities move behind custom or higher-tier licensing. Overall this is adequate maturity with cost strengths and governance-driven tradeoffs.",
-        "reasoning": "Positive signals include repeated positioning of n8n as fair-code licensed and often cost-effective for developer-led teams. However, several 2026 sources note that enterprise features like SSO, environments, and advanced RBAC require custom Enterprise licensing, and some discuss high or variable TCO for self-hosted enterprise deployments. This means the licensing model is workable and understandable, but not uniformly simple or low-cost once enterprise needs appear. The capability is therefore credible but not outstanding.",
-        "evidence": "A May 2026 comparison calls n8n a developer-favorite workflow tool with a fair-code licensed model. A March 2026 comparison says enterprise features such as SSO, environments, and advanced RBAC require a custom Enterprise license. A May 2026 Celigo article says self-hosting can carry high TCO even when Business and Enterprise tiers unlock more features. A June 2026 n8n docs page for the sustainable use license states use and distribution limitations, including internal business use restrictions.",
-        "sources": [
-          "https://www.kognitos.com/blog/best-uipath-alternatives-generative-ai-automation-2026/",
-          "https://n8nlab.io/blog/n8n-vs-node-red-vs-activepieces",
-          "https://www.celigo.com/blog/n8n-alternatives/",
-          "https://docs.n8n.io/privacy-and-security/sustainable-use-license"
+          "https://sii.pl/blog/en/ai-agents-in-process-automation-uipath-vs-n8n/",
+          "https://apromore.com/",
+          "https://kyp.ai/uipath-process-intelligence-alternatives/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1001,16 +982,33 @@
         "questions": ""
       },
       {
-        "category": "Industry applicability / business domain applicability",
-        "score": 3,
-        "rationale": "n8n is broadly applicable across many business domains because of its integration breadth and flexible workflow engine, but there is limited evidence of deep industry-specific packaged capability or regulated-industry leadership. That supports an adequate cross-domain applicability score.",
-        "reasoning": "The evidence shows n8n can support many business scenarios, including finance/accounting integrations, data processing, business intelligence, and general workflow automation. This breadth indicates it is not confined to a narrow vertical. However, the search results did not reveal strong industry-specific solution packaging, compliance leadership, or analyst recognition for vertical excellence. As a result, n8n is broadly usable across domains but not strongly industry-specialized.",
-        "evidence": "The n8n homepage describes the platform as combining AI capabilities with business process automation for technical teams. n8n has a finance and accounting integrations category that references APIs, webhooks, and MCP-based integrations. A June 2026 article says enterprise n8n implementations demonstrate versatility across data processing and business intelligence applications. A November 2025 comparison mentions enterprise features around security, compliance, and business intelligence use cases.",
+        "category": "Licensing & TCO",
+        "score": 4,
+        "rationale": "n8n's licensing model is attractive on cost and flexibility thanks to free self-hosted community usage, execution-based cloud pricing, and source-available customization. Complexity around enterprise pricing and self-hosting ops prevents a best-in-class score, but overall maturity is strong.",
+        "reasoning": "First-party pricing clearly shows cloud and self-hosted options, while multiple 2026 sources say the Community Edition can be self-hosted for free. The pricing motion toward execution-based billing gives a more predictable model than workflow-count limits, though enterprise pricing remains custom and operations effort can materially affect TCO. The source-available/self-hosted model is a strong economic lever for technical teams, but sustainable-use license constraints and infra/support overhead mean TCO is not universally low. On balance, this is a 4.",
+        "evidence": "n8n's pricing page offers Cloud and Self-hosted plans, including Starter, Pro, and Enterprise tiers. A 2026 pricing guide snippet says n8n Cloud and the new Business plan charge by execution rather than workflow count. A 2026 comparison says n8n's self-hosted Community edition is free, while enterprise features cost extra. n8n Docs publishes a Sustainable Use License page restricting redistribution for commercial purposes, clarifying licensing conditions beyond pure open source.",
         "sources": [
-          "https://n8n.io/",
-          "https://n8n.io/integrations/categories/finance-and-accounting/",
-          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
-          "https://docs.raiaai.com/ai-research/competitive-landscape/n8n-vs-raia-ai"
+          "https://n8n.io/pricing/",
+          "https://zeabur.com/blogs/n8n-pricing-shift-self-hosting-business-costs-zeabur-guide",
+          "https://n8nlab.io/blog/n8n-vs-node-red-vs-activepieces",
+          "https://docs.n8n.io/privacy-and-security/sustainable-use-license"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "high",
+        "notes": "",
+        "questions": ""
+      },
+      {
+        "category": "Industry applicability / business domain applicability",
+        "score": 4,
+        "rationale": "n8n appears broadly applicable across industries and business domains because of its integration flexibility, self-hosting options, and wide range of use cases from security operations to telecom and general business automation. It is strong, though not clearly packaged into deep industry-specific solutions.",
+        "reasoning": "n8n case studies mention Vodafone using it for threat intelligence with significant savings, while community examples reference telecom OSS, GIS, RFMS, and PostgreSQL-based workflows. Academic and community evidence also point to adoption for small-scale business process automation and revenue-generating automations. This demonstrates cross-domain applicability rather than a niche tool. The main limitation is that the evidence points more to horizontal flexibility than to purpose-built vertical solutions, so n8n scores 4 rather than 5.",
+        "evidence": "n8n case studies say Vodafone used n8n to revolutionize threat intelligence and save £2.2 million. A community post references integrating OSS, RFMS, GIS, PostgreSQL, and AI agents for telecom use cases. An arXiv 2026 study evaluates workflow automation efficiency using n8n in a small-scale business case study. Reddit discussion snippets describe uses such as automating business processes, Excel-driven actions, and AI voice calling workflows.",
+        "sources": [
+          "https://n8n.io/case-studies/",
+          "https://community.n8n.io/t/looking-for-an-n8n-freelancer-consultant-with-telecom-oss-experience/300396",
+          "https://arxiv.org/abs/2602.01311",
+          "https://www.reddit.com/r/n8n/comments/1kx0pbw/anyone_using_n8n_to_make_money_how_are_you_doing/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1019,15 +1017,15 @@
       },
       {
         "category": "Long-term value",
-        "score": 3,
-        "rationale": "n8n offers meaningful long-term value for technically capable teams through flexibility, self-hosting, and a sustainable commercial model, but that value is tempered by reported limitations as complexity and enterprise requirements increase. The result is an adequate long-term value profile.",
-        "reasoning": "Community and third-party evidence suggests n8n can create real long-term value and has an explicit focus on building a sustainable business model. Users also report the platform remains useful over time, especially for developer-led automation. However, recurring evidence points to reliability, governance, and scaling limits for more advanced enterprise AI and automation programs, which can reduce long-term strategic fit. This balance supports a middle score rather than a strong one.",
-        "evidence": "A 2022 n8n community post on sustainability argues that paid advanced features help make n8n successful and sustainable long term. A January 2024 community response says building a sustainable business is necessary so n8n can continue to be supported and improved long term. A May 2024 developer blog says a short setup experience suggested n8n could be useful on a longer-term basis. A July 2025 user post says n8n is excellent for prototyping but quickly encounters reliability issues and limitations beyond basic AI use cases.",
+        "score": 4,
+        "rationale": "n8n shows strong long-term value signals through community adoption, enterprise production use, and its self-hosted/source-available model that reduces vendor dependency. Some licensing debate and enterprise maturity questions remain, but the long-term proposition is compelling for many technical organizations.",
+        "reasoning": "The search results point to sustained community and enterprise momentum: Menlo Ventures notes n8n formalized contracts after broad internal usage, and n8n's own case studies show production deployment at recognizable organizations. Third-party commentary highlights long-term value around sovereignty and avoiding lock-in via the ecosystem and self-hosting. The sustainable-use license means value is not identical to fully permissive open source, but for enterprise buyers focused on durability and control, the proposition is strong. That earns a 4.",
+        "evidence": "Menlo Ventures said in late 2025 that n8n built its business on open-source community adoption and formalized contracts only after hundreds of employees were already active users. n8n's case studies page highlights teams running n8n in production, including Vodafone. A 2026 blog says the n8n ecosystem provides long-term value while addressing concerns about vendor dependency and data sovereignty. n8n Docs publishes a Sustainable Use License, clarifying the long-term licensing model and constraints.",
         "sources": [
-          "https://community.n8n.io/t/making-n8n-sustainable-paid-advanced-features/14270?tl=en",
-          "https://community.n8n.io/t/does-community-edition-have-limitations-on-functionality-what-options-are-included-in-this-edition/35138?tl=en",
-          "https://pixeljets.com/blog/n8n/",
-          "https://www.reddit.com/r/n8n/comments/1mcm9d2/why_i_left_n8n_for_python_and_why_it_was_the_best/"
+          "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+          "https://n8n.io/case-studies/",
+          "https://blckalpaca.at/en/blog/n8n-workflow-automation-2026-ai-orchestrated-solutions",
+          "https://docs.n8n.io/privacy-and-security/sustainable-use-license"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1037,14 +1035,14 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "n8n is strong on business adaptability and agility because its visual workflows, API-first connectivity, self-hosting options, and developer flexibility make it easy to adapt automations quickly. It falls short of best-in-class mainly because governance and enterprise control maturity are less developed than top enterprise platforms.",
-        "reasoning": "The core product positioning emphasizes flexibility for technical teams, and several sources explicitly associate n8n with business agility and rapid adaptation. Its breadth of integrations, support for APIs/webhooks, and ability to combine code with low-code workflow design are strong enablers of agility. This gives n8n a higher maturity than many narrower tools. Still, some enterprise feature gaps and governance limitations prevent a top score, since agility at scale also requires controlled change management.",
-        "evidence": "The n8n homepage says the platform combines AI capabilities with business process automation while giving technical teams flexibility. A May 2025 article describes n8n as supporting business agility and efficient scaling. A practical workflow article highlights the need for agentic workflows that can flexibly take advantage of new AI capabilities. Community and Reddit discussions show experienced developers considering n8n specifically for quickly automating workflows for businesses.",
+        "rationale": "n8n is strong on business adaptability because it combines low-code workflow assembly, API/webhook extensibility, self-hosting flexibility, and support for custom code. That makes it highly adaptable for changing business requirements, especially in technical teams.",
+        "reasoning": "Several results emphasize n8n's fit for organizations that prioritize customization, privacy, and flexible deployment. Academic and technical sources describe n8n as a workflow orchestration system for business processes, while community content consistently shows API-based, domain-specific adaptation across varied contexts. Because users can mix no-code/low-code nodes with custom logic and self-host in controlled environments, n8n is well-suited to iterative change. The absence of richer enterprise governance and packaged business abstractions keeps it from a 5, but it is clearly a strong 4.",
+        "evidence": "A 2026 workflow automation roundup says n8n can be self-hosted and is a strong choice for companies prioritizing data privacy, security, and customization. The same source says n8n allows both no-code and more flexible automation styles. A peer-reviewed 2026 paper describes n8n as a workflow orchestration system originally developed for business processes. Community and documentation results show n8n supports API-based integrations, webhooks, and public REST API access for adapting workflows to changing systems.",
         "sources": [
-          "https://n8n.io/",
-          "https://medium.com/towardsdev/n8n-automate-freely-scale-efficiently-d4cf70566e01",
-          "https://medium.com/@syrom_85473/a-practical-n8n-workflow-example-from-a-to-z-part-1-use-case-learning-journey-and-setup-1f4efcfb81b1",
-          "https://www.reddit.com/r/n8n/comments/1hvaqb5/experienced_developers_n8n_or_roll_your_own/"
+          "https://riseuplabs.com/workflow-automation-tools/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210874/",
+          "https://docs.n8n.io/connect/n8n-api",
+          "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
