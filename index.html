@@ -674,8 +674,8 @@
     if (!el || !SCORECARD_DATE) return;
     el.innerHTML =
       `<span style="width:8px;height:8px;border-radius:50%;background:#38d9a9;flex-shrink:0;"></span>
-       <span>Data source: <strong style="color:var(--text);">scorecard-full.json</strong> · Last updated: <strong style="color:var(--text);">${SCORECARD_DATE}</strong> · Refreshed via UiPath Maestro pipeline</span>
-       <span style="margin-left:auto;color:var(--muted);">Generate intelligence pulls the latest scorecard data</span>`;
+       <span>Data source: <strong style="color:#0f172a;">scorecard-full.json</strong> · Last updated: <strong style="color:#0f172a;">${SCORECARD_DATE}</strong> · Refreshed via UiPath Maestro pipeline</span>
+       <span style="margin-left:auto;color:#64748b;">Generate intelligence pulls the latest scorecard data</span>`;
   }
   const DATA_SOURCE  = 'agentic_rpa_vendor_scorecard.xlsx';
 
@@ -705,6 +705,7 @@
     const json = await r.json();
     if (!json || !json.vendors) throw new Error('scorecard-full.json geçersiz format — "vendors" alanı yok');
     Object.keys(json.vendors).forEach(v => { VENDORS[v] = json.vendors[v]; });
+    normalizeVendorSources(VENDORS); // manuel/otomatik yenilemede de aynı güvenlik ağı geçerli
     DATA = json;
     window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
     return json;
@@ -735,6 +736,49 @@
     return '<a class="' + (cls||'') + '" href="' + esc(href) + '" target="_blank" rel="noopener" title="' + esc(isUrl ? t : 'Search: ' + t) + '">' + esc(label) + '</a>';
   }
   function tagClass(c) { if(!c)return''; return{'High':'tag-high','Medium':'tag-medium','Low':'tag-low'}[c]||''; }
+
+  // ── kaynak sıralama güvenliği ──
+  // Bazı scorecard kayıtlarında ilk source jenerik bir sayfa olabilir (ana sayfa, /platform, /pricing vb.).
+  // Kural: "Licensing & TCO" hariç, jenerik sayfalar konuya özel kanıt sayılmaz ve asla ilk sırada
+  // gösterilmemeli. Veri pipeline'ı (araştırma ajanı) çoğu zaman bunu doğru sıralar, ama ham JSON'un
+  // sırasına körü körüne güvenmek yerine burada da bir UI-side güvenlik ağı kuruyoruz — render'dan
+  // hemen önce, veri her yüklendiğinde/yenilendiğinde tek bir yerden normalize ediliyor.
+  const GENERIC_SOURCE_PATHS = new Set(['pricing','platform','platform.html','products','solutions','about','about-us','home','index','index.html']);
+  function isGenericSource(url, topic) {
+    let u;
+    try { u = new URL(url); } catch (e) { return false; } // URL değilse ("Publisher — Title" gibi metinse) jenerik sayılmaz, yerinde kalır
+    const host = (u.hostname || '').toLowerCase();
+    const labels = host.split('.');
+    // "www.vendor.com" veya "vendor.com" gibi çıplak ana domain = genel pazarlama sitesi;
+    // "trust.vendor.com", "docs.vendor.com", "licensing.vendor.com" gibi anlamlı bir alt alan adı
+    // varsa bu zaten konuya özel bir portaldır — whitelist tutmak yerine genel kural: "www" dışında
+    // bir alt alan adı varsa jenerik SAYILMAZ.
+    const firstLabel = labels.length > 2 ? labels[0] : '';
+    const hasMeaningfulSubdomain = firstLabel && firstLabel !== 'www';
+    const path = u.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+    if (path === '') return !hasMeaningfulSubdomain; // çıplak ana sayfa (vendor.com/) jenerik; trust.vendor.com/ gibi özel alt alan adları jenerik SAYILMAZ
+    if (GENERIC_SOURCE_PATHS.has(path)) {
+      if (path === 'pricing' && topic === 'Licensing & TCO') return false; // tek istisna: bu konuda pricing sayfası zaten doğru/beklenen kaynak
+      return true;
+    }
+    return false;
+  }
+  function sortSourcesForDisplay(sources, topic) {
+    if (!Array.isArray(sources)) return sources;
+    const specific = [], generic = [];
+    sources.forEach(s => (isGenericSource(s, topic) ? generic : specific).push(s));
+    return specific.concat(generic); // stable partition — her grup kendi içinde orijinal sırasını korur
+  }
+  function normalizeVendorSources(vendorsObj) {
+    if (!vendorsObj) return;
+    Object.keys(vendorsObj).forEach(v => {
+      (vendorsObj[v] || []).forEach(card => {
+        if (card && Array.isArray(card.sources) && card.sources.length > 1) {
+          card.sources = sortSourcesForDisplay(card.sources, card.category);
+        }
+      });
+    });
+  }
 
   // ── navigation ──
   document.querySelectorAll('.nav-tab').forEach(btn=>{
@@ -935,9 +979,9 @@
         ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
         <div class="ev-evidence">${esc(row.evidence)}</div>
         <div class="accordion">
-          ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
           ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
           ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
+          ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
           ${(row.notes||row.questions)?`<details><summary>Notes & Next Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
         </div>
       </div>
@@ -1068,9 +1112,9 @@
           ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
           <div class="ev-evidence">${esc(row.evidence)}</div>
           <div class="accordion">
-            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
             ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
             ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
+            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
             ${(row.notes||row.questions)?`<details><summary>Notes & Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
           </div>
         </div>
@@ -1563,6 +1607,7 @@
     VENDORS  = DATA.vendors;
     SCOPES   = DATA.vendorScopes;
     RATIONALE= DATA.vendorRationale;
+    normalizeVendorSources(VENDORS); // render'dan önce: jenerik kaynaklar (ana sayfa, /platform vb.) asla ilk sırada olmasın
 
     // State başlangıç değerlerini VORDER yüklendikten sonra set et
     state.vendorView = VORDER[0];
