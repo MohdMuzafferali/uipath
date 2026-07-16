@@ -823,13 +823,6 @@
 
   // ── EXECUTIVE SUMMARY ──
   function renderExecMetrics() {
-    const topV = VORDER.reduce((a,b)=>avgScore(a)>=avgScore(b)?a:b);
-    const agIdx = TOPICS.findIndex(t=>t.toLowerCase().includes('agentic'));
-    const agV = VORDER.reduce((a,b)=>score(a,agIdx)>=score(b,agIdx)?a:b);
-    const uiAvg = avgScore('UiPath');
-    const nearest = VORDER.filter(v=>v!=='UiPath').map(v=>({v,d:uiAvg-avgScore(v)})).sort((a,b)=>a.d-b.d)[0];
-    const tcoV = VORDER.reduce((a,b)=>score(a,11)>=score(b,11)?a:b);
-
     const card = (label, value, sub, accent) =>
       `<div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;border-left:4px solid ${accent};">
         <div style="font-size:11px;font-weight:600;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">${label}</div>
@@ -840,21 +833,77 @@
       </div>`;
 
     const el = document.getElementById('exec-metrics-light');
-    if(el) el.innerHTML = `
+    if (!el) return;
+
+    const hl = state.radarHighlight;
+
+    if (!hl) {
+      // ── Market-wide view: no vendor pill selected ──
+      const topV = VORDER.reduce((a,b)=>avgScore(a)>=avgScore(b)?a:b);
+      const agIdx = TOPICS.findIndex(t=>t.toLowerCase().includes('agentic'));
+      const agV = VORDER.reduce((a,b)=>score(a,agIdx)>=score(b,agIdx)?a:b);
+      const uiAvg = avgScore('UiPath');
+      const nearest = VORDER.filter(v=>v!=='UiPath').map(v=>({v,d:uiAvg-avgScore(v)})).sort((a,b)=>a.d-b.d)[0];
+
+      el.innerHTML = `
+        <div style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Market-wide · click a vendor above to drill in</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          ${card('Highest Average Maturity', topV + ' (' + avgScore(topV).toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', '#4f8ef7')}
+          ${card('Agentic Leader', agV + ' (' + score(agV,agIdx) + ')', 'Highest score in "Agentic Capabilities" topic', '#38d9a9')}
+          ${card('External Validation Gap',
+            nearest
+              ? (nearest.d >= 0
+                  ? 'UiPath (+' + nearest.d.toFixed(1) + ')'
+                  : nearest.v + ' leads (' + nearest.d.toFixed(1) + ')')
+              : 'UiPath',
+            nearest && nearest.d < 0
+              ? 'UiPath trails nearest rival — review score semantics'
+              : 'Largest delta between UiPath and nearest rival',
+            '#f5a623')}
+        </div>`;
+      return;
+    }
+
+    // ── Vendor-specific view: a pill is selected ──
+    const v = hl;
+    const vAvg = avgScore(v);
+    let bestIdx = 0;
+    TOPICS.forEach((t,i)=>{ if (score(v,i) > score(v,bestIdx)) bestIdx = i; });
+    const bestTopic = TOPICS[bestIdx];
+    const bestScore = score(v, bestIdx);
+
+    let gapLabel, gapValue, gapSub;
+    if (v === 'UiPath') {
+      const nearest = VORDER.filter(x=>x!=='UiPath').map(x=>({x,d:vAvg-avgScore(x)})).sort((a,b)=>a.d-b.d)[0];
+      gapLabel = 'Gap vs Nearest Rival';
+      gapValue = nearest ? (nearest.d >= 0 ? '+' + nearest.d.toFixed(1) : nearest.x + ' leads (' + nearest.d.toFixed(1) + ')') : '—';
+      gapSub  = nearest ? 'UiPath average vs ' + nearest.x : 'No rival data available';
+    } else {
+      const uiAvg2 = avgScore('UiPath');
+      const d = vAvg - uiAvg2;
+      gapLabel = 'Gap vs UiPath';
+      gapValue = d >= 0 ? (v + ' leads (+' + d.toFixed(1) + ')') : ('UiPath leads (' + d.toFixed(1) + ')');
+      gapSub  = 'Average maturity delta vs UiPath';
+    }
+
+    el.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div style="font-size:10px;font-weight:700;color:${COLORS[v]||'#4f8ef7'};text-transform:uppercase;letter-spacing:.05em;">Showing: ${esc(v)}</div>
+        <button id="exec-metrics-clear" style="font-size:11px;color:#64748b;background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;">Clear</button>
+      </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        ${card('Highest Average Maturity', topV + ' (' + avgScore(topV).toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', '#4f8ef7')}
-        ${card('Agentic Leader', agV + ' (' + score(agV,agIdx) + ')', 'Highest score in "Agentic Capabilities" topic', '#38d9a9')}
-        ${card('External Validation Gap',
-          nearest
-            ? (nearest.d >= 0
-                ? 'UiPath (+' + nearest.d.toFixed(1) + ')'
-                : nearest.v + ' leads (' + nearest.d.toFixed(1) + ')')
-            : 'UiPath',
-          nearest && nearest.d < 0
-            ? 'UiPath trails nearest rival — review score semantics'
-            : 'Largest delta between UiPath and nearest rival',
-          '#f5a623')}
+        ${card('Average Maturity', v + ' (' + vAvg.toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', COLORS[v]||'#4f8ef7')}
+        ${card('Strongest Topic', bestTopic + ' (' + bestScore + ')', "Vendor's highest-scoring dimension", '#38d9a9')}
+        ${card(gapLabel, gapValue, gapSub, '#f5a623')}
       </div>`;
+
+    const clearBtn = document.getElementById('exec-metrics-clear');
+    if (clearBtn) clearBtn.addEventListener('click', () => {
+      state.radarHighlight = null;
+      document.querySelectorAll('#radar-chips .chip').forEach(c=>{c.classList.add('checked');c.style.opacity='1';});
+      renderRadar();
+      renderExecMetrics();
+    });
   }
 
   function renderScopeTable() {
@@ -892,6 +941,7 @@
           });
         }
         renderRadar();
+        renderExecMetrics();
       });
     });
   }
