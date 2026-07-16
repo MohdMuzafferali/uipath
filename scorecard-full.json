@@ -1534,14 +1534,14 @@
       {
         "category": "Security & Compliance",
         "score": 4,
-        "rationale": "OpenAI shows strong enterprise security and compliance maturity with dedicated privacy, security, and trust resources plus enterprise-specific controls. Evidence supports broad enterprise readiness, but the available snippets do not establish direct top-tier analyst leadership for this exact topic.",
-        "reasoning": "Search results show OpenAI has dedicated first-party security and privacy pages, a trust portal, and explicit enterprise privacy positioning. The snippets indicate customer data confidentiality, customer ownership of data, and enterprise-focused privacy/security commitments, which are consistent with a mature enterprise offering. However, the search results available here do not expose concrete analyst leadership such as Gartner/Forrester/IDC recognition directly tied to security/compliance, so a 5 is not justified under the rubric. Overall, this is strong rather than clearly best-in-class from the evidence surfaced.",
-        "evidence": "OpenAI states that 'Your organization's data always remains confidential, secure, and entirely owned by' the customer on its business data privacy, security, and compliance page. OpenAI maintains a dedicated Trust Portal at trust.openai.com for enterprise security review workflows. OpenAI says it is 'committed to building trust in our organization and platform by protecting our customer data, models, and products.' OpenAI's January 2026 enterprise privacy page says trust and privacy are core for ChatGPT Business and ChatGPT Enterprise.",
+        "rationale": "OpenAI shows strong enterprise security and compliance maturity with dedicated business privacy commitments, a trust portal exposing SOC 2 materials, and enterprise compliance logging capabilities. The evidence supports a broad, production-oriented program, though not clear best-in-class analyst-recognized leadership for this exact topic.",
+        "reasoning": "OpenAI has multiple recent first-party sources showing formal enterprise security posture: the business data page states customer data remains confidential and customer-owned, the trust portal offers SOC 2 access, and the enterprise privacy page highlights HIPAA-oriented healthcare support. The help-center compliance platform page adds concrete operational controls such as authenticated-request logging and conversation logs for enterprise and education customers. This is stronger than basic compliance marketing because it references named control artifacts and customer-facing governance features. I stopped short of 5 because this topic has no direct analyst MQ benchmark and the available evidence, while strong and recent, does not establish market-wide best-in-class recognition beyond OpenAI's own materials.",
+        "evidence": "OpenAI says business customer data remains confidential, secure, and entirely owned by the customer across ChatGPT Enterprise and Business. OpenAI's trust portal offers access to its SOC 2 report and security controls information. OpenAI says ChatGPT for Healthcare is built to support HIPAA compliance. OpenAI's compliance platform logs authenticated API requests for security and compliance purposes and introduced conversation logs in March 2026.",
         "sources": [
           "https://openai.com/business-data/",
           "https://trust.openai.com/",
-          "https://openai.com/security-and-privacy/",
-          "https://openai.com/enterprise-privacy/"
+          "https://openai.com/enterprise-privacy/",
+          "https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1551,47 +1551,47 @@
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "OpenAI demonstrates strong deployment and operational maturity through enterprise rollouts, API deployment support, and the OpenAI Frontier platform for building and managing agents. The evidence shows meaningful operational capability, though not enough to prove category-leading operational depth across all enterprise deployment patterns.",
-        "reasoning": "The results indicate OpenAI supports API deployments for enterprise users and has continued shipping production deployment updates such as GPT-5.5 availability and OpenAI Frontier. Frontier is described as an enterprise platform for building, deploying, and managing AI agents with shared context, onboarding, and permissions, which is meaningful evidence of operational maturity. Azure OpenAI and Microsoft Foundry results also suggest a broader deployment ecosystem around OpenAI models, but some of that operational depth is provided via hyperscaler partners rather than OpenAI alone. That supports a score of 4 rather than 5.",
-        "evidence": "OpenAI's GPT-5.5 announcement says API deployments are part of the rollout alongside ChatGPT availability for business and enterprise users. OpenAI Frontier is described as an enterprise platform for 'building, deploying, and managing AI agents' with shared context, onboarding, and permissions. Microsoft Foundry documentation indicates customers can preserve endpoints, API keys, and state during Azure OpenAI resource upgrades, showing mature operational pathways around OpenAI models.",
+        "rationale": "OpenAI has built a strong enterprise deployment motion, including a dedicated Deployment Company and forward-deployed enterprise delivery model, indicating mature operational support for production rollouts. However, the evidence emphasizes services and enablement more than detailed platform operations tooling, so it lands at strong rather than best-in-class.",
+        "reasoning": "Recent first-party and partner evidence shows OpenAI expanding beyond model access into deployment execution: the OpenAI Deployment Company was launched in May 2026 specifically to help businesses deploy AI at enterprise scale. Additional evidence from OpenAI, Accenture, and enterprise-focused materials points to hands-on deployment insights, operating models, and full lifecycle experimentation-to-deployment work for Codex Enterprise. That indicates substantial operational maturity and customer enablement. The ceiling stays at 4 because the surfaced evidence is stronger on deployment assistance and organizational capability than on a deeply documented operational platform layer such as native environment management, release orchestration, or IT operations controls documentation.",
+        "evidence": "OpenAI launched the OpenAI Deployment Company in May 2026 to help businesses deploy AI across the enterprise. OpenAI's Codex Enterprise engineering role describes ownership of the full lifecycle of experimentation, deployment, and iteration. OpenAI's 2025 enterprise AI report highlights skills and operating models required to deploy AI successfully. Accenture said its collaboration with OpenAI would help scale enterprise deployment insights and hands-on expertise.",
         "sources": [
-          "https://openai.com/index/introducing-gpt-5-5/",
-          "https://openai.com/index/introducing-openai-frontier/",
-          "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
-          "https://learn.microsoft.com/en-us/azure/foundry/openai/reference"
+          "https://openai.com/index/openai-launches-the-deployment-company/",
+          "https://openai.com/careers/software-engineer-codex-enterprise-san-francisco/",
+          "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/",
+          "https://newsroom.accenture.com/news/2025/openai-and-accenture-accelerate-enterprise-reinvention-with-advanced-ai"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
-        "score": 3,
-        "rationale": "OpenAI has credible scalable enterprise usage and partner-supported quota management, but the snippet evidence here shows less direct first-party proof of enterprise-grade reliability commitments, tenancy options, or SLAs than stronger infrastructure platforms provide. This supports an adequate rather than strong score.",
-        "reasoning": "The available results show Azure OpenAI quota automation and scaling support, which indicates that OpenAI-backed model access can scale in enterprise settings. However, the most explicit reliability critique in the search results comes from a third-party comparison page citing limitations such as no dedicated tenancy and limited SLA features for OpenAI directly. Because the web snippets do not surface direct first-party evidence of comprehensive reliability architecture, HA/DR posture, or strong OpenAI-native SLA constructs, the maturity appears credible but not fully enterprise-proven in this area. That places OpenAI at 3.",
-        "evidence": "Microsoft's Azure OpenAI quotas and limits page says if a customer's usage increases such that their current quota tier is limiting use, the system will automatically respond, indicating scalable quota management. A 2026 enterprise inference comparison article explicitly lists OpenAI limitations as 'limited enterprise reliability features (no dedicated tenancy, limited SLA ...)' in the snippet. OpenAI job postings reference 'scalable DAQ processes' with 'clear SLAs, metrics, and reliability targets,' indicating internal reliability focus but not a full customer-facing reliability capability proof.",
+        "score": 4,
+        "rationale": "OpenAI demonstrates strong scalability and reliability maturity, backed by engineering evidence that it scaled PostgreSQL to support 800 million ChatGPT users and ongoing infrastructure reliability investment. It is clearly enterprise-grade, though the retrieved evidence is narrower than a full published HA/DR operations corpus.",
+        "reasoning": "The strongest evidence here is direct engineering disclosure: OpenAI published a January 2026 post on scaling PostgreSQL to power 800 million ChatGPT users while minimizing latency and improving performance. Supporting evidence from Microsoft technical coverage and an infrastructure reliability engineering role reinforces that OpenAI is operating large-scale distributed systems with continuous improvement emphasis. This is stronger than an 'adequate' rating because it shows real scale, not just architectural aspirations. I did not assign a 5 because no direct market-leadership benchmark exists for this topic and the search results did not surface equally concrete public documentation on failover, HA/DR, or platform SLAs.",
+        "evidence": "OpenAI published engineering details on scaling PostgreSQL to power 800 million ChatGPT users. The engineering post says the scaling work minimizes latency while improving performance. OpenAI is hiring for infrastructure reliability roles focused on distributed systems at scale, reliability, scalability, and security. Microsoft technical community coverage described lessons from OpenAI scaling Azure Database for PostgreSQL for reliability and efficiency.",
         "sources": [
-          "https://learn.microsoft.com/en-us/azure/foundry/openai/quotas-limits",
-          "https://www.gmicloud.ai/en/blog/most-reliable-ai-inference-platforms-for-enterprise",
-          "https://openai.com/careers/technical-program-manager-robotics-data-acquisition-san-francisco/"
+          "https://openai.com/index/scaling-postgresql/",
+          "https://openai.com/careers/software-engineer-infrastructure-reliability-london-uk/",
+          "https://techcommunity.microsoft.com/blog/adforpostgresql/scaling-postgresql-at-openai-lessons-in-reliability-efficiency-and-innovation/4428483"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "OpenAI has strong integration maturity via APIs, Agents SDK, apps in ChatGPT, MCP-related connector support, and tool-based agent workflows. It is broad and developer-friendly, though the evidence does not show the kind of massive packaged enterprise connector library that would make it best-in-class for integration alone.",
-        "reasoning": "The search results show OpenAI released Responses API and Agents SDK, introduced apps in ChatGPT for business and enterprise users, and supports MCP server connectivity in its ecosystem. These are meaningful integration enablers for developers and enterprise app builders. The Assistants migration guidance also suggests product consolidation and maturity around a unified API surface. OpenAI is clearly strong on API-led integration, but the results do not prove the very broad enterprise prebuilt integration catalog typical of iPaaS or automation leaders, so 4 is appropriate.",
-        "evidence": "OpenAI's AgentKit announcement says enterprises have built end-to-end agentic workflows since the release of the Responses API and Agents SDK. OpenAI introduced apps in ChatGPT, with preview availability for ChatGPT Business, Enterprise, and Edu customers. OpenAI Help Center documentation indicates apps may have file search and connector-style capabilities for ChatGPT Enterprise. OpenAI's Realtime API update mentions MCP server support among new API capabilities.",
+        "score": 3,
+        "rationale": "OpenAI has credible integration capabilities through ChatGPT apps/connectors, partner network expansion, and selected product integrations, but the evidence suggests a growing ecosystem rather than the deep, enterprise-wide integration breadth of a top iPaaS-class platform. This supports an adequate maturity score.",
+        "reasoning": "OpenAI's recent materials show real integration momentum: ChatGPT apps/connectors link ChatGPT or Codex to external data and actions, the OpenAI Partner Network aims to enable a large ecosystem of consultants and integrators, and product announcements show integrations such as Excel/financial data and healthcare record connections. At the same time, the surfaced evidence also includes limitations, such as user complaints around Git provider support and public-repository constraints for Codex. Because this topic maps more closely to iPaaS/API-management-style depth, OpenAI's evidence looks functional but not broad and enterprise-proven at that category standard. That makes 3 more appropriate than 4.",
+        "evidence": "OpenAI says apps in ChatGPT connect ChatGPT or Codex to external data and actions. OpenAI launched a Partner Network in June 2026 and aimed to train 300,000 certified consultants by the end of 2026. OpenAI introduced ChatGPT for Excel with new financial data integrations. Community evidence indicates Codex connectivity limitations, including support concerns beyond GitHub and public repository constraints.",
         "sources": [
-          "https://openai.com/index/introducing-agentkit/",
-          "https://openai.com/index/introducing-apps-in-chatgpt/",
           "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt",
-          "https://openai.com/index/introducing-gpt-realtime/"
+          "https://openai.com/index/introducing-openai-partner-network/",
+          "https://openai.com/index/chatgpt-for-excel/",
+          "https://community.openai.com/t/connecting-openai-codex-to-other-git-providers/1264316"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1600,14 +1600,15 @@
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "OpenAI offers a strong time-to-value profile through ChatGPT, Codex, business plans, apps, and a unified developer stack that speeds prototyping and deployment. The evidence indicates rapid adoption and usability, though the snippets do not fully prove top-tier enterprise workflow packaging or low-code onboarding breadth across complex operations.",
-        "reasoning": "OpenAI benefits from an easy starting point for users through ChatGPT and for developers through the Responses API and Agents SDK. ChatGPT Business pricing snippets describe access across desktop and mobile apps for chat, coding, analysis, and workflows, which supports fast value realization. The broad rollout of GPT-5.5 across product tiers also implies consistent UX availability. Still, the evidence is lighter on enterprise-specific guided implementation and business-user workflow packaging than specialized enterprise platforms, keeping the score at 4.",
-        "evidence": "OpenAI's business pricing page highlights access to ChatGPT and Codex across desktop and mobile apps for chat, coding, analysis, and workflows. OpenAI's GPT-5.5 rollout spans Plus, Pro, Business, and Enterprise users in ChatGPT and Codex, supporting broad user accessibility. OpenAI's AgentKit builds on the Responses API to help developers build agents more efficiently and reliably.",
+        "score": 3,
+        "rationale": "OpenAI delivers relatively fast time-to-value through mainstream ChatGPT/Codex interfaces and broad enterprise availability, but the research surfaced limited direct evidence on structured low-code onboarding, guided enterprise UX, or formal platform design depth for this topic. The result is credible but not especially deep enterprise UX maturity.",
+        "reasoning": "OpenAI's product footprint clearly lowers adoption friction: GPT-5.5 rolled out broadly across Plus, Pro, Business, and Enterprise, and release notes show enterprise features such as Sites and workspace agents becoming generally available. Those are signals of accessible user experience and quick adoption. However, the search results for this topic were thinner and noisier than for OpenAI's stronger areas, and they did not surface direct low-code-platform or analyst-category evidence comparable to enterprise application UX leaders. Because the evidence supports usability and rapid access but not unusually rich enterprise experience design or workflow acceleration tooling, 3 is the fairest score.",
+        "evidence": "OpenAI rolled GPT-5.5 out across Plus, Pro, Business, and Enterprise users in ChatGPT and Codex. OpenAI release notes show Business and Enterprise customers already had access to Sites. Workspace agents became generally available in ChatGPT Business, Enterprise, and Edu in May 2026. OpenAI states it prioritizes user trust and user experience over revenue in its approach to advertising and expanding access.",
         "sources": [
-          "https://openai.com/business/pricing/",
           "https://openai.com/index/introducing-gpt-5-5/",
-          "https://openai.com/index/introducing-agentkit/"
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+          "https://openai.com/index/our-approach-to-advertising-and-expanding-access/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1617,14 +1618,15 @@
       {
         "category": "Agentic Capabilities",
         "score": 4,
-        "rationale": "OpenAI has strong agentic capability maturity with the Responses API, Agents SDK, AgentKit, built-in tools, and production-oriented updates. The offering is clearly advanced, but the evidence here does not show direct analyst leadership for the exact category, so best-in-class is not proven from snippets alone.",
-        "reasoning": "OpenAI's March and October 2025 announcements show a coherent agent platform strategy: Responses API as a core primitive, Agents SDK, AgentKit, and expanded evaluation features. Search snippets also mention built-in tools, computer use support, and MCP server support in related API updates, all of which strengthen the case for advanced agentic functionality. The Assistants-to-Responses migration also suggests convergence toward a more mature platform architecture. This is a strong 4 with broad evidence, short of a 5 because no direct Gartner/Forrester/IDC leadership for this exact topic surfaced.",
-        "evidence": "OpenAI said it released the Responses API and Agents SDK in March and enterprises have built end-to-end agentic workflows since then. AgentKit 'builds on the Responses API to help developers build agents more efficiently and reliably.' OpenAI's March 2025 announcement says the API makes it easier to store data on OpenAI so developers can evaluate agent performance using tracing and evaluations. The Responses API supports computer-use capability according to Azure OpenAI documentation surfaced in search.",
+        "rationale": "OpenAI is strong in agentic capabilities, with Codex, Operator, browsing/code-execution behaviors, and explicit positioning around agentic infrastructure. It also has analyst recognition in enterprise AI coding agents, but that category is adjacent rather than a direct match to general agent orchestration, so the score is capped at 4.",
+        "reasoning": "The product evidence is substantial: OpenAI says GPT-5.3-Codex has agentic capabilities beyond software, ChatGPT includes web browsing and code execution, and OpenAI describes building global infrastructure for agentic AI. There is also analyst-related signal: OpenAI says it was named a Leader in Gartner's 2026 Magic Quadrant for Enterprise AI Coding Agents. Under the strict non-UiPath rule, that leadership is strong supporting evidence but not a direct match for broad 'Agentic Capabilities,' which encompasses multi-agent orchestration and autonomous task execution beyond coding. Media coverage also surfaced real limitations, including stumbles in agentic shopping, which supports a strong-but-not-best-in-class rating.",
+        "evidence": "OpenAI says GPT-5.3-Codex has agentic capabilities that go beyond software development tasks. A 2026 OpenAI paper says ChatGPT includes agentic capabilities such as web browsing and code execution. OpenAI says it is building global infrastructure for agentic AI in the GPT-5.5 announcement. OpenAI says it was named a Leader in Gartner's 2026 Magic Quadrant for Enterprise AI Coding Agents. CNBC reported OpenAI's first try at agentic shopping stumbled, indicating product limitations in some autonomous commerce scenarios.",
         "sources": [
-          "https://openai.com/index/introducing-agentkit/",
-          "https://openai.com/index/new-tools-for-building-agents/",
-          "https://openai.com/index/new-tools-and-features-in-the-responses-api/",
-          "https://developers.openai.com/api/docs/assistants/migration"
+          "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "https://cdn.openai.com/pdf/5d1e1489-21c0-43e4-9d42-f87efdbf0082/the-shift-to-agentic-ai-evidence-from-codex.pdf",
+          "https://openai.com/index/introducing-gpt-5-5/",
+          "https://openai.com/index/gartner-2026-agentic-coding-leader/",
+          "https://www.cnbc.com/2026/03/20/open-ai-agentic-shopping-etsy-shopify-walmart-amazon.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1634,30 +1636,32 @@
       {
         "category": "BPM & Orchestration",
         "score": 2,
-        "rationale": "OpenAI has emerging orchestration capability around agents and workflows, but the evidence does not show a dedicated BPM suite, process modeling environment, or broad enterprise business orchestration platform. This is a basic-to-emerging capability rather than a full BPM offering.",
-        "reasoning": "The search results for BPM and orchestration largely surface broader market definitions and third-party workflow tools instead of OpenAI-owned BPM product evidence. OpenAI does have agent workflow tooling via AgentKit and Frontier, but that is not the same as a mature business orchestration and automation platform with process governance, modeling, simulation, and process execution controls. Because the capability exists in a narrower agent/workflow sense but lacks evidence of enterprise BPM depth, a 2 is warranted. Confidence is lower because search results were relatively thin and indirect for this exact topic.",
-        "evidence": "OpenAI Frontier is described as an enterprise platform for building, deploying, and managing AI agents with shared context, onboarding, and permissions. AgentKit helps developers design workflows with Agent Builder, indicating workflow composition capability. Searches for OpenAI on BPM/orchestration returned mostly generic market pages rather than first-party OpenAI BPM product pages, indicating limited evidence of a dedicated BPM platform.",
+        "rationale": "OpenAI has emerging orchestration relevance through the Agents SDK ecosystem and third-party workflow integrations, but it does not present as a dedicated BPM or business orchestration platform. The evidence points to building blocks and partnerships rather than a full-fledged enterprise process orchestration suite.",
+        "reasoning": "This topic required checking BOAT and adjacent business automation categories, and the results did not show OpenAI as a named leader in BOAT, IDC Business Automation Platforms, or Forrester DPA-style categories. The substantive evidence that did appear was indirect: Temporal announced integration with the OpenAI Agents SDK for production-ready agents, indicating OpenAI can participate in orchestration scenarios through partners rather than by supplying the BPM platform itself. Gartner Peer Insights has an OpenAI Platform listing, but that is not evidence of BPM leadership or breadth. Because OpenAI has useful orchestration components but lacks strong evidence of native process modeling, workflow governance, and enterprise BPM depth, it fits 2 rather than 3.",
+        "evidence": "Temporal announced integration with the OpenAI Agents SDK for production-ready agents. Gartner surfaced an OpenAI Platform reviews page, but the search did not show OpenAI as a BOAT Magic Quadrant Leader. The search for IDC Business Automation Platforms did not surface OpenAI as a vendor leader in that market. OpenAI's orchestration relevance in the result set appeared mostly through third-party workflow tooling rather than native BPM product evidence.",
         "sources": [
-          "https://openai.com/index/introducing-openai-frontier/",
-          "https://openai.com/index/introducing-agentkit/",
-          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies"
+          "https://temporal.io/blog/announcing-openai-agents-sdk-integration",
+          "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies",
+          "https://www.gartner.com/reviews/product/openai-platform",
+          "https://www.gartner.com/en/research/magic-quadrant"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "low",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 4,
-        "rationale": "OpenAI has strong evaluation maturity for AI applications, with explicit evals guidance, expanded evaluation features, and benchmark-oriented model releases. However, the evidence is centered on model/application evals rather than a full enterprise functional and performance testing suite across software systems.",
-        "reasoning": "OpenAI directly documents evaluation best practices and defines evals as structured tests for measuring model performance. Product announcements also reference expanding evaluation capabilities and using early model versions to diagnose test results and evaluations internally. This demonstrates real maturity in AI-specific testing and evaluation. Still, the evidence does not show a broad traditional software functional and performance testing platform, so a 4 rather than 5 is the best fit.",
-        "evidence": "OpenAI's Evaluation best practices page says 'Evals are structured tests for measuring a model's performance.' The AgentKit announcement says OpenAI is 'expanding evaluation capabilities with new features.' OpenAI's GPT-5.3-Codex announcement says the Codex team used early versions to 'diagnose test results and evaluations.' OpenAI model announcements reference benchmarks and latency/performance testing across different settings.",
+        "score": 3,
+        "rationale": "OpenAI has credible and increasingly mature evaluation capabilities, especially around model benchmarking, automated testing, and coding-task evaluation, but it is not evidenced as a dedicated enterprise software testing platform. That places it at adequate rather than strong maturity for this exact topic.",
+        "reasoning": "The evidence shows real testing depth in OpenAI's own domain: GPT-5.6 references human red teaming combined with large-scale automated testing, GPT-5.3-Codex claims state-of-the-art performance on SWE-Bench Pro, and OpenAI has published critiques of benchmark quality such as why SWE-bench Verified no longer measures frontier coding well. These are meaningful evaluation capabilities. However, when checked against the direct analyst category for AI-augmented software testing tools, the surfaced analyst recognition was for enterprise AI coding agents, not testing tools. OpenAI therefore appears credible in model and coding evaluation but not established as a top-tier functional/performance testing suite vendor.",
+        "evidence": "OpenAI says GPT-5.6 combined human red teaming with large-scale automated testing during evaluation. OpenAI says GPT-5.3-Codex achieved state-of-the-art performance on SWE-Bench Pro. OpenAI published analysis explaining why SWE-bench Verified no longer measures frontier coding well. ChatGPT release notes reference reductions to thinking time based on testing and strong performance in function-related tasks.",
         "sources": [
-          "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
-          "https://openai.com/index/introducing-agentkit/",
-          "https://openai.com/index/introducing-gpt-5-4/",
-          "https://openai.com/index/introducing-gpt-5-3-codex/"
+          "https://openai.com/index/gpt-5-6/",
+          "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/",
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "https://www.gartner.com/en/research/magic-quadrant"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1666,15 +1670,15 @@
       },
       {
         "category": "Monitoring & Observability",
-        "score": 3,
-        "rationale": "OpenAI provides some native data controls and supports tracing/evaluations in its agent tooling, but the evidence suggests customers often rely on third-party observability tools for deeper monitoring. That indicates adequate but not strong observability maturity.",
-        "reasoning": "OpenAI's March 2025 agent tools announcement explicitly mentions tracing and evaluations for agent performance, and the data controls documentation confirms abuse monitoring logs are generated for API feature usage. At the same time, the search results heavily surface third-party ecosystems such as Langfuse and OpenObserve for practical cost tracking, tracing, and observability around OpenAI workloads. That pattern suggests native capability exists but is not as comprehensive as specialized observability platforms. Therefore the topic scores as 3.",
-        "evidence": "OpenAI said developers can evaluate agent performance using features such as 'tracing and evaluations.' OpenAI's data controls documentation says 'abuse monitoring logs are generated for all API feature usage.' Third-party observability vendors explicitly position themselves for OpenAI monitoring, including cost tracking and tracing for OpenAI generations, indicating customers often extend beyond OpenAI-native monitoring.",
+        "score": 2,
+        "rationale": "OpenAI itself is not strongly evidenced as an observability platform vendor; instead, multiple observability vendors monitor OpenAI services and APIs. That indicates OpenAI is observable and instrumentable, but not that it offers deep native observability capabilities as a product category leader.",
+        "reasoning": "The topic maps to Gartner's Observability Platforms category, and the search results surfaced leaders like Datadog and Elastic rather than OpenAI. The most relevant evidence is third-party observability tooling that can collect metrics and traces from OpenAI services, monitor OpenAI token consumption and latency, or monitor OpenAI costs. This is useful ecosystem support, but it is external to OpenAI's own core product maturity. Without strong first-party evidence of a native observability platform layer, OpenAI looks emerging/basic here.",
+        "evidence": "Splunk provides guidance to collect metrics and traces from OpenAI services. Dynatrace says it integrates with OpenAI to monitor performance, token consumption, latency, and related AI observability data. Grafana has an OpenAI monitoring integration page. The Gartner Observability Platforms search did not surface OpenAI as a Leader or primary platform vendor in that market.",
         "sources": [
-          "https://openai.com/index/new-tools-for-building-agents/",
-          "https://developers.openai.com/api/docs/guides/your-data",
-          "https://openobserve.ai/blog/monitor-openai-api-costs-opentelemetry/",
-          "https://langfuse.com/docs/observability/features/token-and-cost-tracking"
+          "https://help.splunk.com/en/splunk-observability-cloud/observability-for-ai/splunk-ai-infrastructure-monitoring/set-up-ai-infrastructure-monitoring/openai",
+          "https://docs.dynatrace.com/docs/observe/dynatrace-for-ai-observability",
+          "https://grafana.com/integrations/openai/monitor/",
+          "https://www.datadoghq.com/blog/datadog-observability-platforms-gartner-magic-quadrant-2026/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1683,30 +1687,31 @@
       },
       {
         "category": "Traceability & Governance",
-        "score": 4,
-        "rationale": "OpenAI shows strong governance maturity with enterprise admin controls, RBAC, SAML SSO, SCIM, audit logs, and policy-oriented controls. The evidence is solid for enterprise governance, though not sufficient to establish best-in-class status across the full governance market.",
-        "reasoning": "The strongest first-party snippet here is OpenAI's March 2026 financial integration announcement, which explicitly mentions RBAC, SAML SSO, SCIM, audit logs, and support for common DLP and SIEM. That is substantial evidence of enterprise governance infrastructure. Additional third-party snippets refer to compliance APIs, agent run logs, and governance features, reinforcing the theme, though these sources are less authoritative. Since analyst leadership for this exact topic was not surfaced, the right score is 4.",
-        "evidence": "OpenAI says customers can 'Manage and monitor access with RBAC, SAML SSO, SCIM, and audit logs, with support for common DLP and SIEM.' A third-party regulated-agent comparison cites 'Compliance API + agent run logs (what ran, when, by whom)' for OpenAI AgentKit. Another 2026 comparison snippet notes OpenAI governance capabilities such as RBAC, audit logs, policy enforcement, and key management.",
+        "score": 3,
+        "rationale": "OpenAI has credible governance and data-control features, including data residency controls, enterprise key management, request logging, and explicit enterprise governance messaging. Still, the evidence suggests a developing governance layer rather than the deepest end-to-end enterprise traceability stack.",
+        "reasoning": "The most concrete evidence came from first-party materials: OpenAI's data-controls documentation lists data retention controls for abuse monitoring, data residency controls, and enterprise key management. The March 2026 ChatGPT for Excel announcement also emphasizes security, governance, and control for enterprise customers, while the Promptfoo acquisition announcement frames OpenAI's push toward evaluation, governance, and accountability over time. These are meaningful capabilities, but the search also surfaced community discussion around governance and auditability difficulties, suggesting the area is still maturing. That combination supports a 3: clearly real, but not yet richly evidenced as broad governance leadership.",
+        "evidence": "OpenAI documents data retention controls, data residency controls, and Enterprise Key Management in its platform data-controls guide. OpenAI says ChatGPT Enterprise includes security, governance, and access controls. OpenAI said its Promptfoo acquisition would accelerate testing, evaluation, governance, and accountability capabilities. OpenAI's compliance platform logs authenticated requests for security and compliance purposes.",
         "sources": [
+          "https://developers.openai.com/api/docs/guides/your-data",
           "https://openai.com/index/chatgpt-for-excel/",
-          "https://mightybot.ai/compare/mightybot-vs-openai/",
-          "https://www.notdiamond.ai/blog/the-top-10-ai-gateways-for-the-multi-model-future-2026"
+          "https://openai.com/index/openai-to-acquire-promptfoo/",
+          "https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Process Intelligence",
         "score": 1,
-        "rationale": "There is no credible evidence in the search results that OpenAI offers a first-party process mining or task mining product. The topic is largely unsupported as a native vendor capability.",
-        "reasoning": "Search results for this topic mostly surfaced academic papers and industry commentary about using LLMs in process mining, rather than OpenAI product pages or customer evidence for a native process intelligence offering. That indicates OpenAI models may be used within process intelligence solutions, but OpenAI itself does not appear to sell a dedicated process mining/task mining capability based on the evidence available. Under the rubric, lack of credible first-party product support maps to 1. Confidence is medium because the absence pattern was fairly consistent across searches.",
-        "evidence": "Searches returned academic and research content about LLMs enhancing process mining rather than an OpenAI first-party process mining product page. No first-party OpenAI result in the search set described process mining, task mining, conformance checking, or process intelligence as an OpenAI product capability. The visible evidence points to OpenAI as an enabling model provider in third-party research, not a native process intelligence vendor.",
+        "rationale": "There is no credible evidence that OpenAI offers a native process mining or process intelligence platform on this topic. The search results instead surfaced OpenAI research and broad AI materials, while Gartner process mining evidence pointed to other specialist vendors.",
+        "reasoning": "I ran the direct process intelligence search and the analyst-category search for process mining platforms. The returned results identified Gartner's Process Intelligence Platforms / Process Mining market and named leaders such as Celonis and ABBYY, but did not surface OpenAI as a participant with a native process mining product. OpenAI's own result set for this topic pointed to general research and policy content rather than process discovery, conformance checking, or mining capabilities. Because the evidence indicates genuine absence of a credible dedicated offering, this is one of the few topics that merits a 1 rather than a 2.",
+        "evidence": "The Gartner process mining / process intelligence results named vendors such as Celonis and ABBYY, not OpenAI, as leaders in this category. OpenAI's results for this topic surfaced general research and industrial policy pages rather than process mining functionality. No surfaced OpenAI source described process discovery, conformance checking, event-log mining, or a process intelligence platform.",
         "sources": [
-          "https://arxiv.org/html/2603.15351v1",
-          "https://www.sciencedirect.com/science/article/pii/S0306437925001280",
-          "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1716819/full"
+          "https://www.gartner.com/en/research/magic-quadrant",
+          "https://www.processexcellencenetwork.com/process-mining/articles/16-process-mining-vendors-gartner-magic-quadrant",
+          "https://openai.com/research/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1716,12 +1721,13 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "OpenAI offers transparent API pricing and clear business plan packaging, but the overall cost and enterprise licensing flexibility evidenced here are adequate rather than clearly market-leading. The model is understandable, though likely requires careful cost management at scale.",
-        "reasoning": "OpenAI provides a dedicated API pricing page with model and tool pricing, as well as business and enterprise plan structures through ChatGPT pricing materials. That supports baseline transparency and buyer accessibility. However, the available snippets do not surface strong proof of enterprise-oriented licensing advantages such as robust committed-use discounts, broad bundling economics, or unusually favorable TCO governance features. Combined with the need for third-party commentary around pricing negotiation, 3 is appropriate.",
-        "evidence": "OpenAI has a dedicated API pricing page covering GPT-5.5, multimodal models, and tools, with token and service tier pricing. OpenAI's business pricing page describes Business plan capabilities including ChatGPT, Codex, and tool connectivity. OpenAI Help Center documentation explains ChatGPT Business seat types and how pricing, privacy, and admin controls work.",
+        "rationale": "OpenAI's licensing and pricing are real and increasingly documented, with public API pricing, business pricing, and a Codex rate card, but the packaging remains somewhat complex across plans, tokens, credits, and seat changes. This supports an adequate score rather than a strong one.",
+        "reasoning": "Unlike some enterprise software vendors, OpenAI does provide direct public pricing sources: API pricing, Business pricing, and a recent Codex rate card. That transparency is a positive maturity signal. At the same time, the pricing model spans token consumption, container/session costs, business plans, and evolving seat availability, which can complicate TCO estimation compared with simpler enterprise subscription structures. The evidence shows credible pricing maturity, but not an especially streamlined or easily forecastable cost model across the portfolio.",
+        "evidence": "OpenAI publishes public API pricing, including token and session/container-related charges. OpenAI publishes Business pricing for ChatGPT Business and APIs. OpenAI's help center documents a Codex rate card and notes an April 2, 2026 pricing update. OpenAI notes that starting June 24, 2026 Codex seats would no longer be available to new ChatGPT Business plans, showing packaging changes customers must track.",
         "sources": [
           "https://openai.com/api/pricing/",
           "https://openai.com/business/pricing/",
+          "https://help.openai.com/en/articles/20001106-codex-rate-card",
           "https://help.openai.com/en/articles/8792828-what-is-chatgpt-business"
         ],
         "evidenceType": "Paraphrase",
@@ -1732,14 +1738,14 @@
       {
         "category": "Industry applicability / business domain applicability",
         "score": 4,
-        "rationale": "OpenAI has strong cross-industry applicability, with evidence spanning healthcare, financial services, education, and broad enterprise transformation use cases. The vendor is clearly versatile across domains, though the snippets do not prove packaged vertical solutions breadth on the level of best-in-class enterprise application vendors.",
-        "reasoning": "The evidence includes an OpenAI for Healthcare launch with HIPAA-support messaging, as well as Accenture and BBVA references pointing to financial services and enterprise business workflow adoption. Microsoft customer-story results also reference government and education use cases on Azure OpenAI. This shows OpenAI's models are broadly applicable across industries. Still, the search results more strongly support platform adaptability than deep industry-specific packaged solutions, so 4 is the right score.",
-        "evidence": "OpenAI launched 'OpenAI for Healthcare' and says it enables secure, enterprise-grade AI that supports HIPAA compliance. Accenture said its OpenAI program will help enterprises in industries including financial services and healthcare adopt AI in real business workflows. Microsoft highlighted Azure OpenAI-based customer transformation stories including government and education use cases. OpenAI's BBVA case study says the bank is putting AI at the core of banking with OpenAI.",
+        "rationale": "OpenAI shows strong cross-industry applicability, with named partner and customer-facing activity spanning financial services, government, healthcare, life sciences, retail, and media. The evidence demonstrates broad domain relevance, though it is more ecosystem-driven than deeply productized by industry.",
+        "reasoning": "Recent OpenAI partner materials are explicit about industry coverage: Cognizant's OpenAI page names financial services, government and public sector, healthcare and life sciences, media and entertainment, and retail and consumer goods; CGI highlights government, financial services, and healthcare. OpenAI's adoption-patterns material also supports broad workplace enterprise adoption. This breadth is stronger than 'adequate' because it shows multiple industry motions rather than a generic horizontal platform claim. I stopped at 4 because the evidence is more about partner-enabled applicability and adoption than a deeply cataloged library of industry-specific product solutions.",
+        "evidence": "OpenAI's Cognizant partner page names financial services, government and public sector, healthcare and life sciences, media and entertainment, and retail and consumer goods. OpenAI's CGI partner page highlights expertise across government, financial services, and healthcare. OpenAI published a guide on ChatGPT usage and adoption patterns at work, signaling broad enterprise use. OpenAI launched ChatGPT for Healthcare, showing at least some vertical product packaging.",
         "sources": [
-          "https://openai.com/index/openai-for-healthcare/",
-          "https://newsroom.accenture.com/news/2025/openai-and-accenture-accelerate-enterprise-reinvention-with-advanced-ai",
-          "https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/",
-          "https://openai.com/index/bbva/"
+          "https://openai.com/business/partners/cognizant/",
+          "https://openai.com/business/partners/cgi/",
+          "https://openai.com/business/guides-and-resources/chatgpt-usage-and-adoption-patterns-at-work/",
+          "https://openai.com/index/introducing-chatgpt-health/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1749,33 +1755,34 @@
       {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "OpenAI shows strong long-term value potential through large-scale enterprise adoption, strategic funding, major partnerships, and evidence of deepening customer usage. The results support durable strategic relevance, though not enough to prove category-best stability and value realization across all enterprise dimensions.",
-        "reasoning": "The evidence shows OpenAI raised major capital to accelerate AI development and reported strong adoption signals across consumer, enterprise, and developer usage. Customer evidence such as BBVA's long-term transformation and OpenAI's own statement that users folded ChatGPT into daily work support lasting value creation. At the same time, the market remains dynamic, and snippets do not fully resolve long-term concerns such as dependency, pricing evolution, and control for enterprises. That makes 4 appropriate.",
-        "evidence": "OpenAI announced it raised $122 billion to accelerate the next phase of AI, citing consumer adoption, enterprise deployment, and developer usage. OpenAI wrote that adoption and deep usage happened at a scale 'no one predicted' and that people folded ChatGPT into daily work. BBVA says ChatGPT Enterprise adoption is part of a much larger long-term transformation with OpenAI.",
+        "rationale": "OpenAI demonstrates strong long-term value potential through continued product investment, structural evolution, and broad enterprise adoption momentum. The evidence supports durable strategic relevance, though long-term customer value still depends on a rapidly evolving commercial model and governance trajectory.",
+        "reasoning": "OpenAI's own materials emphasize sustained product and market investment: it states it prioritizes user trust and experience over optimizing time spent, continues to expand access and monetization carefully, and has formalized a structure linking foundation resources to value creation as it grows. Its enterprise adoption materials show the platform moving from consumer breakthrough to workplace scale, while product rollouts like GPT-5.5 and workspace agents indicate an ongoing pace of innovation. That combination points to strong long-term relevance and roadmap durability. I stopped short of 5 because this topic has no analyst-MQ shortcut and because governance/commercial evolution remains active enough that the long-term picture, while promising, is not fully settled.",
+        "evidence": "OpenAI says it does not optimize for time spent in ChatGPT and prioritizes user trust and user experience over revenue. OpenAI's structure page says the OpenAI Foundation's resources are directly linked to the long-term value OpenAI Group creates as it grows. OpenAI published enterprise adoption patterns showing broad workplace uptake. OpenAI continues frequent major releases, including GPT-5.5 and workspace agents in 2026.",
         "sources": [
-          "https://openai.com/index/accelerating-the-next-phase-ai/",
-          "https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/",
-          "https://openai.com/index/bbva/"
+          "https://openai.com/index/our-approach-to-advertising-and-expanding-access/",
+          "https://openai.com/our-structure/",
+          "https://openai.com/business/guides-and-resources/chatgpt-usage-and-adoption-patterns-at-work/",
+          "https://openai.com/index/introducing-gpt-5-5/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Business adaptability / Agility",
-        "score": 4,
-        "rationale": "OpenAI is strong on adaptability through APIs, evolving agent tooling, model choice, and rapid feature shipping that lets enterprises iterate quickly. The evidence supports high agility, though not a full enterprise application configuration stack with deep packaged business-rule adaptation.",
-        "reasoning": "OpenAI's product direction around Responses API, Agents SDK, AgentKit, built-in tools, and fast release cadence points to a highly adaptable platform for custom AI workflows. Business and enterprise plans plus developer APIs allow organizations to experiment across chat, coding, analysis, and workflow use cases. However, the strongest adaptation mechanisms in the snippets are developer-led rather than business-process-led configuration frameworks. That makes OpenAI strong but not clearly best-in-class for enterprise business agility as a platform category.",
-        "evidence": "OpenAI's AgentKit helps developers build agents more efficiently and reliably using the Responses API. OpenAI's May 2025 Responses API update added new built-in tools to its core API primitive for building agentic applications. OpenAI Business pricing highlights use across chat, coding, analysis, and workflows, supporting rapid redeployment across use cases. The Assistants API deprecation in favor of the Responses API indicates consolidation around a more flexible foundation.",
+        "score": 3,
+        "rationale": "OpenAI enables reasonable business adaptability through broad model rollout cadence, workspace agents, and configurable enterprise usage patterns, but the evidence did not show especially deep low-code process reconfiguration or business-rule agility features. This places it at adequate maturity.",
+        "reasoning": "The best evidence for agility is operational rather than BPM-centric: OpenAI rolls new capabilities into Business and Enterprise tiers quickly, workspace agents became generally available in May 2026, and enterprise adoption materials show the platform expanding from experimentation to broad workplace use. That indicates customers can adapt usage patterns and build on new features at a fast cadence. Still, this topic is about business adaptability, not just vendor release speed, and the searches did not surface strong proof of low-code reconfiguration or enterprise process agility tooling native to OpenAI. Accordingly, the score stays at 3.",
+        "evidence": "Workspace agents became generally available in ChatGPT Business, Enterprise, and Edu in May 2026. OpenAI rolled GPT-5.5 across major commercial tiers in April 2026. OpenAI's enterprise adoption patterns report describes movement from early experimentation to scaled use at work. ChatGPT release notes show ongoing feature delivery to business and enterprise customers, including Sites.",
         "sources": [
-          "https://openai.com/index/introducing-agentkit/",
-          "https://openai.com/index/new-tools-and-features-in-the-responses-api/",
-          "https://openai.com/business/pricing/",
-          "https://developers.openai.com/api/docs/assistants/migration"
+          "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+          "https://openai.com/index/introducing-gpt-5-5/",
+          "https://openai.com/business/guides-and-resources/chatgpt-usage-and-adoption-patterns-at-work/",
+          "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       }
