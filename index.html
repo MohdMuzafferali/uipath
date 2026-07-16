@@ -871,19 +871,23 @@
     TOPICS.forEach((t,i)=>{ if (score(v,i) > score(v,bestIdx)) bestIdx = i; });
     const bestTopic = TOPICS[bestIdx];
     const bestScore = score(v, bestIdx);
+    const strongDelta = bestScore - vAvg;
+    const strongSub = strongDelta >= 0.05
+      ? `+${strongDelta.toFixed(1)} vs ${v}'s own average`
+      : `In line with ${v}'s own average`;
 
     let gapLabel, gapValue, gapSub;
     if (v === 'UiPath') {
       const nearest = VORDER.filter(x=>x!=='UiPath').map(x=>({x,d:vAvg-avgScore(x)})).sort((a,b)=>a.d-b.d)[0];
       gapLabel = 'Gap vs Nearest Rival';
-      gapValue = nearest ? (nearest.d >= 0 ? '+' + nearest.d.toFixed(1) : nearest.x + ' leads (' + nearest.d.toFixed(1) + ')') : '—';
-      gapSub  = nearest ? 'UiPath average vs ' + nearest.x : 'No rival data available';
+      gapValue = nearest ? (nearest.d >= 0 ? '+' + nearest.d.toFixed(1) : nearest.x + ' leads (+' + Math.abs(nearest.d).toFixed(1) + ')') : '—';
+      gapSub  = nearest ? `${nearest.x} average: ${avgScore(nearest.x).toFixed(1)}` : 'No rival data available';
     } else {
       const uiAvg2 = avgScore('UiPath');
       const d = vAvg - uiAvg2;
       gapLabel = 'Gap vs UiPath';
-      gapValue = d >= 0 ? (v + ' leads (+' + d.toFixed(1) + ')') : ('UiPath leads (' + d.toFixed(1) + ')');
-      gapSub  = 'Average maturity delta vs UiPath';
+      gapValue = d >= 0 ? (v + ' leads (+' + d.toFixed(1) + ')') : ('UiPath leads (+' + Math.abs(d).toFixed(1) + ')');
+      gapSub  = `UiPath average: ${uiAvg2.toFixed(1)}`;
     }
 
     el.innerHTML = `
@@ -893,7 +897,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
         ${card('Average Maturity', v + ' (' + vAvg.toFixed(1) + ')', 'Based on aggregated scoring across all 15 dimensions', COLORS[v]||'#4f8ef7')}
-        ${card('Strongest Topic', bestTopic + ' (' + bestScore + ')', "Vendor's highest-scoring dimension", '#38d9a9')}
+        ${card('Strongest Topic', bestTopic + ' (' + bestScore + ')', strongSub, '#38d9a9')}
         ${card(gapLabel, gapValue, gapSub, '#f5a623')}
       </div>`;
 
