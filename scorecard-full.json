@@ -1756,30 +1756,31 @@
     "Camunda": [
       {
         "category": "Security & Compliance",
-        "score": 4,
-        "rationale": "Camunda shows strong enterprise security and compliance maturity with a dedicated trust center and published SOC 2, ISO 27001, TISAX, CSA, and GDPR evidence. The evidence supports a broad, production-ready program, though this topic does not map to a single analyst category and the visible proof is mostly first-party trust material rather than external validation.",
-        "reasoning": "Search results surfaced a dedicated Camunda Trust Center listing TISAX, Cloud Security Alliance, GDPR, ISO 27001, and SOC 2, which is strong concrete evidence of a mature compliance posture. Camunda 8 SaaS documentation explicitly points customers to the Trust Center for standards and certifications, indicating these controls are integrated into the commercial platform rather than being generic corporate claims. I did not find meaningful third-party security assessments in the allowed search snippets, so the score stops at 4 rather than 5. The result is a strong enterprise-grade compliance capability with good direct evidence and acceptable recency.",
-        "evidence": "Camunda's Trust Center lists TISAX, Cloud Security Alliance, GDPR, ISO 27001, and SOC 2 certifications/compliance. Camunda 8 SaaS documentation directs users to the Trust Center for SOC 2 compliance and ISO/IEC 27001 certification details. Camunda platform messaging references SOC 2 Type II compliance, TISAX, and ISO/IEC 27001 certification.",
+        "score": 3,
+        "rationale": "Camunda shows credible enterprise security and compliance support, but the evidence surfaced here is mostly product/blog-level positioning rather than detailed trust-portal proof such as named certifications. That supports an adequate, not best-in-class, maturity assessment.",
+        "reasoning": "Recent Camunda materials explicitly position the platform for enterprise security and compliance needs, including references to security/compliance requirements in deployment pipelines and enterprise credentials. The 2026 AI orchestration assessment page also highlights role-based access control and separation of duties, which are relevant control capabilities. However, the search session did not surface a dedicated first-party trust/compliance page with concrete SOC 2, ISO 27001, or similar certification evidence, which limits how far the score can rise on this topic. The capability appears real and enterprise-oriented, but the documented proof in this run is thinner than what a strong 4 would normally require.",
+        "evidence": "Camunda's December 2024 blog says Java teams can integrate Camunda features into deployment pipelines to ensure workflows meet security and compliance requirements. Camunda's April 2026 orchestration assessment guide cites strong enterprise credentials and mentions role-based access control and separation of duties for modeling and deployment. Camunda 8.9 release notes were surfaced as current product documentation, indicating active platform evolution relevant to enterprise controls.",
         "sources": [
-          "https://trust.camunda.com/",
-          "https://docs.camunda.io/docs/components/saas/",
-          "https://camunda.com/platform/"
+          "https://camunda.com/blog/2024/12/how-camunda-8-simplifies-workflow-automation-for-java-teams/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "Camunda has a strong deployment and operations story with SaaS and self-managed options, Kubernetes/Helm deployment guidance, OpenShift support content, and recent operational improvements in releases. It is enterprise-proven, but the evidence emphasizes platform operations rather than uniquely market-leading operational tooling.",
-        "reasoning": "Camunda's self-managed documentation clearly distinguishes SaaS versus self-managed responsibilities and references Kubernetes deployment through Helm charts, which is a solid sign of enterprise operational maturity. The 8.5 and 8.9 release materials mention enhanced availability and operations, migration guidance, and operational improvements, showing ongoing investment rather than a static deployment model. OpenShift deployment guidance adds credibility for enterprise platform teams running regulated or standardized container platforms. Because the evidence is broad and current but not reinforced by a dedicated analyst category or exceptional differentiators in the snippets, 4 is the best fit.",
-        "evidence": "Camunda 8 Self-Managed documentation says customers can deploy Camunda on Kubernetes using Helm charts. Camunda 8.5 release content highlights enhanced availability and operations and official support for Zeebe rolling updates. Camunda 8.9 release notes add migration guidance for self-managed Helm deployments away from deprecated Bitnami subcharts.",
+        "rationale": "Camunda demonstrates strong deployment and operational maturity, with current release documentation pointing to cluster management, management APIs, and multi-region operational improvements. The evidence indicates an enterprise-proven operational model with only minor gaps in the depth surfaced here.",
+        "reasoning": "The search results surfaced multiple recent operationally relevant releases for Camunda 8.8 and 8.9, including an Orchestration Cluster MCP Server and a new cluster management UI focused on broker and partition scaling. Release notes also state that moving batch operations into the core engine improves reliability and resilience for multi-region deployments. The 2026 guidance page references separation of duties for modeling and deployment, which is a meaningful operational control for enterprise teams. While these are strong signals, the snippet set did not surface a single comprehensive architecture or operations guide covering the full lifecycle end to end, so the score lands at 4 rather than 5.",
+        "evidence": "Camunda's April 2026 8.9 release blog says the Orchestration Cluster MCP Server exposes Camunda's operational capabilities. A February 2026 Camunda hackathon post says a new cluster management UI focuses on broker and partition scaling and exposes management API functionality. Camunda 8.8 release notes say moving batch operations to the core engine improves reliability and resilience for multi-region deployments. Camunda's April 2026 guide mentions role-based access control and separation of duties for modeling and deployment.",
         "sources": [
-          "https://docs.camunda.io/docs/self-managed/about-self-managed/",
-          "https://camunda.com/blog/2024/04/camunda-8-5-release/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/"
+          "https://camunda.com/blog/2026/04/camunda-8-9-fastest-path-to-agentic-orchestration/",
+          "https://camunda.com/blog/2026/02/2026-hackathon/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/",
+          "https://camunda.com/blog/2026/04/choosing-ai-orchestration-a-practical-assessment-guide-for-developers/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1789,13 +1790,14 @@
       {
         "category": "Scalability & Reliability",
         "score": 4,
-        "rationale": "Camunda demonstrates strong scalability and reliability maturity with documented HA/DR capabilities, dual-region guidance, and recent release-level improvements around cluster resilience. The platform appears enterprise-ready at scale, though the available evidence stops short of uniquely best-in-class market recognition for this specific topic.",
-        "reasoning": "Recent Camunda materials explicitly mention high availability and disaster recovery in the context of 8.8 and 8.6, showing current investment rather than legacy-only claims. The dual-region documentation states that with v2 APIs in 8.9+, user traffic can be served from both regions simultaneously and distributed via DNS or load balancers, which is meaningful architectural depth. Release notes also reference clearer DR paths and failover. The combination of current product docs and release notes supports a strong 4, while the absence of stronger external proof or a dedicated reliability leadership category keeps it below 5.",
-        "evidence": "Camunda 8.8 deployment content references high availability and disaster recovery for production environments. Camunda dual-region documentation says user traffic can be served from both regions simultaneously with v2 APIs in 8.9+. Camunda 8.9 release notes mention a clearer path for disaster recovery plus high availability and failover.",
+        "rationale": "Camunda has strong evidence of scalable, reliable architecture, especially through Kubernetes integration, event-driven design, and multi-region resilience improvements. It looks enterprise-grade, though this search session did not surface the kind of external benchmark or SLA evidence needed for a 5.",
+        "reasoning": "Recent Camunda sources describe Kubernetes as core to Camunda 8's cloud-native scalability and explicitly call out enterprise-grade reliability. Release and migration content also highlights safer scalable imports, seamless scaling, and reliability gains from core-engine batch operations in multi-region environments. Gartner Peer Insights snippets additionally reference customer praise for flexibility and scalability, which supports real-world credibility. The remaining gap is that the evidence here is mostly product and review snippet evidence rather than a broader independently recognized best-in-class reliability position, so 4 is the right fit.",
+        "evidence": "A December 2024 Camunda blog says Camunda 8's cloud-native capabilities are tightly integrated with Kubernetes for seamless scalability. A July 2025 Camunda migration blog cites seamless scaling with enterprise-grade reliability. Camunda 8.8 release notes say moving batch operations to the core engine improves reliability and resilience for multi-region deployments. Gartner Peer Insights search snippets describe Camunda as having high flexibility and scalability.",
         "sources": [
-          "https://camunda.com/blog/2025/03/streamlined-deployment-with-camunda-8-8/",
-          "https://docs.camunda.io/docs/self-managed/concepts/multi-region/dual-region/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/"
+          "https://camunda.com/blog/2024/12/exploring-the-new-features-in-camunda-8-for-java-developers/",
+          "https://camunda.com/blog/2025/07/migrate-from-camunda-7-to-camunda-8/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/",
+          "https://www.gartner.com/reviews/market/business-process-automation-tools/vendor/camunda"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1805,45 +1807,46 @@
       {
         "category": "Connectivity & Integration",
         "score": 3,
-        "rationale": "Camunda has credible core integration capabilities through connectors, REST APIs, webhooks, SAP integrations, and newer MCP support, but the evidence suggests an adequate integration layer rather than a market-leading iPaaS-class offering. This is a solid orchestration-centric integration story with narrower breadth than specialist integration platforms.",
-        "reasoning": "Camunda's connectors architecture, REST API process starts, webhook support, and 2025 SAP OData/RFC integrations show the platform can connect to external systems in practical enterprise scenarios. The 8.9 release notes also mention MCP-compliant client connectivity for invoking Camunda tools without custom API integration code, which is current and relevant. However, analyst-category searches did not surface Camunda as an iPaaS leader or equivalent direct-match integration market leader, and the evidence is more orchestration-integration than broad integration-platform breadth. That profile aligns to 3: credible and working, with clear limitations in depth versus leading integration suites.",
-        "evidence": "Camunda release notes say MCP-compliant clients such as VS Code, GitHub Copilot, or Claude Code can discover and invoke Camunda tools without custom API integration code. Camunda provides a REST API and inbound webhook pattern for starting Camunda Platform 8 processes using connectors. Camunda 8.7 release notes describe SAP integrations including OData and RFC connectors for API and BAPI/function module interactions.",
+        "rationale": "Camunda has credible integration capabilities, but the evidence surfaced here points more to selective or evolving integrations than to a clearly broad, mature integration fabric. That supports an adequate score rather than a strong one.",
+        "reasoning": "The most relevant current evidence surfaced was the 8.8 release note snippet showing a Microsoft Teams integration in early-access alpha, plus Camunda material discussing integration capabilities in its business orchestration layer. A 2024 release also mentions GitHub sync in the Modeler, which is useful for CI/CD workflows and developer integration. Those are real signals, but they do not demonstrate the sort of large, mature connector ecosystem or iPaaS-class breadth associated with stronger scores. No direct Gartner iPaaS, API management, or comparable analyst leadership evidence surfaced for Camunda on this topic, so the score stays at 3.",
+        "evidence": "Camunda 8.8 release notes say Microsoft Teams integration was released as an early access alpha feature. Camunda's April 2026 blog on a central orchestration layer explicitly references integration capabilities in the agentic AI space. Camunda 8.6 release materials say the Modeler includes a GitHub sync function to simplify integration with CI/CD pipelines.",
         "sources": [
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/890-release-notes/",
-          "https://camunda.com/blog/2023/05/start-camunda-8-process-rest-webhooks/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/870/870-release-notes/"
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/",
+          "https://camunda.com/blog/2026/04/case-for-a-central-business-orchestration-layer-without-recentralizing-your-architecture/",
+          "https://camunda.com/blog/2024/10/camunda-8-6-release/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Time-to-Value & User Experience",
-        "score": 4,
-        "rationale": "Camunda offers a strong time-to-value and UX story through low-code Web Modeler improvements, forms, task UX, and collaboration between analysts, low-code developers, and engineers. It is notably easier to adopt than code-heavy orchestration stacks, though still more technical than top low-code-centric platforms.",
-        "reasoning": "Camunda's modeler page explicitly describes a shared workflow where business analysts document and validate, low-code developers wire connectors and forms, and engineers extend with code, which indicates a layered UX for multiple personas. Recent release notes cite low-coder-friendly UX for building blocks, unified deployment experiences, process applications, GitHub sync, and improved task features. Older but relevant 8.2 materials also emphasized low-code accelerators and forms for reducing time to value. This is broader and more enterprise-usable than a purely developer-first tool, but the available evidence does not show the same level of low-code market leadership as dedicated LCAP vendors, so 4 is appropriate.",
-        "evidence": "Camunda's BPMN Process Modeler page says business analysts can add documentation and validation rules, low-code developers can wire connectors and forms, and engineers can extend with code. Camunda 8.8 release notes say Web Modeler provides a low-coder friendly UX for creating building blocks. Camunda 8.6 release content highlights a unified deployment experience, process applications, and GitHub sync in Web Modeler.",
+        "score": 3,
+        "rationale": "Camunda shows credible UX and onboarding improvements, but the evidence suggests incremental productivity gains rather than a broadly validated, standout low-code user experience. The result is adequate maturity with some depth for technical teams.",
+        "reasoning": "Recent results point to reduced friction and faster time-to-value, especially the 2026 hackathon result that says C9 ramps up time-to-value and reduces friction for users. The 2024 release evidence around GitHub sync and the older 8.3 release note about improving user experience also indicate ongoing UX investment. At the same time, much of Camunda's surfaced messaging remains developer-centric and architecture-oriented rather than strongly emphasizing broad business-user self-service or low-code simplicity. Without analyst leadership in enterprise low-code application platforms or equivalent direct validation, the topic fits a 3 more than a 4.",
+        "evidence": "A February 2026 Camunda hackathon post says C9 ramps up time-to-value and reduces friction for users. Camunda 8.6 release materials say the Modeler added GitHub sync to simplify CI/CD-related workflows. Camunda 8.3 release messaging said the release added features that improve user experience and help scale automation success.",
         "sources": [
-          "https://camunda.com/platform/modeler/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/",
-          "https://camunda.com/blog/2024/10/camunda-8-6-release/"
+          "https://camunda.com/blog/2026/02/2026-hackathon/",
+          "https://camunda.com/blog/2024/10/camunda-8-6-release/",
+          "https://camunda.com/blog/2023/10/camunda-8-3-scaling-automation-maximize-value/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
         "score": 4,
-        "rationale": "Camunda has moved quickly into agentic orchestration with dedicated AI-agent documentation, 2026 product positioning, and explicit support for bridging agents, human tasks, and automation tools. The evidence is strong and current, but I did not find direct-match analyst leadership in a bona fide AI-agent orchestration category, so the score is capped below 5.",
-        "reasoning": "Camunda has a dedicated documentation section for AI agent integration features and multiple 2026 pages focused on agentic orchestration, indicating this is now a productized capability rather than aspirational messaging. Search snippets also describe Camunda as bridging autonomous agents, human tasks, and other automation tools, with emphasis on guardrails and dependable deployment. That shows meaningful maturity in orchestrating AI work inside governed processes. However, I did not find a direct-match Gartner/IDC/Forrester leadership designation specifically for agentic orchestration platforms, so under the stricter non-UiPath 5 rule this lands at 4 rather than 5.",
-        "evidence": "Camunda 8 docs have a dedicated AI agents section describing features for integrating AI agents into processes. Camunda's 2026 report blog says many organizations use agents but fewer can deploy them as a dependable capability, framing Camunda around closing that gap. Event and blog snippets say Camunda bridges autonomous agents, human tasks, and automation tools, and emphasizes guardrails and autonomy.",
+        "rationale": "Camunda has become a strong agentic orchestration player, with dedicated AI agent documentation, enterprise-grade AI-agent announcements, and current agentic orchestration messaging. However, no direct analyst leadership in an exact agentic-platform category surfaced in this run, so it does not qualify for a 5.",
+        "reasoning": "This is one of Camunda's strongest newer areas in the evidence set. First-party docs explicitly describe AI agent integration features in Camunda 8, and Camunda's October 2025 press release says it introduced capabilities to build enterprise-grade AI agents. The February 2025 and January 2026 items reinforce that Camunda is not merely experimenting but building a sustained product narrative around agentic orchestration and automation. Still, the search session did not surface a direct Gartner, IDC, or Forrester leadership position in a genuinely matching agentic orchestration category, so under the non-UiPath 5-score rule the ceiling here is 4.",
+        "evidence": "Camunda 8 Docs has a dedicated AI agents page describing AI agent integration features in Camunda 8. Camunda's October 2025 press release says it introduced new capabilities to build enterprise-grade AI agents. A February 2025 Camunda blog provides a step-by-step guide for building an AI agent in Camunda. A January 2026 Camunda blog discusses the state of agentic orchestration and automation and the vision-reality gap in agentic AI.",
         "sources": [
           "https://docs.camunda.io/docs/components/agentic-orchestration/ai-agents/",
-          "https://camunda.com/blog/2026/01/closing-agentic-ai-vision-reality-gap-camunda-2026-state-of-agentic-orchestration-automation-report/",
-          "https://camunda.com/blog/2026/04/why-bpmn-still-matters-especially-in-the-age-of-ai/"
+          "https://camunda.com/press_release/camunda-introduces-new-capabilities-to-build-enterprise-grade-ai-agents/",
+          "https://camunda.com/blog/2025/02/building-ai-agent-camunda/",
+          "https://camunda.com/blog/2026/01/closing-agentic-ai-vision-reality-gap-camunda-2026-state-of-agentic-orchestration-automation-report/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1853,12 +1856,13 @@
       {
         "category": "BPM & Orchestration",
         "score": 4,
-        "rationale": "Camunda is a strong BPM and orchestration platform with direct analyst recognition in the exact market, including Visionary status in Gartner's inaugural BOAT MQ and strong Forrester recognition for orchestration. It is clearly enterprise-grade, but the surfaced evidence does not show direct-match Leader status needed for a 5.",
-        "reasoning": "This topic has direct analyst categories, and searches were run against Gartner BOAT, IDC Business Automation Platforms, and Forrester Digital Process Automation. Gartner results show Camunda was named a Visionary in the 2025 Magic Quadrant for Business Orchestration and Automation Technologies, while Forrester coverage says Camunda was recognized for best-in-class orchestration in the Digital Process Automation Software Wave Q3 2025. IDC search results surfaced the BAP report itself but not a Camunda Leader claim. Taken together, that is excellent proof of market relevance and product depth, but because the surfaced direct-match evidence is Visionary/Strong Performer rather than Leader, the proper score is 4.",
-        "evidence": "Camunda was named a Visionary in the 2025 Gartner Magic Quadrant for Business Orchestration and Automation Technologies. Camunda's August 2025 blog says the Forrester Wave: Digital Process Automation Software, Q3 2025 recognized it for best-in-class orchestration. Gartner's BOAT reviews market page describes Camunda as software that automates business processes and workflows through process modeling, execution, and monitoring.",
+        "rationale": "Camunda is strongly mature in BPM and orchestration, with longstanding BPMN/DMN depth and strong current positioning around business orchestration. The evidence supports enterprise-proven strength, but no direct analyst Leader proof in BOAT, IDC Business Automation Platforms, or Forrester DPA surfaced here to justify a 5.",
+        "reasoning": "Camunda's core strength is still orchestration. Recent sources emphasize a central business orchestration layer, deterministic workflow combined with agentic AI, and business rules engine capabilities, while older product history shows long-running BPMN and DMN depth. Gartner review-market results also indicate Camunda is being evaluated within business orchestration and automation technology contexts, but the search results did not surface a direct Leader designation from Gartner MQ BOAT, IDC MarketScape for Business Automation Platforms, or Forrester Wave for Digital Process Automation. Given the product depth and enterprise orientation, 4 is well supported, but the strict direct-match analyst rule prevents a 5.",
+        "evidence": "Camunda's April 2026 blog argues for a central business orchestration layer and says Camunda blends deterministic workflows with AI agents. A July 2024 Camunda blog on business rules engines highlights functionality that should be part of a business process rules engine. A 2024 Camunda BPM overview blog cites workflow automation, real-time analytics, and process optimization capabilities. Search results surfaced Gartner's Business Orchestration and Automation Technologies market page, indicating Camunda competes in the relevant evaluation context.",
         "sources": [
-          "https://camunda.com/press_release/camunda-named-a-visionary-in-2025-gartner-magic-quadrant-for-business-orchestration-and-automation-technologies/",
-          "https://camunda.com/blog/2025/08/camunda-best-in-class-orchestration-forrester/",
+          "https://camunda.com/blog/2026/04/case-for-a-central-business-orchestration-layer-without-recentralizing-your-architecture/",
+          "https://camunda.com/blog/2024/07/the-business-process-rules-engine/",
+          "https://camunda.com/blog/2024/04/what-is-business-process-management/",
           "https://www.gartner.com/reviews/market/business-orchestration-and-automation-technologies"
         ],
         "evidenceType": "Paraphrase",
@@ -1868,30 +1872,14 @@
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "Camunda has credible testing guidance and meaningful performance benchmarking for its workflow engine, but testing is not a major standalone product pillar with direct analyst validation in AI-augmented testing. The evidence supports an adequate engineering-focused capability rather than a broad best-of-breed testing platform.",
-        "reasoning": "Camunda documentation explicitly discusses testing process definitions, including end-user, end-to-end, and performance/load test goals, which establishes a credible baseline. More recent 2025 materials add performance tuning guidance and Zeebe benchmarking, while an Intuit case snippet says Camunda 8 scaled under simulated tax-season peak load. That is solid evidence of technical testing maturity around the platform itself. But I found no direct-match leadership in Gartner's AI-augmented software testing tools or IDC cloud testing categories, and the capability appears focused on validating Camunda processes rather than delivering a comprehensive enterprise testing suite, so 3 is the right score.",
-        "evidence": "Camunda docs on testing process definitions say goals can include end-user and acceptance tests, end-to-end tests, and performance and load tests. Camunda's 2025 performance tuning blog says teams should always run tests to ensure cluster sizing is appropriate for load. A 2024 Camunda case study snippet says Intuit simulated tax-season peak load and Camunda 8 scaled to meet needed demand.",
+        "score": 2,
+        "rationale": "Camunda has some developer-oriented testing support, but the evidence surfaced here is narrow and does not indicate a broad testing product for functional and performance evaluation. The capability is real but emerging/basic for this topic definition.",
+        "reasoning": "The clearest relevant evidence is older but specific: Camunda Platform 8.0 introduced Zeebe Process Test for testing automated BPMN processes in JUnit 5. More recent release-note evidence references functionality, performance, and preserving workflows, but not a dedicated end-to-end testing offering with functional, performance, test management, and governance breadth. The search session also did not surface any direct analyst recognition in Gartner's AI-Augmented Software Testing Tools or IDC's cloud testing assessment. That combination suggests Camunda supports workflow/process testing for developers, but not a mature testing suite comparable to purpose-built testing platforms, so the correct score is 2.",
+        "evidence": "Camunda Platform 8.0 release notes say it introduced Zeebe Process Test for testing automated BPMN processes in JUnit 5 tests. Camunda 8.8 release notes mention consistent functionality and better performance without breaking existing workflows. A May 2022 Camunda feature blog highlighted Camunda Platform 8 capabilities, but no current broad software-testing product surfaced in the results.",
         "sources": [
-          "https://docs.camunda.io/docs/components/best-practices/development/testing-process-definitions/",
-          "https://camunda.com/blog/2025/01/performance-tuning-camunda-8/",
-          "https://camunda.com/blog/2024/08/scaling-workflow-engines-intuit-camunda-8-zeebe/"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "high",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Monitoring & Observability",
-        "score": 3,
-        "rationale": "Camunda offers credible monitoring and observability through Micrometer-based metrics export and ecosystem integrations such as Prometheus, Grafana, and Datadog. That is sufficient for core operational visibility, but the evidence does not support a leading, full observability-platform-level position.",
-        "reasoning": "Camunda's self-managed monitoring docs state that the platform uses Micrometer to export metrics to supported implementations such as Prometheus, which is direct evidence of standards-based observability. There is also vendor content about monitoring Camunda with Prometheus and a Datadog integration page describing deep insights into Camunda 8. These are practical, enterprise-relevant capabilities, but they rely heavily on external observability stacks rather than a differentiated native observability product. I found no direct analyst-category recognition in Gartner's observability market, which is not surprising for an orchestration vendor, so 3 fits better than 4.",
-        "evidence": "Camunda monitoring docs say the platform uses Micrometer to export metrics to implementations such as Prometheus. Camunda has published guidance for monitoring the platform with Prometheus and Grafana. Datadog documentation says its Camunda 8 integration provides system administrators and DevOps engineers deep insights into Camunda 8.",
-        "sources": [
-          "https://docs.camunda.io/docs/self-managed/operational-guides/monitoring/metrics/",
-          "https://camunda.com/blog/2022/10/monitoring-camunda-platform-7-with-prometheus/",
-          "https://docs.datadoghq.com/integrations/bordant-technologies-camunda/"
+          "https://camunda.com/blog/2022/04/camunda-platform-8-0-released-whats-new/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/",
+          "https://camunda.com/blog/2022/05/10-cool-features-of-camunda-platform-8/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1899,15 +1887,31 @@
         "questions": ""
       },
       {
+        "category": "Monitoring & Observability",
+        "score": 4,
+        "rationale": "Camunda shows strong observability maturity, with current SaaS metrics integration into external observability stacks and explicit monitoring endpoint controls. The evidence supports an enterprise-usable capability, though not market-leading observability-platform depth.",
+        "reasoning": "The strongest evidence is recent and specific: Camunda's January 2026 blog says SaaS metrics can be integrated into established observability tools and mentions access restriction for the cluster monitoring endpoint. Additional ecosystem evidence from Datadog highlights visibility into Camunda 8 components and customizable alerts through monitors. Historical Camunda guidance on Prometheus monitoring adds continuity to the observability story, even if it is older and centered on Camunda 7. This is clearly beyond basic logging and lands at 4, but there is no basis to call Camunda best-in-class in observability as a platform category.",
+        "evidence": "Camunda's January 2026 blog says Camunda SaaS metrics can be integrated into established observability tools. The same Camunda blog mentions a feature to restrict access to the cluster's monitoring endpoint. A Datadog 2024 blog highlights visibility into Camunda 8 components and the ability to customize alerts with Datadog monitors. Camunda has published Prometheus-based monitoring guidance for Camunda Platform 7, showing longer-term investment in monitoring patterns.",
+        "sources": [
+          "https://camunda.com/blog/2026/01/integrate-camunda-saas-metrics-into-your-observability-stack-with-cluster-metrics/",
+          "https://www.datadoghq.com/blog/bordant-technologies-camunda-8-datadog-marketplace/",
+          "https://camunda.com/blog/2022/10/monitoring-camunda-platform-7-with-prometheus/"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "high",
+        "notes": "",
+        "questions": ""
+      },
+      {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "Camunda has strong traceability and governance capabilities with embedded audit logs, historic process and decision reporting, authenticated/authorized operation records, and explicit positioning around control and audit trails. The evidence shows mature governance foundations for enterprise orchestration.",
-        "reasoning": "Recent release and product pages show Camunda 8.9 includes an audit log that provides a detailed record of operations, while docs specify that the audit log captures authenticated and authorized operations that successfully reach execution. Separate best-practice content says the engine automatically collects audit information about historical process or decision instances for reporting. Press-release messaging further emphasizes fully traceable activity and escalation paths in BPMN. This combination of operational auditability, history, and process-level traceability supports a strong 4.",
-        "evidence": "Camunda docs say the audit log contains operations performed through the platform and records authenticated, authorized actions that reach execution successfully. Camunda 8.9 'What's new' notes list Audit log as providing access to a detailed record of operations. Camunda best-practice docs say the engine automatically collects audit information about historical process or decision instances.",
+        "rationale": "Camunda has strong governance-oriented positioning and control features, especially around mission-critical operations, task visibility, monitoring, and responsible AI. The evidence supports a strong enterprise capability, though the search results do not prove a uniquely category-defining governance lead.",
+        "reasoning": "Recent Camunda sources repeatedly stress governance and control. The April 2026 8.9 release messaging explicitly mentions governance and control for mission-critical operations, while the March 2026 alpha5 post emphasizes improved task visibility. The June 2025 responsible-AI article adds a governance framing for monitoring and controlling AI usage at scale. This body of evidence indicates meaningful traceability and governance maturity, but without more concrete audit-trail or compliance-detail evidence in the surfaced results, 4 is the right ceiling.",
+        "evidence": "Camunda's April 2026 8.9 release blog says the platform provides the governance and control mission-critical operations demand. A March 2026 Camunda post says new features bring Camunda 8 closer to the task visibility model customers expect while strengthening visibility. A June 2025 Camunda blog says Camunda enables effective AI governance by acting as an operational backbone to integrate, orchestrate, and monitor AI usage.",
         "sources": [
-          "https://docs.camunda.io/docs/components/audit-log/overview/recorded-operations/",
-          "https://docs.camunda.io/docs/reference/announcements-release-notes/890/whats-new-in-89/",
-          "https://docs.camunda.io/docs/components/best-practices/operations/reporting-about-processes/"
+          "https://camunda.com/blog/2026/04/camunda-8-9-fastest-path-to-agentic-orchestration/",
+          "https://camunda.com/blog/2026/03/operate-with-confidence-camunda-8-9-alpha5/",
+          "https://camunda.com/blog/2025/06/responsible-ai-at-scale-camunda-governance-and-control/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1916,62 +1920,60 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 3,
-        "rationale": "Camunda has credible process intelligence through Optimize and process-intelligence positioning, but the surfaced evidence centers on analytics and process understanding rather than a clearly top-tier process mining suite. This is a real capability, yet not convincingly best-in-class in the process mining market from the available sources.",
-        "reasoning": "Camunda's materials define process intelligence as applying process mining, data analysis, automation, machine learning, and predictive analytics to monitor and improve processes, and Optimize is positioned as a process intelligence and analytics product. The platform page also says process mining shows what is happening across systems while Optimize tracks throughput and cycle time. Those are important signals of substantive capability, but searches did not surface direct analyst leadership in a process mining platform category for Camunda. The evidence therefore supports an adequate 3 rather than a stronger 4 or 5.",
-        "evidence": "Camunda's process intelligence resource says the discipline applies process mining, data analysis, automation, machine learning, and predictive analytics to monitor, analyze, report on, and recommend improvements. Camunda Optimize is positioned as process intelligence and analytics enabling collaboration between business and IT. Camunda's platform page says process mining shows what's happening across systems, while Optimize provides proof through metrics like throughput and cycle time.",
+        "score": 2,
+        "rationale": "The evidence surfaced for Camunda on process intelligence is thin and indirect, with more emphasis on orchestration, AI-assisted modeling, and process history than on a clearly mature process-mining platform. That points to emerging/basic maturity for this topic.",
+        "reasoning": "Unlike BPM/orchestration, Camunda did not surface strong first-party evidence of dedicated process mining, conformance checking, or analyst recognition in a process mining category. The closest signals were AI-powered modeling suggestions and a note that completed process instances will be archived in Zeebe, which helps data retention but is not equivalent to a robust process intelligence suite. Because there is some adjacent capability around process data and modeling assistance, a 1 would be too harsh; however, the lack of direct process-mining evidence keeps the score at 2. This is a good example of uneven maturity across topics rather than a general platform weakness.",
+        "evidence": "A May 2024 Camunda blog says Camunda Copilot provides AI-powered suggestions to minimize errors and improve process diagrams. A January 2025 Camunda blog says Camunda 8 will introduce a feature where completed process instances are archived directly in Camunda Zeebe. The search results did not surface direct first-party claims of process mining, conformance checking, or analyst recognition in a process-mining report category.",
         "sources": [
-          "https://camunda.com/resources/process-intelligence/",
-          "https://camunda.com/platform/optimize/",
-          "https://camunda.com/platform/"
+          "https://camunda.com/blog/2024/05/ai-powered-suggestions-with-camunda-copilot/",
+          "https://camunda.com/blog/2025/01/ai-tools-process-orchestration-perfect-match-developers/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "Camunda offers a free entry point plus enterprise SaaS and self-managed options, but pricing remains mostly custom and licensing has changed for self-managed deployments. That combination gives flexibility but can create TCO ambiguity compared with vendors that package pricing more transparently.",
-        "reasoning": "Camunda's pricing page says customers can start free for development and move to Enterprise on either Camunda-hosted SaaS or self-managed deployment, which is a positive for adoption flexibility. At the same time, the self-managed licensing update shows licensing has changed in recent years, which can complicate planning for cost and deployment decisions. Search results did not provide transparent public enterprise price points beyond custom packaging. The result is a middle score: viable and flexible, but not especially transparent or predictably low-friction from a TCO perspective.",
-        "evidence": "Camunda's pricing page says users can start free for development or run in production with Enterprise on Camunda-hosted SaaS or Self-Managed. Camunda's platform page says SaaS and Self-Managed share the same orchestration engine and APIs. Camunda's 2024 self-managed licensing update notes license changes for self-managed components.",
+        "rationale": "Camunda appears commercially viable with a clear value narrative, but the search results did not surface a first-party pricing page or strong pricing transparency. That supports a middle score rather than a stronger one.",
+        "reasoning": "For this topic, the most relevant usable evidence from acceptable domains is Camunda's own May 2025 value-oriented blog, which explicitly discusses reducing total cost of ownership and time to market. However, the surfaced explicit pricing page came from a third-party pricing-benchmark site, which is not acceptable as a source under the rules, so it cannot be relied on here. Camunda's April 2026 SDK expansion suggests continuing investment that can improve application leverage, but it does not directly answer packaging or transparency questions. Overall, there is enough to say Camunda has a credible TCO story, but not enough transparent pricing/package evidence to score it as strong.",
+        "evidence": "Camunda's May 2025 blog explicitly discusses lowering TCO and shortening time to market versus traditional IT solutions. Camunda's April 2026 SDK announcement says enhanced SDKs extend support to more programming languages and introduce new capabilities, which can reduce implementation friction and affect TCO. The search results in this run did not surface a first-party Camunda pricing page with transparent packaging or list pricing details.",
         "sources": [
-          "https://camunda.com/pricing/",
-          "https://camunda.com/blog/2024/04/licensing-update-camunda-8-self-managed/",
-          "https://camunda.com/platform/"
+          "https://camunda.com/blog/2025/05/the-benefits-of-using-camunda-compared-to-traditional-it-solutions/",
+          "https://camunda.com/blog/2026/04/introducing-camunda-enhanced-sdk-portfolio/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
-        "score": 4,
-        "rationale": "Camunda shows strong horizontal applicability across multiple regulated and operationally complex industries, with explicit industry solutions and references in banking, insurance, healthcare, logistics, telecom, retail, public sector, and manufacturing. The breadth of named industries and partner/customer signals supports strong domain applicability.",
-        "reasoning": "Camunda's industry pages list a wide set of verticals including banking and financial services, insurance, healthcare and life sciences, logistics and transport, telecommunications, retail, public sector, and manufacturing. Partner and press-release content reinforce this breadth by referencing customer work in insurance, banking, public sector, energy/utilities, and manufacturing contexts. A case study such as QuickSign also shows concrete business outcomes in onboarding. This is broad and credible vertical relevance, though the surfaced evidence is more breadth-of-applicability than deep packaged industry clouds, so 4 is the right ceiling.",
-        "evidence": "Camunda's industry pages list banking and financial services, insurance, retail, logistics and transport, telecommunications, healthcare and life sciences, public sector, and manufacturing. An Aaseya partner page tied to Camunda references financial services, insurance, manufacturing, public sector, and telecommunications. QuickSign's case study says it used Camunda to digitize onboarding and achieved an 80% customer conversion rate.",
+        "score": 3,
+        "rationale": "Camunda is evidently applicable across industries, but the evidence surfaced here is broad rather than rich with recent named vertical solutions or extensive industry-specific proof points. That supports adequate breadth, not standout depth.",
+        "reasoning": "Camunda's older Zeebe-era positioning explicitly said workflows are applicable across different industries, and more recent proof-of-concept guidance discusses how to model specific business-domain problems and what knowledge is needed across business and development teams. Those are credible signs of cross-domain applicability. What is missing in this search session is a dense set of recent, named industry solution pages or vertical customer references showing deep packaged solutions across sectors. Therefore the score is 3: clearly applicable, but not strongly evidenced here as unusually deep by industry.",
+        "evidence": "A June 2019 Camunda blog says workflows are applicable and can be implemented across different industries. A February 2024 Camunda proof-of-concept blog discusses modeling specific business-domain problems and required business/development know-how. Camunda's orchestration-oriented positioning suggests general-purpose applicability, but the results did not surface many recent named vertical solution pages in this run.",
         "sources": [
-          "https://camunda.com/solutions/industry/",
-          "https://camunda.com/partners/aaseya/",
-          "https://camunda.com/case-study/quicksign/"
+          "https://camunda.com/blog/2019/06/workflows-are-everywhere/",
+          "https://camunda.com/blog/2024/02/planning-your-camunda-proof-of-concept/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "Camunda appears to offer strong long-term value through continuing executive investment, partner ecosystem expansion, enterprise customer growth signals, and modern product evolution toward agentic orchestration. The evidence supports durability and roadmap momentum, though not enough external market-proof to call it best-in-class on this topic.",
-        "reasoning": "Recent press releases about new CRO and CMO hires explicitly frame Camunda around accelerating growth and expanding the partner ecosystem, which is a useful indicator of ongoing commercial investment. Customer-oriented content such as NatWest's center-of-excellence story points to sustained enterprise usage rather than short-term experimentation. Camunda has also evolved its platform toward agentic orchestration and modern cloud-native operations, suggesting roadmap continuity instead of stagnation. Because this topic has no analyst MQ and the evidence is positive but mostly first-party, 4 is appropriate rather than 5.",
-        "evidence": "Camunda's February 2026 CRO announcement says the company has an expanding partner ecosystem and growing sales team. Camunda's December 2025 CMO announcement says the role will grow brand awareness with enterprises and through the partner ecosystem. A 2024 NatWest story says the bank accelerated process automation and orchestration and scaled usage with a center of excellence using Camunda.",
+        "rationale": "Camunda shows strong long-term value signals through LTS support, managed end-of-life transitions, ongoing platform investment, and continued expansion into agentic orchestration. The evidence indicates durable roadmap commitment and ecosystem continuity.",
+        "reasoning": "This topic is supported by a useful mix of product-lifecycle and roadmap evidence. Camunda 7.24 is identified as the last minor release and an LTS release, while Camunda also announced an end-of-life extension for enterprise customers, showing managed lifecycle stewardship rather than abrupt abandonment. At the same time, Camunda continues to invest in newer platform directions such as agentic automation and long-term memory for LLM interactions in release notes. That combination of lifecycle discipline plus forward investment supports a strong long-term value assessment of 4.",
+        "evidence": "Camunda enterprise support announcements identify Camunda 7.24 as an LTS release and the last minor release of Camunda 7. Camunda's February 2025 blog announced a Camunda 7 Enterprise end-of-life extension. Camunda's October 2025 press release describes new capabilities for enterprise-grade AI agents. Camunda 8.8 release notes mention long-term memory for LLMs and agentic AI interaction.",
         "sources": [
-          "https://camunda.com/press_release/chris-white-joins-camunda-as-chief-revenue-officer/",
-          "https://camunda.com/press_release/ryan-shopp-joins-camunda-as-chief-marketing-officer/",
-          "https://camunda.com/blog/2024/02/learn-how-natwest-built-a-center-of-excellence-to-improve-process-orchestration/"
+          "https://docs.camunda.org/enterprise/announcement/",
+          "https://camunda.com/blog/2025/02/camunda-7-enterprise-end-of-life-extension/",
+          "https://camunda.com/press_release/camunda-introduces-new-capabilities-to-build-enterprise-grade-ai-agents/",
+          "https://docs.camunda.io/docs/reference/announcements-release-notes/880/880-release-notes/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1981,13 +1983,13 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "Camunda is strong for business adaptability because it externalizes workflow and decision logic into BPMN/DMN, supports low-code forms, and encourages business participation in process changes. It is especially well suited for organizations that need to change complex processes without hard-coding them into core systems.",
-        "reasoning": "Camunda's process orchestration messaging explicitly ties low-code and business participation to agility, saying business stakeholders can actively participate in implementing process changes. The 2025 blog on benefits versus traditional IT solutions highlights low-code form creation and moving business logic into BPMN and DMN, both of which are important agility levers. The BT/Openreach example also points to design collaboration and bringing the business along during orchestration changes. These are strong signs of adaptability, though Camunda remains more process-specialist than a mass-market low-code platform, so 4 is the best fit.",
-        "evidence": "Camunda's process orchestration page says business stakeholders can actively participate in implementing process changes and links that to business agility. A 2025 Camunda blog says users can create UI forms in a low-code fashion and move business logic into BPMN and DMN. A 2024 BT Group/Openreach story says the team valued ease of BPMN use and bringing the business on the journey of process orchestration changes.",
+        "rationale": "Camunda shows strong business adaptability through flexible rules, orchestration, and process change support, especially for organizations comfortable with model-driven and developer-led change. The evidence suggests strong adaptability, though not uniquely unmatched in low-code agility.",
+        "reasoning": "Recent Camunda materials speak directly to adaptability and agility. A July 2024 blog describes the characteristics expected in an adaptable business rules engine, while a 2024 BPM overview connects workflow automation and process optimization to business agility. The April 2026 business orchestration layer post further shows Camunda combining deterministic process controls with AI agents, which supports changing business needs without recentralizing architecture. The main constraint is that the surfaced evidence favors architectural flexibility over broad citizen-developer agility, so 4 is strong but appropriate.",
+        "evidence": "A July 2024 Camunda blog on business rules engines explicitly discusses an adaptable business rules engine. A 2024 Camunda BPM overview links workflow automation, real-time analytics, and process optimization capabilities to business agility. Camunda's April 2026 business orchestration layer post says the platform blends deterministic workflows with agentic AI capabilities to support evolving architectures.",
         "sources": [
-          "https://camunda.com/process-orchestration/",
-          "https://camunda.com/blog/2025/05/the-benefits-of-using-camunda-compared-to-traditional-it-solutions/",
-          "https://camunda.com/blog/2024/12/bt-group-openreach-simplify-operations/"
+          "https://camunda.com/blog/2024/07/the-business-process-rules-engine/",
+          "https://camunda.com/blog/2024/04/what-is-business-process-management/",
+          "https://camunda.com/blog/2026/04/case-for-a-central-business-orchestration-layer-without-recentralizing-your-architecture/"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
