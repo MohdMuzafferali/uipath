@@ -1035,12 +1035,12 @@
       {
         "category": "Security & Compliance",
         "score": 4,
-        "rationale": "UiPath shows strong enterprise-grade security and compliance maturity with recent platform updates that add AI security controls, audit simplification, and self-hosted deployment options for regulated environments. The evidence supports a broad, production-ready capability, but this topic has no direct analyst MQ anchor and therefore does not merit a 5 by default.",
-        "reasoning": "Recent first-party evidence is substantive and on-topic: UiPath's September 2025 platform update highlights built-in AI security and compliance features, while the May 2026 Automation Suite announcement emphasizes self-hosted AI capabilities for organizations with strict security and compliance requirements. Automation Suite release notes also reference centralized role-assignment visibility to simplify audits and reporting. The capability appears broad across cloud and self-hosted deployments, which supports a strong maturity score. I stopped at 4 because this topic has no dedicated analyst MQ and the evidence, while strong, is product-led rather than independently market-defining.",
-        "evidence": "UiPath's September 2025 platform update states that powerful new AI security and compliance features are built into the platform. UiPath's May 2026 Automation Suite announcement says agencies can run recommended open-source models entirely within their own environment to meet security and compliance requirements. Automation Suite 2.2510.0 release notes say centralized role-assignment visibility simplifies audits, compliance, and reporting.",
+        "rationale": "UiPath shows strong enterprise-grade security and compliance maturity with built-in AI security controls, audit-oriented role visibility, and on-prem/self-hosted deployment support, but this topic has no direct analyst-MQ anchor and the evidence is primarily first-party. The platform is clearly more than basic or adequate, yet the available snippet set does not justify an exceptional no-MQ 5.",
+        "reasoning": "Recent first-party evidence is substantial: UiPath's May 2026 Automation Suite announcement emphasizes self-hosted AI capabilities to meet security and compliance requirements, and September 2025 investor-relations material highlights new AI security and compliance features. Automation Suite release notes from November 2025 add centralized role-assignment visibility explicitly tied to simplifying audits, compliance, and reporting, which indicates operationalized controls rather than generic trust claims. The evidence is current and topic-specific, but mostly vendor-published and not independently benchmarked in a dedicated analyst category, so the strongest objective maturity judgment is 4 rather than 5. This score reflects broad, enterprise-ready controls with minor evidence limitations around third-party validation depth on this exact topic.",
+        "evidence": "UiPath's May 2026 Automation Suite announcement says agencies can run recommended open-source models entirely within their own environments to meet security and compliance requirements. UiPath's September 2025 platform expansion announcement says powerful new AI security and compliance features are built into the platform. Automation Suite 2.2510.0 release notes say centralized role-assignment visibility simplifies audits, compliance, and reporting.",
         "sources": [
-          "https://ir.uipath.com/news/detail/407/uipath-accelerates-ai-transformation-with-expanded-capabilities-for-its-uipath-platform-for-agentic-automation-and-orchestration",
           "https://www.uipath.com/newsroom/uipath-automation-suite-delivers-agentic-ai-for-public-sector",
+          "https://ir.uipath.com/news/detail/407/uipath-accelerates-ai-transformation-with-expanded-capabilities-for-its-uipath-platform-for-agentic-automation-and-orchestration",
           "https://docs.uipath.com/automation-suite/automation-suite/2.2510/release-notes/automation-suite-on-eks-aks-2-2510-0"
         ],
         "evidenceType": "Paraphrase",
@@ -1051,28 +1051,28 @@
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "UiPath has a strong deployment and operations posture, especially through Automation Cloud and Automation Suite for self-hosted environments. The platform clearly supports enterprise deployment flexibility and operational governance, but the available evidence does not justify a no-MQ 5.",
-        "reasoning": "The May 2026 Automation Suite announcement explicitly positions UiPath for on-premises agentic AI deployment beyond the cloud, which is important for operational control. The February 2026 Academy update references deployment and governance as core operational concerns, and the deprecation timeline indicates active lifecycle management across capabilities. These signals point to a mature platform operated across multiple deployment models rather than a narrowly SaaS-only product. The score remains 4 because there is no dedicated analyst category for deployment operations here, and the snippets show strength more than uniquely category-defining leadership.",
-        "evidence": "UiPath's May 2026 Automation Suite announcement says new capabilities let agencies deploy agentic AI beyond the cloud. The UiPath Platform February 2026 updates course highlights deployment and governance as part of the platform capability set. UiPath maintains a formal deprecation timeline documenting feature lifecycle changes, indicating operational maturity and release management discipline.",
+        "rationale": "UiPath has strong deployment and operations maturity through Automation Cloud plus Automation Suite for self-hosted and public-sector use cases, with ongoing release management and governance updates. The deployment breadth is enterprise-proven, but this no-MQ topic lacks enough independent evidence to elevate it to an undisputed 5.",
+        "reasoning": "UiPath's May 2026 public-sector announcement explicitly positions Automation Suite as bringing on-premises agentic AI beyond the cloud, showing meaningful deployment flexibility rather than SaaS-only delivery. The February 2026 Academy update snippet references deployment and governance challenges, while deprecation and release-note materials indicate active lifecycle management and product-operational discipline. Those signals support a broad deployment and operations capability spanning cloud and self-managed environments. Because the evidence is largely first-party and not anchored by a dedicated analyst category, the score lands at 4: strong and enterprise-ready, with no concrete weakness surfaced but also no basis for a no-MQ 5.",
+        "evidence": "UiPath Automation Suite was announced in May 2026 as delivering on-premises agentic AI capabilities beyond the cloud for the public sector. UiPath's February 2026 platform-updates course references deployment and governance as practical platform concerns addressed in the product. UiPath maintains a documented deprecation timeline and release-note cadence, evidencing operational lifecycle governance across the platform.",
         "sources": [
           "https://www.uipath.com/newsroom/uipath-automation-suite-delivers-agentic-ai-for-public-sector",
           "https://academy.uipath.com/courses/UiPath-Platform-February-2026-updates",
           "https://docs.uipath.com/overview/other/latest/overview/deprecation-timeline"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "high",
+        "confidence": "medium",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
         "score": 4,
-        "rationale": "UiPath demonstrates strong scalability and reliability characteristics with explicit enterprise claims around flexible scale, reliable agents, and reporting features aimed at enterprise expansion. The evidence is solid but, absent a dedicated analyst category for this topic, supports a strong 4 rather than a 5.",
-        "reasoning": "UiPath's April 2025 IR announcement describes the platform as enabling reliable AI agents, robots, and people with unmatched scalability and flexibility. Automation Cloud messaging also directly claims scalability and flexibility for automating any process, and Test Suite 2024.10 highlights advanced reporting features framed as essential for enterprise scalability. While vendor claims should always be weighed carefully, the evidence is recent and spans product, IR, and release-specific sources. There is enough depth for a strong enterprise score, but not enough no-MQ exceptional proof to justify best-in-class status on this topic alone.",
-        "evidence": "UiPath's April 2025 platform launch announcement says the platform supports reliable AI agents, robots, and people with unmatched scalability and flexibility. Automation Cloud messaging states customers get the full platform with scalability and flexibility to automate any process. UiPath's 2024.10 Test Suite release says advanced test reporting features are essential for enterprise scalability.",
+        "rationale": "UiPath demonstrates strong scalability and reliability through enterprise SaaS positioning, resilient automation features, and claims of unmatched scalability in recent platform launches. The evidence shows mature capability, but without a dedicated analyst category and with limited architecture-detail snippets, the most defensible score is 4.",
+        "reasoning": "The platform page states Automation Cloud provides the full UiPath platform with scalability and flexibility to automate any process, which is broad but somewhat marketing-led. More concretely, the April 2025 launch of the agentic automation platform describes reliable AI agents, robots, and people with unmatched scalability, flexibility, and compliance, and the November 2024 Test Suite release adds advanced test reporting described as essential for enterprise scalability. Together these indicate UiPath is building for enterprise scale, not just departmental automation. However, the snippets do not expose deeper HA/DR or SLA specifics in this session, so the evidence supports strong maturity rather than a best-in-class claim.",
+        "evidence": "UiPath's platform page says Automation Cloud provides scalability and flexibility to automate any process. UiPath's April 2025 agentic automation launch says the platform brings reliable AI agents, robots, and people together with unmatched scalability. UiPath's 2024.10 Test Suite release says advanced test reporting features are essential for enterprise scalability.",
         "sources": [
-          "https://ir.uipath.com/news/detail/388/uipath-launches-the-first-enterprise-grade-platform-for-agentic-automation",
           "https://www.uipath.com/platform/agentic-automation",
+          "https://ir.uipath.com/news/detail/388/uipath-launches-the-first-enterprise-grade-platform-for-agentic-automation",
           "https://www.uipath.com/blog/product-and-updates/test-suite-2024-10-release-updates"
         ],
         "evidenceType": "Paraphrase",
@@ -1083,13 +1083,13 @@
       {
         "category": "Connectivity & Integration",
         "score": 4,
-        "rationale": "UiPath has strong integration maturity through its Integration Service and support for custom REST-based connectors, making the platform credible for broad enterprise connectivity needs. The evidence supports a deep, enterprise-capable integration layer, though I did not surface direct iPaaS analyst leadership from the search session to anchor a 5.",
-        "reasoning": "The clearest evidence here is feature-specific: UiPath's Connector Builder public preview introduced the ability to create custom connectors using any RESTful API, and the deprecation timeline shows active connection-management evolution in Integration Service as recently as March 2026. Integration Service is also described as existing at the Automation Cloud level above Orchestrator tenants, indicating it is treated as a platform service rather than a narrow add-on. This is substantial product evidence for broad integration maturity. I kept the score at 4 because the session did not surface direct Gartner iPaaS or API management leadership URLs, even though the product depth is clearly strong.",
-        "evidence": "UiPath's Connector Builder supports creation of custom connectors using any RESTful API. UiPath's deprecation timeline references connection management changes in Integration Service in Automation Cloud in March 2026. A UiPath forum result describes Integration Service as an Automation Cloud-level feature sitting above Orchestrator tenants.",
+        "rationale": "UiPath has strong connectivity and integration maturity via Integration Service, API automation, and custom-connector support, but the analyst evidence found is adjacent rather than a direct iPaaS leadership anchor. That makes this a strong 4 rather than a direct-match 5.",
+        "reasoning": "First-party evidence shows meaningful integration depth: UiPath introduced Integration Service and in 2022 added Connector Builder for custom RESTful API connectors, indicating both packaged and extensible integration patterns. The deprecation timeline also references ongoing connection-management changes in Integration Service as recently as March 2026, which suggests the capability is actively developed rather than legacy. On analyst evidence, the search surfaced Gartner's application integration platform review category but did not yield a direct UiPath leadership position in a matching iPaaS report. Accordingly, UiPath appears broad and enterprise-capable on integration, but the direct-match analyst bar for a 5 was not met in this search set.",
+        "evidence": "UiPath introduced Integration Service as a platform capability for connecting applications and automations. UiPath's Connector Builder supports creation of custom connectors using any RESTful API. UiPath documentation references Integration Service connection-management changes in March 2026, showing ongoing product investment.",
         "sources": [
+          "https://www.uipath.com/blog/product-and-updates/introducing-uipath-integration-service",
           "https://www.uipath.com/blog/product-and-updates/connector-builder-public-preview",
-          "https://docs.uipath.com/overview/other/latest/overview/deprecation-timeline",
-          "https://forum.uipath.com/t/integration-services-multitenants/390137"
+          "https://docs.uipath.com/overview/other/latest/overview/deprecation-timeline"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1099,13 +1099,13 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 4,
-        "rationale": "UiPath appears strong on time-to-value and user experience, with repeated messaging around faster ROI, improved user experience, and automation downtime reduction. The evidence is recent and product-specific, but without a direct low-code analyst leadership result from this session, the score remains 4.",
-        "reasoning": "UiPath's September 2025 announcement explicitly says the expanded platform capabilities accelerate ROI and time-to-value across agent-building, automation, and orchestration stages. A 2023 Process Mining update emphasizes enhanced capabilities and improved user experience for faster time to value, and the May 2025 Healing Agent release focuses on reducing automation downtime, which practically improves realized value. These are meaningful indicators that UiPath is optimizing adoption speed and usability, not just raw functionality. The topic has analyst mappings, but I did not surface a direct relevant low-code leadership citation in the search pass, so I stayed at a strong 4.",
-        "evidence": "UiPath's September 2025 platform update says new solutions accelerate ROI and time-to-value. UiPath's Process Mining update says enhanced capabilities and improved user experience enable faster time to value. UiPath's Healing Agent reduces automation downtime across Robots, Orchestrator, and Studio.",
+        "rationale": "UiPath presents a strong case for fast time-to-value and improving user experience through healing, AI-assisted development, and explicit ROI acceleration messaging. The capability looks enterprise-proven, but the evidence here is mostly first-party and not enough to claim undisputed best-in-class status on this no-direct-MQ topic mapping.",
+        "reasoning": "UiPath's May 2025 Agents release notes describe Healing Agent reducing automation downtime, which directly supports faster value realization and lower support friction. Its September 2025 platform announcement explicitly says solutions accelerate ROI and time-to-value across agent-building, automation, and orchestration. Earlier product updates and Process Mining messaging also emphasize improved developer experiences and better user experience. These are strong indicators of mature UX and adoption-oriented design, but without a dedicated low-code analyst leadership citation surfaced in this session, 4 is the safest evidence-based score.",
+        "evidence": "UiPath's May 2025 Healing Agent update says the feature reduces automation downtime. UiPath's September 2025 platform expansion announcement says the solutions accelerate ROI and time-to-value across deployment stages. UiPath's 2023.4 release overview says new AI-powered features and developer experiences aim to improve time to automation value.",
         "sources": [
+          "https://docs.uipath.com/agents/automation-cloud/latest/release-notes-ha/may-2025",
           "https://ir.uipath.com/news/detail/407/uipath-accelerates-ai-transformation-with-expanded-capabilities-for-its-uipath-platform-for-agentic-automation-and-orchestration",
-          "https://www.uipath.com/blog/product-and-updates/migrating-to-new-uipath-process-mining",
-          "https://docs.uipath.com/agents/automation-cloud/latest/release-notes-ha/may-2025"
+          "https://www.uipath.com/blog/product-and-updates/2023-4-release-overview"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1115,9 +1115,9 @@
       {
         "category": "Agentic Capabilities",
         "score": 4,
-        "rationale": "UiPath has strong, current agentic capabilities including agent building, orchestration, HITL, memory/evaluation concepts, and self-hosted deployment. The product evidence is broad and recent, but this session did not surface a direct Gartner/IDC/Forrester leadership citation for an exact agentic category, so the score is a strong 4 rather than 5.",
-        "reasoning": "UiPath's agentic platform page and 2025-2026 updates provide concrete capability signals: agentic AI governance, orchestration, HITL workflows, episodic memory, evaluations, and feedback loops are all referenced in current materials. The May 2026 public-sector Automation Suite announcement and April 2026 release notes show that these agentic capabilities are not cloud-only and are actively being expanded in self-hosted deployments. This is compelling enterprise product evidence. I did not award 5 because, unlike Testing, the search session did not surface direct-match analyst leadership in an exact agentic market category.",
-        "evidence": "UiPath's platform page says it provides agentic AI capabilities including governance, orchestration, and HITL workflows. The UiPath Platform February 2026 updates course references episodic memory, evaluations, and feedback loops for agentic features. Automation Suite 2.2510.2 release notes state new agentic capabilities were onboarded to Automation Suite in April 2026.",
+        "rationale": "UiPath now has broad and rapidly maturing agentic capabilities, including agent creation, orchestration, governance, feedback loops, and on-prem support. The evidence is strong and recent, but the session did not surface a direct Gartner/IDC/Forrester leadership category exactly matching standalone agentic orchestration, so the score remains 4.",
+        "reasoning": "First-party evidence is substantial: the agentic automation platform page states Agent Builder lets enterprises create, customize, and deploy AI agents, while the February 2026 course references episodic memory, evaluations, and feedback loops. Automation Suite 2.2510.2 adds newly onboarded agentic capabilities in April 2026, and the May 2026 public-sector announcement extends these capabilities beyond cloud deployments. IDC Business Automation recognition and broader platform positioning mention agentic AI capabilities, governance, orchestration, and HITL workflows, but that category is closer to business automation platforms than a direct analyst category solely for agentic capabilities. That combination supports a strong 4 with high confidence rather than a direct-match 5.",
+        "evidence": "UiPath's agentic automation page says Agent Builder lets enterprises create, customize, and deploy AI agents for complex processes. UiPath's February 2026 platform-updates course references episodic memory, evaluations, and feedback loops for agentic automation. Automation Suite 2.2510.2 release notes say new agentic capabilities were onboarded in April 2026.",
         "sources": [
           "https://www.uipath.com/platform/agentic-automation",
           "https://academy.uipath.com/courses/UiPath-Platform-February-2026-updates",
@@ -1130,30 +1130,30 @@
       },
       {
         "category": "BPM & Orchestration",
-        "score": 4,
-        "rationale": "UiPath is strong in BPM and orchestration, with dedicated business orchestration messaging and growing recognition of Maestro-centered process coordination. The evidence supports broad enterprise orchestration maturity, but this session did not surface a direct BOAT/IDC Business Automation Platforms leadership citation to force a 5.",
-        "reasoning": "UiPath's business orchestration page is directly on-topic, describing orchestration that connects AI agents, robots, and people across enterprise systems for end-to-end execution. External coverage from TechTarget also characterizes UiPath as having evolved into an AI-powered automation and orchestration platform, which helps validate market perception. The evidence shows credible depth beyond simple task automation, especially around process coordination. I held the score at 4 because the required direct analyst-leadership proof for this exact topic category did not surface in the search results I gathered.",
-        "evidence": "UiPath's business orchestration page says it connects AI agents, robots, and people across enterprise systems to execute end-to-end processes. A 2026 TechTarget roundup says UiPath has evolved from an RPA tool into an AI-powered automation and orchestration platform. UiPath's business process automation page highlights low-code, user-friendly interfaces and broader automation capabilities in BPM contexts.",
+        "score": 5,
+        "rationale": "UiPath scores 5 because recent evidence directly ties it to leadership in IDC's Business Automation Platforms assessment and positions it as an enterprise orchestration platform connecting AI agents, robots, and people across end-to-end processes. Combined with dedicated business-orchestration productization, that satisfies the direct-match analyst leadership rule for UiPath on this topic.",
+        "reasoning": "UiPath's business orchestration page explicitly describes software that connects AI agents, robots, and people across enterprise systems for end-to-end process execution. More importantly, May 2025 news says UiPath was named a Leader in the IDC MarketScape: Worldwide Business Automation Platforms 2025 Vendor Assessment, a direct and current analyst category match for this topic per the reference mapping. Gartner BOAT-specific search results were noisier, but the IDC leadership finding is current, named, and on-topic, and TechTarget's 2026 BPM roundup also describes UiPath as having evolved into an AI-powered automation and orchestration platform. Under the stated rules, that direct-match analyst leadership is enough to award a 5 absent contradicting evidence, and no contradicting evidence surfaced.",
+        "evidence": "UiPath's business orchestration product page says it connects AI agents, robots, and people across enterprise systems to execute end-to-end processes. UiPath's May 2025 newsroom announcement says it was named a Leader in the IDC MarketScape: Worldwide Business Automation Platforms 2025 Vendor Assessment. TechTarget's February 2026 BPM tools roundup says UiPath has evolved into an AI-powered automation and orchestration platform.",
         "sources": [
           "https://www.uipath.com/platform/agentic-automation/business-orchestration",
-          "https://www.techtarget.com/searchcio/tip/17-top-business-process-management-tools",
-          "https://www.uipath.com/automation/business-process-automation"
+          "https://www.uipath.com/newsroom/uipath-named-a-leader-in-idc-marketscape-assessment",
+          "https://www.techtarget.com/searchcio/tip/17-top-business-process-management-tools"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 5,
-        "rationale": "UiPath is best-in-class on testing and evaluation based on direct-match analyst leadership already established in the reference context, reinforced by current product evidence for Test Cloud capabilities across functional and performance testing. This topic meets the explicit rule for a 5.",
-        "reasoning": "The system context explicitly establishes UiPath as a Leader in the Gartner Magic Quadrant for AI-Augmented Software Testing Tools and in the IDC MarketScape: Worldwide Cloud Testing Vendor Assessment; per the analyst leadership rule, that requires a 5 unless there is contradicting evidence, which I did not find. Current product evidence also aligns with that position: UiPath's testing platform page references performance testing, test automation, and mobile, while fiscal Q1 2026 materials call out new performance testing and SAP testing capabilities. Additional agent documentation references evaluations and evaluation sets, supporting the 'evaluation' half of the topic. This combination of direct-match analyst leadership and current product depth clearly supports best-in-class maturity.",
-        "evidence": "UiPath Test Cloud materials reference performance testing, test automation, and mobile testing capabilities. UiPath's Q1 fiscal 2026 results call out new performance testing and SAP testing capabilities. UiPath agent documentation references creating evaluations and evaluation sets in July 2025.",
+        "rationale": "UiPath is best-in-class on this topic based on direct analyst leadership plus broad functional and performance testing coverage in Test Cloud. The score is mandated by the analyst-leadership rule and reinforced by recent product evidence.",
+        "reasoning": "This topic has the strongest evidence set in the session. UiPath has a direct-match leadership citation in the Gartner Magic Quadrant for AI-Augmented Software Testing Tools, and the reference context also establishes IDC MarketScape cloud-testing leadership; the search results surfaced citable URLs for both. First-party product evidence further shows Test Cloud covers performance testing, test automation, and mobile, while recent release and investor materials highlight evaluation features and enterprise testing breadth. With direct analyst leadership and no contradictory evidence, the correct score is 5.",
+        "evidence": "UiPath's analyst-report page says UiPath was named a Leader in the Gartner Magic Quadrant for AI-Augmented Software Testing Tools. UiPath's agentic testing page states Test Cloud supports performance testing, test automation, and mobile testing. UiPath's agentic testing page also states UiPath was named a Leader in the IDC MarketScape: Worldwide Cloud Testing 2022 Vendor Assessment.",
         "sources": [
+          "https://www.uipath.com/resources/automation-analyst-reports/gartner-magic-quadrant-ai-augmented-software-testing-tools",
           "https://www.uipath.com/platform/agentic-testing",
-          "https://ir.uipath.com/news/detail/394/uipath-reports-first-quarter-fiscal-2026-financial-results",
-          "https://docs.uipath.com/agents/automation-cloud/latest/release-notes/july-2025"
+          "https://www.uipath.com/newsroom/uipath-named-a-leader-gartner-magic-quadrant-ai-testing-tools"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1163,12 +1163,12 @@
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "UiPath has strong monitoring and observability evidence, including a centralized agent observability hub and engineering work around OpenTelemetry and analytics backends. The capability appears enterprise-ready, but the session did not surface direct observability-platform analyst recognition, so 4 is the appropriate maturity score.",
-        "reasoning": "The most concrete evidence is UiPath's agent management documentation, which explicitly describes a centralized registry and observability hub for all UiPath agents used to monitor performance and test outcomes. The July 2025 engineering post on OpenTelemetry plus Azure Data Explorer indicates meaningful investment in scalable observability architecture and cost-efficient monitoring. Automation Suite release notes also reference monitoring with L7 load balancers, showing operational observability considerations in infrastructure layers. This is stronger than basic logging, but without direct MQ proof for observability platforms, it lands at 4.",
-        "evidence": "UiPath's Agents page is described as a centralized registry and observability hub for all UiPath agents. A July 2025 engineering post describes scaling observability with OpenTelemetry and Azure Data Explorer while retaining full Kusto capabilities. Automation Suite 2.2510.0 release notes reference monitoring and security features with L7 load balancers.",
+        "rationale": "UiPath has strong monitoring and observability capabilities through Insights/agent monitoring, engineering investment in OpenTelemetry-based observability, and platform-level monitoring features. However, no direct observability-platform analyst leadership was surfaced, so the evidence supports a strong 4 rather than 5.",
+        "reasoning": "The engineering post from July 2025 is especially valuable because it is concrete and technical: UiPath describes scaling observability with OpenTelemetry and ADX while retaining full Kusto capabilities for queries, joins, and visualizations. Product documentation adds that the Agents page acts as a centralized registry and observability hub to monitor performance and testing, and Automation Suite release notes mention monitoring features with L7 load balancers. This combination suggests meaningful internal and productized observability maturity. Still, the session did not surface evidence that UiPath is recognized in the dedicated observability-platform market, so the score remains 4.",
+        "evidence": "UiPath engineering described scaling observability with OpenTelemetry and ADX while retaining full Kusto query and visualization capabilities. UiPath documentation says the Agents page serves as a centralized registry and observability hub for all UiPath agents. Automation Suite 2.2510.0 release notes reference monitoring and security features with L7 load balancers.",
         "sources": [
-          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/managing-uipath-agents",
           "https://engineering.uipath.com/scaling-observability-with-opentelemetry-adx-how-we-improve-the-monitoring-with-cost-reduced-42100a99b89a",
+          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/managing-uipath-agents",
           "https://docs.uipath.com/automation-suite/automation-suite/2.2510/release-notes/automation-suite-2-2510-0"
         ],
         "evidenceType": "Paraphrase",
@@ -1179,12 +1179,12 @@
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "UiPath is strong on traceability and governance with role-based controls, audit capabilities, AI governance features, and recent audit-log enhancements. The evidence is detailed and recent, but because this topic lacks a dedicated analyst MQ, the maturity appropriately tops out at a strong 4.",
-        "reasoning": "Recent sources are particularly relevant: UiPath's November 2025 governance post highlights role-based controls, folder permissions, and unified audit capabilities to ensure automations operate in intentional and traceable ways. Data Service July 2025 notes mention audit logs in Data Fabric for governance, traceability, and compliance, and Automation Cloud September 2025 notes say PII In-Flight Masking is generally available in the AI Trust Layer governance panel. These are concrete governance mechanisms, not vague marketing claims. The breadth across auditability, RBAC, privacy masking, and AI governance supports a strong enterprise score.",
-        "evidence": "UiPath's November 2025 governance post says role-based controls, folder permissions, and unified audit capabilities ensure automations are intentional and traceable. Data Service July 2025 release notes mention audit logs in Data Fabric for governance, traceability, and compliance. Automation Cloud September 2025 release notes say PII In-Flight Masking became generally available in the AI Trust Layer AI Governance panel.",
+        "rationale": "UiPath demonstrates strong governance and traceability through audit logs, role-based controls, PII masking, and unified audit capabilities across the platform. The evidence is recent and specific, but since this topic lacks a dedicated analyst category the documented maturity supports a 4 rather than a 5.",
+        "reasoning": "Recent product evidence is solid: Data Service July 2025 release notes tie audit logs to governance, traceability, and compliance, and the November 2025 governance blog describes role-based controls, folder permissions, and unified audit capabilities for traceable automation operations. September 2025 Automation Cloud notes also add PII In-Flight Masking in the AI Trust Layer governance panel, showing the governance stack extends into AI-specific controls. This is a broad and modern governance posture, not a basic control set. The absence of a named analyst category is not a weakness by itself, but it means the evidence ceiling is best interpreted as strong enterprise maturity rather than undisputed best-in-class.",
+        "evidence": "UiPath Data Service July 2025 release notes say audit logs support governance, traceability, and compliance. UiPath's November 2025 governance blog says role-based controls, folder permissions, and unified audit capabilities make automation intentional and traceable. UiPath's September 2025 Automation Cloud release notes say PII In-Flight Masking became generally available in the AI Trust Layer AI Governance panel.",
         "sources": [
-          "https://www.uipath.com/blog/product-and-updates/agentic-enterprise-governance-and-security-2025-10-release",
           "https://docs.uipath.com/data-service/automation-cloud/latest/release-notes/july-2025",
+          "https://www.uipath.com/blog/product-and-updates/agentic-enterprise-governance-and-security-2025-10-release",
           "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/september-2025"
         ],
         "evidenceType": "Paraphrase",
@@ -1194,14 +1194,14 @@
       },
       {
         "category": "Process Intelligence",
-        "score": 3,
-        "rationale": "UiPath has credible process intelligence capabilities, especially for organizations already invested in the UiPath ecosystem, but the surfaced evidence for 2025-2026 is thinner and more mixed than for its core automation, testing, or governance areas. That supports an adequate 3 rather than a strong 4.",
-        "reasoning": "The system context indicates Process Mining and Task Mining depth, but the web results I surfaced were comparatively weak and included mostly adjacent or third-party roundup commentary rather than strong first-party product detail. The best supporting snippet from external coverage says UiPath Process Mining can remove the need for a separate process intelligence platform for existing UiPath customers, which is meaningful but ecosystem-dependent. At the same time, the release notes for Automation Suite 2.2510.0 indicate Task Mining availability changes, which suggests some unevenness in deployment options. Because the evidence is real but thinner and less consistently strong than adjacent topics, a 3 is the more defensible maturity assessment.",
-        "evidence": "A June 2026 roundup says UiPath Process Mining can remove the need for a separate process intelligence platform for organizations already invested in the UiPath ecosystem. A process-mining comparison snippet lists UiPath Process Mining among system-log mining tools that reconstruct workflows from event data. Automation Suite 2.2510.0 release notes say Task Mining is no longer available in Automation Suite on EKS/AKS 2.2510 and unassisted Task Mining is deprecated.",
+        "score": 4,
+        "rationale": "UiPath has strong process-intelligence maturity with embedded process mining and task/process discovery, and third-party coverage indicates it has reached Leader status in Gartner's process-mining market. The evidence is good but slightly mixed in source quality and directness, so 4 is the most defensible current score.",
+        "reasoning": "The session surfaced current third-party commentary that UiPath moved into the Leaders quadrant for process mining and that its offering includes UiPath Process Mining. Gartner's process-intelligence market page defines the category scope around process and task mining, analysis, alerting, and SLA tracking, which is aligned with the capability being scored. UiPath's own July 2025 RPA MQ announcement also mentions embedded process intelligence, reinforcing that process insights are platformized rather than standalone afterthoughts. Because the clearest leadership evidence came through secondary coverage rather than a direct UiPath or Gartner vendor-specific press release for process mining, I stop at 4 with medium confidence instead of invoking a hard-rule 5.",
+        "evidence": "Solutions Review's May 2024 summary says UiPath moved from Challenger to Leader in Gartner's process mining Magic Quadrant and that its offering includes UiPath Process Mining. Gartner's process intelligence platform review category describes capabilities including process and task mining, process modeling, advanced analysis, alerting, and SLA tracking. UiPath's July 2025 RPA Magic Quadrant release says the platform includes embedded process intelligence.",
         "sources": [
-          "https://www.noxus.ai/roundups/best-celonis-alternatives",
-          "https://kyp.ai/process-mining-software-comparison/",
-          "https://docs.uipath.com/automation-suite/automation-suite/2.2510/release-notes/automation-suite-on-eks-aks-2-2510-0"
+          "https://solutionsreview.com/business-process-management/key-takeaways-2024-gartner-magic-quadrant-for-process-mining-tools/",
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
+          "https://ir.uipath.com/news/detail/400/uipath-recognized-as-a-leader-in-the-2025-gartner-magic-quadrant-for-robotic-process-automation"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -1211,12 +1211,12 @@
       {
         "category": "Licensing & TCO",
         "score": 3,
-        "rationale": "UiPath's licensing and TCO story is adequate but not especially strong based on the surfaced evidence. The search results suggest value-oriented packaging in Automation Cloud and some TCO-reduction messaging, but they do not show unusually transparent or simplified pricing maturity.",
-        "reasoning": "This topic has no analyst MQ, so the score depends on packaging clarity and TCO evidence rather than leadership reports. The strongest first-party evidence available in the search session is broad: Automation Cloud emphasizes broader bundled capabilities, and ScreenPlay documentation claims it lowers TCO for its use case. Those are useful signals, but they do not amount to comprehensive, transparent pricing evidence across the whole platform. Because the evidence is somewhat indirect and licensing complexity is a common challenge in enterprise automation, 3 is the most balanced score.",
-        "evidence": "UiPath's ScreenPlay documentation says the offering lowers total cost of ownership for its use case. Automation Cloud product messaging emphasizes getting more capabilities and integrations within the cloud-based platform. The available search results did not surface a detailed first-party pricing breakdown specific to the broader platform, limiting confidence in a stronger score.",
+        "rationale": "UiPath appears adequate rather than strong on Licensing & TCO: there is evidence of platform packaging and some TCO messaging, but the public evidence surfaced here does not show especially transparent, simple, or low-cost packaging. The topic-specific source coverage is also thinner than for most other areas.",
+        "reasoning": "This topic is harder to score because the acceptable evidence is narrow and comparison-style pricing pages from third parties are not suitable. UiPath's Automation Cloud page confirms formal licensing constructs such as AI Units and capability packaging, while the ScreenPlay documentation claims value in lowering TCO for that component. At the same time, the search session did not surface a clear first-party pricing structure or transparent broad licensing explanation specific enough to support a strong score, and one candidate result was an excluded comparison page. That combination supports a 3: credible enterprise packaging exists, but pricing transparency and TCO clarity are not especially evident from the sources found.",
+        "evidence": "UiPath's Automation Cloud page references licensing constructs including AI Units. UiPath's ScreenPlay overview says the offering lowers total cost of ownership for that use case. The search session did not surface a strong first-party public pricing page or detailed packaging explanation sufficient to evidence especially high transparency.",
         "sources": [
-          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide-screenplay/overview",
-          "https://www.uipath.com/product/automation-cloud"
+          "https://www.uipath.com/product/automation-cloud",
+          "https://docs.uipath.com/agents/automation-cloud/latest/user-guide-screenplay/overview"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "low",
@@ -1226,29 +1226,29 @@
       {
         "category": "Industry applicability / business domain applicability",
         "score": 4,
-        "rationale": "UiPath has strong cross-industry applicability with evidence of deployment across virtually every industry and business process, plus signs of expanding domain-specific AI capabilities. The platform appears broadly applicable, but this no-MQ topic does not have enough undisputed evidence for a 5.",
-        "reasoning": "UiPath's RPA overview directly states that millions of robots are at work around the world touching virtually every industry and business process, which is broad applicability evidence. The May 2025 Bring Your Own Model announcement also points to a more adaptable AI layer for domain-specific needs, and external industry research snippets show category demand for insurance-specific intelligent document processing where UiPath participates. The available evidence supports breadth more than deep proof of category-defining vertical specialization, which is why the score stays at 4. This reflects strong range across industries without overclaiming unmatched depth in every domain.",
-        "evidence": "UiPath's RPA overview says millions of robots are at work around the world, touching virtually every industry and business process. UiPath's May 2025 Bring Your Own Model announcement emphasizes seamless integration and customization for AI use cases. Industry research snippets in 2026 reference insurance-specific intelligent document processing capabilities as a relevant market context for vendors such as UiPath.",
+        "rationale": "UiPath has strong industry applicability because its automation platform is used across virtually every industry and supports broad business-process coverage, while also adding domain-specific AI customization. The evidence indicates breadth and growing vertical depth, but not enough undisputed vertical specialization evidence to justify a no-MQ 5.",
+        "reasoning": "UiPath's RPA overview says robots are at work around the world touching virtually every industry and business process, which is a direct breadth signal. The 2025 Bring Your Own Model announcement adds that customers can integrate and customize AI models, improving fit for domain-specific use cases rather than forcing one-size-fits-all AI. Financial filings further reinforce enterprise-scale customer adoption, although scale alone is not the scoring basis here. The combined evidence supports wide industry applicability with meaningful extensibility, but the snippets surfaced fewer named packaged vertical solutions than would be ideal for a 5.",
+        "evidence": "UiPath's RPA overview says robots are used around the world across virtually every industry and business process. UiPath's May 2025 Bring Your Own Model announcement says the platform supports seamless AI model integration and customization. UiPath's FY2026 annual report highlights ARR as a key subscription metric, reinforcing sustained enterprise adoption at scale.",
         "sources": [
           "https://www.uipath.com/rpa/robotic-process-automation",
           "https://www.uipath.com/blog/product-and-updates/introducing-bring-your-own-model-to-uipath",
-          "https://www.everestgrp.com/report/egr-2026-38-r-7997/"
+          "https://ir.uipath.com/financials/sec-filings/content/0001734722-26-000030/0001734722-26-000030.pdf"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "UiPath offers strong long-term value based on its continued product investment, recurring revenue base, and ongoing platform evolution into orchestration and agentic automation. The evidence supports durability and roadmap commitment, though this no-MQ topic does not have enough basis for a 5.",
-        "reasoning": "UiPath's fiscal 2026 annual report provides evidence of subscription-oriented business durability through ARR as a core operating metric. Product-side evidence is also recent: Orchestrator continued shipping tenant-management enhancements in April 2026, and the platform was recognized by TIME as one of the Best Inventions of 2025 according to UiPath's platform page. These signals indicate sustained investment rather than a stagnant mature product. I did not score 5 because some surfaced evidence also shows portfolio churn, such as Task Mining deprecation changes in Automation Suite, which suggests long-term value is strong but not uniformly frictionless across all areas.",
-        "evidence": "UiPath's fiscal 2026 annual report says ARR is the key performance metric used to manage the business, indicating a durable subscription base. Orchestrator release notes show continued feature investment in April 2026, including tenant-management enhancements. UiPath's platform page says the UiPath Platform for agentic automation and orchestration was named one of TIME's Best Inventions of 2025.",
+        "rationale": "UiPath offers strong long-term value through ongoing product investment, enterprise platform expansion, and durable ecosystem signals, though the evidence also shows some portfolio evolution and deprecation that temper a perfect score. The result is a solid 4 for strategic durability rather than an undisputed 5.",
+        "reasoning": "Recent release notes and investor materials show UiPath is continuing to invest actively in Orchestrator, Maestro, and the broader agentic automation platform, which supports roadmap durability. The platform was also highlighted as one of TIME's Best Inventions of 2025 on the platform page, indicating ongoing market relevance beyond legacy RPA. At the same time, Automation Suite notes show some feature rationalization such as the removal trajectory for unassisted Task Mining in that deployment model, which is not fatal but does show that the portfolio is still being reshaped. That mix supports strong expected long-term value with manageable product-transition risk.",
+        "evidence": "UiPath's April 2026 Orchestrator release notes show active ongoing platform enhancement. UiPath's platform page says the UiPath Platform for agentic automation and orchestration was named one of TIME's Best Inventions of 2025. Automation Suite 2.2510.0 release notes say Unassisted Task Mining is deprecated and will be removed in that environment, showing some portfolio evolution.",
         "sources": [
-          "https://ir.uipath.com/financials/sec-filings/content/0001734722-26-000030/0001734722-26-000030.pdf",
           "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/april-2026",
-          "https://www.uipath.com/platform/agentic-automation"
+          "https://www.uipath.com/platform/agentic-automation",
+          "https://docs.uipath.com/automation-suite/automation-suite/2.2510/release-notes/automation-suite-on-eks-aks-2-2510-0"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -1258,12 +1258,13 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "UiPath is strong on business adaptability and agility, with evidence around easily adjustable process orchestration and customer examples citing increased resiliency and agility. The capability appears broad and practical, but as a no-MQ topic it does not have the exceptional proof needed for a 5.",
-        "reasoning": "UiPath's process orchestration page directly says organizations can easily adjust processes as business needs evolve, which is directly relevant to agility. A customer story from Polish banks cites increased resiliency and agility in operations, offering a real-world indicator beyond product marketing. The surrounding platform direction toward orchestration and agentic automation further supports adaptability across changing workflows. The score remains 4 because the evidence is strong and recent enough to show meaningful business agility, but not so definitive or independently benchmarked as to warrant best-in-class status under a no-MQ topic.",
-        "evidence": "UiPath's process orchestration page says organizations can easily adjust processes as the business evolves, supporting agility and responsiveness. A UiPath customer story about leading Polish banks cites increased resiliency and agility in business operations. The broader platform push into orchestration supports faster change across processes instead of isolated task automation.",
+        "rationale": "UiPath is strong on business adaptability and agility because its orchestration layer, process flexibility messaging, and customer outcomes all point to fast change management across operations. The evidence supports broad configurability and responsiveness, but not an exceptional no-MQ 5.",
+        "reasoning": "UiPath's process-orchestration page explicitly says organizations can easily adjust processes as business needs evolve, which is directly relevant to agility. A customer-story result from 2023 cites increased resiliency and agility in scaled automation deployments for leading Polish banks, showing the claims are not purely theoretical. More broadly, UiPath's orchestration and agentic platform design supports modifying flows across people, agents, and robots rather than hard-coding brittle scripts. This is strong evidence of adaptability, but the session did not surface especially deep low-code governance or change-cycle metrics that would justify a 5 on a no-MQ topic.",
+        "evidence": "UiPath's process orchestration page says users can easily adjust processes as the business evolves, improving agility and responsiveness. A UiPath newsroom item on Polish banks cites increased resiliency and agility from scaled automation deployments. UiPath's orchestration approach coordinates agents, robots, and people, supporting process adaptation across changing workflows.",
         "sources": [
           "https://www.uipath.com/ai/process-orchestration",
-          "https://www.uipath.com/newsroom/uipath-enables-leading-polish-banks-to-scale-automation"
+          "https://www.uipath.com/newsroom/uipath-enables-leading-polish-banks-to-scale-automation",
+          "https://www.uipath.com/platform/agentic-automation/business-orchestration"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
