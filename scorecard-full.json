@@ -534,61 +534,65 @@
       {
         "category": "Security & Compliance",
         "score": 4,
-        "rationale": "ServiceNow shows strong enterprise security and compliance maturity with active governance launches in 2026 and a substantial GRC/security ecosystem, but the evidence surfaced is mostly first-party and adjacent rather than anchored by a direct analyst category for this topic.",
-        "reasoning": "Search results surfaced recent first-party evidence that ServiceNow launched Autonomous Security & Risk in May 2026 to govern AI agent identities and connected assets, and AI Control Tower added pre-built compliance content in 2026. A ServiceNow Store SOC 2 Accelerator result also points to platform support for risk assessment, policy, compliance, and audit features. Because this topic has no dedicated analyst MQ and the strongest evidence is product/news oriented rather than an undisputed market-defining benchmark, the score lands at a strong 4 rather than a 5. Confidence is medium because the sources are relevant and recent, but depth on certifications such as ISO/SOC was not directly surfaced in the snippets.",
-        "evidence": "ServiceNow launched 'Autonomous Security & Risk' in May 2026, integrating Armis and Veza to govern AI agent identity and connected assets. ServiceNow AI Control Tower's June 2026 release added pre-built compliance content. A ServiceNow Store SOC 2 Accelerator listing says the platform supports risk assessment, policy, compliance, and rich audit features for SOC 2 workflows.",
+        "rationale": "ServiceNow has strong enterprise security and compliance maturity, backed by formal certifications, trust-center infrastructure, and dedicated GRC/IRM products. The evidence supports broad, production-grade capability, but this topic has no dedicated analyst MQ and therefore does not warrant a default 5.",
+        "reasoning": "ServiceNow’s trust materials explicitly cite ISO/IEC 27001:2022 certification and SSAE 18 SOC 1 and SOC 2 reports, which is concrete evidence of mature compliance operations. Its GRC and Integrated Risk Management offerings show productized capabilities for policy, risk, audit, and compliance workflows rather than ad hoc controls. The 2026 Autonomous Security & Risk announcement adds current evidence that ServiceNow is extending governance across AI agents and connected assets. Because this topic is evaluated primarily on first-party trust and product depth rather than a direct analyst-leadership category, the evidence supports a strong 4 rather than an exceptional 5.",
+        "evidence": "ServiceNow’s compliance page lists ISO/IEC 27001:2022 certification and SSAE 18 SOC 1 and SOC 2 reports. ServiceNow offers Governance, Risk, and Compliance (GRC) and Integrated Risk Management products for enterprise-wide risk-informed decisions. In May 2026, ServiceNow announced Autonomous Security & Risk to govern AI agent identity and connected assets.",
         "sources": [
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-launches-Autonomous-Security--Risk-integrating-Armis-and-Veza-to-govern-every-AI-agent-identity-and-connected-asset/default.aspx",
-          "https://www.servicenow.com/community/ai-control-tower-articles/ai-control-tower-what-s-new-in-the-june-2026-release/ta-p/3561445",
-          "https://store.servicenow.com/store/app/afb277221be46a50a85b16db234bcb9a"
+          "https://www.servicenow.com/company/trust/compliance.html",
+          "https://trust.servicenow.com/certifications",
+          "https://www.servicenow.com/products/governance-risk-and-compliance.html",
+          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-launches-Autonomous-Security--Risk-integrating-Armis-and-Veza-to-govern-every-AI-agent-identity-and-connected-asset/default.aspx"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "ServiceNow offers strong deployment and operations maturity, including a 2026 Private Stack option and broad enterprise packaging for operating the Now Platform under different control models. The evidence supports a robust enterprise platform, though the search results did not expose deep operational architecture details such as HA/DR design in enough specificity for a 5.",
-        "reasoning": "A recent ServiceNow product-launch result explicitly describes 'Private Stack' as a way to deploy the full ServiceNow AI Platform on customer terms, which is meaningful evidence for deployment flexibility and controlled operations. The April 2026 newsroom release also stresses that AI, data, security, and governance are built to deploy across products and packages. These results indicate mature operational packaging, but the snippets surfaced more go-to-market and deployment-model language than low-level operating detail around resilience patterns, upgrade control, or air-gapped operations. Because this topic has no dedicated analyst MQ and the evidence is strong but not category-defining, ServiceNow merits a 4.",
-        "evidence": "ServiceNow introduced 'Private Stack' in April 2026 to let customers deploy the full ServiceNow AI Platform on their terms. A 2026 ServiceNow newsroom announcement says customers can deploy ServiceNow Build Agent skills from any tool with AI, data, security, and governance built into the platform. ServiceNow's product catalog and ecosystem results show a broad packaged platform used for enterprise operations workflows and extensions.",
+        "rationale": "ServiceNow shows strong deployment and operational maturity through formal release-note discipline, AI control/governance tooling, and support for managed and self-hosted operating models. The platform appears enterprise-proven, though the available evidence is more operational than deeply architectural.",
+        "reasoning": "The family release notes and 2026 product announcements show an established release cadence and centralized operational packaging across the platform. ServiceNow’s AI Control Tower expansion indicates it is investing in tooling to discover, observe, govern, secure, and measure AI deployed across systems, which strengthens operational oversight. Evidence also surfaced for self-hosting guidance and operational administration patterns, suggesting the company supports more than a single SaaS-only mode. This is stronger than basic deployment maturity, but the search results did not surface enough detailed architecture-ops documentation to push beyond 4 on a no-MQ topic.",
+        "evidence": "ServiceNow publishes family release notes for new products, features, and fixes across platform releases. In May 2026, ServiceNow expanded AI Control Tower with capabilities to discover, observe, govern, secure, and measure AI deployed across enterprise systems. A 2025 ServiceNow self-hosting blueprint references HA, DR, OS-level patching, security hardening, and firewall-rule management.",
         "sources": [
-          "https://www.servicenow.com/community/product-launch-blogs/private-stack-deploy-the-full-servicenow-ai-platform-on-your/ba-p/3524144",
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx",
-          "https://www.servicenow.com/products-by-category.html"
+          "https://www.servicenow.com/docs/r/release-notes/family-release-notes.html",
+          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
+          "https://www.servicenow.com/community/onboarding-hub-blog/service-now-self-hosting-blueprint-part-4/ba-p/3334691"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Scalability & Reliability",
         "score": 4,
-        "rationale": "ServiceNow appears strong on scalability and reliability, with enterprise-grade platform references and customer review evidence supporting production scale. However, the surfaced evidence is more indicative than architectural, so it supports a 4 rather than an exceptional 5.",
-        "reasoning": "A 2026 Gartner Peer Insights result includes a review calling ServiceNow a 'scalable and reliable ITSM platform' that delivers value at enterprise scale, which is useful independent-market confirmation. Additional search results from the ServiceNow ecosystem repeatedly describe the Now Platform as secure, scalable, and reliable for integrations and incident workflows. Those signals are credible, but they do not provide detailed architecture evidence such as HA topology, DR objectives, or scale benchmarks directly in the snippets. On a no-MQ topic, that leaves ServiceNow clearly strong but not indisputably best-in-class.",
-        "evidence": "A Gartner Peer Insights 2026 review describes ServiceNow as a 'scalable and reliable ITSM platform' that delivers strong value at enterprise scale. A ServiceNow Store integration listing says the spoke leverages native ServiceNow capabilities for secure, scalable, and reliable integration. ServiceNow-related engineering hiring language references enterprise-grade platform solutions and support for implementations, upgrades, and new features at scale.",
+        "rationale": "ServiceNow demonstrates strong scalability and reliability through mirrored production architecture, advanced high availability, and repeated enterprise-scale customer validation. The evidence shows serious operational engineering, but this no-MQ topic does not have the kind of undisputed external proof needed for a 5.",
+        "reasoning": "ServiceNow support content states that its Advanced High Availability transfer architecture deploys mirrored production instances, which is a meaningful indicator of resilience design. The high-availability white paper and community guidance also tie the platform to backup, recovery, and DR practices rather than generic uptime claims. Gartner Peer Insights reviews additionally describe ServiceNow as scalable and reliable at enterprise scale, providing some external corroboration. Taken together, this is clearly strong enterprise maturity, but without a recognized direct analyst leadership anchor for this topic, 4 is the more disciplined score.",
+        "evidence": "ServiceNow’s Advanced High Availability transfer FAQ says ServiceNow deploys a mirrored architecture for customer production instances. ServiceNow community guidance says Advanced High Availability architecture is the primary means to restore service in a failure scenario. Gartner Peer Insights reviews describe ServiceNow as a scalable and reliable ITSM platform delivering value at enterprise scale.",
         "sources": [
-          "https://www.gartner.com/reviews/market/it-service-management-platforms/vendor/servicenow",
-          "https://store.servicenow.com/store/app/667a5be8c3fbae50ef46d0af0501310e",
-          "https://vanguard.wd5.myworkdayjobs.com/en-US/vanguard_external/job/ServiceNow-Platform-Engineer-for-CMDB_177848-1"
+          "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB2564143",
+          "https://www.servicenow.com/standard/resource-center/white-paper/wp-sn-advanced-high-availability-architecture.html",
+          "https://www.servicenow.com/community/cmdb-forum/how-does-the-instance-backup-policy-work/td-p/2773108",
+          "https://www.gartner.com/reviews/market/it-service-management-platforms/vendor/servicenow"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Connectivity & Integration",
-        "score": 4,
-        "rationale": "ServiceNow has strong integration maturity through REST APIs, MID Server, IntegrationHub, and a broad connector/app ecosystem. It scores 4 because the evidence shows credible enterprise connectivity, but the analyst signals surfaced were adjacent or indirect rather than a direct iPaaS leadership match for ServiceNow itself.",
-        "reasoning": "The 2026 ServiceNow community result explicitly points learners to REST APIs, MID Server, and IntegrationHub for connecting ServiceNow with external systems, which is concrete feature evidence. Store listings such as Medallia Connector and Checkmarx/ArmorCode integrations reinforce a meaningful integration ecosystem. I also searched Gartner, IDC, and Forrester category terms for iPaaS/integration; the closest ServiceNow analyst signal surfaced was ServiceNow's analyst-reports page referring to Gartner recognition of 'unified platform vendors' including integration, which is supportive but not a direct Magic Quadrant for iPaaS leadership. Under the strict non-UiPath 5 rule, that keeps the score at 4.",
-        "evidence": "A 2026 ServiceNow community result cites REST APIs, MID Server, and IntegrationHub for connecting ServiceNow with external systems. ServiceNow's April 2026 newsroom release references 'data connectivity' as part of the enterprise-scale AI platform stack. A Medallia Connector listing states it integrates the Medallia and ServiceNow platforms for ITSM and customer service workflows.",
+        "score": 3,
+        "rationale": "ServiceNow has credible integration capability via IntegrationHub, REST connectivity, MID Server, and ecosystem connectors, but the evidence points to adequate platform integration rather than market-leading iPaaS/API-management depth. No direct-match Gartner/IDC/Forrester leadership surfaced for ServiceNow in iPaaS or API management.",
+        "reasoning": "ServiceNow documentation and community content show IntegrationHub, REST APIs, MID Server, and cloud-gateway patterns that cover common enterprise integration needs. The App Store results also show a sizeable ecosystem of packaged integrations, which strengthens practical connectivity. However, the analyst-category searches for iPaaS and API management surfaced leaders such as Microsoft and Workato rather than ServiceNow, and the evidence did not show ServiceNow positioned as a leader in those direct categories. That makes ServiceNow a credible 3: real and useful integration capability, but not the broad specialist-market leadership associated with a 4 or 5 here.",
+        "evidence": "ServiceNow learning and docs references mention REST APIs, MID Server, and IntegrationHub for connecting ServiceNow with external systems. ServiceNow documentation includes MID Server support for IntegrationHub and REST-type data sources. ServiceNow’s ecosystem includes packaged integrations such as ArmorCode and Checkmarx connectors in the Store.",
         "sources": [
           "https://www.servicenow.com/community/training-and-certifications/servicenow-2026-where-should-i-focus-my-learning/m-p/3422971",
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx",
-          "https://store.servicenow.com/store/app/571be32a1b246a50a85b16db234bcbf3"
+          "https://www.servicenow.com/docs/r/integrate-applications/integration-hub/dsa-on-mid.html",
+          "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB2464657",
+          "https://store.servicenow.com/store/app/2b2d6fa21b646a50a85b16db234bcbcb",
+          "https://store.servicenow.com/store/app/cbc8efea1be06a50a85b16db234bcb97"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -598,29 +602,31 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 4,
-        "rationale": "ServiceNow demonstrates strong maturity in time-to-value and user experience through a unified AI experience and analyst-recognized low-code positioning. The evidence supports a broad, enterprise-ready experience, but the surfaced snippets do not prove a direct top-of-market position on this exact topic strongly enough to justify a 5.",
-        "reasoning": "The April 2026 newsroom release emphasizes faster enterprise value from AI, while ServiceNow's AI page says Now Assist, Moveworks, and AI Experience have been reimagined as a single 'ServiceNow Otto' experience that completes work for every person in the organization. Those are strong UX and adoption signals, especially when combined with ServiceNow's low-code platform heritage. Although analyst-oriented results surfaced around low-code leadership and Gartner use cases on adjacent pages, the snippets returned here were not a sufficiently direct, topic-matched leadership proof for this specific combination. Since this topic maps to low-code/application-platform style evidence and ServiceNow clearly has strong user-facing workflow design maturity, a 4 is appropriate.",
-        "evidence": "ServiceNow's April 2026 announcement says the platform gives customers faster time to value from AI with enterprise-scale capabilities. ServiceNow's AI page says Now Assist, Moveworks, and AI Experience were reimagined as 'ServiceNow Otto' as one AI experience for every person in the organization. A ServiceNow Store AI Risk Profiler listing highlights workflow, user-experience, and operational impacts when enabling AI skills.",
+        "rationale": "ServiceNow shows strong maturity in time-to-value and user experience through guided workflows, AI-native product motion, and repeated emphasis on adoption and faster rollout outcomes. The evidence supports strong enterprise UX and onboarding depth, though not a direct 5-caliber analyst leadership match for this exact topic in the collected sources.",
+        "reasoning": "Multiple 2026 sources explicitly associate ServiceNow offerings with faster time to value, improved user experience, and feature adoption rather than leaving those benefits implicit. The product-led AI motion role description also indicates the company is systematically measuring adoption and time-to-value, which is a sign of mature product operations. In parallel, ServiceNow has public Forrester low-code leadership material, which is adjacent and supportive because enterprise low-code platforms often correlate with faster delivery and usability. That combination supports a strong 4, but the available search evidence is still more benefit-oriented than a direct analyst-category leadership proof point for this exact topic.",
+        "evidence": "A ServiceNow Store listing describes enhanced user experience through guided workflows, real-time visibility, and faster time to value. A 2026 ServiceNow role description references improving time-to-value and feature adoption for AI capabilities. ServiceNow’s AI-native platform announcement says AI, data, security, and governance are embedded across offerings rather than sold separately, supporting simplified adoption.",
         "sources": [
+          "https://store.servicenow.com/store/app/d95c63ae1b246a50a85b16db234bcb43",
+          "https://careers.servicenow.com/jobs/744000140274819/sr-staff-product-manager-ai-product-led-motion/",
           "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx",
-          "https://www.servicenow.com/ai.html",
-          "https://store.servicenow.com/store/app/e1a9b04947c94bd0040ae738436d43f1"
+          "https://www.servicenow.com/workflow/app-development/forrester-leader-low-code-platforms.html"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Agentic Capabilities",
         "score": 5,
-        "rationale": "ServiceNow is best-in-class on agentic capabilities based on direct, topic-matched analyst evidence plus substantial recent product depth. Search results show Gartner ranked ServiceNow #1 for the 'Building and Managing AI Agents' use case, and ServiceNow has documented thousands of AI agents plus lifecycle and governance capabilities.",
-        "reasoning": "This topic has a plausible direct analyst category, and the search surfaced ServiceNow's AI Agents product page explicitly stating it was ranked #1 by Gartner for the Building and Managing AI Agents use case. That is a direct match to agentic capabilities, not a merely adjacent conversational AI category, satisfying the stricter non-UiPath rule for a 5. Product evidence is also strong: a March 2025 newsroom release says ServiceNow added thousands of AI agents and lifecycle capabilities to build, onboard, and manage them, while 2026 releases emphasize agentic governance and enterprise-scale deployment. With direct analyst recognition and deep recent product evidence, 5 is warranted.",
-        "evidence": "ServiceNow's AI Agents page says Gartner ranked it #1 for the 'Building and Managing AI Agents' use case. A March 2025 ServiceNow release says the platform added thousands of AI agents and capabilities to build, onboard, and manage the entire AI agent lifecycle. A May 2026 ServiceNow announcement says AI governance was extended from desktops to data centers with NVIDIA.",
+        "rationale": "ServiceNow is best-in-class on agentic capabilities based on direct-match analyst recognition and substantial first-party evidence of AI-agent lifecycle management. Gartner-ranked leadership for building and managing AI agents satisfies the rubric’s 5-score requirement for a non-UiPath vendor because it directly matches the topic.",
+        "reasoning": "The strongest evidence is direct-match analyst recognition: ServiceNow’s AI Agents page says Gartner ranked ServiceNow #1 for the “Building and Managing AI Agents” use case in 2025 Critical Capabilities for Enterprise Low-Code Applications. That is reinforced by 2025–2026 product evidence showing ServiceNow can build, onboard, manage, and govern thousands of AI agents across workflows. The release notes also reference a centralized AI Admin Center as a control hub for agentic capabilities, which strengthens governance and lifecycle depth. Because the analyst category directly matches the topic rather than merely touching adjacent conversational AI, the score qualifies for 5 under the stated rules.",
+        "evidence": "ServiceNow states Gartner ranked it #1 for the “Building and Managing AI Agents” use case in 2025 Critical Capabilities for Enterprise Low-Code Applications. A March 2025 ServiceNow platform release said it added capabilities to build, onboard, and manage the entire AI agent lifecycle across CRM, HR, IT, and more. ServiceNow release notes describe AI Admin Center as a single control hub bringing together AI capabilities and configuration functions.",
         "sources": [
           "https://www.servicenow.com/products/ai-agents.html",
           "https://newsroom.servicenow.com/press-releases/details/2025/ServiceNows-latest-platform-release-adds-to-thousands-of-AI-agents-across-CRM-HR-IT-and-more-for-faster-smarter-workflows-and-maximum-business-impact-03-12-2025-traffic/default.aspx",
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-extends-agentic-AI-governance-from-desktops-to-data-centers-with-NVIDIA/default.aspx"
+          "https://www.servicenow.com/docs/r/release-notes/now-assist-rn-landing.html",
+          "https://www.servicenow.com/workflow/app-development/enterprise-low-code-leader-6-years.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -630,29 +636,32 @@
       {
         "category": "BPM & Orchestration",
         "score": 5,
-        "rationale": "ServiceNow scores as best-in-class for BPM and orchestration because the search surfaced direct analyst leadership evidence in a matching category and strong first-party BPM/process automation depth. The combination of Forrester DPA leadership evidence and broad workflow/BPM capabilities supports a 5.",
-        "reasoning": "I searched Gartner BOAT, IDC Business Automation Platforms, and Forrester Digital Process Automation separately. The strongest direct-match evidence surfaced from Forrester: an August 2025 report summary states that ServiceNow was named a Leader in The Forrester Wave for Digital Process Automation. That is a direct match to this topic for a non-UiPath vendor and therefore qualifies for 5 under the analyst leadership rule. Supporting product evidence from ServiceNow's BPM page emphasizes human-centric BPM, real-time notifications, task tracking, and process automation, while another search result indicates ServiceNow also claims IDC MarketScape leadership in Business Automation Platforms. Together these point to top-tier maturity.",
-        "evidence": "An August 2025 report summary says Forrester named ServiceNow a Leader in Digital Process Automation. ServiceNow's BPM page describes human-centric BPM with user-friendly interfaces, real-time notifications, and task tracking capabilities. A ServiceNow sitemap result references ServiceNow as a Leader in IDC MarketScape: Business Automation Platforms.",
+        "rationale": "ServiceNow is best-in-class in BPM and orchestration because it has direct-match leadership evidence in both IDC Business Automation Platforms and Forrester Digital Process Automation, alongside broad workflow and process automation product depth. This exceeds simple workflow support and meets the rubric for a 5.",
+        "reasoning": "The decisive evidence is direct analyst alignment to the topic. ServiceNow’s Q2 2025 results announcement says it was recognized as a Leader in the IDC MarketScape: Worldwide Business Automation Platforms 2025 Vendor Assessment, which directly maps to BPM & Orchestration per the topic reference. In parallel, Forrester’s 2025 DPA coverage surfaced ServiceNow among Leaders in Digital Process Automation, and ServiceNow’s own workflow/BPM pages show broad cross-functional automation depth on the Now Platform. With both direct-match analyst evidence and extensive platform capability, the strongest score is 5.",
+        "evidence": "ServiceNow disclosed that it was recognized as a Leader in the IDC MarketScape: Worldwide Business Automation Platforms 2025 Vendor Assessment. A 2025 industry report summary states Forrester named ServiceNow a Leader in Digital Process Automation Software, Q3 2025. ServiceNow’s BPM and workflow automation pages describe digital workflows, task tracking, notifications, and cross-department business process automation.",
         "sources": [
+          "https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Reports-Second-Quarter-2025-Financial-Results/default.aspx",
           "https://automationtoday.net/news/forrester-names-appian-ibm-pegasystems-salesforce-and-servicenow-as-dpa-leaders/",
           "https://www.servicenow.com/platform/what-is-business-process-management.html",
-          "https://www.servicenow.com/jp/full-sitemap.html"
+          "https://www.servicenow.com/platform/workflow-automation.html",
+          "https://www.servicenow.com/company/analyst-reports.html"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Testing & Evaluation (Functional + Performance)",
-        "score": 3,
-        "rationale": "ServiceNow has credible but limited testing and evaluation capabilities, mainly around agile testing, ATF-oriented automation, and prompt/performance evaluation for AI skills, but it is not evidenced as a leading full-spectrum functional and performance testing platform. The absence of direct testing-tool analyst leadership and the partial nature of the surfaced capabilities keep it at 3.",
-        "reasoning": "I searched the direct testing analyst categories across Gartner, IDC, and Forrester and did not surface ServiceNow as a leader in AI-augmented software testing or cloud testing. The product evidence that did appear is narrower: ServiceNow has an 'Agile Testing' page, a Now Assist Skill Kit FAQ discussing prompt performance evaluation, and a 2026 ServiceNow AI governance article mentioning an ATF Test Agent. Those are credible testing-related capabilities, especially for testing within the ServiceNow platform, but they do not add up to a broad, market-leading functional + performance testing suite across enterprise applications. That profile aligns with an adequate 3 rather than an emerging 2 because the capability is real, just scoped and less comprehensive than dedicated testing vendors.",
-        "evidence": "ServiceNow has a page explaining Agile Testing and states that testing occurs at every stage of development. A 2024 Now Assist Skill Kit FAQ references custom skills and prompt performance evaluation. A 2026 ServiceNow AI governance post mentions introducing an 'ATF Test Agent' in the ServiceNow AI Platform.",
+        "score": 2,
+        "rationale": "ServiceNow appears to have only emerging, indirect capability on testing and evaluation for this topic. The evidence shows internal AI evaluation and prompt-performance tooling, but no direct-match software-testing product or analyst recognition in AI-augmented testing surfaced.",
+        "reasoning": "The research did surface prompt performance evaluation and internal AI evaluation harnesses for accuracy, regression, and hallucination checks, which indicates ServiceNow is not absent from evaluation practices. However, those signals are internal/platform-adjacent and not equivalent to a dedicated functional-plus-performance software testing suite with market recognition. Direct-match analyst searches for AI-Augmented Software Testing Tools and IDC Cloud Testing did not surface ServiceNow as a leader or meaningful presence, while the category results strongly surfaced specialist testing vendors. That makes 2 the right score: an emerging, narrow capability footprint rather than a mature testing platform.",
+        "evidence": "ServiceNow community content references custom skills and prompt performance testing through the Now Assist Skill Kit. A 2026 ServiceNow engineering role mentions evaluation harnesses for accuracy, regression, and hallucination checks for AI features. Analyst-category searches for AI-Augmented Software Testing Tools surfaced specialist vendors rather than ServiceNow.",
         "sources": [
-          "https://www.servicenow.com/products/strategic-portfolio-management/what-is-agile-testing.html",
-          "https://www.servicenow.com/community/now-assist-articles/now-assist-skill-kit-nask-faq/ta-p/3007953",
-          "https://www.servicenow.com/community/servicenow-ai-platform-blog/why-automation-governance-is-non-negotiable-in-2026/ba-p/3523068"
+          "https://www.servicenow.com/community/servicenow-otto-articles/now-assist-skill-kit-nask-faq/ta-p/3007953",
+          "https://careers.servicenow.com/jobs/744000144386100/software-engineer/",
+          "https://www.tricentis.com/news/tricentis-named-a-leader-2025-gartner-magic-quadrant-ai-augmented-software-testing-tools",
+          "https://www.gartner.com/reviews/market/enterprise-low-code-application-platform"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -662,13 +671,14 @@
       {
         "category": "Monitoring & Observability",
         "score": 4,
-        "rationale": "ServiceNow has strong monitoring and observability capabilities with a dedicated Service Observability product and recent AI governance/observation extensions, but the available analyst evidence points more to visibility in the category than direct leadership. That supports a strong 4 rather than a 5.",
-        "reasoning": "The product evidence is solid: ServiceNow's Service Observability page says customers can integrate observability capabilities into existing workflows for alerting and incident response, and a May 2026 announcement expands AI Control Tower to discover, observe, govern, secure, and measure AI across enterprise systems. I also searched the Gartner Observability Platforms category directly; the results surfaced the market page and outside commentary indicating ServiceNow is present, but not a clear Leader designation from an acceptable source. ServiceNow also has adjacent analyst strength in AIOps, including an IDC MarketScape leader result, but AIOps is related to observability rather than a direct match to the MQ required for a 5 here. Hence, 4 is the disciplined score.",
-        "evidence": "ServiceNow's Service Observability product says it integrates observability capabilities into workflows for alerting and incident response. A May 2026 ServiceNow announcement says AI Control Tower was expanded to discover, observe, govern, secure, and measure AI across systems. A ServiceNow community article on the 2026 ITOM licensing model references observability, synthetic monitoring, and AIOps capabilities.",
+        "rationale": "ServiceNow has strong observability maturity, with a dedicated Service Observability product and external analyst recognition as a Visionary in APM/observability. The evidence supports enterprise-grade capability, though not direct current-category leadership in Gartner Observability Platforms.",
+        "reasoning": "ServiceNow has a specific Service Observability offering focused on integrating observability into alerting and incident workflows, which is much stronger than generic monitoring claims. Its ITOM and observability-related content also points to AI-driven operations and cross-team operational response. Crucially, ServiceNow has public analyst evidence showing it was named a Visionary in the 2023 Gartner Magic Quadrant for APM and Observability, which is close and supportive but not the same as being a current direct-match leader in the newer Observability Platforms MQ. Under the scoring rules, that adjacent analyst signal plus solid product evidence supports a strong 4, not 5.",
+        "evidence": "ServiceNow offers a dedicated Service Observability product to integrate observability into alerting and incident workflows. ServiceNow’s ITOM page says it was named a leader in the IDC MarketScape worldwide AIOps 2026. ServiceNow has public material stating it was named a Visionary in the 2023 Gartner Magic Quadrant for Application Performance Monitoring and Observability.",
         "sources": [
           "https://www.servicenow.com/products/observability.html",
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
-          "https://www.servicenow.com/community/architect-articles/navigating-the-april-2026-servicenow-itom-licensing-model/ta-p/3555121"
+          "https://www.servicenow.com/products/it-operations-management.html",
+          "https://www.servicenow.com/lpayr/gartner-mq-apm-observability.html",
+          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-named-a-Leader-in-the-2026-IDC-MarketScape-for-worldwide-AIOps/default.aspx"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -678,13 +688,14 @@
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "ServiceNow is strong in traceability and governance, with recent AI governance, enterprise architecture visibility, identity governance, and GRC capabilities all evident in the search results. It stops short of 5 because this no-MQ topic lacks undisputed category-defining evidence in the snippets returned.",
-        "reasoning": "A May 2026 announcement says AI Control Tower was expanded to discover, observe, govern, secure, and measure AI across any system, which is highly relevant for traceability and governance. ServiceNow's Enterprise Architecture Workspace result highlights product capabilities mapping and AI governance visibility, while the identity and access governance results show broader control-plane maturity. These are all enterprise-grade signals, particularly around cross-system governance and visibility, but the search results do not surface the sort of overwhelming independent proof that would justify a rare 5 on a no-MQ topic. So the score is a strong 4.",
-        "evidence": "ServiceNow expanded AI Control Tower in May 2026 to discover, observe, govern, secure, and measure AI across any system in the enterprise. A 2025 ServiceNow Enterprise Architecture Workspace result highlights product capabilities mapping and AI governance visibility. A 2024 ServiceNow architecture article discusses identity and access management on and with ServiceNow.",
+        "rationale": "ServiceNow is strong in traceability and governance, with AI Control Tower, identity governance, and governance tasking across platform changes and architecture. The evidence points to broad governance instrumentation, but this no-MQ topic still fits better at 4 than 5.",
+        "reasoning": "The May 2026 AI Control Tower expansion is highly relevant because it explicitly centers on discovering, observing, governing, securing, and measuring AI across systems. Supporting evidence also surfaced for identity and access governance patterns and for ensuring traceability between platform changes and approved governance actions. Enterprise Architecture Workspace material further suggests governance over technology landscapes and future-state planning, which broadens the scope beyond narrow compliance checklists. These are strong governance and traceability signals, but without a dedicated analyst anchor for the topic, the most defensible score is 4.",
+        "evidence": "ServiceNow expanded AI Control Tower in 2026 to discover, observe, govern, secure, and measure AI across enterprise systems. A ServiceNow Store listing for SkyControl says it includes governance tasks and schedules and ensures traceability between platform changes and approved governance tasks. ServiceNow community architecture content discusses identity and access management and governance capabilities.",
         "sources": [
           "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
-          "https://www.servicenow.com/community/enterprise-architecture-blog/zurich-enterprise-architecture-workspace-monitor-and-use-ai/ba-p/3332510",
-          "https://www.servicenow.com/community/architect-articles/identity-amp-access-management-on-with-servicenow/ta-p/2850542"
+          "https://store.servicenow.com/store/app/18dd1d7a4739721882f632c4f16d43b4",
+          "https://www.servicenow.com/community/architect-articles/identity-amp-access-management-on-with-servicenow/ta-p/2850542",
+          "https://www.servicenow.com/community/enterprise-architecture-blog/zurich-enterprise-architecture-workspace-monitor-and-use-ai/ba-p/3332510"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -694,29 +705,31 @@
       {
         "category": "Process Intelligence",
         "score": 4,
-        "rationale": "ServiceNow has strong and growing process intelligence maturity through process mining and task mining, with Gartner market presence and an acquisition to deepen capabilities. The evidence supports a robust offering, but it does not show direct leadership in the exact Gartner process intelligence category, so 4 is appropriate.",
-        "reasoning": "The Gartner results clearly show ServiceNow Process Mining exists as a reviewed product and is included in the Process Intelligence Platforms market. ServiceNow also announced the acquisition of UltimateSuite in late 2023 to enhance process mining and task mining on the Now Platform, which is strategically important product depth. These facts indicate a credible, enterprise-grade process intelligence offering, but the surfaced evidence does not establish that ServiceNow is a Leader in the direct Gartner Magic Quadrant/market leadership sense required for a 5. As a result, ServiceNow lands at a strong 4.",
-        "evidence": "Gartner has a specific review listing for 'ServiceNow Process Mining.' The Gartner process intelligence market page describes ServiceNow Process Mining as software to analyze and visualize business processes using digital-system data. ServiceNow announced in December 2023 that it would acquire UltimateSuite to enhance process mining and task mining on the Now Platform.",
+        "rationale": "ServiceNow has strong process intelligence maturity through a dedicated Process Mining product, task-mining expansion via UltimateSuite, and analyst visibility in Gartner’s process-intelligence market. The evidence is substantial, but direct leadership proof in a matching analyst report did not surface, so 4 is more appropriate than 5.",
+        "reasoning": "ServiceNow clearly has a real product here: its Process Mining materials describe using enterprise event logs to reveal bottlenecks, variations, and inefficiencies, and its docs reference automated business process flows from process-mining analysis. The 2023 UltimateSuite acquisition strengthens the task-mining side and shows strategic investment in expanding the process-intelligence stack. Gartner market and product-review results also confirm ServiceNow’s presence in the process-intelligence space, but the search results did not establish direct leader status in a matching Gartner/IDC/Forrester category. That combination points to a strong 4 rather than a market-leading 5.",
+        "evidence": "ServiceNow offers a dedicated Process Mining product that uses enterprise event-log data to show how processes actually run and reveal bottlenecks and variations. ServiceNow said its acquisition of UltimateSuite would enhance process mining and intelligent automation on the Now Platform. Gartner has both a process-intelligence market listing and a ServiceNow Process Mining product review page, confirming recognizable market presence.",
         "sources": [
+          "https://www.servicenow.com/products/process-mining.html",
+          "https://www.servicenow.com/docs/r/now-intelligence/process-mining/process-mining.html",
+          "https://newsroom.servicenow.com/press-releases/details/2023/ServiceNow-to-acquire-task-mining-company-UltimateSuite-to-enhance-process-mining-and-intelligent-automation-on-the-Now-Platform-12-18-2023-traffic/default.aspx",
           "https://www.gartner.com/reviews/product/servicenow-process-mining",
-          "https://www.gartner.com/reviews/market/process-intelligence-platforms",
-          "https://newsroom.servicenow.com/press-releases/details/2023/ServiceNow-to-acquire-task-mining-company-UltimateSuite-to-enhance-process-mining-and-intelligent-automation-on-the-Now-Platform-12-18-2023-traffic/default.aspx"
+          "https://www.gartner.com/reviews/market/process-intelligence-platforms"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Licensing & TCO",
-        "score": 2,
-        "rationale": "ServiceNow appears comparatively weak on licensing transparency and TCO clarity based on the surfaced evidence, which emphasizes app-level store listings and community questions rather than clear first-party platform pricing. The capability is not absent, but the packaging complexity implied by the results supports an emerging/basic score of 2.",
-        "reasoning": "This topic has no analyst MQ, so the assessment depends on packaging clarity and cost transparency. The search results returned first-party Store entries for TCO-related apps and a community question about licensing cost for Now Assist Agents, but no clean first-party ServiceNow pricing page with straightforward platform packaging for the core platform surfaced. That pattern suggests customers may need partner or sales-led interpretation for real TCO understanding, especially as AI add-ons evolve. Because there is some evidence of formal licensing constructs but limited transparency in the surfaced materials, 2 is more appropriate than 3.",
-        "evidence": "ServiceNow Store listings exist for 'Application Total Cost of Ownership (TCO)' and 'Total Cost of Ownership,' indicating supporting tools rather than straightforward platform pricing disclosure. A December 2025 ServiceNow community question asks about licensing cost for customers using Now Assist Agents. The search results did not surface a clear first-party ServiceNow platform pricing page for core licenses in this session.",
+        "score": 3,
+        "rationale": "ServiceNow’s licensing appears mature but relatively complex, with multiple license families, edition tiers, and feature-packaging changes in 2026. The evidence suggests adequate transparency for existing customers, but not unusually simple or low-TCO packaging.",
+        "reasoning": "The 2026 ServiceNow community articles provide concrete detail on AI-native licensing changes and ITSM tiering across Foundation, Advanced, and Prime, which shows the model is structured and documented. At the same time, the need for practical guides to explain licensing changes suggests real complexity in packaging and cost governance. The evidence therefore supports an adequate 3 rather than a strong 4: buyers can understand the model, but it is not especially lightweight or straightforward from a TCO perspective. This topic has no analyst-MQ anchor, so the ceiling is governed by the specifics of pricing clarity and packaging, not vendor scale.",
+        "evidence": "A June 2026 ServiceNow guide says the company shifted to AI-native licensing and frames the change as something admins and platform owners must manage operationally. A May 2026 ServiceNow article details ITSM licensing across Foundation, Advanced, and Prime editions and names included capabilities. Search results repeatedly describe ServiceNow pricing as role-based, subscription-based, and organized into multiple license families.",
         "sources": [
-          "https://store.servicenow.com/store/app/c5dd67a61b646a50a85b16db234bcbc6",
-          "https://store.servicenow.com/store/app/c76d63261b646a50a85b16db234bcbfe",
-          "https://www.servicenow.com/community/servicenow-ai-platform-forum/licensing-cost-for-customers-for-utilization-of-now-assist/m-p/3457002"
+          "https://www.servicenow.com/community/upgrades-and-patching-forum/servicenow-ai-native-licensing-in-2026-a-practical-guide-to/td-p/3565858",
+          "https://www.servicenow.com/community/itsm-articles/itsm-licensing-in-april-2026-foundation-advanced-and-prime-in/ta-p/3544380",
+          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -726,29 +739,30 @@
       {
         "category": "Industry applicability / business domain applicability",
         "score": 4,
-        "rationale": "ServiceNow shows broad industry applicability, with industry-solution messaging, partner-scale support, and analyst attention to an expanding portfolio. The evidence indicates wide business-domain relevance across enterprise workflows, though the snippets are broader than deep vertical proof, so 4 is the right ceiling here.",
-        "reasoning": "A recent ServiceNow Impact page snippet says customers can browse solutions for complex business challenges unique to their industry, which directly supports vertical applicability. Additional results from Everest Group and the partner ecosystem point to a broad portfolio spanning low-code tools, industry solutions, and embedded AI, backed by a large services network. That combination is strong evidence of horizontal and vertical adaptability, but the snippets do not enumerate multiple deep industry-specific products or customer references in enough detail to justify a rare 5 on a no-MQ topic. Therefore, ServiceNow scores 4.",
-        "evidence": "ServiceNow's Impact page says customers can browse solutions to solve business challenges unique to their industry. Everest Group's 2025 PEAK Matrix snippet says ServiceNow's expanding portfolio includes low-code tools, industry-specific solutions, and embedded generative and agentic AI. ServiceNow's partner program highlights a large ecosystem to help customers develop and integrate applications.",
+        "rationale": "ServiceNow has strong industry applicability, with dedicated industry-solution packaging and broad customer-story coverage across sectors. The breadth is clearly enterprise-ready, though the evidence also hints that some industries still have shallower solution messaging than others.",
+        "reasoning": "ServiceNow’s industries hub shows explicit industry-solution packaging rather than generic horizontal positioning, which is a good indicator of domain maturity. Its customer-stories page adds proof that the platform is applied across multiple industries in real deployments. At the same time, 2026 job postings for industry marketing note that several industries still have limited solution-level messaging, suggesting some unevenness in vertical depth. Because this topic has no analyst MQ and the evidence is strong but not indisputably category-defining across every vertical, 4 is the right score.",
+        "evidence": "ServiceNow has a dedicated industries page positioning industry solutions built with AI. ServiceNow’s customer stories page organizes references by industry, including sectors such as automotive and other verticals. A 2026 ServiceNow industry-marketing role notes that several industries have limited solution-level messaging today, implying breadth is real but not perfectly uniform.",
         "sources": [
-          "https://www.servicenow.com/legal/servicenow-impact.html",
-          "https://www.everestgrp.com/report/egr-2025-50-r-7754/",
-          "https://www.servicenow.com/partners.html"
+          "https://www.servicenow.com/industries.html",
+          "https://www.servicenow.com/customers.html",
+          "https://careers.servicenow.com/jobs/744000135542804/director-industry-marketing-defense/"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "high",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "ServiceNow demonstrates strong long-term value signals through sustained ecosystem investment, customer-outcome claims, and strategic AI partnerships. The evidence supports durability and continued platform investment, but on this no-MQ topic it is not sufficiently undisputed to exceed the default ceiling of 4.",
-        "reasoning": "The evidence here is recent and strategically relevant: ServiceNow's 2026 OpenAI collaboration deepens enterprise AI outcomes, while customer-outcomes and AI maturity materials report gains in engagement, time to value, and risk reduction. The company also surfaced explicit customer-success roles tied to delivering long-term value, which aligns with a mature enterprise-customer model. These are good indicators of ongoing investment and ecosystem durability, reinforced by financial-strength evidence from 2026 results. Because long-term value has no direct analyst anchor and the proof remains largely first-party, a 4 is the disciplined score.",
-        "evidence": "A January 2026 investor release says ServiceNow and OpenAI are collaborating to deepen and accelerate enterprise AI outcomes. A 2026 ServiceNow AI maturity white paper reports 88% increased customer engagement and retention, 87% accelerated time to value, and 84% reduced risks. A 2026 ServiceNow customer-success job posting explicitly references driving long-term value for both the customer and ServiceNow.",
+        "rationale": "ServiceNow shows strong long-term value through sustained roadmap investment, analyst visibility, and platform expansion into AI, automation, and industry workflows. The evidence supports durability and continued strategic investment, but this no-MQ topic still falls short of the extraordinary proof needed for 5.",
+        "reasoning": "The 2026 AI-native platform announcement and the continuous stream of platform, AI, and architecture updates show active roadmap investment rather than maintenance-only evolution. Community and enterprise-architecture content also suggest ServiceNow is reducing documentation overhead and continuously expanding workflow and AI capabilities, which supports long-run customer value. The company’s analyst-reports hub indicates ongoing visibility across multiple software categories, reinforcing market durability. This is a strong long-term-value profile, but the evidence remains directional and portfolio-based rather than an undisputed best-in-class proof on this exact no-MQ topic.",
+        "evidence": "ServiceNow’s April 2026 announcement says AI, data, security, and governance are now embedded across all ServiceNow offerings. A January 2026 ServiceNow article frames continuous value assessment as essential to long-term trust in AI. A May 2026 enterprise-architecture update highlights features meant to reduce the burden of producing and maintaining architecture documentation.",
         "sources": [
-          "https://investor.servicenow.com/news/news-details/2026/ServiceNow-and-OpenAI-collaborate-to-deepen-and-accelerate-enterprise-AI-outcomes/default.aspx",
-          "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/white-paper/wp-enterprise-ai-maturity-index-2026.pdf",
-          "https://careers.servicenow.com/jobs/744000126022639/customer-success-executive/"
+          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx",
+          "https://www.servicenow.com/community/ceg-ai-coe-articles/generative-ai-on-servicenow-why-value-is-a-continuous/ta-p/3474821",
+          "https://www.servicenow.com/community/enterprise-architecture-blog/what-s-new-in-enterprise-architecture-australia-and-q1-2026/ba-p/3536934",
+          "https://www.servicenow.com/company/analyst-reports.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -758,13 +772,13 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "ServiceNow is strong in business adaptability and agility thanks to its low-code workflow platform and unified AI/data/workflow architecture. It earns a 4 because the evidence shows broad configurability and workflow changeability, but this no-MQ topic does not have the undisputed proof needed for a 5.",
-        "reasoning": "The ServiceNow low-code page directly states that apps simplify approval workflows, data entry, and routine business functions, which is core evidence for adaptability. The platform page reinforces that ServiceNow unites AI, data, and workflows on a single cloud platform, an architectural trait that usually improves speed of change across business processes. These signals align with a mature enterprise low-code/workflow platform capable of supporting business agility. Still, the snippets returned were mostly first-party and broad rather than loaded with detailed customer-change metrics, so the score remains at 4.",
-        "evidence": "ServiceNow's low-code page says apps simplify approval workflows, data entry, and other routine business functions. ServiceNow's platform page says it unites AI, data, and workflows on a single cloud platform. A 2026 ServiceNow AI Platform announcement emphasizes enterprise-scale capabilities across automation and more agentic AI features.",
+        "rationale": "ServiceNow is strong on business adaptability and agility, with low-code workflow capabilities, AI-enabled change acceleration, and broad automation across business functions. The evidence supports enterprise configurability and change velocity, but not an exceptional 5 on this no-MQ topic.",
+        "reasoning": "ServiceNow’s workflow and low-code evidence, including Forrester low-code leadership material, shows the platform can support rapid process change rather than just static IT workflows. External coverage from Knowledge 2026 also explicitly ties ServiceNow to enterprise demands for speed and agility, which matches the topic well. Product breadth across AI, automation, and departmental workflows reinforces adaptability because customers can reconfigure multiple domains on one platform. Still, since this topic has no dedicated analyst MQ and the evidence is strong but not singularly category-defining, 4 is the disciplined score.",
+        "evidence": "ServiceNow has public Forrester-leader material for low-code platforms, with the report noting mature capabilities in both process automation and integration. Coverage of ServiceNow Knowledge 2026 says organizations are seeking speed and agility and highlights ServiceNow automation capabilities across business needs. ServiceNow’s workflow automation materials describe automating business processes as digital workflows across the enterprise.",
         "sources": [
-          "https://www.servicenow.com/workflows/creator-workflows/what-is-low-code.html",
-          "https://www.servicenow.com/platform.html",
-          "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx"
+          "https://www.servicenow.com/workflow/app-development/forrester-leader-low-code-platforms.html",
+          "https://biztechmagazine.com/article/2026/05/servicenow-knowledge-2026-enterprises-look-fast-track-automation",
+          "https://www.servicenow.com/platform/workflow-automation.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
