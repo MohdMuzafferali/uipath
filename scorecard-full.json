@@ -287,13 +287,14 @@
       {
         "category": "Security & Compliance",
         "score": 4,
-        "rationale": "Appian shows strong enterprise-grade security and compliance maturity through certified cloud controls, HIPAA-aligned compliance materials, and AI-specific security guidance. The evidence supports a broad, production-ready capability, though this topic has no dedicated analyst MQ anchor and therefore does not justify a 5.",
-        "reasoning": "Appian publishes a trust/compliance page stating Appian Cloud is compliant with HIPAA security requirements, and its security page highlights monitoring, encryption, and Appian Protect offerings. Appian's 26.7 documentation also says its AI capabilities operate within Appian's certified cloud and are designed to meet enterprise security and compliance requirements. That combination indicates mature controls spanning platform, cloud operations, and AI usage rather than a narrow feature claim. Because Security & Compliance has no direct analyst category and the evidence is largely first-party trust material rather than independent assessment, 4 is the right ceiling-aligned score.",
-        "evidence": "Appian documentation says its AI capabilities are designed to meet enterprise security and compliance requirements and operate within Appian's certified cloud. Appian Cloud compliance materials state the service is compliant with HIPAA security requirements for securely processing and storing protected health information. Appian's security page highlights Appian Protect offerings for security monitoring and encryption.",
+        "rationale": "Appian shows strong enterprise-grade security and compliance maturity with certified cloud controls, HIPAA support, and tiered Appian Protect offerings. The evidence supports a robust, production-proven capability, but this topic has no dedicated analyst MQ and the available evidence is primarily first-party, so 4 is the appropriate ceiling.",
+        "reasoning": "Appian’s own trust and documentation pages show enterprise security depth rather than superficial checkbox claims: Appian AI features are stated to operate within Appian’s certified cloud, and Appian Cloud is explicitly described as compliant with HIPAA security requirements. The Appian Protect announcement and security page indicate layered monitoring, encryption, and premium security tiers, which suggests mature operational security packaging for regulated deployments. Because Security & Compliance has no dedicated analyst MQ in the scoring framework, the ceiling is normally 4 unless there is truly exceptional undisputed outside validation. The combination of recent first-party documentation and trust materials supports a strong score, but not a 5.",
+        "evidence": "Appian documentation says its AI capabilities are designed to meet enterprise security and compliance requirements and operate within Appian's certified cloud. Appian Cloud compliance materials state that Appian Cloud is compliant with HIPAA security requirements. Appian Protect security materials describe strong security out of the box, premium-tier advanced security features, and encryption/data protections. Appian announced tiered Appian Protect offerings that provide heightened security and compliance capabilities aligned to different security postures.",
         "sources": [
           "https://docs.appian.com/suite/help/26.7/security-compliance.html",
           "https://appian.com/support/resources/trust/compliance",
-          "https://appian.com/support/resources/trust/security"
+          "https://appian.com/support/resources/trust/security",
+          "https://investors.appian.com/news-releases/news-release-details/new-appian-protect-security-offerings-deliver-enhanced"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -303,29 +304,13 @@
       {
         "category": "Deployment & Operations",
         "score": 4,
-        "rationale": "Appian demonstrates strong deployment and operational maturity with current system requirements, hotfix cadence, and operational health-check evidence. The platform appears enterprise-proven across managed and self-managed operations, with only minor visibility gaps from search snippets preventing a stronger claim.",
-        "reasoning": "The 26.7 system requirements page shows Appian maintains detailed deployment guidance and sizing practices, including use of a sizing script with sample and production data. Its hotfix page shows active 2026 maintenance releases and security updates, which is a practical indicator of operational discipline. Search results also reference startup health-check role creation on Windows server, reinforcing platform operations depth rather than just marketing language. This topic has no dedicated analyst MQ, so the score rests on documentation depth and operational upkeep; that supports a strong 4.",
-        "evidence": "Appian's system requirements documentation instructs customers to use a sizing script with sample data in development and real data before production deployment. Appian's hotfix documentation lists 2026 releases and security updates, indicating an active operational maintenance cadence. Hotfix notes mention increased attempts to create the health check role on Windows server startup, evidencing operational monitoring detail.",
+        "rationale": "Appian has strong deployment and operational maturity, reflected in native release management, frequent release-note evidence, and support for different deployment models including self-managed limitations. Its 2026 release cadence and admin-focused deployment controls indicate a well-developed operational platform.",
+        "reasoning": "The clearest recent evidence is Appian’s June 2026 launch of native release management, which directly addresses a core deployment-and-operations requirement and is described as admin-toggle-enabled with deployment-wide applicability. Release notes further support operational depth and continuous platform evolution rather than a static deployment model. The pricing page snippet also implies differentiated functionality between cloud and self-managed deployments, which is useful evidence that Appian supports multiple operating models, though with some feature tradeoffs. Since this topic has no dedicated analyst MQ, the evidence supports a strong enterprise-ready operational capability but not a 5.",
+        "evidence": "Appian introduced native release management in June 2026, enabled by an administrator through the Admin console for deployments containing supported objects. Appian maintains current release notes that reference deployment capability changes and deprecated-feature transition guidance. Appian pricing materials indicate some features may have limited functionality in self-managed deployments, implying both cloud and self-managed operational models.",
         "sources": [
-          "https://docs.appian.com/suite/help/26.7/System_Requirements.html",
-          "https://docs.appian.com/suite/help/24.3/Hotfixes.html",
-          "https://appian.com/blog/2026/q2-product-highlights"
-        ],
-        "evidenceType": "Paraphrase",
-        "confidence": "medium",
-        "notes": "",
-        "questions": ""
-      },
-      {
-        "category": "Scalability & Reliability",
-        "score": 4,
-        "rationale": "Appian has strong evidence of enterprise scalability and reliability, including dedicated cloud scalability materials and documented performance/reliability improvements in current releases. The capability appears mature and production-grade, but this no-MQ topic lacks independent analyst anchoring for a 5.",
-        "reasoning": "Appian maintains a dedicated cloud scalability page describing reliability and scale as core platform strengths, which is more substantive than a generic homepage claim. Its current RPA release notes cite improved backend server startup processes for reliability, and system requirements document scaling and sizing practices for production use. Appian also surfaces this topic in an enterprise cloud session explicitly focused on security, scalability, and reliability, suggesting it is a recurring enterprise concern rather than a one-off feature. Taken together, the evidence supports strong operational scale and resilience, but not an exceptional 5 under the no-MQ ceiling rule.",
-        "evidence": "Appian's trust materials say the platform is known for reliability and scale and provide a dedicated Appian Cloud scalability page. Appian RPA 26.7 release notes mention improved backend server startup processes for reliability. Appian system requirements documentation directs customers to use sizing scripts and real data for production capacity planning.",
-        "sources": [
-          "https://appian.com/support/resources/trust/scalability",
-          "https://docs.appian.com/suite/help/26.7/rpa-9.22/whats-new.html",
-          "https://docs.appian.com/suite/help/26.7/System_Requirements.html"
+          "https://appian.com/blog/pm/appian-releases-native-release-management",
+          "https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html",
+          "https://appian.com/products/pricing"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -333,16 +318,32 @@
         "questions": ""
       },
       {
+        "category": "Scalability & Reliability",
+        "score": 4,
+        "rationale": "Appian demonstrates strong scalability and reliability through dedicated Appian Cloud scalability messaging and documentation aimed at mission-critical enterprise workloads. The capability appears mature and enterprise-proven, but the evidence set is mostly first-party and this topic has no analyst MQ anchor.",
+        "reasoning": "Appian’s trust resource explicitly says customers can scale Appian Cloud across the enterprise and expand capacity without sacrificing reliability, which is a direct fit for this topic. Supporting documentation around secure, scalable deployment options in Appian solution docs reinforces that scalability is designed into the platform architecture rather than treated as an afterthought. The evidence does not surface a named external SLA benchmark or third-party reliability ranking in the results reviewed, so the score should remain at 4 rather than stretch to 5. This is strong, credible enterprise infrastructure evidence with good topical alignment.",
+        "evidence": "Appian Cloud scalability materials state customers can reliably scale Appian across the enterprise and expand capacity as needed without sacrificing reliability. Appian documentation for packaged government solutions references secure, scalable deployment and configuration options. System and platform materials indicate hardware/capability-tier requirements for larger data sync scenarios, suggesting operational planning for scale.",
+        "sources": [
+          "https://appian.com/support/resources/trust/scalability",
+          "https://docs.appian.com/suite/help/26.6/gcm-26.3.3.8/gcm-appian-government-clause-automation.html",
+          "https://docs.appian.com/suite/help/26.7/System_Requirements.html"
+        ],
+        "evidenceType": "Paraphrase",
+        "confidence": "medium",
+        "notes": "",
+        "questions": ""
+      },
+      {
         "category": "Connectivity & Integration",
         "score": 3,
-        "rationale": "Appian has credible integration capabilities with API connectivity, cloud database integrations, OAuth support, and AI-agent connectivity, but the evidence does not show direct leadership in an integration-specific analyst market. That places Appian at an adequate, enterprise-usable level rather than best-in-class integration maturity on this topic.",
-        "reasoning": "Appian's Q2 2026 product highlights say MCP provides instant bi-directional connectivity for Appian and third-party AI agents, which is a contemporary integration signal. Product and docs results also show specific AWS PrivateLink, Microsoft Azure database integration, and OAuth 2.0 connected-system support. However, the analyst searches did not surface Appian as a Leader in a direct-match iPaaS or API management report; the strongest nearby signals were BOAT and DPA, which are adjacent rather than direct for this topic. That combination supports a solid 3: credible breadth for core enterprise integrations, but without the evidence needed for a 4 or 5 in connectivity as its own category.",
-        "evidence": "Appian's Q2 2026 product highlights say MCP provides instant, bi-directional connectivity for Appian and third-party AI agents. Appian documentation includes AWS PrivateLink integration for Appian Cloud external connectivity. Appian documentation describes Microsoft Azure database integration with Appian Cloud. Appian knowledge-base material references OAuth 2.0 client credentials grant connected systems.",
+        "rationale": "Appian has credible, practical integration capability with API connectivity, external document-store sync, and Appian Cloud external connectivity options. However, the research did not surface direct-match analyst leadership in iPaaS or API management, so the evidence supports adequate-to-strong functionality but not top-tier market leadership for this specific topic.",
+        "reasoning": "Product evidence is solid: Appian’s 2026 product updates mention external document store integration, and Appian Cloud documentation details connectivity options such as Dynamic VPN Routing, AWS PrivateLink Integration, and Cloud Secure Link. Appian’s API integration page and Gartner Peer Insights snippet also point to broad integration via REST, SOAP, databases, and RPA components. That said, the analyst signals surfaced were mostly in adjacent areas such as low-code and BOAT, not a direct Gartner iPaaS or API Management leadership category required for a non-UiPath 5. On balance, this is a credible enterprise integration capability with some breadth, but the available evidence is better calibrated to a 3 than a 4 because the results emphasize platform integration enablement rather than leadership in integration as a market of its own.",
+        "evidence": "Appian's 2026 Q1 product highlights mention external document store integration that syncs external document-system metadata into Appian. Appian Cloud external connectivity documentation lists Dynamic VPN Routing, AWS PrivateLink Integration, and Cloud Secure Link. Gartner Peer Insights snippet says Appian integrates with external systems via REST APIs, SOAP services, databases, and RPA components. Appian's API integration page describes modular, reusable API connections to enterprise systems.",
         "sources": [
-          "https://appian.com/blog/2026/q2-product-highlights",
-          "https://docs.appian.com/suite/help/26.7/AWS-PrivateLink_Integration.html",
-          "https://docs.appian.com/suite/help/26.7/Microsoft_Azure_DB_Integration_Appian_Cloud.html",
-          "https://community.appian.com/support/w/kb/3761/kb-2367-oauth-2-0-client-credentials-grant-connected-system-shows-errors-despite-successful-connection"
+          "https://appian.com/blog/2026/q1-release-highlights",
+          "https://docs.appian.com/suite/help/26.7/Appian_cloud_external_connectivity.html",
+          "https://www.gartner.com/reviews/product/appian-platform",
+          "https://appian.com/products/platform/process-automation/api-integration"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -352,14 +353,14 @@
       {
         "category": "Time-to-Value & User Experience",
         "score": 5,
-        "rationale": "Appian scores as best-in-class here because it has direct-match analyst leadership in Enterprise Low-Code Application Platforms, the category mapped to this topic. Recent product evidence around AI-assisted development and accessibility further supports rapid delivery and usable enterprise experiences.",
-        "reasoning": "The analyst-category search surfaced Appian's 2023 statement that it was a Leader in Gartner's Magic Quadrant for Enterprise Low-Code Application Platforms, which is a direct match for this topic under the scoring model. Additional 2026 product evidence shows AI-augmented development with dev agents and release-highlights citing direct AI editing, multi-file requirements upload, and enhanced performance and scalability. Appian also publishes an accessibility conformance report, which is relevant to enterprise UX quality. Because direct-match Gartner leadership requires a 5 absent contradicting evidence, and none was found, this must score 5.",
-        "evidence": "Appian states it was a Leader in the Gartner Magic Quadrant for Enterprise Low-Code Application Platforms, the direct analyst category mapped to this topic. Appian's Q1 2026 product highlights mention direct AI editing, multi-file requirements upload, and enhanced performance and scalability. Appian provides an accessibility conformance report covering product evaluation against accessibility criteria. Appian offers Appian World 2026 content focused on AI-augmented development with dev agents.",
+        "rationale": "Appian qualifies as best-in-class on this topic because the research surfaced direct-match analyst leadership in the Gartner Magic Quadrant for Enterprise Low-Code Application Platforms, which maps directly to time-to-value and user experience. Its low-code and AI-assisted development evidence reinforces that leadership with product depth focused on fast delivery and usable design.",
+        "reasoning": "The scoring framework maps this topic to Enterprise Low-Code Application Platforms, and the search results directly surfaced Appian as a Leader in that Gartner Magic Quadrant. Under the analyst leadership rule, a direct-match MQ Leader warrants a 5 unless there is contradicting evidence, and none was found. Product evidence also aligns: Appian’s low-code platform emphasizes visual app design, and 2026 release content highlights Composer, AI-assisted editing, and multi-file requirements upload that should reduce build time. Because both direct-match analyst recognition and current feature evidence point the same way, this is one of the clearest 5s in the set.",
+        "evidence": "Search results state Appian was a Leader in the Gartner Magic Quadrant for Enterprise Low-Code Application Platforms. Appian's low-code platform page says it empowers pro and citizen developers with visual and intuitive low-code application design capabilities. Appian's 2026 Q1 release highlights say Composer generates complete application plans from requirements documents and notes, and adds direct AI editing and multi-file requirements upload.",
         "sources": [
-          "https://appian.com/blog/2023/gartner-magic-quadrant-lcap-and-critical-capabilities-2023",
-          "https://appian.com/blog/2026/q1-release-highlights",
-          "https://appian.com/legal/accessibility-conformance-report-vpat-508",
-          "https://appian.com/learn/events/event-videos/appian-world-2026/ai-augmented-development-with-dev-agents"
+          "https://investors.appian.com/news-releases/news-release-details/appian-named-leader-2024-gartnerr-magic-quadranttm-process",
+          "https://www.gartner.com/reviews/market/enterprise-low-code-application-platform",
+          "https://appian.com/products/platform/low-code",
+          "https://appian.com/blog/2026/q1-release-highlights"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -369,14 +370,14 @@
       {
         "category": "Agentic Capabilities",
         "score": 4,
-        "rationale": "Appian has a strong, recent agentic offering with AI agents, Agent Studio, dev agents, and agentic automation announcements, but the analyst evidence found is adjacent rather than a direct-match agent-platform leadership category. Under the strict non-UiPath rule for 5s, that caps the score at 4.",
-        "reasoning": "Appian's AI Agents page says customers can build, govern, and orchestrate enterprise-grade AI agents with Agent Studio in one platform. Its April 2026 press release explicitly announces new capabilities in agentic automation and AI-assisted spec-driven development, while Appian World 2026 content highlights AI-augmented development with dev agents. Gartner BOAT language and Appian's BOAT-related materials mention agentic features, which is a strong adjacent signal but not a direct analyst category specifically for agentic AI platforms or agent orchestration. Because the best analyst recognition surfaced is adjacent rather than direct-match, Appian is strong but capped at 4.",
-        "evidence": "Appian's AI Agents page says Agent Studio lets users build, govern, and orchestrate enterprise-grade AI agents in one platform. Appian's April 2026 announcement says new capabilities in agentic automation and AI-assisted spec-driven development transform complex work. Appian World 2026 includes a session on AI-augmented development with dev agents. Appian's BOAT materials say the platform unifies process orchestration, connectivity, and agentic features.",
+        "rationale": "Appian has moved beyond basic AI features into enterprise-grade agentic automation with Agent Studio, orchestration, and governance capabilities. The offering looks strong and recent, but the analyst evidence surfaced was adjacent through BOAT and low-code/AI categories rather than a clean direct-match agentic analyst category, so the score is capped at 4.",
+        "reasoning": "Appian’s AI agents page explicitly says customers can build, govern, and orchestrate AI agents in Agent Studio, which is direct product evidence for this topic. Recent 2025-2026 releases also emphasize agentic automation, AI-assisted development, and process insights via the MCP Server, showing current investment rather than stale experimentation. Analyst-adjacent evidence exists: BOAT coverage references agentic features and Appian’s 2025 BOAT leadership is a strong supporting signal, but BOAT is broader than pure agentic capability and therefore does not justify a 5 for a non-UiPath vendor under the strict direct-match rule. That leaves Appian as strong, recent, and enterprise-oriented here, but not analyst-anchored enough for best-in-class.",
+        "evidence": "Appian's AI Agents page says customers can build, govern, and orchestrate enterprise-grade AI agents in Agent Studio. Appian's April 2026 announcement says new capabilities in agentic automation and AI-assisted spec-driven development transform complex work. Appian's November 2025 press release says it launched new AI capabilities to automate complex work and accelerate application modernization. Appian release notes say process insights capabilities were added to the Appian MCP Server, enabling questions such as how long cases are taking.",
         "sources": [
           "https://appian.com/products/platform/artificial-intelligence/ai-agents",
-          "https://appian.com/about/explore/press-releases/2026/appian-advances-ai-in-process-to-deliver-enterprise-outcomes-at-scale",
-          "https://appian.com/learn/events/event-videos/appian-world-2026/ai-augmented-development-with-dev-agents",
-          "https://appian.com/blog/2025/gartner-magic-quadrant-boat-appian-is-a-leader"
+          "https://investors.appian.com/news-releases/news-release-details/appian-advances-ai-process-deliver-enterprise-outcomes-scale",
+          "https://appian.com/about/explore/press-releases/2025/appian-launches-new-ai-capabilities-to-automate-complex-work",
+          "https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -386,14 +387,14 @@
       {
         "category": "BPM & Orchestration",
         "score": 5,
-        "rationale": "Appian is best-in-class on BPM & Orchestration because direct-match analyst evidence shows it as a Leader in the Gartner Magic Quadrant for Business Orchestration and Automation Technologies. Product and analyst materials consistently position Appian around unified process orchestration and enterprise automation.",
-        "reasoning": "The Gartner BOAT search returned Appian's October 2025 announcement that it was named a Leader in the inaugural Gartner Magic Quadrant for Business Orchestration and Automation Technologies, which is the direct mapped category for this topic. A Forrester Wave page also says Appian was named a leader in Digital Process Automation Software, which is additional direct thematic support. Appian's own site and recent content center process orchestration as a core platform value proposition, reinforcing that this is not an incidental capability. Under the analyst leadership rule, the direct-match Gartner Leader evidence requires a 5.",
-        "evidence": "Appian announced it was named a Leader in the 2025 Gartner Magic Quadrant for Business Orchestration and Automation Technologies. Appian's Forrester Wave page says Forrester named Appian a leader in Digital Process Automation Software. Appian's homepage describes the company as AI-powered process orchestration across the enterprise. Recent Appian content highlights impact with AI and process orchestration.",
+        "rationale": "Appian is best-in-class on BPM & Orchestration because the research surfaced direct-match leadership in the 2025 Gartner Magic Quadrant for Business Orchestration and Automation Technologies and in the 2025 Forrester Wave for Digital Process Automation. That combination, alongside Appian’s longstanding BPM product depth, squarely meets the rubric for a 5.",
+        "reasoning": "This is the strongest topic in the set from an analyst-evidence standpoint. The results explicitly show Appian named as a Leader in Gartner’s inaugural BOAT Magic Quadrant, which directly matches the topic per the topic-to-analyst mapping. Separate results also show Appian as a Leader in the 2025 Forrester Wave for Digital Process Automation, a second direct market signal that reinforces the score rather than serving as adjacent evidence. With direct-match analyst leadership plus Appian’s BPM product page emphasizing workflow, governance, and continuous process improvement, a 5 is required by the rubric.",
+        "evidence": "Appian's analyst-report page and press release state Appian is a Leader in the 2025 Gartner Magic Quadrant for Business Orchestration and Automation Technologies. The BOAT press release quotes Gartner's definition that BOAT platforms unify process orchestration, connectivity, and agentic features. Appian's Forrester Wave report page says Appian was named a leader in the Q3 2025 Digital Process Automation evaluation. Appian's BPM product page says its BPM capabilities help customers build workflows, enhance governance, increase efficiency, and continuously improve processes.",
         "sources": [
+          "https://appian.com/resources/analyst-reports/gartner-boat-magic-quadrant",
           "https://appian.com/about/explore/press-releases/2025/appian-is-named-a-leader-in-inaugural-gartner-magic-quadrant-for-business-orchestration-and-automation-technologies",
           "https://appian.com/resources/analyst-reports/forrester-wave-digital-process-automation",
-          "https://appian.com/about/explore/press-releases/2026/appian-congratulates-2026-partner-award-winners",
-          "https://appian.com/"
+          "https://appian.com/products/platform/process-automation/business-process-management-bpm"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -403,13 +404,13 @@
       {
         "category": "Testing & Evaluation (Functional + Performance)",
         "score": 2,
-        "rationale": "Appian has some testing and performance tooling for its low-code development lifecycle, but the evidence does not indicate a mature standalone functional-and-performance testing platform or direct analyst recognition in the mapped testing categories. This looks emerging/basic rather than comprehensive enterprise testing leadership.",
-        "reasoning": "Current evidence shows Appian has DevOps and testing content and interface performance instrumentation, including a performance view that exposes function and query evaluation details. Appian's accessibility conformance report also references product evaluation using automated tools and manual testing with assistive technologies. However, searches did not surface direct leadership or even a clear product position in AI-augmented software testing or cloud testing vendor assessments, and the visible evidence is more about platform engineering and app performance than broad test automation depth. That warrants a 2 rather than a 1 because credible capability exists, but meaningful scope gaps remain on this topic.",
-        "evidence": "Appian's DevOps and Testing page says DevOps and low-code share the goal of delivering better software to users quickly. Appian documentation includes a Performance View with function and query evaluation timing details for design objects and interfaces. Appian's accessibility conformance report says the product was evaluated using automated tools and manual testing with assistive technologies.",
+        "rationale": "The search results did not surface a dedicated Appian testing product or direct analyst coverage in AI-augmented software testing or cloud testing. There is some adjacent evidence around accessibility and system logging, but not enough to show a mature standalone testing capability, so this lands as emerging/basic rather than unsupported.",
+        "reasoning": "I ran direct testing-oriented searches plus Gartner and IDC category searches, and the results stayed mostly adjacent: accessibility conformance, system logs, low-code development guidance, and general platform pages. That is not evidence of a full-featured testing suite on par with vendors recognized in software testing analyst categories. At the same time, the presence of functional performance statements in the VPAT and performance-related system logs shows some real but limited support around evaluation and platform performance rather than complete absence. Because there is thin, differently labeled evidence instead of strong product proof, 2 is the better fit than 1.",
+        "evidence": "Appian's accessibility conformance report includes Functional Performance Statements and product accessibility features such as extending the user session. Appian system logs documentation provides performance measurements on reporting functionality and metrics tied to long evaluation times and memory usage. An Appian low-code guide snippet mentions AI tools that provide design suggestions and generate testing, but the results did not surface a dedicated testing product or testing analyst recognition.",
         "sources": [
-          "https://appian.com/products/platform/total-experience/devops-and-testing",
-          "https://docs.appian.com/suite/help/26.6/Performance_View.html",
-          "https://appian.com/legal/accessibility-conformance-report-vpat-508"
+          "https://appian.com/legal/accessibility-conformance-report-vpat-508",
+          "https://docs.appian.com/suite/help/26.7/Logging.html",
+          "https://appian.com/blog/acp/low-code/comprehensive-guide-low-code-development"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -419,12 +420,13 @@
       {
         "category": "Monitoring & Observability",
         "score": 3,
-        "rationale": "Appian provides credible monitoring capabilities for applications and process execution, but the evidence points to platform monitoring rather than a full observability-suite leadership position. The lack of direct-match observability analyst evidence keeps it at an adequate 3.",
-        "reasoning": "Appian's monitoring-applications documentation explicitly says it describes areas in Appian applications that can be monitored and the tools available to support monitoring goals. Community results also reference process monitor visibility into execution paths and variable values, which is useful for operational observability inside workflows. Appian additionally publishes business observability thought leadership, but the analyst-category search for observability platforms did not surface Appian as a leader in that direct market. This indicates workable in-platform monitoring, but not the breadth expected of top observability platforms, so a 3 fits best.",
-        "evidence": "Appian documentation states it provides tools and monitored areas to support application monitoring goals. An Appian community discussion notes that Appian's process monitor lets users see execution paths and variable values. Appian published guidance on implementing better business observability using real-time data monitoring.",
+        "rationale": "Appian has credible internal monitoring and observability support through process monitors, application monitoring, system-resource guidance, and business observability content. However, the evidence points to adequate platform observability rather than leadership in an observability-platform market.",
+        "reasoning": "Appian documentation directly addresses monitoring applications and system resources, which is a strong fit for the operational half of this topic. Community evidence also shows users relying on Appian’s process monitor for flow and subprocess visibility, indicating the capability is real in practice rather than merely marketed. At the same time, the analyst-category search did not surface Appian as a leader in Gartner’s Observability Platforms category, which would be expected for a 5 in this topic area. The result is an adequate and practical observability posture, but not one evidenced as a market-leading observability platform.",
+        "evidence": "Appian documentation says it is important to monitor system resources and ensure sufficient capacity, indicating built-in operational monitoring guidance. A 2025 Appian Community thread says Appian's process monitor allows users to see flow behavior across orchestrator and subprocess flows. Appian's AI page asks what monitoring or analytics are available for AI performance and ROI, indicating platform-level monitoring constructs. Appian's 2024 business observability article focuses on real-time data monitoring for process management.",
         "sources": [
           "https://docs.appian.com/suite/help/26.6/monitoring-applications.html",
           "https://community.appian.com/process-modeling-15/how-to-enable-early-error-detection-and-observability-in-orchestrator-and-subprocess-flows-14807",
+          "https://appian.com/products/platform/artificial-intelligence",
           "https://appian.com/blog/acp/process-mining/improve-business-observability-steps"
         ],
         "evidenceType": "Paraphrase",
@@ -435,12 +437,13 @@
       {
         "category": "Traceability & Governance",
         "score": 4,
-        "rationale": "Appian demonstrates strong governance and traceability, especially around AI actions and process/data lineage, with evidence of fully traceable AI usage and broader governance messaging. This is a mature enterprise capability, though the topic lacks a dedicated analyst category for a 5.",
-        "reasoning": "Appian's AI product page directly addresses governance controls over AI actions and says AI in Appian is fully traceable, showing when and why actions occurred. A 2022 release announcement also emphasized traceability of processes and data through Appian Portals, which aligns with the platform's long-standing auditability position. Community/app-market content further reinforces governance as a practical operational issue in correspondence and review workflows. Since this topic has no dedicated MQ and the evidence is primarily first-party, Appian lands at a strong 4 rather than a market-defining 5.",
-        "evidence": "Appian's AI platform page says it provides governance controls over AI actions. The same Appian AI page says AI in Appian is fully traceable, showing when and why actions occurred. Appian's 2022 platform release announcement said Appian Portals inherited platform security and the traceability of processes and data.",
+        "rationale": "Appian appears strong on traceability and governance through audit-oriented process/data traceability, AI governance controls, and newer native release-management capabilities. The evidence supports broad governance maturity, though the topic lacks a dedicated analyst category and the support is mainly first-party.",
+        "reasoning": "Traceability is explicitly surfaced in older but still relevant Appian messaging about process and data traceability, while more recent evidence shows governance controls for AI actions and native release management that should improve deployment traceability. This mix suggests Appian treats governance as a platform concern spanning AI, releases, and regulated workflows. I excluded competitor comparison pages from the score even though they appeared in search results, so the judgment rests on first-party topic-aligned evidence. Given the no-MQ structure of this topic, Appian’s breadth and recency support a 4.",
+        "evidence": "Appian's AI platform page explicitly references governance controls over AI actions. Appian's 2022 release announcement says Appian Portals inherits the traceability of Appian processes and data. Appian's June 2026 native release management announcement says the feature helps teams deploy faster and with fewer issues, supporting change governance and release traceability. Appian Community's Correspondence Center listing describes governance-risk and compliance-gap reduction features for handling correspondence.",
         "sources": [
           "https://appian.com/products/platform/artificial-intelligence",
           "https://investors.appian.com/news-releases/news-release-details/latest-version-appian-low-code-platform-now-available-0",
+          "https://appian.com/blog/pm/appian-releases-native-release-management",
           "https://community.appian.com/b/appmarket/posts/correspondence-center"
         ],
         "evidenceType": "Paraphrase",
@@ -451,12 +454,13 @@
       {
         "category": "Process Intelligence",
         "score": 5,
-        "rationale": "Appian is best-in-class on Process Intelligence because direct-match analyst evidence shows it as a Leader in the Gartner Magic Quadrant for Process Mining Platforms, the mapped category for this topic. Product evidence around Process HQ and end-to-end optimization supports the leadership signal.",
-        "reasoning": "The Gartner process-mining search returned Appian's May 2024 announcement that it was named a Leader in the Gartner Magic Quadrant for Process Mining Platforms, which directly matches this topic. Appian's Process Intelligence product page says Process HQ measures and monitors process performance and key business insights with AI and data fabric, showing concrete product depth behind the analyst status. Gartner's process intelligence market page also describes the category in terms including process and task mining, modeling, analysis, alerting, and SLA tracking, aligning closely with the capabilities Appian markets. Under the analyst leadership rule, the direct-match Gartner Leader status requires a 5.",
-        "evidence": "Appian announced it was named a Leader in the 2024 Gartner Magic Quadrant for Process Mining Platforms. Appian says Process HQ measures and monitors process performance and key business insights with AI and data fabric. Gartner's process intelligence platform market description includes process and task mining, modeling, analysis, alerting, and SLA tracking as core category capabilities.",
+        "rationale": "Appian is best-in-class on Process Intelligence because the evidence surfaced direct-match leadership in the Gartner Magic Quadrant for Process Mining Platforms, which maps directly to this topic. Appian also supports the score with product evidence around Process HQ, process mining, and process intelligence workflows.",
+        "reasoning": "This topic has clean direct-match analyst evidence: Appian’s product and press results state it was named a Leader in the 2024 Gartner Magic Quadrant for Process Mining Platforms. Under the analyst leadership rule, that direct-match leadership is sufficient for a 5 absent contradicting evidence, and none appeared in the search results. Product materials reinforce the fit by describing Process HQ as Appian’s process intelligence tool using data fabric and process mining, and the Gartner market page describes the expected capability set such as advanced analysis and SLA tracking. With both analyst recognition and substantive product depth, 5 is the correct absolute maturity score.",
+        "evidence": "Appian's process intelligence product page says Appian is recognized as a leader in the Gartner Magic Quadrant for Process Mining Platforms. Appian's May 2024 press release says Gartner defines process mining platforms as tools that deliver visibility and insights to innovation leaders. Appian's Process HQ session describes the tool as using data fabric, process mining, and related capabilities to turn data into actionable insight. A Gartner market page for process intelligence platforms lists capabilities such as process/task mining, advanced analysis, alerting, and SLA tracking, aligning with Appian's positioning in this space.",
         "sources": [
-          "https://investors.appian.com/news-releases/news-release-details/appian-named-leader-2024-gartnerr-magic-quadranttm-process",
           "https://appian.com/products/platform/process-intelligence",
+          "https://investors.appian.com/news-releases/news-release-details/appian-named-leader-2024-gartnerr-magic-quadranttm-process",
+          "https://appian.com/learn/events/event-videos/appian-world-2025/transforming-data-into-actionable-insight-with-process-intelligence",
           "https://www.gartner.com/reviews/market/process-intelligence-platforms"
         ],
         "evidenceType": "Paraphrase",
@@ -467,30 +471,29 @@
       {
         "category": "Licensing & TCO",
         "score": 2,
-        "rationale": "Appian appears relatively weak on licensing transparency and TCO clarity in the evidence surfaced here. While value-oriented messaging exists, publicly visible, first-party pricing detail is limited and outside sources repeatedly frame Appian as comparatively expensive.",
-        "reasoning": "This topic has no analyst MQ and must be judged on packaging and pricing transparency. The search results surfaced Appian's pricing page, but the snippet is sparse and does not show straightforward public pricing detail; it mainly notes some deployment-related feature limitations. A 2025 Appian banking-ops post discusses reducing total cost of ownership and licensing/support costs through automation outcomes, which supports value claims but not transparent packaging. Because the visible evidence points to value messaging more than clear, customer-friendly pricing transparency, Appian scores 2 rather than 3 or 4.",
-        "evidence": "Appian has a pricing page, but the surfaced snippet does not show simple public list pricing and instead references deployment-related feature availability. A 2025 Appian blog post on banking operations says AI-driven automation can reduce total cost of ownership as well as licensing and support costs. Appian's system requirements page references hardware and licensing requirements for syncing 20 million or more rows, indicating licensing can be tied to scale and architecture considerations.",
+        "rationale": "Appian’s Licensing & TCO picture is relatively opaque in the search results: there is an official pricing page, but much of the surfaced discussion around TCO comes from disallowed third-party pricing-benchmark content rather than clear first-party packaging detail. That supports an emerging/basic score for transparency rather than a stronger score for mature, buyer-friendly licensing clarity.",
+        "reasoning": "This topic is specifically about pricing transparency and packaging, not broader platform strength. The official pricing page was surfaced, but the snippet mostly notes that some features may be limited in self-managed deployments and does not provide much concrete pricing transparency in the available result summary. Most other search results were consultancy or pricing-benchmark sites that are explicitly disallowed as sources, so I did not use them. Because the citable, first-party evidence on packaging/TCO clarity is thin, the score should be kept low rather than inferred upward from Appian’s overall product maturity.",
+        "evidence": "Appian's pricing page indicates some features may not be available or may have limited functionality in self-managed deployments. The available official search-result evidence provided limited first-party detail on transparent price structure in the snippet, making TCO assessment less clear than other topics.",
         "sources": [
           "https://appian.com/products/pricing",
-          "https://appian.com/blog/2025/proving-the-value-of-ai-driven-automation-for-banking-ops",
           "https://docs.appian.com/suite/help/26.7/System_Requirements.html"
         ],
         "evidenceType": "Paraphrase",
-        "confidence": "medium",
+        "confidence": "low",
         "notes": "",
         "questions": ""
       },
       {
         "category": "Industry applicability / business domain applicability",
         "score": 4,
-        "rationale": "Appian shows broad industry applicability with evidence across public sector, manufacturing, supply chain, insurance, and banking-adjacent process use cases. The platform is clearly adaptable across domains, though the evidence is mostly first-party and partner-led rather than independently benchmarked across industries.",
-        "reasoning": "Appian's industry materials and sector-focused content show it is not limited to one vertical; examples in the search results cover government, operations/manufacturing, supply chain, and insurance-oriented document processing. The PwC alliance release says Appian capabilities span multiple business-critical processes, further indicating cross-domain applicability at enterprise scale. Compliance and data residency messaging also helps support regulated-industry applicability. Under the no-MQ ceiling for this topic, the breadth is strong enough for 4 but not indisputable enough for 5.",
-        "evidence": "Appian has industry content for operations and manufacturing solutions. Appian published a 2026 public sector AI adoption outlook and additional public-sector research content. PwC's April 2026 alliance expansion with Appian says the new capabilities span three of the company's offerings and apply across thousands of business-critical processes. Appian's release notes mention meeting strict public sector compliance and regional data residency requirements.",
+        "rationale": "Appian has broad industry applicability across regulated sectors and government, with evidence spanning public sector, healthcare compliance, banking operations, ERP modernization, and domain-specific solutions. The platform appears strong in cross-industry applicability, especially for process-heavy enterprises.",
+        "reasoning": "The evidence repeatedly points to Appian being used in heavily regulated, domain-intensive environments rather than only generic workflow scenarios. Trust/compliance materials include healthcare relevance via HIPAA, and Appian’s public-sector press release says it is trusted by every cabinet-level agency in the US government. Additional evidence shows ERP modernization for SAP-centered enterprises and banking-specific value messaging, which together suggest wide business-domain applicability. Because this topic has no analyst MQ and the evidence is still mostly first-party, 4 is the right ceiling and score.",
+        "evidence": "Appian Cloud compliance materials state Appian Cloud is compliant with HIPAA security requirements, supporting healthcare applicability. Appian says it is trusted by every cabinet-level agency in the US government, indicating deep public-sector applicability. Appian's ERP modernization content targets SAP and S/4HANA transformation use cases. Appian published banking-operations content focused on AI-driven automation reducing total cost of operations.",
         "sources": [
-          "https://appian.com/industries/automotive-and-manufacturing/operations-manufacturing",
-          "https://appian.com/resources/whitepapers/2026-uk-public-sector-ai-adoption-outlook",
-          "https://www.pwc.com/us/en/about-us/newsroom/press-releases/pwc-appian-expand-alliance.html",
-          "https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html"
+          "https://appian.com/support/resources/trust/compliance",
+          "https://investors.appian.com/news-releases/news-release-details/appian-trusted-every-cabinet-level-agency-us-government",
+          "https://appian.com/blog/2026/appian-erp-modernization",
+          "https://appian.com/blog/2025/proving-the-value-of-ai-driven-automation-for-banking-ops"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
@@ -500,13 +503,13 @@
       {
         "category": "Long-term value",
         "score": 4,
-        "rationale": "Appian offers strong long-term value signals through sustained analyst recognition, continued product investment, and public financial/strategic continuity. The evidence supports durable enterprise viability, though this topic lacks a formal MQ anchor and the proof is more directional than absolute.",
-        "reasoning": "Appian's first-quarter 2026 financial-results release evidences ongoing corporate continuity and planning for both near-term and long-term operations. Media and product materials also emphasize long-term business value rather than accumulating technical debt, which is relevant to platform durability. Recent analyst and product momentum—such as BOAT, DPA, and process-mining leadership claims surfaced elsewhere in the run—supports the case that Appian is continuing to invest rather than coasting on legacy BPM. Because Long-term value has no analyst category of its own, a strong 4 is appropriate, but not a 5.",
-        "evidence": "Appian's Q1 2026 financial-results release discusses short-term and long-term business operations and objectives. Appian media coverage snippets reference long-term business value rather than runaway technical debt. Recent Appian product and analyst-report pages show ongoing investment in AI, orchestration, and process intelligence capabilities.",
+        "rationale": "Appian shows strong long-term value signals through ongoing 2025-2026 product investment, analyst recognition in core process categories, and positioning around avoiding technical debt in enterprise AI/process work. The evidence supports durable strategic value, though this topic has no analyst MQ of its own and the strongest proof is directional rather than financial-outcome specific.",
+        "reasoning": "Recent release notes and product announcements show continued investment in process insights, AI-assisted development, and agentic automation, which are relevant indicators of roadmap durability. Appian’s media-coverage page surfaces messaging around long-term business value rather than runaway technical debt, aligning with the platform’s positioning for sustainable enterprise transformation. The vendor also continues to win major analyst recognition in adjacent core markets like BOAT and process mining, which strengthens the case that the platform is not stagnating. Still, since Long-term value has no direct analyst category and the surfaced evidence is not full of quantified multiyear customer-outcome metrics, 4 is more disciplined than 5.",
+        "evidence": "Appian release notes show ongoing platform investment, including process insights capabilities added to the Appian MCP Server. Appian's 2026 media-coverage page references long-term business value rather than runaway technical debt. Recent 2025-2026 Appian materials show active investment in AI, process orchestration, and enterprise automation capabilities.",
         "sources": [
-          "https://investors.appian.com/news-releases/news-release-details/appian-announces-first-quarter-2026-financial-results",
+          "https://docs.appian.com/suite/help/26.7/Appian_Release_Notes.html",
           "https://appian.com/about/explore/media-coverage",
-          "https://appian.com/blog/2026/q2-product-highlights"
+          "https://investors.appian.com/news-releases/news-release-details/appian-advances-ai-process-deliver-enterprise-outcomes-scale"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "medium",
@@ -516,13 +519,14 @@
       {
         "category": "Business adaptability / Agility",
         "score": 4,
-        "rationale": "Appian is strong in business adaptability and agility, supported by low-code delivery, ERP modernization positioning, and explicit 'agility layer' messaging for continuous improvement. The evidence shows real capability to support rapid business change, but as a no-MQ topic it should generally top out at 4.",
-        "reasoning": "Appian's ERP modernization content states that agility determines market leadership and frames the platform as enabling agility and adaptability where legacy ERP systems fall short. Its webinar content explicitly promotes a low-code agility layer to unlock adaptability and empower business users to drive continuous improvement. These are reinforced by 2026 supply-chain materials that again reference Appian's agility layer. The evidence is recent and directly on-topic, supporting a strong 4 without overstating it to 5 in a category with no dedicated analyst anchor.",
-        "evidence": "Appian's ERP modernization blog says agility determines market leadership and positions Appian as enabling agility and adaptability beyond ERP systems. Appian's low-code agility layer webinar says the platform unlocks adaptability and empowers business users to drive continuous improvement. Appian's 2026 supply-chain outlook content references its agility layer in a business-transformation context.",
+        "rationale": "Appian is strong on business adaptability and agility thanks to its low-code design model, ERP agility-layer messaging, and frequent feature delivery aimed at faster change. The evidence points to real configurability and speed of adaptation, but this no-MQ topic should generally cap at 4 absent indisputable category-defining proof.",
+        "reasoning": "Appian’s low-code platform explicitly emphasizes visual, intuitive application design and adaptability as business needs evolve, which is directly on-topic. The ERP modernization and agility-layer materials further position Appian as a way to unlock continuous improvement and composable change on top of existing enterprise systems. Supporting signals from partner-award and public-sector content suggest these adaptability claims are being applied in live, domain-specific programs rather than only in demos. The result is a strong agility profile backed by current evidence, but still within the normal 4 ceiling for a no-analyst-MQ topic.",
+        "evidence": "Appian's low-code platform page says it empowers pro and citizen developers with visual, intuitive design capabilities and supports adaptability as business needs evolve. Appian's ERP modernization blog says S/4HANA migration will unlock needed agility and positions Appian around orchestration-led modernization. Appian's ERP modernization webinar describes Appian as a low-code agility layer that unlocks adaptability and empowers business users to drive continuous improvement. A 2024 partner-award release says Appian-powered capabilities were designed for adaptability and real-time operation.",
         "sources": [
+          "https://appian.com/products/platform/low-code",
           "https://appian.com/blog/2026/appian-erp-modernization",
           "https://appian.com/resources/webinars/low-code-agility-layer-erp-modernization",
-          "https://appian.com/blog/acp/supply-chain/outlook-supply-chain-management"
+          "https://investors.appian.com/news-releases/news-release-details/appian-names-2024-public-sector-partner-award-winners"
         ],
         "evidenceType": "Paraphrase",
         "confidence": "high",
