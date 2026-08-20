@@ -56,13 +56,13 @@
       /* Main */
       main { padding:12px; }
 
-      /* Grids → tek kolon */
+      /* Grids → single column */
       .grid-2, .grid-3, .grid-4, .grid-sidebar { grid-template-columns:1fr; }
 
-      /* Card head → dikey */
+      /* Card head → vertical */
       .card-head { flex-direction:column; align-items:flex-start; gap:10px; }
 
-      /* Vendor Deep Dive + Topic Analysis filter row → dikey */
+      /* Vendor Deep Dive + Topic Analysis filter row → vertical */
       .card-head > div[style*="display:flex"] { flex-wrap:wrap; gap:8px; }
       .card-head select, .card-head input { width:100% !important; }
       .card-head button { width:100% !important; }
@@ -204,7 +204,7 @@
     /* BATTLE CARD */
     .bc-selector { display:grid; grid-template-columns:1fr 1fr auto; gap:16px; margin-bottom:0; align-items:end; }
 
-    /* Dashboard light tema overrides */
+    /* Dashboard light-theme overrides */
     #view-dashboard .heatmap th { background:#f8f9fa; color:#64748b; border-bottom:1px solid #e2e8f0; }
     #view-dashboard .heatmap th:first-child { background:#f8f9fa; }
     #view-dashboard .heatmap td { border-bottom:1px solid #f1f5f9; }
@@ -235,14 +235,14 @@
 
     /* Print styles — Battle Card only */
     @media print {
-      /* Genel: nav ve export barları gizle */
+      /* General: hide nav and export bars */
       nav, .export-bar, .bc-pdf-btn, .bc-selector, .bc-loading,
       #view-battlecard .view-header,
       button, select, input { display:none !important; }
       body { background:#fff !important; color:#000 !important; }
       main { padding:0 !important; max-width:100% !important; }
 
-      /* Aktif olmayan viewleri gizle */
+      /* Hide inactive views */
       .view { display:none !important; }
       .view.active { display:block !important; }
 
@@ -263,15 +263,15 @@
       .card { border:1px solid #e2e8f0 !important; break-inside:avoid; }
       .card-head { background:#f8f9fa !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 
-      /* Evidence accordions — hepsini aç */
+      /* Evidence accordions — expand all */
       .ev-body { display:block !important; }
       details { display:block !important; }
       details[open] summary::marker { display:none; }
 
-      /* Grid — tek kolon yap */
+      /* Grid — force single column */
       .grid-2, .grid-3, .grid-4, .grid-sidebar { grid-template-columns:1fr !important; }
 
-      /* Charts — küçült */
+      /* Charts — shrink */
       .chart-wrap { height:200px !important; }
 
       /* Heatmap */
@@ -633,16 +633,15 @@
 
 <!-- DATA — from vendor_scorecard_dashboard.html (Kobi Shaal) -->
 <script>
-  // Veri ayrı dosyadan yüklenir — index.html'i şişirmez
-  // Data loaded from separate file — keeps index.html clean
-  // DATA fetch ile yüklenir — aşağıda initApp() çağrılır
+  // Data is loaded from a separate file — keeps index.html lean
+  // Data is fetched here — initApp() is invoked below once it's loaded
   let DATA = null;
   let TOPICS, VORDER, COLORS, VENDORS, SCOPES, RATIONALE;
   
 
-  // Veri tarihi: scorecard-full.json'un HTTP Last-Modified header'ından okunur
-  // (Maestro dosyayı her push'ladığında GitHub Pages bu tarihi günceller).
-  // 'May 2025' sadece hiçbir tarih bulunamazsa devreye giren son çare.
+  // Scorecard date: read from the HTTP Last-Modified header of scorecard-full.json
+  // (GitHub Pages updates this header whenever the Maestro pipeline pushes a new file).
+  // 'May 2025' is only a last-resort fallback if no date can be found at all.
   let SCORECARD_DATE = null;
   const DATA_VERSION = 'May 2025';
   function captureScorecardDate(response) {
@@ -652,8 +651,9 @@
       if (!isNaN(d)) SCORECARD_DATE = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
     }
   }
-  // Last-Modified header bazı ortamlarda (Pages CDN, Live Server) gelmiyor.
-  // En güvenilir kaynak: scorecard-full.json'a dokunan son commit'in tarihi.
+  // The Last-Modified header isn't always available in every environment
+  // (Pages CDN, Live Server, etc). The most reliable source is the date of the
+  // last commit that touched scorecard-full.json.
   async function fetchCommitDate() {
     try {
       const r = await fetch('https://api.github.com/repos/tunauipath/uipath-competitive/commits?path=scorecard-full.json&per_page=1');
@@ -667,7 +667,11 @@
           updateFreshnessBand();
         }
       }
-    } catch (e) { /* rate limit / offline — header veya fallback devrede kalır */ }
+    } catch (e) {
+      // Rate-limited or offline — fall back silently to the header value or DATA_VERSION,
+      // but still log so this doesn't get missed in debugging.
+      console.warn('[Scorecard] Could not fetch commit date:', e.message);
+    }
   }
   function updateFreshnessBand() {
     const el = document.getElementById('data-freshness-band');
@@ -694,18 +698,18 @@
   let radarChart, vendorChart, cmpChart, topicChart;
 
   // ── helpers ──
-  // Güncel scorecard-full.json'u çeker ve VENDORS'u tazeler.
-  // Mimari: schedule edilmiş Maestro job GitHub'daki bu dosyayı günceller;
-  // dashboard Maestro'yu asla doğrudan çağırmaz, sadece dosyayı okur.
+  // Fetches the latest scorecard-full.json and refreshes VENDORS.
+  // Architecture: a scheduled Maestro job updates this file on GitHub;
+  // the dashboard never calls Maestro directly, it only ever reads the file.
   async function refreshScorecard() {
     const r = await fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error('scorecard-full.json fetch failed (HTTP ' + r.status + ')');
     captureScorecardDate(r);
-    fetchCommitDate(); // arkaplanda güncel commit tarihini de tazele
+    fetchCommitDate(); // also refresh the actual latest commit date in the background
     const json = await r.json();
-    if (!json || !json.vendors) throw new Error('scorecard-full.json geçersiz format — "vendors" alanı yok');
+    if (!json || !json.vendors) throw new Error('scorecard-full.json is invalid — missing "vendors" field');
     Object.keys(json.vendors).forEach(v => { VENDORS[v] = json.vendors[v]; });
-    normalizeVendorSources(VENDORS); // manuel/otomatik yenilemede de aynı güvenlik ağı geçerli
+    normalizeVendorSources(VENDORS); // same safety net applies on manual/automatic refresh too
     DATA = json;
     window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
     return json;
@@ -722,43 +726,45 @@
     if(mode==='delta') return val>0?'#f87171':val<0?'#86efac':'#8896b0';
     if(val>=5)return'#86efac';if(val>=4)return'#4ade80';if(val>=3)return'#fbbf24';if(val>=2)return'#fb923c';return'#f87171';
   }
-  function esc(s) { return(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  // HTML-escapes a string for safe injection into innerHTML.
+  function escHtml(s) { return(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-  // Kaynak linki: gerçek URL ise direkt aç, değilse ("Publisher — Title" gibi)
-  // Google aramasına yönlendir. Agent'ın ürettiği bozuk/uydurma URL sorununa
-  // karşı garanti fallback.
+  // Source link: if it's a real URL, open it directly; otherwise (e.g. "Publisher — Title")
+  // fall back to a Google search. This guards against malformed/hallucinated URLs
+  // that the research agent might have produced.
   function srcLink(s, cls) {
     const t = (s||'').trim();
     if (!t) return '';
     const isUrl = /^https?:\/\/[^\s]+$/i.test(t);
     const href  = isUrl ? t : 'https://www.google.com/search?q=' + encodeURIComponent(t);
     const label = isUrl ? t.replace(/^https?:\/\/(www\.)?/i,'') : t + ' 🔍';
-    return '<a class="' + (cls||'') + '" href="' + esc(href) + '" target="_blank" rel="noopener" title="' + esc(isUrl ? t : 'Search: ' + t) + '">' + esc(label) + '</a>';
+    return '<a class="' + (cls||'') + '" href="' + escHtml(href) + '" target="_blank" rel="noopener" title="' + escHtml(isUrl ? t : 'Search: ' + t) + '">' + escHtml(label) + '</a>';
   }
   function tagClass(c) { if(!c)return''; return{'High':'tag-high','Medium':'tag-medium','Low':'tag-low'}[c]||''; }
 
-  // ── kaynak sıralama güvenliği ──
-  // Bazı scorecard kayıtlarında ilk source jenerik bir sayfa olabilir (ana sayfa, /platform, /pricing vb.).
-  // Kural: "Licensing & TCO" hariç, jenerik sayfalar konuya özel kanıt sayılmaz ve asla ilk sırada
-  // gösterilmemeli. Veri pipeline'ı (araştırma ajanı) çoğu zaman bunu doğru sıralar, ama ham JSON'un
-  // sırasına körü körüne güvenmek yerine burada da bir UI-side güvenlik ağı kuruyoruz — render'dan
-  // hemen önce, veri her yüklendiğinde/yenilendiğinde tek bir yerden normalize ediliyor.
+  // ── source ordering safety net ──
+  // Some scorecard entries may have a generic page as their first source (homepage, /platform,
+  // /pricing, etc). Rule: except for "Licensing & TCO", a generic page doesn't count as
+  // topic-specific evidence and should never be shown first. The data pipeline (research agent)
+  // usually orders this correctly, but rather than blindly trusting the raw JSON order, we add a
+  // UI-side safety net here too — normalized from a single place right before rendering, every
+  // time data is loaded or refreshed.
   const GENERIC_SOURCE_PATHS = new Set(['pricing','platform','platform.html','products','solutions','about','about-us','home','index','index.html']);
   function isGenericSource(url, topic) {
     let u;
-    try { u = new URL(url); } catch (e) { return false; } // URL değilse ("Publisher — Title" gibi metinse) jenerik sayılmaz, yerinde kalır
+    try { u = new URL(url); } catch (e) { return false; } // not a URL (e.g. "Publisher — Title" text) — leave it as-is, not generic
     const host = (u.hostname || '').toLowerCase();
     const labels = host.split('.');
-    // "www.vendor.com" veya "vendor.com" gibi çıplak ana domain = genel pazarlama sitesi;
-    // "trust.vendor.com", "docs.vendor.com", "licensing.vendor.com" gibi anlamlı bir alt alan adı
-    // varsa bu zaten konuya özel bir portaldır — whitelist tutmak yerine genel kural: "www" dışında
-    // bir alt alan adı varsa jenerik SAYILMAZ.
+    // A bare root domain like "www.vendor.com" or "vendor.com" is a general marketing site;
+    // a meaningful subdomain like "trust.vendor.com" or "docs.vendor.com" or "licensing.vendor.com"
+    // is already a topic-specific portal — instead of maintaining a whitelist, the general rule is:
+    // if there's a subdomain other than "www", it is NOT considered generic.
     const firstLabel = labels.length > 2 ? labels[0] : '';
     const hasMeaningfulSubdomain = firstLabel && firstLabel !== 'www';
     const path = u.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
-    if (path === '') return !hasMeaningfulSubdomain; // çıplak ana sayfa (vendor.com/) jenerik; trust.vendor.com/ gibi özel alt alan adları jenerik SAYILMAZ
+    if (path === '') return !hasMeaningfulSubdomain; // bare homepage (vendor.com/) is generic; special subdomains like trust.vendor.com/ are NOT generic
     if (GENERIC_SOURCE_PATHS.has(path)) {
-      if (path === 'pricing' && topic === 'Licensing & TCO') return false; // tek istisna: bu konuda pricing sayfası zaten doğru/beklenen kaynak
+      if (path === 'pricing' && topic === 'Licensing & TCO') return false; // one exception: the pricing page is the correct/expected source for this topic
       return true;
     }
     return false;
@@ -767,7 +773,7 @@
     if (!Array.isArray(sources)) return sources;
     const specific = [], generic = [];
     sources.forEach(s => (isGenericSource(s, topic) ? generic : specific).push(s));
-    return specific.concat(generic); // stable partition — her grup kendi içinde orijinal sırasını korur
+    return specific.concat(generic); // stable partition — each group keeps its original relative order
   }
   function normalizeVendorSources(vendorsObj) {
     if (!vendorsObj) return;
@@ -804,9 +810,9 @@
         document.querySelector('nav').style.borderBottomColor = '';
       }
     });
-  }); // nav tab listener sonu
+  }); // end of nav tab listener
 
-  // scorecard-full.json'u fetch et (cache-bust ile — Maestro güncellemeleri anında görünsün), sonra initApp çalıştır
+  // Fetch scorecard-full.json (cache-busted so Maestro updates show up immediately), then run initApp
   fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => { captureScorecardDate(r); return r.json(); })
     .then(json => {
@@ -814,11 +820,11 @@
       window.DASHBOARD_DATA = { vendors: {} };
       Object.keys(DATA.vendors).forEach(v => { window.DASHBOARD_DATA.vendors[v] = DATA.vendors[v]; });
       initApp();
-      fetchCommitDate(); // asıl tarih kaynağı: son commit tarihi (band'i günceller)
+      fetchCommitDate(); // the actual source of truth for the date: latest commit date (updates the band)
     })
     .catch(err => {
-      console.error('scorecard-full.json yüklenemedi:', err);
-      document.body.innerHTML = '<div style="padding:40px;color:#f87171;font-family:sans-serif;">⚠️ scorecard-full.json yüklenemedi. Lütfen sayfayı Live Server ile açın.</div>';
+      console.error('Failed to load scorecard-full.json:', err);
+      document.body.innerHTML = '<div style="padding:40px;color:#f87171;font-family:sans-serif;">⚠️ Failed to load scorecard-full.json. Please open this page via a local server (e.g. Live Server).</div>';
     });
 
   // ── EXECUTIVE SUMMARY ──
@@ -892,7 +898,7 @@
 
     el.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <div style="font-size:10px;font-weight:700;color:${COLORS[v]||'#4f8ef7'};text-transform:uppercase;letter-spacing:.05em;">Showing: ${esc(v)}</div>
+        <div style="font-size:10px;font-weight:700;color:${COLORS[v]||'#4f8ef7'};text-transform:uppercase;letter-spacing:.05em;">Showing: ${escHtml(v)}</div>
         <button id="exec-metrics-clear" style="font-size:11px;color:#64748b;background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;">Clear</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
@@ -917,10 +923,10 @@
       <div style="background:#f8f9fa;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
           <span class="vdot" style="background:${COLORS[v]}"></span>
-          <span style="font-weight:600;font-size:13px;color:#1a202c;">${esc(v)}</span>
+          <span style="font-weight:600;font-size:13px;color:#1a202c;">${escHtml(v)}</span>
         </div>
-        <div style="font-size:11px;color:#64748b;margin-bottom:6px;">${esc(SCOPES[v]||'')}</div>
-        <div style="font-size:12px;color:#374151;line-height:1.5;">${esc(RATIONALE[v]||'')}</div>
+        <div style="font-size:11px;color:#64748b;margin-bottom:6px;">${escHtml(SCOPES[v]||'')}</div>
+        <div style="font-size:12px;color:#374151;line-height:1.5;">${escHtml(RATIONALE[v]||'')}</div>
       </div>`).join('');
   }
 
@@ -929,7 +935,7 @@
     if(wrap.children.length) return;
     wrap.innerHTML = VORDER.map(v=>`
       <label class="chip checked" style="color:${COLORS[v]}" data-v="${v}">
-        <span class="chip-dot" style="background:${COLORS[v]}"></span>${esc(v)}
+        <span class="chip-dot" style="background:${COLORS[v]}"></span>${escHtml(v)}
       </label>`).join('');
     wrap.querySelectorAll('.chip').forEach(chip=>{
       chip.addEventListener('click',()=>{
@@ -981,10 +987,10 @@
   function renderHeatmap() {
     const mode = state.heatmapMode;
     let html = '<thead><tr><th>Dimension</th>';
-    VORDER.forEach(v=>{ html+=`<th style="color:${COLORS[v]}">${esc(v)}</th>`; });
+    VORDER.forEach(v=>{ html+=`<th style="color:${COLORS[v]}">${escHtml(v)}</th>`; });
     html += '</tr></thead><tbody>';
     TOPICS.forEach((t,i)=>{
-      html += `<tr><td title="${esc(t)}">${esc(t.length>24?t.substring(0,22)+'…':t)}</td>`;
+      html += `<tr><td title="${escHtml(t)}">${escHtml(t.length>24?t.substring(0,22)+'…':t)}</td>`;
       VORDER.forEach(v=>{
         const s = VENDORS[v][i].score;
         const uiS = VENDORS['UiPath'][i].score;
@@ -1015,28 +1021,31 @@
   });
 
   // ── VENDOR DEEP DIVE ──
-  function buildEvRow(row, topicLabel) {
+  // Shared evidence-row renderer, used by both Vendor Deep Dive and Topic Analysis.
+  // `nameHtml` lets the caller control what's shown as the row title
+  // (plain topic label in Vendor Deep Dive, vendor name + color dot in Topic Analysis).
+  function buildEvRow(row, nameHtml) {
     const dateLabel = row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION;
     const tags = [
-      row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:'',
-      `<span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${esc(dateLabel)}</span>`
+      row.confidence?`<span class="tag ${tagClass(row.confidence)}">${escHtml(row.confidence)}</span>`:'',
+      `<span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${escHtml(dateLabel)}</span>`
     ].filter(Boolean).join('');
 
     return `<div class="ev-row">
       <div class="ev-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
         <span class="sb ${sbClass(row.score)}">${row.score}</span>
-        <span class="ev-name">${esc(topicLabel)}</span>
+        <span class="ev-name">${nameHtml}</span>
         <div class="ev-tags">${tags}</div>
         <span class="ev-chev">▼</span>
       </div>
       <div class="ev-body">
-        ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
-        <div class="ev-evidence">${esc(row.evidence)}</div>
+        ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${escHtml(row.uipath_advantage)}</div>`:''}
+        <div class="ev-evidence">${escHtml(row.evidence)}</div>
         <div class="accordion">
-          ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
-          ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
+          ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${escHtml(row.rationale)}</div></details>`:''}
+          ${row.reasoning?`<details><summary>Reasoning (explicit)</summary><div class="acc-inner">${escHtml(row.reasoning)}</div></details>`:''}
           ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
-          ${(row.notes||row.questions)?`<details><summary>Notes & Next Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
+          ${(row.notes||row.questions)?`<details><summary>Notes & Next Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+escHtml(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+escHtml(row.questions):''}</div></details>`:''}
         </div>
       </div>
     </div>`;
@@ -1044,10 +1053,10 @@
 
   function renderVendorView() {
     const v = state.vendorView;
-    document.getElementById('vd-vendor-name').innerHTML = `<span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}`;
+    document.getElementById('vd-vendor-name').innerHTML = `<span class="vdot" style="background:${COLORS[v]}"></span>${escHtml(v)}`;
     document.getElementById('vd-vendor-scope').textContent = SCOPES[v]||'';
-    document.getElementById('vendor-select').innerHTML = VORDER.map(vv=>`<option value="${esc(vv)}" ${vv===v?'selected':''}>${esc(vv)}</option>`).join('');
-    document.getElementById('vd-topic-filter').innerHTML = '<option value="">All topics</option>'+TOPICS.map((t,i)=>`<option value="${i}">${esc(t)}</option>`).join('');
+    document.getElementById('vendor-select').innerHTML = VORDER.map(vv=>`<option value="${escHtml(vv)}" ${vv===v?'selected':''}>${escHtml(vv)}</option>`).join('');
+    document.getElementById('vd-topic-filter').innerHTML = '<option value="">All topics</option>'+TOPICS.map((t,i)=>`<option value="${i}">${escHtml(t)}</option>`).join('');
 
     const ctx = document.getElementById('vendorBarChart').getContext('2d');
     if(vendorChart) vendorChart.destroy();
@@ -1071,12 +1080,12 @@
     let rows = VENDORS[v].map((d,i)=>({...d,_i:i}));
     if(tf!=='') rows=rows.filter(r=>String(r._i)===tf);
     if(cf) rows=rows.filter(r=>r.confidence===cf);
-    document.getElementById('vd-evidence-list').innerHTML = rows.map(r=>buildEvRow(r,TOPICS[r._i])).join('');
+    document.getElementById('vd-evidence-list').innerHTML = rows.map(r=>buildEvRow(r, escHtml(TOPICS[r._i]))).join('');
   }
 
   document.getElementById('vendor-select').addEventListener('change',e=>{
     state.vendorView=e.target.value;
-    state.lastGenerated.vendor = { vendor: null }; // seçim değişti, generate gerekecek
+    state.lastGenerated.vendor = { vendor: null }; // selection changed, needs a fresh generate
     renderVendorView();
   });
   document.getElementById('vd-topic-filter').addEventListener('change',e=>{state.vdTopicFilter=e.target.value;renderVendorEvidence();});
@@ -1085,8 +1094,8 @@
   // ── HEAD-TO-HEAD ──
   function renderCompareView() {
     const vA=state.cmpA, vB=state.cmpB;
-    document.getElementById('cmp-a').innerHTML = VORDER.map(v=>`<option value="${esc(v)}" ${v===vA?'selected':''}>${esc(v)}</option>`).join('');
-    document.getElementById('cmp-b').innerHTML = VORDER.map(v=>`<option value="${esc(v)}" ${v===vB?'selected':''}>${esc(v)}</option>`).join('');
+    document.getElementById('cmp-a').innerHTML = VORDER.map(v=>`<option value="${escHtml(v)}" ${v===vA?'selected':''}>${escHtml(v)}</option>`).join('');
+    document.getElementById('cmp-b').innerHTML = VORDER.map(v=>`<option value="${escHtml(v)}" ${v===vB?'selected':''}>${escHtml(v)}</option>`).join('');
 
     const ctx = document.getElementById('compareChart').getContext('2d');
     if(cmpChart) cmpChart.destroy();
@@ -1108,17 +1117,17 @@
 
     const sA = VENDORS[vA], sB = VENDORS[vB];
     let html = `<div class="cmp-head" style="display:grid;grid-template-columns:1fr 60px 60px 1fr;gap:8px;padding:8px 18px;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.04em">
-      <div>Dimension</div><div style="text-align:center">${esc(vA)}</div><div style="text-align:center">${esc(vB)}</div><div>Delta</div></div>`;
+      <div>Dimension</div><div style="text-align:center">${escHtml(vA)}</div><div style="text-align:center">${escHtml(vB)}</div><div>Delta</div></div>`;
     TOPICS.forEach((t,i)=>{
       const a=sA[i].score, b=sB[i].score, d=a-b;
       const dc=d>0?'delta-pos':d<0?'delta-neg':'delta-neu';
       const ds=d>0?`▲ +${d}`:d<0?`▼ ${d}`:'= 0';
       const note = d>0?`${vA} leads on this dimension.`:d<0?`${vB} leads on this dimension.`:'Parity.';
       html+=`<div style="display:grid;grid-template-columns:1fr 60px 60px 1fr;gap:8px;align-items:center;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px;">
-        <div style="font-weight:500">${esc(t)}</div>
+        <div style="font-weight:500">${escHtml(t)}</div>
         <div style="text-align:center"><span class="sb ${sbClass(a)}">${a}</span></div>
         <div style="text-align:center"><span class="sb ${sbClass(b)}">${b}</span></div>
-        <div><span class="${dc}" style="margin-right:8px;">${ds}</span><span style="color:var(--muted);font-size:11px;">${note}</span></div>
+        <div><span class="${dc}" style="margin-right:8px;">${ds}</span><span style="color:var(--muted);font-size:11px;">${escHtml(note)}</span></div>
       </div>`;
     });
     document.getElementById('cmp-table').innerHTML = html;
@@ -1130,7 +1139,7 @@
   // ── TOPIC ANALYSIS ──
   function renderTopicView() {
     const idx=state.topicIdx;
-    document.getElementById('topic-select').innerHTML = TOPICS.map((t,i)=>`<option value="${i}" ${i===idx?'selected':''}>${esc(t)}</option>`).join('');
+    document.getElementById('topic-select').innerHTML = TOPICS.map((t,i)=>`<option value="${i}" ${i===idx?'selected':''}>${escHtml(t)}</option>`).join('');
     document.getElementById('topic-title').textContent = TOPICS[idx];
     document.getElementById('topic-ev-title').textContent = 'Evidence — ' + TOPICS[idx];
 
@@ -1150,29 +1159,11 @@
       }
     });
 
+    // Reuses the shared row renderer (buildEvRow) — name shows vendor + color dot here.
     document.getElementById('topic-evidence-list').innerHTML = VORDER.map(v=>{
       const row = VENDORS[v][idx];
-      return `<div class="ev-row">
-        <div class="ev-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-          <span class="sb ${sbClass(row.score)}">${row.score}</span>
-          <span class="ev-name"><span class="vdot" style="background:${COLORS[v]}"></span>${esc(v)}</span>
-          <div class="ev-tags">
-            ${row.confidence?`<span class="tag ${tagClass(row.confidence)}">${esc(row.confidence)}</span>`:''}
-            <span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${esc(row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION)}</span>
-          </div>
-          <span class="ev-chev">▼</span>
-        </div>
-        <div class="ev-body">
-          ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${esc(row.uipath_advantage)}</div>`:''}
-          <div class="ev-evidence">${esc(row.evidence)}</div>
-          <div class="accordion">
-            ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${esc(row.rationale)}</div></details>`:''}
-            ${row.reasoning?`<details><summary>Reasoning</summary><div class="acc-inner">${esc(row.reasoning)}</div></details>`:''}
-            ${row.sources&&row.sources.length?`<details><summary>Sources (${row.sources.length})</summary><div class="acc-inner"><div class="src-links">${row.sources.map(u=>srcLink(u)).join('')}</div></div></details>`:''}
-            ${(row.notes||row.questions)?`<details><summary>Notes & Questions</summary><div class="acc-inner">${row.notes?'<strong>Notes:</strong> '+esc(row.notes)+'<br>':''}${row.questions?'<strong>Questions:</strong> '+esc(row.questions):''}</div></details>`:''}
-          </div>
-        </div>
-      </div>`;
+      const nameHtml = `<span class="vdot" style="background:${COLORS[v]}"></span>${escHtml(v)}`;
+      return buildEvRow(row, nameHtml);
     }).join('');
   }
 
@@ -1182,10 +1173,10 @@
   function initBattleCard() {
     const rivals = VORDER.filter(v => v !== 'UiPath');
     document.getElementById('bc-rival').innerHTML = rivals.map(v =>
-      `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+      `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
     document.getElementById('bc-topic').innerHTML =
       `<option value="-1">All Topics (Overall)</option>` +
-      TOPICS.map((t,i) => `<option value="${i}">${esc(t)}</option>`).join('');
+      TOPICS.map((t,i) => `<option value="${i}">${escHtml(t)}</option>`).join('');
     document.getElementById('bc-generate-btn').addEventListener('click', generateBattleCard);
   }
 
@@ -1201,21 +1192,21 @@
     document.getElementById('bc-loading-text').textContent = `Researching UiPath vs ${rival} · ${topic}…`;
 
     try {
-      // Güncel scorecard-full.json'u çek ve VENDORS'u tazele (schedule edilmiş Maestro job çıktısı)
+      // Refresh the latest scorecard-full.json and update VENDORS (output of the scheduled Maestro job)
       try {
         await refreshScorecard();
       } catch (e) {
-        console.warn('[BattleCard] Scorecard yenilenemedi, bellekteki veri kullanılıyor:', e.message);
+        console.warn('[BattleCard] Could not refresh scorecard, using in-memory data:', e.message);
       }
 
       let uiData, rvData;
 
       if (isAll) {
-        // Tüm topic'lerin ortalamasını hesapla
+        // Compute the average across all topics
         const uiAvg = (VENDORS['UiPath'].reduce((s,d)=>s+d.score,0)/TOPICS.length).toFixed(1);
         const rvAvg = (VENDORS[rival].reduce((s,d)=>s+d.score,0)/TOPICS.length).toFixed(1);
 
-        // Tüm topic'leri delta'ya göre sırala (UiPath avantajı büyükten küçüğe)
+        // Sort all topics by delta (largest UiPath advantage first)
         const allTopicsSorted = TOPICS.map((t,i) => ({
           topic: t,
           idx: i,
@@ -1257,7 +1248,7 @@
         };
 
       } else {
-        // Tek topic — veri zaten güncel scorecard'dan yüklendi, direkt oku
+        // Single topic — data was already refreshed from the latest scorecard, read it directly
         uiData = VENDORS['UiPath'][topicIdx];
         rvData = VENDORS[rival][topicIdx];
       }
@@ -1267,6 +1258,7 @@
       state.lastGenerated.battlecard = { rival, topicIdx: isAll ? -1 : topicIdx };
 
     } catch (err) {
+      console.error('[BattleCard] Generation failed, falling back to first topic:', err);
       const ti = isAll ? 0 : topicIdx;
       renderBattleCard({ rival, topic, topicIdx:ti, uiData:VENDORS['UiPath'][ti], rvData:VENDORS[rival][ti], isAll });
       state.lastGenerated.battlecard = { rival, topicIdx: isAll ? -1 : topicIdx };
@@ -1296,10 +1288,10 @@
         '<div style="font-size:11px;color:var(--muted);margin-bottom:8px;">UiPath leads on ' + wins.length + ' dimension' + (wins.length!==1?'s':'') + ', parity on ' + par.length + '. Sorted by delta.</div>' +
         uiData._allTopics.filter(t=>t.delta>=0).map(t=>
           '<div class="bc-point"><div class="bc-point-dot" style="background:' + (t.delta>0?'#38d9a9':'#8896b0') + ';"></div><div>' +
-          '<div class="bc-point-text"><strong>' + esc(t.topic) + '</strong>' +
+          '<div class="bc-point-text"><strong>' + escHtml(t.topic) + '</strong>' +
           '<span style="margin-left:6px;font-size:11px;background:' + (t.delta>0?'rgba(56,217,169,.15)':'rgba(136,150,176,.1)') + ';color:' + (t.delta>0?'#38d9a9':'#8896b0') + ';padding:1px 6px;border-radius:4px;">' +
           (t.delta>0?'+'+t.delta:'=') + ' · UiPath ' + t.uiScore + ' vs ' + rival + ' ' + t.rvScore + '</span></div>' +
-          '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + esc(t.uiRationale) + '</div></div></div>'
+          '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + escHtml(t.uiRationale) + '</div></div></div>'
         ).join('');
 
       document.getElementById('bc-weakness-title').textContent = rival + ' Gaps';
@@ -1308,10 +1300,10 @@
         : '<div style="font-size:11px;color:var(--muted);margin-bottom:8px;">' + rival + ' leads on ' + rvWins.length + ' dimension' + (rvWins.length!==1?'s':'') + '.</div>' +
           rvWins.map(t=>
             '<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div>' +
-            '<div class="bc-point-text"><strong>' + esc(t.topic) + '</strong>' +
+            '<div class="bc-point-text"><strong>' + escHtml(t.topic) + '</strong>' +
             '<span style="margin-left:6px;font-size:11px;background:rgba(240,111,111,.15);color:#f06f6f;padding:1px 6px;border-radius:4px;">' +
             t.delta + ' · ' + rival + ' ' + t.rvScore + ' vs UiPath ' + t.uiScore + '</span></div>' +
-            '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + esc(t.rvRationale) + '</div></div></div>'
+            '<div style="font-size:12px;color:var(--muted);margin-top:2px;">' + escHtml(t.rvRationale) + '</div></div></div>'
           ).join('');
 
       const allSrc = [...new Set(uiData._allTopics.flatMap(t=>[...t.uiSources,...t.rvSources]))].slice(0,8);
@@ -1322,18 +1314,18 @@
     } else {
       const uiSrc = (uiData.sources||[]).slice(0,2), rvSrc = (rvData.sources||[]).slice(0,2);
       document.getElementById('bc-strengths').innerHTML =
-        (uiData.uipath_advantage?'<div class="bc-point"><div class="bc-point-dot" style="background:#fa4616;"></div><div class="bc-point-text" style="font-weight:600;color:#fa4616;">'+esc(uiData.uipath_advantage)+'</div></div>':'') +
+        (uiData.uipath_advantage?'<div class="bc-point"><div class="bc-point-dot" style="background:#fa4616;"></div><div class="bc-point-text" style="font-weight:600;color:#fa4616;">'+escHtml(uiData.uipath_advantage)+'</div></div>':'') +
         '<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div>' +
-        '<div class="bc-point-text">' + esc(uiData.rationale||uiData.evidence||'—') + '</div>' +
+        '<div class="bc-point-text">' + escHtml(uiData.rationale||uiData.evidence||'—') + '</div>' +
         uiSrc.map(s=>srcLink(s,'bc-point-src')).join('') + '</div></div>' +
-        (uiData.reasoning?'<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div class="bc-point-text">'+esc(uiData.reasoning)+'</div></div>':'');
+        (uiData.reasoning?'<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div class="bc-point-text">'+escHtml(uiData.reasoning)+'</div></div>':'');
 
       document.getElementById('bc-weakness-title').textContent = rival + ' Gaps';
       document.getElementById('bc-weaknesses').innerHTML =
         '<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div>' +
-        '<div class="bc-point-text">' + esc(rvData.rationale||rvData.evidence||'—') + '</div>' +
+        '<div class="bc-point-text">' + escHtml(rvData.rationale||rvData.evidence||'—') + '</div>' +
         rvSrc.map(s=>srcLink(s,'bc-point-src')).join('') + '</div></div>' +
-        (rvData.notes?'<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div class="bc-point-text">'+esc(rvData.notes)+'</div></div>':'');
+        (rvData.notes?'<div class="bc-point"><div class="bc-point-dot" style="background:#f06f6f;"></div><div class="bc-point-text">'+escHtml(rvData.notes)+'</div></div>':'');
 
       const allSrc = [...new Set([...(uiData.sources||[]),...(rvData.sources||[])])].slice(0,6);
       document.getElementById('bc-sources').innerHTML = allSrc.map(s=>
@@ -1356,6 +1348,9 @@
   }
 
   // ── EXPORT ──
+  // CSV-escapes a string for safe inclusion inside a double-quoted CSV field.
+  function escCsv(s) { return (s||'').replace(/"/g,'""'); }
+
   async function exportView(view) {
     const fmtMap = { vendor:'vendor-fmt', compare:'compare-fmt' };
     const fmt = (view === 'dashboard' || view === 'topic') ? 'pdf'
@@ -1366,9 +1361,8 @@
 
     function safeName(s) { return (s||'').replace(/[^a-zA-Z0-9]/g,''); }
     function uipathFirst(a, b) { return a === 'UiPath' ? [a,b] : b === 'UiPath' ? [b,a] : [a,b]; }
-    function esc(s) { return (s||'').replace(/"/g,'""'); }
 
-    // Vendor Deep Dive — seçim değişmişse önce generate et
+    // Vendor Deep Dive — if the selection changed since the last generate, refresh first
     if (view === 'vendor') {
       const v = state.vendorView;
       const lg = state.lastGenerated.vendor;
@@ -1378,9 +1372,9 @@
         if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '⏳ Refreshing…'; }
         if (statusEl) { statusEl.textContent = `🔍 Refreshing data for ${v}…`; statusEl.style.color = '#f5a623'; }
 
-        // Güncel scorecard'ı çek — tek fetch, tüm topic'ler gelir
+        // Refresh the scorecard — a single fetch brings back all topics
         try { await refreshScorecard(); }
-        catch(e) { console.warn('[Export] Scorecard yenilenemedi:', e.message); }
+        catch(e) { console.warn('[Export] Could not refresh scorecard:', e.message); }
 
         state.lastGenerated.vendor = { vendor: v };
         renderVendorView();
@@ -1390,7 +1384,7 @@
       }
     }
 
-    // PDF export — orijinal elementi yerinde yakala, UI bozulmasın
+    // PDF export — capture the original element in place so the UI doesn't visibly break
     if (fmt === 'pdf') {
       const viewNames = { dashboard:'executivesummary', vendor:'vendordeepdive', compare:'headtohead', topic:'topicanalysis' };
 
@@ -1409,7 +1403,7 @@
       const el = document.getElementById('view-' + view);
       const bgColor = view === 'dashboard' ? '#f8f9fa' : '#0c1018';
 
-      // Export öncesi: gizlenecekler
+      // Before exporting: elements to hide
       const hiddenEls = [];
       el.querySelectorAll('.export-bar, .mode-tabs, #radar-chips').forEach(e => {
         hiddenEls.push({el:e, display:e.style.display});
@@ -1420,7 +1414,7 @@
         e.style.visibility = 'hidden';
       });
 
-      // Scroll alanlarını geçici aç
+      // Temporarily expand scrollable areas
       const scrollEls = [];
       el.querySelectorAll('[style*="max-height"]').forEach(e => {
         scrollEls.push({el:e, mh:e.style.maxHeight, ov:e.style.overflow});
@@ -1428,7 +1422,7 @@
         e.style.overflow = 'visible';
       });
 
-      // Accordion'ları aç
+      // Expand accordions
       const closedBodies = [];
       el.querySelectorAll('.ev-body:not(.open)').forEach(b => {
         closedBodies.push(b);
@@ -1440,7 +1434,7 @@
         d.setAttribute('open','');
       });
 
-      // Sis fix — sadece opacity < 1 olan elementleri düzelt, renklere dokunma
+      // Fade fix — only correct elements with opacity < 1, leave colors alone
       const opacityEls = [];
       el.querySelectorAll('*').forEach(e => {
         const st = window.getComputedStyle(e);
@@ -1451,11 +1445,11 @@
         }
       });
 
-      // Canvas chart'ları image'a çevir (html2canvas canvas yakalayamaz)
+      // Convert canvas charts to images (html2canvas can't capture live canvases reliably)
       const canvasEls = [];
       el.querySelectorAll('canvas').forEach(c => {
         try {
-          // Canvas'ı arka plan rengiyle birlikte image'a çevir
+          // Convert the canvas to an image together with its background color
           const tmpCanvas = document.createElement('canvas');
           tmpCanvas.width = c.width;
           tmpCanvas.height = c.height;
@@ -1470,10 +1464,12 @@
           c.parentNode.insertBefore(img, c);
           c.style.display = 'none';
           canvasEls.push({canvas:c, img});
-        } catch(e) {}
+        } catch(e) {
+          console.warn('[Export] Could not convert canvas to image:', e.message);
+        }
       });
 
-      // Kısa bekleme — DOM render
+      // Brief wait for DOM to settle
       setTimeout(() => {
         html2canvas(el, {
           scale: 3,
@@ -1492,7 +1488,7 @@
           windowWidth: el.scrollWidth,
           windowHeight: el.scrollHeight
         }).then(canvas => {
-          // Her şeyi geri al
+          // Restore everything
           hiddenEls.forEach(({el,display,vis}) => {
             if (display !== undefined) el.style.display = display;
             if (vis !== undefined) el.style.visibility = vis;
@@ -1520,14 +1516,14 @@
           closedDetails.forEach(d => d.removeAttribute('open'));
           canvasEls.forEach(({canvas,img}) => { canvas.style.display=''; img.remove(); });
           opacityEls.forEach(({el,opacity}) => { if(opacity!==undefined) el.style.opacity=opacity; });
-          console.error(err);
+          console.error('[Export] PDF export failed:', err);
           alert('PDF export failed: ' + err.message);
         });
       }, 400);
       return;
     }
 
-    // Excel (CSV) export — Topic Analysis'te sadece PDF, Excel yok
+    // Excel (CSV) export — Topic Analysis only supports PDF, not Excel
     if (view === 'topic') return;
 
     let csv = '', fileName = '';
@@ -1541,9 +1537,9 @@
       csv += 'Topic,Score,Confidence,UiPath Advantage,Sources,Rationale,Reasoning\n';
       VENDORS[v].forEach(d => {
         const sources = (d.sources||[]).join(' | ');
-        // Evidence kolonu UiPath Advantage olarak gösteriliyor
+        // The "UiPath Advantage" column falls back to evidence if not set
         const uiAdvContent = d.uipath_advantage || d.evidence;
-        csv += `"${d.category}",${d.score},"${esc(d.confidence)}","${esc(uiAdvContent)}","${esc(sources)}","${esc(d.rationale)}","${esc(d.reasoning)}"\n`;
+        csv += `"${d.category}",${d.score},"${escCsv(d.confidence)}","${escCsv(uiAdvContent)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}"\n`;
       });
 
     } else if (view === 'compare') {
@@ -1564,12 +1560,12 @@
       const t = TOPICS[state.topicIdx];
       fileName = `uipath-competitive-topicanalysis-${safeName(t).substring(0,24)}-${dateStr}`;
       csv = `Topic Analysis — ${t}\n`;
-      // Kolon sırası: Vendor, Score, Confidence, Evidence, Sources, Rationale, Reasoning, UiPath Advantage
+      // Column order: Vendor, Score, Confidence, Evidence, Sources, Rationale, Reasoning, UiPath Advantage
       csv += 'Vendor,Score,Confidence,Evidence,Sources,Rationale,Reasoning,UiPath Advantage\n';
       VORDER.forEach(v => {
         const d = VENDORS[v][state.topicIdx];
         const sources = (d.sources||[]).join(' | ');
-        csv += `"${v}",${d.score},"${esc(d.confidence)}","${esc(d.evidence)}","${esc(sources)}","${esc(d.rationale)}","${esc(d.reasoning)}","${esc(d.uipath_advantage)}"\n`;
+        csv += `"${v}",${d.score},"${escCsv(d.confidence)}","${escCsv(d.evidence)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}","${escCsv(d.uipath_advantage)}"\n`;
       });
     }
 
@@ -1591,7 +1587,7 @@
     const btn = document.querySelector('.bc-pdf-btn');
     const outputVisible = document.getElementById('bc-output').classList.contains('visible');
 
-    // Seçim değişmiş ya da hiç generate edilmemişse → önce generate et
+    // If the selection changed, or nothing has been generated yet → generate first
     const lg = state.lastGenerated.battlecard;
     const needsGenerate = !outputVisible ||
       lg.rival !== rival ||
@@ -1634,36 +1630,37 @@
       pdf.save(pdfName + '.pdf');
     }).catch(err => {
       if (btn) btn.style.visibility = '';
-      console.error(err);
+      console.error('[BattleCard PDF] Export failed:', err);
       alert('PDF export failed: ' + err.message);
     });
   }
 
   // ── INIT ──
   function initApp() {
-    // DATA'dan sabit tanımları yükle
+    // Load fixed definitions from DATA
     TOPICS   = DATA.topics;
     VORDER   = DATA.vendorOrder;
-    // Renk paleti dashboard'a aittir — sunum meselesi, veri dosyasının işi değil.
-    // scorecard-full.json'daki "colors" bloğu artık OKUNMUYOR; oradan silinebilir.
+    // The color palette belongs to the dashboard — it's a presentation concern,
+    // not the data file's job. The "colors" block in scorecard-full.json is no
+    // longer read and can be removed from there.
     COLORS = {
-      'UiPath':              '#FA4616',  // marka turuncusu
+      'UiPath':              '#FA4616',  // brand orange
       'Microsoft':           '#1e88e5',
       'Google':              '#fdd835',
       'ServiceNow':          '#43a047',
       'Appian':              '#fb8c00',
       'n8n':                 '#8e24aa',
       'OpenAI':              '#555555',
-      'Camunda':             '#14b8a6',  // teal — UiPath turuncusuyla çakışmasın
+      'Camunda':             '#14b8a6',  // teal — avoids clashing with UiPath's orange
       'Automation Anywhere': '#E01C1C',
       'Salesforce':          '#00A1E0'
     };
     VENDORS  = DATA.vendors;
     SCOPES   = DATA.vendorScopes;
     RATIONALE= DATA.vendorRationale;
-    normalizeVendorSources(VENDORS); // render'dan önce: jenerik kaynaklar (ana sayfa, /platform vb.) asla ilk sırada olmasın
+    normalizeVendorSources(VENDORS); // before rendering: generic sources (homepage, /platform, etc) should never appear first
 
-    // State başlangıç değerlerini VORDER yüklendikten sonra set et
+    // Set initial state values once VORDER is loaded
     state.vendorView = VORDER[0];
     state.cmpA = VORDER[0];
     state.cmpB = VORDER[1];
@@ -1671,13 +1668,14 @@
     renderDashboard();
     initBattleCard();
 
-    // Dashboard başlangıçta aktif — nav beyaz olsun
+    // Dashboard is active on load — nav should be white
+
   document.querySelector('.nav-logo svg').style.filter = 'invert(1) brightness(0)';
   document.querySelector('.nav-logo-text').style.color = '#64748b';
   document.querySelector('nav').style.background = '#fff';
   document.querySelector('nav').style.borderBottomColor = '#e2e8f0';
 
-  // Footer ve data band'ı güncelle
+  // Update footer and data freshness band
   document.getElementById('app-footer').textContent =
     `UiPath Competitive Intelligence · Internal Use Only`;
   document.getElementById('data-freshness-band').innerHTML =
@@ -1686,10 +1684,11 @@
      <span style="margin-left:auto;color:var(--muted);">Generate intelligence pulls the latest scorecard data</span>`;
 
   window.DASHBOARD_DATA = { vendors: VENDORS, topics: TOPICS };
-  } // initApp sonu</script>
+  } // end of initApp
+</script>
 
 <script>
-  // Generate butonu — Topic Analysis sekmesinde çalışır
+  // Generate button — works within the Topic Analysis tab
   function setupGenerateButton() {
     const btn = document.getElementById('generate-btn');
     if (!btn) return;
@@ -1708,10 +1707,10 @@
       statusEl.style.color = '#f5a623';
 
       try {
-        // Güncel scorecard-full.json'u çek — tüm vendor'lar tek fetch'te gelir
+        // Refresh the latest scorecard-full.json — all vendors come back in a single fetch
         await refreshScorecard();
 
-        // Dashboard'u yenile
+        // Refresh the dashboard views
         renderTopicView();
         renderHeatmap();
         renderRadar();
@@ -1724,6 +1723,7 @@
         btn.style.opacity = '1';
 
       } catch (err) {
+        console.error('[Generate] Topic refresh failed:', err);
         statusEl.textContent = `❌ Error: ${err.message}`;
         statusEl.style.color = '#f87171';
         btn.disabled = false;
@@ -1752,10 +1752,10 @@
 
       vdSetLoading(true, `🔍 Fetching latest scorecard for ${vendor} · all 15 topics…`);
       try {
-        // Güncel scorecard-full.json'u çek — vendor'ın tüm topic'leri tek fetch'te gelir
+        // Refresh the latest scorecard-full.json — all of the vendor's topics come back in a single fetch
         await refreshScorecard();
-        // Generate = tam yenileme: topic filtresini resetle ki 15 satırın hepsi görünsün.
-        // (Dropdown manuel gezinme filtresi olarak çalışmaya devam eder.)
+        // Generate = full refresh: reset the topic filter so all 15 rows are visible.
+        // (The dropdown continues to work as a manual browsing filter afterward.)
         state.vdTopicFilter = '';
         const tfSel = document.getElementById('vd-topic-filter');
         if (tfSel) tfSel.value = '';
@@ -1765,13 +1765,14 @@
         renderRadar();
         vdSetLoading(false, `✅ ${vendor} · all 15 topics updated`);
       } catch(err) {
+        console.error('[Generate] Vendor refresh failed:', err);
         vdSetLoading(false, `❌ ${err.message}`);
         document.getElementById('vd-generate-status').style.color = '#f87171';
       }
     });
   }
 
-  // Buton DOM'a eklenince setup et
+  // Set up buttons once the DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
     setupGenerateButton();
     setupVendorDeepDiveGenerate();
