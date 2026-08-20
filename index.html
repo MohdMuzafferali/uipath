@@ -647,9 +647,12 @@
 
   // Scorecard date: read from the HTTP Last-Modified header of scorecard-full.json
   // (GitHub Pages updates this header whenever the Maestro pipeline pushes a new file).
-  // 'May 2025' is only a last-resort fallback if no date can be found at all.
+  // DATA_VERSION is the absolute last-resort fallback in buildEvRow()'s per-row date
+  // label, reached only if BOTH the Last-Modified header AND the GitHub commit-date
+  // fetch fail. Deliberately NOT a real date — a stale hardcoded date here would look
+  // like genuine freshness data and could mislead a competitive-intel reader.
   let SCORECARD_DATE = null;
-  const DATA_VERSION = 'May 2025';
+  const DATA_VERSION = 'Unknown';
   function captureScorecardDate(response) {
     const lm = response.headers.get('Last-Modified');
     if (lm) {
@@ -687,8 +690,6 @@
        <span>Data source: <strong style="color:#0f172a;">scorecard-full.json</strong> · Last updated: <strong style="color:#0f172a;">${SCORECARD_DATE}</strong> · Refreshed via UiPath Maestro pipeline</span>
        <span style="margin-left:auto;color:#64748b;">Generate intelligence pulls the latest scorecard data</span>`;
   }
-  const DATA_SOURCE  = 'agentic_rpa_vendor_scorecard.xlsx';
-
   const state = {
     radarHighlight: null,
     heatmapMode: 'score',
@@ -1053,7 +1054,7 @@
   // `nameHtml` lets the caller control what's shown as the row title
   // (plain topic label in Vendor Deep Dive, vendor name + color dot in Topic Analysis).
   function buildEvRow(row, nameHtml) {
-    const dateLabel = row.last_updated || DATA?.lastUpdated || SCORECARD_DATE || DATA_VERSION;
+    const dateLabel = SCORECARD_DATE || DATA_VERSION;
     const tags = [
       row.confidence?`<span class="tag ${tagClass(row.confidence)}">${escHtml(row.confidence)}</span>`:'',
       `<span class="tag" style="background:rgba(136,150,176,.1);color:var(--muted);">📅 Last update: ${escHtml(dateLabel)}</span>`
@@ -1067,7 +1068,6 @@
         <span class="ev-chev">▼</span>
       </div>
       <div class="ev-body">
-        ${row.uipath_advantage?`<div class="ev-evidence" style="color:#fa4616;font-weight:500;border-left:3px solid #fa4616;padding-left:8px;margin-bottom:8px;">${escHtml(row.uipath_advantage)}</div>`:''}
         <div class="ev-evidence">${escHtml(row.evidence)}</div>
         <div class="accordion">
           ${row.rationale?`<details><summary>Rationale</summary><div class="acc-inner">${escHtml(row.rationale)}</div></details>`:''}
@@ -1342,7 +1342,6 @@
     } else {
       const uiSrc = (uiData.sources||[]).slice(0,2), rvSrc = (rvData.sources||[]).slice(0,2);
       document.getElementById('bc-strengths').innerHTML =
-        (uiData.uipath_advantage?'<div class="bc-point"><div class="bc-point-dot" style="background:#fa4616;"></div><div class="bc-point-text" style="font-weight:600;color:#fa4616;">'+escHtml(uiData.uipath_advantage)+'</div></div>':'') +
         '<div class="bc-point"><div class="bc-point-dot" style="background:#38d9a9;"></div><div>' +
         '<div class="bc-point-text">' + escHtml(uiData.rationale||uiData.evidence||'—') + '</div>' +
         uiSrc.map(s=>srcLink(s,'bc-point-src')).join('') + '</div></div>' +
@@ -1377,7 +1376,16 @@
 
   // ── EXPORT ──
   // CSV-escapes a string for safe inclusion inside a double-quoted CSV field.
-  function escCsv(s) { return (s||'').replace(/"/g,'""'); }
+  // CSV-escapes a string for safe inclusion inside a double-quoted CSV field.
+  // Also guards against CSV/Excel formula injection (CWE-1236): a cell value
+  // starting with =, +, -, or @ can be interpreted as a formula by Excel/Sheets
+  // when the exported file is opened. A leading single quote forces text mode
+  // without changing the visible value.
+  function escCsv(s) {
+    s = (s||'').replace(/"/g,'""');
+    if (/^[=+\-@]/.test(s)) s = "'" + s;
+    return s;
+  }
 
   async function exportView(view) {
     const fmtMap = { vendor:'vendor-fmt', compare:'compare-fmt' };
@@ -1545,7 +1553,13 @@
           canvasEls.forEach(({canvas,img}) => { canvas.style.display=''; img.remove(); });
           opacityEls.forEach(({el,opacity}) => { if(opacity!==undefined) el.style.opacity=opacity; });
           console.error('[Export] PDF export failed:', err);
-          alert('PDF export failed: ' + err.message);
+          const failBtn = document.querySelector('#view-' + view + ' .export-btn');
+          if (failBtn) {
+            const original = failBtn.textContent;
+            failBtn.textContent = '⚠ Export failed — try again';
+            failBtn.style.color = '#f87171';
+            setTimeout(() => { failBtn.textContent = original; failBtn.style.color = ''; }, 4000);
+          }
         });
       }, 400);
       return;
@@ -1562,12 +1576,10 @@
       const pair = first === second ? first : first + 'vs' + safeName(second);
       fileName = `uipath-competitive-vendordeepdive-${pair}-${dateStr}`;
       csv = `Vendor Deep Dive — ${v}\n`;
-      csv += 'Topic,Score,Confidence,UiPath Advantage,Sources,Rationale,Reasoning\n';
+      csv += 'Topic,Score,Confidence,Evidence,Sources,Rationale,Reasoning\n';
       VENDORS[v].forEach(d => {
         const sources = (d.sources||[]).join(' | ');
-        // The "UiPath Advantage" column falls back to evidence if not set
-        const uiAdvContent = d.uipath_advantage || d.evidence;
-        csv += `"${d.category}",${d.score},"${escCsv(d.confidence)}","${escCsv(uiAdvContent)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}"\n`;
+        csv += `"${escCsv(d.category)}",${d.score},"${escCsv(d.confidence)}","${escCsv(d.evidence)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}"\n`;
       });
 
     } else if (view === 'compare') {
@@ -1581,19 +1593,19 @@
         const rivalScore = VENDORS[second][i].score;
         const d = uiScore - rivalScore;
         const result = d > 0 ? `UiPath leads on this dimension` : d < 0 ? `${second} leads on this dimension` : 'Parity';
-        csv += `"${t}",${uiScore},${rivalScore},${d},"${result}"\n`;
+        csv += `"${escCsv(t)}",${uiScore},${rivalScore},${d},"${escCsv(result)}"\n`;
       });
 
     } else if (view === 'topic') {
       const t = TOPICS[state.topicIdx];
       fileName = `uipath-competitive-topicanalysis-${safeName(t).substring(0,24)}-${dateStr}`;
       csv = `Topic Analysis — ${t}\n`;
-      // Column order: Vendor, Score, Confidence, Evidence, Sources, Rationale, Reasoning, UiPath Advantage
-      csv += 'Vendor,Score,Confidence,Evidence,Sources,Rationale,Reasoning,UiPath Advantage\n';
+      // Column order: Vendor, Score, Confidence, Evidence, Sources, Rationale, Reasoning
+      csv += 'Vendor,Score,Confidence,Evidence,Sources,Rationale,Reasoning\n';
       VORDER.forEach(v => {
         const d = VENDORS[v][state.topicIdx];
         const sources = (d.sources||[]).join(' | ');
-        csv += `"${v}",${d.score},"${escCsv(d.confidence)}","${escCsv(d.evidence)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}","${escCsv(d.uipath_advantage)}"\n`;
+        csv += `"${escCsv(v)}",${d.score},"${escCsv(d.confidence)}","${escCsv(d.evidence)}","${escCsv(sources)}","${escCsv(d.rationale)}","${escCsv(d.reasoning)}"\n`;
       });
     }
 
@@ -1659,7 +1671,12 @@
     }).catch(err => {
       if (btn) btn.style.visibility = '';
       console.error('[BattleCard PDF] Export failed:', err);
-      alert('PDF export failed: ' + err.message);
+      if (btn) {
+        const original = btn.textContent;
+        btn.textContent = '⚠ Export failed — try again';
+        btn.style.color = '#f87171';
+        setTimeout(() => { btn.textContent = original; btn.style.color = ''; }, 4000);
+      }
     });
   }
 
