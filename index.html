@@ -818,20 +818,42 @@
     });
   }); // end of nav tab listener
 
-  // Fetch scorecard-full.json (cache-busted so Maestro updates show up immediately), then run initApp
+  // Fetch scorecard-full.json (cache-busted so Maestro updates show up immediately), then run initApp.
+  // Error handling is split into two distinct classes so the on-screen message points at the
+  // *actual* cause (we once lost time because a missing CDN library surfaced as a bogus
+  // "failed to load scorecard-full.json" message):
+  //   1. fetch/JSON errors  -> data problem (file missing, opened via file://, invalid JSON)
+  //   2. init/render errors -> app problem (e.g. a CDN library blocked by SRI or not loaded)
+  function showFatalError(title, hint, err) {
+    console.error(title + ':', err);
+    document.body.innerHTML = '<div style="padding:40px;color:#f87171;font-family:sans-serif;line-height:1.6;">' +
+      '⚠️ <strong>' + title + '</strong><br>' + hint +
+      '<br><br><span style="color:#8896b0;font-size:12px;">Details: ' + escHtml(err && err.message ? err.message : String(err)) + '</span></div>';
+  }
   fetch('scorecard-full.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => { captureScorecardDate(r); return r.json(); })
+    .catch(err => {
+      // Reached only for network/HTTP/JSON-parse failures — genuinely a data-loading problem.
+      showFatalError('Failed to load scorecard-full.json',
+        'Check that the file exists next to index.html and that the page is served over HTTP (e.g. Live Server), not file://.', err);
+      throw err; // stop the chain; the .then below must not run
+    })
     .then(json => {
       DATA = json;
       window.DASHBOARD_DATA = { vendors: {} };
       Object.keys(DATA.vendors).forEach(v => { window.DASHBOARD_DATA.vendors[v] = DATA.vendors[v]; });
-      initApp();
+      try {
+        initApp();
+      } catch (err) {
+        // Data loaded fine — the failure is in initialization/rendering (e.g. Chart.js missing
+        // because an SRI hash didn't match, or a bug in a render function).
+        showFatalError('Dashboard failed to initialize',
+          'The data file loaded correctly, but the app could not start. Check the browser console — a blocked or missing CDN library (Chart.js, html2canvas, jsPDF) is the most common cause.', err);
+        return;
+      }
       fetchCommitDate(); // the actual source of truth for the date: latest commit date (updates the band)
     })
-    .catch(err => {
-      console.error('Failed to load scorecard-full.json:', err);
-      document.body.innerHTML = '<div style="padding:40px;color:#f87171;font-family:sans-serif;">⚠️ Failed to load scorecard-full.json. Please open this page via a local server (e.g. Live Server).</div>';
-    });
+    .catch(() => { /* already reported by showFatalError above; swallow the re-thrown error */ });
 
   // ── EXECUTIVE SUMMARY ──
   function renderExecMetrics() {
